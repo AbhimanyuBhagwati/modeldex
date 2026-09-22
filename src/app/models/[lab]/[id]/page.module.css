@@ -29,12 +29,6 @@
 .cardCol {
   position: sticky;
   top: 24px;
-  animation: rise 700ms var(--ease-out) both;
-}
-@keyframes rise {
-  from {
-    transform: translateY(18px) rotate(-2deg);
-  }
 }
 .kicker {
   display: flex;

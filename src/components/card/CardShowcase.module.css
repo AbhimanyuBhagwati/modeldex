@@ -1,0 +1,73 @@
+.wrap {
+  display: grid;
+  gap: 14px;
+}
+.stage {
+  position: relative;
+  perspective: 1400px;
+  /* Horizontal drags spin the card; vertical ones still scroll the page. */
+  touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.stage:active {
+  cursor: grabbing;
+}
+.spinner {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 5 / 7;
+  container-type: inline-size;
+  transform-style: preserve-3d;
+  will-change: transform;
+  --sheen: 0%;
+}
+.face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.back {
+  transform: rotateY(180deg);
+  border-radius: 5.2cqi;
+  overflow: hidden;
+  box-shadow: var(--shadow-hi);
+}
+.back svg {
+  display: block;
+}
+/* A band of light that slides across the back as it turns. */
+.sheen {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.55) 45%, rgba(255, 236, 170, 0.35) 52%, transparent 68%);
+  background-size: 260% 100%;
+  background-position: var(--sheen) 0;
+}
+.shadow {
+  width: 78%;
+  height: 22px;
+  margin: 10px auto 0;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(0, 0, 0, 0.42), transparent);
+  filter: blur(2px);
+}
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.hint {
+  font: 500 12px/1 var(--f-mono);
+  color: var(--ink-3);
+}
+@media (hover: none) {
+  .hint::after {
+    content: ' or tap';
+  }
+}

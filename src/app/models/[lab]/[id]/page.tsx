@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { CSSProperties } from 'react';
 import { Card } from '@/components/card/Card';
+import { CardShowcase } from '@/components/card/CardShowcase';
 import { SiteFooter, SiteHeader } from '@/components/chrome';
 import { AddToDeckButton, CopyButton } from '@/components/client-bits';
 import { Icon, RarityIcon } from '@/components/icons';
@@ -120,7 +121,7 @@ export default async function ModelPage({ params }: PageProps<'/models/[lab]/[id
 
         <article className={styles.layout}>
           <div className={styles.cardCol}>
-            <Card model={m} lab={lab} setSize={data.models.length} refDate={data.updatedAt} link={false} addable={false} tilt={16} headingLevel="h2" />
+            <CardShowcase model={m} lab={lab} setSize={data.models.length} refDate={data.updatedAt} headingLevel="h2" />
           </div>
           <div className={styles.info}>
             <p className={styles.kicker}>
