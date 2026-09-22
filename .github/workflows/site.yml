@@ -1,0 +1,96 @@
+name: Sync and deploy
+
+# Every morning: pull models.dev and Hugging Face, commit data/models.json if anything changed,
+# then build the static site and publish it to GitHub Pages. A push to main publishes too.
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 6 * * *' # 06:17 UTC daily, off the hour when GitHub's scheduler is busiest
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      publish: ${{ steps.decide.outputs.publish }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Pull models.dev and Hugging Face
+        id: sync
+        if: github.event_name != 'push'
+        run: npm run sync
+
+      - name: Lint, typecheck, and test
+        run: |
+          npm run lint
+          npm run typecheck
+          npm test
+
+      - name: Commit new data
+        if: steps.sync.outputs.changed == 'true'
+        env:
+          # Passed through env, never interpolated into the script: it contains model names from upstream data.
+          TITLE: ${{ steps.sync.outputs.title }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/models.json
+          git commit -m "data: ${TITLE}" -m "Automated daily sync from models.dev."
+          git pull --rebase
+          git push
+
+      # Scheduled runs with no new data skip the rebuild; pushes and manual runs always publish.
+      - name: Decide whether to publish
+        id: decide
+        env:
+          EVENT: ${{ github.event_name }}
+          CHANGED: ${{ steps.sync.outputs.changed }}
+        run: |
+          if [ "$EVENT" != "schedule" ] || [ "$CHANGED" = "true" ]; then echo "publish=true" >> "$GITHUB_OUTPUT"; else echo "publish=false" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Read the Pages address
+        id: pages
+        if: steps.decide.outputs.publish == 'true'
+        uses: actions/configure-pages@v6
+
+      - name: Build the static site
+        if: steps.decide.outputs.publish == 'true'
+        env:
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}
+        run: npm run build
+
+      - if: steps.decide.outputs.publish == 'true'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.publish == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

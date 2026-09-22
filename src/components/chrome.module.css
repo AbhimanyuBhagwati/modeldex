@@ -1,0 +1,126 @@
+.header {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 22px var(--gutter) 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 16px;
+  flex-wrap: wrap;
+}
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-weight: 900;
+  font-size: 21px;
+  font-stretch: 125%;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.mark {
+  width: 17px;
+  height: 23px;
+  border-radius: 4px;
+  background: linear-gradient(150deg, #ffe28e, var(--gold) 45%, #c98f0e);
+  box-shadow: inset 0 0 0 1.5px var(--ink);
+  transform: rotate(-9deg);
+  transition: transform 300ms var(--ease-out);
+}
+@media (hover: hover) {
+  .wordmark:hover .mark {
+    transform: rotate(6deg);
+  }
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.nav > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  color: var(--ink-2);
+  font: 650 13.5px/1 var(--f-sans);
+  text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+@media (hover: hover) {
+  .nav > a:hover {
+    background: var(--ground-2);
+    color: var(--ink);
+  }
+}
+.navCompare b {
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 99px;
+  display: inline-grid;
+  place-items: center;
+  background: var(--gold);
+  color: var(--gold-ink);
+  font: 700 11px/1 var(--f-mono);
+}
+.nav > a.sync {
+  margin-left: 4px;
+  font: 500 12px/1 var(--f-mono);
+  color: var(--ink-2);
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+.live {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--good);
+  flex-shrink: 0;
+}
+.live::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--good);
+  opacity: 0;
+  animation: ping 2.6s var(--ease-out) infinite;
+}
+@keyframes ping {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.7;
+  }
+  80%,
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+/* The bottom padding keeps the last line clear of the floating deck. */
+.footer {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 8px var(--gutter) 150px;
+  font: 500 12px/1.6 var(--f-mono);
+  color: var(--ink-3);
+}
+.footer p {
+  margin: 0;
+}
+.footer a {
+  color: var(--ink-2);
+}
+@media (max-width: 560px) {
+  .nav > a.sync {
+    display: none;
+  }
+}

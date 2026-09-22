@@ -1,0 +1,76 @@
+export const MODALITIES = ['text', 'image', 'audio', 'video', 'pdf'] as const;
+export type Modality = (typeof MODALITIES)[number];
+
+export const MODEL_TYPES = ['text', 'image', 'video', 'audio', 'voice', 'transcription', 'embedding', 'rerank', 'safety'] as const;
+export type ModelType = (typeof MODEL_TYPES)[number];
+
+export type Access = 'free' | 'open' | 'paid';
+export type Rarity = 'promo' | 'common' | 'uncommon' | 'rare' | 'holo';
+export type Status = 'preview' | 'beta' | 'deprecated';
+export type LicenseSource = 'proprietary' | 'huggingface' | 'lab-default' | 'override';
+
+export interface License {
+  name: string;
+  source: LicenseSource;
+  url?: string;
+}
+
+/** USD per million tokens. */
+export interface Price {
+  input: number | null;
+  output: number | null;
+  cacheRead: number | null;
+  cacheWrite: number | null;
+}
+
+export interface Model {
+  /** `${lab}/${slug}`, unique across the dataset and used in URLs. */
+  key: string;
+  /** The id the lab's API expects. May contain characters that can't go in a URL. */
+  id: string;
+  /** URL-safe form of the id. */
+  slug: string;
+  lab: string;
+  type: ModelType;
+  name: string;
+  description: string;
+  family: string | null;
+  /** YYYY-MM-DD */
+  releaseDate: string;
+  lastUpdated: string | null;
+  /** YYYY-MM or YYYY-MM-DD */
+  knowledge: string | null;
+  context: number | null;
+  maxOutput: number | null;
+  price: Price | null;
+  input: Modality[];
+  output: Modality[];
+  reasoning: boolean;
+  toolCall: boolean;
+  structuredOutput: boolean;
+  attachment: boolean;
+  openWeights: boolean;
+  status: Status | null;
+  access: Access;
+  rarity: Rarity;
+  /** Release order across the whole set, starting at 1. */
+  set: number;
+  license: License;
+}
+
+export interface LabSummary {
+  key: string;
+  name: string;
+  color: string;
+  docUrl: string | null;
+  count: number;
+}
+
+export interface Dataset {
+  version: 1;
+  /** ISO timestamp of the last sync that changed the data. */
+  updatedAt: string;
+  source: { url: string; providers: number; listings: number };
+  labs: LabSummary[];
+  models: Model[];
+}

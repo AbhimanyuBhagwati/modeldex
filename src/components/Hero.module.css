@@ -1,0 +1,95 @@
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 24px 40px;
+  align-items: center;
+  padding-block: 34px 52px;
+}
+.title {
+  margin: 16px 0 18px;
+  font-weight: 850;
+  font-size: clamp(38px, 5.4vw, 70px);
+  font-stretch: 112%;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  max-width: 15ch;
+}
+.lede {
+  margin: 0;
+  font-size: clamp(16px, 1.5vw, 18.5px);
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 44ch;
+}
+.stats {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  font: 500 13px/1.2 var(--f-mono);
+  color: var(--ink-2);
+}
+.stats b {
+  color: var(--ink);
+  font-weight: 600;
+}
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+.booster {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+.fan {
+  position: relative;
+  width: 100%;
+  height: clamp(340px, 34vw, 430px);
+}
+.slot {
+  --w: clamp(168px, 15.5vw, 218px);
+  position: absolute;
+  width: var(--w);
+  left: calc(50% - var(--w) / 2);
+  top: calc(50% - var(--w) * 0.7 + 8px);
+  transform-origin: 50% 150%;
+  transform: translate(var(--x), var(--y)) rotate(var(--r));
+  animation: deal 1100ms var(--ease-out) both;
+  animation-delay: calc(160ms + var(--i) * 90ms);
+}
+@keyframes deal {
+  from {
+    transform: translate(0, 30px) rotate(0deg);
+  }
+}
+.slot:hover,
+.slot:focus-within {
+  z-index: 5 !important;
+}
+.label {
+  margin: 0;
+  font: 500 12px/1 var(--f-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .slot {
+    --w: 138px;
+  }
+  .fan {
+    height: 300px;
+  }
+}

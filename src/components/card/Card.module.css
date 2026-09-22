@@ -1,0 +1,382 @@
+/* A card is sized entirely in container units, so it scales like a real printed card. */
+.card {
+  position: relative;
+  container-type: inline-size;
+  aspect-ratio: 5 / 7;
+  max-width: 100%;
+  --rx: 0deg;
+  --ry: 0deg;
+  --gx: 50%;
+  --gy: 50%;
+  --px: 50%;
+  --py: 50%;
+  transition: transform 280ms var(--ease-out);
+}
+.hot,
+.card:has(:focus-visible) {
+  transform: translateY(-6px);
+}
+.frame {
+  position: absolute;
+  inset: 0;
+  border-radius: 5.2cqi;
+  padding: 3.1cqi;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(155deg, color-mix(in oklab, var(--t) 66%, white) 0%, var(--t) 40%, color-mix(in oklab, var(--t) 70%, black) 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22),
+    var(--shadow);
+  transition: box-shadow 280ms var(--ease-out);
+}
+.tilting .frame {
+  transform: perspective(900px) rotateX(var(--rx)) rotateY(var(--ry));
+}
+.hot .frame {
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22),
+    var(--shadow-hi);
+}
+.card:has(.add[aria-pressed='true']) .frame {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+.face {
+  position: relative;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto auto auto auto minmax(0, 1fr) auto;
+  gap: 1.9cqi;
+  padding: 3.2cqi 3.8cqi 3cqi;
+  border-radius: 3cqi;
+  background: var(--stock);
+  color: var(--stock-ink);
+  overflow: hidden;
+  box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.16);
+}
+.top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2cqi;
+  min-width: 0;
+}
+.titles {
+  display: grid;
+  gap: 0.8cqi;
+  min-width: 0;
+}
+.lab {
+  font: 600 3.9cqi/1 var(--f-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--t) 60%, black);
+}
+.name {
+  margin: 0;
+  font-family: var(--f-sans);
+  font-weight: 800;
+  font-size: 7cqi;
+  font-stretch: 108%;
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.hp {
+  display: flex;
+  align-items: baseline;
+  gap: 1cqi;
+  flex-shrink: 0;
+  color: color-mix(in oklab, var(--t) 55%, black);
+}
+.hp span {
+  font: 600 3.3cqi/1 var(--f-mono);
+  letter-spacing: 0.06em;
+}
+.hp b {
+  font-weight: 850;
+  font-size: 8.6cqi;
+  font-stretch: 112%;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+.art {
+  position: relative;
+  aspect-ratio: 160 / 96;
+  border-radius: 2cqi;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 100% at 26% 12%, color-mix(in oklab, var(--t) 36%, white) 0%, transparent 58%),
+    linear-gradient(165deg, color-mix(in oklab, var(--t) 88%, white), color-mix(in oklab, var(--t) 60%, black));
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.2),
+    inset 0 3px 10px rgba(0, 0, 0, 0.24);
+}
+.art svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.card[data-status='deprecated'] .art {
+  filter: grayscale(0.85) contrast(0.9);
+}
+.flags {
+  position: absolute;
+  top: 2cqi;
+  left: 2cqi;
+  display: flex;
+  gap: 1.2cqi;
+}
+.flag {
+  font: 750 3.4cqi/1 var(--f-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--gold-ink);
+  padding: 1.2cqi 2cqi;
+  border-radius: 1.4cqi;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+.flag[data-kind='preview'],
+.flag[data-kind='beta'] {
+  background: #fff4d6;
+  color: #6b4a00;
+}
+.flag[data-kind='deprecated'] {
+  background: #2a2c33;
+  color: #f3f1ea;
+}
+.type {
+  justify-self: center;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font: 650 3.5cqi/1 var(--f-sans);
+  font-stretch: 110%;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--t) 52%, black);
+  background: color-mix(in oklab, var(--t) 15%, var(--stock));
+  padding: 1.3cqi 3cqi;
+  border-radius: 99px;
+}
+.moves {
+  display: grid;
+}
+.move {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2.2cqi;
+  padding-block: 1.5cqi;
+  border-bottom: 1px solid var(--stock-line);
+}
+.move:first-child {
+  border-top: 1px solid var(--stock-line);
+}
+.ens {
+  display: flex;
+  gap: 0.8cqi;
+}
+.ens :global(.en) {
+  width: 5cqi;
+  height: 5cqi;
+  box-shadow:
+    inset 0 -0.6cqi 0 rgba(0, 0, 0, 0.22),
+    0 0 0 0.3cqi rgba(0, 0, 0, 0.08);
+}
+.moveName {
+  font-weight: 750;
+  font-size: 4.8cqi;
+  font-stretch: 106%;
+  white-space: nowrap;
+}
+.movePrice {
+  font: 600 5.4cqi/1 var(--f-mono);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+.movePrice small {
+  font-size: 0.62em;
+  font-weight: 500;
+  color: var(--stock-ink-2);
+  margin-left: 0.5cqi;
+}
+.flavor {
+  margin: 0;
+  align-self: start;
+  font: italic 400 4.9cqi/1.16 var(--f-serif);
+  color: var(--stock-ink-2);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.foot {
+  display: flex;
+  align-items: center;
+  gap: 1.6cqi;
+  min-width: 0;
+  font: 500 3.5cqi/1 var(--f-mono);
+  color: var(--stock-ink-2);
+}
+.foot :global(.acc) {
+  font-size: 3.3cqi;
+  padding: 1cqi 1.8cqi;
+  border-radius: 1.2cqi;
+}
+.license {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.set {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8cqi;
+  white-space: nowrap;
+  color: var(--stock-ink);
+}
+.set :global(.rs) {
+  width: 3.8cqi;
+  height: 3.8cqi;
+}
+
+.holo,
+.glare {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.holo {
+  opacity: 0;
+  mix-blend-mode: color-dodge;
+  background: repeating-linear-gradient(
+    115deg,
+    rgba(255, 64, 160, 0) 0%,
+    rgba(255, 206, 84, 0.55) 7%,
+    rgba(84, 255, 190, 0.5) 14%,
+    rgba(84, 168, 255, 0.55) 21%,
+    rgba(214, 112, 255, 0.5) 28%,
+    rgba(255, 64, 160, 0) 35%
+  );
+  background-size: 300% 300%;
+  background-position: var(--px) var(--py);
+  transition: opacity 320ms var(--ease-out);
+}
+.holo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0.5px, transparent 1.2px);
+  background-size: 5px 5px;
+  opacity: 0.3;
+  mix-blend-mode: overlay;
+}
+.card[data-rarity='holo'] .holo {
+  opacity: 0.36;
+}
+.card[data-rarity='holo'].hot .holo {
+  opacity: 0.88;
+}
+.card[data-rarity='rare'].hot .holo {
+  opacity: 0.32;
+}
+.glare {
+  opacity: 0;
+  mix-blend-mode: overlay;
+  background: radial-gradient(farthest-corner circle at var(--gx) var(--gy), rgba(255, 255, 255, 0.66) 0%, rgba(255, 255, 255, 0.14) 28%, rgba(0, 0, 0, 0.14) 90%);
+  transition: opacity 260ms var(--ease-out);
+}
+.hot .glare {
+  opacity: 1;
+}
+
+.hit {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: 5.2cqi;
+}
+.hit:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 4px;
+}
+.add {
+  position: absolute;
+  z-index: 4;
+  top: -10px;
+  right: -10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--ground);
+  background: var(--ink);
+  color: var(--ground);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: scale(0.8);
+  transition:
+    opacity 180ms var(--ease-out),
+    transform 220ms var(--ease-out),
+    background-color 160ms ease;
+}
+.add svg {
+  width: 16px;
+  height: 16px;
+}
+.hot .add,
+.card:has(:focus-visible) .add,
+.add[aria-pressed='true'] {
+  opacity: 1;
+  transform: none;
+}
+.add[aria-pressed='true'] {
+  background: var(--gold);
+  color: var(--gold-ink);
+}
+.card .add:active {
+  transform: scale(0.9);
+}
+@media (hover: none) {
+  .add {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@container (max-width: 190px) {
+  .flavor,
+  .license {
+    display: none;
+  }
+  .art {
+    aspect-ratio: 160 / 124;
+  }
+  .lab {
+    font-size: 4.6cqi;
+  }
+  .foot {
+    font-size: 4.4cqi;
+    justify-content: space-between;
+  }
+  .foot :global(.acc) {
+    font-size: 4.1cqi;
+  }
+  .type {
+    font-size: 4.1cqi;
+  }
+}
