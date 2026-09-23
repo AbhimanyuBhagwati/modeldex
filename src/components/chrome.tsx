@@ -13,6 +13,7 @@ export function SiteHeader({ updatedAt }: { updatedAt: string }) {
       </Link>
       <nav className={styles.nav} aria-label="Main">
         <Link href="/#binder">Binder</Link>
+        <Link href="/galaxy/">Galaxy</Link>
         <Link href="/labs/">Labs</Link>
         <Link href="/evolution/">Evolution</Link>
         <Link href="/battle/">Battle</Link>
@@ -42,7 +43,7 @@ export function SiteFooter({ updatedAt }: { updatedAt: string }) {
         · data updated {formatDate(updatedAt.slice(0, 10))}
       </p>
       <p>
-        <Link href="/new/">New this week</Link> · <a href={withBase('/feed.xml')}>RSS feed</a> · <Link href="/labs/">All labs</Link> · <Link href="/#source">Where the data comes from</Link>
+        <Link href="/new/">New this week</Link> · <a href={withBase('/feed.xml')}>RSS feed</a> · <Link href="/labs/">All labs</Link> · <Link href="/#source">Where the data comes from</Link> · <Link href="/credits/">Credits</Link>
       </p>
       <p>Not affiliated with any AI lab. Model names belong to their makers.</p>
     </footer>

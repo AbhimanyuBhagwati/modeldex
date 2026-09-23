@@ -12,8 +12,8 @@ export function Dock() {
   const entries = useDeck();
   const { registerDock, registerSlot, remove, clear, notify } = useDeckApi();
   const path = usePathname();
-  // The compare and battle pages show the cards themselves.
-  const open = entries.length > 0 && !path.startsWith('/compare') && !path.startsWith('/battle');
+  // The compare and battle pages show the cards themselves; the galaxy needs the whole screen.
+  const open = entries.length > 0 && !path.startsWith('/compare') && !path.startsWith('/battle') && !path.startsWith('/galaxy');
 
   return (
     <div ref={registerDock} className={styles.dock} data-open={open ? 'true' : 'false'} role="region" aria-label="Compare deck" inert={!open}>
