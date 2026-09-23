@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-22T23:17:18.615Z",
+  "updatedAt": "2026-09-23T00:02:12.635Z",
   "source": {
     "url": "https://models.dev/api.json",
     "providers": 223,
-    "listings": 8078
+    "listings": 8080
   },
   "labs": [
     {
@@ -1373,13 +1373,13 @@
       }
     },
     {
-      "key": "cohere/command-r-plus-08-2024",
-      "id": "command-r-plus-08-2024",
-      "slug": "command-r-plus-08-2024",
+      "key": "cohere/command-r-08-2024",
+      "id": "command-r-08-2024",
+      "slug": "command-r-08-2024",
       "lab": "cohere",
       "type": "text",
-      "name": "Command R+",
-      "description": "Cohere's RAG workhorse for long-context enterprise search and tool use",
+      "name": "Command R",
+      "description": "Cohere retrieval model for long-context chat and enterprise RAG workflows",
       "family": "command-r",
       "releaseDate": "2024-08-30",
       "lastUpdated": "2024-08-30",
@@ -1387,8 +1387,8 @@
       "context": 128000,
       "maxOutput": 4000,
       "price": {
-        "input": 2.5,
-        "output": 10,
+        "input": 0.15,
+        "output": 0.6,
         "cacheRead": null,
         "cacheWrite": null
       },
@@ -1405,7 +1405,7 @@
       "openWeights": true,
       "status": null,
       "access": "open",
-      "rarity": "rare",
+      "rarity": "common",
       "set": 29,
       "license": {
         "name": "CC BY-NC 4.0",
