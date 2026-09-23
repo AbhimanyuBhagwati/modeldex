@@ -3,193 +3,191 @@
   gap: 18px;
 }
 
-/* A stage in deep space, lit in the lab's color. Dark in both themes. */
+/* One dark, self-contained stage in either site theme. */
 .theater {
+  --stage-ink: #edf5f2;
+  --stage-muted: #8daca6;
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  justify-items: center;
-  gap: 18px;
-  min-height: 640px;
-  padding: 22px 16px 24px;
-  border-radius: 28px;
-  background:
-    radial-gradient(circle at 50% 46%, color-mix(in oklab, var(--t) 42%, #0b0d16) 0%, #070810 58%, #04050a 100%);
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
-    var(--shadow-lg);
-  color: #eef0f6;
+  border: 1px solid color-mix(in oklab, var(--t) 25%, #202833);
+  border-radius: 26px;
+  background: #060b10;
+  color: var(--stage-ink);
+  box-shadow: 0 24px 80px -40px #000b, inset 0 1px 0 #ffffff0a;
 }
-.canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-}
-.rays {
-  position: absolute;
-  z-index: -2;
-  left: 50%;
-  top: 46%;
-  width: 180%;
-  aspect-ratio: 1;
-  translate: -50% -50%;
-  background: repeating-conic-gradient(from 0deg, color-mix(in oklab, var(--t) 55%, white) 0deg 5deg, transparent 5deg 15deg);
-  mask: radial-gradient(circle, black 0%, transparent 55%);
-  opacity: 0.14;
-  animation: spin 40s linear infinite;
-  transition: opacity 600ms ease;
-}
-.raysFast {
-  opacity: 0;
-  background: repeating-conic-gradient(from 7deg, #fff6d6 0deg 2deg, transparent 2deg 11deg);
-  animation: spin 3.2s linear infinite reverse;
-}
-.theater[data-phase='charge'] .rays {
-  opacity: 0.4;
-}
-.theater[data-phase='charge'] .raysFast {
-  opacity: 0.55;
-  transition-duration: 2200ms;
-}
-@keyframes spin {
-  to {
-    rotate: 360deg;
-  }
-}
-
-.stageInfo {
+.theaterHead {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 12px;
-  font: 500 12px/1 var(--f-mono);
-  letter-spacing: 0.08em;
+  padding: 22px 28px 0;
+}
+.chamber, .stageCount, .chapter, .side > span {
+  font: 500 10px/1.3 var(--f-mono);
+  letter-spacing: .15em;
   text-transform: uppercase;
-  color: rgba(238, 240, 246, 0.72);
 }
-.version {
-  padding: 7px 12px;
-  border-radius: 99px;
-  background: linear-gradient(135deg, #fff2c2, var(--gold) 55%, #d49a1c);
-  color: #2a1f00;
-  font: 800 15px/1 var(--f-sans);
-  letter-spacing: 0;
-  text-transform: none;
-  box-shadow: 0 0 24px color-mix(in oklab, var(--gold) 55%, transparent);
-  animation: badge 520ms var(--ease-out) both;
-}
-@keyframes badge {
-  from {
-    scale: 0.4;
-    opacity: 0;
-  }
-  60% {
-    scale: 1.18;
-  }
-}
-
-/* The card slot. While charging, both forms are pure light and swap faster and faster. */
-.slot {
+.chamber { display: flex; align-items: center; gap: 10px; color: var(--stage-muted); }
+.chamber > span { font: 22px/1 var(--f-sans); color: var(--t); }
+.stageCount { color: #e3d6ac; font-size: 12px; }
+.stageCount > span { color: #6f8189; }
+.arena {
   position: relative;
   display: grid;
   place-items: center;
-  width: min(270px, 70vw);
-  aspect-ratio: 5 / 7;
-  animation: float 5s ease-in-out infinite;
+  height: 400px;
+  isolation: isolate;
+  perspective: 1000px;
 }
-@keyframes float {
-  50% {
-    translate: 0 -8px;
-  }
-}
-.form {
-  grid-area: 1 / 1;
-  width: 100%;
-  transition:
-    filter 1100ms ease-out,
-    opacity 120ms linear;
-}
-.slot[data-phase='charge'] {
-  animation: pulse 700ms ease-in-out infinite alternate;
-}
-@keyframes pulse {
-  from {
-    scale: 1;
-  }
-  to {
-    scale: 1.06;
-  }
-}
-.slot[data-phase='charge'] .form,
-.slot[data-phase='flash'] .form {
-  filter: brightness(0) invert(1) drop-shadow(0 0 14px #fff) drop-shadow(0 0 38px var(--t));
-  transition: filter 500ms ease-in;
-}
-.slot[data-show='from'] .form[data-role='to'],
-.slot[data-show='to'] .form[data-role='from'],
-.slot[data-phase='charge']:not([data-show]) .form[data-role='to'] {
-  opacity: 0;
-}
-.slot[data-phase='reveal'] .form {
-  animation: bloom 1100ms var(--ease-out) both;
-}
-@keyframes bloom {
-  from {
-    scale: 1.12;
-  }
-}
-
-.ring {
+.nebula {
   position: absolute;
+  z-index: -3;
+  inset: -70px 0 -110px;
+  background: radial-gradient(ellipse at center, color-mix(in oklab, var(--t) 23%, transparent), transparent 62%);
+  opacity: .65;
+  transition: opacity 900ms ease;
+  pointer-events: none;
+}
+.theater[data-playing] .nebula { opacity: 1; }
+.grid {
+  position: absolute;
+  z-index: -2;
+  width: 650px;
+  height: 250px;
+  top: 67%;
   left: 50%;
-  top: 46%;
-  width: 240px;
+  background-image: linear-gradient(#8ddbb015 1px, transparent 1px), linear-gradient(90deg, #8ddbb015 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse, #000 10%, transparent 66%);
+  transform: translateX(-50%) rotateX(68deg);
+  transform-origin: center top;
+  pointer-events: none;
+}
+.canvas { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; }
+.halo {
+  position: absolute;
+  z-index: -2;
+  width: 370px;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow:
-    0 0 40px color-mix(in oklab, var(--t) 80%, white),
-    inset 0 0 40px color-mix(in oklab, var(--t) 80%, white);
-  transform: translate(-50%, -50%) scale(0);
-  opacity: 0;
-  pointer-events: none;
+  border: 1px solid color-mix(in oklab, var(--t) 18%, transparent);
+  background: radial-gradient(circle, transparent 48%, color-mix(in oklab, var(--t) 6%, transparent) 70%, transparent 72%);
+  box-shadow: 0 0 90px -45px var(--t), inset 0 0 50px -35px var(--t);
+  transition: opacity 600ms ease, transform 1200ms cubic-bezier(.65, 0, .35, 1);
 }
-.flash {
+.halo::before, .halo::after { content: ''; position: absolute; border-radius: 50%; inset: 14px; border: 1px dashed color-mix(in oklab, var(--t) 14%, transparent); }
+.halo::after { inset: -28px; border-style: solid; opacity: .45; }
+.theater[data-phase='charge'] .halo { transform: scale(.9); opacity: .8; }
+.theater[data-phase='transform'] .halo { transform: scale(1.12); opacity: 1; }
+.theater[data-phase='collapse'] .halo { transform: scale(.1); opacity: 0; transition-duration: 600ms; }
+.theater[data-phase='reveal'] .halo { transform: scale(1.05); }
+.pedestal {
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 46%, #fff 0%, #fff 30%, color-mix(in oklab, var(--t) 40%, white) 70%);
-  opacity: 0;
-  pointer-events: none;
+  z-index: -1;
+  bottom: 2px;
+  width: 270px;
+  height: 35px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, color-mix(in oklab, var(--t) 26%, transparent), transparent 68%);
+  border: 1px solid color-mix(in oklab, var(--t) 18%, transparent);
+  box-shadow: 0 0 35px -14px var(--t), inset 0 0 18px -8px var(--t);
 }
+.orbits { position: absolute; z-index: -1; width: 340px; height: 340px; pointer-events: none; opacity: 0; transition: opacity 450ms ease; }
+.orbits i { position: absolute; inset: 0; border: 1px solid color-mix(in oklab, var(--t) 60%, transparent); border-top-color: #f5efc5; border-right-color: transparent; border-radius: 50%; box-shadow: 0 0 14px -8px var(--t); }
+.orbits i:nth-child(1) { transform: rotate(-35deg) rotateX(65deg); }
+.orbits i:nth-child(2) { transform: rotate(40deg) rotateX(65deg); }
+.orbits i:nth-child(3) { inset: -24px; border-style: dashed; opacity: .45; }
+.theater[data-phase='charge'] .orbits, .theater[data-phase='transform'] .orbits { opacity: 1; }
+.theater[data-phase='charge'] .orbits { animation: orbitGather 1500ms cubic-bezier(.65, 0, .35, 1) both; }
+.theater[data-phase='transform'] .orbits { animation: orbitTurn 1700ms cubic-bezier(.45, 0, .6, 1) both; }
+.theater[data-phase='collapse'] .orbits { animation: orbitCollapse 600ms cubic-bezier(.65, 0, .85, .25) both; }
+@keyframes orbitGather { from { transform: scale(1.25) rotate(-30deg); opacity: 0; } to { transform: scale(1) rotate(40deg); opacity: 1; } }
+@keyframes orbitTurn { from { transform: scale(1) rotate(40deg); } to { transform: scale(.9) rotate(310deg); } }
+@keyframes orbitCollapse { from { transform: scale(.9) rotate(310deg); opacity: 1; } to { transform: scale(.05) rotate(450deg); opacity: 0; } }
 
-.controls {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-.controls :global(.btn-ghost) {
-  color: #eef0f6;
-}
-.evolve {
-  padding: 14px 26px;
-  font-size: 16px;
-  box-shadow: 0 0 30px color-mix(in oklab, var(--gold) 45%, transparent);
-}
-.complete {
-  font: 800 15px/1 var(--f-sans);
-  letter-spacing: 0.02em;
-  color: var(--gold);
-}
-.open {
-  font-size: 13px;
-}
+.side { position: absolute; top: 50%; width: min(22%, 210px); transform: translateY(-50%); z-index: 1; transition: opacity 400ms ease; }
+.sideFrom { left: 6%; }
+.sideTo { right: 6%; text-align: right; }
+.side > span { color: var(--stage-muted); font-size: 9px; letter-spacing: .12em; }
+.side > b { display: block; margin-top: 12px; font: 500 clamp(28px, 4vw, 54px)/1 var(--f-serif); letter-spacing: -.04em; color: #e7f2e9; }
+.sideTo > b { color: color-mix(in oklab, var(--t) 65%, white); }
+.side p { margin: 12px 0 5px; font-size: 12px; line-height: 1.4; color: #c2d4d0; overflow-wrap: anywhere; }
+.side small { font: 10px/1.4 var(--f-mono); color: #718e88; }
+.side::after { content: ''; display: block; height: 1px; width: 42px; margin-top: 20px; background: linear-gradient(90deg, var(--t), transparent); opacity: .5; }
+.sideTo::after { margin-left: auto; transform: rotate(180deg); }
+.theater[data-playing] .sideFrom { opacity: .55; }
 
+.slot { position: relative; z-index: 1; width: 232px; perspective: 900px; }
+.cardForm { width: 100%; transform-origin: 50% 58%; }
+.theater[data-phase='charge'] .cardForm { animation: cardAscend 1500ms cubic-bezier(.45, 0, .2, 1) both; pointer-events: none; }
+.theater[data-phase='transform'] .cardForm, .theater[data-phase='collapse'] .cardForm { opacity: 0; pointer-events: none; }
+.theater[data-phase='reveal'] .cardForm { animation: cardReveal 1250ms cubic-bezier(.16, 1, .3, 1) both; }
+@keyframes cardAscend {
+  0% { transform: translateY(0) rotateY(0) scale(1); opacity: 1; }
+  24% { transform: translateY(-15px) rotateY(-8deg) scale(1.03); opacity: 1; }
+  65% { transform: translateY(-28px) rotateY(-24deg) scale(.91); opacity: .18; }
+  100% { transform: translateY(-35px) rotateY(-35deg) scale(.78); opacity: 0; }
+}
+@keyframes cardReveal {
+  0% { transform: translateY(16px) rotateY(32deg) rotateZ(-5deg) scale(.62); opacity: 0; }
+  36% { opacity: 1; }
+  68% { transform: translateY(-7px) rotateY(-3deg) rotateZ(1deg) scale(1.04); }
+  100% { transform: translateY(0) rotateY(0) rotateZ(0) scale(1); opacity: 1; }
+}
+.energyForms { position: absolute; width: 390px; height: 300px; z-index: 2; pointer-events: none; }
+.energyForms > div { position: absolute; inset: 0; display: grid; place-items: center; }
+.energyForms svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 0 7px var(--t)); }
+.glyphFrom, .glyphTo { opacity: 0; }
+.theater[data-phase='charge'] .glyphFrom { animation: essenceLift 1500ms cubic-bezier(.45, 0, .2, 1) both; }
+.theater[data-phase='transform'] .glyphFrom { animation: oldForm 1700ms cubic-bezier(.65, 0, .35, 1) both; }
+.theater[data-phase='transform'] .glyphTo { animation: newForm 1700ms cubic-bezier(.65, 0, .35, 1) both; }
+.theater[data-phase='collapse'] .glyphTo { animation: essenceCollapse 600ms cubic-bezier(.65, 0, .85, .25) both; }
+@keyframes essenceLift { 0%, 22% { opacity: 0; transform: translateY(-50px) scale(.45) rotate(-15deg); } 65% { opacity: .8; } 100% { opacity: 1; transform: translateY(0) scale(.9) rotate(0); } }
+@keyframes oldForm { 0% { opacity: 1; transform: scale(.9) rotate(0); } 65%, 100% { opacity: 0; transform: scale(.3) rotate(-70deg); } }
+@keyframes newForm { 0%, 12% { opacity: 0; transform: scale(.4) rotate(60deg); } 62% { opacity: 1; transform: scale(1.12) rotate(-6deg); } 100% { opacity: 1; transform: scale(1) rotate(0); } }
+@keyframes essenceCollapse { from { opacity: 1; transform: scale(1) rotate(0); } to { opacity: 0; transform: scale(.03) rotate(95deg); } }
+.core { position: absolute; z-index: 2; width: 180px; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, #fff9d9 0%, #eaffebaa 8%, color-mix(in oklab, var(--t) 60%, transparent) 28%, transparent 69%); opacity: 0; pointer-events: none; }
+.theater[data-phase='collapse'] .core { animation: coreGather 600ms cubic-bezier(.65, 0, .35, 1) both; }
+@keyframes coreGather { 0% { opacity: 0; transform: scale(1.8); } 70% { opacity: .8; } 100% { opacity: 1; transform: scale(.3); } }
+.bloom { position: absolute; z-index: 3; width: min(600px, 110%); aspect-ratio: 1; background: radial-gradient(circle, #effff2bd, color-mix(in oklab, var(--t) 32%, transparent) 20%, transparent 55%); opacity: 0; pointer-events: none; }
+.theater[data-phase='reveal'] .bloom { animation: bloom 1000ms ease-out both; }
+@keyframes bloom { 0% { transform: scale(.08); opacity: 0; } 18% { opacity: .85; } 100% { transform: scale(1.35); opacity: 0; } }
+.shockwave, .shockwaveSecond { position: absolute; z-index: 2; width: 280px; aspect-ratio: 1; border-radius: 50%; border: 1px solid #d5ffdf; box-shadow: 0 0 24px -4px var(--t), inset 0 0 16px -5px var(--t); opacity: 0; pointer-events: none; }
+.theater[data-phase='reveal'] .shockwave { animation: shockwave 1150ms cubic-bezier(.16, 1, .3, 1) both; }
+.theater[data-phase='reveal'] .shockwaveSecond { animation: shockwave 1300ms 140ms cubic-bezier(.16, 1, .3, 1) both; }
+@keyframes shockwave { 0% { transform: scale(.12); opacity: .85; } 100% { transform: scale(2.65); opacity: 0; } }
+.sparkle { position: absolute; z-index: 4; left: calc(50% + 108px); top: 46px; color: #fff4c8; font-size: 38px; opacity: 0; pointer-events: none; }
+.theater[data-phase='reveal'] .sparkle { animation: sparkle 850ms 540ms ease-out both; }
+@keyframes sparkle { 0% { transform: scale(.2) rotate(-45deg); opacity: 0; } 40% { opacity: 1; } 100% { transform: scale(1.1) rotate(45deg); opacity: 0; } }
+
+.dialogue { position: relative; z-index: 4; display: grid; justify-items: center; gap: 9px; padding: 18px 20px 22px; text-align: center; }
+.chapter { color: #e3c578; font-size: 9px; min-height: 12px; }
+.dialogue p { margin: 0; font: 500 clamp(21px, 2.7vw, 31px)/1.2 var(--f-serif); letter-spacing: -.025em; text-wrap: balance; animation: textIn 300ms ease-out both; }
+.subtitle { color: var(--stage-muted); font: 10px/1.5 var(--f-mono); }
+@keyframes textIn { from { opacity: 0; transform: translateY(5px); } }
+.controls { position: relative; z-index: 4; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; min-height: 68px; padding: 0 22px 25px; }
+.controls :global(.btn) { min-height: 44px; }
+.evolve { gap: 12px; padding: 13px 21px; font-size: 13px; box-shadow: 0 2px 16px #e5bf551b, inset 0 1px 0 #fff5; }
+.evolve > span:first-child { font-size: 20px; }
+.evolve > span:last-child { margin-left: 8px; }
+.controls .secondary { gap: 9px; border: 1px solid #a7c6bc30; background: #a7c6bc08; color: #cbdfd8; font-size: 12px; box-shadow: none; }
+.controls .secondary:active, .evolve:active { transform: scale(.97); }
+.open { padding: 12px 6px; color: #91ada4; text-decoration: none; font-size: 11px; }
+.open span[aria-hidden] { margin-left: 5px; }
+.evolving { display: inline-flex; align-items: center; gap: 9px; color: #9fbcb2; font: 11px/1.4 var(--f-mono); }
+.evolving > span { width: 5px; height: 5px; border-radius: 50%; background: #d8dcb0; box-shadow: 0 0 10px #d8dcb066; }
+.complete { color: #e3c578; font: 600 12px/1.3 var(--f-mono); }
+.progress { position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: #ffffff06; }
+.progress span { display: block; width: 100%; height: 100%; background: linear-gradient(90deg, var(--t), #f1e8bc); transform: scaleX(0); transform-origin: left; opacity: .85; }
+.theater[data-playing] .progress span { animation: progress 5600ms linear both; }
+@keyframes progress { to { transform: scaleX(1); } }
+@media (hover: hover) and (pointer: fine) {
+  .controls .secondary:hover { background: #a7c6bc15; border-color: #a7c6bc55; }
+  .open:hover { color: #e1f4e9; }
+}
 /* What changed, counted out like stat gains after a level-up. */
 .report {
   min-height: 92px;
@@ -349,22 +347,43 @@
   color: var(--ink-3);
 }
 
-@media (max-width: 640px) {
-  .theater {
-    min-height: 560px;
-    border-radius: 22px;
-  }
-  .slot {
-    width: min(230px, 64vw);
-  }
-}
 
+@media (max-width: 740px) {
+  .side { width: 18%; }
+  .sideFrom { left: 4%; }
+  .sideTo { right: 4%; }
+  .side p { font-size: 10px; }
+  .side > span { font-size: 8px; }
+}
+@media (max-width: 560px) {
+  .theater { border-radius: 20px; }
+  .theaterHead { padding: 18px 18px 0; }
+  .chamber { font-size: 8px; letter-spacing: .11em; }
+  .stageCount { font-size: 10px; }
+  .arena { height: 355px; margin-top: 8px; }
+  .slot { width: 206px; }
+  .halo { width: 296px; }
+  .orbits { width: 276px; height: 276px; }
+  .energyForms { width: 320px; height: 245px; }
+  .side { display: none; }
+  .pedestal { width: 240px; bottom: 0; }
+  .dialogue { padding: 16px 14px 20px; gap: 8px; }
+  .dialogue p { display: grid; align-items: center; min-height: 2.4em; font-size: 23px; }
+  .subtitle { font-size: 9px; }
+  .controls { align-content: center; min-height: 126px; gap: 10px; padding: 0 16px 22px; }
+  .controls .evolve, .controls .secondary { font-size: 11px; padding: 10px 14px; }
+  .evolve { flex: 1 1 100%; justify-content: center; }
+  .evolve > span:last-child { margin-left: 2px; }
+  .evolving { font-size: 10px; }
+  .sparkle { left: calc(50% + 87px); top: 37px; }
+  .report { padding: 16px; }
+}
 @media (prefers-reduced-motion: reduce) {
-  .rays,
-  .slot,
-  .version,
-  .deltas li,
-  .learned span {
-    animation: none;
+  .theater *, .theater *::before, .theater *::after, .deltas li, .learned span {
+    animation: none !important;
+    transition: none !important;
   }
+  .energyForms, .core, .bloom, .shockwave, .shockwaveSecond, .orbits, .sparkle, .canvas { display: none; }
+  .theater .cardForm { opacity: 1; }
+  .link { transition: none; }
 }
