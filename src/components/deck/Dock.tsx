@@ -43,7 +43,7 @@ export function Dock() {
                     return () => registerSlot(e.key, null);
                   }}
                 />
-                <span className={styles.name}>{e.name}</span>
+                <span className={styles.name} title={e.name}>{e.name}</span>
                 <button type="button" className={styles.remove} onClick={() => remove(e.key)} aria-label={`Remove ${e.name}`}>
                   <Icon name="x" />
                 </button>

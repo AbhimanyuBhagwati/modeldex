@@ -34,6 +34,7 @@ interface DeckApi {
   toggle(entry: DeckEntry, from?: HTMLElement | null): void;
   remove(key: string): void;
   clear(): void;
+  replace(entries: DeckEntry[]): void;
   notify(message: string): void;
   registerDock(el: HTMLDivElement | null): void;
   registerSlot(key: string, el: HTMLElement | null): void;
@@ -98,6 +99,8 @@ function fly(card: HTMLElement, target: HTMLElement, shift: number): Promise<voi
     transformOrigin: '0 0',
     transition: 'none',
   });
+  ghost.style.setProperty('--lift', '0px');
+  ghost.querySelectorAll('[id]').forEach((node) => node.removeAttribute('id'));
   ghost.style.setProperty('--rx', '0deg');
   ghost.style.setProperty('--ry', '0deg');
   document.body.appendChild(ghost);
@@ -108,21 +111,26 @@ function fly(card: HTMLElement, target: HTMLElement, shift: number): Promise<voi
   const anim = ghost.animate(
     [
       { transform: 'translate(0,0) scale(1,1) rotate(0deg)' },
-      { transform: `translate(${dx * 0.45}px, ${dy * 0.45 - 80}px) scale(${(1 + sx) / 2}, ${(1 + sy) / 2}) rotate(-8deg)`, offset: 0.5 },
+      { transform: `translate(${dx * 0.45}px, ${dy * 0.45 - 24}px) scale(${(1 + sx) / 2}, ${(1 + sy) / 2}) rotate(-3deg)`, offset: 0.5 },
       { transform: `translate(${dx}px, ${dy}px) scale(${sx}, ${sy}) rotate(0deg)` },
     ],
-    { duration: 640, easing: 'cubic-bezier(.45,.05,.2,1)' },
+    { duration: 280, easing: 'cubic-bezier(.22,1,.36,1)' },
   );
-  return anim.finished.then(
-    () => ghost.remove(),
-    () => ghost.remove(),
-  );
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  const onPreference = () => { if (reduce.matches) anim.finish(); };
+  reduce.addEventListener('change', onPreference);
+  const cleanup = () => {
+    reduce.removeEventListener('change', onPreference);
+    ghost.remove();
+  };
+  return anim.finished.then(cleanup, cleanup);
 }
 
 export function DeckProvider({ children }: { children: ReactNode }) {
   const [store] = useState(createStore);
   const dockRef = useRef<HTMLDivElement | null>(null);
   const slots = useRef(new Map<string, HTMLElement>());
+  const [announcement, setAnnouncement] = useState('');
   const [toast, setToast] = useState<{ id: number; text: string } | null>(null);
 
   useEffect(() => {
@@ -153,44 +161,54 @@ export function DeckProvider({ children }: { children: ReactNode }) {
     else slots.current.delete(key);
   }, []);
 
-  const remove = useCallback((key: string) => store.set(store.get().filter((e) => e.key !== key)), [store]);
-  const clear = useCallback(() => store.set([]), [store]);
+  const remove = useCallback((key: string) => {
+    const entry = store.get().find((e) => e.key === key);
+    store.set(store.get().filter((e) => e.key !== key));
+    if (entry) setAnnouncement(`${entry.name} removed. ${store.get().length} of ${MAX_DECK} cards in your deck.`);
+  }, [store]);
+  const clear = useCallback(() => { store.set([]); setAnnouncement('Deck cleared.'); }, [store]);
+  const replace = useCallback((entries: DeckEntry[]) => {
+    store.set(entries.slice(0, MAX_DECK));
+    setAnnouncement(`${store.get().length} cards ready in your deck.`);
+  }, [store]);
 
   const toggle = useCallback(
     (entry: DeckEntry, from?: HTMLElement | null) => {
       const current = store.get();
       if (current.some((e) => e.key === entry.key)) {
-        store.set(current.filter((e) => e.key !== entry.key));
+        remove(entry.key);
         return;
       }
       if (current.length >= MAX_DECK) {
         notify(`Your deck holds ${MAX_DECK} cards. Remove one to add another.`);
         return;
       }
-      const wasOpen = dockRef.current?.dataset.open === 'true';
       flushSync(() => store.set([...current, entry]));
+      setAnnouncement(`${entry.name} added. ${current.length + 1} of ${MAX_DECK} cards in your deck.`);
       if (!from || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       const slot = slots.current.get(entry.key);
       const dock = dockRef.current;
       if (!slot || !dock || dock.dataset.open !== 'true') return;
-      const shift = wasOpen ? 0 : dock.getBoundingClientRect().height + 48;
+      const transform = getComputedStyle(dock).transform;
+      const shift = transform === 'none' ? 0 : new DOMMatrixReadOnly(transform).m42;
       slot.dataset.state = 'incoming';
       fly(from, slot, shift).then(() => {
         slot.dataset.state = 'landed';
       });
     },
-    [store, notify],
+    [store, notify, remove],
   );
 
   const api = useMemo<DeckApi>(
-    () => ({ store, toggle, remove, clear, notify, registerDock, registerSlot }),
-    [store, toggle, remove, clear, notify, registerDock, registerSlot],
+    () => ({ store, toggle, remove, clear, replace, notify, registerDock, registerSlot }),
+    [store, toggle, remove, clear, replace, notify, registerDock, registerSlot],
   );
 
   return (
     <DeckContext.Provider value={api}>
       {children}
       <Dock />
+      <div className="sr-only" role="status" aria-live="polite">{announcement}</div>
       <div className={styles.toast} role="status" aria-live="polite" data-show={toast ? 'true' : 'false'}>
         {toast?.text}
       </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useDeferredValue, useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
+import { useDeferredValue, useEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
 import { Card } from '@/components/card/Card';
 import { Icon } from '@/components/icons';
 import { CAPS, DEFAULT_FILTERS, applyFilters, filtersFromParams, filtersToParams, isFiltered, type Cap, type Filters, type SortKey } from '@/lib/filter';
@@ -111,10 +111,7 @@ export function Binder({ models, labs, setSize, refDate }: Props) {
   const countLabel = visible.length === pool ? `${pool} cards` : `${visible.length} of ${pool} cards`;
 
   return (
-    <section className={styles.binder} aria-labelledby="binder-title">
-      <h2 id="binder-title" className="sr-only">
-        The binder
-      </h2>
+    <section id="binder" className={styles.binder} aria-labelledby="binder-title">
       <div className={styles.rail} role="search">
         <label className={styles.search}>
           <Icon name="search" />
@@ -213,7 +210,8 @@ export function Binder({ models, labs, setSize, refDate }: Props) {
         </div>
       </div>
 
-      <div className={styles.results} id="binder">
+      <div className={styles.results}>
+        <h2 id="binder-title" className={styles.heading}>The binder</h2>
         <p className={styles.count} aria-live="polite">
           {countLabel}
         </p>
@@ -238,7 +236,7 @@ export function Binder({ models, labs, setSize, refDate }: Props) {
       </div>
 
       {visible.length > 0 ? (
-        <div className={styles.grid}>
+        <div className={styles.grid} aria-busy={query !== filters.q}>
           {visible.map((m) => (
             <Card key={m.key} model={m} lab={labByKey[m.lab]} setSize={setSize} refDate={refDate} />
           ))}
@@ -276,32 +274,13 @@ function LabPicker({ labs, counts, total, value, onPick }: { labs: LabSummary[];
 }
 
 function Segmented({ value, onChange }: { value: Filters['access']; onChange: (v: Filters['access']) => void }) {
-  const wrap = useRef<HTMLDivElement>(null);
-  const pill = useRef<HTMLSpanElement>(null);
-  const animate = useRef(false);
-
-  useLayoutEffect(() => {
-    const place = () => {
-      const btn = wrap.current?.querySelector<HTMLButtonElement>(`button[data-value="${value}"]`);
-      const p = pill.current;
-      if (!btn || !p) return;
-      if (!animate.current) p.style.transition = 'none';
-      p.style.width = `${btn.offsetWidth}px`;
-      p.style.transform = `translateX(${btn.offsetLeft}px)`;
-      if (!animate.current) {
-        void p.offsetWidth;
-        p.style.transition = '';
-      }
-    };
-    place();
-    animate.current = true;
-  }, [value]);
+  const selected = ACCESS_OPTIONS.findIndex((option) => option.value === value);
 
   return (
-    <div ref={wrap} className={styles.seg} role="group" aria-label="Access">
-      <span ref={pill} className={styles.pill} aria-hidden="true" />
+    <div className={styles.seg} role="group" aria-label="Access" style={{ '--segment': selected } as CSSProperties}>
+      <span className={styles.pill} aria-hidden="true" />
       {ACCESS_OPTIONS.map((o) => (
-        <button key={o.value} type="button" data-value={o.value} aria-pressed={value === o.value} onClick={() => onChange(o.value)}>
+        <button key={o.value} type="button" aria-pressed={value === o.value} onClick={() => onChange(o.value)}>
           {o.label}
         </button>
       ))}

@@ -1,7 +1,7 @@
 :root {
-  --ground: #e6e8ee;
-  --ground-2: #dadde6;
-  --dot: #c8cdd9;
+  --ground: #eef0f5;
+  --ground-2: #e1e5ed;
+  --dot: #dce0e9;
   --panel: #f7f8fb;
   --panel-a: rgba(247, 248, 251, 0.84);
   --ink: #13151c;
@@ -9,8 +9,9 @@
   --ink-3: #6b7282;
   --line: #d0d4de;
   --line-2: #b8becb;
-  --gold: #f5c542;
-  --gold-2: #ebb626;
+  --gold: #f4cb68;
+  --accent-ink: #956310;
+  --gold-2: #eabc4e;
   --gold-ink: #2a1f00;
   --good: #17854a;
   --stock: #fbfaf6;
@@ -20,7 +21,8 @@
   --shadow: 0 1px 1px rgba(19, 21, 28, 0.06), 0 12px 26px -12px rgba(19, 21, 28, 0.34);
   --shadow-hi: 0 2px 2px rgba(19, 21, 28, 0.06), 0 28px 46px -18px rgba(19, 21, 28, 0.48);
   --shadow-lg: 0 40px 80px -30px rgba(19, 21, 28, 0.5);
-  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
   --f-sans: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif;
   --f-serif: var(--font-instrument), 'Iowan Old Style', Georgia, serif;
   --f-mono: var(--font-plex-mono), ui-monospace, 'SF Mono', Menlo, monospace;
@@ -31,11 +33,12 @@
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --ground: #0d0f15;
+    --ground: #101217;
     --ground-2: #191c27;
-    --dot: #1e2231;
-    --panel: #151822;
-    --panel-a: rgba(21, 24, 34, 0.84);
+    --dot: #1e222b;
+    --accent-ink: #f4cb68;
+    --panel: #181c24;
+    --panel-a: rgba(24, 28, 36, 0.94);
     --ink: #eceef4;
     --ink-2: #a8aebe;
     --ink-3: #8a91a3;
@@ -73,7 +76,7 @@ body {
   background-size: 24px 24px;
   color: var(--ink);
   font-family: var(--f-sans);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
@@ -119,7 +122,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  height: 42px;
+  height: 44px;
   padding: 0 16px;
   border-radius: 12px;
   border: 1px solid var(--line-2);
@@ -159,8 +162,8 @@ a {
   border-radius: 9px;
 }
 .icon-btn {
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
   border: 1px solid var(--line);
   background: var(--panel);
@@ -179,7 +182,7 @@ a {
   width: 16px;
   height: 16px;
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .btn:hover,
   .btn-ghost:hover,
   .icon-btn:hover {
@@ -231,7 +234,7 @@ a {
 .chip[aria-pressed='true'] .n {
   color: color-mix(in oklab, var(--ground) 62%, var(--ink));
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .chip:hover {
     border-color: var(--line-2);
     color: var(--ink);
@@ -318,7 +321,17 @@ a {
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    transition-delay: 0s !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn:active, .icon-btn:active, .chip:active { transform: none; }
+}
+@media (pointer: coarse) {
+  .btn-tiny, .chip { min-height: 44px; }
 }

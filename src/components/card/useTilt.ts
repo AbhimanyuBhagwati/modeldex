@@ -2,19 +2,17 @@
 
 import { useEffect, type RefObject } from 'react';
 
-/**
- * Pointer-follow tilt with eased settling. Writes CSS variables straight to the element,
- * so hovering never re-renders React. Mouse and pen only; touch scrolls normally.
- */
+/** Track a stationary hit area; only its frame moves. No React renders on pointer movement. */
 export function useTilt(ref: RefObject<HTMLElement | null>, max: number, cls: { hot: string; tilting: string }) {
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || max <= 0) return;
     const fine = matchMedia('(hover: hover) and (pointer: fine)');
     const reduce = matchMedia('(prefers-reduced-motion: reduce)');
     const cur = { x: 0.5, y: 0.5 };
     const tgt = { x: 0.5, y: 0.5 };
     let raf = 0;
+    let lastTime = 0;
     let hot = false;
 
     const paint = () => {
@@ -26,23 +24,22 @@ export function useTilt(ref: RefObject<HTMLElement | null>, max: number, cls: { 
       s.setProperty('--px', `${(15 + cur.x * 70).toFixed(1)}%`);
       s.setProperty('--py', `${(15 + cur.y * 70).toFixed(1)}%`);
     };
-    const step = () => {
+    const step = (now: number) => {
       raf = 0;
-      cur.x += (tgt.x - cur.x) * 0.14;
-      cur.y += (tgt.y - cur.y) * 0.14;
+      const elapsed = lastTime ? Math.min(32, now - lastTime) : 16.667;
+      lastTime = now;
+      const smoothing = 1 - Math.exp(-elapsed / 65);
+      cur.x += (tgt.x - cur.x) * smoothing;
+      cur.y += (tgt.y - cur.y) * smoothing;
       paint();
-      if (Math.abs(tgt.x - cur.x) + Math.abs(tgt.y - cur.y) > 0.002) raf = requestAnimationFrame(step);
-      else if (!hot) el.classList.remove(cls.tilting);
+      if (Math.abs(tgt.x - cur.x) + Math.abs(tgt.y - cur.y) > 0.002) {
+        raf = requestAnimationFrame(step);
+      } else {
+        lastTime = 0;
+        if (!hot) el.classList.remove(cls.tilting);
+      }
     };
-    const kick = () => {
-      if (!raf) raf = requestAnimationFrame(step);
-    };
-    const enter = (e: PointerEvent) => {
-      if (e.pointerType === 'touch' || !fine.matches) return;
-      hot = true;
-      el.classList.add(cls.hot);
-      if (!reduce.matches) el.classList.add(cls.tilting);
-    };
+    const kick = () => { if (!raf) raf = requestAnimationFrame(step); };
     const move = (e: PointerEvent) => {
       if (!hot || reduce.matches) return;
       const r = el.getBoundingClientRect();
@@ -50,22 +47,42 @@ export function useTilt(ref: RefObject<HTMLElement | null>, max: number, cls: { 
       tgt.y = Math.min(1, Math.max(0, (e.clientY - r.top) / r.height));
       kick();
     };
+    const enter = (e: PointerEvent) => {
+      if (e.pointerType === 'touch' || !fine.matches) return;
+      hot = true;
+      el.classList.add(cls.hot);
+      if (!reduce.matches) el.classList.add(cls.tilting);
+      move(e);
+    };
     const leave = () => {
-      if (!hot) return;
       hot = false;
       el.classList.remove(cls.hot);
       tgt.x = tgt.y = 0.5;
-      kick();
+      if (!reduce.matches) kick();
+    };
+    const reset = () => {
+      cancelAnimationFrame(raf);
+      raf = lastTime = 0;
+      hot = false;
+      cur.x = cur.y = tgt.x = tgt.y = 0.5;
+      el.classList.remove(cls.hot, cls.tilting);
+      paint();
     };
 
     el.addEventListener('pointerenter', enter);
     el.addEventListener('pointermove', move);
     el.addEventListener('pointerleave', leave);
+    el.addEventListener('pointercancel', reset);
+    fine.addEventListener('change', reset);
+    reduce.addEventListener('change', reset);
     return () => {
-      cancelAnimationFrame(raf);
+      reset();
       el.removeEventListener('pointerenter', enter);
       el.removeEventListener('pointermove', move);
       el.removeEventListener('pointerleave', leave);
+      el.removeEventListener('pointercancel', reset);
+      fine.removeEventListener('change', reset);
+      reduce.removeEventListener('change', reset);
     };
   }, [ref, max, cls.hot, cls.tilting]);
 }

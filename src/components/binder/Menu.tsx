@@ -21,38 +21,49 @@ interface MenuProps {
 
 /** A trigger button with a floating panel. Escape or a click outside closes it. */
 export function Menu({ label, value, active = false, icon, dot, badge, align = 'start', width = 280, children }: MenuProps) {
-  // 'returning' is closed, but hands focus back to the trigger (Escape or a pick, not a click elsewhere).
-  const [state, setState] = useState<'closed' | 'open' | 'returning'>('closed');
+  const [state, setState] = useState<'closed' | 'open' | 'closing' | 'returning'>('closed');
   const open = state === 'open';
   const [side, setSide] = useState(align);
   const wrap = useRef<HTMLDivElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
   const panel = useRef<HTMLDivElement>(null);
   const id = useId();
+  const dismiss = useCallback((restoreFocus: boolean) => setState(restoreFocus ? 'returning' : 'closing'), []);
+  const close = useCallback(() => setState('returning'), []);
 
   useEffect(() => {
-    if (state === 'returning') trigger.current?.focus();
+    if (state !== 'closing' && state !== 'returning') return;
+    if (state === 'returning') trigger.current?.focus({ preventScroll: true });
+    const duration = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 120;
+    const timer = setTimeout(() => setState('closed'), duration);
+    return () => clearTimeout(timer);
   }, [state]);
 
   useEffect(() => {
     if (!open) return;
-    const onDown = (e: PointerEvent) => {
-      if (!wrap.current?.contains(e.target as Node)) setState('closed');
+    const outside = (e: Event) => {
+      if (!wrap.current?.contains(e.target as Node)) dismiss(false);
     };
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setState('returning');
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        dismiss(true);
+      }
     };
-    document.addEventListener('pointerdown', onDown);
+    document.addEventListener('pointerdown', outside);
+    document.addEventListener('focusin', outside);
     document.addEventListener('keydown', onKey);
-    const first = panel.current?.querySelector<HTMLElement>('input, [aria-pressed="true"], [aria-checked="true"], button');
+    const content = panel.current;
+    const first = content?.querySelector<HTMLElement>('input')
+      ?? content?.querySelector<HTMLElement>('[aria-pressed="true"], [aria-checked="true"]')
+      ?? content?.querySelector<HTMLElement>('button');
     first?.focus({ preventScroll: true });
     return () => {
-      document.removeEventListener('pointerdown', onDown);
+      document.removeEventListener('pointerdown', outside);
+      document.removeEventListener('focusin', outside);
       document.removeEventListener('keydown', onKey);
     };
-  }, [open]);
-
-  const close = useCallback(() => setState('returning'), []);
+  }, [open, dismiss]);
 
   return (
     <div ref={wrap} className={styles.menu}>
@@ -61,6 +72,7 @@ export function Menu({ label, value, active = false, icon, dot, badge, align = '
         type="button"
         className={styles.trigger}
         aria-expanded={open}
+        aria-haspopup="dialog"
         aria-controls={open ? id : undefined}
         aria-label={value ? `${label}: ${value}` : label}
         data-active={active}
@@ -72,7 +84,10 @@ export function Menu({ label, value, active = false, icon, dot, badge, align = '
             const fitsEnd = r.right - width >= 16;
             setSide(align === 'start' ? (fitsStart || !fitsEnd ? 'start' : 'end') : fitsEnd || !fitsStart ? 'end' : 'start');
           }
-          setState(open ? 'returning' : 'open');
+          if (open) dismiss(true);
+          else {
+            setState('open');
+          }
         }}
       >
         {icon && <Icon name={icon} className={styles.triggerIcon} />}
@@ -81,8 +96,8 @@ export function Menu({ label, value, active = false, icon, dot, badge, align = '
         {badge ? <span className={styles.badge}>{badge}</span> : null}
         <Icon name="chev" className={styles.chev} />
       </button>
-      {open && (
-        <div ref={panel} id={id} className={styles.panel} data-align={side} style={{ width }} role="dialog" aria-label={label}>
+      {state !== 'closed' && (
+        <div ref={panel} id={id} className={styles.panel} data-state={open ? 'open' : 'closing'} inert={!open} aria-hidden={!open} data-align={side} style={{ width }} role="dialog" aria-label={label}>
           {children(close)}
         </div>
       )}

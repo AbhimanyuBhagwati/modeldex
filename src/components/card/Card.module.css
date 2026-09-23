@@ -10,11 +10,11 @@
   --gy: 50%;
   --px: 50%;
   --py: 50%;
-  transition: transform 280ms var(--ease-out);
+  --lift: 0px;
 }
 .hot,
 .card:has(:focus-visible) {
-  transform: translateY(-6px);
+  --lift: -4px;
 }
 .frame {
   position: absolute;
@@ -27,10 +27,12 @@
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.22),
     var(--shadow);
-  transition: box-shadow 280ms var(--ease-out);
+  translate: 0 var(--lift);
+  transition: translate 180ms var(--ease-out), box-shadow 180ms ease;
 }
 .tilting .frame {
   transform: perspective(900px) rotateX(var(--rx)) rotateY(var(--ry));
+  will-change: transform;
 }
 .hot .frame {
   box-shadow:
@@ -272,7 +274,7 @@
   );
   background-size: 300% 300%;
   background-position: var(--px) var(--py);
-  transition: opacity 320ms var(--ease-out);
+  transition: opacity 200ms var(--ease-out);
 }
 .holo::after {
   content: '';
@@ -296,7 +298,7 @@
   opacity: 0;
   mix-blend-mode: overlay;
   background: radial-gradient(farthest-corner circle at var(--gx) var(--gy), rgba(255, 255, 255, 0.66) 0%, rgba(255, 255, 255, 0.14) 28%, rgba(0, 0, 0, 0.14) 90%);
-  transition: opacity 260ms var(--ease-out);
+  transition: opacity 200ms var(--ease-out);
 }
 .hot .glare {
   opacity: 1;
@@ -327,11 +329,11 @@
   place-items: center;
   cursor: pointer;
   box-shadow: var(--shadow);
-  opacity: 0;
-  transform: scale(0.8);
+  opacity: 0.78;
+  transform: scale(0.94);
   transition:
     opacity 180ms var(--ease-out),
-    transform 220ms var(--ease-out),
+    transform 180ms var(--ease-out),
     background-color 160ms ease;
 }
 .add svg {
@@ -379,4 +381,10 @@
   .type {
     font-size: 4.1cqi;
   }
+}
+
+.add::before { content: ""; position: absolute; inset: -4px; border-radius: 50%; }
+@media (prefers-reduced-motion: reduce) {
+  .frame { translate: none; transform: none !important; transition: none; }
+  .add, .card .add:active { transform: none; }
 }

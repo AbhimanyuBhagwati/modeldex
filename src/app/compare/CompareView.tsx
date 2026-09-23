@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useMemo, type CSSProperties, type ReactNode } from 'react';
 import { Card } from '@/components/card/Card';
+import { useDeckApi } from '@/components/deck/DeckProvider';
 import { CopyButton } from '@/components/client-bits';
 import { Energies, Icon, RarityIcon } from '@/components/icons';
 import { ACCESS_LABEL, INPUT_ONLY, RARITY_LABEL, TYPE_LABEL, formatDate, formatMonth, formatPrice, formatTokens, modalityList } from '@/lib/format';
@@ -95,12 +96,16 @@ interface Props {
 /** Reads `?m=` in the browser, since a static host can't build a page per combination. */
 export function CompareView({ models: all, labs: labList, setSize, refDate, newest }: Props) {
   const params = useSearchParams();
+  const deck = useDeckApi();
   const byKey = useMemo(() => new Map(all.map((m) => [m.key, m])), [all]);
   const labs = useMemo(() => Object.fromEntries(labList.map((l) => [l.key, l])), [labList]);
   const models = parseCompareParam(params.getAll('m'))
     .map((k) => byKey.get(k))
     .filter((m): m is Model => Boolean(m));
   const keys = models.map((m) => m.key);
+  const editDeck = () => {
+    if (models.length) deck.replace(models.map((m) => ({ key: m.key, name: m.name, color: labs[m.lab].color })));
+  };
   const title = models.length >= 2 ? models.map((m) => m.name).join(' vs ') : 'Compare models';
 
   useEffect(() => {
@@ -127,44 +132,46 @@ export function CompareView({ models: all, labs: labList, setSize, refDate, newe
       </div>
 
       {models.length < 2 ? (
-        <Empty models={models} newest={newest} />
+        <Empty models={models} newest={newest} onBrowse={editDeck} />
       ) : (
-        <div className={styles.scroll}>
-          <div className={styles.grid} style={{ '--n': models.length + (models.length < MAX_DECK ? 1 : 0) } as CSSProperties}>
-            <div className={`${styles.label} ${styles.corner}`} />
-            {models.map((m) => (
-              <div key={m.key} className={styles.head}>
-                <div className={styles.cardHost}>
-                  <Card model={m} lab={labs[m.lab]} setSize={setSize} refDate={refDate} addable={false} headingLevel="h2" />
+        <div className={styles.scroll} role="region" aria-label="Model comparison, scroll horizontally to see all cards" tabIndex={0}>
+          <div className={styles.grid} role="table" aria-label="Model specifications" style={{ '--n': models.length + (models.length < MAX_DECK ? 1 : 0) } as CSSProperties}>
+            <div className={styles.row} role="row">
+              <div className={`${styles.label} ${styles.corner}`} role="columnheader"><span className={styles.tableLabel}>Your matchup</span><b>{models.length} cards</b><small>Scroll to compare →</small></div>
+              {models.map((m) => (
+                <div key={m.key} className={styles.head} role="columnheader" aria-label={`${m.name} by ${labs[m.lab].name}`}>
+                  <div className={styles.cardHost}>
+                    <Card model={m} lab={labs[m.lab]} setSize={setSize} refDate={refDate} addable={false} headingLevel="h2" />
+                  </div>
+                  <Link className="btn btn-tiny btn-ghost" aria-label={`Remove ${m.name} from comparison`} href={compareHref(keys.filter((k) => k !== m.key))} scroll={false} onClick={() => deck.remove(m.key)}>
+                    Remove
+                  </Link>
                 </div>
-                <Link className="btn btn-tiny btn-ghost" href={compareHref(keys.filter((k) => k !== m.key))} scroll={false}>
-                  Remove
-                </Link>
-              </div>
-            ))}
-            {models.length < MAX_DECK && (
-              <div className={styles.head}>
-                <Link className={styles.addSlot} href="/#binder">
-                  <Icon name="plus" />
-                  <span>Add a card from the binder</span>
-                </Link>
-              </div>
-            )}
+              ))}
+              {models.length < MAX_DECK && (
+                <div className={styles.head} role="columnheader">
+                  <Link className={styles.addSlot} href="/#binder" onClick={editDeck}>
+                    <Icon name="plus" />
+                    <span>Add a card from the binder</span>
+                  </Link>
+                </div>
+              )}
+            </div>
 
             {ROWS.map((row) => {
               const values = row.value ? models.map(row.value) : [];
               const top = row.better ? best(values, row.better) : null;
               const max = row.bar ? Math.max(0, ...values.filter((v): v is number => typeof v === 'number')) : 0;
               return (
-                <div key={row.label} className={styles.row}>
-                  <div className={styles.label}>
+                <div key={row.label} className={styles.row} role="row">
+                  <div className={styles.label} role="rowheader">
                     {row.label}
                     {row.sub && <small>{row.sub}</small>}
                   </div>
                   {models.map((m, i) => {
                     if (row.flag) {
                       return (
-                        <div key={m.key} className={styles.cell}>
+                        <div key={m.key} className={styles.cell} role="cell">
                           {row.flag(m) ? (
                             <span className={styles.yes}>
                               <Icon name="check" />
@@ -178,7 +185,7 @@ export function CompareView({ models: all, labs: labList, setSize, refDate, newe
                     }
                     if (row.render) {
                       return (
-                        <div key={m.key} className={styles.cell}>
+                        <div key={m.key} className={styles.cell} role="cell">
                           {row.render(m)}
                         </div>
                       );
@@ -187,30 +194,30 @@ export function CompareView({ models: all, labs: labList, setSize, refDate, newe
                     const isBest = top != null && v === top;
                     const pct = row.bar && typeof v === 'number' && max > 0 ? (v / max) * 100 : 0;
                     return (
-                      <div key={m.key} className={`${styles.cell} ${isBest ? styles.best : ''}`} style={{ '--t': labs[m.lab].color } as CSSProperties}>
+                      <div key={m.key} className={`${styles.cell} ${isBest ? styles.best : ''}`} role="cell" style={{ '--t': labs[m.lab].color } as CSSProperties}>
                         <div className={styles.val}>
                           <span>{row.format!(v as never)}</span>
                           {isBest && <span className={styles.tag}>{row.tag}</span>}
                         </div>
                         {row.bar && (
-                          <div className={styles.bar}>
-                            <i style={{ width: `${pct}%`, animationDelay: `${i * 70}ms` }} />
+                          <div className={styles.bar} aria-hidden="true">
+                            <i style={{ width: `${pct}%`, animationDelay: `${i * 30}ms` }} />
                           </div>
                         )}
                       </div>
                     );
                   })}
-                  {models.length < MAX_DECK && <div className={styles.cell} aria-hidden="true" />}
+                  {models.length < MAX_DECK && <div className={styles.cell} role="cell" />}
                 </div>
               );
             })}
 
-            <div className={styles.row}>
-              <div className={styles.label}>Official source</div>
+            <div className={styles.row} role="row">
+              <div className={styles.label} role="rowheader">Official source</div>
               {models.map((m) => {
                 const lab = labs[m.lab];
                 return (
-                  <div key={m.key} className={styles.cell}>
+                  <div key={m.key} className={styles.cell} role="cell">
                     {lab.docUrl ? (
                       <a className="btn btn-tiny" href={lab.docUrl} target="_blank" rel="noopener noreferrer">
                         {lab.name} docs
@@ -222,7 +229,7 @@ export function CompareView({ models: all, labs: labList, setSize, refDate, newe
                   </div>
                 );
               })}
-              {models.length < MAX_DECK && <div className={styles.cell} aria-hidden="true" />}
+              {models.length < MAX_DECK && <div className={styles.cell} role="cell" />}
             </div>
           </div>
         </div>
@@ -231,13 +238,13 @@ export function CompareView({ models: all, labs: labList, setSize, refDate, newe
   );
 }
 
-function Empty({ models, newest }: { models: Model[]; newest: string[] }) {
+function Empty({ models, newest, onBrowse }: { models: Model[]; newest: string[]; onBrowse: () => void }) {
   return (
     <div className={styles.empty}>
       <p>{models.length === 1 ? `${models[0].name} needs an opponent.` : 'Pick at least two cards to see them head to head.'}</p>
       <p className={styles.emptyHint}>Add cards with the + button on any card in the binder, then press Compare in the deck at the bottom of the screen.</p>
       <div className={styles.emptyActions}>
-        <Link className="btn btn-gold" href="/#binder">
+        <Link className="btn btn-gold" href="/#binder" onClick={onBrowse}>
           Browse the binder
         </Link>
         <Link className="btn" href={compareHref([...new Set([...models.map((m) => m.key), ...newest])].slice(0, 3))}>

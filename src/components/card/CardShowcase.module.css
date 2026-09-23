@@ -20,7 +20,6 @@
   aspect-ratio: 5 / 7;
   container-type: inline-size;
   transform-style: preserve-3d;
-  will-change: transform;
   --sheen: 0%;
 }
 .face {
@@ -70,4 +69,10 @@
   .hint::after {
     content: ' or tap';
   }
+}
+
+.spinner[data-moving] { will-change: transform; }
+@media (prefers-reduced-motion: reduce) {
+  .hint { display: none; }
+  .stage { cursor: pointer; }
 }

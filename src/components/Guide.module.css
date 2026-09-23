@@ -3,8 +3,10 @@
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   gap: 28px 56px;
   margin-top: 84px;
-  padding-top: 36px;
-  border-top: 1px solid var(--line);
+  padding: 28px;
+  border-radius: 22px;
+  background: var(--panel);
+  border: 1px solid var(--line);
 }
 .guide h2 {
   margin: 0 0 8px;
@@ -79,4 +81,10 @@
 .types b {
   color: var(--ink);
   font-weight: 650;
+}
+
+@media (max-width: 540px) {
+  .guide { padding: 20px 16px; margin-top: 44px; }
+  .legend > div { grid-template-columns: 64px minmax(0, 1fr); gap: 10px; }
+  .types { grid-template-columns: 1fr; }
 }

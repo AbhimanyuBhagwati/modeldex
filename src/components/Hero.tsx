@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import { Card } from '@/components/card/Card';
+import { Icon } from '@/components/icons';
 import { compareHref } from '@/lib/site';
 import type { LabSummary, Model } from '@/lib/types';
 import styles from './Hero.module.css';
@@ -30,30 +31,24 @@ export function Hero({ newest, labs, setSize, refDate, setName, stats }: Props) 
   ];
   return (
     <section className={styles.hero} aria-labelledby="hero-title">
-      <div>
-        <p className="eyebrow">
-          {setName} set · {stats.cards} cards
+      <div className={styles.copy}>
+        <p className={styles.edition}>
+          <span className={styles.editionDot} aria-hidden="true" />
+          The AI model collection <span> / {setName}</span>
         </p>
         <h1 id="hero-title" className={styles.title}>
-          Every model from {stats.labs} AI labs, dealt as a card.
+          Every model.<br /><em>One collection.</em>
         </h1>
         <p className={styles.lede}>
-          Pick up to four and compare them side by side. Every card links to the lab’s own docs, so the source is one click away.
+          Explore {stats.labs} AI labs. Pick up to four cards to compare context, capabilities, and cost.
         </p>
-        <ul className={styles.stats}>
-          {items.map(([n, label]) => (
-            <li key={label}>
-              <b>{n}</b> {label}
-            </li>
-          ))}
-        </ul>
         <div className={styles.cta}>
           <a className="btn btn-gold" href="#binder">
-            Browse the binder
+            Explore the binder <Icon name="back" className={styles.arrow} />
           </a>
           {newest.length >= 2 && (
             <Link className="btn" href={compareHref(newest.map((m) => m.key))}>
-              Compare the newest {newest.length === 3 ? 'three' : newest.length}
+              Compare latest pulls
             </Link>
           )}
         </div>
@@ -70,8 +65,13 @@ export function Hero({ newest, labs, setSize, refDate, setName, stats }: Props) 
             );
           })}
         </div>
-        <p className={styles.label}>Latest pulls</p>
+        <p className={styles.label}><span /> Latest pulls <span /></p>
       </div>
+      <ul className={styles.stats} aria-label="Collection statistics">
+        {items.map(([n, label]) => (
+          <li key={label}><b>{n.toLocaleString('en-US')}</b><span>{label}</span></li>
+        ))}
+      </ul>
     </section>
   );
 }
