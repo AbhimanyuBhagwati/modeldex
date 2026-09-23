@@ -7,7 +7,7 @@ import styles from './page.module.css';
 
 export const metadata: Metadata = {
   title: 'Battle mode',
-  description: 'Two AI model cards fight round by round on context, price, freshness, skills, size, and downloads. Pick your fighters or deal a random battle.',
+  description: 'Two AI model cards fight round by round on quality, context, price, freshness, skills, size, and downloads. Pick your fighters or deal a random battle.',
   alternates: { canonical: '/battle/' },
 };
 

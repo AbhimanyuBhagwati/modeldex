@@ -1,13 +1,28 @@
 import changesRaw from '../../data/changes.json';
 import raw from '../../data/models.json';
 import offersRaw from '../../data/offers.json';
+import scoresRaw from '../../data/scores.json';
 import { buildLines, type EvolutionLine } from './evolution';
-import type { ChangeEvent, Dataset, LabSummary, Model, OffersFile } from './types';
+import { INPUT_ONLY } from './format';
+import type { Signals } from './match';
+import { percentile } from './quality';
+import type { CardScores, ChangeEvent, Dataset, LabSummary, Model, OffersFile, Quality, ScoresFile } from './types';
 
 /** Validated by the sync job before it is ever committed, and again in the test suite. Server-only: pages pass slices to the browser. */
-const dataset = raw as unknown as Dataset;
 const offers = offersRaw as unknown as OffersFile;
+const scores = scoresRaw as unknown as ScoresFile;
 const changes = (changesRaw as unknown as { events: ChangeEvent[] }).events;
+
+function qualityOf(key: string): Quality | null {
+  const s = scores.models[key];
+  const count = s?.basis ? scores.boards[s.basis]?.count : undefined;
+  if (s?.quality == null || !s.basis || !count) return null;
+  return { value: s.quality, basis: s.basis, rank: s.boards[s.basis]!.rank, of: count };
+}
+
+/** Every card carries its headline quality, so the binder, compare, and battle can all show it. */
+const loaded = raw as unknown as Dataset;
+const dataset: Dataset = { ...loaded, models: loaded.models.map((m) => ({ ...m, quality: qualityOf(m.key) })) };
 
 const byKey = new Map(dataset.models.map((m) => [m.key, m]));
 const labsByKey = new Map(dataset.labs.map((l) => [l.key, l]));
@@ -75,6 +90,37 @@ export const providerInfo = (id: string) => offers.providers[id];
 
 export const labModels = (lab: string) => dataset.models.filter((m) => m.lab === lab).sort(newestFirst);
 
+/** A card's public benchmark scores, with the size and date of each board. */
+export const scoresOf = (key: string): CardScores | null => scores.models[key] ?? null;
+export const scoreBoards = () => scores.boards;
+export const scoresUpdatedAt = () => scores.updatedAt;
+
+/**
+ * What the matchmaker needs beyond the card: a price to hold against the budget and the card's leaderboard places.
+ * The price is the lab's own when it lists one; otherwise the cheapest paid host, since free reseller tiers come and go.
+ */
+export function matchSignals(models: Model[]): Record<string, Signals> {
+  const out: Record<string, Signals> = {};
+  for (const m of models) {
+    const inputOnly = INPUT_ONLY.has(m.type);
+    const own = inputOnly ? m.price?.input : m.price?.output;
+    const run = offers.models[m.key];
+    const hosted = [...(run?.offers ?? []), ...(run?.hf ?? [])].map((o) => (inputOnly ? o.input : o.output)).filter((v): v is number => v != null && v > 0);
+    const s = scores.models[m.key];
+    out[m.key] = {
+      price: own ?? (hosted.length ? Math.min(...hosted) : null),
+      boards: Object.fromEntries(
+        Object.entries(s?.boards ?? {}).flatMap(([b, v]) => {
+          const count = scores.boards[b as keyof typeof scores.boards]?.count;
+          return v && count ? [[b, { p: percentile(v.rank, count), rank: v.rank }]] : [];
+        }),
+      ),
+      bench: s?.bench ?? {},
+    };
+  }
+  return out;
+}
+
 /** Everything the daily sync logged in the last 90 days, newest first. */
 export const changeLog = (): ChangeEvent[] => changes;
 
@@ -102,5 +148,6 @@ export function stats() {
     openWeights: ms.filter((m) => m.openWeights).length,
     free: ms.filter((m) => m.access === 'free').length,
     holo: ms.filter((m) => m.rarity === 'holo').length,
+    rated: ms.filter((m) => m.quality).length,
   };
 }

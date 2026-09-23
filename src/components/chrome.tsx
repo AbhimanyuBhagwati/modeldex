@@ -13,6 +13,7 @@ export function SiteHeader({ updatedAt }: { updatedAt: string }) {
       </Link>
       <nav className={styles.nav} aria-label="Main">
         <Link href="/#binder">Binder</Link>
+        <Link href="/match/">Match</Link>
         <Link href="/galaxy/">Galaxy</Link>
         <Link href="/labs/">Labs</Link>
         <Link href="/evolution/">Evolution</Link>

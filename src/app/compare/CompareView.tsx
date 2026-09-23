@@ -35,6 +35,15 @@ function Mods({ list }: { list: Model['input'] }) {
 
 const ROWS: Row[] = [
   { label: 'Type', render: (m) => TYPE_LABEL[m.type] },
+  {
+    label: 'Quality',
+    sub: 'share of its leaderboard it beats',
+    value: (m) => m.quality?.value ?? null,
+    format: (v: number | null) => (v == null ? 'Not rated' : `${v}/100`),
+    better: 'high',
+    tag: 'Best rated',
+    bar: true,
+  },
   { label: 'Context window', value: (m) => m.context, format: formatTokens, better: 'high', tag: 'Largest', bar: true },
   { label: 'Max output', value: (m) => m.maxOutput, format: formatTokens, better: 'high', tag: 'Longest', bar: true },
   { label: 'Input price', sub: 'per 1M tokens', value: (m) => m.price?.input ?? null, format: formatPrice, better: 'low', tag: 'Cheapest', bar: true },

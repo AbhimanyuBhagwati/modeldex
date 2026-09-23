@@ -5,11 +5,12 @@ import type { CSSProperties } from 'react';
 import { Card } from '@/components/card/Card';
 import { CardShowcase } from '@/components/card/CardShowcase';
 import { SiteFooter, SiteHeader } from '@/components/chrome';
+import { Benchmarks } from '@/components/Benchmarks';
 import { AddToDeckButton, CopyButton } from '@/components/client-bits';
 import { WhereToRun } from '@/components/WhereToRun';
 import { VoteButton } from '@/components/votes/VoteButton';
 import { Icon, RarityIcon } from '@/components/icons';
-import { getDataset, getLab, getModel, lineOf, moreFromLab, opponentFor, providerInfo, rivalsOf, whereToRun } from '@/lib/data';
+import { getDataset, getLab, getModel, lineOf, moreFromLab, opponentFor, providerInfo, rivalsOf, scoreBoards, scoresOf, whereToRun } from '@/lib/data';
 import {
   ACCESS_LABEL,
   INPUT_ONLY,
@@ -27,6 +28,7 @@ import {
   modalityList,
   padSet,
 } from '@/lib/format';
+import { BOARD_INFO, topShare } from '@/lib/quality';
 import { battleHref, compareHref, modelHref } from '@/lib/site';
 import type { LabSummary, Model } from '@/lib/types';
 import styles from './page.module.css';
@@ -43,6 +45,7 @@ export async function generateMetadata({ params }: PageProps<'/models/[lab]/[id]
   if (!m) return {};
   const l = getLab(m.lab);
   const facts = [
+    m.quality && `quality ${m.quality.value} (${topShare(m.quality.value).toLowerCase()} on the ${BOARD_INFO[m.quality.basis].label})`,
     m.context && `${formatTokens(m.context)} context`,
     m.price?.output != null && `${formatPrice(m.price.input)} in, ${formatPrice(m.price.output)} out per 1M tokens`,
     m.hub?.params && `${formatParams(m.hub.params)} parameters`,
@@ -120,6 +123,7 @@ export default async function ModelPage({ params }: PageProps<'/models/[lab]/[id
   ];
   const specs: [string, string][] = [
     ['Type', TYPE_LABEL[m.type]],
+    ['Quality', m.quality ? `${m.quality.value} · ${topShare(m.quality.value)} on the ${BOARD_INFO[m.quality.basis].label}` : 'Not rated yet'],
     ...(fromHub ? [] : apiSpecs),
     ...hubSpecs,
     [fromHub ? 'On Hugging Face since' : 'Released', formatDate(m.releaseDate)],
@@ -207,6 +211,11 @@ export default async function ModelPage({ params }: PageProps<'/models/[lab]/[id
                   <Icon name="out" />
                 </a>
               )}
+              {m.quality && (
+                <a className="btn" href="#quality">
+                  Quality <small className={styles.count}>{m.quality.value}</small>
+                </a>
+              )}
               {runCount > 0 && (
                 <a className="btn" href="#run">
                   Where to run it <small className={styles.count}>{runCount}</small>
@@ -234,6 +243,8 @@ export default async function ModelPage({ params }: PageProps<'/models/[lab]/[id
             </p>
           </div>
         </article>
+
+        <Benchmarks model={m} scores={scoresOf(m.key)} boards={scoreBoards()} />
 
         {run && <WhereToRun model={m} offers={run.offers} hf={run.hf} providers={runProviders} />}
 

@@ -153,6 +153,67 @@
   background: #2a2c33;
   color: #f3f1ea;
 }
+/* Quality seal: a stamped medal in the art's corner. Gold, silver, bronze, or plain by how much of its board it beats. */
+.seal {
+  --seal-a: #f4f1e8;
+  --seal-b: #b7b1a2;
+  --seal-ink: #2a2c33;
+  position: absolute;
+  z-index: 1;
+  right: 2cqi;
+  bottom: 2cqi;
+  width: 16cqi;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.5cqi;
+  color: var(--seal-ink);
+  background: radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.95) 0%, var(--seal-a) 38%, var(--seal-b) 100%);
+  box-shadow:
+    0 0 0 0.7cqi rgba(255, 255, 255, 0.88),
+    0 0 0 1.1cqi color-mix(in oklab, var(--seal-b) 70%, black),
+    0 1.2cqi 2.6cqi rgba(0, 0, 0, 0.38);
+}
+.seal b {
+  font-weight: 850;
+  font-size: 7cqi;
+  font-stretch: 112%;
+  line-height: 0.82;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.seal span {
+  font: 750 1.95cqi/1 var(--f-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.seal[data-tier='s'] {
+  --seal-a: #ffd970;
+  --seal-b: #c2860c;
+  --seal-ink: #3a2500;
+}
+.seal[data-tier='s']::before {
+  content: '';
+  position: absolute;
+  inset: -1.1cqi;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #fff6c9, #e6a72a, #fff1a8, #b97c10, #fff6c9);
+  z-index: -1;
+  mask: radial-gradient(closest-side, transparent 87%, #000 88%);
+}
+.seal[data-tier='a'] {
+  --seal-a: #eef2f7;
+  --seal-b: #8a96a6;
+  --seal-ink: #1b2330;
+}
+.seal[data-tier='b'] {
+  --seal-a: #f4c49a;
+  --seal-b: #a55f2a;
+  --seal-ink: #2d1504;
+}
 .type {
   justify-self: center;
   max-width: 100%;

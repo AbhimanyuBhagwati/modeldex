@@ -86,6 +86,17 @@ export interface Model {
   license: License;
   origin: Origin;
   hub: HubStats | null;
+  /** Joined from `data/scores.json` when the site loads; the sync never writes it into models.json. */
+  quality?: Quality | null;
+}
+
+/** The number on the card: the share of a public leaderboard's models this one beats. */
+export interface Quality {
+  value: number;
+  basis: Board;
+  rank: number;
+  /** How many models the board ranks. */
+  of: number;
 }
 
 export interface LabSummary {
@@ -166,4 +177,42 @@ export interface ChangeEvent {
 export interface ChangeLog {
   version: 1;
   events: ChangeEvent[];
+}
+
+/**
+ * Public leaderboards a card can be scored on. `eci` is Epoch AI's Capabilities Index, built from dozens of benchmarks;
+ * the rest are LMArena boards, where people vote between two anonymous answers.
+ */
+export const BOARDS = ['eci', 'text', 'coding', 'math', 'creative', 'webdev', 'vision', 'image', 'image-edit', 'video', 'image-video'] as const;
+export type Board = (typeof BOARDS)[number];
+
+/** Benchmarks Epoch AI runs itself. Scores are the share of questions solved, 0–1. */
+export const BENCHES = ['gpqa', 'swe', 'frontiermath', 'aime', 'simpleqa'] as const;
+export type Bench = (typeof BENCHES)[number];
+
+export interface BoardScore {
+  /** The board's own number: capability index or arena rating. */
+  score: number;
+  /** Place on the board, 1 is best. */
+  rank: number;
+  /** The name the board lists, so a close match is never passed off as exact. */
+  as: string;
+}
+
+export interface CardScores {
+  /** 0–100: the share of the models on `basis` that this one beats. The number on the card; null when no board fits the card's type. */
+  quality: number | null;
+  basis: Board | null;
+  boards: Partial<Record<Board, BoardScore>>;
+  bench: Partial<Record<Bench, number>>;
+}
+
+/** `data/scores.json`: public benchmark scores for the cards they could be matched to. */
+export interface ScoresFile {
+  version: 1;
+  updatedAt: string;
+  /** How many models each board ranks and the day it was published. */
+  boards: Partial<Record<Board, { count: number; published: string | null }>>;
+  bench: Partial<Record<Bench, { count: number }>>;
+  models: Record<string, CardScores>;
 }

@@ -1,6 +1,6 @@
 # Modeldex
 
-Every AI model from the major labs as a collectible card: the models you call through an API, and the most downloaded open models on Hugging Face. Browse the binder, put up to four cards in your deck, compare them side by side, send two into battle, and vote for your favorites. Every card shows where to run it (every provider that sells it, with prices) and links to the lab's own docs or repo. There's a page per lab, a "New this week" page, an RSS feed, and Evolution: every model line (GPT 1 → 5.6, Llama 2 → 4, Claude Opus 4.5 → 5.5, and 90 more) played out stage by stage like a Pokémon evolving. And the AI Galaxy: every model as a star in a 3D spiral galaxy, labs as arms, evolution lines as constellations, and a timeline that plays the whole field's growth.
+Every AI model from the major labs as a collectible card: the models you call through an API, and the most downloaded open models on Hugging Face. Each card carries a quality medal from public benchmarks (Epoch AI and LMArena), and the Model Matchmaker deals you the three best cards for a job after four questions. Browse the binder, put up to four cards in your deck, compare them side by side, send two into battle, and vote for your favorites. Every card shows where to run it (every provider that sells it, with prices) and links to the lab's own docs or repo. There's a page per lab, a "New this week" page, an RSS feed, and Evolution: every model line (GPT 1 → 5.6, Llama 2 → 4, Claude Opus 4.5 → 5.5, and 90 more) played out stage by stage like a Pokémon evolving. And the AI Galaxy: every model as a star in a 3D spiral galaxy, labs as arms, evolution lines as constellations, and a timeline that plays the whole field's growth.
 
 Live at **https://abhimanyubhagwati.github.io/modeldex/**.
 
@@ -22,6 +22,10 @@ The data updates itself. A GitHub Action pulls [models.dev](https://models.dev) 
             │    │    and models.dev cards gain downloads and parameter counts
             │    ├─ where to run it: match every card to the providers that sell it
             │    │    (models.dev's 200+ providers) and to Hugging Face's hosts
+            │    ├─ benchmark scores: Epoch AI's Capabilities Index and its own runs
+            │    │    (GPQA Diamond, SWE-bench Verified, FrontierMath, ...) and LMArena's
+            │    │    leaderboards, matched to cards by name; a source that fails keeps
+            │    │    yesterday's scores
             │    ├─ validate: schema, at least 100 models, no drop over 25% in a day
             │    └─ write data/*.json only if something changed, and log what
             │       changed (new cards, price changes, retirements) for /new/ and the feed
@@ -32,7 +36,13 @@ The data updates itself. A GitHub Action pulls [models.dev](https://models.dev) 
 
 A push to `main` also runs the checks and republishes. A morning with no new data skips the rebuild, though download counts move most days, so most mornings publish.
 
-If models.dev is down or sends something broken, the job fails, GitHub emails you, and the site keeps serving yesterday's data. If Hugging Face is down or rate-limits the job, each org that fails keeps yesterday's cards, stats, and licenses.
+If models.dev is down or sends something broken, the job fails, GitHub emails you, and the site keeps serving yesterday's data. If Hugging Face is down or rate-limits the job, each org that fails keeps yesterday's cards, stats, and licenses. If Epoch AI or LMArena fails, or their data changes shape so fewer than 50 cards get rated, the scores from the last good run stay.
+
+### Quality and the matchmaker
+
+A card's quality is the share of a public leaderboard's models it beats, 0 to 100: Epoch AI's Capabilities Index for chat models (LMArena Text when Epoch hasn't scored one), LMArena's image and video arenas for those types. Gold is the top 10%, silver the top 25%, bronze the top half. Both sources are CC BY 4.0. Only their own data is used; Epoch's copies of other groups' leaderboards carry those groups' terms and are left out. Boards name models their own way (`claude-opus-4-7-high`, `GPT-4o (May 2024)`), so the matcher peels settings, then snapshot dates, and each model page shows the name a score was listed under. Base weights never inherit a chat model's score.
+
+The Model Matchmaker (`/match/`) asks for the job, budget, must-haves, and open or paid, then ranks every card that fits by the leaderboards for that job. It runs in the browser on the same data; nothing is sent anywhere.
 
 ## One-time setup
 
@@ -99,6 +109,8 @@ Requires Node 20.9 or newer (`.nvmrc` pins 24).
 | Fix a provider matched to the wrong model | `nameCore` and `idCore` in `src/lib/pipeline/offers.ts` |
 | Fix an evolution line (a size read as a version, a tier split wrong) | `TIERS`, `NOISE`, and `SIZE` in `src/lib/evolution.ts` |
 | Reshape the galaxy (arm twist, star brightness) | `TWIST`, `layoutGalaxy`, and `galaxyData` in `src/lib/galaxy.ts`; look and glow in `src/components/galaxy/` |
+| Change how quality is matched or rated | `rowCores`, `scoreCores`, and `BASIS` in `src/lib/pipeline/scores.ts`; labels in `src/lib/quality.ts` |
+| Change what the matchmaker weighs | `WEIGHTS`, `TASKS`, `NEEDS`, and `BUDGETS` in `src/lib/match.ts` |
 | Credit a new source, library, or font | `SECTIONS` in `src/app/credits/page.tsx` |
 | Fix a wrong license | `LICENSE_OVERRIDES` in `src/config/labs.ts`, then `npm run sync` |
 | Change rarity thresholds | `RARITY_FLOORS` in `src/lib/pipeline/build.ts` |
@@ -109,7 +121,9 @@ Requires Node 20.9 or newer (`.nvmrc` pins 24).
 ```
 scripts/sync.ts            the daily job: fetch, build, validate, write
 src/config/labs.ts         which labs appear, their colors, how to recognize their models
-src/lib/pipeline/          pure data pipeline (tested): build, licenses, hub, schema, diff
+src/lib/pipeline/          pure data pipeline (tested): build, licenses, hub, offers, scores, schema, diff
+src/lib/quality.ts         quality tiers and what each leaderboard is
+src/lib/match.ts           the Model Matchmaker: filters, ranking, one-line reasons (tested)
 src/lib/battle.ts          battle mode: rounds, damage, matchmaking (tested)
 src/lib/news.ts            what "New this week" and the RSS feed list (tested)
 src/lib/evolution.ts       evolution lines read from model names, and what changed per stage (tested)
@@ -120,13 +134,14 @@ src/lib/data.ts            loads data/models.json for pages
 src/components/card/       the card: foil, tilt, glare, generated art
 src/components/binder/     search, filters (kept in the URL), grid
 src/components/deck/       the compare deck, saved in localStorage
-src/app/                   routes: /, /models/[lab]/[id], /labs, /evolution, /galaxy, /new, /favorites, /credits, /compare and /battle
-                           (read the query in the browser), feed.xml, og.png images, sitemap
+src/app/                   routes: /, /models/[lab]/[id], /labs, /evolution, /galaxy, /new, /favorites, /credits, /compare, /battle
+                           and /match (read the query in the browser), feed.xml, og.png images, sitemap
 src/components/votes/      vote button and store; talks to the Worker
 worker/                    the voting Worker and its D1 schema (own toolchain: Wrangler)
 data/models.json           generated: every card
 data/offers.json           generated: where to run each card
 data/changes.json          generated: the last 90 days of changes
+data/scores.json           generated: public benchmark scores per card
 ```
 
 ## Data and credits
@@ -134,5 +149,6 @@ data/changes.json          generated: the last 90 days of changes
 - Specs and prices: [models.dev](https://models.dev), MIT licensed.
 - Open models, downloads, parameter counts, and licenses: each lab's official [Hugging Face](https://huggingface.co) account and each model's card. When no repo matches, the page shows the lab's usual license and says so.
 - Where to run it: provider listings from models.dev; Hugging Face Inference Providers' prices, speed, and latency from the Hugging Face router.
+- Quality: [Epoch AI's Benchmarking Hub](https://epoch.ai/benchmarks) (CC BY 4.0; Epoch AI, ‘Capabilities & Benchmarking’) and [LMArena's leaderboard dataset](https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset) (CC BY 4.0).
 - Site size: every card gets a static page and a share image, about 0.4 MB each, so ~1,000 cards is ~400 MB, within GitHub Pages' 1 GB limit.
 - Modeldex isn't affiliated with any AI lab. Model names belong to their makers.

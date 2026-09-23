@@ -6,6 +6,7 @@ import { useDeckApi, useInDeck } from '@/components/deck/DeckProvider';
 import { Energies, Icon, RarityIcon } from '@/components/icons';
 import { ART_H, ART_W, cardArt, type Shape } from '@/lib/art';
 import { ACCESS_LABEL, STATUS_LABEL, cardFace, isNew, padSet, typeLine } from '@/lib/format';
+import { qualityTier, qualityTitle } from '@/lib/quality';
 import { modelHref } from '@/lib/site';
 import type { LabSummary, Model } from '@/lib/types';
 import styles from './Card.module.css';
@@ -121,6 +122,12 @@ function CardImpl({ model: m, lab, setSize, refDate, link = true, addable = true
                     {STATUS_LABEL[m.status]}
                   </span>
                 )}
+              </div>
+            )}
+            {m.quality && (
+              <div className={styles.seal} data-tier={qualityTier(m.quality.value)} title={qualityTitle(m.quality)}>
+                <b>{m.quality.value}</b>
+                <span>Quality</span>
               </div>
             )}
           </div>

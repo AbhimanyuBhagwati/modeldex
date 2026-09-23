@@ -17,6 +17,7 @@ const ACCESS_OPTIONS: { value: 'all' | Access; label: string }[] = [
 ];
 const SORT_OPTIONS: { value: SortKey; label: string; short: string }[] = [
   { value: 'newest', label: 'Newest first', short: 'Newest' },
+  { value: 'quality', label: 'Best rated', short: 'Rated' },
   { value: 'popular', label: 'Most downloaded', short: 'Popular' },
   { value: 'rarest', label: 'Rarest first', short: 'Rarest' },
   { value: 'cheapest', label: 'Cheapest output', short: 'Cheapest' },

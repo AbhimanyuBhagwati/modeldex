@@ -14,9 +14,10 @@ interface Props {
   hubCards: number;
   hubOrgs: number;
   hubRepos: number;
+  rated: number;
 }
 
-export function Guide({ listings, providers, updatedLabel, licensesFromHf, openWeights, hubCards, hubOrgs, hubRepos }: Props) {
+export function Guide({ listings, providers, updatedLabel, licensesFromHf, openWeights, hubCards, hubOrgs, hubRepos, rated }: Props) {
   const { uncommon, rare, holo } = RARITY_FLOORS;
   return (
     <section className={styles.guide} aria-labelledby="guide-title">
@@ -39,6 +40,14 @@ export function Guide({ listings, providers, updatedLabel, licensesFromHf, openW
           <div>
             <dt>CTX</dt>
             <dd>Context window, the card’s HP: how many tokens the model can hold at once. Open models that only live on Hugging Face show SIZE, their parameter count, instead.</dd>
+          </div>
+          <div>
+            <dt>Quality</dt>
+            <dd>
+              The medal on the art: how much of a public leaderboard the model beats, from 0 to 100. Chat models are rated on Epoch AI’s Capabilities Index, or LMArena
+              when Epoch hasn’t scored them; image and video models on LMArena’s arenas. Gold is the top 10%, silver the top 25%, bronze the top half. No medal means no
+              leaderboard lists it yet.
+            </dd>
           </div>
           <div>
             <dt>Art</dt>
@@ -114,6 +123,17 @@ export function Guide({ listings, providers, updatedLabel, licensesFromHf, openW
           The same daily job scans {hubRepos.toLocaleString('en-US')} repos across {hubOrgs} official lab accounts on Hugging Face. Any model with at least{' '}
           {HUB_MIN_DOWNLOADS.toLocaleString('en-US')} downloads in the past month becomes a card, {hubCards} so far, and stays in the binder once it’s in. Quantized and
           converted copies are left out, so each model appears once.
+        </p>
+        <p>
+          Quality comes from two public leaderboards, both CC BY 4.0:{' '}
+          <a href="https://epoch.ai/benchmarks" target="_blank" rel="noopener noreferrer">
+            Epoch AI’s Benchmarking Hub
+          </a>{' '}
+          and{' '}
+          <a href="https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset" target="_blank" rel="noopener noreferrer">
+            LMArena’s leaderboard dataset
+          </a>
+          . The same daily job matches them to cards by name, {rated} so far, and each model page shows the name a board lists it under.
         </p>
         <p className={styles.note}>Modeldex isn’t affiliated with any AI lab. Model names belong to their makers, and every card links to the lab’s own docs.</p>
       </div>

@@ -27,6 +27,7 @@ export default function Home() {
           hubCards={data.models.filter((m) => m.origin === 'huggingface').length}
           hubOrgs={data.source.hub.orgs}
           hubRepos={data.source.hub.repos}
+          rated={s.rated}
         />
       </main>
       <SiteFooter updatedAt={data.updatedAt} />

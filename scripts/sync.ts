@@ -1,5 +1,7 @@
 import { appendFile, mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { strFromU8, unzipSync } from 'fflate';
+import { parquetReadObjects } from 'hyparquet';
 import type { ZodType } from 'zod';
 import { LABS, LICENSE_OVERRIDES } from '@/config/labs';
 import { buildDataset } from '@/lib/pipeline/build';
@@ -7,15 +9,23 @@ import { changeEvents, diffDatasets, markdownReport, mergeChangeLog, sameContent
 import { HUB_MIN_DOWNLOADS, addHubModels } from '@/lib/pipeline/hub';
 import { resolveLicenses } from '@/lib/pipeline/licenses';
 import { buildHostOffers, buildOffers, joinOffers } from '@/lib/pipeline/offers';
-import { changeLogSchema, datasetSchema, offersFileSchema } from '@/lib/pipeline/schema';
-import type { ChangeLog, Dataset, HostOffer, OffersFile } from '@/lib/types';
+import { changeLogSchema, datasetSchema, offersFileSchema, scoresFileSchema } from '@/lib/pipeline/schema';
+import { ARENA_CONFIGS, BENCH_FILES, buildScores, type ArenaRow, type EpochInput } from '@/lib/pipeline/scores';
+import type { ChangeLog, Dataset, HostOffer, OffersFile, ScoresFile } from '@/lib/types';
 
 const SOURCE_URL = 'https://models.dev/api.json';
 const OUT_FILE = path.join(process.cwd(), 'data', 'models.json');
 const OFFERS_FILE = path.join(process.cwd(), 'data', 'offers.json');
 const CHANGES_FILE = path.join(process.cwd(), 'data', 'changes.json');
+const SCORES_FILE = path.join(process.cwd(), 'data', 'scores.json');
 /** Hugging Face's list of models its Inference Providers serve, with each host's price and speed. */
 const ROUTER_URL = 'https://router.huggingface.co/v1/models';
+/** Epoch AI's Benchmarking Hub, CC BY 4.0: its Capabilities Index and the benchmarks it runs itself. */
+const EPOCH_URL = 'https://epoch.ai/data/benchmark_data.zip';
+/** LMArena's published leaderboards, CC BY 4.0. */
+const ARENA_DATASET = 'lmarena-ai/leaderboard-dataset';
+/** Fewer scored cards than this means a source changed shape; keep the last good scores. */
+const MIN_SCORED = 50;
 /** A sync that produces fewer models than this is treated as a broken upstream, not real news. */
 const MIN_MODELS = 100;
 const MAX_DROP = 0.25;
@@ -25,19 +35,62 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 /** Optional. Hugging Face rate-limits anonymous calls per IP, and CI runners share IPs; a free read token gets its own limit. */
 const HF_TOKEN = process.env.HF_TOKEN?.trim();
 
-async function fetchJson(url: string, attempts = 3): Promise<unknown> {
-  const headers: Record<string, string> = { accept: 'application/json', 'user-agent': 'modeldex-sync' };
+async function download<T>(url: string, attempts: number, read: (res: Response) => Promise<T>, accept = 'application/json'): Promise<T> {
+  const headers: Record<string, string> = { accept, 'user-agent': 'modeldex-sync' };
   if (HF_TOKEN && new URL(url).hostname === 'huggingface.co') headers.authorization = `Bearer ${HF_TOKEN}`;
   for (let i = 1; ; i++) {
     try {
-      const res = await fetch(url, { headers, signal: AbortSignal.timeout(30_000) });
+      const res = await fetch(url, { headers, signal: AbortSignal.timeout(60_000) });
       if (!res.ok) throw new Error(`${res.status} ${res.statusText} from ${url}`);
-      return await res.json();
+      return await read(res);
     } catch (err) {
       if (i >= attempts) throw err;
       await sleep(1500 * i);
     }
   }
+}
+
+const fetchJson = (url: string, attempts = 3): Promise<unknown> => download(url, attempts, (res) => res.json());
+const fetchBytes = (url: string, attempts = 3) => download(url, attempts, (res) => res.arrayBuffer(), '*/*');
+
+/** The Capabilities Index, the version list that ties it to API ids, and Epoch's own benchmark runs. */
+async function fetchEpoch(): Promise<EpochInput> {
+  const wanted = new Set(['eci_scores.csv', 'model_metadata.csv', ...Object.values(BENCH_FILES)]);
+  const base = (name: string) => name.split('/').pop() ?? name;
+  const files = unzipSync(new Uint8Array(await fetchBytes(EPOCH_URL)), { filter: (f) => wanted.has(base(f.name)) });
+  const text = new Map(Object.entries(files).map(([name, bytes]) => [base(name), strFromU8(bytes)]));
+  const eci = text.get('eci_scores.csv');
+  const metadata = text.get('model_metadata.csv');
+  if (!eci || !metadata) throw new Error('benchmark_data.zip no longer has eci_scores.csv and model_metadata.csv');
+  const bench = Object.fromEntries(Object.entries(BENCH_FILES).flatMap(([id, file]) => (text.has(file) ? [[id, text.get(file)!]] : [])));
+  return { eci, metadata, bench };
+}
+
+const isoDate = (v: unknown) => (v instanceof Date ? v.toISOString().slice(0, 10) : v == null ? null : String(v).slice(0, 10));
+
+/** The latest published board for each arena. A config that fails is left out, so its earlier scores are kept. */
+async function fetchArena(notes: string[]): Promise<Record<string, ArenaRow[]>> {
+  const info = (await fetchJson(`https://huggingface.co/api/datasets/${ARENA_DATASET}`, 2)) as { siblings?: { rfilename: string }[] };
+  const files = info.siblings?.map((s) => s.rfilename) ?? [];
+  const out: Record<string, ArenaRow[]> = {};
+  for (const config of ARENA_CONFIGS) {
+    try {
+      const parts = files.filter((f) => f.startsWith(`${config}/latest-`) && f.endsWith('.parquet'));
+      if (!parts.length) throw new Error('no latest split');
+      const rows: ArenaRow[] = [];
+      for (const part of parts) {
+        const file = await fetchBytes(`https://huggingface.co/datasets/${ARENA_DATASET}/resolve/main/${part}`, 2);
+        const read = await parquetReadObjects({ file, columns: ['model_name', 'rating', 'category', 'leaderboard_publish_date'] });
+        for (const r of read) {
+          rows.push({ model_name: String(r.model_name ?? ''), rating: Number(r.rating), category: String(r.category ?? ''), leaderboard_publish_date: isoDate(r.leaderboard_publish_date) });
+        }
+      }
+      out[config] = rows;
+    } catch (e) {
+      notes.push(`LMArena ${config} failed (${e instanceof Error ? e.message : e}); kept earlier scores`);
+    }
+  }
+  return out;
 }
 
 /** Data written before Hugging Face cards existed lacks their fields; fill them so diffs and guardrails still work. */
@@ -125,6 +178,26 @@ async function main() {
   const offers = joinOffers(buildOffers(raw, dataset, LABS), hosts, dataset.updatedAt);
   const offersCheck = offersFileSchema.safeParse(offers);
   if (!offersCheck.success) fail(`the provider offers failed validation: ${offersCheck.error.issues[0]?.path.join('.')}: ${offersCheck.error.issues[0]?.message}`);
+
+  // Public benchmark scores. A failed source keeps its earlier scores; a broken result keeps the whole earlier file.
+  console.log('Fetching benchmark scores from Epoch AI and LMArena');
+  const previousScores = await readData<ScoresFile>(SCORES_FILE, scoresFileSchema);
+  const epoch = await fetchEpoch().catch((e) => {
+    notes.push(`Epoch AI download failed (${e instanceof Error ? e.message : e}); kept earlier scores`);
+    return null;
+  });
+  const arena = await fetchArena(notes).catch((e) => {
+    notes.push(`LMArena listing failed (${e instanceof Error ? e.message : e}); kept earlier scores`);
+    return {};
+  });
+  let scores: ScoresFile | null = buildScores(dataset, { epoch, arena }, dataset.updatedAt, previousScores);
+  const scoresCheck = scoresFileSchema.safeParse(scores);
+  const scored = Object.values(scores.models).filter((s) => s.quality != null).length;
+  if (!scoresCheck.success || scored < MIN_SCORED) {
+    const why = scoresCheck.success ? `only ${scored} cards scored` : `${scoresCheck.error.issues[0]?.path.join('.')}: ${scoresCheck.error.issues[0]?.message}`;
+    notes.push(`benchmark scores looked wrong (${why}); kept earlier scores`);
+    scores = previousScores;
+  }
   for (const n of notes) console.warn(`  note: ${n}`);
   console.log(
     `Built ${dataset.models.length} models from ${dataset.labs.length} labs ` +
@@ -133,10 +206,15 @@ async function main() {
   console.log(`Hugging Face: ${hub.repos.toLocaleString('en-US')} repos across ${hub.orgs} orgs, ${hub.cards} open-model cards, ${hub.matched} models.dev cards with stats`);
   const offerCount = Object.values(offers.models).reduce((n, m) => n + m.offers.length + m.hf.length, 0);
   console.log(`Where to run it: ${offerCount.toLocaleString('en-US')} offers for ${Object.keys(offers.models).length} cards from ${Object.keys(offers.providers).length} providers`);
+  if (scores) {
+    const boards = Object.entries(scores.boards).map(([b, v]) => `${b} ${v!.count}`).join(', ');
+    console.log(`Benchmark scores: ${Object.values(scores.models).filter((s) => s.quality != null).length} cards rated (boards: ${boards})`);
+  }
 
   const modelsChanged = !previous || !sameContent(previous, dataset);
   const offersChanged = !previousOffers || !sameContent(previousOffers, offers);
-  if (!modelsChanged && !offersChanged) {
+  const scoresChanged = scores != null && (!previousScores || !sameContent(previousScores, scores));
+  if (!modelsChanged && !offersChanged && !scoresChanged) {
     console.log(`No changes since ${previous!.updatedAt}. Nothing written. (${Date.now() - started} ms)`);
     await ghOutput({ changed: 'false' });
     await ghSummary('## Model sync: no changes');
@@ -145,7 +223,7 @@ async function main() {
 
   await mkdir(path.dirname(OUT_FILE), { recursive: true });
   const written: string[] = [];
-  let title = 'provider prices';
+  let title = [offersChanged && 'provider prices', scoresChanged && 'benchmark scores'].filter(Boolean).join(' and ');
   const diff = diffDatasets(previous, dataset);
   if (modelsChanged) {
     await writeData(OUT_FILE, dataset);
@@ -163,9 +241,13 @@ async function main() {
     await writeData(OFFERS_FILE, offers);
     written.push(path.relative(process.cwd(), OFFERS_FILE));
   }
+  if (scoresChanged) {
+    await writeData(SCORES_FILE, scores);
+    written.push(path.relative(process.cwd(), SCORES_FILE));
+  }
   console.log(`Wrote ${written.join(', ')}: ${title} (${Date.now() - started} ms)`);
   await ghOutput({ changed: 'true', title });
-  await ghSummary(modelsChanged ? markdownReport(diff, dataset, notes) : `## Model sync: provider prices changed\n\n${notes.map((n) => `- ${n}`).join('\n')}`);
+  await ghSummary(modelsChanged ? markdownReport(diff, dataset, notes) : `## Model sync: ${title} changed\n\n${notes.map((n) => `- ${n}`).join('\n')}`);
 }
 
 main().catch((e) => fail(e instanceof Error ? e.message : String(e)));

@@ -46,6 +46,9 @@ export function Hero({ newest, labs, setSize, refDate, setName, stats }: Props) 
           <a className="btn btn-gold" href="#binder">
             Explore the binder <Icon name="back" className={styles.arrow} />
           </a>
+          <Link className="btn" href="/match/">
+            Find my model
+          </Link>
           {newest.length >= 2 && (
             <Link className="btn" href={compareHref(newest.map((m) => m.key))}>
               Compare latest pulls

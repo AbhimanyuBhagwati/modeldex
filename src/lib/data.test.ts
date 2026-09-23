@@ -2,9 +2,10 @@ import { describe, expect, it } from 'vitest';
 import changes from '../../data/changes.json';
 import raw from '../../data/models.json';
 import offers from '../../data/offers.json';
+import scores from '../../data/scores.json';
 import { LABS } from '@/config/labs';
 import { applyFilters, DEFAULT_FILTERS, filtersFromParams, filtersToParams } from './filter';
-import { changeLogSchema, datasetSchema, offersFileSchema } from './pipeline/schema';
+import { changeLogSchema, datasetSchema, offersFileSchema, scoresFileSchema } from './pipeline/schema';
 import type { Dataset } from './types';
 
 /** Guards the committed data file, which the site trusts without re-checking. */
@@ -47,6 +48,16 @@ describe('committed offers and change log', () => {
       expect(keys.has(key)).toBe(true);
       for (const o of entry.offers) expect(file.providers[o.provider]).toBeDefined();
     }
+  });
+});
+
+describe('committed benchmark scores', () => {
+  it('match their schema and only score cards that exist', () => {
+    expect(scoresFileSchema.safeParse(scores).error?.issues.slice(0, 5) ?? []).toEqual([]);
+    const keys = new Set((raw as unknown as Dataset).models.map((m) => m.key));
+    const missing = Object.keys(scores.models).filter((k) => !keys.has(k));
+    // The bot updates both files together; a card retired between syncs may linger for a day.
+    expect(missing.length).toBeLessThan(10);
   });
 });
 

@@ -24,6 +24,18 @@ const SECTIONS: { title: string; lede: string; items: Credit[] }[] = [
       { name: 'models.dev', href: 'https://models.dev', use: 'Specs, prices, release dates, and the 200+ providers behind “Where to run it”.', license: 'MIT' },
       { name: 'Hugging Face Hub', href: 'https://huggingface.co/models', use: 'Open models, downloads, likes, parameter counts, and licenses from each lab’s official account.', license: 'Public API' },
       { name: 'Hugging Face Inference Providers', href: 'https://huggingface.co/docs/inference-providers', use: 'Host prices, speed, and first-token latency for open models.', license: 'Public API' },
+      {
+        name: 'Epoch AI Benchmarking Hub',
+        href: 'https://epoch.ai/benchmarks',
+        use: 'The Capabilities Index behind most quality numbers, plus the GPQA Diamond, SWE-bench Verified, FrontierMath, OTIS Mock AIME, and SimpleQA Verified runs Epoch does itself. Cite as: Epoch AI, ‘Capabilities & Benchmarking’, epoch.ai.',
+        license: 'CC BY 4.0',
+      },
+      {
+        name: 'LMArena leaderboard dataset',
+        href: 'https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset',
+        use: 'Ratings from Arena’s text, coding, math, writing, web dev, vision, image, and video leaderboards, where people vote between anonymous answers.',
+        license: 'CC BY 4.0',
+      },
       { name: 'The labs themselves', href: 'https://abhimanyubhagwati.github.io/modeldex/labs/', use: 'Every card links to its lab’s own docs or Hugging Face page, the original source.', license: 'Linked' },
     ],
   },
@@ -45,6 +57,8 @@ const SECTIONS: { title: string; lede: string; items: Credit[] }[] = [
       { name: 'React', href: 'https://react.dev', use: 'Everything interactive.', license: 'MIT' },
       { name: 'three.js', href: 'https://threejs.org', use: 'WebGL for the AI Galaxy: camera, controls, and bloom.', license: 'MIT' },
       { name: 'Zod', href: 'https://zod.dev', use: 'Checks every data file before the site trusts it.', license: 'MIT' },
+      { name: 'hyparquet', href: 'https://github.com/hyparam/hyparquet', use: 'Reads LMArena’s Parquet files during the daily sync.', license: 'MIT' },
+      { name: 'fflate', href: 'https://github.com/101arrowz/fflate', use: 'Unzips Epoch AI’s benchmark data during the daily sync.', license: 'MIT' },
     ],
   },
   {

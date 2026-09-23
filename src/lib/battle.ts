@@ -26,6 +26,7 @@ const skills = (m: Model) => [m.reasoning, m.toolCall, m.structuredOutput, m.att
 
 /** Every round a battle can have, in the order they're fought. A round is skipped when either card lacks the stat. */
 export const STATS: Stat[] = [
+  { key: 'quality', label: 'Quality', move: 'Mind Blast', better: 'high', value: (m) => m.quality?.value ?? null, format: (m) => `${m.quality?.value ?? '—'}/100`, gap: linear(40) },
   { key: 'context', label: 'Context window', move: 'Memory Slam', better: 'high', value: (m) => m.context, format: (m) => formatTokens(m.context), gap: ratio(16) },
   { key: 'output', label: 'Max output', move: 'Word Flood', better: 'high', value: (m) => m.maxOutput, format: (m) => formatTokens(m.maxOutput), gap: ratio(16) },
   { key: 'price', label: 'Output price', move: 'Bargain Blast', better: 'low', value: outputPrice, format: (m) => formatPrice(outputPrice(m)), gap: ratio(40, 0.05) },

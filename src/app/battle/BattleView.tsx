@@ -69,7 +69,7 @@ function Lobby({ byKey, labs, featured, onRandom }: { byKey: Map<string, Model>;
       <p className="eyebrow">Battle mode</p>
       <h1 className={styles.title}>Pick two cards. Let them fight.</h1>
       <p className={styles.lede}>
-        Each round pits one stat against another: context, price, freshness, skills, size, and downloads. The better card hits, and a wider gap hits harder. It’s all decided by
+        Each round pits one stat against another: quality, context, price, freshness, skills, size, and downloads. The better card hits, and a wider gap hits harder. It’s all decided by
         the data, so a shared link replays the same fight.
       </p>
       <div className={styles.lobbyActions}>

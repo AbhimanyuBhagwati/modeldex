@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { MODALITIES, MODEL_TYPES } from '@/lib/types';
+import { BENCHES, BOARDS, MODALITIES, MODEL_TYPES } from '@/lib/types';
 
 /** Input side: lenient, because models.dev adds fields often and we only read a few. */
 export const rawModelSchema = z.looseObject({
@@ -182,3 +182,33 @@ export const offersFileSchema = z.object({
     }),
   ),
 });
+
+const boardScore = z.object({ score: z.number().finite(), rank: z.number().int().positive(), as: z.string().min(1) });
+const boardRecord = <T extends z.ZodType>(v: T) => z.partialRecord(z.enum(BOARDS), v);
+const benchRecord = <T extends z.ZodType>(v: T) => z.partialRecord(z.enum(BENCHES), v);
+
+export const scoresFileSchema = z
+  .object({
+    version: z.literal(1),
+    updatedAt: z.iso.datetime(),
+    boards: boardRecord(z.object({ count: z.number().int().positive(), published: isoDay.nullable() })),
+    bench: benchRecord(z.object({ count: z.number().int().positive() })),
+    models: z.record(
+      z.string(),
+      z.object({
+        quality: z.number().int().min(0).max(100).nullable(),
+        basis: z.enum(BOARDS).nullable(),
+        boards: boardRecord(boardScore),
+        bench: benchRecord(z.number().min(0).max(1)),
+      }),
+    ),
+  })
+  .superRefine((f, ctx) => {
+    for (const [key, s] of Object.entries(f.models)) {
+      for (const [board, v] of Object.entries(s.boards)) {
+        const count = f.boards[board as keyof typeof f.boards]?.count;
+        if (!count || v!.rank > count) ctx.addIssue({ code: 'custom', message: `${key} ranks ${v!.rank} on ${board}, which lists ${count ?? 0}`, path: ['models', key] });
+      }
+      if ((s.quality == null) !== (s.basis == null) || (s.basis && !s.boards[s.basis])) ctx.addIssue({ code: 'custom', message: `${key} has a quality without its board`, path: ['models', key] });
+    }
+  });
