@@ -6,7 +6,8 @@ const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   // Share images are drawn to PNG at build time by next/og, which needs plain <img>.
-  { files: ['src/lib/og.tsx'], rules: { '@next/next/no-img-element': 'off' } },
+  // Evolution tiles show card art as inline SVG data URIs, which next/image adds nothing to.
+  { files: ['src/lib/og.tsx', 'src/app/evolution/shared.tsx'], rules: { '@next/next/no-img-element': 'off' } },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:

@@ -9,7 +9,7 @@ import { AddToDeckButton, CopyButton } from '@/components/client-bits';
 import { WhereToRun } from '@/components/WhereToRun';
 import { VoteButton } from '@/components/votes/VoteButton';
 import { Icon, RarityIcon } from '@/components/icons';
-import { getDataset, getLab, getModel, moreFromLab, opponentFor, providerInfo, rivalsOf, whereToRun } from '@/lib/data';
+import { getDataset, getLab, getModel, lineOf, moreFromLab, opponentFor, providerInfo, rivalsOf, whereToRun } from '@/lib/data';
 import {
   ACCESS_LABEL,
   INPUT_ONLY,
@@ -94,6 +94,7 @@ export default async function ModelPage({ params }: PageProps<'/models/[lab]/[id
   const more = moreFromLab(m, 8);
   const opponent = opponentFor(m);
   const run = whereToRun(m.key);
+  const evolution = lineOf(m.key);
   const runCount = run ? run.offers.length + run.hf.length : 0;
   const runProviders = Object.fromEntries((run?.offers ?? []).map((o) => [o.provider, providerInfo(o.provider)]));
   const fromHub = m.origin === 'huggingface';
@@ -210,6 +211,11 @@ export default async function ModelPage({ params }: PageProps<'/models/[lab]/[id
                 <a className="btn" href="#run">
                   Where to run it <small className={styles.count}>{runCount}</small>
                 </a>
+              )}
+              {evolution && (
+                <Link className="btn" href={`/evolution/${evolution.line.lab}/${evolution.line.slug}/?at=${m.key}`}>
+                  Evolution <small className={styles.count}>{evolution.stage + 1}/{evolution.line.stages.length}</small>
+                </Link>
               )}
               {opponent && (
                 <Link className="btn" href={battleHref(m.key, opponent.key)}>

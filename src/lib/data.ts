@@ -1,6 +1,7 @@
 import changesRaw from '../../data/changes.json';
 import raw from '../../data/models.json';
 import offersRaw from '../../data/offers.json';
+import { buildLines, type EvolutionLine } from './evolution';
 import type { ChangeEvent, Dataset, LabSummary, Model, OffersFile } from './types';
 
 /** Validated by the sync job before it is ever committed, and again in the test suite. Server-only: pages pass slices to the browser. */
@@ -76,6 +77,21 @@ export const labModels = (lab: string) => dataset.models.filter((m) => m.lab ===
 
 /** Everything the daily sync logged in the last 90 days, newest first. */
 export const changeLog = (): ChangeEvent[] => changes;
+
+let lines: EvolutionLine[] | null = null;
+/** Every evolution line: a series with two or more versions, like GPT 3.5 → 4 → 4o → 5. */
+export const evolutionLines = () => (lines ??= buildLines(dataset.models));
+export const linesForLab = (lab: string) => evolutionLines().filter((l) => l.lab === lab);
+export const getLine = (lab: string, slug: string) => evolutionLines().find((l) => l.lab === lab && l.slug === slug);
+
+/** The line a card belongs to and its stage, whether it leads that stage or is one of its variants. */
+export function lineOf(key: string): { line: EvolutionLine; stage: number } | null {
+  for (const line of evolutionLines()) {
+    const stage = line.stages.findIndex((s) => s.key === key || s.variants.includes(key));
+    if (stage >= 0) return { line, stage };
+  }
+  return null;
+}
 
 export function stats() {
   const ms = dataset.models.filter(live);

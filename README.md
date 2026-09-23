@@ -1,6 +1,6 @@
 # Modeldex
 
-Every AI model from the major labs as a collectible card: the models you call through an API, and the most downloaded open models on Hugging Face. Browse the binder, put up to four cards in your deck, compare them side by side, send two into battle, and vote for your favorites. Every card shows where to run it (every provider that sells it, with prices) and links to the lab's own docs or repo. There's a page per lab, a "New this week" page, and an RSS feed.
+Every AI model from the major labs as a collectible card: the models you call through an API, and the most downloaded open models on Hugging Face. Browse the binder, put up to four cards in your deck, compare them side by side, send two into battle, and vote for your favorites. Every card shows where to run it (every provider that sells it, with prices) and links to the lab's own docs or repo. There's a page per lab, a "New this week" page, an RSS feed, and Evolution: every model line (GPT 1 → 5.6, Llama 2 → 4, Claude Opus 4.5 → 5.5, and 90 more) played out stage by stage like a Pokémon evolving.
 
 Live at **https://abhimanyubhagwati.github.io/modeldex/**.
 
@@ -97,6 +97,7 @@ Requires Node 20.9 or newer (`.nvmrc` pins 24).
 | Change the download cutoff for open-model cards | `HUB_MIN_DOWNLOADS` in `src/lib/pipeline/hub.ts` |
 | Change battle rounds or damage | `STATS` and `battle` in `src/lib/battle.ts` |
 | Fix a provider matched to the wrong model | `nameCore` and `idCore` in `src/lib/pipeline/offers.ts` |
+| Fix an evolution line (a size read as a version, a tier split wrong) | `TIERS`, `NOISE`, and `SIZE` in `src/lib/evolution.ts` |
 | Fix a wrong license | `LICENSE_OVERRIDES` in `src/config/labs.ts`, then `npm run sync` |
 | Change rarity thresholds | `RARITY_FLOORS` in `src/lib/pipeline/build.ts` |
 | Change the sync schedule | `cron` in `.github/workflows/site.yml` |
@@ -109,11 +110,13 @@ src/config/labs.ts         which labs appear, their colors, how to recognize the
 src/lib/pipeline/          pure data pipeline (tested): build, licenses, hub, schema, diff
 src/lib/battle.ts          battle mode: rounds, damage, matchmaking (tested)
 src/lib/news.ts            what "New this week" and the RSS feed list (tested)
+src/lib/evolution.ts       evolution lines read from model names, and what changed per stage (tested)
+src/components/evolution/  the evolution theater: silhouette flicker, flash, particles on canvas
 src/lib/data.ts            loads data/models.json for pages
 src/components/card/       the card: foil, tilt, glare, generated art
 src/components/binder/     search, filters (kept in the URL), grid
 src/components/deck/       the compare deck, saved in localStorage
-src/app/                   routes: /, /models/[lab]/[id], /labs, /new, /favorites, /compare and /battle
+src/app/                   routes: /, /models/[lab]/[id], /labs, /evolution, /new, /favorites, /compare and /battle
                            (read the query in the browser), feed.xml, og.png images, sitemap
 src/components/votes/      vote button and store; talks to the Worker
 worker/                    the voting Worker and its D1 schema (own toolchain: Wrangler)

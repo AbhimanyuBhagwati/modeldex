@@ -14,6 +14,7 @@ export function SiteHeader({ updatedAt }: { updatedAt: string }) {
       <nav className={styles.nav} aria-label="Main">
         <Link href="/#binder">Binder</Link>
         <Link href="/labs/">Labs</Link>
+        <Link href="/evolution/">Evolution</Link>
         <Link href="/battle/">Battle</Link>
         {VOTES_API && <Link href="/favorites/">Favorites</Link>}
         <CompareNavLink className={styles.navCompare} />

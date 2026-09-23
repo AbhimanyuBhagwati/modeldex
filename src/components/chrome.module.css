@@ -124,6 +124,22 @@
   .nav > a.sync {
     display: none;
   }
+  /* One row that scrolls sideways instead of wrapping the tabs onto two lines. */
+  .nav {
+    flex-wrap: nowrap;
+    width: calc(100% + 2 * var(--gutter));
+    margin-inline: calc(-1 * var(--gutter));
+    padding-inline: calc(var(--gutter) - 12px);
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 0;
+  }
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+  .nav > a {
+    flex-shrink: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
