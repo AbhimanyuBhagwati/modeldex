@@ -104,6 +104,21 @@ describe('buildDataset', () => {
     const { dataset } = buildDataset(dupes, LABS, { sourceUrl: 'https://models.dev/api.json', updatedAt: '2026-09-22T00:00:00.000Z' });
     expect(dataset.models.map((m) => m.id)).toEqual(['acme-x-2']);
   });
+
+  it('keeps a plus model apart from its base model', () => {
+    const pair = { acme: { name: 'Acme', models: { a: model('acme-r', { name: 'Acme R' }), b: model('acme-r-plus', { name: 'Acme R+' }) } } };
+    const { dataset } = buildDataset(pair, LABS, { sourceUrl: 'https://models.dev/api.json', updatedAt: '2026-09-22T00:00:00.000Z' });
+    expect(dataset.models.map((m) => m.id).sort()).toEqual(['acme-r', 'acme-r-plus']);
+  });
+
+  it('breaks full ties the same way whatever order the feed lists them in', () => {
+    const a = model('acme-y', { name: 'Acme Y' });
+    const b = model('acme-y-20260101', { name: 'Acme Y' });
+    const pick = (models: Record<string, unknown>) =>
+      buildDataset({ acme: { name: 'Acme', models } }, LABS, { sourceUrl: 'https://models.dev/api.json', updatedAt: '2026-09-22T00:00:00.000Z' }).dataset.models.map((m) => m.id);
+    expect(pick({ a, b })).toEqual(['acme-y']);
+    expect(pick({ b, a })).toEqual(['acme-y']);
+  });
 });
 
 describe('rarity and access', () => {

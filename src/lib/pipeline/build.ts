@@ -19,7 +19,12 @@ export const RARITY_FLOORS = { uncommon: 2, rare: 8, holo: 20 } as const;
 
 const ALIAS = /(^|[-_ (])latest([-_ )]|$)/i;
 const PREVIEW = /(^|[-_ ])(preview|exp|experimental)([-_ ]|$)/i;
-export const normalizeName = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+/** Name used to spot the same model listed twice. `+` is spelled out: Command R+ is not Command R. */
+export const normalizeName = (s: string) =>
+  s
+    .toLowerCase()
+    .replace(/\+/g, 'plus')
+    .replace(/[^a-z0-9]/g, '');
 
 /**
  * URL slug: the last path segment of the id with everything but letters, digits, `_` and `-` turned into dashes.
@@ -126,8 +131,13 @@ function toModel(m: RawModel, lab: LabConfig, releaseDate: string): Model {
   };
 }
 
+/** Which of two listings to keep. Full ties go to the smaller key, so the pick never depends on feed order. */
 const isNewer = (a: Model, b: Model) =>
-  a.releaseDate > b.releaseDate || (a.releaseDate === b.releaseDate && (a.lastUpdated ?? '') > (b.lastUpdated ?? ''));
+  a.releaseDate !== b.releaseDate
+    ? a.releaseDate > b.releaseDate
+    : (a.lastUpdated ?? '') !== (b.lastUpdated ?? '')
+      ? (a.lastUpdated ?? '') > (b.lastUpdated ?? '')
+      : a.key < b.key;
 
 export interface BuildResult {
   dataset: Dataset;

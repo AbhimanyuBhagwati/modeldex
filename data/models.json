@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-23T00:02:12.635Z",
+  "updatedAt": "2026-09-23T00:07:28.171Z",
   "source": {
     "url": "https://models.dev/api.json",
     "providers": 223,
@@ -82,7 +82,7 @@
       "name": "Cohere",
       "color": "#6E9A2E",
       "docUrl": "https://docs.cohere.com/docs/models",
-      "count": 13
+      "count": 14
     },
     {
       "key": "minimax",
@@ -1413,6 +1413,46 @@
       }
     },
     {
+      "key": "cohere/command-r-plus-08-2024",
+      "id": "command-r-plus-08-2024",
+      "slug": "command-r-plus-08-2024",
+      "lab": "cohere",
+      "type": "text",
+      "name": "Command R+",
+      "description": "Cohere's RAG workhorse for long-context enterprise search and tool use",
+      "family": "command-r",
+      "releaseDate": "2024-08-30",
+      "lastUpdated": "2024-08-30",
+      "knowledge": "2024-06",
+      "context": 128000,
+      "maxOutput": 4000,
+      "price": {
+        "input": 2.5,
+        "output": 10,
+        "cacheRead": null,
+        "cacheWrite": null
+      },
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ],
+      "reasoning": false,
+      "toolCall": true,
+      "structuredOutput": false,
+      "attachment": false,
+      "openWeights": true,
+      "status": null,
+      "access": "open",
+      "rarity": "rare",
+      "set": 30,
+      "license": {
+        "name": "CC BY-NC 4.0",
+        "source": "lab-default"
+      }
+    },
+    {
       "key": "mistral/pixtral-12b",
       "id": "pixtral-12b",
       "slug": "pixtral-12b",
@@ -1447,7 +1487,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 30,
+      "set": 31,
       "license": {
         "name": "Apache 2.0",
         "source": "lab-default"
@@ -1487,7 +1527,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 31,
+      "set": 32,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -1528,7 +1568,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 32,
+      "set": 33,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -1569,7 +1609,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 33,
+      "set": 34,
       "license": {
         "name": "Qwen license",
         "source": "huggingface",
@@ -1610,7 +1650,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 34,
+      "set": 35,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -1652,7 +1692,7 @@
       "status": null,
       "access": "open",
       "rarity": "rare",
-      "set": 35,
+      "set": 36,
       "license": {
         "name": "Qwen license",
         "source": "huggingface",
@@ -1694,7 +1734,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 36,
+      "set": 37,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -1730,7 +1770,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 37,
+      "set": 38,
       "license": {
         "name": "CC BY-NC 4.0",
         "source": "huggingface",
@@ -1766,7 +1806,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 38,
+      "set": 39,
       "license": {
         "name": "CC BY-NC 4.0",
         "source": "huggingface",
@@ -1808,7 +1848,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 39,
+      "set": 40,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -1849,7 +1889,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 40,
+      "set": 41,
       "license": {
         "name": "Apache 2.0",
         "source": "lab-default"
@@ -1889,7 +1929,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 41,
+      "set": 42,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -1929,7 +1969,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 42,
+      "set": 43,
       "license": {
         "name": "Apache 2.0",
         "source": "lab-default"
@@ -1970,7 +2010,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 43,
+      "set": 44,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -2010,7 +2050,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 44,
+      "set": 45,
       "license": {
         "name": "NVIDIA Open Model license",
         "source": "lab-default"
@@ -2054,7 +2094,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 45,
+      "set": 46,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -2095,7 +2135,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 46,
+      "set": 47,
       "license": {
         "name": "CC BY-NC 4.0",
         "source": "lab-default"
@@ -2138,7 +2178,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 47,
+      "set": 48,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -2178,7 +2218,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 48,
+      "set": 49,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -2221,7 +2261,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 49,
+      "set": 50,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -2263,7 +2303,7 @@
       "status": "deprecated",
       "access": "paid",
       "rarity": "holo",
-      "set": 50,
+      "set": 51,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -2303,7 +2343,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 51,
+      "set": 52,
       "license": {
         "name": "Llama 3.3 license",
         "source": "huggingface",
@@ -2344,7 +2384,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 52,
+      "set": 53,
       "license": {
         "name": "Llama license",
         "source": "lab-default"
@@ -2384,7 +2424,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 53,
+      "set": 54,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -2425,7 +2465,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 54,
+      "set": 55,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -2466,7 +2506,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 55,
+      "set": 56,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -2509,7 +2549,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 56,
+      "set": 57,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -2550,7 +2590,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 57,
+      "set": 58,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -2591,7 +2631,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 58,
+      "set": 59,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -2632,7 +2672,7 @@
       "status": "deprecated",
       "access": "paid",
       "rarity": "uncommon",
-      "set": 59,
+      "set": 60,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -2672,7 +2712,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 60,
+      "set": 61,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -2712,7 +2752,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 61,
+      "set": 62,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -2752,7 +2792,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 62,
+      "set": 63,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -2792,7 +2832,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 63,
+      "set": 64,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -2836,7 +2876,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 64,
+      "set": 65,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -2876,7 +2916,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 65,
+      "set": 66,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -2916,7 +2956,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 66,
+      "set": 67,
       "license": {
         "name": "CC BY-NC 4.0",
         "source": "lab-default"
@@ -2952,7 +2992,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 67,
+      "set": 68,
       "license": {
         "name": "CC BY-NC 4.0",
         "source": "huggingface",
@@ -2989,7 +3029,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 68,
+      "set": 69,
       "license": {
         "name": "CC BY-NC 4.0",
         "source": "huggingface",
@@ -3030,7 +3070,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 69,
+      "set": 70,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -3070,7 +3110,7 @@
       "status": null,
       "access": "open",
       "rarity": "rare",
-      "set": 70,
+      "set": 71,
       "license": {
         "name": "CC BY-NC 4.0",
         "source": "lab-default"
@@ -3110,7 +3150,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 71,
+      "set": 72,
       "license": {
         "name": "Apache 2.0",
         "source": "lab-default"
@@ -3152,7 +3192,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 72,
+      "set": 73,
       "license": {
         "name": "NVIDIA Open Model license",
         "source": "lab-default"
@@ -3192,7 +3232,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 73,
+      "set": 74,
       "license": {
         "name": "Nvidia Open Model license",
         "source": "huggingface",
@@ -3234,7 +3274,7 @@
       "status": "deprecated",
       "access": "paid",
       "rarity": "holo",
-      "set": 74,
+      "set": 75,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -3275,7 +3315,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 75,
+      "set": 76,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -3315,7 +3355,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 76,
+      "set": 77,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -3356,7 +3396,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 77,
+      "set": 78,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -3397,7 +3437,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 78,
+      "set": 79,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -3438,7 +3478,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 79,
+      "set": 80,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -3479,7 +3519,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 80,
+      "set": 81,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -3520,7 +3560,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 81,
+      "set": 82,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -3562,7 +3602,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 82,
+      "set": 83,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -3604,7 +3644,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 83,
+      "set": 84,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -3646,7 +3686,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 84,
+      "set": 85,
       "license": {
         "name": "Llama 4 license",
         "source": "huggingface",
@@ -3688,7 +3728,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 85,
+      "set": 86,
       "license": {
         "name": "Llama license",
         "source": "lab-default"
@@ -3728,7 +3768,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 86,
+      "set": 87,
       "license": {
         "name": "NVIDIA Open Model license",
         "source": "lab-default"
@@ -3768,7 +3808,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 87,
+      "set": 88,
       "license": {
         "name": "Nvidia Open Model license",
         "source": "huggingface",
@@ -3810,7 +3850,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 88,
+      "set": 89,
       "license": {
         "name": "Nvidia Open Model license",
         "source": "huggingface",
@@ -3853,7 +3893,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 89,
+      "set": 90,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -3895,7 +3935,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 90,
+      "set": 91,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -3936,7 +3976,7 @@
       "status": "deprecated",
       "access": "paid",
       "rarity": "common",
-      "set": 91,
+      "set": 92,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -3976,7 +4016,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 92,
+      "set": 93,
       "license": {
         "name": "Llama 3.1 license",
         "source": "huggingface",
@@ -4019,7 +4059,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 93,
+      "set": 94,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -4060,7 +4100,7 @@
       "status": "deprecated",
       "access": "paid",
       "rarity": "uncommon",
-      "set": 94,
+      "set": 95,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -4096,7 +4136,7 @@
       "status": "deprecated",
       "access": "paid",
       "rarity": "promo",
-      "set": 95,
+      "set": 96,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -4136,7 +4176,7 @@
       "status": "preview",
       "access": "paid",
       "rarity": "rare",
-      "set": 96,
+      "set": 97,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -4176,7 +4216,7 @@
       "status": "preview",
       "access": "paid",
       "rarity": "holo",
-      "set": 97,
+      "set": 98,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -4216,7 +4256,7 @@
       "status": "deprecated",
       "access": "open",
       "rarity": "common",
-      "set": 98,
+      "set": 99,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -4258,7 +4298,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 99,
+      "set": 100,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -4301,7 +4341,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 100,
+      "set": 101,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -4341,7 +4381,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 101,
+      "set": 102,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -4381,7 +4421,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 102,
+      "set": 103,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -4422,7 +4462,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 103,
+      "set": 104,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -4462,7 +4502,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 104,
+      "set": 105,
       "license": {
         "name": "NVIDIA Open Model license",
         "source": "lab-default"
@@ -4504,7 +4544,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 105,
+      "set": 106,
       "license": {
         "name": "NVIDIA Open Model license",
         "source": "lab-default"
@@ -4548,7 +4588,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 106,
+      "set": 107,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -4592,7 +4632,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 107,
+      "set": 108,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -4636,7 +4676,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 108,
+      "set": 109,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -4677,7 +4717,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 109,
+      "set": 110,
       "license": {
         "name": "Apache 2.0",
         "source": "lab-default"
@@ -4717,7 +4757,7 @@
       "status": null,
       "access": "open",
       "rarity": "rare",
-      "set": 110,
+      "set": 111,
       "license": {
         "name": "Jamba Open Model license",
         "source": "lab-default"
@@ -4757,7 +4797,7 @@
       "status": "deprecated",
       "access": "open",
       "rarity": "uncommon",
-      "set": 111,
+      "set": 112,
       "license": {
         "name": "Apache 2.0",
         "source": "lab-default"
@@ -4797,7 +4837,7 @@
       "status": "deprecated",
       "access": "open",
       "rarity": "common",
-      "set": 112,
+      "set": 113,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -4838,7 +4878,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 113,
+      "set": 114,
       "license": {
         "name": "Apache 2.0",
         "source": "lab-default"
@@ -4878,7 +4918,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 114,
+      "set": 115,
       "license": {
         "name": "Nvidia Open Model license",
         "source": "huggingface",
@@ -4919,7 +4959,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 115,
+      "set": 116,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -4960,7 +5000,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 116,
+      "set": 117,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -5001,7 +5041,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 117,
+      "set": 118,
       "license": {
         "name": "MIT",
         "source": "lab-default"
@@ -5041,7 +5081,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 118,
+      "set": 119,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -5081,7 +5121,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 119,
+      "set": 120,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -5122,7 +5162,7 @@
       "status": null,
       "access": "open",
       "rarity": "rare",
-      "set": 120,
+      "set": 121,
       "license": {
         "name": "CC BY-NC 4.0",
         "source": "huggingface",
@@ -5164,7 +5204,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 121,
+      "set": 122,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -5205,7 +5245,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 122,
+      "set": 123,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -5246,7 +5286,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 123,
+      "set": 124,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -5288,7 +5328,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 124,
+      "set": 125,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -5330,7 +5370,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 125,
+      "set": 126,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -5371,7 +5411,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 126,
+      "set": 127,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -5411,7 +5451,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 127,
+      "set": 128,
       "license": {
         "name": "Nvidia Open Model license",
         "source": "huggingface",
@@ -5452,7 +5492,7 @@
       "status": null,
       "access": "open",
       "rarity": "rare",
-      "set": 128,
+      "set": 129,
       "license": {
         "name": "CC BY-NC 4.0",
         "source": "huggingface",
@@ -5495,7 +5535,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 129,
+      "set": 130,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -5535,7 +5575,7 @@
       "status": null,
       "access": "open",
       "rarity": "rare",
-      "set": 130,
+      "set": 131,
       "license": {
         "name": "CC BY-NC 4.0",
         "source": "huggingface",
@@ -5577,7 +5617,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 131,
+      "set": 132,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -5617,7 +5657,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 132,
+      "set": 133,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -5658,7 +5698,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 133,
+      "set": 134,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -5699,7 +5739,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 134,
+      "set": 135,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -5743,7 +5783,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 135,
+      "set": 136,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -5787,7 +5827,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 136,
+      "set": 137,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -5831,7 +5871,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 137,
+      "set": 138,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -5871,7 +5911,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 138,
+      "set": 139,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -5912,7 +5952,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 139,
+      "set": 140,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -5949,7 +5989,7 @@
       "status": null,
       "access": "paid",
       "rarity": "promo",
-      "set": 140,
+      "set": 141,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -5991,7 +6031,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 141,
+      "set": 142,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -6031,7 +6071,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 142,
+      "set": 143,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -6072,7 +6112,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 143,
+      "set": 144,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -6113,7 +6153,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 144,
+      "set": 145,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -6154,7 +6194,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 145,
+      "set": 146,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -6196,7 +6236,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 146,
+      "set": 147,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -6237,7 +6277,7 @@
       "status": "preview",
       "access": "paid",
       "rarity": "rare",
-      "set": 147,
+      "set": 148,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -6279,7 +6319,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 148,
+      "set": 149,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -6319,7 +6359,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 149,
+      "set": 150,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -6355,7 +6395,7 @@
       "status": "beta",
       "access": "paid",
       "rarity": "promo",
-      "set": 150,
+      "set": 151,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -6392,7 +6432,7 @@
       "status": "preview",
       "access": "paid",
       "rarity": "promo",
-      "set": 151,
+      "set": 152,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -6432,7 +6472,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 152,
+      "set": 153,
       "license": {
         "name": "Modified MIT",
         "source": "huggingface",
@@ -6473,7 +6513,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 153,
+      "set": 154,
       "license": {
         "name": "Nvidia Open Model license",
         "source": "huggingface",
@@ -6516,7 +6556,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 154,
+      "set": 155,
       "license": {
         "name": "NVIDIA Open Model license",
         "source": "lab-default"
@@ -6557,7 +6597,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 155,
+      "set": 156,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -6599,7 +6639,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 156,
+      "set": 157,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -6636,7 +6676,7 @@
       "status": null,
       "access": "paid",
       "rarity": "promo",
-      "set": 157,
+      "set": 158,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -6678,7 +6718,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 158,
+      "set": 159,
       "license": {
         "name": "NVIDIA Open Model license",
         "source": "lab-default"
@@ -6721,7 +6761,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 159,
+      "set": 160,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -6764,7 +6804,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 160,
+      "set": 161,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -6806,7 +6846,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 161,
+      "set": 162,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -6849,7 +6889,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 162,
+      "set": 163,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -6890,7 +6930,7 @@
       "status": "deprecated",
       "access": "open",
       "rarity": "uncommon",
-      "set": 163,
+      "set": 164,
       "license": {
         "name": "Apache 2.0",
         "source": "lab-default"
@@ -6931,7 +6971,7 @@
       "status": "deprecated",
       "access": "free",
       "rarity": "common",
-      "set": 164,
+      "set": 165,
       "license": {
         "name": "Apache 2.0",
         "source": "lab-default"
@@ -6972,7 +7012,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 165,
+      "set": 166,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -7013,7 +7053,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 166,
+      "set": 167,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -7053,7 +7093,7 @@
       "status": "deprecated",
       "access": "open",
       "rarity": "common",
-      "set": 167,
+      "set": 168,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -7098,7 +7138,7 @@
       "status": "preview",
       "access": "paid",
       "rarity": "uncommon",
-      "set": 168,
+      "set": 169,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -7138,7 +7178,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 169,
+      "set": 170,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -7179,7 +7219,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 170,
+      "set": 171,
       "license": {
         "name": "Modified MIT",
         "source": "huggingface",
@@ -7221,7 +7261,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 171,
+      "set": 172,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -7261,7 +7301,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 172,
+      "set": 173,
       "license": {
         "name": "Jamba Open Model license",
         "source": "lab-default"
@@ -7301,7 +7341,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 173,
+      "set": 174,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -7341,7 +7381,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 174,
+      "set": 175,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -7382,7 +7422,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 175,
+      "set": 176,
       "license": {
         "name": "MIT",
         "source": "lab-default"
@@ -7422,7 +7462,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 176,
+      "set": 177,
       "license": {
         "name": "Nvidia Open Model license",
         "source": "huggingface",
@@ -7461,7 +7501,7 @@
       "status": null,
       "access": "paid",
       "rarity": "promo",
-      "set": 177,
+      "set": 178,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -7499,7 +7539,7 @@
       "status": null,
       "access": "paid",
       "rarity": "promo",
-      "set": 178,
+      "set": 179,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -7539,7 +7579,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 179,
+      "set": 180,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -7582,7 +7622,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 180,
+      "set": 181,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -7624,7 +7664,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 181,
+      "set": 182,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -7666,7 +7706,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 182,
+      "set": 183,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -7707,7 +7747,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 183,
+      "set": 184,
       "license": {
         "name": "Nvidia Open Model license",
         "source": "huggingface",
@@ -7748,7 +7788,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 184,
+      "set": 185,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -7789,7 +7829,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 185,
+      "set": 186,
       "license": {
         "name": "Modified MIT",
         "source": "huggingface",
@@ -7830,7 +7870,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 186,
+      "set": 187,
       "license": {
         "name": "MIT",
         "source": "lab-default"
@@ -7872,7 +7912,7 @@
       "status": "preview",
       "access": "paid",
       "rarity": "uncommon",
-      "set": 187,
+      "set": 188,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -7914,7 +7954,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 188,
+      "set": 189,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -7956,7 +7996,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 189,
+      "set": 190,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -7998,7 +8038,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 190,
+      "set": 191,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -8041,7 +8081,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 191,
+      "set": 192,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -8084,7 +8124,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 192,
+      "set": 193,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -8126,7 +8166,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 193,
+      "set": 194,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -8161,7 +8201,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 194,
+      "set": 195,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -8197,7 +8237,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 195,
+      "set": 196,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -8242,7 +8282,7 @@
       "status": "preview",
       "access": "paid",
       "rarity": "rare",
-      "set": 196,
+      "set": 197,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -8286,7 +8326,7 @@
       "status": "preview",
       "access": "paid",
       "rarity": "rare",
-      "set": 197,
+      "set": 198,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -8329,7 +8369,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 198,
+      "set": 199,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -8373,7 +8413,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 199,
+      "set": 200,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -8417,7 +8457,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 200,
+      "set": 201,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -8458,7 +8498,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 201,
+      "set": 202,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -8500,7 +8540,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 202,
+      "set": 203,
       "license": {
         "name": "NVIDIA Open Model license",
         "source": "lab-default"
@@ -8535,7 +8575,7 @@
       "status": null,
       "access": "paid",
       "rarity": "promo",
-      "set": 203,
+      "set": 204,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -8579,7 +8619,7 @@
       "status": "deprecated",
       "access": "paid",
       "rarity": "common",
-      "set": 204,
+      "set": 205,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -8621,7 +8661,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 205,
+      "set": 206,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -8662,7 +8702,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 206,
+      "set": 207,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -8704,7 +8744,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 207,
+      "set": 208,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -8746,7 +8786,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 208,
+      "set": 209,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -8788,7 +8828,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 209,
+      "set": 210,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -8828,7 +8868,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 210,
+      "set": 211,
       "license": {
         "name": "NVIDIA Open Model license",
         "source": "lab-default"
@@ -8868,7 +8908,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 211,
+      "set": 212,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -8909,7 +8949,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 212,
+      "set": 213,
       "license": {
         "name": "Apache 2.0",
         "source": "lab-default"
@@ -8950,7 +8990,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 213,
+      "set": 214,
       "license": {
         "name": "NVIDIA Open Model license",
         "source": "lab-default"
@@ -8991,7 +9031,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 214,
+      "set": 215,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -9032,7 +9072,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 215,
+      "set": 216,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -9076,7 +9116,7 @@
       "status": "deprecated",
       "access": "paid",
       "rarity": "common",
-      "set": 216,
+      "set": 217,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -9116,7 +9156,7 @@
       "status": "deprecated",
       "access": "paid",
       "rarity": "common",
-      "set": 217,
+      "set": 218,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -9156,7 +9196,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 218,
+      "set": 219,
       "license": {
         "name": "Custom license",
         "source": "huggingface",
@@ -9197,7 +9237,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 219,
+      "set": 220,
       "license": {
         "name": "MIT",
         "source": "lab-default"
@@ -9239,7 +9279,7 @@
       "status": "preview",
       "access": "free",
       "rarity": "common",
-      "set": 220,
+      "set": 221,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -9281,7 +9321,7 @@
       "status": "preview",
       "access": "free",
       "rarity": "common",
-      "set": 221,
+      "set": 222,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -9325,7 +9365,7 @@
       "status": "preview",
       "access": "paid",
       "rarity": "uncommon",
-      "set": 222,
+      "set": 223,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -9365,7 +9405,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 223,
+      "set": 224,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -9406,7 +9446,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 224,
+      "set": 225,
       "license": {
         "name": "Nvidia Open Model license",
         "source": "huggingface",
@@ -9443,7 +9483,7 @@
       "status": "preview",
       "access": "paid",
       "rarity": "promo",
-      "set": 225,
+      "set": 226,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -9486,7 +9526,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 226,
+      "set": 227,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -9526,7 +9566,7 @@
       "status": "beta",
       "access": "open",
       "rarity": "common",
-      "set": 227,
+      "set": 228,
       "license": {
         "name": "Openmdw 1.1 license",
         "source": "huggingface",
@@ -9563,7 +9603,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 228,
+      "set": 229,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -9600,7 +9640,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 229,
+      "set": 230,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -9643,7 +9683,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 230,
+      "set": 231,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -9683,7 +9723,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 231,
+      "set": 232,
       "license": {
         "name": "Apache 2.0",
         "source": "lab-default"
@@ -9721,7 +9761,7 @@
       "status": null,
       "access": "paid",
       "rarity": "promo",
-      "set": 232,
+      "set": 233,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -9761,7 +9801,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 233,
+      "set": 234,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -9805,7 +9845,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 234,
+      "set": 235,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -9847,7 +9887,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 235,
+      "set": 236,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -9887,7 +9927,7 @@
       "status": "preview",
       "access": "paid",
       "rarity": "holo",
-      "set": 236,
+      "set": 237,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -9929,7 +9969,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 237,
+      "set": 238,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -9969,7 +10009,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 238,
+      "set": 239,
       "license": {
         "name": "Nvidia Nemotron Open Model license",
         "source": "huggingface",
@@ -10005,7 +10045,7 @@
       "status": null,
       "access": "paid",
       "rarity": "promo",
-      "set": 239,
+      "set": 240,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -10047,7 +10087,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 240,
+      "set": 241,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -10090,7 +10130,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 241,
+      "set": 242,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -10131,7 +10171,7 @@
       "status": "preview",
       "access": "free",
       "rarity": "common",
-      "set": 242,
+      "set": 243,
       "license": {
         "name": "Tencent Hunyuan license",
         "source": "lab-default"
@@ -10171,7 +10211,7 @@
       "status": "preview",
       "access": "paid",
       "rarity": "uncommon",
-      "set": 243,
+      "set": 244,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -10216,7 +10256,7 @@
       "status": "preview",
       "access": "paid",
       "rarity": "rare",
-      "set": 244,
+      "set": 245,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -10261,7 +10301,7 @@
       "status": "preview",
       "access": "paid",
       "rarity": "rare",
-      "set": 245,
+      "set": 246,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -10302,7 +10342,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 246,
+      "set": 247,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -10344,7 +10384,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 247,
+      "set": 248,
       "license": {
         "name": "Modified MIT",
         "source": "huggingface",
@@ -10389,7 +10429,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 248,
+      "set": 249,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -10432,7 +10472,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 249,
+      "set": 250,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -10473,7 +10513,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 250,
+      "set": 251,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -10517,7 +10557,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 251,
+      "set": 252,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -10560,7 +10600,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 252,
+      "set": 253,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -10602,7 +10642,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 253,
+      "set": 254,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -10637,7 +10677,7 @@
       "status": null,
       "access": "paid",
       "rarity": "promo",
-      "set": 254,
+      "set": 255,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -10679,7 +10719,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 255,
+      "set": 256,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -10719,7 +10759,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 256,
+      "set": 257,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -10763,7 +10803,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 257,
+      "set": 258,
       "license": {
         "name": "NVIDIA Open Model license",
         "source": "lab-default"
@@ -10804,7 +10844,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 258,
+      "set": 259,
       "license": {
         "name": "Apache 2.0",
         "source": "lab-default"
@@ -10848,7 +10888,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 259,
+      "set": 260,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -10892,7 +10932,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 260,
+      "set": 261,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -10933,7 +10973,7 @@
       "status": null,
       "access": "open",
       "rarity": "rare",
-      "set": 261,
+      "set": 262,
       "license": {
         "name": "CC BY-NC 4.0",
         "source": "lab-default"
@@ -10973,7 +11013,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 262,
+      "set": 263,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -11015,7 +11055,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 263,
+      "set": 264,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -11059,7 +11099,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 264,
+      "set": 265,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -11101,7 +11141,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 265,
+      "set": 266,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -11143,7 +11183,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 266,
+      "set": 267,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -11182,7 +11222,7 @@
       "status": null,
       "access": "paid",
       "rarity": "promo",
-      "set": 267,
+      "set": 268,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -11224,7 +11264,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 268,
+      "set": 269,
       "license": {
         "name": "MiniMax Community license",
         "source": "huggingface",
@@ -11267,7 +11307,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 269,
+      "set": 270,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -11307,7 +11347,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 270,
+      "set": 271,
       "license": {
         "name": "NVIDIA Open Model license",
         "source": "lab-default"
@@ -11349,7 +11389,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 271,
+      "set": 272,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -11389,7 +11429,7 @@
       "status": "beta",
       "access": "open",
       "rarity": "uncommon",
-      "set": 272,
+      "set": 273,
       "license": {
         "name": "MIT",
         "source": "lab-default"
@@ -11430,7 +11470,7 @@
       "status": "preview",
       "access": "paid",
       "rarity": "holo",
-      "set": 273,
+      "set": 274,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -11470,7 +11510,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 274,
+      "set": 275,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -11513,7 +11553,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 275,
+      "set": 276,
       "license": {
         "name": "Modified MIT",
         "source": "huggingface",
@@ -11556,7 +11596,7 @@
       "status": null,
       "access": "open",
       "rarity": "rare",
-      "set": 276,
+      "set": 277,
       "license": {
         "name": "Modified MIT",
         "source": "lab-default"
@@ -11596,7 +11636,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 277,
+      "set": 278,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -11633,7 +11673,7 @@
       "status": null,
       "access": "paid",
       "rarity": "promo",
-      "set": 278,
+      "set": 279,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -11674,7 +11714,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 279,
+      "set": 280,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -11716,7 +11756,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 280,
+      "set": 281,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -11758,7 +11798,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 281,
+      "set": 282,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -11800,7 +11840,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 282,
+      "set": 283,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -11842,7 +11882,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 283,
+      "set": 284,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -11884,7 +11924,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 284,
+      "set": 285,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -11926,7 +11966,7 @@
       "status": "preview",
       "access": "paid",
       "rarity": "rare",
-      "set": 285,
+      "set": 286,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -11966,7 +12006,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 286,
+      "set": 287,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -12008,7 +12048,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 287,
+      "set": 288,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -12048,7 +12088,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 288,
+      "set": 289,
       "license": {
         "name": "Openmdw 1.1 license",
         "source": "huggingface",
@@ -12092,7 +12132,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 289,
+      "set": 290,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -12132,7 +12172,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 290,
+      "set": 291,
       "license": {
         "name": "Tencent Hunyuan license",
         "source": "lab-default"
@@ -12174,7 +12214,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 291,
+      "set": 292,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -12216,7 +12256,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 292,
+      "set": 293,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -12258,7 +12298,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 293,
+      "set": 294,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -12300,7 +12340,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 294,
+      "set": 295,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -12342,7 +12382,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 295,
+      "set": 296,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -12383,7 +12423,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 296,
+      "set": 297,
       "license": {
         "name": "Open license",
         "source": "lab-default"
@@ -12425,7 +12465,7 @@
       "status": null,
       "access": "open",
       "rarity": "rare",
-      "set": 297,
+      "set": 298,
       "license": {
         "name": "Kimi K3 license",
         "source": "huggingface",
@@ -12470,7 +12510,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 298,
+      "set": 299,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -12514,7 +12554,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 299,
+      "set": 300,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -12554,7 +12594,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 300,
+      "set": 301,
       "license": {
         "name": "Openmdw 1.1 license",
         "source": "huggingface",
@@ -12597,7 +12637,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 301,
+      "set": 302,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -12640,7 +12680,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 302,
+      "set": 303,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -12682,7 +12722,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 303,
+      "set": 304,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -12726,7 +12766,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 304,
+      "set": 305,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -12770,7 +12810,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 305,
+      "set": 306,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -12810,7 +12850,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 306,
+      "set": 307,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -12850,7 +12890,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 307,
+      "set": 308,
       "license": {
         "name": "NVIDIA Open Model license",
         "source": "lab-default"
@@ -12891,7 +12931,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 308,
+      "set": 309,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -12931,7 +12971,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 309,
+      "set": 310,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -12974,7 +13014,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 310,
+      "set": 311,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -13018,7 +13058,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 311,
+      "set": 312,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -13058,7 +13098,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 312,
+      "set": 313,
       "license": {
         "name": "GLM 5.3 license",
         "source": "huggingface",
@@ -13102,7 +13142,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 313,
+      "set": 314,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -13145,7 +13185,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 314,
+      "set": 315,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -13185,7 +13225,7 @@
       "status": "preview",
       "access": "open",
       "rarity": "uncommon",
-      "set": 315,
+      "set": 316,
       "license": {
         "name": "Tencent Hunyuan license",
         "source": "lab-default"
@@ -13227,7 +13267,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 316,
+      "set": 317,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -13271,7 +13311,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 317,
+      "set": 318,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -13315,7 +13355,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 318,
+      "set": 319,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -13359,7 +13399,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 319,
+      "set": 320,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -13401,7 +13441,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 320,
+      "set": 321,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -13441,7 +13481,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 321,
+      "set": 322,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -13482,7 +13522,7 @@
       "status": "deprecated",
       "access": "open",
       "rarity": "common",
-      "set": 322,
+      "set": 323,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -13524,7 +13564,7 @@
       "status": "deprecated",
       "access": "open",
       "rarity": "common",
-      "set": 323,
+      "set": 324,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -13566,7 +13606,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 324,
+      "set": 325,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -13609,7 +13649,7 @@
       "status": "preview",
       "access": "paid",
       "rarity": "uncommon",
-      "set": 325,
+      "set": 326,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -13652,7 +13692,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 326,
+      "set": 327,
       "license": {
         "name": "MIT",
         "source": "lab-default"
@@ -13694,7 +13734,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 327,
+      "set": 328,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -13737,7 +13777,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 328,
+      "set": 329,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -13779,7 +13819,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 329,
+      "set": 330,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -13821,7 +13861,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 330,
+      "set": 331,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -13863,7 +13903,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 331,
+      "set": 332,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -13907,7 +13947,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 332,
+      "set": 333,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -13951,7 +13991,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 333,
+      "set": 334,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
