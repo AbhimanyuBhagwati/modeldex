@@ -1,6 +1,10 @@
-/** The deploy workflow sets this from GitHub Pages, including the /<repo> path. */
+/**
+ * The site's public address, for canonical links, the sitemap, share images, and the feed.
+ * GitHub Pages builds pass it in (with the /<repo> path); Vercel builds read the project's production domain.
+ */
 function siteUrl(): string {
-  return (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000').replace(/\/$/, '');
+  const vercel = process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  return (process.env.NEXT_PUBLIC_SITE_URL || (vercel ? `https://${vercel}` : 'http://localhost:3000')).replace(/\/$/, '');
 }
 
 export const SITE = {

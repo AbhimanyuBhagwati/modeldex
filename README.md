@@ -50,6 +50,13 @@ The AI Terrarium (`/terrarium/`) draws every card as a creature on a 2D canvas, 
 
 Race the machine (`/race/`) pits you against three models typing the same passage. Each starts after its measured first-token delay and writes at its measured tokens a second, from Hugging Face's own timings of its fastest host; a token counts as four characters. Only models Hugging Face has timed can race.
 
+## Hosting on Vercel
+
+The same static build also runs on [Vercel](https://vercel.com), which gives a clean address like `modeldex.vercel.app`. Import the GitHub repo at vercel.com/new and keep the defaults (Next.js preset, no environment variables). Vercel rebuilds on every push to `main`, including the daily data commits, so it stays as fresh as the GitHub Pages copy.
+
+- Canonical links, the sitemap, share images, and the feed use Vercel's production domain automatically (`VERCEL_PROJECT_PRODUCTION_URL`). Set `NEXT_PUBLIC_SITE_URL` to override it, for example after adding a custom domain.
+- Voting only works from origins listed in `ALLOWED_ORIGINS` in `worker/wrangler.jsonc`. If Vercel gives the project a different address, add it there and run `npm run deploy` in `worker/`.
+
 ## One-time setup
 
 Already done for this repo; here for anyone forking it.

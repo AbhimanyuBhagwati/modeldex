@@ -12,8 +12,9 @@
     }
   ],
   "vars": {
-    // Sites allowed to vote. Reads are open to anyone.
-    "ALLOWED_ORIGINS": "https://abhimanyubhagwati.github.io,http://localhost:3000,http://127.0.0.1:8765"
+    // Sites allowed to vote. Reads are open to anyone. `*` matches one run of letters, digits, and dashes,
+    // so the second Vercel entry covers this project's preview deployments on the `abhi` team only.
+    "ALLOWED_ORIGINS": "https://abhimanyubhagwati.github.io,https://modeldex.vercel.app,https://modeldex-*-abhi.vercel.app,http://localhost:3000,http://127.0.0.1:8765"
   },
   // Daily cleanup of vote rows older than a week.
   "triggers": { "crons": ["17 3 * * *"] }

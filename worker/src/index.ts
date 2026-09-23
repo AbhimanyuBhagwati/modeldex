@@ -41,9 +41,16 @@ async function voterId(ip: string, salt: string): Promise<string> {
   return [...new Uint8Array(digest)].slice(0, 16).map((b) => b.toString(16).padStart(2, '0')).join('');
 }
 
+/** An allowed origin may use `*` for one run of letters, digits, and dashes, for preview deployments. */
+function allows(pattern: string, origin: string): boolean {
+  if (!pattern.includes('*')) return pattern === origin;
+  const re = new RegExp(`^${pattern.split('*').map((part) => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('[a-z0-9-]+')}$`);
+  return re.test(origin);
+}
+
 function corsHeaders(origin: string | null, env: Env): Record<string, string> {
-  const allowed = env.ALLOWED_ORIGINS.split(',').map((s) => s.trim());
-  if (!origin || !allowed.includes(origin)) return { Vary: 'Origin' };
+  const allowed = env.ALLOWED_ORIGINS.split(',').map((s) => s.trim()).filter(Boolean);
+  if (!origin || !allowed.some((p) => allows(p, origin))) return { Vary: 'Origin' };
   return {
     'Access-Control-Allow-Origin': origin,
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { SiteFooter, SiteHeader } from '@/components/chrome';
 import { getDataset } from '@/lib/data';
+import { withBase } from '@/lib/site';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -36,17 +37,17 @@ const SECTIONS: { title: string; lede: string; items: Credit[] }[] = [
         use: 'Ratings from Arena’s text, coding, math, writing, web dev, vision, image, and video leaderboards, where people vote between anonymous answers.',
         license: 'CC BY 4.0',
       },
-      { name: 'The labs themselves', href: 'https://abhimanyubhagwati.github.io/modeldex/labs/', use: 'Every card links to its lab’s own docs or Hugging Face page, the original source.', license: 'Linked' },
+      { name: 'The labs themselves', href: withBase('/labs/'), use: 'Every card links to its lab’s own docs or Hugging Face page, the original source.', license: 'Linked' },
     ],
   },
   {
     title: 'Art',
     lede: 'Nothing here is a photo or stock image. Every picture is drawn by code, on your screen.',
     items: [
-      { name: 'Card art and card back', href: 'https://abhimanyubhagwati.github.io/modeldex/', use: 'Generated per model from its lab’s style and its stats, as SVG.', license: 'Original' },
-      { name: 'The AI Galaxy', href: 'https://abhimanyubhagwati.github.io/modeldex/galaxy/', use: 'Stars, dust lanes, nebula, and glow are WebGL shaders and particles.', license: 'Original' },
-      { name: 'The AI Terrarium', href: 'https://abhimanyubhagwati.github.io/modeldex/terrarium/', use: 'Every creature, egg, fossil, tree, and sky is drawn by code on a canvas from the model’s own stats.', license: 'Original' },
-      { name: 'Evolution effects', href: 'https://abhimanyubhagwati.github.io/modeldex/evolution/', use: 'Silhouettes, flashes, and particles, drawn with SVG, CSS, and canvas.', license: 'Original' },
+      { name: 'Card art and card back', href: withBase('/'), use: 'Generated per model from its lab’s style and its stats, as SVG.', license: 'Original' },
+      { name: 'The AI Galaxy', href: withBase('/galaxy/'), use: 'Stars, dust lanes, nebula, and glow are WebGL shaders and particles.', license: 'Original' },
+      { name: 'The AI Terrarium', href: withBase('/terrarium/'), use: 'Every creature, egg, fossil, tree, and sky is drawn by code on a canvas from the model’s own stats.', license: 'Original' },
+      { name: 'Evolution effects', href: withBase('/evolution/'), use: 'Silhouettes, flashes, and particles, drawn with SVG, CSS, and canvas.', license: 'Original' },
       { name: 'webgl-noise', href: 'https://github.com/stegu/webgl-noise', use: 'Simplex noise by Ian McEwan (Ashima Arts) and Stefan Gustavson, shaping the galaxy’s clouds and arms.', license: 'MIT' },
     ],
   },
