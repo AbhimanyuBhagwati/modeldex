@@ -1,8 +1,10 @@
 import { describe, expect, it } from 'vitest';
+import changes from '../../data/changes.json';
 import raw from '../../data/models.json';
+import offers from '../../data/offers.json';
 import { LABS } from '@/config/labs';
 import { applyFilters, DEFAULT_FILTERS, filtersFromParams, filtersToParams } from './filter';
-import { datasetSchema } from './pipeline/schema';
+import { changeLogSchema, datasetSchema, offersFileSchema } from './pipeline/schema';
 import type { Dataset } from './types';
 
 /** Guards the committed data file, which the site trusts without re-checking. */
@@ -29,6 +31,22 @@ describe('committed dataset', () => {
     const open = applyFilters(d.models, { ...DEFAULT_FILTERS, access: 'open' }, names);
     expect(open.length).toBeGreaterThan(0);
     expect(open.every((m) => m.access === 'open')).toBe(true);
+  });
+});
+
+describe('committed offers and change log', () => {
+  it('match their schemas', () => {
+    expect(offersFileSchema.safeParse(offers).error?.issues.slice(0, 5) ?? []).toEqual([]);
+    expect(changeLogSchema.safeParse(changes).error?.issues.slice(0, 5) ?? []).toEqual([]);
+  });
+
+  it('only list cards and providers that exist', () => {
+    const keys = new Set((raw as unknown as Dataset).models.map((m) => m.key));
+    const file = offers as unknown as { providers: Record<string, unknown>; models: Record<string, { offers: { provider: string }[] }> };
+    for (const [key, entry] of Object.entries(file.models)) {
+      expect(keys.has(key)).toBe(true);
+      for (const o of entry.offers) expect(file.providers[o.provider]).toBeDefined();
+    }
   });
 });
 

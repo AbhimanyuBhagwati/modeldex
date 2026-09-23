@@ -1,15 +1,21 @@
 import { appendFile, mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import type { ZodType } from 'zod';
 import { LABS, LICENSE_OVERRIDES } from '@/config/labs';
 import { buildDataset } from '@/lib/pipeline/build';
-import { diffDatasets, markdownReport, sameContent, summarize } from '@/lib/pipeline/diff';
+import { changeEvents, diffDatasets, markdownReport, mergeChangeLog, sameContent, summarize } from '@/lib/pipeline/diff';
 import { HUB_MIN_DOWNLOADS, addHubModels } from '@/lib/pipeline/hub';
 import { resolveLicenses } from '@/lib/pipeline/licenses';
-import { datasetSchema } from '@/lib/pipeline/schema';
-import type { Dataset } from '@/lib/types';
+import { buildHostOffers, buildOffers, joinOffers } from '@/lib/pipeline/offers';
+import { changeLogSchema, datasetSchema, offersFileSchema } from '@/lib/pipeline/schema';
+import type { ChangeLog, Dataset, HostOffer, OffersFile } from '@/lib/types';
 
 const SOURCE_URL = 'https://models.dev/api.json';
 const OUT_FILE = path.join(process.cwd(), 'data', 'models.json');
+const OFFERS_FILE = path.join(process.cwd(), 'data', 'offers.json');
+const CHANGES_FILE = path.join(process.cwd(), 'data', 'changes.json');
+/** Hugging Face's list of models its Inference Providers serve, with each host's price and speed. */
+const ROUTER_URL = 'https://router.huggingface.co/v1/models';
 /** A sync that produces fewer models than this is treated as a broken upstream, not real news. */
 const MIN_MODELS = 100;
 const MAX_DROP = 0.25;
@@ -49,6 +55,17 @@ async function readPrevious(): Promise<Dataset | null> {
     return null;
   }
 }
+
+async function readData<T>(file: string, schema: ZodType): Promise<T | null> {
+  try {
+    const parsed = schema.safeParse(JSON.parse(await readFile(file, 'utf8')));
+    return parsed.success ? (parsed.data as T) : null;
+  } catch {
+    return null;
+  }
+}
+
+const writeData = (file: string, data: unknown) => writeFile(file, JSON.stringify(data, null, 2) + '\n');
 
 async function ghOutput(values: Record<string, string>) {
   const file = process.env.GITHUB_OUTPUT;
@@ -95,27 +112,60 @@ async function main() {
   const notes = [...built.issues];
   if (stats.failedOrgs.length) notes.push(`Hugging Face lookup failed for ${stats.failedOrgs.join(', ')}; kept earlier licenses`);
   if (hub.failedOrgs.length) notes.push(`Hugging Face listing failed for ${hub.failedOrgs.join(', ')}; kept earlier cards`);
+
+  // Where to run each card: every models.dev provider that sells it, plus Hugging Face's hosts for open models.
+  const previousOffers = await readData<OffersFile>(OFFERS_FILE, offersFileSchema);
+  let hosts: Record<string, HostOffer[]>;
+  try {
+    hosts = buildHostOffers(await fetchJson(ROUTER_URL, 2), dataset);
+  } catch (e) {
+    notes.push(`Hugging Face router failed (${e instanceof Error ? e.message : e}); kept earlier host prices`);
+    hosts = Object.fromEntries(Object.entries(previousOffers?.models ?? {}).flatMap(([k, v]) => (v.hf.length ? [[k, v.hf]] : [])));
+  }
+  const offers = joinOffers(buildOffers(raw, dataset, LABS), hosts, dataset.updatedAt);
+  const offersCheck = offersFileSchema.safeParse(offers);
+  if (!offersCheck.success) fail(`the provider offers failed validation: ${offersCheck.error.issues[0]?.path.join('.')}: ${offersCheck.error.issues[0]?.message}`);
   for (const n of notes) console.warn(`  note: ${n}`);
   console.log(
     `Built ${dataset.models.length} models from ${dataset.labs.length} labs ` +
       `(licenses: ${stats.huggingface} from Hugging Face, ${stats.labDefault} lab default, ${stats.override} override)`,
   );
   console.log(`Hugging Face: ${hub.repos.toLocaleString('en-US')} repos across ${hub.orgs} orgs, ${hub.cards} open-model cards, ${hub.matched} models.dev cards with stats`);
+  const offerCount = Object.values(offers.models).reduce((n, m) => n + m.offers.length + m.hf.length, 0);
+  console.log(`Where to run it: ${offerCount.toLocaleString('en-US')} offers for ${Object.keys(offers.models).length} cards from ${Object.keys(offers.providers).length} providers`);
 
-  if (previous && sameContent(previous, dataset)) {
-    console.log(`No changes since ${previous.updatedAt}. Nothing written. (${Date.now() - started} ms)`);
+  const modelsChanged = !previous || !sameContent(previous, dataset);
+  const offersChanged = !previousOffers || !sameContent(previousOffers, offers);
+  if (!modelsChanged && !offersChanged) {
+    console.log(`No changes since ${previous!.updatedAt}. Nothing written. (${Date.now() - started} ms)`);
     await ghOutput({ changed: 'false' });
     await ghSummary('## Model sync: no changes');
     return;
   }
 
-  const diff = diffDatasets(previous, dataset);
   await mkdir(path.dirname(OUT_FILE), { recursive: true });
-  await writeFile(OUT_FILE, JSON.stringify(dataset, null, 2) + '\n');
-  const title = summarize(diff);
-  console.log(`Wrote ${path.relative(process.cwd(), OUT_FILE)}: ${title} (${Date.now() - started} ms)`);
+  const written: string[] = [];
+  let title = 'provider prices';
+  const diff = diffDatasets(previous, dataset);
+  if (modelsChanged) {
+    await writeData(OUT_FILE, dataset);
+    title = summarize(diff);
+    written.push(path.relative(process.cwd(), OUT_FILE));
+    // The log behind "New this week" and the RSS feed.
+    const previousLog = await readData<ChangeLog>(CHANGES_FILE, changeLogSchema);
+    const log = mergeChangeLog(previousLog, changeEvents(previous, diff, dataset.updatedAt.slice(0, 10)), dataset.updatedAt.slice(0, 10));
+    if (!previousLog || JSON.stringify(previousLog) !== JSON.stringify(log)) {
+      await writeData(CHANGES_FILE, log);
+      written.push(path.relative(process.cwd(), CHANGES_FILE));
+    }
+  }
+  if (offersChanged) {
+    await writeData(OFFERS_FILE, offers);
+    written.push(path.relative(process.cwd(), OFFERS_FILE));
+  }
+  console.log(`Wrote ${written.join(', ')}: ${title} (${Date.now() - started} ms)`);
   await ghOutput({ changed: 'true', title });
-  await ghSummary(markdownReport(diff, dataset, notes));
+  await ghSummary(modelsChanged ? markdownReport(diff, dataset, notes) : `## Model sync: provider prices changed\n\n${notes.map((n) => `- ${n}`).join('\n')}`);
 }
 
 main().catch((e) => fail(e instanceof Error ? e.message : String(e)));

@@ -1,0 +1,14 @@
+{
+  "name": "modeldex-votes",
+  "private": true,
+  "description": "Anonymous voting for Modeldex: a Cloudflare Worker and a D1 database.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:init": "wrangler d1 execute modeldex-votes --remote --file schema.sql",
+    "db:init:local": "wrangler d1 execute modeldex-votes --local --file schema.sql"
+  },
+  "devDependencies": {
+    "wrangler": "4.136.3"
+  }
+}

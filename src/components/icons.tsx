@@ -27,13 +27,15 @@ export function IconSprite() {
         <symbol id="i-back" viewBox="0 0 16 16"><path d="M9.5 4L5.5 8l4 4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></symbol>
         <symbol id="i-sliders" viewBox="0 0 16 16"><path d="M2.5 4.5h3.1M8.9 4.5h4.6M2.5 11.5h7.1M12.9 11.5h.6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /><circle cx="7.25" cy="4.5" r="1.65" fill="none" stroke="currentColor" strokeWidth="1.6" /><circle cx="11.25" cy="11.5" r="1.65" fill="none" stroke="currentColor" strokeWidth="1.6" /></symbol>
         <symbol id="i-sort" viewBox="0 0 16 16"><path d="M5 12.5v-9M2.8 5.7L5 3.5l2.2 2.2M11 3.5v9M8.8 10.3l2.2 2.2 2.2-2.2" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></symbol>
+        <symbol id="i-heart" viewBox="0 0 16 16"><path d="M8 13.6S2.4 10.3 2.4 6.3a2.9 2.9 0 0 1 5.6-1.1 2.9 2.9 0 0 1 5.6 1.1c0 4-5.6 7.3-5.6 7.3z" fill="currentColor" /></symbol>
+        <symbol id="i-rss" viewBox="0 0 16 16"><path d="M3.5 7.2a5.3 5.3 0 0 1 5.3 5.3M3.5 3.5a9 9 0 0 1 9 9" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" /><circle cx="4.2" cy="11.8" r="1.3" fill="currentColor" /></symbol>
         <symbol id="i-link" viewBox="0 0 16 16"><path d="M6.8 9.2a2.6 2.6 0 0 0 3.7 0l2-2a2.6 2.6 0 0 0-3.7-3.7l-.6.6M9.2 6.8a2.6 2.6 0 0 0-3.7 0l-2 2a2.6 2.6 0 0 0 3.7 3.7l.6-.6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></symbol>
       </defs>
     </svg>
   );
 }
 
-export type IconName = 'plus' | 'check' | 'x' | 'search' | 'out' | 'chev' | 'back' | 'link' | 'sliders' | 'sort';
+export type IconName = 'plus' | 'check' | 'x' | 'search' | 'out' | 'chev' | 'back' | 'link' | 'sliders' | 'sort' | 'heart' | 'rss';
 
 export const Icon = ({ name, className }: { name: IconName; className?: string }) => (
   <svg className={className} aria-hidden="true" focusable="false">

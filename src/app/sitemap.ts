@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { getDataset } from '@/lib/data';
-import { SITE, modelHref } from '@/lib/site';
+import { SITE, VOTES_API, modelHref } from '@/lib/site';
 
 export const dynamic = 'force-static';
 
@@ -10,6 +10,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${SITE.url}/`, lastModified: updated, changeFrequency: 'daily', priority: 1 },
     { url: `${SITE.url}/battle/`, lastModified: updated, changeFrequency: 'daily', priority: 0.6 },
+    { url: `${SITE.url}/new/`, lastModified: updated, changeFrequency: 'daily', priority: 0.8 },
+    { url: `${SITE.url}/labs/`, lastModified: updated, changeFrequency: 'weekly', priority: 0.6 },
+    ...(VOTES_API ? [{ url: `${SITE.url}/favorites/`, lastModified: updated, changeFrequency: 'daily' as const, priority: 0.6 }] : []),
+    ...data.labs.map((l) => ({ url: `${SITE.url}/labs/${l.key}/`, lastModified: updated, changeFrequency: 'weekly' as const, priority: 0.6 })),
     ...data.models.map((m) => ({
       url: `${SITE.url}${modelHref(m)}`,
       lastModified: new Date(`${m.lastUpdated ?? m.releaseDate}T00:00:00Z`),

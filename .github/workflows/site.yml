@@ -1,6 +1,6 @@
 name: Sync and deploy
 
-# Every morning: pull models.dev and Hugging Face, commit data/models.json if anything changed,
+# Every morning: pull models.dev and Hugging Face, commit data/*.json if anything changed,
 # then build the static site and publish it to GitHub Pages. A push to main publishes too.
 on:
   push:
@@ -56,7 +56,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/models.json
+          git add data/
           git commit -m "data: ${TITLE}" -m "Automated daily sync from models.dev."
           git pull --rebase
           git push

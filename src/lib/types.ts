@@ -110,3 +110,60 @@ export interface Dataset {
   labs: LabSummary[];
   models: Model[];
 }
+
+/** One provider selling a model through its API, from models.dev. Prices are USD per million tokens. */
+export interface Offer {
+  /** models.dev provider id; its name and docs link are in `OffersFile.providers`. */
+  provider: string;
+  /** The model's id at that provider. */
+  model: string;
+  input: number | null;
+  output: number | null;
+  context: number | null;
+  /** Sold by the lab that made the model. */
+  official: boolean;
+}
+
+/** One Hugging Face Inference Provider serving an open model, from the Hugging Face router. */
+export interface HostOffer {
+  provider: string;
+  name: string;
+  /** The model's Hugging Face page with this provider selected. */
+  url: string;
+  input: number | null;
+  output: number | null;
+  context: number | null;
+  /** Tokens per second, measured by Hugging Face. */
+  throughput: number | null;
+  latencyMs: number | null;
+  tools: boolean;
+}
+
+/** `data/offers.json`: where to run each card. Kept out of `models.json` so the binder stays light. */
+export interface OffersFile {
+  version: 1;
+  updatedAt: string;
+  /** Every models.dev provider that sells at least one card. */
+  providers: Record<string, { name: string; url: string | null }>;
+  models: Record<string, { offers: Offer[]; hf: HostOffer[] }>;
+}
+
+export type ChangeKind = 'added' | 'removed' | 'price' | 'retired';
+
+/** One thing the daily sync noticed. `data/changes.json` keeps the last 90 days, newest first. */
+export interface ChangeEvent {
+  /** YYYY-MM-DD, the sync's day. */
+  date: string;
+  kind: ChangeKind;
+  key: string;
+  name: string;
+  lab: string;
+  /** For price changes: per million tokens, before and after. */
+  before?: { input: number | null; output: number | null };
+  after?: { input: number | null; output: number | null };
+}
+
+export interface ChangeLog {
+  version: 1;
+  events: ChangeEvent[];
+}

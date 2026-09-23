@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // The voting Worker has its own toolchain (Wrangler).
+    "worker/**",
   ]),
 ]);
 

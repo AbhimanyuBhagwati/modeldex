@@ -138,3 +138,47 @@ export const datasetSchema = z
     const sets = d.models.map((m) => m.set).sort((a, b) => a - b);
     if (sets.some((s, i) => s !== i + 1)) ctx.addIssue({ code: 'custom', message: 'Set numbers must run 1..N with no gaps' });
   });
+
+const perMillion = z.object({ input: usd, output: usd });
+
+export const changeLogSchema = z.object({
+  version: z.literal(1),
+  events: z.array(
+    z.object({
+      date: isoDay,
+      kind: z.enum(['added', 'removed', 'price', 'retired']),
+      key: z.string().min(3),
+      name: z.string().min(1),
+      lab: z.string().min(1),
+      before: perMillion.optional(),
+      after: perMillion.optional(),
+    }),
+  ),
+});
+
+export const offersFileSchema = z.object({
+  version: z.literal(1),
+  updatedAt: z.iso.datetime(),
+  providers: z.record(z.string(), z.object({ name: z.string().min(1), url: z.url({ protocol: /^https$/ }).nullable() })),
+  models: z.record(
+    z.string(),
+    z.object({
+      offers: z.array(
+        z.object({ provider: z.string().min(1), model: z.string().min(1), input: usd, output: usd, context: tokens, official: z.boolean() }),
+      ),
+      hf: z.array(
+        z.object({
+          provider: z.string().min(1),
+          name: z.string().min(1),
+          url: z.url({ protocol: /^https$/ }),
+          input: usd,
+          output: usd,
+          context: tokens,
+          throughput: z.number().int().positive().nullable(),
+          latencyMs: z.number().int().positive().nullable(),
+          tools: z.boolean(),
+        }),
+      ),
+    }),
+  ),
+});

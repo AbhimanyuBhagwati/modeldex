@@ -1,0 +1,283 @@
+.top {
+  padding-block: 34px 26px;
+}
+.title {
+  margin: 12px 0 8px;
+  font-weight: 850;
+  font-size: clamp(30px, 4.2vw, 52px);
+  font-stretch: 112%;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+.lede {
+  margin: 0;
+  color: var(--ink-2);
+  max-width: 62ch;
+}
+
+/* Index */
+.tiles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+}
+.tile {
+  display: flex;
+  gap: 14px;
+  height: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  text-decoration: none;
+  transition:
+    transform 200ms var(--ease-out),
+    border-color 160ms ease;
+}
+@media (hover: hover) {
+  .tile:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in oklab, var(--t) 60%, var(--line));
+  }
+}
+.swatch {
+  flex-shrink: 0;
+  width: 26px;
+  height: 36px;
+  border-radius: 6px;
+  background: linear-gradient(155deg, color-mix(in oklab, var(--t) 65%, white), var(--t) 45%, color-mix(in oklab, var(--t) 70%, black));
+  box-shadow: 0 6px 14px -6px color-mix(in oklab, var(--t) 70%, transparent);
+  transform: rotate(-6deg);
+}
+.tileText {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.tileText b {
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+}
+.tileText small {
+  font: 500 12px/1.3 var(--f-mono);
+  color: var(--ink-3);
+}
+.newest {
+  font-size: 13px;
+  color: var(--ink-2);
+  overflow-wrap: anywhere;
+}
+.newest em {
+  font-style: normal;
+  color: var(--ink-3);
+}
+
+/* One lab */
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding-block: 26px 22px;
+  font: 500 12.5px/1.3 var(--f-mono);
+  color: var(--ink-3);
+}
+.crumbs a {
+  color: var(--ink-2);
+  text-decoration: none;
+}
+.crumbs a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 2px;
+}
+.crumbs [aria-current] {
+  color: var(--ink);
+}
+.labHead {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+}
+.labMark {
+  flex-shrink: 0;
+  width: 54px;
+  height: 76px;
+  margin-top: 8px;
+  border-radius: 9px;
+  background: linear-gradient(155deg, color-mix(in oklab, var(--t) 65%, white), var(--t) 45%, color-mix(in oklab, var(--t) 70%, black));
+  box-shadow: 0 14px 30px -12px color-mix(in oklab, var(--t) 80%, transparent);
+  transform: rotate(-6deg);
+}
+.labHead .title {
+  margin-top: 0;
+}
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+.typeChips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 28px 0 0;
+  padding: 0;
+}
+.typeChips a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 99px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.typeChips a:hover {
+  border-color: var(--line-2);
+}
+.typeChips b {
+  font: 600 12px/1 var(--f-mono);
+  color: var(--ink-3);
+}
+.section {
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.section h2 {
+  margin: 0;
+  font-weight: 850;
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-stretch: 115%;
+  letter-spacing: -0.02em;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 28px 20px;
+  margin-top: 20px;
+}
+
+/* Timeline: a colored rail, a dot per month. */
+.years,
+.months,
+.releases {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.years {
+  margin-top: 18px;
+}
+.year + .year {
+  margin-top: 26px;
+}
+.year h3 {
+  margin: 0 0 8px;
+  font: 800 30px/1 var(--f-sans);
+  font-stretch: 112%;
+  letter-spacing: -0.03em;
+  color: var(--ink-3);
+}
+.months {
+  border-left: 2px solid color-mix(in oklab, var(--t) 55%, var(--line));
+  margin-left: 8px;
+}
+.months > li {
+  position: relative;
+  padding: 4px 0 14px 22px;
+}
+.months > li::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--t);
+  box-shadow: 0 0 0 3px var(--ground);
+}
+.month {
+  margin: 0 0 6px;
+  font: 600 12px/1.4 var(--f-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.releases li {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+}
+.releases li[data-retired] {
+  opacity: 0.62;
+}
+.releases time {
+  font: 500 12px/1.3 var(--f-mono);
+  color: var(--ink-3);
+}
+.releases a {
+  font-weight: 650;
+  color: var(--ink);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.releases a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 2px;
+}
+.meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 500 12px/1 var(--f-mono);
+  color: var(--ink-3);
+}
+.meta svg {
+  width: 13px;
+  height: 13px;
+}
+.note {
+  margin: 18px 0 0;
+  font: 500 12px/1.55 var(--f-mono);
+  color: var(--ink-3);
+}
+
+@media (max-width: 640px) {
+  .labHead {
+    gap: 14px;
+  }
+  .labMark {
+    width: 36px;
+    height: 50px;
+  }
+  .releases li {
+    grid-template-columns: 52px minmax(0, 1fr);
+  }
+  .meta {
+    grid-column: 2;
+  }
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 14px;
+  }
+}

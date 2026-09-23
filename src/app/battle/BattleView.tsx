@@ -8,6 +8,7 @@ import { Menu, Option } from '@/components/binder/Menu';
 import binder from '@/components/binder/Binder.module.css';
 import { CopyButton } from '@/components/client-bits';
 import { useDeck } from '@/components/deck/DeckProvider';
+import { VoteButton } from '@/components/votes/VoteButton';
 import { Icon } from '@/components/icons';
 import { MAX_HP, STATS, battle, randomMatchup, type Round, type Side } from '@/lib/battle';
 import { TYPE_LABEL } from '@/lib/format';
@@ -227,6 +228,7 @@ function Arena({
                   />
                 )}
               </Menu>
+              {done && <VoteButton modelKey={m.key} name={m.name} label="Vote for this card" className="btn btn-tiny" />}
             </div>
           );
         })}

@@ -6,8 +6,10 @@ import { Card } from '@/components/card/Card';
 import { CardShowcase } from '@/components/card/CardShowcase';
 import { SiteFooter, SiteHeader } from '@/components/chrome';
 import { AddToDeckButton, CopyButton } from '@/components/client-bits';
+import { WhereToRun } from '@/components/WhereToRun';
+import { VoteButton } from '@/components/votes/VoteButton';
 import { Icon, RarityIcon } from '@/components/icons';
-import { getDataset, getLab, getModel, moreFromLab, opponentFor, rivalsOf } from '@/lib/data';
+import { getDataset, getLab, getModel, moreFromLab, opponentFor, providerInfo, rivalsOf, whereToRun } from '@/lib/data';
 import {
   ACCESS_LABEL,
   INPUT_ONLY,
@@ -91,6 +93,9 @@ export default async function ModelPage({ params }: PageProps<'/models/[lab]/[id
   const rivals = rivalsOf(m, 3);
   const more = moreFromLab(m, 8);
   const opponent = opponentFor(m);
+  const run = whereToRun(m.key);
+  const runCount = run ? run.offers.length + run.hf.length : 0;
+  const runProviders = Object.fromEntries((run?.offers ?? []).map((o) => [o.provider, providerInfo(o.provider)]));
   const fromHub = m.origin === 'huggingface';
   const repoUrl = m.hub ? `https://huggingface.co/${m.hub.repo}` : m.license.url;
   const labOnHub = lab.docUrl?.startsWith('https://huggingface.co/');
@@ -141,7 +146,7 @@ export default async function ModelPage({ params }: PageProps<'/models/[lab]/[id
         <nav className={styles.crumbs} aria-label="Breadcrumb">
           <Link href="/">Binder</Link>
           <span aria-hidden="true">/</span>
-          <Link href={`/?lab=${m.lab}#binder`}>{lab.name}</Link>
+          <Link href={`/labs/${m.lab}/`}>{lab.name}</Link>
           <span aria-hidden="true">/</span>
           <span aria-current="page">{m.name}</span>
         </nav>
@@ -153,7 +158,9 @@ export default async function ModelPage({ params }: PageProps<'/models/[lab]/[id
           <div className={styles.info}>
             <p className={styles.kicker}>
               <span className={styles.dot} style={{ '--t': lab.color } as CSSProperties} />
-              {lab.name}
+              <Link className={styles.labLink} href={`/labs/${m.lab}/`}>
+                {lab.name}
+              </Link>
               <span className={styles.sep} aria-hidden="true">
                 ·
               </span>
@@ -199,12 +206,18 @@ export default async function ModelPage({ params }: PageProps<'/models/[lab]/[id
                   <Icon name="out" />
                 </a>
               )}
+              {runCount > 0 && (
+                <a className="btn" href="#run">
+                  Where to run it <small className={styles.count}>{runCount}</small>
+                </a>
+              )}
               {opponent && (
                 <Link className="btn" href={battleHref(m.key, opponent.key)}>
                   Battle {opponent.name}
                 </Link>
               )}
               <AddToDeckButton entry={{ key: m.key, name: m.name, color: lab.color }} />
+              <VoteButton modelKey={m.key} name={m.name} />
             </div>
             <p className={styles.note}>
               {licenseNote(m, lab)}{' '}
@@ -215,6 +228,8 @@ export default async function ModelPage({ params }: PageProps<'/models/[lab]/[id
             </p>
           </div>
         </article>
+
+        {run && <WhereToRun model={m} offers={run.offers} hf={run.hf} providers={runProviders} />}
 
         {rivals.length > 0 && (
           <section className={styles.section} aria-labelledby="faceoff">

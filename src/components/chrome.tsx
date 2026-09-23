@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { formatDate } from '@/lib/format';
+import { VOTES_API, withBase } from '@/lib/site';
 import { CompareNavLink } from './client-bits';
 import styles from './chrome.module.css';
 
@@ -12,9 +13,11 @@ export function SiteHeader({ updatedAt }: { updatedAt: string }) {
       </Link>
       <nav className={styles.nav} aria-label="Main">
         <Link href="/#binder">Binder</Link>
+        <Link href="/labs/">Labs</Link>
         <Link href="/battle/">Battle</Link>
+        {VOTES_API && <Link href="/favorites/">Favorites</Link>}
         <CompareNavLink className={styles.navCompare} />
-        <Link className={styles.sync} href="/#source">
+        <Link className={styles.sync} href="/new/" title="What changed this week">
           <span className={styles.live} aria-hidden="true" />
           Updated <time dateTime={updatedAt}>{formatDate(updatedAt.slice(0, 10))}</time>
         </Link>
@@ -36,6 +39,9 @@ export function SiteFooter({ updatedAt }: { updatedAt: string }) {
           Hugging Face
         </a>{' '}
         · data updated {formatDate(updatedAt.slice(0, 10))}
+      </p>
+      <p>
+        <Link href="/new/">New this week</Link> · <a href={withBase('/feed.xml')}>RSS feed</a> · <Link href="/labs/">All labs</Link> · <Link href="/#source">Where the data comes from</Link>
       </p>
       <p>Not affiliated with any AI lab. Model names belong to their makers.</p>
     </footer>

@@ -1,8 +1,12 @@
+import changesRaw from '../../data/changes.json';
 import raw from '../../data/models.json';
-import type { Dataset, LabSummary, Model } from './types';
+import offersRaw from '../../data/offers.json';
+import type { ChangeEvent, Dataset, LabSummary, Model, OffersFile } from './types';
 
-/** Validated by the sync job before it is ever committed, and again in the test suite. */
+/** Validated by the sync job before it is ever committed, and again in the test suite. Server-only: pages pass slices to the browser. */
 const dataset = raw as unknown as Dataset;
+const offers = offersRaw as unknown as OffersFile;
+const changes = (changesRaw as unknown as { events: ChangeEvent[] }).events;
 
 const byKey = new Map(dataset.models.map((m) => [m.key, m]));
 const labsByKey = new Map(dataset.labs.map((l) => [l.key, l]));
@@ -63,6 +67,15 @@ export function featuredBattles(): { title: string; keys: [string, string] }[] {
   ];
   return picks.filter((p): p is { title: string; keys: [string, string] } => p.keys != null);
 }
+
+/** Where to run a card: every provider selling it, and Hugging Face's hosts for open models. */
+export const whereToRun = (key: string) => offers.models[key] ?? null;
+export const providerInfo = (id: string) => offers.providers[id];
+
+export const labModels = (lab: string) => dataset.models.filter((m) => m.lab === lab).sort(newestFirst);
+
+/** Everything the daily sync logged in the last 90 days, newest first. */
+export const changeLog = (): ChangeEvent[] => changes;
 
 export function stats() {
   const ms = dataset.models.filter(live);

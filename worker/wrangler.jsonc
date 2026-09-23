@@ -1,0 +1,20 @@
+{
+  // Modeldex votes. Deploy with `npm run deploy` from this folder; see README.md.
+  "name": "modeldex-votes",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-01",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "modeldex-votes",
+      // Filled in by `wrangler d1 create modeldex-votes`.
+      "database_id": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "vars": {
+    // Sites allowed to vote. Reads are open to anyone.
+    "ALLOWED_ORIGINS": "https://abhimanyubhagwati.github.io,http://localhost:3000,http://127.0.0.1:8765"
+  },
+  // Daily cleanup of vote rows older than a week.
+  "triggers": { "crons": ["17 3 * * *"] }
+}

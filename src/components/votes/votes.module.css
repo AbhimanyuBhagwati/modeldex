@@ -1,0 +1,36 @@
+.vote svg {
+  color: var(--ink-3);
+  transition:
+    color 160ms ease,
+    transform 220ms var(--ease-out);
+}
+.vote small {
+  font: 600 11px/1 var(--f-mono);
+  padding: 3px 6px;
+  border-radius: 99px;
+  background: var(--line);
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+@media (hover: hover) {
+  .vote:hover svg {
+    color: #e5484d;
+  }
+}
+.vote[data-voted] svg {
+  color: #e5484d;
+  animation: beat 420ms var(--ease-out);
+}
+.vote[data-voted] {
+  border-color: color-mix(in oklab, #e5484d 45%, var(--line-2));
+}
+@keyframes beat {
+  40% {
+    transform: scale(1.35);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vote[data-voted] svg {
+    animation: none;
+  }
+}

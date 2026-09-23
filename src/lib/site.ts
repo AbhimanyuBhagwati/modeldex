@@ -11,6 +11,12 @@ export const SITE = {
 
 export const MAX_DECK = 4;
 
+/** The voting service (see `worker/`). Empty hides every vote button, so the site works without it. */
+export const VOTES_API = (process.env.NEXT_PUBLIC_VOTES_API ?? '').replace(/\/$/, '');
+
+/** For plain links to files that aren't pages, like the RSS feed. `<Link>` adds the base path itself. */
+export const withBase = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH?.replace(/\/$/, '') ?? ''}${path}`;
+
 /** Model keys contain a slash, so compare links read `?m=anthropic/claude-opus-5-5,xai/grok-4.7`. */
 export const modelHref = (m: { lab: string; slug: string }) => `/models/${m.lab}/${m.slug}/`;
 export const compareHref = (keys: string[]) => (keys.length ? `/compare/?m=${keys.join(',')}` : '/compare/');

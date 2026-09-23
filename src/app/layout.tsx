@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   applicationName: SITE.name,
   openGraph: { type: 'website', siteName: SITE.name, locale: 'en_US', images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Modeldex: every AI model, dealt as a card' }] },
   twitter: { card: 'summary_large_image', images: ['/og.png'] },
+  alternates: { types: { 'application/rss+xml': [{ url: '/feed.xml', title: 'Modeldex: new AI models' }] } },
 };
 
 export const viewport: Viewport = {
