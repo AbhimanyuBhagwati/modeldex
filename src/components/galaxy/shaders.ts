@@ -66,6 +66,28 @@ float fbm3(vec3 p) {
 }
 `;
 
+/**
+ * The Big Bang: `uBang` runs 0 (everything in one point) to 1 (the galaxy as it is). Particles fly out
+ * from the singularity, unwinding a spin, puffed into a sphere that flattens into the disk, and cool
+ * from white-hot to their lab's color.
+ */
+export const BANG = /* glsl */ `
+uniform float uBang;
+vec3 bangPosition(vec3 p, float seed) {
+  if (uBang >= 1.0) return p;
+  float t = clamp(uBang, 0.0, 1.0);
+  float grow = 1.0 - pow(1.0 - t, 3.0);
+  float spin = pow(1.0 - t, 2.0) * 4.2;
+  float c = cos(spin);
+  float s = sin(spin);
+  vec3 q = vec3(p.x * c - p.z * s, p.y, p.x * s + p.z * c) * grow;
+  q.y += sin(3.14159 * t) * (fract(seed * 91.7) - 0.5) * 2.0 * length(p.xz) * 0.55;
+  return q;
+}
+float bangHeat() { return 1.0 - smoothstep(0.15, 0.92, uBang); }
+float bangShown() { return smoothstep(0.0, 0.025, uBang); }
+`;
+
 /** Model stars: a white-hot core, a halo in the lab's color, spikes on the brightest, a flare at birth. */
 export const STAR_VERTEX = /* glsl */ `
 attribute float aSize;
@@ -82,8 +104,9 @@ varying vec3 vColor;
 varying float vAlpha;
 varying float vFlash;
 varying float vSpikes;
+${BANG}
 void main() {
-  vec4 mv = modelViewMatrix * vec4(position, 1.0);
+  vec4 mv = modelViewMatrix * vec4(bangPosition(position, aSeed), 1.0);
   gl_Position = projectionMatrix * mv;
   float age = uDay - aBirth;
   if (age < 0.0) { gl_PointSize = 0.0; vAlpha = 0.0; return; }
@@ -92,9 +115,10 @@ void main() {
   float twinkle = 0.88 + 0.12 * sin(uClock * (1.1 + aSeed * 2.3) + aSeed * 61.0);
   float size = aSize * twinkle * (1.0 + flash * 2.4);
   gl_PointSize = clamp(size * uScale / -mv.z, 2.0, 220.0);
-  vColor = aColor;
-  vAlpha = aDim;
-  vFlash = flash;
+  float heat = bangHeat();
+  vColor = mix(aColor, vec3(1.0, 0.92, 0.78), heat);
+  vAlpha = aDim * bangShown();
+  vFlash = max(flash, heat * 0.9);
   vSpikes = aSpikes;
 }
 `;
@@ -126,15 +150,21 @@ attribute float aSeed;
 uniform float uFrontier;
 uniform float uScale;
 uniform float uClock;
+uniform float uGhost;
 varying vec3 vColor;
 varying float vAlpha;
+${BANG}
 void main() {
-  vec4 mv = modelViewMatrix * vec4(position, 1.0);
+  vec4 mv = modelViewMatrix * vec4(bangPosition(position, aSeed), 1.0);
   gl_Position = projectionMatrix * mv;
+  // Past the edge of now, the arms are a faint ghost of what's still to come. The Big Bang lights them
+  // all, and they fade to ghosts (uGhost 0 -> 1) just after it, as history starts.
   float inside = 1.0 - smoothstep(uFrontier - 3.0, uFrontier + 1.0, aRadius);
-  gl_PointSize = clamp(aSize * uScale / -mv.z, 0.0, 26.0) * inside;
-  vColor = aColor;
-  vAlpha = inside * (0.55 + 0.45 * sin(uClock * 0.4 + aSeed * 30.0));
+  float shown = mix(1.0, mix(0.3, 1.0, inside), uGhost) * bangShown();
+  gl_PointSize = clamp(aSize * uScale / -mv.z, 0.0, 26.0) * step(0.001, shown);
+  float heat = bangHeat();
+  vColor = mix(aColor, vec3(1.0, 0.9, 0.72) * 1.4, heat);
+  vAlpha = shown * (0.55 + 0.45 * sin(uClock * 0.4 + aSeed * 30.0)) * (1.0 + heat);
 }
 `;
 
@@ -165,6 +195,7 @@ uniform float uFrontier;
 uniform float uRadius;
 uniform float uClock;
 uniform float uTwist;
+uniform float uBang;
 varying vec2 vPos;
 void main() {
   float r = length(vPos) / uRadius;
@@ -180,7 +211,7 @@ void main() {
   vec3 blue = vec3(0.12, 0.45, 1.0);
   vec3 color = mix(mix(gold, violet, smoothstep(0.04, 0.45, r)), blue, smoothstep(0.45, 1.0, r));
   // Kept dim: the stars and dust carry the arms; this is only the glow between them.
-  float intensity = core * 0.5 + body * 0.12;
+  float intensity = (core * 0.5 + body * 0.12) * smoothstep(0.35, 1.0, uBang);
   gl_FragColor = vec4(color * intensity, intensity);
 }
 `;
@@ -245,12 +276,14 @@ attribute vec3 aColor;
 attribute float aBirth;
 attribute float aGlow;
 uniform float uDay;
+uniform float uBang;
 varying vec3 vColor;
 varying float vAlpha;
 void main() {
   gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
   vColor = aColor;
-  vAlpha = uDay >= aBirth ? aGlow : 0.0;
+  // Constellations are drawn once the galaxy has formed.
+  vAlpha = uDay >= aBirth ? aGlow * smoothstep(0.92, 1.0, uBang) : 0.0;
 }
 `;
 
@@ -282,6 +315,30 @@ varying float vAcross;
 void main() {
   float glow = exp(-pow((vAcross - 0.5) * 3.4, 2.0));
   float a = glow * uOpacity;
+  gl_FragColor = vec4(uColor * a, a);
+}
+`;
+
+/** The Big Bang's blast wave: a sphere that only glows at its rim. */
+export const SHOCK_VERTEX = /* glsl */ `
+varying vec3 vNormal;
+varying vec3 vView;
+void main() {
+  vec4 mv = modelViewMatrix * vec4(position, 1.0);
+  vNormal = normalize(normalMatrix * normal);
+  vView = normalize(-mv.xyz);
+  gl_Position = projectionMatrix * mv;
+}
+`;
+
+export const SHOCK_FRAGMENT = /* glsl */ `
+uniform vec3 uColor;
+uniform float uOpacity;
+varying vec3 vNormal;
+varying vec3 vView;
+void main() {
+  float rim = pow(1.0 - abs(dot(vNormal, vView)), 2.2);
+  float a = rim * uOpacity;
   gl_FragColor = vec4(uColor * a, a);
 }
 `;

@@ -50,6 +50,9 @@ export function GalaxyExperience({ data }: { data: GalaxyData }) {
   const [labsOpen, setLabsOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [touched, setTouched] = useState(false);
+  /** The opening: a singularity, the bang, the galaxy forming, then history plays. */
+  const [intro, setIntro] = useState<'none' | 'singularity' | 'bang' | 'formed'>('none');
+  const runBang = useRef<(s: GalaxyScene) => void>(() => {});
 
   // Sorted birth days, for "how many stars exist by now" without scanning every star.
   const sortedDays = useMemo(() => data.stars.map((s) => s.day).sort((a, b) => a - b), [data.stars]);
@@ -81,6 +84,7 @@ export function GalaxyExperience({ data }: { data: GalaxyData }) {
   useEffect(() => {
     let cancelled = false;
     let built: GalaxyScene | null = null;
+    let cleanup = () => {};
     import('./scene').then(({ createGalaxyScene }) => {
       if (cancelled || !canvas.current) return;
       const lite = window.innerWidth < 760 || (navigator.hardwareConcurrency ?? 8) <= 4;
@@ -98,18 +102,37 @@ export function GalaxyExperience({ data }: { data: GalaxyData }) {
       built.setLabels(labels);
       built.onUserMove(() => setTouched(true));
       setStatus('ready');
+      let settle: ReturnType<typeof setTimeout> | undefined;
+      // In the beginning there is one point of light; the blast makes the galaxy, then history plays.
+      runBang.current = (s) => {
+        clearTimeout(settle);
+        setPlaying(false);
+        setSelected(null);
+        dayRef.current = 0;
+        setDay(0);
+        setIntro('singularity');
+        s.bigBang({
+          bang: () => setIntro('bang'),
+          formed: () => {
+            if (cancelled) return;
+            setIntro('formed');
+            setPlaying(true);
+            settle = setTimeout(() => !cancelled && setIntro('none'), 3200);
+          },
+        });
+      };
       if (still) {
         dayRef.current = data.days;
         setDay(data.days);
         built.flyTo({ home: true }, 0);
       } else {
-        // The opening: sweep down from above while history plays out.
-        built.flyTo({ home: true }, 5600);
-        setTimeout(() => !cancelled && setPlaying(true), 900);
+        runBang.current(built);
       }
+      cleanup = () => clearTimeout(settle);
     });
     return () => {
       cancelled = true;
+      cleanup();
       built?.destroy();
       scene.current = null;
     };
@@ -169,6 +192,13 @@ export function GalaxyExperience({ data }: { data: GalaxyData }) {
     },
     [byKey],
   );
+  const skipIntro = () => {
+    scene.current?.skipBang();
+    setIntro('none');
+    setPlaying(false);
+    dayRef.current = data.days;
+    setDay(data.days);
+  };
   const focusOn = (lab: string | null) => {
     setFocusLab(lab);
     setLabsOpen(false);
@@ -192,13 +222,13 @@ export function GalaxyExperience({ data }: { data: GalaxyData }) {
 
   // During playback, name the brightest star born in the last few weeks of timeline.
   const caption = useMemo(() => {
-    if (!playing || day < 20) return null;
+    if (!playing || day < 20 || intro !== 'none') return null;
     let best: GalaxyStar | null = null;
     for (const s of data.stars) {
       if (!s.classic && s.day <= day && s.day > day - 40 && s.magnitude >= 0.55 && (!best || s.magnitude > best.magnitude)) best = s;
     }
     return best;
-  }, [playing, day, data.stars]);
+  }, [playing, day, data.stars, intro]);
 
   const months = useMemo(() => {
     const bins = new Map<number, number>();
@@ -227,7 +257,7 @@ export function GalaxyExperience({ data }: { data: GalaxyData }) {
   const labsSorted = useMemo(() => [...data.labs].sort((a, b) => b.count - a.count), [data.labs]);
 
   return (
-    <div className={styles.root} data-status={status}>
+    <div className={styles.root} data-status={status} data-intro={intro}>
       <canvas
         ref={canvas}
         className={styles.canvas}
@@ -267,6 +297,18 @@ export function GalaxyExperience({ data }: { data: GalaxyData }) {
           </span>
         ))}
       </div>
+
+      {intro === 'bang' && <div className={styles.flash} aria-hidden="true" />}
+      {(intro === 'singularity' || intro === 'formed') && (
+        <p key={intro} className={styles.story} role="status">
+          {intro === 'singularity' ? 'In the beginning, there was attention.' : 'Then everything happened at once.'}
+        </p>
+      )}
+      {(intro === 'singularity' || intro === 'bang') && (
+        <button type="button" className={styles.skip} onClick={skipIntro}>
+          Skip intro
+        </button>
+      )}
 
       {status === 'loading' && (
         <div className={styles.loading}>
@@ -346,6 +388,18 @@ export function GalaxyExperience({ data }: { data: GalaxyData }) {
           aria-label="Reset the view"
         >
           Reset
+        </button>
+        <button
+          type="button"
+          className={`${styles.chip} ${styles.bangChip}`}
+          onClick={() => {
+            setFocusLab(null);
+            setLabsOpen(false);
+            if (scene.current) runBang.current(scene.current);
+          }}
+          aria-label="Replay the Big Bang"
+        >
+          <span aria-hidden="true">✺</span> Big Bang
         </button>
       </div>
 

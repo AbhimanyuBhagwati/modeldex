@@ -28,7 +28,11 @@ export interface Label {
 export interface GalaxyScene {
   setDay(day: number): void;
   setFocus(focus: Focus): void;
-  flyTo(to: { key?: string; lab?: string; home?: boolean }, ms?: number): void;
+  flyTo(to: { key?: string; lab?: string; home?: boolean }, ms?: number, easing?: 'inOut' | 'out'): void;
+  /** Plays the Big Bang: a pulsing singularity, then the blast, then the galaxy forming. */
+  bigBang(on: { bang?: () => void; formed?: () => void }): void;
+  /** Ends the Big Bang at once, with the galaxy formed. */
+  skipBang(): void;
   pick(clientX: number, clientY: number): string | null;
   setLabels(labels: Label[]): void;
   /** Called when the viewer grabs the camera. */
@@ -82,6 +86,13 @@ function ringTexture(dashed: boolean, size = 256) {
 }
 
 const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+/** Fast then slow: the camera is thrown back by the blast. */
+const easeOut = (t: number) => 1 - Math.pow(1 - t, 4);
+
+/** Big Bang timing, in ms: the singularity charges, then the universe expands into the galaxy. */
+const CHARGE = 1700;
+const EXPAND = 3800;
+const SHOCK = 2000;
 
 /**
  * Builds the galaxy on a canvas. Returns null when WebGL isn't available, so the page can say so.
@@ -120,6 +131,10 @@ export function createGalaxyScene(canvas: HTMLCanvasElement, data: GalaxyData, l
   const keep = <T extends { dispose(): void }>(x: T) => (disposables.push(x), x);
   const clock = { value: 0 };
   const day = { value: 0 };
+  const bang = { value: 1 };
+  /** 0 while the whole galaxy glows after the Big Bang, 1 once unwritten arms have faded to ghosts. */
+  const ghost = { value: 1 };
+  let ghostFrom = -Infinity;
   const flare = { value: 0 };
   let dayMovedAt = -Infinity;
   const scale = { value: 1 };
@@ -176,7 +191,7 @@ export function createGalaxyScene(canvas: HTMLCanvasElement, data: GalaxyData, l
       new THREE.ShaderMaterial({
         vertexShader: S.DISK_VERTEX,
         fragmentShader: S.DISK_FRAGMENT,
-        uniforms: { uFrontier: frontier, uRadius: { value: R }, uClock: clock, uTwist: { value: TWIST } },
+        uniforms: { uFrontier: frontier, uRadius: { value: R }, uClock: clock, uTwist: { value: TWIST }, uBang: bang },
         transparent: true,
         depthWrite: false,
         blending: THREE.AdditiveBlending,
@@ -236,7 +251,7 @@ export function createGalaxyScene(canvas: HTMLCanvasElement, data: GalaxyData, l
       new THREE.ShaderMaterial({
         vertexShader: S.DUST_VERTEX,
         fragmentShader: S.DUST_FRAGMENT,
-        uniforms: { uFrontier: frontier, uScale: scale, uClock: clock },
+        uniforms: { uFrontier: frontier, uScale: scale, uClock: clock, uBang: bang, uGhost: ghost },
         transparent: true,
         depthWrite: false,
         blending: THREE.AdditiveBlending,
@@ -279,7 +294,7 @@ export function createGalaxyScene(canvas: HTMLCanvasElement, data: GalaxyData, l
       new THREE.ShaderMaterial({
         vertexShader: S.STAR_VERTEX,
         fragmentShader: S.STAR_FRAGMENT,
-        uniforms: { uDay: day, uScale: scale, uClock: clock, uFlare: flare },
+        uniforms: { uDay: day, uScale: scale, uClock: clock, uFlare: flare, uBang: bang },
         transparent: true,
         depthWrite: false,
         blending: THREE.AdditiveBlending,
@@ -317,7 +332,7 @@ export function createGalaxyScene(canvas: HTMLCanvasElement, data: GalaxyData, l
     g.setAttribute('aColor', new THREE.Float32BufferAttribute(col, 3));
     g.setAttribute('aBirth', new THREE.Float32BufferAttribute(birth, 1));
     g.setAttribute('aGlow', new THREE.Float32BufferAttribute(glow, 1));
-    const m = keep(new THREE.ShaderMaterial({ vertexShader: S.LINE_VERTEX, fragmentShader: S.LINE_FRAGMENT, uniforms: { uDay: day }, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
+    const m = keep(new THREE.ShaderMaterial({ vertexShader: S.LINE_VERTEX, fragmentShader: S.LINE_FRAGMENT, uniforms: { uDay: day, uBang: bang }, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
     return new THREE.LineSegments(g, m);
   })();
   scene.add(lines);
@@ -352,9 +367,34 @@ export function createGalaxyScene(canvas: HTMLCanvasElement, data: GalaxyData, l
 
   // The core's light.
   const coreTex = keep(glowTexture('rgba(255,244,214,1)', 'rgba(255,190,110,0.45)'));
-  const core = new THREE.Sprite(keep(new THREE.SpriteMaterial({ map: coreTex, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true, opacity: 0.55 })));
+  const coreMat = keep(new THREE.SpriteMaterial({ map: coreTex, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true, opacity: 0.55 }));
+  const core = new THREE.Sprite(coreMat);
   core.scale.setScalar(R * 0.36);
   scene.add(core);
+
+  // The Big Bang's pieces: the singularity, a blast-wave sphere, and a shock ring racing across the plane.
+  const singularityMat = keep(new THREE.SpriteMaterial({ map: keep(glowTexture('rgba(255,255,255,1)', 'rgba(255,226,170,0.9)')), blending: THREE.AdditiveBlending, depthWrite: false, depthTest: false, transparent: true }));
+  const singularity = new THREE.Sprite(singularityMat);
+  singularity.visible = false;
+  scene.add(singularity);
+  const shockMat = keep(
+    new THREE.ShaderMaterial({
+      vertexShader: S.SHOCK_VERTEX,
+      fragmentShader: S.SHOCK_FRAGMENT,
+      uniforms: { uColor: { value: new THREE.Color('#ffe7b8') }, uOpacity: { value: 0 } },
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+    }),
+  );
+  const shock = new THREE.Mesh(keep(new THREE.SphereGeometry(1, 64, 32)), shockMat);
+  shock.visible = false;
+  scene.add(shock);
+  const shockRingMat = ringMaterial('#fff1d0', 0, 0.9, 1.1);
+  const shockRing = new THREE.Mesh(keep(new THREE.RingGeometry(0.9, 1.1, 256)), shockRingMat);
+  shockRing.rotation.x = Math.PI / 2;
+  shockRing.visible = false;
+  scene.add(shockRing);
 
   // Hover and selection markers.
   const hoverMat = keep(new THREE.SpriteMaterial({ map: keep(ringTexture(false)), blending: THREE.AdditiveBlending, depthWrite: false, depthTest: false, transparent: true }));
@@ -386,8 +426,8 @@ export function createGalaxyScene(canvas: HTMLCanvasElement, data: GalaxyData, l
   resize();
 
   // Camera flights.
-  let flight: { from: [THREE.Vector3, THREE.Vector3]; to: [THREE.Vector3, THREE.Vector3]; start: number; ms: number } | null = null;
-  const flyTo: GalaxyScene['flyTo'] = (to, ms = 1500) => {
+  let flight: { from: [THREE.Vector3, THREE.Vector3]; to: [THREE.Vector3, THREE.Vector3]; start: number; ms: number; easing: (t: number) => number } | null = null;
+  const flyTo: GalaxyScene['flyTo'] = (to, ms = 1500, easing = 'inOut') => {
     let target: THREE.Vector3;
     let position: THREE.Vector3;
     if (to.key != null && index.has(to.key)) {
@@ -408,7 +448,7 @@ export function createGalaxyScene(canvas: HTMLCanvasElement, data: GalaxyData, l
       flight = null;
       return;
     }
-    flight = { from: [camera.position.clone(), controls.target.clone()], to: [position, target], start: performance.now(), ms };
+    flight = { from: [camera.position.clone(), controls.target.clone()], to: [position, target], start: performance.now(), ms, easing: easing === 'out' ? easeOut : ease };
   };
   const moved: (() => void)[] = [];
   controls.addEventListener('start', () => {
@@ -417,7 +457,8 @@ export function createGalaxyScene(canvas: HTMLCanvasElement, data: GalaxyData, l
     moved.forEach((cb) => cb());
   });
 
-  // Labels.
+  // Labels. Lab names ride just outside the edge of now, but never closer in than the ghost arms.
+  const labelRadius = (edgeRadius: number) => Math.min(R * 1.06, Math.max(R * 0.64, edgeRadius + 7));
   let labels: (Label & { v: THREE.Vector3 })[] = [];
   let focusLab: string | null = null;
   const projected = new THREE.Vector3();
@@ -426,7 +467,7 @@ export function createGalaxyScene(canvas: HTMLCanvasElement, data: GalaxyData, l
     const h = canvas.clientHeight;
     for (const l of labels) {
       projected.copy(l.v).project(camera);
-      const visible = projected.z < 1 && day.value >= l.minDay && Math.abs(projected.x) < 1.1 && Math.abs(projected.y) < 1.1;
+      const visible = bang.value >= 1 && projected.z < 1 && day.value >= l.minDay && Math.abs(projected.x) < 1.1 && Math.abs(projected.y) < 1.1;
       if (!visible) {
         l.el.style.opacity = '0';
         continue;
@@ -442,6 +483,61 @@ export function createGalaxyScene(canvas: HTMLCanvasElement, data: GalaxyData, l
   // The edge of now glows while the galaxy is growing and settles once it reaches today.
   let edgeGlow = 0.5;
 
+  let bangRun: { start: number; on: { bang?: () => void; formed?: () => void }; blasted: boolean } | null = null;
+  const showRings = (on: boolean) => {
+    for (const y of yearRings) y.mesh.visible = on && day.value >= y.day;
+    edge.visible = on;
+  };
+  const endBang = (linger = true) => {
+    bangRun = null;
+    bang.value = 1;
+    // Let the formed galaxy hold a beat before the future dims to ghosts.
+    ghostFrom = linger ? performance.now() + 700 : -Infinity;
+    ghost.value = linger ? 0 : 1;
+    singularity.visible = shock.visible = shockRing.visible = false;
+    coreMat.opacity = 0.55;
+    controls.autoRotate = !opts.reduced;
+    controls.enabled = true;
+    showRings(true);
+  };
+  const stepBang = (now: number) => {
+    if (!bangRun) return;
+    const t = now - bangRun.start;
+    if (t < CHARGE) {
+      // The singularity gathers itself: brighter, faster, bigger.
+      const k = t / CHARGE;
+      singularity.visible = true;
+      singularity.scale.setScalar(1.2 + 5 * k * k + Math.sin(t * (0.012 + k * 0.03)) * 0.9 * k);
+      singularityMat.opacity = 0.35 + 0.65 * k;
+      bang.value = 0;
+      ghost.value = 0;
+      coreMat.opacity = 0;
+      return;
+    }
+    if (!bangRun.blasted) {
+      bangRun.blasted = true;
+      shock.visible = shockRing.visible = true;
+      flyTo({ home: true }, EXPAND + 1400, 'out');
+      bangRun.on.bang?.();
+    }
+    const k = Math.min(1, (t - CHARGE) / EXPAND);
+    bang.value = Math.max(0.001, k);
+    coreMat.opacity = 0.55 * Math.min(1, k * 1.6);
+    singularity.scale.setScalar(Math.max(0, 6 * (1 - k * 5)));
+    singularity.visible = k < 0.2;
+    const s = Math.min(1, (t - CHARGE) / SHOCK);
+    shock.scale.setScalar(2 + s * R * 3.2);
+    shockMat.uniforms.uOpacity.value = Math.pow(1 - s, 1.6) * 1.4;
+    shockRing.scale.setScalar(1 + s * R * 1.6);
+    shockRingMat.uniforms.uOpacity.value = Math.pow(1 - s, 1.2) * 1.2;
+    if (s >= 1) shock.visible = shockRing.visible = false;
+    if (k >= 1) {
+      const formed = bangRun.on.formed;
+      endBang();
+      formed?.();
+    }
+  };
+
   // The loop.
   let raf = 0;
   const started = performance.now();
@@ -451,11 +547,13 @@ export function createGalaxyScene(canvas: HTMLCanvasElement, data: GalaxyData, l
     flare.value = Math.max(0, 1 - (now - dayMovedAt) / 1600);
     if (flight) {
       const t = Math.min(1, (now - flight.start) / flight.ms);
-      const e = ease(t);
+      const e = flight.easing(t);
       camera.position.lerpVectors(flight.from[0], flight.to[0], e);
       controls.target.lerpVectors(flight.from[1], flight.to[1], e);
       if (t >= 1) flight = null;
     }
+    stepBang(now);
+    if (!bangRun && ghost.value < 1) ghost.value = Math.min(1, Math.max(0, (now - ghostFrom) / 3000));
     controls.update();
     selectMat.rotation = clock.value * 0.6;
     edgeMaterial.uniforms.uOpacity.value = edgeGlow * (0.75 + 0.25 * Math.sin(clock.value * 2.2));
@@ -473,9 +571,9 @@ export function createGalaxyScene(canvas: HTMLCanvasElement, data: GalaxyData, l
       const r = layout.radiusAt(d);
       frontier.value = r;
       edge.scale.setScalar(Math.max(0.5, r));
-      for (const l of labels) if (l.rim && l.lab) l.v.set(...layout.place(l.lab, Math.min(R * 1.06, r + 7), 0, 0));
+      for (const l of labels) if (l.rim && l.lab) l.v.set(...layout.place(l.lab, labelRadius(r), 0, 0));
       edgeGlow = r >= R * 0.995 ? 0.14 : 0.5;
-      for (const y of yearRings) y.mesh.visible = d >= y.day;
+      showRings(bang.value >= 1);
     },
     setFocus(f) {
       focusLab = f.lab;
@@ -510,6 +608,26 @@ export function createGalaxyScene(canvas: HTMLCanvasElement, data: GalaxyData, l
       }
     },
     flyTo,
+    bigBang(on) {
+      flight = null;
+      controls.autoRotate = false;
+      controls.enabled = false;
+      camera.position.set(0, 10, 30);
+      controls.target.set(0, 0, 0);
+      bang.value = 0;
+      showRings(false);
+      if (opts.reduced) {
+        endBang(false);
+        on.formed?.();
+        return;
+      }
+      bangRun = { start: performance.now(), on, blasted: false };
+    },
+    skipBang() {
+      if (!bangRun && bang.value >= 1) return;
+      endBang(false);
+      flyTo({ home: true }, 900);
+    },
     pick(clientX, clientY) {
       const rect = canvas.getBoundingClientRect();
       let best: string | null = null;
@@ -533,7 +651,7 @@ export function createGalaxyScene(canvas: HTMLCanvasElement, data: GalaxyData, l
       return best;
     },
     setLabels(next) {
-      labels = next.map((l) => ({ ...l, v: new THREE.Vector3(...(l.rim && l.lab ? layout.place(l.lab, Math.min(R * 1.06, frontier.value + 7), 0, 0) : l.position)) }));
+      labels = next.map((l) => ({ ...l, v: new THREE.Vector3(...(l.rim && l.lab ? layout.place(l.lab, labelRadius(frontier.value), 0, 0) : l.position)) }));
       placeLabels();
     },
     onUserMove(cb) {
