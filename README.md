@@ -73,7 +73,7 @@ openssl rand -hex 32 | npx wrangler secret put SALT
 npm run deploy                              # prints https://modeldex-votes.<you>.workers.dev
 ```
 
-Then set that URL as `VOTES_API` in `src/lib/site.ts` (or the `NEXT_PUBLIC_VOTES_API` build variable) and push. Add your own domain to `ALLOWED_ORIGINS` in `wrangler.jsonc` if you move the site.
+Then set that URL as `VOTES_API` in `src/lib/site.ts` (or the `NEXT_PUBLIC_VOTES_API` build variable) and push. This repo's Worker runs at `https://modeldex-votes.modeldex-votes.workers.dev`. Add your own domain to `ALLOWED_ORIGINS` in `wrangler.jsonc` if you move the site.
 
 ## Local development
 

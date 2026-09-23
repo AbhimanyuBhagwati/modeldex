@@ -11,8 +11,8 @@ export const SITE = {
 
 export const MAX_DECK = 4;
 
-/** The voting service (see `worker/`). Empty hides every vote button, so the site works without it. */
-export const VOTES_API = (process.env.NEXT_PUBLIC_VOTES_API ?? '').replace(/\/$/, '');
+/** The voting service (see `worker/`). Set `NEXT_PUBLIC_VOTES_API` to an empty string to hide every vote button. */
+export const VOTES_API = (process.env.NEXT_PUBLIC_VOTES_API ?? 'https://modeldex-votes.modeldex-votes.workers.dev').replace(/\/$/, '');
 
 /** For plain links to files that aren't pages, like the RSS feed. `<Link>` adds the base path itself. */
 export const withBase = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH?.replace(/\/$/, '') ?? ''}${path}`;
