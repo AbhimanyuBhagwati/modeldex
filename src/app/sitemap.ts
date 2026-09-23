@@ -9,6 +9,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const updated = new Date(data.updatedAt);
   return [
     { url: `${SITE.url}/`, lastModified: updated, changeFrequency: 'daily', priority: 1 },
+    { url: `${SITE.url}/terrarium/`, lastModified: updated, changeFrequency: 'daily', priority: 0.8 },
+    { url: `${SITE.url}/race/`, lastModified: updated, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${SITE.url}/match/`, lastModified: updated, changeFrequency: 'daily', priority: 0.8 },
     { url: `${SITE.url}/battle/`, lastModified: updated, changeFrequency: 'daily', priority: 0.6 },
     { url: `${SITE.url}/new/`, lastModified: updated, changeFrequency: 'daily', priority: 0.8 },

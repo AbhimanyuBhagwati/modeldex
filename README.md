@@ -1,6 +1,6 @@
 # Modeldex
 
-Every AI model from the major labs as a collectible card: the models you call through an API, and the most downloaded open models on Hugging Face. Each card carries a quality medal from public benchmarks (Epoch AI and LMArena), and the Model Matchmaker deals you the three best cards for a job after four questions. Browse the binder, put up to four cards in your deck, compare them side by side, send two into battle, and vote for your favorites. Every card shows where to run it (every provider that sells it, with prices) and links to the lab's own docs or repo. There's a page per lab, a "New this week" page, an RSS feed, and Evolution: every model line (GPT 1 → 5.6, Llama 2 → 4, Claude Opus 4.5 → 5.5, and 90 more) played out stage by stage like a Pokémon evolving. And the AI Galaxy: every model as a star in a 3D spiral galaxy, labs as arms, evolution lines as constellations, and a timeline that plays the whole field's growth.
+Every AI model from the major labs as a collectible card: the models you call through an API, and the most downloaded open models on Hugging Face. Each card carries a quality medal from public benchmarks (Epoch AI and LMArena), and the Model Matchmaker deals you the three best cards for a job after four questions. The AI Terrarium turns every card into a living creature, and Race the machine lets you out-type (or not) models running at their measured speed. Browse the binder, put up to four cards in your deck, compare them side by side, send two into battle, and vote for your favorites. Every card shows where to run it (every provider that sells it, with prices) and links to the lab's own docs or repo. There's a page per lab, a "New this week" page, an RSS feed, and Evolution: every model line (GPT 1 → 5.6, Llama 2 → 4, Claude Opus 4.5 → 5.5, and 90 more) played out stage by stage like a Pokémon evolving. And the AI Galaxy: every model as a star in a 3D spiral galaxy, labs as arms, evolution lines as constellations, and a timeline that plays the whole field's growth.
 
 Live at **https://abhimanyubhagwati.github.io/modeldex/**.
 
@@ -43,6 +43,12 @@ If models.dev is down or sends something broken, the job fails, GitHub emails yo
 A card's quality is the share of a public leaderboard's models it beats, 0 to 100: Epoch AI's Capabilities Index for chat models (LMArena Text when Epoch hasn't scored one), LMArena's image and video arenas for those types. Gold is the top 10%, silver the top 25%, bronze the top half. Both sources are CC BY 4.0. Only their own data is used; Epoch's copies of other groups' leaderboards carry those groups' terms and are left out. Boards name models their own way (`claude-opus-4-7-high`, `GPT-4o (May 2024)`), so the matcher peels settings, then snapshot dates, and each model page shows the name a score was listed under. Base weights never inherit a chat model's score.
 
 The Model Matchmaker (`/match/`) asks for the job, budget, must-haves, and open or paid, then ranks every card that fits by the leaderboards for that job. It runs in the browser on the same data; nothing is sent anywhere.
+
+### The Terrarium and the race
+
+The AI Terrarium (`/terrarium/`) draws every card as a creature on a 2D canvas, from its data: the type picks the species (walkers, butterflies, mushrooms, bats, ants, and more), context or parameters set the size, measured speed sets the pace, quality earns a crown or halo, and reasoning, tools, image input, and audio grow a horn, an antenna, big eyes, and ears. Each lab has its own land. The last week's releases arrive as eggs you tap to hatch, retired models lie as fossils in the rock layer of their year, and families walk single file behind their newest generation. Day and night follow the visitor's clock. Adopting a creature saves a snapshot in the browser, so it can tell you what changed since: quality, price, a new generation, retirement.
+
+Race the machine (`/race/`) pits you against three models typing the same passage. Each starts after its measured first-token delay and writes at its measured tokens a second, from Hugging Face's own timings of its fastest host; a token counts as four characters. Only models Hugging Face has timed can race.
 
 ## One-time setup
 
@@ -111,6 +117,8 @@ Requires Node 20.9 or newer (`.nvmrc` pins 24).
 | Reshape the galaxy (arm twist, star brightness) | `TWIST`, `layoutGalaxy`, and `galaxyData` in `src/lib/galaxy.ts`; look and glow in `src/components/galaxy/` |
 | Change how quality is matched or rated | `rowCores`, `scoreCores`, and `BASIS` in `src/lib/pipeline/scores.ts`; labels in `src/lib/quality.ts` |
 | Change what the matchmaker weighs | `WEIGHTS`, `TASKS`, `NEEDS`, and `BUDGETS` in `src/lib/match.ts` |
+| Change a creature's species or looks | `SPECIES` in `src/lib/terrarium.ts`; drawing in `src/components/creatures/draw.ts`; the world in `src/components/terrarium/world.ts` |
+| Change the race passages or lineup | `PASSAGES` and `defaultLineup` in `src/lib/race.ts` |
 | Credit a new source, library, or font | `SECTIONS` in `src/app/credits/page.tsx` |
 | Fix a wrong license | `LICENSE_OVERRIDES` in `src/config/labs.ts`, then `npm run sync` |
 | Change rarity thresholds | `RARITY_FLOORS` in `src/lib/pipeline/build.ts` |
@@ -124,6 +132,10 @@ src/config/labs.ts         which labs appear, their colors, how to recognize the
 src/lib/pipeline/          pure data pipeline (tested): build, licenses, hub, offers, scores, schema, diff
 src/lib/quality.ts         quality tiers and what each leaderboard is
 src/lib/match.ts           the Model Matchmaker: filters, ranking, one-line reasons (tested)
+src/lib/terrarium.ts       cards as creatures: species, size, families, eggs, fossils, moods (tested)
+src/lib/race.ts            Race the machine: who has typed what, when (tested)
+src/components/creatures/  every species, egg, and fossil drawn on a canvas
+src/components/terrarium/  the Terrarium's world: scenery, simulation, camera, and its React shell
 src/lib/battle.ts          battle mode: rounds, damage, matchmaking (tested)
 src/lib/news.ts            what "New this week" and the RSS feed list (tested)
 src/lib/evolution.ts       evolution lines read from model names, and what changed per stage (tested)
@@ -135,7 +147,7 @@ src/components/card/       the card: foil, tilt, glare, generated art
 src/components/binder/     search, filters (kept in the URL), grid
 src/components/deck/       the compare deck, saved in localStorage
 src/app/                   routes: /, /models/[lab]/[id], /labs, /evolution, /galaxy, /new, /favorites, /credits, /compare, /battle
-                           and /match (read the query in the browser), feed.xml, og.png images, sitemap
+                           /match, /terrarium, and /race (read the query in the browser), feed.xml, og.png images, sitemap
 src/components/votes/      vote button and store; talks to the Worker
 worker/                    the voting Worker and its D1 schema (own toolchain: Wrangler)
 data/models.json           generated: every card

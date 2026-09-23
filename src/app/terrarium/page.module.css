@@ -1,0 +1,106 @@
+.top {
+  padding-block: 30px 4px;
+}
+.title {
+  margin: 12px 0 10px;
+  font-weight: 850;
+  font-size: clamp(30px, 4.4vw, 56px);
+  font-stretch: 112%;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+.title em {
+  font: italic 400 0.86em/1 var(--f-serif);
+  letter-spacing: 0;
+  color: var(--accent-ink);
+}
+.lede {
+  margin: 0;
+  max-width: 70ch;
+  color: var(--ink-2);
+}
+.section {
+  margin-top: 64px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+.section h2 {
+  margin: 0;
+  font-weight: 850;
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-stretch: 115%;
+  letter-spacing: -0.02em;
+}
+.sectionLede {
+  margin: 6px 0 0;
+  color: var(--ink-2);
+}
+.guide {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+}
+.guide li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+.specimen {
+  width: 120px;
+  height: 100px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 30%, color-mix(in oklab, var(--t) 18%, #ffffff), color-mix(in oklab, var(--t) 34%, #dfe9d5));
+}
+.guide h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+}
+.guide h3 small {
+  font: 500 12px var(--f-mono);
+  color: var(--ink-3);
+  margin-left: 4px;
+}
+.guide p {
+  margin: 4px 0 0;
+  font-size: 13.5px;
+  color: var(--ink-2);
+}
+.example {
+  font: 500 11.5px var(--f-mono) !important;
+  color: var(--ink-3) !important;
+}
+.how {
+  margin: 18px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+.how div {
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+.how dt {
+  font: 600 11px var(--f-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.how dd {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: var(--ink-2);
+}

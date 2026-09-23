@@ -6,6 +6,8 @@ import { buildLines, type EvolutionLine } from './evolution';
 import { INPUT_ONLY } from './format';
 import type { Signals } from './match';
 import { percentile } from './quality';
+import type { Racer } from './race';
+import { buildCreatures, measuredSpeeds, type TerrariumData } from './terrarium';
 import type { CardScores, ChangeEvent, Dataset, LabSummary, Model, OffersFile, Quality, ScoresFile } from './types';
 
 /** Validated by the sync job before it is ever committed, and again in the test suite. Server-only: pages pass slices to the browser. */
@@ -119,6 +121,34 @@ export function matchSignals(models: Model[]): Record<string, Signals> {
     };
   }
   return out;
+}
+
+let speeds: ReturnType<typeof measuredSpeeds> | null = null;
+/** Each card's fastest measured host on Hugging Face: tokens a second and first-token delay. */
+export const speedsOf = () => (speeds ??= measuredSpeeds(offers));
+
+/** Every live model Hugging Face has timed, for Race the machine. */
+export function racers(): Racer[] {
+  const speeds = speedsOf();
+  return dataset.models
+    .filter((m) => m.status !== 'deprecated' && speeds[m.key]?.latencyMs != null)
+    .map((m) => {
+      const s = speeds[m.key];
+      return { key: m.key, name: m.name, lab: m.lab, speed: s.speed, latencyMs: s.latencyMs!, host: s.name, url: s.url };
+    });
+}
+
+/** Every card as a creature, for the Terrarium. */
+export function terrariumData(): TerrariumData {
+  const today = dataset.updatedAt.slice(0, 10);
+  const newest = changes[0]?.date;
+  return {
+    creatures: buildCreatures(dataset.models, evolutionLines(), speedsOf(), today),
+    labs: dataset.labs.map(({ key, name, color }) => ({ key, name, color })),
+    today,
+    hatchedToday: newest ? changes.filter((e) => e.date === newest && e.kind === 'added').length : 0,
+    events: changes.filter((e) => e.kind === 'price' || e.kind === 'retired'),
+  };
 }
 
 /** Everything the daily sync logged in the last 90 days, newest first. */

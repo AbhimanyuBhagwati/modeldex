@@ -15,9 +15,11 @@ export function SiteHeader({ updatedAt }: { updatedAt: string }) {
         <Link href="/#binder">Binder</Link>
         <Link href="/match/">Match</Link>
         <Link href="/galaxy/">Galaxy</Link>
+        <Link href="/terrarium/">Terrarium</Link>
         <Link href="/labs/">Labs</Link>
         <Link href="/evolution/">Evolution</Link>
         <Link href="/battle/">Battle</Link>
+        <Link href="/race/">Race</Link>
         {VOTES_API && <Link href="/favorites/">Favorites</Link>}
         <CompareNavLink className={styles.navCompare} />
         <Link className={styles.sync} href="/new/" title="What changed this week">

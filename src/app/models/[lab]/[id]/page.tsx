@@ -10,7 +10,7 @@ import { AddToDeckButton, CopyButton } from '@/components/client-bits';
 import { WhereToRun } from '@/components/WhereToRun';
 import { VoteButton } from '@/components/votes/VoteButton';
 import { Icon, RarityIcon } from '@/components/icons';
-import { getDataset, getLab, getModel, lineOf, moreFromLab, opponentFor, providerInfo, rivalsOf, scoreBoards, scoresOf, whereToRun } from '@/lib/data';
+import { getDataset, getLab, getModel, lineOf, moreFromLab, opponentFor, providerInfo, rivalsOf, scoreBoards, scoresOf, speedsOf, whereToRun } from '@/lib/data';
 import {
   ACCESS_LABEL,
   INPUT_ONLY,
@@ -98,6 +98,7 @@ export default async function ModelPage({ params }: PageProps<'/models/[lab]/[id
   const opponent = opponentFor(m);
   const run = whereToRun(m.key);
   const evolution = lineOf(m.key);
+  const timed = m.status !== 'deprecated' ? speedsOf()[m.key] : undefined;
   const runCount = run ? run.offers.length + run.hf.length : 0;
   const runProviders = Object.fromEntries((run?.offers ?? []).map((o) => [o.provider, providerInfo(o.provider)]));
   const fromHub = m.origin === 'huggingface';
@@ -226,6 +227,14 @@ export default async function ModelPage({ params }: PageProps<'/models/[lab]/[id
                   Evolution <small className={styles.count}>{evolution.stage + 1}/{evolution.line.stages.length}</small>
                 </Link>
               )}
+              {timed?.latencyMs != null && (
+                <Link className="btn" href={`/race/?r=${m.key}`}>
+                  Race it <small className={styles.count}>{Math.round(timed.speed)} tok/s</small>
+                </Link>
+              )}
+              <Link className="btn" href={`/terrarium/?see=${m.key}`}>
+                Meet its creature
+              </Link>
               {opponent && (
                 <Link className="btn" href={battleHref(m.key, opponent.key)}>
                   Battle {opponent.name}

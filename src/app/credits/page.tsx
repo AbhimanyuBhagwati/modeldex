@@ -23,7 +23,7 @@ const SECTIONS: { title: string; lede: string; items: Credit[] }[] = [
     items: [
       { name: 'models.dev', href: 'https://models.dev', use: 'Specs, prices, release dates, and the 200+ providers behind “Where to run it”.', license: 'MIT' },
       { name: 'Hugging Face Hub', href: 'https://huggingface.co/models', use: 'Open models, downloads, likes, parameter counts, and licenses from each lab’s official account.', license: 'Public API' },
-      { name: 'Hugging Face Inference Providers', href: 'https://huggingface.co/docs/inference-providers', use: 'Host prices, speed, and first-token latency for open models.', license: 'Public API' },
+      { name: 'Hugging Face Inference Providers', href: 'https://huggingface.co/docs/inference-providers', use: 'Host prices, speed, and first-token latency for open models; the speeds Race the machine and the Terrarium run on.', license: 'Public API' },
       {
         name: 'Epoch AI Benchmarking Hub',
         href: 'https://epoch.ai/benchmarks',
@@ -45,6 +45,7 @@ const SECTIONS: { title: string; lede: string; items: Credit[] }[] = [
     items: [
       { name: 'Card art and card back', href: 'https://abhimanyubhagwati.github.io/modeldex/', use: 'Generated per model from its lab’s style and its stats, as SVG.', license: 'Original' },
       { name: 'The AI Galaxy', href: 'https://abhimanyubhagwati.github.io/modeldex/galaxy/', use: 'Stars, dust lanes, nebula, and glow are WebGL shaders and particles.', license: 'Original' },
+      { name: 'The AI Terrarium', href: 'https://abhimanyubhagwati.github.io/modeldex/terrarium/', use: 'Every creature, egg, fossil, tree, and sky is drawn by code on a canvas from the model’s own stats.', license: 'Original' },
       { name: 'Evolution effects', href: 'https://abhimanyubhagwati.github.io/modeldex/evolution/', use: 'Silhouettes, flashes, and particles, drawn with SVG, CSS, and canvas.', license: 'Original' },
       { name: 'webgl-noise', href: 'https://github.com/stegu/webgl-noise', use: 'Simplex noise by Ian McEwan (Ashima Arts) and Stefan Gustavson, shaping the galaxy’s clouds and arms.', license: 'MIT' },
     ],
