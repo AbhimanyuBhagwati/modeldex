@@ -6,12 +6,14 @@ import { CardBack } from './CardBack';
 import styles from './CardShowcase.module.css';
 
 const nearestFace = (angle: number) => Math.round(angle / 180) * 180;
+const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+const easeOutQuart = (t: number) => 1 - Math.pow(1 - t, 4);
 const facing = (angle: number): 'front' | 'back' => {
   const normalized = ((angle % 360) + 360) % 360;
   return normalized > 90 && normalized < 270 ? 'back' : 'front';
 };
 
-/** Direct manipulation while held, with a short, interruptible settle onto either face. */
+/** One full turn when the page opens, then direct manipulation while held, with a short, interruptible settle onto either face. */
 export function CardShowcase(props: CardProps) {
   const spinner = useRef<HTMLDivElement>(null);
   const shadow = useRef<HTMLDivElement>(null);
@@ -33,7 +35,7 @@ export function CardShowcase(props: CardProps) {
     }
   }, []);
 
-  const animateTo = useCallback((target: number) => {
+  const animateTo = useCallback((target: number, duration = 280, ease = easeOutCubic) => {
     const m = motion.current;
     cancelAnimationFrame(m.raf);
     m.target = target;
@@ -52,8 +54,8 @@ export function CardShowcase(props: CardProps) {
     const start = performance.now();
     spinner.current?.setAttribute('data-moving', 'true');
     const tick = (now: number) => {
-      const progress = Math.min(1, (now - start) / 280);
-      m.angle = from + (target - from) * (1 - Math.pow(1 - progress, 3));
+      const progress = Math.min(1, (now - start) / duration);
+      m.angle = from + (target - from) * ease(progress);
       paint();
       if (progress < 1) m.raf = requestAnimationFrame(tick);
       else finish();
@@ -69,10 +71,11 @@ export function CardShowcase(props: CardProps) {
   useEffect(() => {
     const m = motion.current;
     const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+    // The reveal: a full turn that shows the card back on the way. Grabbing the card stops it.
     if (!reduce.matches) {
-      m.angle = -16;
+      m.angle = -360;
       paint();
-      animateTo(0);
+      animateTo(0, 1500, easeOutQuart);
     }
     const onPreference = () => {
       if (reduce.matches) animateTo(m.target ?? nearestFace(m.angle));
