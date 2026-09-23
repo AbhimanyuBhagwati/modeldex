@@ -18,7 +18,7 @@ import { rawModelSchema, rawProviderSchema, type RawModel } from './schema';
 export const RARITY_FLOORS = { uncommon: 2, rare: 8, holo: 20 } as const;
 
 const ALIAS = /(^|[-_ (])latest([-_ )]|$)/i;
-const PREVIEW = /(^|[-_ ])(preview|exp|experimental)([-_ ]|$)/i;
+export const PREVIEW = /(^|[-_ ])(preview|exp|experimental)([-_ ]|$)/i;
 /** Name used to spot the same model listed twice. `+` is spelled out: Command R+ is not Command R. */
 export const normalizeName = (s: string) =>
   s
@@ -73,7 +73,8 @@ export function defaultLicense(lab: LabConfig, openWeights: boolean): License {
 
 const matches = (lab: LabConfig, m: { id: string; name: string }) => lab.match.test(m.id) || lab.match.test(m.name);
 
-function day(s: string | undefined): string | null {
+/** YYYY-MM-DD from a date or timestamp, or null when it isn't a real date. */
+export function day(s: string | undefined): string | null {
   if (!s) return null;
   const v = /^\d{4}-\d{2}$/.test(s) ? `${s}-01` : s.slice(0, 10);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(v) || Number.isNaN(Date.parse(`${v}T00:00:00Z`))) return null;
@@ -128,6 +129,8 @@ function toModel(m: RawModel, lab: LabConfig, releaseDate: string): Model {
     rarity: rarityFor(price),
     set: 0,
     license: defaultLicense(lab, openWeights),
+    origin: 'models.dev',
+    hub: null,
   };
 }
 
@@ -206,29 +209,35 @@ export function buildDataset(raw: unknown, labs: LabConfig[], opts: { sourceUrl:
     if (!held || isNewer(m, held)) byKey.set(m.key, m);
   }
 
-  const models = [...byKey.values()].sort(
-    (a, b) => a.releaseDate.localeCompare(b.releaseDate) || a.name.localeCompare(b.name, 'en') || a.key.localeCompare(b.key),
-  );
-  models.forEach((m, i) => (m.set = i + 1));
-
-  const labSummaries: LabSummary[] = [];
+  const models = numberSet([...byKey.values()]);
   for (const lab of labs) {
-    const n = models.filter((m) => m.lab === lab.key).length;
-    if (n === 0) {
-      issues.push(`${lab.name} has no models in this sync`);
-      continue;
-    }
-    labSummaries.push({ key: lab.key, name: lab.name, color: lab.color, docUrl: docs.get(lab.key) ?? null, count: n });
+    if (lab.providers.length && !models.some((m) => m.lab === lab.key)) issues.push(`${lab.name} has no models in this sync`);
   }
 
   return {
     dataset: {
       version: 1,
       updatedAt: opts.updatedAt,
-      source: { url: opts.sourceUrl, providers: Object.keys(root).length, listings },
-      labs: labSummaries,
+      source: { url: opts.sourceUrl, providers: Object.keys(root).length, listings, hub: { orgs: 0, repos: 0 } },
+      labs: summarizeLabs(models, labs, (lab) => docs.get(lab.key) ?? null),
       models,
     },
     issues,
   };
+}
+
+/** Orders the set by release date and numbers it from 1. */
+export function numberSet(models: Model[]): Model[] {
+  return [...models]
+    .sort((a, b) => a.releaseDate.localeCompare(b.releaseDate) || a.name.localeCompare(b.name, 'en') || a.key.localeCompare(b.key))
+    .map((m, i) => ({ ...m, set: i + 1 }));
+}
+
+/** One summary per lab that has cards, in config order. */
+export function summarizeLabs(models: Model[], labs: LabConfig[], docUrl: (lab: LabConfig) => string | null): LabSummary[] {
+  const counts = new Map<string, number>();
+  for (const m of models) counts.set(m.lab, (counts.get(m.lab) ?? 0) + 1);
+  return labs
+    .filter((lab) => counts.has(lab.key))
+    .map((lab) => ({ key: lab.key, name: lab.name, color: lab.color, docUrl: docUrl(lab), count: counts.get(lab.key)! }));
 }

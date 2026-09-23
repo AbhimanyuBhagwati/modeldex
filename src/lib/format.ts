@@ -11,6 +11,23 @@ export function formatTokens(n: number | null): string {
 
 export const formatTokensLong = (n: number | null) => (n == null ? '—' : `${n.toLocaleString('en-US')} tokens`);
 
+/** 6.1M, 250K, 1.2B: one decimal below ten, none above. */
+function compact(n: number, units: [number, string][]): string {
+  for (const [size, unit] of units) {
+    if (n >= size) {
+      const v = n / size;
+      return `${v < 10 ? trim(v.toFixed(1)) : Math.round(v)}${unit}`;
+    }
+  }
+  return String(Math.round(n));
+}
+
+/** Parameter count: 8B, 1.5B, 596M. */
+export const formatParams = (n: number | null | undefined) => (n == null ? '—' : compact(n, [[1e12, 'T'], [1e9, 'B'], [1e6, 'M'], [1e3, 'K']]));
+
+/** Download and like counts: 6.1M, 250K. */
+export const formatCount = (n: number | null | undefined) => (n == null ? '—' : compact(n, [[1e9, 'B'], [1e6, 'M'], [1e3, 'K']]));
+
 /** Price per 1M tokens, for tables: $4.00, $0.098, Free. */
 export function formatPrice(v: number | null): string {
   if (v == null) return '—';
@@ -69,6 +86,10 @@ export const TYPE_LABEL: Record<ModelType, string> = {
   embedding: 'Embedding',
   rerank: 'Rerank',
   safety: 'Safety',
+  '3d': '3D',
+  vision: 'Vision',
+  encoder: 'Encoder',
+  forecast: 'Forecasting',
 };
 /** What the type means, for the legend and chip tooltips. */
 export const TYPE_HINT: Record<ModelType, string> = {
@@ -78,14 +99,61 @@ export const TYPE_HINT: Record<ModelType, string> = {
   audio: 'text to speech and music',
   voice: 'real-time spoken conversation',
   transcription: 'speech to text',
-  embedding: 'turn text into vectors for search',
+  embedding: 'turn text or images into vectors for search',
   rerank: 'reorder search results by relevance',
   safety: 'moderation and content filters',
+  '3d': 'turn images or text into 3D objects',
+  vision: 'classify, detect, and segment what’s in images',
+  encoder: 'BERT-style models for classifying and tagging',
+  forecast: 'predict what comes next in a time series',
 };
 /** Types where only the input side is billed, so a zero output price means "not applicable", not "free". */
 export const INPUT_ONLY: ReadonlySet<ModelType> = new Set(['embedding', 'rerank', 'safety']);
 
 export const modalityList = (list: Modality[]) => (list.length ? list.map((m) => MODALITY_LABEL[m]).join(', ') : '—');
+
+export interface CardMove {
+  name: string;
+  list: Modality[];
+  value: string;
+  unit: string;
+}
+
+/**
+ * The card's corner stat and its two moves. Models you call show context and price;
+ * open models without a price show size and Hugging Face downloads instead.
+ */
+export function cardFace(m: Pick<Model, 'type' | 'context' | 'price' | 'input' | 'output' | 'hub'>): {
+  /** Null for open models that publish neither a context window nor a parameter count: better blank than a dash. */
+  corner: { label: string; value: string; title: string } | null;
+  moves: [CardMove, CardMove];
+} {
+  const hub = m.price == null ? m.hub : null;
+  const corner =
+    m.context != null || !hub
+      ? { label: 'CTX', value: formatTokens(m.context), title: 'Context window' }
+      : hub.params
+        ? { label: 'SIZE', value: formatParams(hub.params), title: 'Parameters' }
+        : null;
+  if (hub) {
+    return {
+      corner,
+      moves: [
+        { name: 'Downloads', list: m.input, value: formatCount(hub.downloads), unit: '/mo' },
+        { name: 'Likes', list: m.output, value: formatCount(hub.likes), unit: '' },
+      ],
+    };
+  }
+  const input = m.price?.input ?? null;
+  const output = INPUT_ONLY.has(m.type) && !m.price?.output ? null : (m.price?.output ?? null);
+  return {
+    corner,
+    moves: [
+      { name: 'Input', list: m.input, value: formatPriceShort(input), unit: input ? '/M' : '' },
+      { name: 'Output', list: m.output, value: formatPriceShort(output), unit: output ? '/M' : '' },
+    ],
+  };
+}
 
 /** The three-word type line on a card. */
 export function typeLine(m: Pick<Model, 'type' | 'reasoning' | 'toolCall' | 'input' | 'output'>): string {
@@ -99,8 +167,13 @@ export function typeLine(m: Pick<Model, 'type' | 'reasoning' | 'toolCall' | 'inp
       embedding: 'Embedding',
       rerank: 'Rerank',
       safety: 'Safety',
+      '3d': '3D generation',
+      vision: 'Computer vision',
+      encoder: 'Encoder',
+      forecast: 'Forecasting',
     };
-    return [lead[m.type], m.input.includes('image') && m.type !== 'image' ? 'Vision' : null].filter(Boolean).join(' · ');
+    const sees = m.input.includes('image') && m.type !== 'image' && m.type !== 'vision' && m.type !== '3d';
+    return [lead[m.type], sees ? 'Vision' : null].filter(Boolean).join(' · ');
   }
   const parts: string[] = [];
   if (m.reasoning) parts.push('Reasoning');

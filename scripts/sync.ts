@@ -3,6 +3,7 @@ import path from 'node:path';
 import { LABS, LICENSE_OVERRIDES } from '@/config/labs';
 import { buildDataset } from '@/lib/pipeline/build';
 import { diffDatasets, markdownReport, sameContent, summarize } from '@/lib/pipeline/diff';
+import { HUB_MIN_DOWNLOADS, addHubModels } from '@/lib/pipeline/hub';
 import { resolveLicenses } from '@/lib/pipeline/licenses';
 import { datasetSchema } from '@/lib/pipeline/schema';
 import type { Dataset } from '@/lib/types';
@@ -15,13 +16,15 @@ const MAX_DROP = 0.25;
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
+/** Optional. Hugging Face rate-limits anonymous calls per IP, and CI runners share IPs; a free read token gets its own limit. */
+const HF_TOKEN = process.env.HF_TOKEN?.trim();
+
 async function fetchJson(url: string, attempts = 3): Promise<unknown> {
+  const headers: Record<string, string> = { accept: 'application/json', 'user-agent': 'modeldex-sync' };
+  if (HF_TOKEN && new URL(url).hostname === 'huggingface.co') headers.authorization = `Bearer ${HF_TOKEN}`;
   for (let i = 1; ; i++) {
     try {
-      const res = await fetch(url, {
-        headers: { accept: 'application/json', 'user-agent': 'modeldex-sync' },
-        signal: AbortSignal.timeout(30_000),
-      });
+      const res = await fetch(url, { headers, signal: AbortSignal.timeout(30_000) });
       if (!res.ok) throw new Error(`${res.status} ${res.statusText} from ${url}`);
       return await res.json();
     } catch (err) {
@@ -31,9 +34,16 @@ async function fetchJson(url: string, attempts = 3): Promise<unknown> {
   }
 }
 
+/** Data written before Hugging Face cards existed lacks their fields; fill them so diffs and guardrails still work. */
+function upgrade(data: { source?: object; models?: object[] }) {
+  if (data.source && !('hub' in data.source)) data.source = { ...data.source, hub: { orgs: 0, repos: 0 } };
+  data.models = data.models?.map((m) => ({ origin: 'models.dev', hub: null, ...m }));
+  return data;
+}
+
 async function readPrevious(): Promise<Dataset | null> {
   try {
-    const parsed = datasetSchema.safeParse(JSON.parse(await readFile(OUT_FILE, 'utf8')));
+    const parsed = datasetSchema.safeParse(upgrade(JSON.parse(await readFile(OUT_FILE, 'utf8'))));
     return parsed.success ? (parsed.data as Dataset) : null;
   } catch {
     return null;
@@ -66,11 +76,14 @@ async function main() {
   const previous = await readPrevious();
 
   const built = buildDataset(raw, LABS, { sourceUrl: SOURCE_URL, updatedAt: new Date().toISOString() });
-  const { dataset, stats } = await resolveLicenses(built.dataset, LABS, {
+  const licensed = await resolveLicenses(built.dataset, LABS, {
     fetchJson: (u) => fetchJson(u, 2),
     previous,
     overrides: LICENSE_OVERRIDES,
   });
+  const stats = licensed.stats;
+  console.log(`Fetching Hugging Face orgs (cards need ${HUB_MIN_DOWNLOADS.toLocaleString('en-US')} downloads a month)`);
+  const { dataset, stats: hub } = await addHubModels(licensed.dataset, LABS, { fetchJson: (u) => fetchJson(u, 2), previous });
 
   const check = datasetSchema.safeParse(dataset);
   if (!check.success) fail(`the new data failed validation:\n${check.error.issues.slice(0, 10).map((i) => `  ${i.path.join('.')}: ${i.message}`).join('\n')}`);
@@ -81,11 +94,13 @@ async function main() {
 
   const notes = [...built.issues];
   if (stats.failedOrgs.length) notes.push(`Hugging Face lookup failed for ${stats.failedOrgs.join(', ')}; kept earlier licenses`);
+  if (hub.failedOrgs.length) notes.push(`Hugging Face listing failed for ${hub.failedOrgs.join(', ')}; kept earlier cards`);
   for (const n of notes) console.warn(`  note: ${n}`);
   console.log(
     `Built ${dataset.models.length} models from ${dataset.labs.length} labs ` +
       `(licenses: ${stats.huggingface} from Hugging Face, ${stats.labDefault} lab default, ${stats.override} override)`,
   );
+  console.log(`Hugging Face: ${hub.repos.toLocaleString('en-US')} repos across ${hub.orgs} orgs, ${hub.cards} open-model cards, ${hub.matched} models.dev cards with stats`);
 
   if (previous && sameContent(previous, dataset)) {
     console.log(`No changes since ${previous.updatedAt}. Nothing written. (${Date.now() - started} ms)`);

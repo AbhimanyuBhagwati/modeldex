@@ -1,6 +1,6 @@
 'use client';
 
-import { useDeferredValue, useEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
+import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
 import { Card } from '@/components/card/Card';
 import { Icon } from '@/components/icons';
 import { CAPS, DEFAULT_FILTERS, applyFilters, filtersFromParams, filtersToParams, isFiltered, type Cap, type Filters, type SortKey } from '@/lib/filter';
@@ -17,12 +17,15 @@ const ACCESS_OPTIONS: { value: 'all' | Access; label: string }[] = [
 ];
 const SORT_OPTIONS: { value: SortKey; label: string; short: string }[] = [
   { value: 'newest', label: 'Newest first', short: 'Newest' },
+  { value: 'popular', label: 'Most downloaded', short: 'Popular' },
   { value: 'rarest', label: 'Rarest first', short: 'Rarest' },
   { value: 'cheapest', label: 'Cheapest output', short: 'Cheapest' },
   { value: 'context', label: 'Most context', short: 'Context' },
   { value: 'set', label: 'Set number', short: 'Set no.' },
 ];
 const CAP_LABEL: Record<Cap, string> = { reasoning: 'Reasoning', vision: 'Vision', tools: 'Tools' };
+/** Cards rendered per step. The rest arrive as you scroll, so a thousand cards never render at once. */
+const PAGE = 48;
 
 interface Props {
   models: Model[];
@@ -63,6 +66,21 @@ export function Binder({ models, labs, setSize, refDate }: Props) {
   const visible = useMemo(() => applyFilters(models, { ...filters, q: query }, labNames), [models, filters, query, labNames]);
   const liveTotal = models.length - retiredCount;
   const pool = filters.retired ? models.length : liveTotal;
+
+  // How far you've scrolled belongs to one set of filters; change them and the binder starts from the top again.
+  const view = filtersToParams({ ...filters, q: query }).toString();
+  const [shown, setShown] = useState({ view: '', count: PAGE });
+  const limit = shown.view === view ? shown.count : PAGE;
+  const showMore = useCallback(() => setShown({ view, count: limit + PAGE }), [view, limit]);
+  const sentinel = useCallback(
+    (el: HTMLDivElement | null) => {
+      if (!el) return;
+      const io = new IntersectionObserver((entries) => entries.some((e) => e.isIntersecting) && showMore(), { rootMargin: '900px 0px' });
+      io.observe(el);
+      return () => io.disconnect();
+    },
+    [showMore],
+  );
 
   // Each menu counts within the other's choice: picking Image leaves only labs that make image models.
   const counts = useMemo(() => {
@@ -236,11 +254,21 @@ export function Binder({ models, labs, setSize, refDate }: Props) {
       </div>
 
       {visible.length > 0 ? (
-        <div className={styles.grid} aria-busy={query !== filters.q}>
-          {visible.map((m) => (
-            <Card key={m.key} model={m} lab={labByKey[m.lab]} setSize={setSize} refDate={refDate} />
-          ))}
-        </div>
+        <>
+          <div className={styles.grid} aria-busy={query !== filters.q}>
+            {visible.slice(0, limit).map((m) => (
+              <Card key={m.key} model={m} lab={labByKey[m.lab]} setSize={setSize} refDate={refDate} />
+            ))}
+          </div>
+          {visible.length > limit && (
+            <div ref={sentinel} className={styles.more}>
+              <button type="button" className="btn" onClick={showMore}>
+                Show more cards
+                <small>{visible.length - limit} left</small>
+              </button>
+            </div>
+          )}
+        </>
       ) : (
         <div className={styles.empty}>
           <p>No cards match those filters.</p>

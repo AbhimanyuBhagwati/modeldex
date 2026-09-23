@@ -7,8 +7,8 @@ import { Card } from '@/components/card/Card';
 import { useDeckApi } from '@/components/deck/DeckProvider';
 import { CopyButton } from '@/components/client-bits';
 import { Energies, Icon, RarityIcon } from '@/components/icons';
-import { ACCESS_LABEL, INPUT_ONLY, RARITY_LABEL, TYPE_LABEL, formatDate, formatMonth, formatPrice, formatTokens, modalityList } from '@/lib/format';
-import { MAX_DECK, compareHref, parseCompareParam } from '@/lib/site';
+import { ACCESS_LABEL, INPUT_ONLY, RARITY_LABEL, TYPE_LABEL, formatCount, formatDate, formatMonth, formatParams, formatPrice, formatTokens, modalityList } from '@/lib/format';
+import { MAX_DECK, battleHref, compareHref, parseCompareParam } from '@/lib/site';
 import type { LabSummary, Model } from '@/lib/types';
 import styles from './page.module.css';
 
@@ -48,6 +48,8 @@ const ROWS: Row[] = [
     bar: true,
   },
   { label: 'Cache read', sub: 'per 1M tokens', value: (m) => m.price?.cacheRead ?? null, format: formatPrice, better: 'low', tag: 'Cheapest', bar: true },
+  { label: 'Parameters', sub: 'open weights', value: (m) => m.hub?.params ?? null, format: formatParams, better: 'high', tag: 'Largest', bar: true },
+  { label: 'Downloads', sub: 'last 30 days, Hugging Face', value: (m) => m.hub?.downloads ?? null, format: formatCount, better: 'high', tag: 'Most used', bar: true },
   { label: 'Released', value: (m) => m.releaseDate, format: formatDate, better: 'high', tag: 'Newest' },
   { label: 'Knowledge cutoff', value: (m) => m.knowledge, format: formatMonth, better: 'high', tag: 'Freshest' },
   { label: 'Takes in', render: (m) => <Mods list={m.input} /> },
@@ -122,6 +124,9 @@ export function CompareView({ models: all, labs: labList, setSize, refDate, newe
         </div>
         {models.length >= 2 && (
           <div className={styles.topActions}>
+            <Link className="btn btn-gold" href={battleHref(keys[0], keys[1])}>
+              {models.length === 2 ? 'Battle these two' : 'Battle the first two'}
+            </Link>
             <CopyButton label="Copy link" className="btn" />
             <Link className="btn btn-ghost" href="/#binder">
               <Icon name="back" />

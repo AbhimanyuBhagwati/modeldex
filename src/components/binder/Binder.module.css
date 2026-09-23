@@ -463,6 +463,15 @@
   gap: 32px 26px;
   margin-top: 22px;
 }
+.more {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.more small {
+  font: 500 12px/1 var(--f-mono);
+  color: var(--ink-3);
+}
 .empty {
   display: grid;
   justify-items: center;

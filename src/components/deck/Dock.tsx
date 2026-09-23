@@ -4,15 +4,16 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { CSSProperties } from 'react';
 import { Icon } from '@/components/icons';
-import { MAX_DECK, compareHref } from '@/lib/site';
+import { MAX_DECK, battleHref, compareHref } from '@/lib/site';
 import { useDeck, useDeckApi } from './DeckProvider';
 import styles from './Dock.module.css';
 
 export function Dock() {
   const entries = useDeck();
   const { registerDock, registerSlot, remove, clear, notify } = useDeckApi();
-  const onComparePage = usePathname().startsWith('/compare');
-  const open = entries.length > 0 && !onComparePage;
+  const path = usePathname();
+  // The compare and battle pages show the cards themselves.
+  const open = entries.length > 0 && !path.startsWith('/compare') && !path.startsWith('/battle');
 
   return (
     <div ref={registerDock} className={styles.dock} data-open={open ? 'true' : 'false'} role="region" aria-label="Compare deck" inert={!open}>
@@ -55,6 +56,11 @@ export function Dock() {
           <button type="button" className={`btn btn-ghost ${styles.clear}`} onClick={clear}>
             Clear
           </button>
+          {entries.length >= 2 && (
+            <Link className="btn" href={battleHref(entries[0].key, entries[1].key)} title={`${entries[0].name} vs ${entries[1].name}`}>
+              Battle
+            </Link>
+          )}
           {entries.length >= 2 ? (
             <Link className="btn btn-gold" href={compareHref(entries.map((e) => e.key))}>
               Compare {entries.length}

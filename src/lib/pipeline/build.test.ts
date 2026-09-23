@@ -79,7 +79,7 @@ describe('buildDataset', () => {
   });
 
   it('counts listings across every provider, including resellers', () => {
-    expect(build().dataset.source).toEqual({ url: 'https://models.dev/api.json', providers: 4, listings: 13 });
+    expect(build().dataset.source).toEqual({ url: 'https://models.dev/api.json', providers: 4, listings: 13, hub: { orgs: 0, repos: 0 } });
   });
 
   it('reports skipped entries instead of failing', () => {

@@ -3,7 +3,7 @@ import { MODEL_TYPES, type Access, type Model, type ModelType } from './types';
 
 export const CAPS = ['reasoning', 'vision', 'tools'] as const;
 export type Cap = (typeof CAPS)[number];
-export const SORTS = ['newest', 'rarest', 'cheapest', 'context', 'set'] as const;
+export const SORTS = ['newest', 'popular', 'rarest', 'cheapest', 'context', 'set'] as const;
 export type SortKey = (typeof SORTS)[number];
 
 export interface Filters {
@@ -28,6 +28,7 @@ const big = (v: number | null | undefined) => v ?? Number.POSITIVE_INFINITY;
 
 const COMPARE: Record<SortKey, (a: Model, b: Model) => number> = {
   newest: (a, b) => b.releaseDate.localeCompare(a.releaseDate) || b.set - a.set,
+  popular: (a, b) => (b.hub?.downloads ?? -1) - (a.hub?.downloads ?? -1) || b.releaseDate.localeCompare(a.releaseDate),
   set: (a, b) => a.set - b.set,
   cheapest: (a, b) => big(a.price?.output) - big(b.price?.output) || big(a.price?.input) - big(b.price?.input) || a.set - b.set,
   context: (a, b) => (b.context ?? 0) - (a.context ?? 0) || b.releaseDate.localeCompare(a.releaseDate),
@@ -44,7 +45,7 @@ export function applyFilters(models: Model[], f: Filters, labNames: Record<strin
       if (f.access !== 'all' && m.access !== f.access) return false;
       if (!f.caps.every((c) => HAS[c](m))) return false;
       if (terms.length) {
-        const hay = `${m.name} ${m.id} ${labNames[m.lab] ?? ''} ${m.family ?? ''}`.toLowerCase();
+        const hay = `${m.name} ${m.id} ${labNames[m.lab] ?? ''} ${m.family ?? ''} ${m.hub?.repo ?? ''}`.toLowerCase();
         if (!terms.every((t) => hay.includes(t))) return false;
       }
       return true;

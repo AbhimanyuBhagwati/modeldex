@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 import { artToSvg, cardArt } from '@/lib/art';
 import { mix } from '@/lib/color';
 import { getDataset, getLab, newestModels } from '@/lib/data';
-import { ACCESS_LABEL, RARITY_LABEL, formatPrice, formatTokens, typeLine } from '@/lib/format';
+import { ACCESS_LABEL, RARITY_LABEL, cardFace, formatCount, formatParams, formatPrice, formatTokens, typeLine } from '@/lib/format';
 import type { LabSummary, Model } from '@/lib/types';
 
 /** Share images, 1200 by 630, rendered at build time into real .png files. */
@@ -50,7 +50,7 @@ export function renderHomeOg() {
                   <div style={{ fontSize: 10, letterSpacing: 1.2, color: mix(c, '#000000', 0.4) }}>{getLab(m.lab).name.toUpperCase()}</div>
                   <div style={{ fontSize: 17, fontWeight: 800, lineHeight: 1.05 }}>{m.name}</div>
                   <img alt="" width={168} height={100} style={{ borderRadius: 6 }} src={`data:image/svg+xml;base64,${Buffer.from(artToSvg(cardArt(m, c), 168, 100)).toString('base64')}`} />
-                  <div style={{ fontSize: 13, color: '#5b5e67' }}>{`${formatTokens(m.context)} context`}</div>
+                  <div style={{ fontSize: 13, color: '#5b5e67' }}>{m.context == null && m.hub?.params ? `${formatParams(m.hub.params)} parameters` : `${formatTokens(m.context)} context`}</div>
                 </div>
               </div>
             );
@@ -64,6 +64,14 @@ export function renderHomeOg() {
 
 export function renderModelOg(m: Model, lab: LabSummary) {
   const t = lab.color;
+  const { corner, moves } = cardFace(m);
+  const facts = [
+    m.context && `${formatTokens(m.context)} context`,
+    m.price?.output != null && `${formatPrice(m.price.output)} per 1M output tokens`,
+    m.price == null && m.hub?.params && `${formatParams(m.hub.params)} parameters`,
+    m.price == null && m.hub && `${formatCount(m.hub.downloads)} downloads a month`,
+    m.license.name,
+  ];
 
   return new ImageResponse(
     (
@@ -87,8 +95,8 @@ export function renderModelOg(m: Model, lab: LabSummary) {
                 <div style={{ fontSize: 26, fontWeight: 800, lineHeight: 1.05 }}>{m.name}</div>
               </div>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: 4, color: mix(t, '#000000', 0.45) }}>
-                <span style={{ fontSize: 12 }}>CTX</span>
-                <span style={{ fontSize: 30, fontWeight: 800 }}>{formatTokens(m.context)}</span>
+                <span style={{ fontSize: 12 }}>{corner?.label ?? ''}</span>
+                <span style={{ fontSize: 30, fontWeight: 800 }}>{corner?.value ?? ''}</span>
               </div>
             </div>
             <img
@@ -102,13 +110,10 @@ export function renderModelOg(m: Model, lab: LabSummary) {
               {typeLine(m).toUpperCase()}
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', borderTop: '1px solid #e2e1dc' }}>
-              {[
-                ['Input', m.price?.input],
-                ['Output', m.price?.output],
-              ].map(([k, v]) => (
-                <div key={k as string} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #e2e1dc', fontSize: 18 }}>
-                  <span style={{ fontWeight: 700 }}>{k}</span>
-                  <span>{formatPrice((v as number | null | undefined) ?? null)}</span>
+              {moves.map((move) => (
+                <div key={move.name} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #e2e1dc', fontSize: 18 }}>
+                  <span style={{ fontWeight: 700 }}>{move.name}</span>
+                  <span>{`${move.value}${move.unit}`}</span>
                 </div>
               ))}
             </div>
@@ -121,7 +126,7 @@ export function renderModelOg(m: Model, lab: LabSummary) {
           </div>
           <div style={{ fontSize: 72, fontWeight: 800, lineHeight: 1, letterSpacing: -2 }}>{m.name}</div>
           <div style={{ fontSize: 26, color: '#a8aebe', lineHeight: 1.35 }}>
-            {[m.context && `${formatTokens(m.context)} context`, m.price?.output != null && `${formatPrice(m.price.output)} per 1M output tokens`, m.license.name].filter(Boolean).join(' · ')}
+            {facts.filter(Boolean).join(' · ')}
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 24, fontSize: 24, fontWeight: 700 }}>
             <div style={{ width: 18, height: 24, borderRadius: 4, background: '#f5c542', transform: 'rotate(-9deg)' }} />

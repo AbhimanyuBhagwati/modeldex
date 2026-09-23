@@ -5,7 +5,7 @@ import { memo, useMemo, useRef, type CSSProperties, type RefObject } from 'react
 import { useDeckApi, useInDeck } from '@/components/deck/DeckProvider';
 import { Energies, Icon, RarityIcon } from '@/components/icons';
 import { ART_H, ART_W, cardArt, type Shape } from '@/lib/art';
-import { ACCESS_LABEL, INPUT_ONLY, STATUS_LABEL, formatPriceShort, formatTokens, isNew, padSet, typeLine } from '@/lib/format';
+import { ACCESS_LABEL, STATUS_LABEL, cardFace, isNew, padSet, typeLine } from '@/lib/format';
 import { modelHref } from '@/lib/site';
 import type { LabSummary, Model } from '@/lib/types';
 import styles from './Card.module.css';
@@ -91,8 +91,7 @@ function CardImpl({ model: m, lab, setSize, refDate, link = true, addable = true
   const ref = useRef<HTMLElement>(null);
   useTilt(ref, tilt, TILT_CLASSES);
   const fresh = isNew(m, refDate);
-  const price = m.price;
-  const outputPrice = INPUT_ONLY.has(m.type) && !price?.output ? null : (price?.output ?? null);
+  const { corner, moves } = cardFace(m);
 
   return (
     <article ref={ref} className={styles.card} data-rarity={m.rarity} data-type={m.type} data-status={m.status ?? undefined} style={{ '--t': lab.color } as CSSProperties}>
@@ -105,10 +104,12 @@ function CardImpl({ model: m, lab, setSize, refDate, link = true, addable = true
                 {m.name}
               </Heading>
             </div>
-            <div className={styles.hp} title="Context window">
-              <span>CTX</span>
-              <b>{formatTokens(m.context)}</b>
-            </div>
+            {corner && (
+              <div className={styles.hp} title={corner.title}>
+                <span>{corner.label}</span>
+                <b>{corner.value}</b>
+              </div>
+            )}
           </div>
           <div className={styles.art}>
             <CardArt model={m} color={lab.color} />
@@ -125,26 +126,18 @@ function CardImpl({ model: m, lab, setSize, refDate, link = true, addable = true
           </div>
           <div className={styles.type}>{typeLine(m)}</div>
           <div className={styles.moves}>
-            <div className={styles.move}>
-              <span className={styles.ens}>
-                <Energies list={m.input} />
-              </span>
-              <span className={styles.moveName}>Input</span>
-              <span className={styles.movePrice}>
-                {formatPriceShort(price?.input ?? null)}
-                {price?.input ? <small>/M</small> : null}
-              </span>
-            </div>
-            <div className={styles.move}>
-              <span className={styles.ens}>
-                <Energies list={m.output} />
-              </span>
-              <span className={styles.moveName}>Output</span>
-              <span className={styles.movePrice}>
-                {formatPriceShort(outputPrice)}
-                {outputPrice ? <small>/M</small> : null}
-              </span>
-            </div>
+            {moves.map((move) => (
+              <div key={move.name} className={styles.move}>
+                <span className={styles.ens}>
+                  <Energies list={move.list} />
+                </span>
+                <span className={styles.moveName}>{move.name}</span>
+                <span className={styles.movePrice}>
+                  {move.value}
+                  {move.unit ? <small>{move.unit}</small> : null}
+                </span>
+              </div>
+            ))}
           </div>
           <p className={styles.flavor}>{m.description}</p>
           <div className={styles.foot}>

@@ -50,9 +50,10 @@ describe('resolveLicenses', () => {
     context: 1000, maxOutput: 100, price: null, input: ['text'], output: ['text'], reasoning: false, toolCall: false, structuredOutput: false,
     attachment: false, openWeights, status: null, access: openWeights ? 'open' : 'paid', rarity: 'promo', set: 1,
     license: openWeights ? { name: 'MIT', source: 'lab-default' } : { name: 'Proprietary', source: 'proprietary' },
+    origin: 'models.dev', hub: null,
   });
   const dataset = (models: Model[]): Dataset => ({
-    version: 1, updatedAt: '2026-09-22T00:00:00.000Z', source: { url: 'https://models.dev/api.json', providers: 1, listings: 1 },
+    version: 1, updatedAt: '2026-09-22T00:00:00.000Z', source: { url: 'https://models.dev/api.json', providers: 1, listings: 1, hub: { orgs: 0, repos: 0 } },
     labs: [{ key: 'acme', name: 'Acme', color: '#112233', docUrl: null, count: models.length }], models,
   });
 

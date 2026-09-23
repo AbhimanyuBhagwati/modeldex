@@ -29,8 +29,19 @@ const NAMES: Record<string, string> = {
   qwen: 'Qwen license',
   other: 'Custom license',
 };
-const UPPER = new Set(['mit', 'bsd', 'gpl', 'lgpl', 'agpl', 'cc', 'by', 'nc', 'sa', 'nd', 'ai', 'mrl', 'rail', 'glm']);
-const CASED: Record<string, string> = { minimax: 'MiniMax', deepseek: 'DeepSeek', openai: 'OpenAI', license: 'license', licence: 'license' };
+const UPPER = new Set(['mit', 'bsd', 'gpl', 'lgpl', 'agpl', 'cc', 'by', 'nc', 'sa', 'nd', 'ai', 'mrl', 'rail', 'glm', 'nvidia', 'flux', 'ltx', 'amlr', 'sai', 'lfm']);
+const CASED: Record<string, string> = {
+  minimax: 'MiniMax',
+  deepseek: 'DeepSeek',
+  openai: 'OpenAI',
+  openmdw: 'OpenMDW',
+  dinov3: 'DINOv3',
+  timesfm: 'TimesFM',
+  'lfm1.0': 'LFM 1.0',
+  stabilityai: 'Stability',
+  license: 'license',
+  licence: 'license',
+};
 
 export function prettyLicense(tag: string): string {
   const t = tag.trim().toLowerCase();
@@ -38,7 +49,9 @@ export function prettyLicense(tag: string): string {
   const words = t
     .split(/[-_\s]+/)
     .filter(Boolean)
-    .map((w) => CASED[w] ?? (UPPER.has(w) ? w.toUpperCase() : /^\d/.test(w) ? w : w[0].toUpperCase() + w.slice(1)));
+    .map((w) => CASED[w] ?? (UPPER.has(w) ? w.toUpperCase() : /^\d/.test(w) ? w : w[0].toUpperCase() + w.slice(1)))
+    // "license" stays lowercase at the end ("MIT license") but is part of the title mid-name ("Community License Agreement").
+    .map((w, i, all) => (w === 'license' && i < all.length - 1 ? 'License' : w));
   const name = words.join(' ');
   return /\blicen[cs]e\b/i.test(name) ? name : `${name} license`;
 }
@@ -65,7 +78,7 @@ export function findRepo(model: Pick<Model, 'id' | 'name'>, repos: HfRepo[]): Hf
   return undefined;
 }
 
-type FetchJson = (url: string) => Promise<unknown>;
+export type FetchJson = (url: string) => Promise<unknown>;
 
 async function listRepos(src: { org: string; search?: string }, fetchJson: FetchJson): Promise<HfRepo[]> {
   const q = new URLSearchParams({ author: src.org, limit: '1000' });
@@ -78,7 +91,7 @@ async function listRepos(src: { org: string; search?: string }, fetchJson: Fetch
 }
 
 /** `license:other` repos keep the real name in the model card. */
-async function customLicenseName(repo: string, fetchJson: FetchJson): Promise<string | null> {
+export async function customLicenseName(repo: string, fetchJson: FetchJson): Promise<string | null> {
   const body = (await fetchJson(`https://huggingface.co/api/models/${repo}`)) as { cardData?: { license_name?: unknown } };
   const name = body?.cardData?.license_name;
   return typeof name === 'string' && name.trim() ? prettyLicense(name) : null;

@@ -29,6 +29,21 @@ export const rawModelSchema = z.looseObject({
 });
 export type RawModel = z.infer<typeof rawModelSchema>;
 
+/** One repo from the Hugging Face models API, with the fields we expand. Lenient for the same reason. */
+export const rawHubRepoSchema = z.looseObject({
+  id: z.string().regex(/^[\w.-]+\/[\w.-]+$/),
+  downloads: z.number().optional(),
+  likes: z.number().optional(),
+  pipeline_tag: z.string().optional(),
+  library_name: z.string().optional(),
+  createdAt: z.string().optional(),
+  lastModified: z.string().optional(),
+  tags: z.array(z.string()).optional(),
+  gated: z.union([z.boolean(), z.string()]).optional(),
+  safetensors: z.looseObject({ total: z.number().optional() }).optional(),
+});
+export type RawHubRepo = z.infer<typeof rawHubRepoSchema>;
+
 export const rawProviderSchema = z.looseObject({
   name: z.string(),
   doc: z.string().optional(),
@@ -71,6 +86,16 @@ export const modelSchema = z.object({
     source: z.enum(['proprietary', 'huggingface', 'lab-default', 'override']),
     url: z.url({ protocol: /^https$/ }).optional(),
   }),
+  origin: z.enum(['models.dev', 'huggingface']),
+  hub: z
+    .object({
+      repo: z.string().regex(/^[\w.-]+\/[\w.-]+$/),
+      downloads: z.number().int().nonnegative(),
+      likes: z.number().int().nonnegative(),
+      params: z.number().int().positive().nullable(),
+      gated: z.boolean(),
+    })
+    .nullable(),
 });
 
 export const datasetSchema = z
@@ -81,6 +106,7 @@ export const datasetSchema = z
       url: z.url(),
       providers: z.number().int().nonnegative(),
       listings: z.number().int().nonnegative(),
+      hub: z.object({ orgs: z.number().int().nonnegative(), repos: z.number().int().nonnegative() }),
     }),
     labs: z.array(
       z.object({
@@ -101,6 +127,13 @@ export const datasetSchema = z
       keys.add(m.key);
       if (!labs.has(m.lab)) ctx.addIssue({ code: 'custom', message: `Unknown lab ${m.lab}`, path: ['models', i, 'lab'] });
       if (m.key !== `${m.lab}/${m.slug}`) ctx.addIssue({ code: 'custom', message: `Key ${m.key} doesn't match lab and slug`, path: ['models', i, 'key'] });
+      if (m.origin === 'huggingface' && !m.hub) ctx.addIssue({ code: 'custom', message: `${m.key} came from Hugging Face but has no repo`, path: ['models', i, 'hub'] });
+    });
+    const folded = new Set<string>();
+    d.models.forEach((m, i) => {
+      const k = m.key.toLowerCase();
+      if (folded.has(k)) ctx.addIssue({ code: 'custom', message: `Key ${m.key} differs from another only by case`, path: ['models', i, 'key'] });
+      folded.add(k);
     });
     const sets = d.models.map((m) => m.set).sort((a, b) => a - b);
     if (sets.some((s, i) => s !== i + 1)) ctx.addIssue({ code: 'custom', message: 'Set numbers must run 1..N with no gaps' });

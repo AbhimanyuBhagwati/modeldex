@@ -52,8 +52,14 @@ export interface LabConfig {
   skip?: RegExp;
   /** Shown for open-weight models when Hugging Face has no matching repo. */
   defaultLicense: string | null;
+  /** Where to look up licenses for this lab's models.dev listings. */
   huggingFace?: HuggingFaceSource[];
+  /** Official Hugging Face accounts whose popular models become cards. The first one is the lab's link when models.dev has none. */
+  hub?: string[];
 }
+
+/** For labs that only come from Hugging Face: no models.dev listing is ever theirs. */
+const NOTHING = /(?!)/;
 
 /**
  * To add a lab: append an entry, run `npm run sync`, and commit the result.
@@ -69,6 +75,7 @@ export const LABS: LabConfig[] = [
     match: /^(gpt|o\d|chatgpt|codex|dall-?e|whisper|tts-|text-embedding-3|text-embedding-ada|sora|omni-moderation|computer-use|davinci|babbage)/i,
     defaultLicense: 'Apache 2.0',
     huggingFace: [{ org: 'openai' }],
+    hub: ['openai', 'openai-community'],
   },
   {
     key: 'anthropic',
@@ -88,6 +95,7 @@ export const LABS: LabConfig[] = [
     match: /^(gemini|gemma|imagen|veo|lyria|learnlm|nano.?banana|deep-research|text-embedding-00|embedding-00)/i,
     defaultLicense: 'Gemma license',
     huggingFace: [{ org: 'google', search: 'gemma' }],
+    hub: ['google', 'google-bert'],
   },
   {
     key: 'xai',
@@ -108,6 +116,7 @@ export const LABS: LabConfig[] = [
     skip: /^(cerebras|groq)-/i,
     defaultLicense: 'Llama license',
     huggingFace: [{ org: 'meta-llama' }],
+    hub: ['meta-llama', 'facebook', 'FacebookAI'],
   },
   {
     key: 'mistral',
@@ -118,6 +127,7 @@ export const LABS: LabConfig[] = [
     match: /^(mistral|magistral|codestral|devstral|pixtral|ministral|voxtral|mixtral|open-mi[sx]tral)/i,
     defaultLicense: 'Apache 2.0',
     huggingFace: [{ org: 'mistralai' }],
+    hub: ['mistralai'],
   },
   {
     key: 'deepseek',
@@ -128,6 +138,7 @@ export const LABS: LabConfig[] = [
     match: /^deepseek/i,
     defaultLicense: 'MIT',
     huggingFace: [{ org: 'deepseek-ai' }],
+    hub: ['deepseek-ai'],
   },
   {
     key: 'qwen',
@@ -138,6 +149,7 @@ export const LABS: LabConfig[] = [
     match: /^(qwen|qwq|qvq|wan)/i,
     defaultLicense: 'Apache 2.0',
     huggingFace: [{ org: 'Qwen' }],
+    hub: ['Qwen', 'Wan-AI', 'Alibaba-NLP'],
   },
   {
     key: 'moonshot',
@@ -148,6 +160,7 @@ export const LABS: LabConfig[] = [
     match: /^(kimi|moonshot)/i,
     defaultLicense: 'Modified MIT',
     huggingFace: [{ org: 'moonshotai' }],
+    hub: ['moonshotai'],
   },
   {
     key: 'zai',
@@ -158,6 +171,7 @@ export const LABS: LabConfig[] = [
     match: /^(glm|cogview|zai-glm|chatglm|autoglm)/i,
     defaultLicense: 'MIT',
     huggingFace: [{ org: 'zai-org' }],
+    hub: ['zai-org'],
   },
   {
     key: 'cohere',
@@ -168,6 +182,7 @@ export const LABS: LabConfig[] = [
     match: /^(command|north|aya|embed-|rerank|c4ai)/i,
     defaultLicense: 'CC BY-NC 4.0',
     huggingFace: [{ org: 'CohereLabs' }],
+    hub: ['CohereLabs'],
   },
   {
     key: 'minimax',
@@ -178,6 +193,7 @@ export const LABS: LabConfig[] = [
     match: /^(minimax|abab|speech-|hailuo|music-)/i,
     defaultLicense: 'MIT',
     huggingFace: [{ org: 'MiniMaxAI' }],
+    hub: ['MiniMaxAI'],
   },
   // Labs below publish through a provider that may also carry other companies' models, so most are strict.
   {
@@ -190,6 +206,7 @@ export const LABS: LabConfig[] = [
     skip: /^(us|eu|apac|jp|ca|au|global|us-gov)\./i,
     strict: true,
     defaultLicense: null,
+    hub: ['amazon'],
   },
   {
     key: 'microsoft',
@@ -201,6 +218,7 @@ export const LABS: LabConfig[] = [
     strict: true,
     defaultLicense: 'MIT',
     huggingFace: [{ org: 'microsoft', search: 'phi' }],
+    hub: ['microsoft'],
   },
   {
     key: 'nvidia',
@@ -212,6 +230,7 @@ export const LABS: LabConfig[] = [
     strict: true,
     defaultLicense: 'NVIDIA Open Model license',
     huggingFace: [{ org: 'nvidia', search: 'nemotron' }],
+    hub: ['nvidia'],
   },
   {
     key: 'bytedance',
@@ -223,6 +242,7 @@ export const LABS: LabConfig[] = [
     strict: true,
     defaultLicense: null,
     huggingFace: [{ org: 'ByteDance-Seed' }],
+    hub: ['ByteDance-Seed', 'ByteDance'],
   },
   {
     key: 'perplexity',
@@ -233,6 +253,7 @@ export const LABS: LabConfig[] = [
     match: /^sonar/i,
     strict: true,
     defaultLicense: null,
+    hub: ['perplexity-ai'],
   },
   {
     key: 'ibm',
@@ -245,6 +266,7 @@ export const LABS: LabConfig[] = [
     strict: true,
     defaultLicense: 'Apache 2.0',
     huggingFace: [{ org: 'ibm-granite' }],
+    hub: ['ibm-granite'],
   },
   {
     key: 'tencent',
@@ -257,6 +279,7 @@ export const LABS: LabConfig[] = [
     strict: true,
     defaultLicense: 'Tencent Hunyuan license',
     huggingFace: [{ org: 'tencent', search: 'hunyuan' }],
+    hub: ['tencent'],
   },
   {
     key: 'xiaomi',
@@ -269,6 +292,7 @@ export const LABS: LabConfig[] = [
     strict: true,
     defaultLicense: 'MIT',
     huggingFace: [{ org: 'XiaomiMiMo' }],
+    hub: ['XiaomiMiMo'],
   },
   {
     key: 'stepfun',
@@ -281,6 +305,7 @@ export const LABS: LabConfig[] = [
     strict: true,
     defaultLicense: 'Apache 2.0',
     huggingFace: [{ org: 'stepfun-ai' }],
+    hub: ['stepfun-ai'],
   },
   {
     key: 'ai21',
@@ -292,6 +317,7 @@ export const LABS: LabConfig[] = [
     match: /^jamba/i,
     defaultLicense: 'Jamba Open Model license',
     huggingFace: [{ org: 'ai21labs' }],
+    hub: ['ai21labs'],
   },
   {
     key: 'inception',
@@ -313,6 +339,7 @@ export const LABS: LabConfig[] = [
     match: /^solar/i,
     defaultLicense: null,
     huggingFace: [{ org: 'upstage' }],
+    hub: ['upstage'],
   },
   {
     key: 'sakana',
@@ -323,6 +350,7 @@ export const LABS: LabConfig[] = [
     providers: ['sakana'],
     match: /^(sakana|fugu)/i,
     defaultLicense: null,
+    hub: ['SakanaAI'],
   },
   {
     key: 'sarvam',
@@ -334,6 +362,7 @@ export const LABS: LabConfig[] = [
     match: /^sarvam/i,
     defaultLicense: null,
     huggingFace: [{ org: 'sarvamai' }],
+    hub: ['sarvamai'],
   },
   {
     key: 'arcee',
@@ -346,6 +375,7 @@ export const LABS: LabConfig[] = [
     strict: true,
     defaultLicense: 'Apache 2.0',
     huggingFace: [{ org: 'arcee-ai' }],
+    hub: ['arcee-ai'],
   },
   {
     key: 'poolside',
@@ -358,6 +388,7 @@ export const LABS: LabConfig[] = [
     strict: true,
     defaultLicense: null,
     huggingFace: [{ org: 'poolside' }],
+    hub: ['poolside'],
   },
   {
     key: 'morph',
@@ -381,6 +412,7 @@ export const LABS: LabConfig[] = [
     strict: true,
     defaultLicense: 'MIT',
     huggingFace: [{ org: 'inclusionAI' }],
+    hub: ['inclusionAI'],
   },
   {
     key: 'meituan',
@@ -393,6 +425,7 @@ export const LABS: LabConfig[] = [
     strict: true,
     defaultLicense: 'MIT',
     huggingFace: [{ org: 'meituan-longcat' }],
+    hub: ['meituan-longcat'],
   },
   {
     key: 'thinkingmachines',
@@ -416,6 +449,216 @@ export const LABS: LabConfig[] = [
     match: /^sensenova/i,
     strict: true,
     defaultLicense: null,
+  },
+  // Labs below come only from Hugging Face: their official accounts' most downloaded open models.
+  {
+    key: 'bfl',
+    name: 'Black Forest Labs',
+    color: '#2F6B45',
+    art: 'emblem',
+    emblem: { glyph: 'triangle', layout: 'scatter' },
+    providers: [],
+    match: NOTHING,
+    defaultLicense: null,
+    hub: ['black-forest-labs'],
+  },
+  {
+    key: 'stability',
+    name: 'Stability AI',
+    color: '#7A3FA0',
+    art: 'emblem',
+    emblem: { glyph: 'hexagon', layout: 'radial' },
+    providers: [],
+    match: NOTHING,
+    defaultLicense: null,
+    hub: ['stabilityai'],
+  },
+  {
+    key: 'baai',
+    name: 'BAAI',
+    color: '#B5651D',
+    art: 'emblem',
+    emblem: { glyph: 'hexagon', layout: 'grid' },
+    providers: [],
+    match: NOTHING,
+    defaultLicense: null,
+    hub: ['BAAI'],
+  },
+  {
+    key: 'sbert',
+    name: 'Sentence Transformers',
+    color: '#5E6AD2',
+    art: 'emblem',
+    emblem: { glyph: 'circle', layout: 'grid' },
+    providers: [],
+    match: NOTHING,
+    defaultLicense: null,
+    hub: ['sentence-transformers', 'cross-encoder'],
+  },
+  {
+    key: 'jina',
+    name: 'Jina AI',
+    color: '#C44536',
+    art: 'emblem',
+    emblem: { glyph: 'star', layout: 'wave' },
+    providers: [],
+    match: NOTHING,
+    defaultLicense: null,
+    hub: ['jinaai'],
+  },
+  {
+    key: 'nomic',
+    name: 'Nomic',
+    color: '#4F5D75',
+    art: 'emblem',
+    emblem: { glyph: 'square', layout: 'concentric' },
+    providers: [],
+    match: NOTHING,
+    defaultLicense: null,
+    hub: ['nomic-ai'],
+  },
+  {
+    key: 'ai2',
+    name: 'Ai2',
+    color: '#E84C9A',
+    art: 'emblem',
+    emblem: { glyph: 'plus', layout: 'scatter' },
+    providers: [],
+    match: NOTHING,
+    defaultLicense: null,
+    hub: ['allenai'],
+  },
+  {
+    key: 'huggingface',
+    name: 'Hugging Face',
+    color: '#F2A900',
+    art: 'emblem',
+    emblem: { glyph: 'circle', layout: 'radial' },
+    providers: [],
+    match: NOTHING,
+    defaultLicense: null,
+    hub: ['HuggingFaceTB'],
+  },
+  {
+    key: 'tii',
+    name: 'TII',
+    color: '#1B998B',
+    art: 'emblem',
+    emblem: { glyph: 'diamond', layout: 'wave' },
+    providers: [],
+    match: NOTHING,
+    defaultLicense: null,
+    hub: ['tiiuae'],
+  },
+  {
+    key: 'liquid',
+    name: 'Liquid AI',
+    color: '#00A3C4',
+    art: 'emblem',
+    emblem: { glyph: 'circle', layout: 'concentric' },
+    providers: [],
+    match: NOTHING,
+    defaultLicense: null,
+    hub: ['LiquidAI'],
+  },
+  {
+    key: 'snowflake',
+    name: 'Snowflake',
+    color: '#29B5E8',
+    art: 'emblem',
+    emblem: { glyph: 'star', layout: 'grid' },
+    providers: [],
+    match: NOTHING,
+    defaultLicense: null,
+    hub: ['Snowflake'],
+  },
+  {
+    key: 'apple',
+    name: 'Apple',
+    color: '#8E8E93',
+    art: 'emblem',
+    emblem: { glyph: 'ring', layout: 'scatter' },
+    providers: [],
+    match: NOTHING,
+    defaultLicense: null,
+    hub: ['apple'],
+  },
+  {
+    key: 'internlm',
+    name: 'InternLM',
+    color: '#6A4C93',
+    art: 'emblem',
+    emblem: { glyph: 'square', layout: 'wave' },
+    providers: [],
+    match: NOTHING,
+    defaultLicense: null,
+    hub: ['internlm'],
+  },
+  {
+    key: 'openbmb',
+    name: 'OpenBMB',
+    color: '#E76F51',
+    art: 'emblem',
+    emblem: { glyph: 'hexagon', layout: 'spiral' },
+    providers: [],
+    match: NOTHING,
+    defaultLicense: null,
+    hub: ['openbmb'],
+  },
+  {
+    key: 'lightricks',
+    name: 'Lightricks',
+    color: '#FF5E5B',
+    art: 'emblem',
+    emblem: { glyph: 'triangle', layout: 'radial' },
+    providers: [],
+    match: NOTHING,
+    defaultLicense: null,
+    hub: ['Lightricks'],
+  },
+  {
+    key: 'hexgrad',
+    name: 'hexgrad',
+    color: '#9C6644',
+    art: 'emblem',
+    emblem: { glyph: 'diamond', layout: 'grid' },
+    providers: [],
+    match: NOTHING,
+    defaultLicense: null,
+    hub: ['hexgrad'],
+  },
+  {
+    key: 'resemble',
+    name: 'Resemble AI',
+    color: '#7B2CBF',
+    art: 'emblem',
+    emblem: { glyph: 'ring', layout: 'spiral' },
+    providers: [],
+    match: NOTHING,
+    defaultLicense: null,
+    hub: ['ResembleAI'],
+  },
+  {
+    key: 'mixedbread',
+    name: 'Mixedbread',
+    color: '#C9A26B',
+    art: 'emblem',
+    emblem: { glyph: 'plus', layout: 'concentric' },
+    providers: [],
+    match: NOTHING,
+    defaultLicense: null,
+    hub: ['mixedbread-ai'],
+  },
+  {
+    key: 'salesforce',
+    name: 'Salesforce',
+    color: '#0B8FD6',
+    art: 'emblem',
+    emblem: { glyph: 'ring', layout: 'grid' },
+    providers: [],
+    match: NOTHING,
+    defaultLicense: null,
+    hub: ['Salesforce'],
   },
 ];
 

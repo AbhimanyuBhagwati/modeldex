@@ -1,13 +1,41 @@
 export const MODALITIES = ['text', 'image', 'audio', 'video', 'pdf'] as const;
 export type Modality = (typeof MODALITIES)[number];
 
-export const MODEL_TYPES = ['text', 'image', 'video', 'audio', 'voice', 'transcription', 'embedding', 'rerank', 'safety'] as const;
+export const MODEL_TYPES = [
+  'text',
+  'image',
+  'video',
+  '3d',
+  'audio',
+  'voice',
+  'transcription',
+  'embedding',
+  'rerank',
+  'vision',
+  'encoder',
+  'forecast',
+  'safety',
+] as const;
 export type ModelType = (typeof MODEL_TYPES)[number];
 
 export type Access = 'free' | 'open' | 'paid';
 export type Rarity = 'promo' | 'common' | 'uncommon' | 'rare' | 'holo';
 export type Status = 'preview' | 'beta' | 'deprecated';
 export type LicenseSource = 'proprietary' | 'huggingface' | 'lab-default' | 'override';
+/** models.dev lists models you can call; Hugging Face adds open models you download. */
+export type Origin = 'models.dev' | 'huggingface';
+
+/** From the model's Hugging Face repo. Counts are rounded to two significant digits so the data doesn't churn daily. */
+export interface HubStats {
+  /** `org/name` on huggingface.co */
+  repo: string;
+  /** Downloads in the last 30 days. */
+  downloads: number;
+  likes: number;
+  params: number | null;
+  /** The weights sit behind a license agreement on Hugging Face. */
+  gated: boolean;
+}
 
 export interface License {
   name: string;
@@ -56,6 +84,8 @@ export interface Model {
   /** Release order across the whole set, starting at 1. */
   set: number;
   license: License;
+  origin: Origin;
+  hub: HubStats | null;
 }
 
 export interface LabSummary {
@@ -70,7 +100,13 @@ export interface Dataset {
   version: 1;
   /** ISO timestamp of the last sync that changed the data. */
   updatedAt: string;
-  source: { url: string; providers: number; listings: number };
+  source: {
+    url: string;
+    providers: number;
+    listings: number;
+    /** Hugging Face accounts and repos scanned for open models. */
+    hub: { orgs: number; repos: number };
+  };
   labs: LabSummary[];
   models: Model[];
 }

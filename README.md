@@ -1,10 +1,10 @@
 # Modeldex
 
-Every AI model from the major labs as a collectible card. Browse the binder, put up to four cards in your deck, compare them side by side, and follow each card to the lab's own docs.
+Every AI model from the major labs as a collectible card: the models you call through an API, and the most downloaded open models on Hugging Face. Browse the binder, put up to four cards in your deck, compare them side by side, send two into battle, and follow each card to the lab's own docs or repo.
 
 Live at **https://abhimanyubhagwati.github.io/modeldex/**.
 
-The data updates itself. A GitHub Action pulls [models.dev](https://models.dev) every morning, checks it, commits the result, and republishes the site on GitHub Pages. Nobody has to touch the site for new models to appear.
+The data updates itself. A GitHub Action pulls [models.dev](https://models.dev) and the labs' official [Hugging Face](https://huggingface.co) accounts every morning, checks the result, commits it, and republishes the site on GitHub Pages. Nobody has to touch the site for new models to appear.
 
 ## How the daily update works
 
@@ -16,6 +16,10 @@ The data updates itself. A GitHub Action pulls [models.dev](https://models.dev) 
             │    ├─ sort every model into a type: text, image, video, audio, voice,
             │    │  transcription, embedding, rerank, safety
             │    ├─ read open-weight licenses from Hugging Face
+            │    ├─ scan each lab's official Hugging Face accounts (≈55 orgs):
+            │    │    models with 100,000+ downloads last month become cards,
+            │    │    cards stay once they're in, quantized copies are skipped,
+            │    │    and models.dev cards gain downloads and parameter counts
             │    ├─ validate: schema, at least 100 models, no drop over 25% in a day
             │    └─ write data/models.json only if something changed
             ├─ lint, typecheck, test
@@ -23,9 +27,9 @@ The data updates itself. A GitHub Action pulls [models.dev](https://models.dev) 
             └─ build the static site and publish to GitHub Pages
 ```
 
-A push to `main` also runs the checks and republishes. A morning with no new data skips the rebuild.
+A push to `main` also runs the checks and republishes. A morning with no new data skips the rebuild, though download counts move most days, so most mornings publish.
 
-If models.dev is down or sends something broken, the job fails, GitHub emails you, and the site keeps serving yesterday's data. If Hugging Face is down, licenses from the previous sync are kept.
+If models.dev is down or sends something broken, the job fails, GitHub emails you, and the site keeps serving yesterday's data. If Hugging Face is down or rate-limits the job, each org that fails keeps yesterday's cards, stats, and licenses.
 
 ## One-time setup
 
@@ -42,6 +46,10 @@ Already done for this repo; here for anyone forking it.
    ```
 3. **Run the workflow once** to publish: *Actions → Sync and deploy → Run workflow*. The site appears at `https://OWNER.github.io/modeldex/`.
 4. **If the default branch is protected,** allow `github-actions[bot]` to push to it, or the daily data commit will fail.
+5. **Optional: add a Hugging Face token.** The sync makes about 100 anonymous calls a day, well under Hugging Face's limit, but GitHub's runners share IP addresses with other jobs. A free read token from *huggingface.co → Settings → Access Tokens*, saved as the repo secret `HF_TOKEN`, gives the job a limit of its own:
+   ```bash
+   gh secret set HF_TOKEN
+   ```
 
 The workflow reads the Pages address itself, so a custom domain (set under *Settings → Pages*) needs no code changes.
 
@@ -52,7 +60,7 @@ GitHub pauses scheduled workflows in public repos after 60 days with no commits.
 ```bash
 npm install
 npm run dev          # http://localhost:3000
-npm run sync         # refresh data/models.json from models.dev
+npm run sync         # refresh data/models.json from models.dev and Hugging Face
 npm run check        # lint + typecheck + tests
 npm run build        # static export into out/ (every page prerendered)
 ```
@@ -64,7 +72,10 @@ Requires Node 20.9 or newer (`.nvmrc` pins 24).
 | To… | Edit |
 | --- | --- |
 | Add or remove a lab | `src/config/labs.ts`, then `npm run sync`. Pick an `art` style, or use `emblem` with a glyph and layout; labs with neither get a generated look of their own |
-| Change how model types are detected | `typeOf` in `src/lib/pipeline/build.ts` |
+| Change how model types are detected | `typeOf` in `src/lib/pipeline/build.ts`; for Hugging Face, `TASKS` in `src/lib/pipeline/hub.ts` |
+| Add a Hugging Face account to a lab | `hub` on the lab in `src/config/labs.ts`, then `npm run sync` |
+| Change the download cutoff for open-model cards | `HUB_MIN_DOWNLOADS` in `src/lib/pipeline/hub.ts` |
+| Change battle rounds or damage | `STATS` and `battle` in `src/lib/battle.ts` |
 | Fix a wrong license | `LICENSE_OVERRIDES` in `src/config/labs.ts`, then `npm run sync` |
 | Change rarity thresholds | `RARITY_FLOORS` in `src/lib/pipeline/build.ts` |
 | Change the sync schedule | `cron` in `.github/workflows/site.yml` |
@@ -74,17 +85,19 @@ Requires Node 20.9 or newer (`.nvmrc` pins 24).
 ```
 scripts/sync.ts            the daily job: fetch, build, validate, write
 src/config/labs.ts         which labs appear, their colors, how to recognize their models
-src/lib/pipeline/          pure data pipeline (tested): build, licenses, schema, diff
+src/lib/pipeline/          pure data pipeline (tested): build, licenses, hub, schema, diff
+src/lib/battle.ts          battle mode: rounds, damage, matchmaking (tested)
 src/lib/data.ts            loads data/models.json for pages
 src/components/card/       the card: foil, tilt, glare, generated art
 src/components/binder/     search, filters (kept in the URL), grid
 src/components/deck/       the compare deck, saved in localStorage
-src/app/                   routes: /, /models/[lab]/[id], /compare (reads ?m= in the browser), og.png images, sitemap
+src/app/                   routes: /, /models/[lab]/[id], /compare and /battle (read the query in the browser), og.png images, sitemap
 data/models.json           generated; committed by the sync job
 ```
 
 ## Data and credits
 
 - Specs and prices: [models.dev](https://models.dev), MIT licensed.
-- Open-weight licenses: each model's [Hugging Face](https://huggingface.co) card. When no repo matches, the page shows the lab's usual license and says so.
+- Open models, downloads, parameter counts, and licenses: each lab's official [Hugging Face](https://huggingface.co) account and each model's card. When no repo matches, the page shows the lab's usual license and says so.
+- Site size: every card gets a static page and a share image, about 0.4 MB each, so ~1,000 cards is ~400 MB, within GitHub Pages' 1 GB limit.
 - Modeldex isn't affiliated with any AI lab. Model names belong to their makers.

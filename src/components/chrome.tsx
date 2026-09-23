@@ -12,6 +12,7 @@ export function SiteHeader({ updatedAt }: { updatedAt: string }) {
       </Link>
       <nav className={styles.nav} aria-label="Main">
         <Link href="/#binder">Binder</Link>
+        <Link href="/battle/">Battle</Link>
         <CompareNavLink className={styles.navCompare} />
         <Link className={styles.sync} href="/#source">
           <span className={styles.live} aria-hidden="true" />
@@ -30,7 +31,7 @@ export function SiteFooter({ updatedAt }: { updatedAt: string }) {
         <a href="https://models.dev" target="_blank" rel="noopener noreferrer">
           models.dev
         </a>{' '}
-        (MIT) · licenses from{' '}
+        (MIT) · open models, stats, and licenses from{' '}
         <a href="https://huggingface.co" target="_blank" rel="noopener noreferrer">
           Hugging Face
         </a>{' '}

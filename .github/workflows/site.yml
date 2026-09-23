@@ -38,6 +38,9 @@ jobs:
         id: sync
         if: github.event_name != 'push'
         run: npm run sync
+        env:
+          # Optional repo secret: a free Hugging Face read token gives the job its own rate limit.
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
 
       - name: Lint, typecheck, and test
         run: |

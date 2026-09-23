@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { formatDate, formatMonth, formatPrice, formatPriceShort, formatTokens, isNew, typeLine } from './format';
+import { cardFace, formatCount, formatDate, formatMonth, formatParams, formatPrice, formatPriceShort, formatTokens, isNew, typeLine } from './format';
 
 describe('format', () => {
   it('formats token counts', () => {
@@ -36,5 +36,27 @@ describe('format', () => {
     expect(typeLine({ type: 'text', reasoning: false, toolCall: false, input: ['text'], output: ['text'] })).toBe('Text');
     expect(typeLine({ type: 'embedding', reasoning: false, toolCall: false, input: ['text'], output: ['text'] })).toBe('Embedding');
     expect(typeLine({ type: 'image', reasoning: false, toolCall: false, input: ['text', 'image'], output: ['image'] })).toBe('Image generation');
+  });
+});
+
+describe('open-model stats', () => {
+  it('formats parameter and download counts', () => {
+    expect(formatParams(8_030_261_248)).toBe('8B');
+    expect(formatParams(1_543_490_560)).toBe('1.5B');
+    expect(formatParams(22_713_728)).toBe('23M');
+    expect(formatCount(6_100_000)).toBe('6.1M');
+    expect(formatCount(250_000)).toBe('250K');
+    expect(formatCount(null)).toBe('—');
+  });
+
+  it('shows size and downloads on open models without a price, and prices otherwise', () => {
+    const hub = { repo: 'acme/a', downloads: 6_100_000, likes: 7_800, params: 8e9, gated: false };
+    const open = cardFace({ type: 'text', context: null, price: null, input: ['text'], output: ['text'], hub });
+    expect(open.corner).toEqual({ label: 'SIZE', value: '8B', title: 'Parameters' });
+    expect(open.moves.map((m) => `${m.name} ${m.value}${m.unit}`)).toEqual(['Downloads 6.1M/mo', 'Likes 7.8K']);
+    expect(cardFace({ type: 'text', context: null, price: null, input: [], output: [], hub: { ...hub, params: null } }).corner).toBeNull();
+    const priced = cardFace({ type: 'text', context: 200_000, price: { input: 3, output: 15, cacheRead: null, cacheWrite: null }, input: ['text'], output: ['text'], hub });
+    expect(priced.corner?.value).toBe('200K');
+    expect(priced.moves.map((m) => `${m.name} ${m.value}${m.unit}`)).toEqual(['Input $3/M', 'Output $15/M']);
   });
 });

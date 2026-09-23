@@ -1,6 +1,7 @@
 import { Energies, RarityIcon } from '@/components/icons';
 import { TYPE_HINT, TYPE_LABEL } from '@/lib/format';
 import { RARITY_FLOORS } from '@/lib/pipeline/build';
+import { HUB_MIN_DOWNLOADS } from '@/lib/pipeline/hub';
 import { MODALITIES, MODEL_TYPES } from '@/lib/types';
 import styles from './Guide.module.css';
 
@@ -10,9 +11,12 @@ interface Props {
   updatedLabel: string;
   licensesFromHf: number;
   openWeights: number;
+  hubCards: number;
+  hubOrgs: number;
+  hubRepos: number;
 }
 
-export function Guide({ listings, providers, updatedLabel, licensesFromHf, openWeights }: Props) {
+export function Guide({ listings, providers, updatedLabel, licensesFromHf, openWeights, hubCards, hubOrgs, hubRepos }: Props) {
   const { uncommon, rare, holo } = RARITY_FLOORS;
   return (
     <section className={styles.guide} aria-labelledby="guide-title">
@@ -34,7 +38,7 @@ export function Guide({ listings, providers, updatedLabel, licensesFromHf, openW
           </div>
           <div>
             <dt>CTX</dt>
-            <dd>Context window, the card’s HP. It’s how many tokens the model can hold at once.</dd>
+            <dd>Context window, the card’s HP: how many tokens the model can hold at once. Open models that only live on Hugging Face show SIZE, their parameter count, instead.</dd>
           </div>
           <div>
             <dt>Art</dt>
@@ -56,7 +60,7 @@ export function Guide({ listings, providers, updatedLabel, licensesFromHf, openW
           </div>
           <div>
             <dt>Moves</dt>
-            <dd>Input and output price per million tokens, from the lab’s own price list.</dd>
+            <dd>Input and output price per million tokens, from the lab’s own price list. Open models without an API price show their Hugging Face downloads over the last 30 days and their likes.</dd>
           </div>
           <div>
             <dt>Rarity</dt>
@@ -67,7 +71,7 @@ export function Guide({ listings, providers, updatedLabel, licensesFromHf, openW
                 <span><RarityIcon rarity="uncommon" />Uncommon, ${uncommon} to ${rare}</span>
                 <span><RarityIcon rarity="rare" />Rare, ${rare} to ${holo}</span>
                 <span><RarityIcon rarity="holo" />Holo rare, ${holo} and up</span>
-                <span><RarityIcon rarity="promo" />Promo, no public price</span>
+                <span><RarityIcon rarity="promo" />Promo, no API price, like most open models</span>
               </span>
             </dd>
           </div>
@@ -105,6 +109,11 @@ export function Guide({ listings, providers, updatedLabel, licensesFromHf, openW
             Hugging Face
           </a>{' '}
           card: {licensesFromHf} of {openWeights} matched directly. The rest show the lab’s usual license and say so on their page.
+        </p>
+        <p>
+          The same daily job scans {hubRepos.toLocaleString('en-US')} repos across {hubOrgs} official lab accounts on Hugging Face. Any model with at least{' '}
+          {HUB_MIN_DOWNLOADS.toLocaleString('en-US')} downloads in the past month becomes a card, {hubCards} so far, and stays in the binder once it’s in. Quantized and
+          converted copies are left out, so each model appears once.
         </p>
         <p className={styles.note}>Modeldex isn’t affiliated with any AI lab. Model names belong to their makers, and every card links to the lab’s own docs.</p>
       </div>

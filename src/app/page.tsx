@@ -22,8 +22,11 @@ export default function Home() {
           listings={data.source.listings}
           providers={data.source.providers}
           updatedLabel={formatDate(refDate.slice(0, 10))}
-          licensesFromHf={data.models.filter((m) => m.license.source === 'huggingface').length}
-          openWeights={data.models.filter((m) => m.openWeights).length}
+          licensesFromHf={data.models.filter((m) => m.origin === 'models.dev' && m.license.source === 'huggingface').length}
+          openWeights={data.models.filter((m) => m.origin === 'models.dev' && m.openWeights).length}
+          hubCards={data.models.filter((m) => m.origin === 'huggingface').length}
+          hubOrgs={data.source.hub.orgs}
+          hubRepos={data.source.hub.repos}
         />
       </main>
       <SiteFooter updatedAt={data.updatedAt} />
