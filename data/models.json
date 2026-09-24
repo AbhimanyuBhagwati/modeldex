@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-24T11:53:20.790Z",
+  "updatedAt": "2026-09-24T12:44:33.504Z",
   "source": {
     "url": "https://models.dev/api.json",
     "providers": 223,
     "listings": 8173,
     "hub": {
-      "orgs": 54,
-      "repos": 8695
+      "orgs": 58,
+      "repos": 8750
     }
   },
   "labs": [
@@ -44,7 +44,7 @@
       "name": "Meta",
       "color": "#D8457A",
       "docUrl": "https://dev.meta.ai/docs",
-      "count": 108
+      "count": 109
     },
     {
       "key": "mistral",
@@ -65,7 +65,7 @@
       "name": "Qwen",
       "color": "#8A5CF5",
       "docUrl": "https://www.alibabacloud.com/help/en/model-studio/models",
-      "count": 154
+      "count": 156
     },
     {
       "key": "moonshot",
@@ -142,14 +142,14 @@
       "name": "Tencent",
       "color": "#2A6FDB",
       "docUrl": "https://cloud.tencent.com/document/product/1823/130050",
-      "count": 5
+      "count": 6
     },
     {
       "key": "xiaomi",
       "name": "Xiaomi",
       "color": "#FF6900",
       "docUrl": "https://platform.xiaomimimo.com/#/docs",
-      "count": 9
+      "count": 11
     },
     {
       "key": "stepfun",
@@ -219,7 +219,7 @@
       "name": "Ant Group",
       "color": "#1677FF",
       "docUrl": "https://alipaytbox.yuque.com/sxs0ba/ling/intro",
-      "count": 4
+      "count": 6
     },
     {
       "key": "meituan",
@@ -367,6 +367,27 @@
       "color": "#0B8FD6",
       "docUrl": "https://huggingface.co/Salesforce",
       "count": 8
+    },
+    {
+      "key": "convai-innovations",
+      "name": "Convai Innovations",
+      "color": "#9C35B6",
+      "docUrl": "https://huggingface.co/convaiinnovations",
+      "count": 1
+    },
+    {
+      "key": "xingchen-agi",
+      "name": "XingChen-AGI",
+      "color": "#B6A235",
+      "docUrl": "https://huggingface.co/XingChen-AGI",
+      "count": 1
+    },
+    {
+      "key": "sparkllm",
+      "name": "SparkLLM",
+      "color": "#B6354C",
+      "docUrl": "https://huggingface.co/XHToken",
+      "count": 1
     }
   ],
   "models": [
@@ -33276,7 +33297,7 @@
       "hub": {
         "repo": "Qwen/Qwen3.5-4B-Base",
         "downloads": 510000,
-        "likes": 98,
+        "likes": 99,
         "params": 4659865088,
         "gated": false
       }
@@ -40200,6 +40221,139 @@
       }
     },
     {
+      "key": "qwen/qwen3-8-2-4t-a95b",
+      "id": "Qwen/Qwen3.8-2.4T-A95B",
+      "slug": "qwen3-8-2-4t-a95b",
+      "lab": "qwen",
+      "type": "text",
+      "name": "Qwen3.8-2.4T-A95B",
+      "description": "Language model from Qwen, 2.4T parameters.",
+      "family": null,
+      "releaseDate": "2026-08-08",
+      "lastUpdated": "2026-08-12",
+      "knowledge": null,
+      "context": null,
+      "maxOutput": null,
+      "price": null,
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ],
+      "reasoning": false,
+      "toolCall": false,
+      "structuredOutput": false,
+      "attachment": false,
+      "openWeights": true,
+      "status": null,
+      "access": "open",
+      "rarity": "promo",
+      "set": 910,
+      "license": {
+        "name": "Qwen3.8 Max license",
+        "source": "huggingface",
+        "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B"
+      },
+      "origin": "huggingface",
+      "hub": {
+        "repo": "Qwen/Qwen3.8-2.4T-A95B",
+        "downloads": 55000,
+        "likes": 1300,
+        "params": 2446182725504,
+        "gated": false
+      }
+    },
+    {
+      "key": "meta/muse-glimmer-30b",
+      "id": "meta-models/Muse-Glimmer-30B",
+      "slug": "muse-glimmer-30b",
+      "lab": "meta",
+      "type": "text",
+      "name": "Muse-Glimmer-30B",
+      "description": "Vision-language model from Meta, 30B parameters.",
+      "family": null,
+      "releaseDate": "2026-08-09",
+      "lastUpdated": "2026-08-11",
+      "knowledge": null,
+      "context": null,
+      "maxOutput": null,
+      "price": null,
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ],
+      "reasoning": false,
+      "toolCall": false,
+      "structuredOutput": false,
+      "attachment": false,
+      "openWeights": true,
+      "status": null,
+      "access": "open",
+      "rarity": "promo",
+      "set": 911,
+      "license": {
+        "name": "Apache 2.0",
+        "source": "huggingface",
+        "url": "https://huggingface.co/meta-models/Muse-Glimmer-30B"
+      },
+      "origin": "huggingface",
+      "hub": {
+        "repo": "meta-models/Muse-Glimmer-30B",
+        "downloads": 310000,
+        "likes": 1900,
+        "params": 29776626688,
+        "gated": false
+      }
+    },
+    {
+      "key": "antgroup/ling-3-0-tiny",
+      "id": "inclusionAI/Ling-3.0-tiny",
+      "slug": "ling-3-0-tiny",
+      "lab": "antgroup",
+      "type": "text",
+      "name": "Ling-3.0-tiny",
+      "description": "Language model from Ant Group, 7.9B parameters.",
+      "family": null,
+      "releaseDate": "2026-08-10",
+      "lastUpdated": "2026-09-24",
+      "knowledge": null,
+      "context": null,
+      "maxOutput": null,
+      "price": null,
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ],
+      "reasoning": false,
+      "toolCall": false,
+      "structuredOutput": false,
+      "attachment": false,
+      "openWeights": true,
+      "status": null,
+      "access": "open",
+      "rarity": "promo",
+      "set": 912,
+      "license": {
+        "name": "MIT",
+        "source": "huggingface",
+        "url": "https://huggingface.co/inclusionAI/Ling-3.0-tiny"
+      },
+      "origin": "huggingface",
+      "hub": {
+        "repo": "inclusionAI/Ling-3.0-tiny",
+        "downloads": 22000,
+        "likes": 480,
+        "params": 7893392800,
+        "gated": false
+      }
+    },
+    {
       "key": "cohere/north-micro-vision-instruct",
       "id": "CohereLabs/North-Micro-Vision-Instruct",
       "slug": "north-micro-vision-instruct",
@@ -40229,7 +40383,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 910,
+      "set": 913,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -40278,7 +40432,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 911,
+      "set": 914,
       "license": {
         "name": "NVIDIA Open Model license",
         "source": "lab-default"
@@ -40321,7 +40475,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 912,
+      "set": 915,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -40363,7 +40517,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 913,
+      "set": 916,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -40414,7 +40568,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 914,
+      "set": 917,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -40451,7 +40605,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 915,
+      "set": 918,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -40504,7 +40658,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 916,
+      "set": 919,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -40546,7 +40700,7 @@
       "status": null,
       "access": "open",
       "rarity": "uncommon",
-      "set": 917,
+      "set": 920,
       "license": {
         "name": "GLM 5.3 license",
         "source": "huggingface",
@@ -40558,6 +40712,50 @@
         "downloads": 1100000,
         "likes": 1900,
         "params": 753329940480,
+        "gated": false
+      }
+    },
+    {
+      "key": "tencent/auk",
+      "id": "tencent/AuK",
+      "slug": "auk",
+      "lab": "tencent",
+      "type": "audio",
+      "name": "AuK",
+      "description": "Text-to-speech model from Tencent.",
+      "family": null,
+      "releaseDate": "2026-08-18",
+      "lastUpdated": "2026-09-10",
+      "knowledge": null,
+      "context": null,
+      "maxOutput": null,
+      "price": null,
+      "input": [
+        "text"
+      ],
+      "output": [
+        "audio"
+      ],
+      "reasoning": false,
+      "toolCall": false,
+      "structuredOutput": false,
+      "attachment": false,
+      "openWeights": true,
+      "status": null,
+      "access": "open",
+      "rarity": "promo",
+      "set": 921,
+      "license": {
+        "name": "MIT",
+        "source": "huggingface",
+        "url": "https://huggingface.co/tencent/AuK"
+      },
+      "origin": "huggingface",
+      "hub": {
+        "repo": "tencent/AuK",
+        "downloads": 4000,
+        "likes": 350,
+        "params": null,
         "gated": false
       }
     },
@@ -40591,7 +40789,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 918,
+      "set": 922,
       "license": {
         "name": "Qwen Community 1.0 license",
         "source": "huggingface",
@@ -40603,6 +40801,50 @@
         "downloads": 830000,
         "likes": 5700,
         "params": 179999981459,
+        "gated": false
+      }
+    },
+    {
+      "key": "sparkllm/spark-x2-5-4b",
+      "id": "XHToken/Spark-X2.5-4B",
+      "slug": "spark-x2-5-4b",
+      "lab": "sparkllm",
+      "type": "text",
+      "name": "Spark-X2.5-4B",
+      "description": "Language model from SparkLLM, 4.1B parameters.",
+      "family": null,
+      "releaseDate": "2026-08-24",
+      "lastUpdated": "2026-09-15",
+      "knowledge": null,
+      "context": null,
+      "maxOutput": null,
+      "price": null,
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ],
+      "reasoning": false,
+      "toolCall": false,
+      "structuredOutput": false,
+      "attachment": false,
+      "openWeights": true,
+      "status": null,
+      "access": "open",
+      "rarity": "promo",
+      "set": 923,
+      "license": {
+        "name": "Apache 2.0",
+        "source": "huggingface",
+        "url": "https://huggingface.co/XHToken/Spark-X2.5-4B"
+      },
+      "origin": "huggingface",
+      "hub": {
+        "repo": "XHToken/Spark-X2.5-4B",
+        "downloads": 35000,
+        "likes": 1300,
+        "params": 4112079360,
         "gated": false
       }
     },
@@ -40631,7 +40873,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 919,
+      "set": 924,
       "license": {
         "name": "TimesFM Non Commercial License V1.0",
         "source": "huggingface",
@@ -40683,7 +40925,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 920,
+      "set": 925,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -40734,7 +40976,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 921,
+      "set": 926,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -40776,7 +41018,7 @@
       "status": "preview",
       "access": "open",
       "rarity": "uncommon",
-      "set": 922,
+      "set": 927,
       "license": {
         "name": "Tencent Hunyuan license",
         "source": "lab-default"
@@ -40826,7 +41068,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 923,
+      "set": 928,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -40872,7 +41114,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 924,
+      "set": 929,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -40918,7 +41160,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 925,
+      "set": 930,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -40964,7 +41206,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 926,
+      "set": 931,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -41008,7 +41250,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 927,
+      "set": 932,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -41045,7 +41287,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 928,
+      "set": 933,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -41089,7 +41331,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 929,
+      "set": 934,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -41138,7 +41380,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 930,
+      "set": 935,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -41181,7 +41423,7 @@
       "status": "deprecated",
       "access": "open",
       "rarity": "common",
-      "set": 931,
+      "set": 936,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -41231,7 +41473,7 @@
       "status": "deprecated",
       "access": "open",
       "rarity": "common",
-      "set": 932,
+      "set": 937,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -41281,7 +41523,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 933,
+      "set": 938,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -41293,6 +41535,50 @@
         "downloads": 610000,
         "likes": 3700,
         "params": 763205315794,
+        "gated": false
+      }
+    },
+    {
+      "key": "qwen/qwen-image-2-1",
+      "id": "Qwen/Qwen-Image-2.1",
+      "slug": "qwen-image-2-1",
+      "lab": "qwen",
+      "type": "image",
+      "name": "Qwen-Image-2.1",
+      "description": "Text-to-image model from Qwen, 7.1B parameters.",
+      "family": null,
+      "releaseDate": "2026-09-14",
+      "lastUpdated": "2026-09-21",
+      "knowledge": null,
+      "context": null,
+      "maxOutput": null,
+      "price": null,
+      "input": [
+        "text"
+      ],
+      "output": [
+        "image"
+      ],
+      "reasoning": false,
+      "toolCall": false,
+      "structuredOutput": false,
+      "attachment": false,
+      "openWeights": true,
+      "status": null,
+      "access": "open",
+      "rarity": "promo",
+      "set": 939,
+      "license": {
+        "name": "Qwen Research license",
+        "source": "huggingface",
+        "url": "https://huggingface.co/Qwen/Qwen-Image-2.1"
+      },
+      "origin": "huggingface",
+      "hub": {
+        "repo": "Qwen/Qwen-Image-2.1",
+        "downloads": 38000,
+        "likes": 2100,
+        "params": 7115124736,
         "gated": false
       }
     },
@@ -41332,13 +41618,101 @@
       "status": "preview",
       "access": "paid",
       "rarity": "uncommon",
-      "set": 934,
+      "set": 940,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
       },
       "origin": "models.dev",
       "hub": null
+    },
+    {
+      "key": "xingchen-agi/xing4-0-29b-a4b",
+      "id": "XingChen-AGI/Xing4.0-29B-A4B",
+      "slug": "xing4-0-29b-a4b",
+      "lab": "xingchen-agi",
+      "type": "text",
+      "name": "Xing4.0-29B-A4B",
+      "description": "Language model from XingChen-AGI, 31B parameters.",
+      "family": null,
+      "releaseDate": "2026-09-16",
+      "lastUpdated": "2026-09-18",
+      "knowledge": null,
+      "context": null,
+      "maxOutput": null,
+      "price": null,
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ],
+      "reasoning": false,
+      "toolCall": false,
+      "structuredOutput": false,
+      "attachment": false,
+      "openWeights": true,
+      "status": null,
+      "access": "open",
+      "rarity": "promo",
+      "set": 941,
+      "license": {
+        "name": "Apache 2.0",
+        "source": "huggingface",
+        "url": "https://huggingface.co/XingChen-AGI/Xing4.0-29B-A4B"
+      },
+      "origin": "huggingface",
+      "hub": {
+        "repo": "XingChen-AGI/Xing4.0-29B-A4B",
+        "downloads": 42000,
+        "likes": 1600,
+        "params": 31215031088,
+        "gated": false
+      }
+    },
+    {
+      "key": "antgroup/ming-image-0-1-design",
+      "id": "inclusionAI/Ming-Image-0.1-Design",
+      "slug": "ming-image-0-1-design",
+      "lab": "antgroup",
+      "type": "image",
+      "name": "Ming-Image-0.1-Design",
+      "description": "Text-to-image model from Ant Group, 6.2B parameters.",
+      "family": null,
+      "releaseDate": "2026-09-17",
+      "lastUpdated": "2026-09-23",
+      "knowledge": null,
+      "context": null,
+      "maxOutput": null,
+      "price": null,
+      "input": [
+        "text"
+      ],
+      "output": [
+        "image"
+      ],
+      "reasoning": false,
+      "toolCall": false,
+      "structuredOutput": false,
+      "attachment": false,
+      "openWeights": true,
+      "status": null,
+      "access": "open",
+      "rarity": "promo",
+      "set": 942,
+      "license": {
+        "name": "MIT",
+        "source": "huggingface",
+        "url": "https://huggingface.co/inclusionAI/Ming-Image-0.1-Design"
+      },
+      "origin": "huggingface",
+      "hub": {
+        "repo": "inclusionAI/Ming-Image-0.1-Design",
+        "downloads": 0,
+        "likes": 200,
+        "params": 6154901056,
+        "gated": false
+      }
     },
     {
       "key": "zai/glm-5-3-flashx",
@@ -41377,13 +41751,55 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 935,
+      "set": 943,
       "license": {
         "name": "MIT",
         "source": "lab-default"
       },
       "origin": "models.dev",
       "hub": null
+    },
+    {
+      "key": "convai-innovations/laya",
+      "id": "convaiinnovations/laya",
+      "slug": "laya",
+      "lab": "convai-innovations",
+      "type": "encoder",
+      "name": "laya",
+      "description": "Text classifier from Convai Innovations, 421M parameters.",
+      "family": null,
+      "releaseDate": "2026-09-18",
+      "lastUpdated": "2026-09-24",
+      "knowledge": null,
+      "context": null,
+      "maxOutput": null,
+      "price": null,
+      "input": [
+        "text"
+      ],
+      "output": [],
+      "reasoning": false,
+      "toolCall": false,
+      "structuredOutput": false,
+      "attachment": false,
+      "openWeights": true,
+      "status": null,
+      "access": "open",
+      "rarity": "promo",
+      "set": 944,
+      "license": {
+        "name": "Apache 2.0",
+        "source": "huggingface",
+        "url": "https://huggingface.co/convaiinnovations/laya"
+      },
+      "origin": "huggingface",
+      "hub": {
+        "repo": "convaiinnovations/laya",
+        "downloads": 0,
+        "likes": 3300,
+        "params": 421293830,
+        "gated": false
+      }
     },
     {
       "key": "xai/grok-4-7",
@@ -41421,13 +41837,101 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 936,
+      "set": 945,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
       },
       "origin": "models.dev",
       "hub": null
+    },
+    {
+      "key": "xiaomi/mimo-v2-6-flash-rl",
+      "id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "slug": "mimo-v2-6-flash-rl",
+      "lab": "xiaomi",
+      "type": "text",
+      "name": "MiMo-V2.6-Flash-RL",
+      "description": "Language model from Xiaomi, 311B parameters.",
+      "family": null,
+      "releaseDate": "2026-09-21",
+      "lastUpdated": "2026-09-22",
+      "knowledge": null,
+      "context": null,
+      "maxOutput": null,
+      "price": null,
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ],
+      "reasoning": false,
+      "toolCall": false,
+      "structuredOutput": false,
+      "attachment": false,
+      "openWeights": true,
+      "status": null,
+      "access": "open",
+      "rarity": "promo",
+      "set": 946,
+      "license": {
+        "name": "MIT",
+        "source": "huggingface",
+        "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL"
+      },
+      "origin": "huggingface",
+      "hub": {
+        "repo": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+        "downloads": 19000,
+        "likes": 440,
+        "params": 310756322688,
+        "gated": false
+      }
+    },
+    {
+      "key": "xiaomi/mimo-v2-6-pro-rl",
+      "id": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "slug": "mimo-v2-6-pro-rl",
+      "lab": "xiaomi",
+      "type": "text",
+      "name": "MiMo-V2.6-Pro-RL",
+      "description": "Language model from Xiaomi, 1T parameters.",
+      "family": null,
+      "releaseDate": "2026-09-21",
+      "lastUpdated": "2026-09-22",
+      "knowledge": null,
+      "context": null,
+      "maxOutput": null,
+      "price": null,
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ],
+      "reasoning": false,
+      "toolCall": false,
+      "structuredOutput": false,
+      "attachment": false,
+      "openWeights": true,
+      "status": null,
+      "access": "open",
+      "rarity": "promo",
+      "set": 947,
+      "license": {
+        "name": "MIT",
+        "source": "huggingface",
+        "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL"
+      },
+      "origin": "huggingface",
+      "hub": {
+        "repo": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
+        "downloads": 9800,
+        "likes": 470,
+        "params": 1024216603392,
+        "gated": false
+      }
     },
     {
       "key": "xiaomi/mimo-v2-6-pro-ultraspeed",
@@ -41466,7 +41970,7 @@
       "status": null,
       "access": "open",
       "rarity": "rare",
-      "set": 937,
+      "set": 948,
       "license": {
         "name": "MIT",
         "source": "lab-default"
@@ -41510,7 +42014,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 938,
+      "set": 949,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -41554,7 +42058,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 939,
+      "set": 950,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -41598,7 +42102,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 940,
+      "set": 951,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -41643,7 +42147,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 941,
+      "set": 952,
       "license": {
         "name": "MIT",
         "source": "lab-default"
@@ -41688,7 +42192,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 942,
+      "set": 953,
       "license": {
         "name": "MIT",
         "source": "lab-default"

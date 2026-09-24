@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-24T11:07:02.805Z",
+  "updatedAt": "2026-09-24T12:44:33.504Z",
   "boards": {
     "eci": {
       "count": 268,
@@ -5155,6 +5155,23 @@
           "score": 1057,
           "rank": 63,
           "as": "qwen-image"
+        }
+      },
+      "bench": {}
+    },
+    "qwen/qwen-image-2-1": {
+      "quality": 79,
+      "basis": "image",
+      "boards": {
+        "image": {
+          "score": 1228,
+          "rank": 17,
+          "as": "qwen-image-2.1"
+        },
+        "image-edit": {
+          "score": 1367,
+          "rank": 16,
+          "as": "qwen-image-2.1"
         }
       },
       "bench": {}

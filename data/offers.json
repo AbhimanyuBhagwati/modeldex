@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-24T11:53:20.790Z",
+  "updatedAt": "2026-09-24T12:44:33.504Z",
   "providers": {
     "302ai": {
       "name": "302.AI",
@@ -1145,6 +1145,19 @@
           "output": 2.29,
           "context": 128000,
           "official": true
+        }
+      ],
+      "hf": []
+    },
+    "antgroup/ling-3-0-tiny": {
+      "offers": [
+        {
+          "provider": "requesty",
+          "model": "ling-3.0-tiny",
+          "input": 0,
+          "output": 0,
+          "context": 262144,
+          "official": false
         }
       ],
       "hf": []
@@ -5937,8 +5950,8 @@
           "input": null,
           "output": null,
           "context": null,
-          "throughput": 69,
-          "latencyMs": 231,
+          "throughput": 70,
+          "latencyMs": 224,
           "tools": true
         }
       ]
@@ -6707,14 +6720,6 @@
           "official": false
         },
         {
-          "provider": "huggingface",
-          "model": "deepseek-ai/DeepSeek-R1",
-          "input": 0.7,
-          "output": 2.5,
-          "context": 64000,
-          "official": false
-        },
-        {
           "provider": "kilo",
           "model": "deepseek/deepseek-r1",
           "input": 0.7,
@@ -6835,7 +6840,19 @@
           "official": false
         }
       ],
-      "hf": []
+      "hf": [
+        {
+          "provider": "novita",
+          "name": "Novita",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1?inference_provider=novita",
+          "input": 0.7,
+          "output": 2.5,
+          "context": 64000,
+          "throughput": 19,
+          "latencyMs": 1298,
+          "tools": true
+        }
+      ]
     },
     "deepseek/deepseek-r1-0528": {
       "offers": [
@@ -7443,8 +7460,8 @@
           "input": 0.24,
           "output": 0.9,
           "context": 163840,
-          "throughput": 29,
-          "latencyMs": 463,
+          "throughput": 41,
+          "latencyMs": 514,
           "tools": true
         },
         {
@@ -7632,17 +7649,6 @@
         }
       ],
       "hf": [
-        {
-          "provider": "deepinfra",
-          "name": "DeepInfra",
-          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1?inference_provider=deepinfra",
-          "input": 0.25,
-          "output": 0.95,
-          "context": 163840,
-          "throughput": 10,
-          "latencyMs": 1897,
-          "tools": true
-        },
         {
           "provider": "novita",
           "name": "Novita",
@@ -7977,8 +7983,8 @@
           "input": 0.269,
           "output": 0.4,
           "context": 163840,
-          "throughput": 39,
-          "latencyMs": 1110,
+          "throughput": 38,
+          "latencyMs": 1550,
           "tools": true
         },
         {
@@ -8971,8 +8977,19 @@
           "input": null,
           "output": null,
           "context": 1048576,
-          "throughput": 104,
-          "latencyMs": 563,
+          "throughput": 105,
+          "latencyMs": 864,
+          "tools": true
+        },
+        {
+          "provider": "scaleway",
+          "name": "Scaleway",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731?inference_provider=scaleway",
+          "input": null,
+          "output": null,
+          "context": null,
+          "throughput": 86,
+          "latencyMs": 3768,
           "tools": true
         }
       ]
@@ -14109,8 +14126,8 @@
           "input": 0.285,
           "output": 0.57,
           "context": null,
-          "throughput": 108,
-          "latencyMs": 383,
+          "throughput": 125,
+          "latencyMs": 423,
           "tools": true
         },
         {
@@ -16354,17 +16371,6 @@
       ],
       "hf": [
         {
-          "provider": "novita",
-          "name": "Novita",
-          "url": "https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct?inference_provider=novita",
-          "input": 0.135,
-          "output": 0.4,
-          "context": 12288,
-          "throughput": 48,
-          "latencyMs": 646,
-          "tools": true
-        },
-        {
           "provider": "ovhcloud",
           "name": "OVHcloud",
           "url": "https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct?inference_provider=ovhcloud",
@@ -16590,8 +16596,8 @@
           "input": 0.1,
           "output": 0.3,
           "context": 327680,
-          "throughput": 40,
-          "latencyMs": 511,
+          "throughput": 20,
+          "latencyMs": 510,
           "tools": true
         },
         {
@@ -16648,6 +16654,152 @@
         }
       ],
       "hf": []
+    },
+    "meta/muse-glimmer-30b": {
+      "offers": [
+        {
+          "provider": "nvidia",
+          "model": "meta/muse-glimmer-30b",
+          "input": 0,
+          "output": 0,
+          "context": 131072,
+          "official": false
+        },
+        {
+          "provider": "requesty",
+          "model": "muse-glimmer-30b",
+          "input": 0,
+          "output": 0,
+          "context": 131072,
+          "official": false
+        },
+        {
+          "provider": "empiriolabs",
+          "model": "muse-glimmer-30b",
+          "input": 0.2,
+          "output": 0.8,
+          "context": 131072,
+          "official": false
+        },
+        {
+          "provider": "kilo",
+          "model": "meta/muse-glimmer-30b",
+          "input": 0.3,
+          "output": 1.1,
+          "context": 131072,
+          "official": false
+        },
+        {
+          "provider": "llmgateway",
+          "model": "muse-glimmer-30b",
+          "input": 0.3,
+          "output": 1.2,
+          "context": 131072,
+          "official": false
+        },
+        {
+          "provider": "edenai",
+          "model": "flexai/Muse-Glimmer-30B",
+          "input": 0.3,
+          "output": 1.2,
+          "context": 131072,
+          "official": false
+        },
+        {
+          "provider": "llmgateway-providers",
+          "model": "deepinfra/muse-glimmer-30b",
+          "input": 0.3,
+          "output": 1.2,
+          "context": 131072,
+          "official": false
+        },
+        {
+          "provider": "openrouter",
+          "model": "meta/muse-glimmer-30b",
+          "input": 0.3,
+          "output": 1.2,
+          "context": 131072,
+          "official": false
+        },
+        {
+          "provider": "fireworks-ai",
+          "model": "accounts/fireworks/models/muse-glimmer-30b",
+          "input": 0.35,
+          "output": 1.5,
+          "context": 131072,
+          "official": false
+        },
+        {
+          "provider": "nano-gpt",
+          "model": "TEE/muse-glimmer-30b",
+          "input": 0.35,
+          "output": 1.5,
+          "context": 131072,
+          "official": false
+        },
+        {
+          "provider": "vercel",
+          "model": "meta/muse-glimmer-30b",
+          "input": 0.35,
+          "output": 1.5,
+          "context": 131072,
+          "official": false
+        },
+        {
+          "provider": "llmtr",
+          "model": "muse-glimmer-30b-tr",
+          "input": 2,
+          "output": 5,
+          "context": 131072,
+          "official": false
+        }
+      ],
+      "hf": [
+        {
+          "provider": "deepinfra",
+          "name": "DeepInfra",
+          "url": "https://huggingface.co/meta-models/Muse-Glimmer-30B?inference_provider=deepinfra",
+          "input": 0.3,
+          "output": 1.2,
+          "context": 131072,
+          "throughput": 77,
+          "latencyMs": 3896,
+          "tools": true
+        },
+        {
+          "provider": "together",
+          "name": "Together AI",
+          "url": "https://huggingface.co/meta-models/Muse-Glimmer-30B?inference_provider=together",
+          "input": 0.35,
+          "output": 1.5,
+          "context": 131072,
+          "throughput": 101,
+          "latencyMs": 494,
+          "tools": true
+        },
+        {
+          "provider": "featherless-ai",
+          "name": "Featherless",
+          "url": "https://huggingface.co/meta-models/Muse-Glimmer-30B?inference_provider=featherless-ai",
+          "input": null,
+          "output": null,
+          "context": null,
+          "throughput": null,
+          "latencyMs": null,
+          "tools": false
+        },
+        {
+          "provider": "fireworks-ai",
+          "name": "Fireworks",
+          "url": "https://huggingface.co/meta-models/Muse-Glimmer-30B?inference_provider=fireworks-ai",
+          "input": null,
+          "output": null,
+          "context": 131072,
+          "throughput": 63,
+          "latencyMs": 139,
+          "tools": true
+        }
+      ]
     },
     "meta/muse-spark-1-1": {
       "offers": [
@@ -19192,8 +19344,8 @@
           "input": 0.3,
           "output": 1.2,
           "context": 524288,
-          "throughput": 82,
-          "latencyMs": 518,
+          "throughput": 40,
+          "latencyMs": 483,
           "tools": true
         },
         {
@@ -22833,8 +22985,8 @@
           "input": 2.85,
           "output": 14.25,
           "context": 1048576,
-          "throughput": 34,
-          "latencyMs": 566,
+          "throughput": 16,
+          "latencyMs": 567,
           "tools": true
         },
         {
@@ -22866,8 +23018,8 @@
           "input": 3,
           "output": 15,
           "context": 1048576,
-          "throughput": 50,
-          "latencyMs": 712,
+          "throughput": 57,
+          "latencyMs": 751,
           "tools": true
         },
         {
@@ -31284,8 +31436,8 @@
           "input": 0.037,
           "output": 0.17,
           "context": 131072,
-          "throughput": 37,
-          "latencyMs": 1053,
+          "throughput": 45,
+          "latencyMs": 535,
           "tools": true
         },
         {
@@ -31328,8 +31480,8 @@
           "input": 0.1,
           "output": 0.5,
           "context": 128072,
-          "throughput": 170,
-          "latencyMs": 223,
+          "throughput": 185,
+          "latencyMs": 267,
           "tools": true
         },
         {
@@ -31372,8 +31524,8 @@
           "input": 0.15,
           "output": 0.75,
           "context": 131072,
-          "throughput": 424,
-          "latencyMs": 218,
+          "throughput": 421,
+          "latencyMs": 307,
           "tools": true
         },
         {
@@ -31715,8 +31867,8 @@
           "input": 0.03,
           "output": 0.14,
           "context": 131072,
-          "throughput": 130,
-          "latencyMs": 246,
+          "throughput": 115,
+          "latencyMs": 973,
           "tools": true
         },
         {
@@ -34372,8 +34524,8 @@
           "input": 0.2,
           "output": 0.8,
           "context": 40960,
-          "throughput": 36,
-          "latencyMs": 1999,
+          "throughput": 27,
+          "latencyMs": 1221,
           "tools": false
         },
         {
@@ -35969,8 +36121,8 @@
           "input": 0.45,
           "output": 3,
           "context": 262144,
-          "throughput": 47,
-          "latencyMs": 242,
+          "throughput": 52,
+          "latencyMs": 228,
           "tools": true
         },
         {
@@ -36248,17 +36400,6 @@
           "context": 262144,
           "throughput": 31,
           "latencyMs": 383,
-          "tools": true
-        },
-        {
-          "provider": "together",
-          "name": "Together AI",
-          "url": "https://huggingface.co/Qwen/Qwen3.5-9B?inference_provider=together",
-          "input": 0.17,
-          "output": 0.25,
-          "context": 262144,
-          "throughput": 97,
-          "latencyMs": 2770,
           "tools": true
         },
         {
@@ -36645,8 +36786,8 @@
           "input": 0.32,
           "output": 3.2,
           "context": 262144,
-          "throughput": 54,
-          "latencyMs": 581,
+          "throughput": 37,
+          "latencyMs": 437,
           "tools": true
         },
         {
@@ -36897,8 +37038,8 @@
           "input": 0.1,
           "output": 0.95,
           "context": 262144,
-          "throughput": 30,
-          "latencyMs": 360,
+          "throughput": 103,
+          "latencyMs": 301,
           "tools": true
         },
         {
@@ -37982,6 +38123,216 @@
       ],
       "hf": []
     },
+    "qwen/qwen3-8-2-4t-a95b": {
+      "offers": [
+        {
+          "provider": "iteracompute",
+          "model": "qwen/qwen3.8-2.4t-a95b",
+          "input": 1.95,
+          "output": 5.95,
+          "context": 970000,
+          "official": false
+        },
+        {
+          "provider": "aihubmix",
+          "model": "qwen3.8-2.4t-a95b",
+          "input": 2,
+          "output": 6,
+          "context": 262000,
+          "official": false
+        },
+        {
+          "provider": "hyper",
+          "model": "qwen3.8-2.4t-a95b",
+          "input": 2,
+          "output": 6,
+          "context": 1000000,
+          "official": false
+        },
+        {
+          "provider": "deepinfra",
+          "model": "Qwen/Qwen3.8-2.4T-A95B",
+          "input": 2,
+          "output": 6,
+          "context": 262144,
+          "official": false
+        },
+        {
+          "provider": "llmgateway",
+          "model": "qwen3.8-2.4t-a95b",
+          "input": 2,
+          "output": 6,
+          "context": 1010000,
+          "official": false
+        },
+        {
+          "provider": "edenai",
+          "model": "qwen/qwen3.8-2.4t-a95b",
+          "input": 2,
+          "output": 6,
+          "context": 1000000,
+          "official": false
+        },
+        {
+          "provider": "fireworks-ai",
+          "model": "accounts/fireworks/models/qwen3p8-2p4t-a95b",
+          "input": 2,
+          "output": 6,
+          "context": 262144,
+          "official": false
+        },
+        {
+          "provider": "kilo",
+          "model": "qwen/qwen3.8-2.4t-a95b",
+          "input": 2,
+          "output": 6,
+          "context": 1000000,
+          "official": false
+        },
+        {
+          "provider": "llmgateway-providers",
+          "model": "novita/qwen3.8-2.4t-a95b",
+          "input": 2,
+          "output": 6,
+          "context": 1000000,
+          "official": false
+        },
+        {
+          "provider": "modal",
+          "model": "Qwen/Qwen3.8-2.4T-A95B",
+          "input": 2,
+          "output": 6,
+          "context": 1010000,
+          "official": false
+        },
+        {
+          "provider": "openrouter",
+          "model": "qwen/qwen3.8-2.4t-a95b",
+          "input": 2,
+          "output": 6,
+          "context": 1048576,
+          "official": false
+        },
+        {
+          "provider": "requesty",
+          "model": "qwen3.8-2.4T-A95B",
+          "input": 2,
+          "output": 6,
+          "context": 262144,
+          "official": false
+        },
+        {
+          "provider": "runinfra",
+          "model": "Inferact/Qwen3.8-2.4T-A95B-NVFP4",
+          "input": 2,
+          "output": 6,
+          "context": 262144,
+          "official": false
+        },
+        {
+          "provider": "siliconflow",
+          "model": "Qwen/Qwen3.8-2.4T-A95B",
+          "input": 2,
+          "output": 6,
+          "context": 1049000,
+          "official": false
+        },
+        {
+          "provider": "vercel",
+          "model": "alibaba/qwen3.8-2.4t-a95b",
+          "input": 2,
+          "output": 6,
+          "context": 262144,
+          "official": false
+        },
+        {
+          "provider": "cortecs",
+          "model": "qwen3.8-2.4t-a95b",
+          "input": 2.5,
+          "output": 6,
+          "context": 262144,
+          "official": false
+        },
+        {
+          "provider": "opper",
+          "model": "qwen3.8-2.4t-a95b",
+          "input": 2.5,
+          "output": 6,
+          "context": 262144,
+          "official": false
+        },
+        {
+          "provider": "tensorx",
+          "model": "qwen/qwen3.8-2.4t-a95b",
+          "input": 2.5,
+          "output": 6,
+          "context": 262144,
+          "official": false
+        },
+        {
+          "provider": "merge-gateway",
+          "model": "qwen/qwen3.8-2.4t-a95b",
+          "input": 2.5,
+          "output": 6.25,
+          "context": 262144,
+          "official": false
+        },
+        {
+          "provider": "venice",
+          "model": "qwen-3-8-2-4t-a95b",
+          "input": 2.5,
+          "output": 7.5,
+          "context": 262144,
+          "official": false
+        }
+      ],
+      "hf": [
+        {
+          "provider": "deepinfra",
+          "name": "DeepInfra",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B?inference_provider=deepinfra",
+          "input": 2,
+          "output": 6,
+          "context": 262144,
+          "throughput": 92,
+          "latencyMs": 441,
+          "tools": true
+        },
+        {
+          "provider": "novita",
+          "name": "Novita",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B?inference_provider=novita",
+          "input": 2,
+          "output": 6,
+          "context": 1000000,
+          "throughput": 36,
+          "latencyMs": 1245,
+          "tools": true
+        },
+        {
+          "provider": "together",
+          "name": "Together AI",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B?inference_provider=together",
+          "input": 2,
+          "output": 6,
+          "context": 1010000,
+          "throughput": 148,
+          "latencyMs": 340,
+          "tools": true
+        },
+        {
+          "provider": "fireworks-ai",
+          "name": "Fireworks",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B?inference_provider=fireworks-ai",
+          "input": null,
+          "output": null,
+          "context": 262144,
+          "throughput": 66,
+          "latencyMs": 792,
+          "tools": true
+        }
+      ]
+    },
     "qwen/qwen3-8-27b": {
       "offers": [
         {
@@ -38258,17 +38609,6 @@
         }
       ],
       "hf": [
-        {
-          "provider": "cerebras",
-          "name": "Cerebras",
-          "url": "https://huggingface.co/Qwen/Qwen3.8-27B?inference_provider=cerebras",
-          "input": 0.99,
-          "output": 1.49,
-          "context": 65536,
-          "throughput": 766,
-          "latencyMs": 220,
-          "tools": true
-        },
         {
           "provider": "deepinfra",
           "name": "DeepInfra",
@@ -40218,8 +40558,8 @@
           "input": 0.09,
           "output": 1.1,
           "context": 262144,
-          "throughput": 95,
-          "latencyMs": 492,
+          "throughput": 68,
+          "latencyMs": 333,
           "tools": true
         },
         {
@@ -42192,8 +42532,8 @@
           "input": 0.834,
           "output": 2.501,
           "context": 1000000,
-          "throughput": 60,
-          "latencyMs": 3483,
+          "throughput": 35,
+          "latencyMs": 3888,
           "tools": true
         }
       ]
@@ -45341,8 +45681,8 @@
           "input": null,
           "output": null,
           "context": null,
-          "throughput": 40,
-          "latencyMs": 2268,
+          "throughput": 36,
+          "latencyMs": 2591,
           "tools": true
         }
       ]
@@ -45574,8 +45914,8 @@
           "input": 0.5,
           "output": 2,
           "context": 202752,
-          "throughput": 28,
-          "latencyMs": 408,
+          "throughput": 32,
+          "latencyMs": 766,
           "tools": true
         },
         {
@@ -45717,8 +46057,8 @@
           "input": null,
           "output": null,
           "context": null,
-          "throughput": 50,
-          "latencyMs": 3179,
+          "throughput": 48,
+          "latencyMs": 2391,
           "tools": true
         }
       ]
@@ -46066,8 +46406,8 @@
           "input": 0.4,
           "output": 1.75,
           "context": 202752,
-          "throughput": 48,
-          "latencyMs": 529,
+          "throughput": 37,
+          "latencyMs": 475,
           "tools": true
         },
         {
@@ -46088,8 +46428,8 @@
           "input": 0.6,
           "output": 2.2,
           "context": 204800,
-          "throughput": 24,
-          "latencyMs": 4028,
+          "throughput": 26,
+          "latencyMs": 3186,
           "tools": true
         },
         {
@@ -46925,6 +47265,14 @@
           "official": false
         },
         {
+          "provider": "huggingface",
+          "model": "zai-org/GLM-5.1",
+          "input": 1,
+          "output": 3.2,
+          "context": 202752,
+          "official": false
+        },
+        {
           "provider": "ollama-cloud",
           "model": "glm-5.1",
           "input": 1,
@@ -47261,30 +47609,7 @@
           "official": false
         }
       ],
-      "hf": [
-        {
-          "provider": "deepinfra",
-          "name": "DeepInfra",
-          "url": "https://huggingface.co/zai-org/GLM-5.1?inference_provider=deepinfra",
-          "input": 1.05,
-          "output": 3.5,
-          "context": 202752,
-          "throughput": 15,
-          "latencyMs": 2710,
-          "tools": true
-        },
-        {
-          "provider": "featherless-ai",
-          "name": "Featherless",
-          "url": "https://huggingface.co/zai-org/GLM-5.1?inference_provider=featherless-ai",
-          "input": null,
-          "output": null,
-          "context": null,
-          "throughput": null,
-          "latencyMs": null,
-          "tools": false
-        }
-      ]
+      "hf": []
     },
     "zai/glm-5-2": {
       "offers": [
@@ -48007,8 +48332,8 @@
           "input": 1.4,
           "output": 4.4,
           "context": 1048576,
-          "throughput": 69,
-          "latencyMs": 736,
+          "throughput": 70,
+          "latencyMs": 954,
           "tools": true
         },
         {
@@ -48657,8 +48982,8 @@
           "input": null,
           "output": null,
           "context": null,
-          "throughput": 32,
-          "latencyMs": 3178,
+          "throughput": 37,
+          "latencyMs": 2902,
           "tools": true
         }
       ]
