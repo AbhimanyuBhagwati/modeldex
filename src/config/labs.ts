@@ -56,6 +56,11 @@ export interface LabConfig {
   huggingFace?: HuggingFaceSource[];
   /** Official Hugging Face accounts whose popular models become cards. The first one is the lab's link when models.dev has none. */
   hub?: string[];
+  /**
+   * A lab we expect but models.dev doesn't list yet. Its provider ids are best guesses; the sync stays quiet
+   * about them until one shows up, and the lab appears in the binder with its first model.
+   */
+  watch?: boolean;
 }
 
 /** For labs that only come from Hugging Face: no models.dev listing is ever theirs. */
@@ -116,7 +121,7 @@ export const LABS: LabConfig[] = [
     skip: /^(cerebras|groq)-/i,
     defaultLicense: 'Llama license',
     huggingFace: [{ org: 'meta-llama' }],
-    hub: ['meta-llama', 'facebook', 'FacebookAI'],
+    hub: ['meta-llama', 'facebook', 'FacebookAI', 'meta-models'],
   },
   {
     key: 'mistral',
@@ -659,6 +664,18 @@ export const LABS: LabConfig[] = [
     match: NOTHING,
     defaultLicense: null,
     hub: ['Salesforce'],
+  },
+  {
+    // Jev, an API-only "System One" model (Sept 2026). Waiting for models.dev to list it; the ids are guesses.
+    key: 'typesafe',
+    name: 'TypeSafe AI',
+    color: '#5B6CFF',
+    art: 'emblem',
+    emblem: { glyph: 'diamond', layout: 'wave' },
+    providers: ['typesafe', 'typesafe-ai', 'typesafeai'],
+    match: /^jev/i,
+    defaultLicense: null,
+    watch: true,
   },
 ];
 

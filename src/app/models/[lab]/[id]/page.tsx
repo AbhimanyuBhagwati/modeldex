@@ -10,7 +10,7 @@ import { AddToDeckButton, CopyButton } from '@/components/client-bits';
 import { WhereToRun } from '@/components/WhereToRun';
 import { VoteButton } from '@/components/votes/VoteButton';
 import { Icon, RarityIcon } from '@/components/icons';
-import { getDataset, getLab, getModel, lineOf, moreFromLab, opponentFor, providerInfo, rivalsOf, scoreBoards, scoresOf, speedsOf, whereToRun } from '@/lib/data';
+import { getDataset, getLab, getModel, lineOf, moreFromLab, newcomerOf, opponentFor, providerInfo, rivalsOf, scoreBoards, scoresOf, speedsOf, whereToRun } from '@/lib/data';
 import {
   ACCESS_LABEL,
   INPUT_ONLY,
@@ -99,6 +99,7 @@ export default async function ModelPage({ params }: PageProps<'/models/[lab]/[id
   const run = whereToRun(m.key);
   const evolution = lineOf(m.key);
   const timed = m.status !== 'deprecated' ? speedsOf()[m.key] : undefined;
+  const found = newcomerOf(m.lab);
   const runCount = run ? run.offers.length + run.hf.length : 0;
   const runProviders = Object.fromEntries((run?.offers ?? []).map((o) => [o.provider, providerInfo(o.provider)]));
   const fromHub = m.origin === 'huggingface';
@@ -177,6 +178,11 @@ export default async function ModelPage({ params }: PageProps<'/models/[lab]/[id
               <RarityIcon rarity={m.rarity} />
               {RARITY_LABEL[m.rarity]}
               {m.status && <span className={`status status-${m.status}`}>{STATUS_LABEL[m.status]}</span>}
+              {found && (
+                <Link className="status status-new" href={`/labs/${m.lab}/`} title={`The trending radar added ${lab.name} on ${formatDate(found.since)}`}>
+                  New lab
+                </Link>
+              )}
             </p>
             <h1 className={styles.title}>{m.name}</h1>
             {m.description && <p className={styles.desc}>{m.description}</p>}
@@ -246,7 +252,9 @@ export default async function ModelPage({ params }: PageProps<'/models/[lab]/[id
             <p className={styles.note}>
               {licenseNote(m, lab)}{' '}
               {fromHub
-                ? `Stats from ${lab.name}’s official Hugging Face account, refreshed daily.`
+                ? found
+                  ? `Stats from ${lab.name}’s Hugging Face account, refreshed daily. The trending radar added this lab on ${formatDate(found.since)}.`
+                  : `Stats from ${lab.name}’s official Hugging Face account, refreshed daily.`
                 : `Specs from models.dev${m.hub ? ', downloads from Hugging Face' : ''}, last changed ${formatDate(data.updatedAt.slice(0, 10))}.`}
               {!fromHub && lab.docUrl && ` Official source: ${new URL(lab.docUrl).host}.`}
             </p>

@@ -212,3 +212,18 @@ export const scoresFileSchema = z
       if ((s.quality == null) !== (s.basis == null) || (s.basis && !s.boards[s.basis])) ctx.addIssue({ code: 'custom', message: `${key} has a quality without its board`, path: ['models', key] });
     }
   });
+
+/** `data/newcomers.json`: labs the trending radar brought in. */
+export const newcomersFileSchema = z.object({
+  version: z.literal(1),
+  labs: z.array(
+    z.object({
+      key: z.string().regex(/^[a-z0-9-]+$/),
+      name: z.string().min(1),
+      author: z.string().regex(/^[\w.-]+$/),
+      color: z.string().regex(/^#[0-9A-Fa-f]{6}$/),
+      since: isoDay,
+      repo: z.string().regex(/^[\w.-]+\/[\w.-]+$/),
+    }),
+  ),
+});

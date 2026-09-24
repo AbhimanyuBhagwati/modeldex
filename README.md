@@ -20,6 +20,9 @@ The data updates itself. A GitHub Action pulls [models.dev](https://models.dev) 
             │    │    models with 100,000+ downloads last month become cards,
             │    │    cards stay once they're in, quantized copies are skipped,
             │    │    and models.dev cards gain downloads and parameter counts
+            │    ├─ trending radar: read Hugging Face's trending list; original models
+            │    │    with 200+ likes from labs we cover skip the download wait, and
+            │    │    ones with 1,000+ likes from labs we don't bring their lab in
             │    ├─ where to run it: match every card to the providers that sell it
             │    │    (models.dev's 200+ providers) and to Hugging Face's hosts
             │    ├─ benchmark scores: Epoch AI's Capabilities Index and its own runs
@@ -37,6 +40,17 @@ The data updates itself. A GitHub Action pulls [models.dev](https://models.dev) 
 A push to `main` also runs the checks and republishes. A morning with no new data skips the rebuild, though download counts move most days, so most mornings publish.
 
 If models.dev is down or sends something broken, the job fails, GitHub emails you, and the site keeps serving yesterday's data. If Hugging Face is down or rate-limits the job, each org that fails keeps yesterday's cards, stats, and licenses. If Epoch AI or LMArena fails, or their data changes shape so fewer than 50 cards get rated, the scores from the last good run stay.
+
+### The trending radar
+
+Downloads lag. A model everyone is talking about can show zero downloads for days, and the binder waits for 100,000 a month. So the daily job also reads Hugging Face's trending list (`src/lib/pipeline/radar.ts`), where likes move fast, and lets in original models released in the last 90 days:
+
+- **From a lab we cover:** 200 likes or more, and it becomes a card straight away.
+- **From anyone else:** 1,000 likes or more, and its account becomes a new lab, named from its Hugging Face profile, with a color and card art generated from its key. It's saved in `data/newcomers.json` so it stays and keeps syncing, and its pages carry a "New lab" badge. At most three new labs a morning.
+- **Never:** quantized or converted copies, adapters, fine-tunes of another lab's model (Hugging Face's `base_model` tags give them away), or repos with no known task.
+- **Held for review:** an account whose name matches a lab we already have ("Meta Inc." for Meta) is either that lab's new account or an impersonator, so the job summary flags it instead of adding it. Add real ones to the lab's `hub` list in `src/config/labs.ts`.
+
+API-only models have no popularity signal: models.dev lists them, alongside plenty of resellers and wrappers. Expected labs go in `src/config/labs.ts` with `watch: true` (TypeSafe AI, for Jev, is one), so their first listing becomes a card without daily warnings in the meantime.
 
 ### Quality and the matchmaker
 
@@ -124,6 +138,8 @@ Requires Node 20.9 or newer (`.nvmrc` pins 24).
 | Reshape the galaxy (arm twist, star brightness) | `TWIST`, `layoutGalaxy`, and `galaxyData` in `src/lib/galaxy.ts`; look and glow in `src/components/galaxy/` |
 | Change how quality is matched or rated | `rowCores`, `scoreCores`, and `BASIS` in `src/lib/pipeline/scores.ts`; labels in `src/lib/quality.ts` |
 | Change what the matchmaker weighs | `WEIGHTS`, `TASKS`, `NEEDS`, and `BUDGETS` in `src/lib/match.ts` |
+| Tune the trending radar (likes, age, labs per day) | the `RADAR_*` constants in `src/lib/pipeline/radar.ts` |
+| Expect a lab that isn't listed yet | add it to `src/config/labs.ts` with `watch: true` |
 | Change a creature's species or looks | `SPECIES` in `src/lib/terrarium.ts`; drawing in `src/components/creatures/draw.ts`; the world in `src/components/terrarium/world.ts` |
 | Change the race passages or lineup | `PASSAGES` and `defaultLineup` in `src/lib/race.ts` |
 | Credit a new source, library, or font | `SECTIONS` in `src/app/credits/page.tsx` |
@@ -136,7 +152,7 @@ Requires Node 20.9 or newer (`.nvmrc` pins 24).
 ```
 scripts/sync.ts            the daily job: fetch, build, validate, write
 src/config/labs.ts         which labs appear, their colors, how to recognize their models
-src/lib/pipeline/          pure data pipeline (tested): build, licenses, hub, offers, scores, schema, diff
+src/lib/pipeline/          pure data pipeline (tested): build, licenses, hub, radar, offers, scores, schema, diff
 src/lib/quality.ts         quality tiers and what each leaderboard is
 src/lib/match.ts           the Model Matchmaker: filters, ranking, one-line reasons (tested)
 src/lib/terrarium.ts       cards as creatures: species, size, families, eggs, fossils, moods (tested)
@@ -161,6 +177,7 @@ data/models.json           generated: every card
 data/offers.json           generated: where to run each card
 data/changes.json          generated: the last 90 days of changes
 data/scores.json           generated: public benchmark scores per card
+data/newcomers.json        generated: labs the trending radar added by itself
 ```
 
 ## Data and credits

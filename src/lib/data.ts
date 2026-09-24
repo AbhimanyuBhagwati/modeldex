@@ -1,11 +1,13 @@
 import changesRaw from '../../data/changes.json';
 import raw from '../../data/models.json';
 import offersRaw from '../../data/offers.json';
+import newcomersRaw from '../../data/newcomers.json';
 import scoresRaw from '../../data/scores.json';
 import { buildLines, type EvolutionLine } from './evolution';
 import { INPUT_ONLY } from './format';
 import type { Signals } from './match';
 import { percentile } from './quality';
+import type { Newcomer, NewcomersFile } from './pipeline/radar';
 import type { Racer } from './race';
 import { buildCreatures, measuredSpeeds, type TerrariumData } from './terrarium';
 import type { CardScores, ChangeEvent, Dataset, LabSummary, Model, OffersFile, Quality, ScoresFile } from './types';
@@ -14,6 +16,10 @@ import type { CardScores, ChangeEvent, Dataset, LabSummary, Model, OffersFile, Q
 const offers = offersRaw as unknown as OffersFile;
 const scores = scoresRaw as unknown as ScoresFile;
 const changes = (changesRaw as unknown as { events: ChangeEvent[] }).events;
+const newcomers = new Map((newcomersRaw as unknown as NewcomersFile).labs.map((n) => [n.key, n]));
+
+/** A lab the trending radar brought in by itself, with the day it was spotted; undefined for labs we set up. */
+export const newcomerOf = (lab: string): Newcomer | undefined => newcomers.get(lab);
 
 function qualityOf(key: string): Quality | null {
   const s = scores.models[key];

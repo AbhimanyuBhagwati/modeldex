@@ -23,7 +23,7 @@ const SECTIONS: { title: string; lede: string; items: Credit[] }[] = [
     lede: 'Where every card, price, and star comes from. The sync pulls these fresh every day.',
     items: [
       { name: 'models.dev', href: 'https://models.dev', use: 'Specs, prices, release dates, and the 200+ providers behind “Where to run it”.', license: 'MIT' },
-      { name: 'Hugging Face Hub', href: 'https://huggingface.co/models', use: 'Open models, downloads, likes, parameter counts, and licenses from each lab’s official account.', license: 'Public API' },
+      { name: 'Hugging Face Hub', href: 'https://huggingface.co/models', use: 'Open models, downloads, likes, parameter counts, and licenses from each lab’s official account, plus the trending list that brings in new labs.', license: 'Public API' },
       { name: 'Hugging Face Inference Providers', href: 'https://huggingface.co/docs/inference-providers', use: 'Host prices, speed, and first-token latency for open models; the speeds Race the machine and the Terrarium run on.', license: 'Public API' },
       {
         name: 'Epoch AI Benchmarking Hub',

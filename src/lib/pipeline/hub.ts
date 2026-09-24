@@ -95,7 +95,14 @@ const FORMAT = /[-_](hf|diffusers|transformers)$/i;
 const REASONING = /(^|[-_])(r1|thinking|reasoning|reasoner)([-_]|$)/i;
 
 export const repoName = (id: string) => id.slice(id.indexOf('/') + 1);
-const orgOf = (id: string) => id.slice(0, id.indexOf('/'));
+export const orgOf = (id: string) => id.slice(0, id.indexOf('/'));
+
+/** A repo that holds a model of its own: not a quantized copy, a second file layout's twin, an adapter, or code. */
+export function isModelRepo(r: Pick<RawHubRepo, 'id' | 'tags' | 'library_name'>): boolean {
+  const name = repoName(r.id);
+  if (COPY.test(name) || NOT_A_MODEL.test(name)) return false;
+  return !(r.tags?.includes('gguf') || r.tags?.includes('lora') || r.library_name === 'peft');
+}
 
 /** What a repo is for, from its declared task or, failing that, its name and library. */
 export function hubTask(r: Pick<RawHubRepo, 'id' | 'pipeline_tag' | 'library_name' | 'tags'>): Task | null {
@@ -214,9 +221,11 @@ export function mergeHub(
   dataset: Dataset,
   labs: LabConfig[],
   listings: Map<string, RawHubRepo[] | null>,
-  opts: { previous?: Dataset | null; minDownloads?: number } = {},
+  opts: { previous?: Dataset | null; minDownloads?: number; boost?: Set<string> } = {},
 ): { dataset: Dataset; stats: HubStatsSummary } {
   const min = opts.minDownloads ?? HUB_MIN_DOWNLOADS;
+  // Repos the trending radar vouched for: popular right now, even before their downloads catch up.
+  const boost = opts.boost ?? new Set<string>();
   const previous = opts.previous?.models ?? [];
   const before = new Map(previous.map((m) => [m.key, m]));
   const carded = new Set(previous.flatMap((m) => (m.origin === 'huggingface' && m.hub ? [m.hub.repo] : [])));
@@ -254,9 +263,8 @@ export function mergeHub(
     const picks = new Map<string, RawHubRepo>();
     for (const r of [...repos].sort(byDownloads)) {
       const name = repoName(r.id);
-      if (claimed.has(r.id) || COPY.test(name) || NOT_A_MODEL.test(name)) continue;
-      if (r.tags?.includes('gguf') || r.tags?.includes('lora') || r.library_name === 'peft') continue;
-      if ((r.downloads ?? 0) < min && !carded.has(r.id)) continue;
+      if (claimed.has(r.id) || !isModelRepo(r)) continue;
+      if ((r.downloads ?? 0) < min && !carded.has(r.id) && !boost.has(r.id)) continue;
       if (!hubTask(r)) continue;
       const same = normalizeName(name.replace(FORMAT, ''));
       if (!picks.has(same)) picks.set(same, r);
@@ -298,13 +306,20 @@ export function mergeHub(
 export async function addHubModels(
   dataset: Dataset,
   labs: LabConfig[],
-  opts: { fetchJson: FetchJson; previous?: Dataset | null; minDownloads?: number },
+  opts: { fetchJson: FetchJson; previous?: Dataset | null; minDownloads?: number; trending?: RawHubRepo[] },
 ): Promise<{ dataset: Dataset; stats: HubStatsSummary }> {
   const listings = new Map<string, RawHubRepo[] | null>();
   for (const org of new Set(labs.flatMap((l) => l.hub ?? []))) {
     listings.set(org, await opts.fetchJson(hubListUrl(org)).then(parseListing, () => null));
   }
-  const merged = mergeHub(dataset, labs, listings, opts);
+  // The radar's picks join their org's listing even if a big org's top 1,000 by downloads left them out.
+  const trending = opts.trending ?? [];
+  for (const r of trending) {
+    const org = [...listings.keys()].find((o) => o.toLowerCase() === orgOf(r.id).toLowerCase());
+    const list = org ? listings.get(org) : null;
+    if (list && !list.some((x) => x.id === r.id)) list.push(r);
+  }
+  const merged = mergeHub(dataset, labs, listings, { ...opts, boost: new Set(trending.map((r) => r.id)) });
 
   // `license:other` keeps the real name in the model card, one request per repo. If that fails, keep yesterday's name.
   const earlier = new Map((opts.previous?.models ?? []).map((m) => [m.key, m.license]));

@@ -6,7 +6,7 @@ import { Card } from '@/components/card/Card';
 import { SiteFooter, SiteHeader } from '@/components/chrome';
 import { Icon, RarityIcon } from '@/components/icons';
 import { LABS } from '@/config/labs';
-import { getDataset, labModels } from '@/lib/data';
+import { getDataset, labModels, newcomerOf } from '@/lib/data';
 import { ACCESS_LABEL, RARITY_LABEL, TYPE_LABEL, formatDate, formatMonth } from '@/lib/format';
 import { modelHref } from '@/lib/site';
 import { MODEL_TYPES, type Model } from '@/lib/types';
@@ -51,7 +51,8 @@ export default async function LabPage({ params }: PageProps<'/labs/[lab]'>) {
   const open = models.filter((m) => m.openWeights).length;
   const first = models[models.length - 1];
   const docsOnHub = lab.docUrl?.startsWith('https://huggingface.co/');
-  const hubOrgs = config?.hub ?? [];
+  const found = newcomerOf(lab.key);
+  const hubOrgs = config?.hub ?? (found ? [found.author] : []);
 
   return (
     <>
@@ -69,6 +70,12 @@ export default async function LabPage({ params }: PageProps<'/labs/[lab]'>) {
           <span className={styles.labMark} aria-hidden="true" />
           <div>
             <h1 className={styles.title}>{lab.name}</h1>
+            {found && (
+              <p className={styles.newLab}>
+                <span>New lab</span> Spotted on Hugging Face’s trending list on {formatDate(found.since)}, when <code>{found.repo}</code> took off. The daily radar added it
+                by itself.
+              </p>
+            )}
             <p className={styles.lede}>
               {lab.count} {lab.count === 1 ? 'card' : 'cards'}
               {first && `, from ${formatMonth(first.releaseDate)} to ${formatMonth(models[0].releaseDate)}`}. {open > 0 && `${open} with open weights.`}

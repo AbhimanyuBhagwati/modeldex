@@ -6,10 +6,11 @@ import type { ZodType } from 'zod';
 import { LABS, LICENSE_OVERRIDES } from '@/config/labs';
 import { buildDataset } from '@/lib/pipeline/build';
 import { changeEvents, diffDatasets, markdownReport, mergeChangeLog, sameContent, summarize } from '@/lib/pipeline/diff';
-import { HUB_MIN_DOWNLOADS, addHubModels } from '@/lib/pipeline/hub';
+import { HUB_MIN_DOWNLOADS, addHubModels, parseListing } from '@/lib/pipeline/hub';
 import { resolveLicenses } from '@/lib/pipeline/licenses';
 import { buildHostOffers, buildOffers, joinOffers } from '@/lib/pipeline/offers';
-import { changeLogSchema, datasetSchema, offersFileSchema, scoresFileSchema } from '@/lib/pipeline/schema';
+import { RADAR_NEW_LAB_LIKES, clashingLab, newcomer, newcomerLab, orgProfileUrl, radar, trendingUrl, userProfileUrl, type Newcomer, type NewcomersFile } from '@/lib/pipeline/radar';
+import { changeLogSchema, datasetSchema, newcomersFileSchema, offersFileSchema, scoresFileSchema, type RawHubRepo } from '@/lib/pipeline/schema';
 import { ARENA_CONFIGS, BENCH_FILES, buildScores, type ArenaRow, type EpochInput } from '@/lib/pipeline/scores';
 import type { ChangeLog, Dataset, HostOffer, OffersFile, ScoresFile } from '@/lib/types';
 
@@ -18,6 +19,7 @@ const OUT_FILE = path.join(process.cwd(), 'data', 'models.json');
 const OFFERS_FILE = path.join(process.cwd(), 'data', 'offers.json');
 const CHANGES_FILE = path.join(process.cwd(), 'data', 'changes.json');
 const SCORES_FILE = path.join(process.cwd(), 'data', 'scores.json');
+const NEWCOMERS_FILE = path.join(process.cwd(), 'data', 'newcomers.json');
 /** Hugging Face's list of models its Inference Providers serve, with each host's price and speed. */
 const ROUTER_URL = 'https://router.huggingface.co/v1/models';
 /** Epoch AI's Benchmarking Hub, CC BY 4.0: its Capabilities Index and the benchmarks it runs itself. */
@@ -120,6 +122,52 @@ async function readData<T>(file: string, schema: ZodType): Promise<T | null> {
 
 const writeData = (file: string, data: unknown) => writeFile(file, JSON.stringify(data, null, 2) + '\n');
 
+/** A Hugging Face account's display name, "Convai Innovations" for convaiinnovations. Orgs and users live at different addresses. */
+async function profileName(author: string): Promise<string | null> {
+  for (const url of [orgProfileUrl(author), userProfileUrl(author)]) {
+    const body = (await fetchJson(url, 1).catch(() => null)) as { fullname?: unknown } | null;
+    if (body && typeof body.fullname === 'string' && body.fullname.trim()) return body.fullname.trim();
+  }
+  return null;
+}
+
+/**
+ * The trending radar: reads Hugging Face's trending list and returns the repos to let in early, plus any new labs.
+ * Never throws; a failed fetch just means no early arrivals today.
+ */
+async function runRadar(newcomers: Newcomer[], today: string, notes: string[]): Promise<{ picks: RawHubRepo[]; newcomers: Newcomer[]; found: Map<string, string> }> {
+  let trending: RawHubRepo[];
+  try {
+    trending = parseListing(await fetchJson(trendingUrl(), 2));
+  } catch (e) {
+    notes.push(`Trending radar couldn't read Hugging Face (${e instanceof Error ? e.message : e}); no early arrivals today`);
+    return { picks: [], newcomers, found: new Map() };
+  }
+  const result = radar(trending, LABS, newcomers, today);
+  const taken = new Set([...LABS.map((l) => l.key), ...newcomers.map((n) => n.key)]);
+  const added: Newcomer[] = [];
+  const found = new Map<string, string>();
+  for (const { author, pick } of result.newLabs) {
+    const fullname = await profileName(author);
+    const clash = clashingLab(fullname, [...LABS, ...newcomers]);
+    if (clash) {
+      notes.push(`Trending radar: ${author} calls itself "${fullname}", like our ${clash} lab. If it's theirs, add it to that lab's hub accounts in src/config/labs.ts`);
+      continue;
+    }
+    const n = newcomer(author, fullname, pick.repo.id, today, taken);
+    taken.add(n.key);
+    added.push(n);
+    found.set(n.key, `new lab ${n.name}, for ${pick.repo.id} (${pick.likes.toLocaleString('en-US')} likes)`);
+  }
+  console.log(`Trending radar: ${trending.length} trending repos, ${result.known.length} early arrivals from labs we cover, ${added.length} new labs (${RADAR_NEW_LAB_LIKES.toLocaleString('en-US')}+ likes)`);
+  const welcomed = new Set(added.map((n) => n.author.toLowerCase()));
+  return {
+    picks: [...result.known.map((p) => p.repo), ...result.newLabs.filter((x) => welcomed.has(x.author.toLowerCase())).map((x) => x.pick.repo)],
+    newcomers: [...newcomers, ...added],
+    found,
+  };
+}
+
 async function ghOutput(values: Record<string, string>) {
   const file = process.env.GITHUB_OUTPUT;
   if (!file) return;
@@ -152,8 +200,23 @@ async function main() {
     overrides: LICENSE_OVERRIDES,
   });
   const stats = licensed.stats;
-  console.log(`Fetching Hugging Face orgs (cards need ${HUB_MIN_DOWNLOADS.toLocaleString('en-US')} downloads a month)`);
-  const { dataset, stats: hub } = await addHubModels(licensed.dataset, LABS, { fetchJson: (u) => fetchJson(u, 2), previous });
+  const radarNotes: string[] = [];
+  const previousNewcomers = await readData<NewcomersFile>(NEWCOMERS_FILE, newcomersFileSchema);
+  const today = built.dataset.updatedAt.slice(0, 10);
+  const scan = await runRadar(previousNewcomers?.labs ?? [], today, radarNotes);
+  console.log(`Fetching Hugging Face orgs (cards need ${HUB_MIN_DOWNLOADS.toLocaleString('en-US')} downloads a month, or a place on the trending radar)`);
+  const { dataset, stats: hub } = await addHubModels(licensed.dataset, [...LABS, ...scan.newcomers.map(newcomerLab)], {
+    fetchJson: (u) => fetchJson(u, 2),
+    previous,
+    trending: scan.picks,
+  });
+  // A newcomer stays only while it has a card: a pick can still fall through, for example a name already taken.
+  const withCards = new Set(dataset.models.map((m) => m.lab));
+  const newcomers: NewcomersFile = { version: 1, labs: scan.newcomers.filter((n) => withCards.has(n.key)) };
+  const before = new Set((previous?.models ?? []).map((m) => m.key));
+  const early = dataset.models.filter((m) => !before.has(m.key) && m.hub && scan.picks.some((r) => r.id === m.hub!.repo));
+  if (early.length) radarNotes.push(`Trending radar let in ${early.map((m) => m.hub!.repo).join(', ')}`);
+  for (const n of newcomers.labs) if (scan.found.has(n.key)) radarNotes.push(`Trending radar: ${scan.found.get(n.key)}`);
 
   const check = datasetSchema.safeParse(dataset);
   if (!check.success) fail(`the new data failed validation:\n${check.error.issues.slice(0, 10).map((i) => `  ${i.path.join('.')}: ${i.message}`).join('\n')}`);
@@ -162,7 +225,7 @@ async function main() {
     fail(`model count fell from ${previous.models.length} to ${dataset.models.length}, more than ${MAX_DROP * 100}% in one day`);
   }
 
-  const notes = [...built.issues];
+  const notes = [...built.issues, ...radarNotes];
   if (stats.failedOrgs.length) notes.push(`Hugging Face lookup failed for ${stats.failedOrgs.join(', ')}; kept earlier licenses`);
   if (hub.failedOrgs.length) notes.push(`Hugging Face listing failed for ${hub.failedOrgs.join(', ')}; kept earlier cards`);
 
@@ -214,7 +277,8 @@ async function main() {
   const modelsChanged = !previous || !sameContent(previous, dataset);
   const offersChanged = !previousOffers || !sameContent(previousOffers, offers);
   const scoresChanged = scores != null && (!previousScores || !sameContent(previousScores, scores));
-  if (!modelsChanged && !offersChanged && !scoresChanged) {
+  const newcomersChanged = JSON.stringify(previousNewcomers ?? { version: 1, labs: [] }) !== JSON.stringify(newcomers);
+  if (!modelsChanged && !offersChanged && !scoresChanged && !newcomersChanged) {
     console.log(`No changes since ${previous!.updatedAt}. Nothing written. (${Date.now() - started} ms)`);
     await ghOutput({ changed: 'false' });
     await ghSummary('## Model sync: no changes');
@@ -244,6 +308,10 @@ async function main() {
   if (scoresChanged) {
     await writeData(SCORES_FILE, scores);
     written.push(path.relative(process.cwd(), SCORES_FILE));
+  }
+  if (newcomersChanged) {
+    await writeData(NEWCOMERS_FILE, newcomers);
+    written.push(path.relative(process.cwd(), NEWCOMERS_FILE));
   }
   console.log(`Wrote ${written.join(', ')}: ${title} (${Date.now() - started} ms)`);
   await ghOutput({ changed: 'true', title });

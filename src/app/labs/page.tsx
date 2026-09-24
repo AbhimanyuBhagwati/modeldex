@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import { SiteFooter, SiteHeader } from '@/components/chrome';
-import { getDataset, labModels } from '@/lib/data';
+import { getDataset, labModels, newcomerOf } from '@/lib/data';
 import { formatMonth } from '@/lib/format';
 import styles from './labs.module.css';
 
@@ -36,7 +36,10 @@ export default function LabsPage() {
                 <Link className={styles.tile} href={`/labs/${lab.key}/`} style={{ '--t': lab.color } as CSSProperties}>
                   <span className={styles.swatch} aria-hidden="true" />
                   <span className={styles.tileText}>
-                    <b>{lab.name}</b>
+                    <b>
+                      {lab.name}
+                      {newcomerOf(lab.key) && <span className={styles.newTag}>New lab</span>}
+                    </b>
                     <small>
                       {lab.count} {lab.count === 1 ? 'card' : 'cards'} · {types} {types === 1 ? 'type' : 'types'}
                     </small>

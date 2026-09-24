@@ -2,10 +2,12 @@ import { describe, expect, it } from 'vitest';
 import changes from '../../data/changes.json';
 import raw from '../../data/models.json';
 import offers from '../../data/offers.json';
+import newcomers from '../../data/newcomers.json';
 import scores from '../../data/scores.json';
 import { LABS } from '@/config/labs';
 import { applyFilters, DEFAULT_FILTERS, filtersFromParams, filtersToParams } from './filter';
-import { changeLogSchema, datasetSchema, offersFileSchema, scoresFileSchema } from './pipeline/schema';
+import { changeLogSchema, datasetSchema, newcomersFileSchema, offersFileSchema, scoresFileSchema } from './pipeline/schema';
+import type { NewcomersFile } from './pipeline/radar';
 import type { Dataset } from './types';
 
 /** Guards the committed data file, which the site trusts without re-checking. */
@@ -16,10 +18,11 @@ describe('committed dataset', () => {
     expect(parsed.error?.issues.slice(0, 5) ?? []).toEqual([]);
   });
 
-  it('has a realistic number of models and only configured labs', () => {
+  it('has a realistic number of models and only configured labs or radar newcomers', () => {
     const d = raw as unknown as Dataset;
     expect(d.models.length).toBeGreaterThanOrEqual(100);
-    const configured = new Set(LABS.map((l) => l.key));
+    expect(newcomersFileSchema.safeParse(newcomers).error?.issues.slice(0, 5) ?? []).toEqual([]);
+    const configured = new Set([...LABS.map((l) => l.key), ...(newcomers as unknown as NewcomersFile).labs.map((n) => n.key)]);
     expect(d.labs.every((l) => configured.has(l.key))).toBe(true);
   });
 

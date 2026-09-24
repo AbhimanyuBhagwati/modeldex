@@ -169,7 +169,7 @@ export function buildDataset(raw: unknown, labs: LabConfig[], opts: { sourceUrl:
     for (const providerId of lab.providers) {
       const provider = rawProviderSchema.safeParse(root[providerId]);
       if (!provider.success) {
-        issues.push(`models.dev has no usable provider "${providerId}" for ${lab.name}`);
+        if (!lab.watch) issues.push(`models.dev has no usable provider "${providerId}" for ${lab.name}`);
         continue;
       }
       if (!docs.get(lab.key)) {
@@ -211,7 +211,7 @@ export function buildDataset(raw: unknown, labs: LabConfig[], opts: { sourceUrl:
 
   const models = numberSet([...byKey.values()]);
   for (const lab of labs) {
-    if (lab.providers.length && !models.some((m) => m.lab === lab.key)) issues.push(`${lab.name} has no models in this sync`);
+    if (lab.providers.length && !lab.watch && !models.some((m) => m.lab === lab.key)) issues.push(`${lab.name} has no models in this sync`);
   }
 
   return {
