@@ -2,6 +2,140 @@
   "version": 1,
   "events": [
     {
+      "date": "2026-09-28",
+      "kind": "added",
+      "key": "nvidia/mit-b0",
+      "name": "mit-b0",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "added",
+      "key": "qwen/wan2-2-animate-14b",
+      "name": "Wan2.2-Animate-14B",
+      "lab": "qwen"
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "added",
+      "key": "qwen/qwen3-5-flash",
+      "name": "Qwen3.5 Flash",
+      "lab": "qwen"
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "added",
+      "key": "qwen/qwen3-7-flash",
+      "name": "Qwen3.7 Flash",
+      "lab": "qwen"
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "added",
+      "key": "xingchen-agi/teleocr",
+      "name": "TeleOCR",
+      "lab": "xingchen-agi"
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "added",
+      "key": "qwen/qwen3-8-omni-flash",
+      "name": "Qwen3.8 Omni Flash",
+      "lab": "qwen"
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "added",
+      "key": "edge0/audio8-asr-infinite",
+      "name": "Audio8-ASR-Infinite",
+      "lab": "edge0"
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "retired",
+      "key": "nvidia/nemotron-mini-4b-instruct",
+      "name": "nemotron-mini-4b-instruct",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "retired",
+      "key": "nvidia/nemotron-3-nano-30b-a3b",
+      "name": "nemotron-3-nano-30b-a3b",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "retired",
+      "key": "nvidia/llama-3-1-nemotron-nano-8b-v1",
+      "name": "Llama 3.1 Nemotron Nano 8B v1",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "retired",
+      "key": "nvidia/llama-3-3-nemotron-super-49b-v1",
+      "name": "Llama 3.3 Nemotron Super 49B v1",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "retired",
+      "key": "nvidia/llama-3-1-nemotron-nano-vl-8b-v1",
+      "name": "Llama 3.1 Nemotron Nano VL 8B v1",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "retired",
+      "key": "nvidia/llama-3-3-nemotron-super-49b-v1-5",
+      "name": "Llama 3.3 Nemotron Super 49B v1.5",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "retired",
+      "key": "nvidia/nvidia-nemotron-nano-9b-v2",
+      "name": "nvidia-nemotron-nano-9b-v2",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "retired",
+      "key": "nvidia/nemotron-nano-12b-v2-vl",
+      "name": "Nemotron Nano 12B v2 VL",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "retired",
+      "key": "nvidia/nemotron-content-safety-reasoning-4b",
+      "name": "nemotron-content-safety-reasoning-4b",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "retired",
+      "key": "nvidia/nemotron-3-content-safety",
+      "name": "nemotron-3-content-safety",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "price",
+      "key": "qwen/qwen3-7-plus",
+      "name": "Qwen3.7 Plus",
+      "lab": "qwen",
+      "before": {
+        "input": 0.5,
+        "output": 3
+      },
+      "after": {
+        "input": 0.4,
+        "output": 1.6
+      }
+    },
+    {
       "date": "2026-09-27",
       "kind": "added",
       "key": "poolside/laguna-xs-2",

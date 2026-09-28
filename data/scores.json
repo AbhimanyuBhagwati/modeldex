@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-27T12:09:21.463Z",
+  "updatedAt": "2026-09-28T14:04:15.632Z",
   "boards": {
     "eci": {
       "count": 268,
@@ -5942,6 +5942,48 @@
         "aime": 0.617
       }
     },
+    "qwen/qwen3-5-flash": {
+      "quality": 68,
+      "basis": "eci",
+      "boards": {
+        "eci": {
+          "score": 144,
+          "rank": 87,
+          "as": "Qwen 3.5 Flash (hosted 35B-A3B)"
+        },
+        "text": {
+          "score": 1397,
+          "rank": 149,
+          "as": "qwen3.5-flash"
+        },
+        "coding": {
+          "score": 1412,
+          "rank": 154,
+          "as": "qwen3.5-flash"
+        },
+        "math": {
+          "score": 1407,
+          "rank": 139,
+          "as": "qwen3.5-flash"
+        },
+        "creative": {
+          "score": 1343,
+          "rank": 169,
+          "as": "qwen3.5-flash"
+        },
+        "webdev": {
+          "score": 1243,
+          "rank": 123,
+          "as": "qwen3.5-flash"
+        }
+      },
+      "bench": {
+        "gpqa": 0.823,
+        "frontiermath": 0.182,
+        "aime": 0.844,
+        "simpleqa": 0.203
+      }
+    },
     "qwen/qwen3-5-plus": {
       "quality": 76,
       "basis": "eci",
@@ -6090,6 +6132,22 @@
         "frontiermath": 0.382,
         "aime": 0.933,
         "simpleqa": 0.441
+      }
+    },
+    "qwen/qwen3-7-flash": {
+      "quality": 70,
+      "basis": "eci",
+      "boards": {
+        "eci": {
+          "score": 144.6,
+          "rank": 82,
+          "as": "Qwen3.7 Flash"
+        }
+      },
+      "bench": {
+        "gpqa": 0.823,
+        "frontiermath": 0.193,
+        "aime": 0.867
       }
     },
     "qwen/qwen3-7-max": {
