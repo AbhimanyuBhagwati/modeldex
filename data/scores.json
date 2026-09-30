@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-29T13:00:08.464Z",
+  "updatedAt": "2026-09-30T12:42:23.214Z",
   "boards": {
     "eci": {
       "count": 268,
@@ -23,8 +23,8 @@
       "published": "2026-09-25"
     },
     "webdev": {
-      "count": 134,
-      "published": "2026-09-25"
+      "count": 135,
+      "published": "2026-09-29"
     },
     "vision": {
       "count": 156,
@@ -49,19 +49,19 @@
   },
   "bench": {
     "gpqa": {
-      "count": 314
+      "count": 315
     },
     "swe": {
       "count": 35
     },
     "frontiermath": {
-      "count": 109
+      "count": 110
     },
     "aime": {
-      "count": 292
+      "count": 293
     },
     "simpleqa": {
-      "count": 81
+      "count": 82
     }
   },
   "models": {
@@ -218,8 +218,8 @@
           "as": "claude-fable-5-high"
         },
         "webdev": {
-          "score": 1627,
-          "rank": 14,
+          "score": 1626,
+          "rank": 15,
           "as": "claude-fable-5-high"
         },
         "vision": {
@@ -265,7 +265,7 @@
           "as": "claude-fable-5.1-max"
         },
         "webdev": {
-          "score": 1751,
+          "score": 1753,
           "rank": 3,
           "as": "claude-fable-5.1-max"
         },
@@ -312,7 +312,7 @@
         },
         "webdev": {
           "score": 1330,
-          "rank": 110,
+          "rank": 111,
           "as": "claude-haiku-4-5-20251001"
         }
       },
@@ -353,7 +353,7 @@
         },
         "webdev": {
           "score": 1468,
-          "rank": 58,
+          "rank": 59,
           "as": "claude-opus-4-5-20251101"
         }
       },
@@ -394,7 +394,7 @@
         },
         "webdev": {
           "score": 1546,
-          "rank": 34,
+          "rank": 35,
           "as": "claude-opus-4-6-high"
         },
         "vision": {
@@ -442,7 +442,7 @@
         },
         "webdev": {
           "score": 1557,
-          "rank": 30,
+          "rank": 31,
           "as": "claude-opus-4-7-high"
         },
         "vision": {
@@ -490,7 +490,7 @@
         },
         "webdev": {
           "score": 1555,
-          "rank": 32,
+          "rank": 33,
           "as": "claude-opus-4-8-high"
         },
         "vision": {
@@ -536,8 +536,8 @@
           "as": "claude-opus-5-max"
         },
         "webdev": {
-          "score": 1693,
-          "rank": 4,
+          "score": 1694,
+          "rank": 5,
           "as": "claude-opus-5-max"
         },
         "vision": {
@@ -573,7 +573,7 @@
           "as": "claude-opus-5.5-high"
         },
         "webdev": {
-          "score": 1827,
+          "score": 1820,
           "rank": 1,
           "as": "claude-opus-5.5-max"
         }
@@ -616,7 +616,7 @@
         },
         "webdev": {
           "score": 1384,
-          "rank": 91,
+          "rank": 92,
           "as": "claude-sonnet-4-5-20250929"
         }
       },
@@ -658,7 +658,7 @@
         },
         "webdev": {
           "score": 1521,
-          "rank": 41,
+          "rank": 42,
           "as": "claude-sonnet-4-6"
         },
         "vision": {
@@ -704,8 +704,8 @@
           "as": "claude-sonnet-5-high"
         },
         "webdev": {
-          "score": 1539,
-          "rank": 36,
+          "score": 1540,
+          "rank": 37,
           "as": "claude-sonnet-5-high"
         },
         "vision": {
@@ -719,6 +719,23 @@
         "frontiermath": 0.656,
         "aime": 0.947,
         "simpleqa": 0.337
+      }
+    },
+    "anthropic/claude-sonnet-5-5": {
+      "quality": 98,
+      "basis": "webdev",
+      "boards": {
+        "webdev": {
+          "score": 1699,
+          "rank": 4,
+          "as": "claude-sonnet-5.5-high"
+        }
+      },
+      "bench": {
+        "gpqa": 0.956,
+        "frontiermath": 0.888,
+        "aime": 1,
+        "simpleqa": 0.465
       }
     },
     "arcee/trinity-large-thinking": {
@@ -746,8 +763,8 @@
           "as": "trinity-large-thinking"
         },
         "webdev": {
-          "score": 1238,
-          "rank": 125,
+          "score": 1237,
+          "rank": 126,
           "as": "trinity-large-thinking"
         }
       },
@@ -826,7 +843,7 @@
       "basis": "webdev",
       "boards": {
         "webdev": {
-          "score": 1518,
+          "score": 1517,
           "rank": 44,
           "as": "seed-2.1-pro-preview"
         }
@@ -1027,8 +1044,8 @@
           "as": "deepseek-v4.1-flash-max"
         },
         "webdev": {
-          "score": 1621,
-          "rank": 16,
+          "score": 1620,
+          "rank": 18,
           "as": "deepseek-v4.1-flash-max"
         }
       },
@@ -1285,7 +1302,7 @@
         },
         "webdev": {
           "score": 1362,
-          "rank": 97,
+          "rank": 98,
           "as": "deepseek-v3.2-thinking"
         }
       },
@@ -1322,7 +1339,7 @@
         },
         "webdev": {
           "score": 1581,
-          "rank": 27,
+          "rank": 29,
           "as": "deepseek-v4-flash-high"
         }
       },
@@ -1376,7 +1393,7 @@
         },
         "webdev": {
           "score": 1446,
-          "rank": 64,
+          "rank": 65,
           "as": "deepseek-v4-pro"
         }
       },
@@ -1529,7 +1546,7 @@
         },
         "webdev": {
           "score": 1227,
-          "rank": 127,
+          "rank": 128,
           "as": "gemini-2.5-pro"
         },
         "vision": {
@@ -1621,7 +1638,7 @@
         },
         "webdev": {
           "score": 1256,
-          "rank": 119,
+          "rank": 120,
           "as": "gemini-3.1-flash-lite-preview"
         },
         "vision": {
@@ -1663,7 +1680,7 @@
         },
         "webdev": {
           "score": 1446,
-          "rank": 63,
+          "rank": 64,
           "as": "gemini-3.1-pro-preview"
         },
         "vision": {
@@ -1724,7 +1741,7 @@
         },
         "webdev": {
           "score": 1499,
-          "rank": 50,
+          "rank": 51,
           "as": "gemini-3.5-flash-high"
         },
         "vision": {
@@ -1771,8 +1788,8 @@
           "as": "gemini-3.5-flash-lite"
         },
         "webdev": {
-          "score": 1439,
-          "rank": 66,
+          "score": 1440,
+          "rank": 67,
           "as": "gemini-3.5-flash-lite"
         },
         "vision": {
@@ -1818,7 +1835,7 @@
         },
         "webdev": {
           "score": 1536,
-          "rank": 38,
+          "rank": 39,
           "as": "gemini-3.6-flash-high"
         },
         "vision": {
@@ -1865,7 +1882,7 @@
         },
         "webdev": {
           "score": 1593,
-          "rank": 23,
+          "rank": 24,
           "as": "gemini-3.7-flash-high"
         },
         "vision": {
@@ -1911,7 +1928,7 @@
           "as": "gemini-3.8-flash-high"
         },
         "webdev": {
-          "score": 1580,
+          "score": 1581,
           "rank": 28,
           "as": "gemini-3.8-flash-high"
         },
@@ -1959,7 +1976,7 @@
         },
         "webdev": {
           "score": 1439,
-          "rank": 68,
+          "rank": 69,
           "as": "gemini-3-flash"
         },
         "vision": {
@@ -2221,8 +2238,8 @@
           "as": "gemma-4-26b-a4b"
         },
         "webdev": {
-          "score": 1358,
-          "rank": 99,
+          "score": 1359,
+          "rank": 100,
           "as": "gemma-4-26b-a4b"
         },
         "vision": {
@@ -2266,8 +2283,8 @@
           "as": "gemma-4-31b"
         },
         "webdev": {
-          "score": 1363,
-          "rank": 96,
+          "score": 1364,
+          "rank": 97,
           "as": "gemma-4-31b"
         },
         "vision": {
@@ -2368,8 +2385,8 @@
           "as": "granite-4.1-8b"
         },
         "webdev": {
-          "score": 1191,
-          "rank": 130,
+          "score": 1190,
+          "rank": 131,
           "as": "granite-4.1-8b"
         }
       },
@@ -2418,7 +2435,7 @@
         },
         "webdev": {
           "score": 1170,
-          "rank": 131,
+          "rank": 132,
           "as": "mercury-2"
         }
       },
@@ -2730,8 +2747,8 @@
           "as": "muse-spark-1.1"
         },
         "webdev": {
-          "score": 1541,
-          "rank": 35,
+          "score": 1542,
+          "rank": 36,
           "as": "muse-spark-1.1"
         },
         "vision": {
@@ -2769,8 +2786,8 @@
           "as": "muse-spark-1.2 (xHigh)"
         },
         "webdev": {
-          "score": 1531,
-          "rank": 40,
+          "score": 1532,
+          "rank": 41,
           "as": "muse-spark-1.2 (xHigh)"
         },
         "vision": {
@@ -2813,8 +2830,8 @@
           "as": "muse-spark-1.3-max"
         },
         "webdev": {
-          "score": 1656,
-          "rank": 10,
+          "score": 1655,
+          "rank": 11,
           "as": "muse-spark-1.3-max"
         },
         "vision": {
@@ -2977,7 +2994,7 @@
         },
         "webdev": {
           "score": 1297,
-          "rank": 114,
+          "rank": 115,
           "as": "minimax-m2"
         }
       },
@@ -3009,7 +3026,7 @@
         },
         "webdev": {
           "score": 1384,
-          "rank": 92,
+          "rank": 93,
           "as": "minimax-m2.1-preview"
         }
       },
@@ -3046,7 +3063,7 @@
         },
         "webdev": {
           "score": 1386,
-          "rank": 89,
+          "rank": 90,
           "as": "minimax-m2.5"
         }
       },
@@ -3083,7 +3100,7 @@
         },
         "webdev": {
           "score": 1397,
-          "rank": 84,
+          "rank": 85,
           "as": "minimax-m2.7"
         }
       },
@@ -3119,8 +3136,8 @@
           "as": "minimax-m3"
         },
         "webdev": {
-          "score": 1483,
-          "rank": 54,
+          "score": 1482,
+          "rank": 55,
           "as": "minimax-m3"
         },
         "vision": {
@@ -3157,7 +3174,7 @@
       "boards": {
         "webdev": {
           "score": 1196,
-          "rank": 129,
+          "rank": 130,
           "as": "devstral-2"
         }
       },
@@ -3168,8 +3185,8 @@
       "basis": "webdev",
       "boards": {
         "webdev": {
-          "score": 1075,
-          "rank": 134,
+          "score": 1076,
+          "rank": 135,
           "as": "devstral-medium-2507"
         }
       },
@@ -3314,7 +3331,7 @@
         },
         "webdev": {
           "score": 1230,
-          "rank": 126,
+          "rank": 127,
           "as": "mistral-large-3"
         },
         "vision": {
@@ -3428,7 +3445,7 @@
         },
         "webdev": {
           "score": 1263,
-          "rank": 118,
+          "rank": 119,
           "as": "mistral-medium-3.5"
         },
         "vision": {
@@ -3659,7 +3676,7 @@
         },
         "webdev": {
           "score": 1436,
-          "rank": 70,
+          "rank": 71,
           "as": "kimi-k2.5-thinking"
         },
         "vision": {
@@ -3732,7 +3749,7 @@
         },
         "webdev": {
           "score": 1473,
-          "rank": 57,
+          "rank": 58,
           "as": "kimi-k2.7-code"
         }
       },
@@ -3785,8 +3802,8 @@
           "as": "kimi-k3-max"
         },
         "webdev": {
-          "score": 1660,
-          "rank": 9,
+          "score": 1659,
+          "rank": 10,
           "as": "kimi-k3-max"
         }
       },
@@ -4239,8 +4256,8 @@
           "as": "gpt-5-chat"
         },
         "webdev": {
-          "score": 1418,
-          "rank": 75,
+          "score": 1417,
+          "rank": 76,
           "as": "gpt-5-medium"
         },
         "vision": {
@@ -4287,8 +4304,8 @@
           "as": "gpt-5.1-high"
         },
         "webdev": {
-          "score": 1394,
-          "rank": 85,
+          "score": 1395,
+          "rank": 87,
           "as": "gpt-5.1-medium"
         },
         "vision": {
@@ -4335,7 +4352,7 @@
         },
         "webdev": {
           "score": 1415,
-          "rank": 76,
+          "rank": 77,
           "as": "gpt-5.2"
         },
         "vision": {
@@ -4415,8 +4432,8 @@
           "as": "gpt-5.4-high"
         },
         "webdev": {
-          "score": 1466,
-          "rank": 59,
+          "score": 1465,
+          "rank": 60,
           "as": "gpt-5.4-high (codex-harness)"
         },
         "vision": {
@@ -4464,7 +4481,7 @@
         },
         "webdev": {
           "score": 1397,
-          "rank": 83,
+          "rank": 84,
           "as": "gpt-5.4-mini-high"
         },
         "vision": {
@@ -4569,7 +4586,7 @@
         },
         "webdev": {
           "score": 1512,
-          "rank": 46,
+          "rank": 47,
           "as": "gpt-5.5-xhigh (codex-harness)"
         },
         "vision": {
@@ -4629,8 +4646,8 @@
           "as": "gpt-5.6-luna-xhigh"
         },
         "webdev": {
-          "score": 1520,
-          "rank": 43,
+          "score": 1517,
+          "rank": 45,
           "as": "gpt-5.6-luna-xhigh (codex-harness)"
         },
         "vision": {
@@ -4676,7 +4693,7 @@
           "as": "gpt-5.6-sol-xhigh"
         },
         "webdev": {
-          "score": 1617,
+          "score": 1619,
           "rank": 20,
           "as": "gpt-5.6-sol-xhigh (codex-harness)"
         },
@@ -4723,8 +4740,8 @@
           "as": "gpt-5.6-terra-xhigh"
         },
         "webdev": {
-          "score": 1521,
-          "rank": 42,
+          "score": 1520,
+          "rank": 43,
           "as": "gpt-5.6-terra-xhigh (codex-harness)"
         },
         "vision": {
@@ -4911,8 +4928,8 @@
           "as": "gpt-6-luna-max"
         },
         "webdev": {
-          "score": 1593,
-          "rank": 24,
+          "score": 1583,
+          "rank": 26,
           "as": "gpt-6-luna-max"
         }
       },
@@ -4943,8 +4960,8 @@
           "as": "gpt-6-sol-max"
         },
         "webdev": {
-          "score": 1681,
-          "rank": 5,
+          "score": 1692,
+          "rank": 6,
           "as": "gpt-6-sol-max"
         }
       },
@@ -5248,12 +5265,12 @@
       }
     },
     "poolside/laguna-m-1": {
-      "quality": 23,
+      "quality": 22,
       "basis": "webdev",
       "boards": {
         "webdev": {
           "score": 1348,
-          "rank": 104,
+          "rank": 105,
           "as": "laguna-m.1"
         }
       },
@@ -5265,7 +5282,7 @@
       "boards": {
         "webdev": {
           "score": 1302,
-          "rank": 113,
+          "rank": 114,
           "as": "laguna-xs.2"
         }
       },
@@ -5800,7 +5817,7 @@
         },
         "webdev": {
           "score": 1360,
-          "rank": 98,
+          "rank": 99,
           "as": "qwen3.5-122b-a10b"
         },
         "vision": {
@@ -5837,7 +5854,7 @@
         },
         "webdev": {
           "score": 1357,
-          "rank": 100,
+          "rank": 101,
           "as": "qwen3.5-27b"
         },
         "vision": {
@@ -5878,8 +5895,8 @@
           "as": "qwen3.5-35b-a3b"
         },
         "webdev": {
-          "score": 1254,
-          "rank": 121,
+          "score": 1253,
+          "rank": 122,
           "as": "qwen3.5-35b-a3b"
         }
       },
@@ -5919,7 +5936,7 @@
         },
         "webdev": {
           "score": 1400,
-          "rank": 82,
+          "rank": 83,
           "as": "qwen3.5-397b-a17b"
         },
         "vision": {
@@ -5988,7 +6005,7 @@
         },
         "webdev": {
           "score": 1243,
-          "rank": 123,
+          "rank": 124,
           "as": "qwen3.5-flash"
         }
       },
@@ -6094,8 +6111,8 @@
           "as": "qwen3.6-max-preview"
         },
         "webdev": {
-          "score": 1481,
-          "rank": 55,
+          "score": 1482,
+          "rank": 56,
           "as": "qwen3.6-max-preview"
         }
       },
@@ -6137,7 +6154,7 @@
         },
         "webdev": {
           "score": 1461,
-          "rank": 61,
+          "rank": 62,
           "as": "qwen3.6-plus"
         }
       },
@@ -6196,7 +6213,7 @@
         },
         "webdev": {
           "score": 1515,
-          "rank": 45,
+          "rank": 46,
           "as": "qwen3.7-max-20260517"
         }
       },
@@ -6279,7 +6296,7 @@
           "as": "qwen3.8-27b"
         },
         "webdev": {
-          "score": 1591,
+          "score": 1592,
           "rank": 25,
           "as": "qwen3.8-27b"
         },
@@ -6296,8 +6313,8 @@
       "basis": "webdev",
       "boards": {
         "webdev": {
-          "score": 1636,
-          "rank": 11,
+          "score": 1637,
+          "rank": 12,
           "as": "qwen3.8-flash-next"
         }
       },
@@ -6333,8 +6350,8 @@
           "as": "qwen3.8-max"
         },
         "webdev": {
-          "score": 1672,
-          "rank": 6,
+          "score": 1671,
+          "rank": 7,
           "as": "qwen3.8-max"
         },
         "vision": {
@@ -6386,7 +6403,7 @@
         },
         "webdev": {
           "score": 1274,
-          "rank": 116,
+          "rank": 117,
           "as": "qwen3-coder-480b-a35b-instruct"
         }
       },
@@ -6519,12 +6536,12 @@
       "bench": {}
     },
     "stepfun/step-5-preview": {
-      "quality": 79,
+      "quality": 78,
       "basis": "webdev",
       "boards": {
         "webdev": {
-          "score": 1565,
-          "rank": 29,
+          "score": 1569,
+          "rank": 30,
           "as": "step-5-preview-high"
         }
       },
@@ -6556,19 +6573,19 @@
         },
         "webdev": {
           "score": 1509,
-          "rank": 47,
+          "rank": 49,
           "as": "hy3"
         }
       },
       "bench": {}
     },
     "tencent/hy4-preview": {
-      "quality": 92,
+      "quality": 90,
       "basis": "webdev",
       "boards": {
         "webdev": {
-          "score": 1631,
-          "rank": 12,
+          "score": 1633,
+          "rank": 14,
           "as": "hy4-preview"
         }
       },
@@ -6604,8 +6621,8 @@
           "as": "inkling"
         },
         "webdev": {
-          "score": 1411,
-          "rank": 77,
+          "score": 1412,
+          "rank": 78,
           "as": "inkling"
         }
       },
@@ -6648,8 +6665,8 @@
           "as": "solar-pro4"
         },
         "webdev": {
-          "score": 1372,
-          "rank": 94,
+          "score": 1371,
+          "rank": 96,
           "as": "solar-pro4"
         }
       },
@@ -6703,7 +6720,7 @@
         },
         "webdev": {
           "score": 1357,
-          "rank": 101,
+          "rank": 102,
           "as": "grok-4.3"
         },
         "vision": {
@@ -6750,7 +6767,7 @@
         },
         "webdev": {
           "score": 1552,
-          "rank": 33,
+          "rank": 34,
           "as": "grok-4.5"
         },
         "vision": {
@@ -6796,8 +6813,8 @@
           "as": "grok-4.6-high"
         },
         "webdev": {
-          "score": 1621,
-          "rank": 17,
+          "score": 1620,
+          "rank": 19,
           "as": "grok-4.6-high"
         },
         "vision": {
@@ -6838,7 +6855,7 @@
           "as": "grok-4.7-xhigh"
         },
         "webdev": {
-          "score": 1629,
+          "score": 1636,
           "rank": 13,
           "as": "grok-4.7-xhigh"
         }
@@ -6912,7 +6929,7 @@
         },
         "webdev": {
           "score": 1438,
-          "rank": 69,
+          "rank": 70,
           "as": "mimo-v2.5"
         },
         "vision": {
@@ -6949,7 +6966,7 @@
         },
         "webdev": {
           "score": 1477,
-          "rank": 56,
+          "rank": 57,
           "as": "mimo-v2.5-pro"
         }
       },
@@ -7013,7 +7030,7 @@
         },
         "webdev": {
           "score": 1618,
-          "rank": 19,
+          "rank": 21,
           "as": "mimo-v2.6-pro"
         },
         "vision": {
@@ -7050,7 +7067,7 @@
         },
         "webdev": {
           "score": 1330,
-          "rank": 109,
+          "rank": 110,
           "as": "mimo-v2-flash (non-thinking)"
         }
       },
@@ -7114,7 +7131,7 @@
         },
         "webdev": {
           "score": 1433,
-          "rank": 73,
+          "rank": 74,
           "as": "mimo-v2-pro"
         }
       },
@@ -7232,7 +7249,7 @@
         },
         "webdev": {
           "score": 1339,
-          "rank": 106,
+          "rank": 107,
           "as": "glm-4.6"
         }
       },
@@ -7296,7 +7313,7 @@
         },
         "webdev": {
           "score": 1435,
-          "rank": 71,
+          "rank": 72,
           "as": "glm-4.7"
         }
       },
@@ -7367,7 +7384,7 @@
         },
         "webdev": {
           "score": 1434,
-          "rank": 72,
+          "rank": 73,
           "as": "glm-5"
         }
       },
@@ -7407,8 +7424,8 @@
           "as": "glm-5.1"
         },
         "webdev": {
-          "score": 1508,
-          "rank": 49,
+          "score": 1509,
+          "rank": 50,
           "as": "glm-5.1"
         }
       },
@@ -7450,8 +7467,8 @@
           "as": "glm-5.2-max"
         },
         "webdev": {
-          "score": 1602,
-          "rank": 22,
+          "score": 1604,
+          "rank": 23,
           "as": "glm-5.2-max"
         }
       },
@@ -7493,8 +7510,8 @@
           "as": "glm-5.3-max"
         },
         "webdev": {
-          "score": 1619,
-          "rank": 18,
+          "score": 1623,
+          "rank": 17,
           "as": "glm-5.3-max"
         }
       },
@@ -7535,8 +7552,8 @@
           "as": "glm-5.3-flash"
         },
         "webdev": {
-          "score": 1613,
-          "rank": 21,
+          "score": 1614,
+          "rank": 22,
           "as": "glm-5.3-flash"
         },
         "vision": {
@@ -7577,7 +7594,7 @@
         },
         "webdev": {
           "score": 1400,
-          "rank": 81,
+          "rank": 82,
           "as": "glm-5v-turbo"
         },
         "vision": {
