@@ -1,30 +1,30 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-30T12:42:23.214Z",
+  "updatedAt": "2026-10-01T13:25:51.080Z",
   "boards": {
     "eci": {
-      "count": 268,
-      "published": "2026-09-09"
+      "count": 270,
+      "published": "2026-09-28"
     },
     "text": {
-      "count": 409,
-      "published": "2026-09-25"
+      "count": 410,
+      "published": "2026-09-30"
     },
     "coding": {
-      "count": 404,
-      "published": "2026-09-25"
+      "count": 405,
+      "published": "2026-09-30"
     },
     "math": {
-      "count": 393,
-      "published": "2026-09-25"
+      "count": 395,
+      "published": "2026-09-30"
     },
     "creative": {
-      "count": 407,
-      "published": "2026-09-25"
+      "count": 408,
+      "published": "2026-09-30"
     },
     "webdev": {
-      "count": 135,
-      "published": "2026-09-29"
+      "count": 137,
+      "published": "2026-09-30"
     },
     "vision": {
       "count": 156,
@@ -35,8 +35,8 @@
       "published": "2026-09-24"
     },
     "image-edit": {
-      "count": 56,
-      "published": "2026-09-22"
+      "count": 57,
+      "published": "2026-09-30"
     },
     "video": {
       "count": 48,
@@ -49,19 +49,19 @@
   },
   "bench": {
     "gpqa": {
-      "count": 315
+      "count": 318
     },
     "swe": {
       "count": 35
     },
     "frontiermath": {
-      "count": 110
+      "count": 113
     },
     "aime": {
-      "count": 293
+      "count": 296
     },
     "simpleqa": {
-      "count": 82
+      "count": 85
     }
   },
   "models": {
@@ -76,12 +76,12 @@
         },
         "coding": {
           "score": 1386,
-          "rank": 180,
+          "rank": 181,
           "as": "nova-2-lite"
         },
         "math": {
           "score": 1359,
-          "rank": 197,
+          "rank": 199,
           "as": "nova-2-lite"
         },
         "creative": {
@@ -98,22 +98,22 @@
       "boards": {
         "text": {
           "score": 1228,
-          "rank": 296,
+          "rank": 297,
           "as": "amazon-nova-lite-v1.0"
         },
         "coding": {
           "score": 1239,
-          "rank": 289,
+          "rank": 290,
           "as": "amazon-nova-lite-v1.0"
         },
         "math": {
           "score": 1227,
-          "rank": 285,
+          "rank": 287,
           "as": "amazon-nova-lite-v1.0"
         },
         "creative": {
           "score": 1197,
-          "rank": 303,
+          "rank": 304,
           "as": "amazon-nova-lite-v1.0"
         },
         "vision": {
@@ -130,22 +130,22 @@
       "boards": {
         "text": {
           "score": 1208,
-          "rank": 308,
+          "rank": 309,
           "as": "amazon-nova-micro-v1.0"
         },
         "coding": {
           "score": 1218,
-          "rank": 300,
+          "rank": 301,
           "as": "amazon-nova-micro-v1.0"
         },
         "math": {
           "score": 1206,
-          "rank": 297,
+          "rank": 299,
           "as": "amazon-nova-micro-v1.0"
         },
         "creative": {
           "score": 1172,
-          "rank": 314,
+          "rank": 315,
           "as": "amazon-nova-micro-v1.0"
         }
       },
@@ -157,22 +157,22 @@
       "boards": {
         "eci": {
           "score": 123.8,
-          "rank": 179,
+          "rank": 181,
           "as": "Amazon Nova Pro"
         },
         "text": {
           "score": 1259,
-          "rank": 284,
+          "rank": 285,
           "as": "amazon-nova-pro-v1.0"
         },
         "coding": {
           "score": 1270,
-          "rank": 272,
+          "rank": 273,
           "as": "amazon-nova-pro-v1.0"
         },
         "math": {
           "score": 1252,
-          "rank": 268,
+          "rank": 270,
           "as": "amazon-nova-pro-v1.0"
         },
         "creative": {
@@ -189,37 +189,37 @@
       "bench": {}
     },
     "anthropic/claude-fable-5": {
-      "quality": 99,
+      "quality": 98,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 163.6,
-          "rank": 3,
+          "score": 162.2,
+          "rank": 7,
           "as": "Claude Fable 5"
         },
         "text": {
-          "score": 1491,
-          "rank": 8,
+          "score": 1492,
+          "rank": 9,
           "as": "claude-fable-5-high"
         },
         "coding": {
-          "score": 1518,
+          "score": 1519,
           "rank": 9,
           "as": "claude-fable-5-high"
         },
         "math": {
-          "score": 1519,
-          "rank": 5,
+          "score": 1517,
+          "rank": 7,
           "as": "claude-fable-5-high"
         },
         "creative": {
-          "score": 1494,
-          "rank": 4,
+          "score": 1496,
+          "rank": 5,
           "as": "claude-fable-5-high"
         },
         "webdev": {
           "score": 1626,
-          "rank": 15,
+          "rank": 17,
           "as": "claude-fable-5-high"
         },
         "vision": {
@@ -236,37 +236,37 @@
       }
     },
     "anthropic/claude-fable-5-1": {
-      "quality": 100,
+      "quality": 99,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 165,
-          "rank": 2,
+          "score": 164.8,
+          "rank": 4,
           "as": "Claude Fable 5.1"
         },
         "text": {
           "score": 1511,
-          "rank": 2,
+          "rank": 3,
           "as": "claude-fable-5.1-max"
         },
         "coding": {
-          "score": 1523,
-          "rank": 7,
+          "score": 1526,
+          "rank": 8,
           "as": "claude-fable-5.1-max"
         },
         "math": {
-          "score": 1519,
-          "rank": 4,
+          "score": 1520,
+          "rank": 5,
           "as": "claude-fable-5.1-max"
         },
         "creative": {
-          "score": 1507,
-          "rank": 2,
+          "score": 1505,
+          "rank": 4,
           "as": "claude-fable-5.1-max"
         },
         "webdev": {
-          "score": 1753,
-          "rank": 3,
+          "score": 1751,
+          "rank": 4,
           "as": "claude-fable-5.1-max"
         },
         "vision": {
@@ -282,37 +282,37 @@
       }
     },
     "anthropic/claude-haiku-4-5-20251001": {
-      "quality": 64,
+      "quality": 63,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 142.4,
-          "rank": 98,
+          "rank": 100,
           "as": "Claude Haiku 4.5"
         },
         "text": {
           "score": 1396,
-          "rank": 151,
+          "rank": 153,
           "as": "claude-haiku-4-5-20251001"
         },
         "coding": {
-          "score": 1454,
-          "rank": 87,
+          "score": 1453,
+          "rank": 92,
           "as": "claude-haiku-4-5-20251001"
         },
         "math": {
           "score": 1395,
-          "rank": 159,
+          "rank": 162,
           "as": "claude-haiku-4-5-20251001"
         },
         "creative": {
           "score": 1371,
-          "rank": 136,
+          "rank": 137,
           "as": "claude-haiku-4-5-20251001"
         },
         "webdev": {
-          "score": 1330,
-          "rank": 111,
+          "score": 1329,
+          "rank": 113,
           "as": "claude-haiku-4-5-20251001"
         }
       },
@@ -323,17 +323,17 @@
       }
     },
     "anthropic/claude-opus-4-5-20251101": {
-      "quality": 83,
+      "quality": 82,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 150.1,
-          "rank": 47,
+          "rank": 49,
           "as": "Claude Opus 4.5"
         },
         "text": {
           "score": 1451,
-          "rank": 46,
+          "rank": 48,
           "as": "claude-opus-4-5-20251101"
         },
         "coding": {
@@ -343,17 +343,17 @@
         },
         "math": {
           "score": 1458,
-          "rank": 51,
+          "rank": 55,
           "as": "claude-opus-4-5-20251101"
         },
         "creative": {
           "score": 1443,
-          "rank": 37,
+          "rank": 38,
           "as": "claude-opus-4-5-20251101"
         },
         "webdev": {
           "score": 1468,
-          "rank": 59,
+          "rank": 61,
           "as": "claude-opus-4-5-20251101"
         }
       },
@@ -364,23 +364,23 @@
       }
     },
     "anthropic/claude-opus-4-6": {
-      "quality": 91,
+      "quality": 90,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 155.4,
-          "rank": 25,
+          "score": 155.3,
+          "rank": 27,
           "as": "Claude Opus 4.6"
         },
         "text": {
           "score": 1504,
-          "rank": 4,
+          "rank": 5,
           "as": "claude-opus-4-6-high"
         },
         "coding": {
           "score": 1535,
           "rank": 3,
-          "as": "claude-opus-4-6"
+          "as": "claude-opus-4-6-high"
         },
         "math": {
           "score": 1517,
@@ -394,7 +394,7 @@
         },
         "webdev": {
           "score": 1546,
-          "rank": 35,
+          "rank": 37,
           "as": "claude-opus-4-6-high"
         },
         "vision": {
@@ -412,37 +412,37 @@
       }
     },
     "anthropic/claude-opus-4-7": {
-      "quality": 93,
+      "quality": 92,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 156.4,
-          "rank": 19,
+          "rank": 22,
           "as": "Claude Opus 4.7"
         },
         "text": {
           "score": 1490,
-          "rank": 10,
+          "rank": 11,
           "as": "claude-opus-4-7-high"
         },
         "coding": {
           "score": 1519,
-          "rank": 8,
+          "rank": 10,
           "as": "claude-opus-4-7-high"
         },
         "math": {
           "score": 1499,
-          "rank": 12,
+          "rank": 15,
           "as": "claude-opus-4-7-high"
         },
         "creative": {
           "score": 1486,
-          "rank": 8,
+          "rank": 10,
           "as": "claude-opus-4-7-high"
         },
         "webdev": {
           "score": 1557,
-          "rank": 31,
+          "rank": 33,
           "as": "claude-opus-4-7-high"
         },
         "vision": {
@@ -460,37 +460,37 @@
       }
     },
     "anthropic/claude-opus-4-8": {
-      "quality": 97,
+      "quality": 96,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 158.3,
-          "rank": 10,
+          "rank": 12,
           "as": "Claude Opus 4.8"
         },
         "text": {
-          "score": 1460,
-          "rank": 37,
+          "score": 1461,
+          "rank": 38,
           "as": "claude-opus-4-8-high"
         },
         "coding": {
-          "score": 1491,
-          "rank": 32,
+          "score": 1490,
+          "rank": 33,
           "as": "claude-opus-4-8-high"
         },
         "math": {
-          "score": 1487,
-          "rank": 22,
+          "score": 1486,
+          "rank": 23,
           "as": "claude-opus-4-8-high"
         },
         "creative": {
-          "score": 1453,
+          "score": 1455,
           "rank": 27,
           "as": "claude-opus-4-8-high"
         },
         "webdev": {
-          "score": 1555,
-          "rank": 33,
+          "score": 1556,
+          "rank": 35,
           "as": "claude-opus-4-8-high"
         },
         "vision": {
@@ -511,33 +511,33 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 162.7,
-          "rank": 4,
+          "score": 162.9,
+          "rank": 5,
           "as": "Claude Opus 5"
         },
         "text": {
-          "score": 1506,
-          "rank": 3,
+          "score": 1507,
+          "rank": 4,
           "as": "claude-opus-5-max"
         },
         "coding": {
-          "score": 1533,
-          "rank": 5,
+          "score": 1534,
+          "rank": 6,
           "as": "claude-opus-5-max"
         },
         "math": {
-          "score": 1533,
-          "rank": 1,
+          "score": 1532,
+          "rank": 2,
           "as": "claude-opus-5-high"
         },
         "creative": {
-          "score": 1491,
-          "rank": 5,
+          "score": 1490,
+          "rank": 7,
           "as": "claude-opus-5-max"
         },
         "webdev": {
           "score": 1694,
-          "rank": 5,
+          "rank": 6,
           "as": "claude-opus-5-max"
         },
         "vision": {
@@ -555,25 +555,35 @@
     },
     "anthropic/claude-opus-5-5": {
       "quality": 100,
-      "basis": "text",
+      "basis": "eci",
       "boards": {
-        "text": {
-          "score": 1518,
+        "eci": {
+          "score": 167.4,
           "rank": 1,
+          "as": "Claude Opus 5.5"
+        },
+        "text": {
+          "score": 1512,
+          "rank": 2,
           "as": "claude-opus-5.5-high"
         },
         "coding": {
-          "score": 1545,
-          "rank": 1,
+          "score": 1534,
+          "rank": 5,
+          "as": "claude-opus-5.5-high"
+        },
+        "math": {
+          "score": 1514,
+          "rank": 8,
           "as": "claude-opus-5.5-high"
         },
         "creative": {
-          "score": 1538,
-          "rank": 1,
+          "score": 1530,
+          "rank": 2,
           "as": "claude-opus-5.5-high"
         },
         "webdev": {
-          "score": 1820,
+          "score": 1818,
           "rank": 1,
           "as": "claude-opus-5.5-max"
         }
@@ -591,12 +601,12 @@
       "boards": {
         "eci": {
           "score": 146.8,
-          "rank": 64,
+          "rank": 66,
           "as": "Claude Sonnet 4.5"
         },
         "text": {
           "score": 1439,
-          "rank": 75,
+          "rank": 76,
           "as": "claude-sonnet-4-5-20250929"
         },
         "coding": {
@@ -606,17 +616,17 @@
         },
         "math": {
           "score": 1422,
-          "rank": 110,
+          "rank": 112,
           "as": "claude-sonnet-4-5-20250929"
         },
         "creative": {
           "score": 1442,
-          "rank": 39,
+          "rank": 40,
           "as": "claude-sonnet-4-5-20250929"
         },
         "webdev": {
           "score": 1384,
-          "rank": 92,
+          "rank": 94,
           "as": "claude-sonnet-4-5-20250929"
         }
       },
@@ -633,32 +643,32 @@
       "boards": {
         "eci": {
           "score": 152.3,
-          "rank": 38,
+          "rank": 40,
           "as": "Claude Sonnet 4.6"
         },
         "text": {
           "score": 1458,
-          "rank": 39,
+          "rank": 41,
           "as": "claude-sonnet-4-6"
         },
         "coding": {
           "score": 1504,
-          "rank": 17,
+          "rank": 18,
           "as": "claude-sonnet-4-6"
         },
         "math": {
           "score": 1463,
-          "rank": 48,
+          "rank": 51,
           "as": "claude-sonnet-4-6"
         },
         "creative": {
           "score": 1435,
-          "rank": 53,
+          "rank": 52,
           "as": "claude-sonnet-4-6"
         },
         "webdev": {
-          "score": 1521,
-          "rank": 42,
+          "score": 1522,
+          "rank": 44,
           "as": "claude-sonnet-4-6"
         },
         "vision": {
@@ -675,37 +685,37 @@
       }
     },
     "anthropic/claude-sonnet-5": {
-      "quality": 93,
+      "quality": 92,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 156.3,
-          "rank": 20,
+          "rank": 23,
           "as": "Claude Sonnet 5"
         },
         "text": {
           "score": 1443,
-          "rank": 67,
+          "rank": 65,
           "as": "claude-sonnet-5-high"
         },
         "coding": {
           "score": 1483,
-          "rank": 45,
+          "rank": 49,
           "as": "claude-sonnet-5-high"
         },
         "math": {
           "score": 1467,
-          "rank": 43,
+          "rank": 46,
           "as": "claude-sonnet-5-high"
         },
         "creative": {
-          "score": 1416,
+          "score": 1417,
           "rank": 68,
           "as": "claude-sonnet-5-high"
         },
         "webdev": {
           "score": 1540,
-          "rank": 37,
+          "rank": 39,
           "as": "claude-sonnet-5-high"
         },
         "vision": {
@@ -722,12 +732,17 @@
       }
     },
     "anthropic/claude-sonnet-5-5": {
-      "quality": 98,
-      "basis": "webdev",
+      "quality": 99,
+      "basis": "eci",
       "boards": {
+        "eci": {
+          "score": 165.2,
+          "rank": 3,
+          "as": "Claude Sonnet 5.5"
+        },
         "webdev": {
-          "score": 1699,
-          "rank": 4,
+          "score": 1709,
+          "rank": 5,
           "as": "claude-sonnet-5.5-high"
         }
       },
@@ -744,27 +759,27 @@
       "boards": {
         "text": {
           "score": 1340,
-          "rank": 205,
+          "rank": 207,
           "as": "trinity-large-thinking"
         },
         "coding": {
           "score": 1357,
-          "rank": 216,
+          "rank": 217,
           "as": "trinity-large-thinking"
         },
         "math": {
           "score": 1366,
-          "rank": 191,
+          "rank": 193,
           "as": "trinity-large-thinking"
         },
         "creative": {
-          "score": 1307,
-          "rank": 208,
+          "score": 1306,
+          "rank": 210,
           "as": "trinity-large-thinking"
         },
         "webdev": {
-          "score": 1237,
-          "rank": 126,
+          "score": 1238,
+          "rank": 128,
           "as": "trinity-large-thinking"
         }
       },
@@ -781,7 +796,7 @@
         },
         "image-edit": {
           "score": 1149,
-          "rank": 50,
+          "rank": 51,
           "as": "flux-1-kontext-dev"
         }
       },
@@ -797,8 +812,8 @@
           "as": "flux-2-dev"
         },
         "image-edit": {
-          "score": 1226,
-          "rank": 38,
+          "score": 1225,
+          "rank": 41,
           "as": "flux-2-dev"
         }
       },
@@ -814,8 +829,8 @@
           "as": "flux-2-klein-4b"
         },
         "image-edit": {
-          "score": 1188,
-          "rank": 46,
+          "score": 1187,
+          "rank": 47,
           "as": "flux-2-klein-4b"
         }
       },
@@ -839,12 +854,12 @@
       "bench": {}
     },
     "bytedance/doubao-seed-2-1-pro-260628": {
-      "quality": 68,
+      "quality": 66,
       "basis": "webdev",
       "boards": {
         "webdev": {
           "score": 1517,
-          "rank": 44,
+          "rank": 47,
           "as": "seed-2.1-pro-preview"
         }
       },
@@ -856,22 +871,22 @@
       "boards": {
         "text": {
           "score": 1224,
-          "rank": 302,
+          "rank": 303,
           "as": "c4ai-aya-expanse-32b"
         },
         "coding": {
           "score": 1197,
-          "rank": 309,
+          "rank": 310,
           "as": "c4ai-aya-expanse-32b"
         },
         "math": {
           "score": 1200,
-          "rank": 299,
+          "rank": 301,
           "as": "c4ai-aya-expanse-32b"
         },
         "creative": {
           "score": 1200,
-          "rank": 300,
+          "rank": 301,
           "as": "c4ai-aya-expanse-32b"
         }
       },
@@ -883,22 +898,22 @@
       "boards": {
         "text": {
           "score": 1185,
-          "rank": 322,
+          "rank": 323,
           "as": "c4ai-aya-expanse-8b"
         },
         "coding": {
           "score": 1161,
-          "rank": 329,
+          "rank": 330,
           "as": "c4ai-aya-expanse-8b"
         },
         "math": {
           "score": 1168,
-          "rank": 314,
+          "rank": 316,
           "as": "c4ai-aya-expanse-8b"
         },
         "creative": {
           "score": 1168,
-          "rank": 316,
+          "rank": 317,
           "as": "c4ai-aya-expanse-8b"
         }
       },
@@ -922,17 +937,17 @@
       "boards": {
         "text": {
           "score": 1331,
-          "rank": 218,
+          "rank": 219,
           "as": "command-a-03-2025"
         },
         "coding": {
           "score": 1331,
-          "rank": 228,
+          "rank": 229,
           "as": "command-a-03-2025"
         },
         "math": {
           "score": 1300,
-          "rank": 231,
+          "rank": 233,
           "as": "command-a-03-2025"
         },
         "creative": {
@@ -949,22 +964,22 @@
       "boards": {
         "text": {
           "score": 1187,
-          "rank": 318,
+          "rank": 319,
           "as": "command-r-08-2024"
         },
         "coding": {
           "score": 1170,
-          "rank": 323,
+          "rank": 324,
           "as": "command-r-08-2024"
         },
         "math": {
           "score": 1155,
-          "rank": 322,
+          "rank": 324,
           "as": "command-r-08-2024"
         },
         "creative": {
           "score": 1170,
-          "rank": 315,
+          "rank": 316,
           "as": "command-r-08-2024"
         }
       },
@@ -976,22 +991,22 @@
       "boards": {
         "eci": {
           "score": 119.3,
-          "rank": 194,
+          "rank": 196,
           "as": "Command R+"
         },
         "text": {
           "score": 1229,
-          "rank": 295,
+          "rank": 296,
           "as": "command-r-plus-08-2024"
         },
         "coding": {
           "score": 1187,
-          "rank": 315,
+          "rank": 316,
           "as": "command-r-plus-08-2024"
         },
         "math": {
           "score": 1188,
-          "rank": 304,
+          "rank": 306,
           "as": "command-r-plus-08-2024"
         },
         "creative": {
@@ -1007,8 +1022,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 88.9,
-          "rank": 263,
+          "score": 89.7,
+          "rank": 265,
           "as": "DeepSeek Coder 6.7B"
         }
       },
@@ -1020,32 +1035,32 @@
       "boards": {
         "eci": {
           "score": 155,
-          "rank": 28,
+          "rank": 29,
           "as": "DeepSeek V4.1 Flash"
         },
         "text": {
-          "score": 1465,
-          "rank": 35,
+          "score": 1461,
+          "rank": 37,
           "as": "deepseek-v4.1-flash-max"
         },
         "coding": {
-          "score": 1511,
-          "rank": 14,
+          "score": 1507,
+          "rank": 16,
           "as": "deepseek-v4.1-flash-max"
         },
         "math": {
-          "score": 1493,
-          "rank": 18,
+          "score": 1486,
+          "rank": 26,
           "as": "deepseek-v4.1-flash-max"
         },
         "creative": {
-          "score": 1436,
-          "rank": 50,
+          "score": 1434,
+          "rank": 56,
           "as": "deepseek-v4.1-flash-max"
         },
         "webdev": {
           "score": 1620,
-          "rank": 18,
+          "rank": 21,
           "as": "deepseek-v4.1-flash-max"
         }
       },
@@ -1057,27 +1072,27 @@
       "boards": {
         "eci": {
           "score": 139,
-          "rank": 118,
+          "rank": 120,
           "as": "DeepSeek-R1"
         },
         "text": {
           "score": 1373,
-          "rank": 174,
+          "rank": 175,
           "as": "deepseek-r1"
         },
         "coding": {
-          "score": 1372,
-          "rank": 195,
+          "score": 1371,
+          "rank": 196,
           "as": "deepseek-r1"
         },
         "math": {
           "score": 1392,
-          "rank": 163,
+          "rank": 165,
           "as": "deepseek-r1"
         },
         "creative": {
           "score": 1354,
-          "rank": 155,
+          "rank": 156,
           "as": "deepseek-r1"
         }
       },
@@ -1092,27 +1107,27 @@
       "boards": {
         "eci": {
           "score": 141.3,
-          "rank": 105,
+          "rank": 107,
           "as": "DeepSeek-R1 (May 2025)"
         },
         "text": {
           "score": 1428,
-          "rank": 92,
+          "rank": 93,
           "as": "deepseek-r1-0528"
         },
         "coding": {
           "score": 1427,
-          "rank": 131,
+          "rank": 132,
           "as": "deepseek-r1-0528"
         },
         "math": {
           "score": 1401,
-          "rank": 148,
+          "rank": 152,
           "as": "deepseek-r1-0528"
         },
         "creative": {
           "score": 1406,
-          "rank": 79,
+          "rank": 80,
           "as": "deepseek-r1-0528"
         }
       },
@@ -1140,12 +1155,12 @@
       }
     },
     "deepseek/deepseek-r1-distill-qwen-14b": {
-      "quality": 51,
+      "quality": 50,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 135.4,
-          "rank": 133,
+          "rank": 135,
           "as": "DeepSeek-R1-Distill-Qwen-14B"
         }
       },
@@ -1155,12 +1170,12 @@
       }
     },
     "deepseek/deepseek-r1-distill-qwen-32b": {
-      "quality": 54,
+      "quality": 53,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 137.4,
-          "rank": 125,
+          "rank": 127,
           "as": "DeepSeek-R1-Distill-Qwen-32B"
         }
       },
@@ -1174,23 +1189,23 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 132.4,
-          "rank": 145,
+          "score": 132.3,
+          "rank": 147,
           "as": "DeepSeek-V3"
         },
         "text": {
           "score": 1332,
-          "rank": 217,
+          "rank": 218,
           "as": "deepseek-v3"
         },
         "coding": {
           "score": 1325,
-          "rank": 230,
+          "rank": 231,
           "as": "deepseek-v3"
         },
         "math": {
           "score": 1311,
-          "rank": 222,
+          "rank": 224,
           "as": "deepseek-v3"
         },
         "creative": {
@@ -1209,28 +1224,28 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 136,
-          "rank": 131,
+          "score": 135.9,
+          "rank": 133,
           "as": "DeepSeek-V3 (Mar 2025)"
         },
         "text": {
           "score": 1375,
-          "rank": 172,
+          "rank": 173,
           "as": "deepseek-v3-0324"
         },
         "coding": {
           "score": 1368,
-          "rank": 200,
+          "rank": 201,
           "as": "deepseek-v3-0324"
         },
         "math": {
           "score": 1373,
-          "rank": 182,
+          "rank": 185,
           "as": "deepseek-v3-0324"
         },
         "creative": {
           "score": 1364,
-          "rank": 143,
+          "rank": 144,
           "as": "deepseek-v3-0324"
         }
       },
@@ -1245,27 +1260,27 @@
       "boards": {
         "eci": {
           "score": 139.9,
-          "rank": 113,
+          "rank": 115,
           "as": "DeepSeek-V3.1"
         },
         "text": {
           "score": 1420,
-          "rank": 112,
+          "rank": 113,
           "as": "deepseek-v3.1"
         },
         "coding": {
           "score": 1417,
-          "rank": 144,
+          "rank": 145,
           "as": "deepseek-v3.1-thinking"
         },
         "math": {
-          "score": 1420,
-          "rank": 113,
+          "score": 1421,
+          "rank": 115,
           "as": "deepseek-v3.1"
         },
         "creative": {
           "score": 1401,
-          "rank": 92,
+          "rank": 94,
           "as": "deepseek-v3.1-thinking"
         }
       },
@@ -1277,32 +1292,32 @@
       "boards": {
         "eci": {
           "score": 146.3,
-          "rank": 70,
+          "rank": 72,
           "as": "DeepSeek-V3.2"
         },
         "text": {
-          "score": 1424,
-          "rank": 99,
+          "score": 1425,
+          "rank": 100,
           "as": "deepseek-v3.2"
         },
         "coding": {
-          "score": 1454,
-          "rank": 88,
+          "score": 1453,
+          "rank": 89,
           "as": "deepseek-v3.2-thinking"
         },
         "math": {
           "score": 1435,
-          "rank": 83,
+          "rank": 84,
           "as": "deepseek-v3.2"
         },
         "creative": {
           "score": 1400,
-          "rank": 97,
+          "rank": 99,
           "as": "deepseek-v3.2"
         },
         "webdev": {
           "score": 1362,
-          "rank": 98,
+          "rank": 100,
           "as": "deepseek-v3.2-thinking"
         }
       },
@@ -1314,7 +1329,7 @@
       "boards": {
         "eci": {
           "score": 146.1,
-          "rank": 72,
+          "rank": 74,
           "as": "DeepSeek-V4-Flash"
         },
         "text": {
@@ -1323,35 +1338,35 @@
           "as": "deepseek-v4-flash"
         },
         "coding": {
-          "score": 1457,
-          "rank": 82,
+          "score": 1456,
+          "rank": 83,
           "as": "deepseek-v4-flash"
         },
         "math": {
-          "score": 1427,
-          "rank": 100,
+          "score": 1426,
+          "rank": 102,
           "as": "deepseek-v4-flash"
         },
         "creative": {
           "score": 1403,
-          "rank": 87,
+          "rank": 88,
           "as": "deepseek-v4-flash"
         },
         "webdev": {
           "score": 1581,
-          "rank": 29,
+          "rank": 31,
           "as": "deepseek-v4-flash-high"
         }
       },
       "bench": {}
     },
     "deepseek/deepseek-v4-flash-0731": {
-      "quality": 89,
+      "quality": 88,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 154.5,
-          "rank": 31,
+          "rank": 32,
           "as": "DeepSeek V4 Flash 0731"
         }
       },
@@ -1363,12 +1378,12 @@
       }
     },
     "deepseek/deepseek-v4-pro": {
-      "quality": 80,
+      "quality": 79,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 149.1,
-          "rank": 54,
+          "rank": 57,
           "as": "DeepSeek-V4-Pro"
         },
         "text": {
@@ -1378,22 +1393,22 @@
         },
         "coding": {
           "score": 1469,
-          "rank": 64,
+          "rank": 65,
           "as": "deepseek-v4-pro"
         },
         "math": {
           "score": 1443,
-          "rank": 70,
+          "rank": 72,
           "as": "deepseek-v4-pro"
         },
         "creative": {
           "score": 1446,
-          "rank": 33,
+          "rank": 36,
           "as": "deepseek-v4-pro"
         },
         "webdev": {
           "score": 1446,
-          "rank": 65,
+          "rank": 67,
           "as": "deepseek-v4-pro"
         }
       },
@@ -1411,7 +1426,7 @@
       "boards": {
         "eci": {
           "score": 155.4,
-          "rank": 24,
+          "rank": 26,
           "as": "DeepSeek V4 Pro 0813"
         }
       },
@@ -1428,27 +1443,27 @@
       "boards": {
         "eci": {
           "score": 140.8,
-          "rank": 107,
+          "rank": 109,
           "as": "Gemini 2.5 Flash (Jun 2025)"
         },
         "text": {
           "score": 1417,
-          "rank": 120,
+          "rank": 121,
           "as": "gemini-2.5-flash"
         },
         "coding": {
           "score": 1424,
-          "rank": 137,
+          "rank": 139,
           "as": "gemini-2.5-flash"
         },
         "math": {
           "score": 1410,
-          "rank": 132,
+          "rank": 136,
           "as": "gemini-2.5-flash"
         },
         "creative": {
           "score": 1400,
-          "rank": 96,
+          "rank": 98,
           "as": "gemini-2.5-flash"
         },
         "vision": {
@@ -1472,19 +1487,19 @@
         },
         "image-edit": {
           "score": 1293,
-          "rank": 28,
+          "rank": 29,
           "as": "gemini-2.5-flash-image-preview (nano-banana)"
         }
       },
       "bench": {}
     },
     "google/gemini-2-5-flash-lite": {
-      "quality": 48,
+      "quality": 47,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 133.9,
-          "rank": 141,
+          "rank": 143,
           "as": "Gemini 2.5 Flash-Lite (Jun 2025)"
         },
         "text": {
@@ -1494,17 +1509,17 @@
         },
         "coding": {
           "score": 1373,
-          "rank": 193,
+          "rank": 194,
           "as": "gemini-2.5-flash-lite-preview-06-17-thinking"
         },
         "math": {
           "score": 1362,
-          "rank": 193,
+          "rank": 195,
           "as": "gemini-2.5-flash-lite-preview-06-17-thinking"
         },
         "creative": {
           "score": 1366,
-          "rank": 141,
+          "rank": 142,
           "as": "gemini-2.5-flash-lite-preview-06-17-thinking"
         },
         "vision": {
@@ -1516,12 +1531,12 @@
       "bench": {}
     },
     "google/gemini-2-5-pro": {
-      "quality": 71,
+      "quality": 70,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 145.3,
-          "rank": 79,
+          "rank": 81,
           "as": "Gemini 2.5 Pro (Jun 2025)"
         },
         "text": {
@@ -1531,22 +1546,22 @@
         },
         "coding": {
           "score": 1452,
-          "rank": 94,
+          "rank": 95,
           "as": "gemini-2.5-pro"
         },
         "math": {
           "score": 1450,
-          "rank": 63,
+          "rank": 65,
           "as": "gemini-2.5-pro"
         },
         "creative": {
           "score": 1453,
-          "rank": 26,
+          "rank": 28,
           "as": "gemini-2.5-pro"
         },
         "webdev": {
           "score": 1227,
-          "rank": 128,
+          "rank": 130,
           "as": "gemini-2.5-pro"
         },
         "vision": {
@@ -1572,7 +1587,7 @@
           "as": "gemini-3.1-flash-image (nano-banana-2) [web-search]"
         },
         "image-edit": {
-          "score": 1388,
+          "score": 1387,
           "rank": 12,
           "as": "gemini-3.1-flash-image (nano-banana-2) [web-search]"
         }
@@ -1585,7 +1600,7 @@
       "boards": {
         "eci": {
           "score": 144.5,
-          "rank": 83,
+          "rank": 85,
           "as": "Gemini 3.1 Flash-Lite"
         }
       },
@@ -1606,7 +1621,7 @@
         },
         "image-edit": {
           "score": 1314,
-          "rank": 21,
+          "rank": 22,
           "as": "gemini-3.1-flash-lite-image (nano-banana-2-lite)"
         }
       },
@@ -1618,27 +1633,27 @@
       "boards": {
         "text": {
           "score": 1416,
-          "rank": 124,
+          "rank": 125,
           "as": "gemini-3.1-flash-lite-preview"
         },
         "coding": {
           "score": 1400,
-          "rank": 166,
+          "rank": 167,
           "as": "gemini-3.1-flash-lite-preview"
         },
         "math": {
           "score": 1427,
-          "rank": 98,
+          "rank": 100,
           "as": "gemini-3.1-flash-lite-preview"
         },
         "creative": {
-          "score": 1400,
-          "rank": 95,
+          "score": 1401,
+          "rank": 97,
           "as": "gemini-3.1-flash-lite-preview"
         },
         "webdev": {
           "score": 1256,
-          "rank": 120,
+          "rank": 122,
           "as": "gemini-3.1-flash-lite-preview"
         },
         "vision": {
@@ -1650,37 +1665,37 @@
       "bench": {}
     },
     "google/gemini-3-1-pro-preview": {
-      "quality": 90,
+      "quality": 89,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 154.9,
-          "rank": 29,
+          "score": 154.8,
+          "rank": 31,
           "as": "Gemini 3.1 Pro"
         },
         "text": {
           "score": 1480,
-          "rank": 16,
+          "rank": 18,
           "as": "gemini-3.1-pro-preview"
         },
         "coding": {
           "score": 1483,
-          "rank": 47,
+          "rank": 46,
           "as": "gemini-3.1-pro-preview"
         },
         "math": {
           "score": 1485,
-          "rank": 25,
+          "rank": 27,
           "as": "gemini-3.1-pro-preview"
         },
         "creative": {
           "score": 1482,
-          "rank": 12,
+          "rank": 13,
           "as": "gemini-3.1-pro-preview"
         },
         "webdev": {
           "score": 1446,
-          "rank": 64,
+          "rank": 66,
           "as": "gemini-3.1-pro-preview"
         },
         "vision": {
@@ -1697,12 +1712,12 @@
       }
     },
     "google/gemini-3-1-pro-preview-customtools": {
-      "quality": 90,
+      "quality": 89,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 154.9,
-          "rank": 29,
+          "score": 154.8,
+          "rank": 31,
           "as": "Gemini 3.1 Pro"
         }
       },
@@ -1711,37 +1726,37 @@
       }
     },
     "google/gemini-3-5-flash": {
-      "quality": 89,
+      "quality": 88,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 154.6,
-          "rank": 30,
+          "score": 154.5,
+          "rank": 33,
           "as": "Gemini 3.5 Flash"
         },
         "text": {
           "score": 1481,
-          "rank": 15,
+          "rank": 16,
           "as": "gemini-3.5-flash-high"
         },
         "coding": {
           "score": 1492,
-          "rank": 30,
+          "rank": 31,
           "as": "gemini-3.5-flash-high"
         },
         "math": {
-          "score": 1502,
-          "rank": 10,
+          "score": 1503,
+          "rank": 13,
           "as": "gemini-3.5-flash-high"
         },
         "creative": {
-          "score": 1467,
-          "rank": 15,
+          "score": 1470,
+          "rank": 16,
           "as": "gemini-3.5-flash-medium"
         },
         "webdev": {
           "score": 1499,
-          "rank": 51,
+          "rank": 53,
           "as": "gemini-3.5-flash-high"
         },
         "vision": {
@@ -1764,32 +1779,32 @@
       "boards": {
         "eci": {
           "score": 145.1,
-          "rank": 80,
+          "rank": 82,
           "as": "Gemini 3.5 Flash-Lite"
         },
         "text": {
-          "score": 1436,
-          "rank": 82,
+          "score": 1434,
+          "rank": 86,
           "as": "gemini-3.5-flash-lite"
         },
         "coding": {
-          "score": 1454,
-          "rank": 85,
+          "score": 1452,
+          "rank": 94,
           "as": "gemini-3.5-flash-lite"
         },
         "math": {
-          "score": 1431,
-          "rank": 93,
+          "score": 1433,
+          "rank": 88,
           "as": "gemini-3.5-flash-lite"
         },
         "creative": {
-          "score": 1419,
-          "rank": 66,
+          "score": 1420,
+          "rank": 65,
           "as": "gemini-3.5-flash-lite"
         },
         "webdev": {
           "score": 1440,
-          "rank": 67,
+          "rank": 69,
           "as": "gemini-3.5-flash-lite"
         },
         "vision": {
@@ -1809,33 +1824,33 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 154.4,
-          "rank": 32,
+          "score": 154.3,
+          "rank": 34,
           "as": "Gemini 3.6 Flash"
         },
         "text": {
-          "score": 1478,
+          "score": 1480,
           "rank": 20,
           "as": "gemini-3.6-flash-high"
         },
         "coding": {
           "score": 1491,
-          "rank": 31,
+          "rank": 32,
           "as": "gemini-3.6-flash-high"
         },
         "math": {
-          "score": 1504,
-          "rank": 9,
+          "score": 1505,
+          "rank": 11,
           "as": "gemini-3.6-flash-high"
         },
         "creative": {
-          "score": 1464,
-          "rank": 20,
+          "score": 1467,
+          "rank": 18,
           "as": "gemini-3.6-flash-high"
         },
         "webdev": {
           "score": 1536,
-          "rank": 39,
+          "rank": 41,
           "as": "gemini-3.6-flash-high"
         },
         "vision": {
@@ -1852,37 +1867,37 @@
       }
     },
     "google/gemini-3-7-flash": {
-      "quality": 96,
+      "quality": 95,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 157.7,
-          "rank": 11,
+          "score": 157.4,
+          "rank": 14,
           "as": "Gemini 3.7 Flash"
         },
         "text": {
           "score": 1487,
-          "rank": 12,
+          "rank": 13,
           "as": "gemini-3.7-flash-high"
         },
         "coding": {
-          "score": 1499,
-          "rank": 21,
+          "score": 1498,
+          "rank": 24,
           "as": "gemini-3.7-flash-high"
         },
         "math": {
-          "score": 1511,
-          "rank": 8,
+          "score": 1510,
+          "rank": 10,
           "as": "gemini-3.7-flash-high"
         },
         "creative": {
-          "score": 1490,
+          "score": 1493,
           "rank": 6,
           "as": "gemini-3.7-flash-high"
         },
         "webdev": {
-          "score": 1593,
-          "rank": 24,
+          "score": 1592,
+          "rank": 26,
           "as": "gemini-3.7-flash-high"
         },
         "vision": {
@@ -1899,36 +1914,36 @@
       }
     },
     "google/gemini-3-8-flash": {
-      "quality": 96,
+      "quality": 95,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 157.1,
-          "rank": 13,
+          "score": 156.9,
+          "rank": 15,
           "as": "Gemini 3.8 Flash"
         },
         "text": {
-          "score": 1494,
-          "rank": 7,
+          "score": 1496,
+          "rank": 8,
           "as": "gemini-3.8-flash-high"
         },
         "coding": {
-          "score": 1512,
-          "rank": 13,
+          "score": 1510,
+          "rank": 14,
           "as": "gemini-3.8-flash-high"
         },
         "math": {
-          "score": 1528,
-          "rank": 3,
+          "score": 1522,
+          "rank": 4,
           "as": "gemini-3.8-flash-high"
         },
         "creative": {
-          "score": 1485,
-          "rank": 9,
+          "score": 1488,
+          "rank": 8,
           "as": "gemini-3.8-flash-high"
         },
         "webdev": {
-          "score": 1581,
+          "score": 1583,
           "rank": 28,
           "as": "gemini-3.8-flash-high"
         },
@@ -1946,37 +1961,37 @@
       }
     },
     "google/gemini-3-flash-preview": {
-      "quality": 85,
+      "quality": 84,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 151.8,
-          "rank": 42,
+          "rank": 44,
           "as": "Gemini 3 Flash"
         },
         "text": {
           "score": 1466,
-          "rank": 33,
+          "rank": 34,
           "as": "gemini-3-flash"
         },
         "coding": {
-          "score": 1459,
-          "rank": 78,
+          "score": 1460,
+          "rank": 79,
           "as": "gemini-3-flash"
         },
         "math": {
           "score": 1472,
-          "rank": 38,
+          "rank": 40,
           "as": "gemini-3-flash"
         },
         "creative": {
-          "score": 1457,
-          "rank": 23,
+          "score": 1456,
+          "rank": 25,
           "as": "gemini-3-flash"
         },
         "webdev": {
           "score": 1439,
-          "rank": 69,
+          "rank": 71,
           "as": "gemini-3-flash"
         },
         "vision": {
@@ -2004,7 +2019,7 @@
         },
         "image-edit": {
           "score": 1390,
-          "rank": 9,
+          "rank": 10,
           "as": "gemini-3-pro-image-2k (nano-banana-pro)"
         }
       },
@@ -2033,22 +2048,22 @@
       "boards": {
         "text": {
           "score": 1156,
-          "rank": 335,
+          "rank": 336,
           "as": "gemma-2-2b-it"
         },
         "coding": {
           "score": 1112,
-          "rank": 348,
+          "rank": 349,
           "as": "gemma-2-2b-it"
         },
         "math": {
           "score": 1135,
-          "rank": 333,
+          "rank": 335,
           "as": "gemma-2-2b-it"
         },
         "creative": {
           "score": 1147,
-          "rank": 327,
+          "rank": 328,
           "as": "gemma-2-2b-it"
         }
       },
@@ -2060,22 +2075,22 @@
       "boards": {
         "eci": {
           "score": 119.8,
-          "rank": 192,
+          "rank": 194,
           "as": "Gemma 2 9B"
         },
         "text": {
           "score": 1207,
-          "rank": 309,
+          "rank": 310,
           "as": "gemma-2-9b-it"
         },
         "coding": {
           "score": 1174,
-          "rank": 321,
+          "rank": 322,
           "as": "gemma-2-9b-it"
         },
         "math": {
           "score": 1183,
-          "rank": 307,
+          "rank": 309,
           "as": "gemma-2-9b-it"
         },
         "creative": {
@@ -2095,27 +2110,27 @@
       "boards": {
         "eci": {
           "score": 123.5,
-          "rank": 180,
+          "rank": 182,
           "as": "Gemma 3 12B"
         },
         "text": {
           "score": 1334,
-          "rank": 214,
+          "rank": 215,
           "as": "gemma-3-12b-it"
         },
         "coding": {
           "score": 1281,
-          "rank": 267,
+          "rank": 268,
           "as": "gemma-3-12b-it"
         },
         "math": {
           "score": 1307,
-          "rank": 224,
+          "rank": 226,
           "as": "gemma-3-12b-it"
         },
         "creative": {
           "score": 1331,
-          "rank": 182,
+          "rank": 184,
           "as": "gemma-3-12b-it"
         }
       },
@@ -2139,22 +2154,22 @@
       "boards": {
         "eci": {
           "score": 130,
-          "rank": 152,
+          "rank": 154,
           "as": "Gemma 3 27B"
         },
         "text": {
           "score": 1358,
-          "rank": 192,
+          "rank": 193,
           "as": "gemma-3-27b-it"
         },
         "coding": {
           "score": 1322,
-          "rank": 232,
+          "rank": 233,
           "as": "gemma-3-27b-it"
         },
         "math": {
           "score": 1311,
-          "rank": 220,
+          "rank": 222,
           "as": "gemma-3-27b-it"
         },
         "creative": {
@@ -2178,28 +2193,28 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 116,
-          "rank": 209,
+          "score": 116.1,
+          "rank": 211,
           "as": "Gemma 3 4B"
         },
         "text": {
           "score": 1291,
-          "rank": 248,
+          "rank": 250,
           "as": "gemma-3-4b-it"
         },
         "coding": {
           "score": 1230,
-          "rank": 294,
+          "rank": 295,
           "as": "gemma-3-4b-it"
         },
         "math": {
           "score": 1239,
-          "rank": 278,
+          "rank": 280,
           "as": "gemma-3-4b-it"
         },
         "creative": {
           "score": 1270,
-          "rank": 241,
+          "rank": 242,
           "as": "gemma-3-4b-it"
         }
       },
@@ -2209,12 +2224,12 @@
       }
     },
     "google/gemma-4-26b-a4b-it": {
-      "quality": 63,
+      "quality": 62,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 141.9,
-          "rank": 101,
+          "rank": 103,
           "as": "Gemma 4 26B A4B"
         },
         "text": {
@@ -2224,12 +2239,12 @@
         },
         "coding": {
           "score": 1446,
-          "rank": 103,
+          "rank": 102,
           "as": "gemma-4-26b-a4b"
         },
         "math": {
           "score": 1469,
-          "rank": 42,
+          "rank": 44,
           "as": "gemma-4-26b-a4b"
         },
         "creative": {
@@ -2239,7 +2254,7 @@
         },
         "webdev": {
           "score": 1359,
-          "rank": 100,
+          "rank": 102,
           "as": "gemma-4-26b-a4b"
         },
         "vision": {
@@ -2254,37 +2269,37 @@
       }
     },
     "google/gemma-4-31b-it": {
-      "quality": 66,
+      "quality": 65,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 142.7,
-          "rank": 93,
+          "score": 142.8,
+          "rank": 95,
           "as": "Gemma 4 31B IT"
         },
         "text": {
           "score": 1443,
-          "rank": 63,
+          "rank": 64,
           "as": "gemma-4-31b"
         },
         "coding": {
           "score": 1459,
-          "rank": 79,
+          "rank": 80,
           "as": "gemma-4-31b"
         },
         "math": {
           "score": 1464,
-          "rank": 46,
+          "rank": 49,
           "as": "gemma-4-31b"
         },
         "creative": {
           "score": 1416,
-          "rank": 69,
+          "rank": 71,
           "as": "gemma-4-31b"
         },
         "webdev": {
-          "score": 1364,
-          "rank": 97,
+          "score": 1365,
+          "rank": 99,
           "as": "gemma-4-31b"
         },
         "vision": {
@@ -2339,22 +2354,22 @@
       "boards": {
         "text": {
           "score": 1042,
-          "rank": 388,
+          "rank": 389,
           "as": "smollm2-1.7b-instruct"
         },
         "coding": {
           "score": 1048,
-          "rank": 375,
+          "rank": 376,
           "as": "smollm2-1.7b-instruct"
         },
         "math": {
           "score": 1105,
-          "rank": 349,
+          "rank": 351,
           "as": "smollm2-1.7b-instruct"
         },
         "creative": {
           "score": 1031,
-          "rank": 383,
+          "rank": 384,
           "as": "smollm2-1.7b-instruct"
         }
       },
@@ -2365,28 +2380,28 @@
       "basis": "text",
       "boards": {
         "text": {
-          "score": 1290,
+          "score": 1291,
           "rank": 249,
           "as": "granite-4.1-8b"
         },
         "coding": {
           "score": 1313,
-          "rank": 239,
+          "rank": 240,
           "as": "granite-4.1-8b"
         },
         "math": {
           "score": 1311,
-          "rank": 221,
+          "rank": 223,
           "as": "granite-4.1-8b"
         },
         "creative": {
-          "score": 1249,
-          "rank": 262,
+          "score": 1251,
+          "rank": 259,
           "as": "granite-4.1-8b"
         },
         "webdev": {
-          "score": 1190,
-          "rank": 131,
+          "score": 1191,
+          "rank": 133,
           "as": "granite-4.1-8b"
         }
       },
@@ -2397,18 +2412,18 @@
       "basis": "text",
       "boards": {
         "text": {
-          "score": 1319,
-          "rank": 230,
+          "score": 1317,
+          "rank": 231,
           "as": "granite-4.2-8b"
         },
         "coding": {
           "score": 1379,
-          "rank": 188,
+          "rank": 189,
           "as": "granite-4.2-8b"
         },
         "creative": {
-          "score": 1238,
-          "rank": 275,
+          "score": 1232,
+          "rank": 284,
           "as": "granite-4.2-8b"
         }
       },
@@ -2420,12 +2435,12 @@
       "boards": {
         "text": {
           "score": 1355,
-          "rank": 195,
+          "rank": 196,
           "as": "mercury-2"
         },
         "coding": {
           "score": 1391,
-          "rank": 174,
+          "rank": 175,
           "as": "mercury-2"
         },
         "creative": {
@@ -2435,7 +2450,7 @@
         },
         "webdev": {
           "score": 1170,
-          "rank": 132,
+          "rank": 134,
           "as": "mercury-2"
         }
       },
@@ -2447,7 +2462,7 @@
       "boards": {
         "eci": {
           "score": 128.8,
-          "rank": 161,
+          "rank": 163,
           "as": "Llama 3.1-405B"
         }
       },
@@ -2462,22 +2477,22 @@
       "boards": {
         "eci": {
           "score": 125.9,
-          "rank": 174,
+          "rank": 176,
           "as": "Llama 3.1-70B"
         },
         "text": {
           "score": 1261,
-          "rank": 283,
+          "rank": 284,
           "as": "llama-3.1-70b-instruct"
         },
         "coding": {
           "score": 1260,
-          "rank": 282,
+          "rank": 283,
           "as": "llama-3.1-70b-instruct"
         },
         "math": {
           "score": 1252,
-          "rank": 267,
+          "rank": 269,
           "as": "llama-3.1-70b-instruct"
         },
         "creative": {
@@ -2496,28 +2511,28 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 116.5,
-          "rank": 206,
+          "score": 116.6,
+          "rank": 208,
           "as": "Llama 3.1-8B"
         },
         "text": {
           "score": 1187,
-          "rank": 320,
+          "rank": 321,
           "as": "llama-3.1-8b-instruct"
         },
         "coding": {
           "score": 1195,
-          "rank": 311,
+          "rank": 312,
           "as": "llama-3.1-8b-instruct"
         },
         "math": {
           "score": 1179,
-          "rank": 311,
+          "rank": 313,
           "as": "llama-3.1-8b-instruct"
         },
         "creative": {
           "score": 1154,
-          "rank": 322,
+          "rank": 323,
           "as": "llama-3.1-8b-instruct"
         }
       },
@@ -2532,27 +2547,27 @@
       "boards": {
         "eci": {
           "score": 102,
-          "rank": 241,
+          "rank": 243,
           "as": "Llama 3.2 1B"
         },
         "text": {
           "score": 1055,
-          "rank": 382,
+          "rank": 383,
           "as": "llama-3.2-1b-instruct"
         },
         "coding": {
           "score": 1071,
-          "rank": 369,
+          "rank": 370,
           "as": "llama-3.2-1b-instruct"
         },
         "math": {
           "score": 1086,
-          "rank": 353,
+          "rank": 355,
           "as": "llama-3.2-1b-instruct"
         },
         "creative": {
           "score": 1033,
-          "rank": 381,
+          "rank": 382,
           "as": "llama-3.2-1b-instruct"
         }
       },
@@ -2567,22 +2582,22 @@
       "boards": {
         "text": {
           "score": 1110,
-          "rank": 354,
+          "rank": 355,
           "as": "llama-3.2-3b-instruct"
         },
         "coding": {
           "score": 1098,
-          "rank": 354,
+          "rank": 355,
           "as": "llama-3.2-3b-instruct"
         },
         "math": {
           "score": 1126,
-          "rank": 336,
+          "rank": 338,
           "as": "llama-3.2-3b-instruct"
         },
         "creative": {
           "score": 1094,
-          "rank": 353,
+          "rank": 354,
           "as": "llama-3.2-3b-instruct"
         }
       },
@@ -2603,27 +2618,27 @@
       "boards": {
         "eci": {
           "score": 127.3,
-          "rank": 166,
+          "rank": 168,
           "as": "Llama 3.3 70B"
         },
         "text": {
           "score": 1274,
-          "rank": 269,
+          "rank": 270,
           "as": "llama-3.3-70b-instruct"
         },
         "coding": {
           "score": 1268,
-          "rank": 277,
+          "rank": 278,
           "as": "llama-3.3-70b-instruct"
         },
         "math": {
           "score": 1268,
-          "rank": 261,
+          "rank": 263,
           "as": "llama-3.3-70b-instruct"
         },
         "creative": {
           "score": 1250,
-          "rank": 258,
+          "rank": 260,
           "as": "llama-3.3-70b-instruct"
         }
       },
@@ -2633,12 +2648,12 @@
       }
     },
     "meta/llama-4-maverick-17b-128e-instruct-fp8": {
-      "quality": 46,
+      "quality": 45,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 132.2,
-          "rank": 146,
+          "rank": 148,
           "as": "Llama 4 Maverick"
         }
       },
@@ -2648,32 +2663,32 @@
       }
     },
     "meta/llama-4-scout-17b-16e-instruct": {
-      "quality": 43,
+      "quality": 42,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 129.6,
-          "rank": 154,
+          "score": 129.7,
+          "rank": 156,
           "as": "Llama 4 Scout"
         },
         "text": {
           "score": 1279,
-          "rank": 266,
+          "rank": 267,
           "as": "llama-4-scout-17b-16e-instruct"
         },
         "coding": {
           "score": 1286,
-          "rank": 264,
+          "rank": 265,
           "as": "llama-4-scout-17b-16e-instruct"
         },
         "math": {
           "score": 1286,
-          "rank": 238,
+          "rank": 240,
           "as": "llama-4-scout-17b-16e-instruct"
         },
         "creative": {
           "score": 1249,
-          "rank": 261,
+          "rank": 263,
           "as": "llama-4-scout-17b-16e-instruct"
         },
         "vision": {
@@ -2693,7 +2708,7 @@
       "boards": {
         "eci": {
           "score": 122.9,
-          "rank": 182,
+          "rank": 184,
           "as": "Llama 3-70B"
         }
       },
@@ -2707,8 +2722,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 116.3,
-          "rank": 207,
+          "score": 116.5,
+          "rank": 209,
           "as": "Llama 3-8B"
         }
       },
@@ -2718,37 +2733,37 @@
       }
     },
     "meta/muse-spark-1-1": {
-      "quality": 88,
+      "quality": 87,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 154.3,
-          "rank": 33,
+          "rank": 35,
           "as": "Muse Spark 1.1"
         },
         "text": {
-          "score": 1478,
+          "score": 1480,
           "rank": 19,
           "as": "muse-spark-1.1"
         },
         "coding": {
-          "score": 1497,
-          "rank": 25,
+          "score": 1499,
+          "rank": 23,
           "as": "muse-spark-1.1"
         },
         "math": {
-          "score": 1477,
+          "score": 1479,
           "rank": 31,
           "as": "muse-spark-1.1"
         },
         "creative": {
           "score": 1440,
-          "rank": 43,
+          "rank": 44,
           "as": "muse-spark-1.1"
         },
         "webdev": {
           "score": 1542,
-          "rank": 36,
+          "rank": 38,
           "as": "muse-spark-1.1"
         },
         "vision": {
@@ -2762,32 +2777,32 @@
       }
     },
     "meta/muse-spark-1-2": {
-      "quality": 90,
+      "quality": 89,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 155.2,
-          "rank": 27,
+          "score": 155,
+          "rank": 30,
           "as": "Muse Spark 1.2"
         },
         "text": {
-          "score": 1486,
-          "rank": 13,
+          "score": 1484,
+          "rank": 14,
           "as": "muse-spark-1.2 (xHigh)"
         },
         "coding": {
-          "score": 1497,
-          "rank": 26,
+          "score": 1498,
+          "rank": 25,
           "as": "muse-spark-1.2 (xHigh)"
         },
         "creative": {
-          "score": 1444,
-          "rank": 36,
+          "score": 1448,
+          "rank": 34,
           "as": "muse-spark-1.2 (xHigh)"
         },
         "webdev": {
           "score": 1532,
-          "rank": 41,
+          "rank": 43,
           "as": "muse-spark-1.2 (xHigh)"
         },
         "vision": {
@@ -2801,37 +2816,37 @@
       }
     },
     "meta/muse-spark-1-3": {
-      "quality": 95,
+      "quality": 94,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 156.9,
-          "rank": 15,
+          "rank": 17,
           "as": "Muse Spark 1.3"
         },
         "text": {
           "score": 1490,
-          "rank": 11,
+          "rank": 12,
           "as": "muse-spark-1.3-max"
         },
         "coding": {
-          "score": 1516,
-          "rank": 10,
+          "score": 1515,
+          "rank": 11,
           "as": "muse-spark-1.3-max"
         },
         "math": {
-          "score": 1497,
-          "rank": 15,
+          "score": 1504,
+          "rank": 12,
           "as": "muse-spark-1.3-max"
         },
         "creative": {
-          "score": 1450,
-          "rank": 31,
+          "score": 1458,
+          "rank": 23,
           "as": "muse-spark-1.3-max"
         },
         "webdev": {
           "score": 1655,
-          "rank": 11,
+          "rank": 13,
           "as": "muse-spark-1.3-max"
         },
         "vision": {
@@ -2850,8 +2865,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 107.6,
-          "rank": 226,
+          "score": 108,
+          "rank": 228,
           "as": "Phi-2"
         }
       },
@@ -2874,28 +2889,28 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 117.2,
-          "rank": 203,
+          "score": 117.4,
+          "rank": 205,
           "as": "phi-3-mini 3.8B"
         },
         "text": {
           "score": 1050,
-          "rank": 387,
+          "rank": 388,
           "as": "phi-3-mini-128k-instruct"
         },
         "coding": {
           "score": 1040,
-          "rank": 379,
+          "rank": 380,
           "as": "phi-3-mini-128k-instruct"
         },
         "math": {
           "score": 1089,
-          "rank": 352,
+          "rank": 354,
           "as": "phi-3-mini-128k-instruct"
         },
         "creative": {
           "score": 1024,
-          "rank": 387,
+          "rank": 388,
           "as": "phi-3-mini-128k-instruct"
         }
       },
@@ -2906,60 +2921,60 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 117.2,
-          "rank": 203,
+          "score": 117.4,
+          "rank": 205,
           "as": "phi-3-mini 3.8B"
         },
         "text": {
           "score": 1073,
-          "rank": 374,
+          "rank": 375,
           "as": "phi-3-mini-4k-instruct"
         },
         "coding": {
           "score": 1093,
-          "rank": 358,
+          "rank": 359,
           "as": "phi-3-mini-4k-instruct"
         },
         "math": {
           "score": 1111,
-          "rank": 343,
+          "rank": 345,
           "as": "phi-3-mini-4k-instruct"
         },
         "creative": {
           "score": 1037,
-          "rank": 377,
+          "rank": 378,
           "as": "phi-3-mini-4k-instruct"
         }
       },
       "bench": {}
     },
     "microsoft/phi-4": {
-      "quality": 44,
+      "quality": 43,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 130.4,
-          "rank": 151,
+          "rank": 153,
           "as": "Phi-4"
         },
         "text": {
           "score": 1217,
-          "rank": 307,
+          "rank": 308,
           "as": "phi-4"
         },
         "coding": {
           "score": 1231,
-          "rank": 292,
+          "rank": 293,
           "as": "phi-4"
         },
         "math": {
           "score": 1246,
-          "rank": 273,
+          "rank": 275,
           "as": "phi-4"
         },
         "creative": {
           "score": 1182,
-          "rank": 309,
+          "rank": 310,
           "as": "phi-4"
         }
       },
@@ -2969,22 +2984,22 @@
       }
     },
     "minimax/MiniMax-M2": {
-      "quality": 50,
+      "quality": 49,
       "basis": "text",
       "boards": {
         "text": {
           "score": 1340,
-          "rank": 207,
+          "rank": 208,
           "as": "minimax-m2"
         },
         "coding": {
-          "score": 1370,
-          "rank": 197,
+          "score": 1369,
+          "rank": 199,
           "as": "minimax-m2"
         },
         "math": {
-          "score": 1350,
-          "rank": 207,
+          "score": 1349,
+          "rank": 209,
           "as": "minimax-m2"
         },
         "creative": {
@@ -2994,7 +3009,7 @@
         },
         "webdev": {
           "score": 1297,
-          "rank": 115,
+          "rank": 117,
           "as": "minimax-m2"
         }
       },
@@ -3006,101 +3021,101 @@
       "boards": {
         "text": {
           "score": 1392,
-          "rank": 159,
+          "rank": 160,
           "as": "minimax-m2.1-preview"
         },
         "coding": {
           "score": 1421,
-          "rank": 140,
+          "rank": 141,
           "as": "minimax-m2.1-preview"
         },
         "math": {
-          "score": 1396,
-          "rank": 156,
+          "score": 1397,
+          "rank": 157,
           "as": "minimax-m2.1-preview"
         },
         "creative": {
           "score": 1362,
-          "rank": 147,
+          "rank": 148,
           "as": "minimax-m2.1-preview"
         },
         "webdev": {
           "score": 1384,
-          "rank": 93,
+          "rank": 95,
           "as": "minimax-m2.1-preview"
         }
       },
       "bench": {}
     },
     "minimax/MiniMax-M2-5": {
-      "quality": 76,
+      "quality": 75,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 146.7,
-          "rank": 66,
+          "rank": 68,
           "as": "MiniMax-M2.5"
         },
         "text": {
           "score": 1359,
-          "rank": 191,
+          "rank": 192,
           "as": "minimax-m2.5"
         },
         "coding": {
           "score": 1380,
-          "rank": 184,
+          "rank": 185,
           "as": "minimax-m2.5"
         },
         "math": {
-          "score": 1378,
-          "rank": 175,
+          "score": 1377,
+          "rank": 177,
           "as": "minimax-m2.5"
         },
         "creative": {
           "score": 1331,
-          "rank": 184,
+          "rank": 185,
           "as": "minimax-m2.5"
         },
         "webdev": {
           "score": 1386,
-          "rank": 90,
+          "rank": 92,
           "as": "minimax-m2.5"
         }
       },
       "bench": {}
     },
     "minimax/MiniMax-M2-7": {
-      "quality": 73,
+      "quality": 72,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 145.8,
-          "rank": 74,
+          "score": 145.9,
+          "rank": 76,
           "as": "MiniMax-M2.7"
         },
         "text": {
-          "score": 1404,
-          "rank": 141,
+          "score": 1405,
+          "rank": 142,
           "as": "minimax-m2.7"
         },
         "coding": {
           "score": 1453,
-          "rank": 91,
+          "rank": 90,
           "as": "minimax-m2.7"
         },
         "math": {
-          "score": 1420,
+          "score": 1421,
           "rank": 114,
           "as": "minimax-m2.7"
         },
         "creative": {
           "score": 1354,
-          "rank": 156,
+          "rank": 157,
           "as": "minimax-m2.7"
         },
         "webdev": {
           "score": 1397,
-          "rank": 85,
+          "rank": 86,
           "as": "minimax-m2.7"
         }
       },
@@ -3112,22 +3127,22 @@
       "boards": {
         "eci": {
           "score": 147,
-          "rank": 62,
+          "rank": 64,
           "as": "MiniMax-M3"
         },
         "text": {
-          "score": 1433,
-          "rank": 86,
+          "score": 1432,
+          "rank": 88,
           "as": "minimax-m3"
         },
         "coding": {
           "score": 1470,
-          "rank": 62,
+          "rank": 63,
           "as": "minimax-m3"
         },
         "math": {
-          "score": 1432,
-          "rank": 90,
+          "score": 1431,
+          "rank": 93,
           "as": "minimax-m3"
         },
         "creative": {
@@ -3137,7 +3152,7 @@
         },
         "webdev": {
           "score": 1482,
-          "rank": 55,
+          "rank": 57,
           "as": "minimax-m3"
         },
         "vision": {
@@ -3174,7 +3189,7 @@
       "boards": {
         "webdev": {
           "score": 1196,
-          "rank": 130,
+          "rank": 132,
           "as": "devstral-2"
         }
       },
@@ -3186,7 +3201,7 @@
       "boards": {
         "webdev": {
           "score": 1076,
-          "rank": 135,
+          "rank": 137,
           "as": "devstral-medium-2507"
         }
       },
@@ -3197,8 +3212,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 112,
-          "rank": 216,
+          "score": 112.2,
+          "rank": 218,
           "as": "Mistral 7B v0.1"
         }
       },
@@ -3210,22 +3225,22 @@
       "boards": {
         "text": {
           "score": 1090,
-          "rank": 366,
+          "rank": 367,
           "as": "mistral-7b-instruct-v0.2"
         },
         "coding": {
           "score": 1082,
-          "rank": 362,
+          "rank": 363,
           "as": "mistral-7b-instruct-v0.2"
         },
         "math": {
           "score": 1085,
-          "rank": 354,
+          "rank": 356,
           "as": "mistral-7b-instruct-v0.2"
         },
         "creative": {
           "score": 1068,
-          "rank": 370,
+          "rank": 371,
           "as": "mistral-7b-instruct-v0.2"
         }
       },
@@ -3236,8 +3251,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 108.7,
-          "rank": 223,
+          "score": 109,
+          "rank": 225,
           "as": "Mistral 7B v0.3"
         }
       },
@@ -3251,8 +3266,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 112,
-          "rank": 216,
+          "score": 112.2,
+          "rank": 218,
           "as": "Mistral 7B v0.1"
         }
       },
@@ -3263,40 +3278,40 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 108.7,
-          "rank": 223,
+          "score": 109,
+          "rank": 225,
           "as": "Mistral 7B v0.3"
         }
       },
       "bench": {}
     },
     "mistral/mistral-large-2411": {
-      "quality": 40,
+      "quality": 39,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 128.5,
-          "rank": 162,
+          "rank": 164,
           "as": "Mistral Large 2 (Nov 2024)"
         },
         "text": {
           "score": 1265,
-          "rank": 277,
+          "rank": 278,
           "as": "mistral-large-2411"
         },
         "coding": {
           "score": 1276,
-          "rank": 270,
+          "rank": 271,
           "as": "mistral-large-2411"
         },
         "math": {
           "score": 1261,
-          "rank": 265,
+          "rank": 268,
           "as": "mistral-large-2411"
         },
         "creative": {
           "score": 1242,
-          "rank": 269,
+          "rank": 270,
           "as": "mistral-large-2411"
         }
       },
@@ -3316,12 +3331,12 @@
         },
         "coding": {
           "score": 1447,
-          "rank": 101,
+          "rank": 99,
           "as": "mistral-large-3"
         },
         "math": {
           "score": 1415,
-          "rank": 127,
+          "rank": 129,
           "as": "mistral-large-3"
         },
         "creative": {
@@ -3331,7 +3346,7 @@
         },
         "webdev": {
           "score": 1230,
-          "rank": 127,
+          "rank": 129,
           "as": "mistral-large-3"
         },
         "vision": {
@@ -3348,27 +3363,27 @@
       "boards": {
         "eci": {
           "score": 134.1,
-          "rank": 140,
+          "rank": 142,
           "as": "Mistral Medium 3"
         },
         "text": {
           "score": 1370,
-          "rank": 177,
+          "rank": 178,
           "as": "mistral-medium-2505"
         },
         "coding": {
           "score": 1386,
-          "rank": 179,
+          "rank": 180,
           "as": "mistral-medium-2505"
         },
         "math": {
           "score": 1352,
-          "rank": 205,
+          "rank": 207,
           "as": "mistral-medium-2505"
         },
         "creative": {
           "score": 1344,
-          "rank": 168,
+          "rank": 169,
           "as": "mistral-medium-2505"
         },
         "vision": {
@@ -3388,17 +3403,17 @@
       "boards": {
         "text": {
           "score": 1424,
-          "rank": 100,
+          "rank": 101,
           "as": "mistral-medium-2508"
         },
         "coding": {
           "score": 1434,
-          "rank": 124,
+          "rank": 125,
           "as": "mistral-medium-2508"
         },
         "math": {
           "score": 1409,
-          "rank": 135,
+          "rank": 140,
           "as": "mistral-medium-2508"
         },
         "creative": {
@@ -3420,12 +3435,12 @@
       "boards": {
         "eci": {
           "score": 141.4,
-          "rank": 104,
+          "rank": 106,
           "as": "Mistral Medium 3.5"
         },
         "text": {
           "score": 1421,
-          "rank": 106,
+          "rank": 107,
           "as": "mistral-medium-3.5"
         },
         "coding": {
@@ -3435,17 +3450,17 @@
         },
         "math": {
           "score": 1432,
-          "rank": 88,
+          "rank": 90,
           "as": "mistral-medium-3.5"
         },
         "creative": {
-          "score": 1372,
+          "score": 1374,
           "rank": 135,
           "as": "mistral-medium-3.5"
         },
         "webdev": {
           "score": 1263,
-          "rank": 119,
+          "rank": 121,
           "as": "mistral-medium-3.5"
         },
         "vision": {
@@ -3461,8 +3476,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 118.6,
-          "rank": 196,
+          "score": 118.7,
+          "rank": 198,
           "as": "Mistral NeMo"
         }
       },
@@ -3473,8 +3488,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 118.6,
-          "rank": 196,
+          "score": 118.7,
+          "rank": 198,
           "as": "Mistral NeMo"
         }
       },
@@ -3486,12 +3501,12 @@
       "boards": {
         "eci": {
           "score": 131.7,
-          "rank": 147,
+          "rank": 149,
           "as": "Mistral Small 3.2"
         },
         "text": {
           "score": 1338,
-          "rank": 210,
+          "rank": 211,
           "as": "mistral-small-2506"
         },
         "coding": {
@@ -3501,12 +3516,12 @@
         },
         "math": {
           "score": 1341,
-          "rank": 210,
+          "rank": 212,
           "as": "mistral-small-2506"
         },
         "creative": {
           "score": 1304,
-          "rank": 210,
+          "rank": 211,
           "as": "mistral-small-2506"
         },
         "vision": {
@@ -3518,26 +3533,26 @@
       "bench": {}
     },
     "mistral/mistral-small-3-1-24b-instruct-2503": {
-      "quality": 35,
+      "quality": 34,
       "basis": "text",
       "boards": {
         "text": {
-          "score": 1278,
-          "rank": 268,
+          "score": 1277,
+          "rank": 269,
           "as": "mistral-small-3.1-24b-instruct-2503"
         },
         "coding": {
           "score": 1309,
-          "rank": 244,
+          "rank": 245,
           "as": "mistral-small-3.1-24b-instruct-2503"
         },
         "math": {
           "score": 1261,
-          "rank": 266,
+          "rank": 267,
           "as": "mistral-small-3.1-24b-instruct-2503"
         },
         "creative": {
-          "score": 1253,
+          "score": 1252,
           "rank": 257,
           "as": "mistral-small-3.1-24b-instruct-2503"
         },
@@ -3554,28 +3569,28 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 118.4,
-          "rank": 199,
+          "score": 118.5,
+          "rank": 201,
           "as": "Mixtral 8x7B"
         },
         "text": {
           "score": 1132,
-          "rank": 342,
+          "rank": 343,
           "as": "mixtral-8x7b-instruct-v0.1"
         },
         "coding": {
           "score": 1126,
-          "rank": 343,
+          "rank": 344,
           "as": "mixtral-8x7b-instruct-v0.1"
         },
         "math": {
           "score": 1147,
-          "rank": 328,
+          "rank": 330,
           "as": "mixtral-8x7b-instruct-v0.1"
         },
         "creative": {
           "score": 1109,
-          "rank": 342,
+          "rank": 343,
           "as": "mixtral-8x7b-instruct-v0.1"
         }
       },
@@ -3588,28 +3603,28 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 108.7,
-          "rank": 223,
+          "score": 109,
+          "rank": 225,
           "as": "Mistral 7B v0.3"
         },
         "text": {
-          "score": 1024,
-          "rank": 393,
+          "score": 1023,
+          "rank": 394,
           "as": "mistral-7b-instruct"
         },
         "coding": {
           "score": 1019,
-          "rank": 384,
+          "rank": 385,
           "as": "mistral-7b-instruct"
         },
         "math": {
           "score": 1027,
-          "rank": 375,
+          "rank": 377,
           "as": "mistral-7b-instruct"
         },
         "creative": {
           "score": 1028,
-          "rank": 385,
+          "rank": 386,
           "as": "mistral-7b-instruct"
         }
       },
@@ -3623,7 +3638,7 @@
       "boards": {
         "eci": {
           "score": 122,
-          "rank": 185,
+          "rank": 187,
           "as": "Mixtral 8x22B"
         }
       },
@@ -3636,8 +3651,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 118.4,
-          "rank": 199,
+          "score": 118.5,
+          "rank": 201,
           "as": "Mixtral 8x7B"
         }
       },
@@ -3646,27 +3661,27 @@
       }
     },
     "moonshot/kimi-k2-5": {
-      "quality": 79,
+      "quality": 78,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 148.1,
-          "rank": 58,
+          "score": 148,
+          "rank": 60,
           "as": "Kimi K2.5"
         },
         "text": {
           "score": 1445,
-          "rank": 57,
+          "rank": 58,
           "as": "kimi-k2.5-thinking"
         },
         "coding": {
           "score": 1474,
-          "rank": 55,
+          "rank": 56,
           "as": "kimi-k2.5-thinking"
         },
         "math": {
           "score": 1470,
-          "rank": 41,
+          "rank": 43,
           "as": "kimi-k2.5-thinking"
         },
         "creative": {
@@ -3676,7 +3691,7 @@
         },
         "webdev": {
           "score": 1436,
-          "rank": 71,
+          "rank": 73,
           "as": "kimi-k2.5-thinking"
         },
         "vision": {
@@ -3691,37 +3706,37 @@
       }
     },
     "moonshot/kimi-k2-6": {
-      "quality": 84,
+      "quality": 83,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 151,
-          "rank": 44,
+          "score": 151.1,
+          "rank": 46,
           "as": "Kimi K2.6"
         },
         "text": {
           "score": 1455,
-          "rank": 42,
+          "rank": 43,
           "as": "kimi-k2.6"
         },
         "coding": {
-          "score": 1488,
-          "rank": 35,
+          "score": 1489,
+          "rank": 34,
           "as": "kimi-k2.6"
         },
         "math": {
           "score": 1475,
-          "rank": 33,
+          "rank": 36,
           "as": "kimi-k2.6"
         },
         "creative": {
-          "score": 1434,
+          "score": 1435,
           "rank": 55,
           "as": "kimi-k2.6"
         },
         "webdev": {
           "score": 1509,
-          "rank": 48,
+          "rank": 50,
           "as": "kimi-k2.6"
         },
         "vision": {
@@ -3744,12 +3759,12 @@
       "boards": {
         "eci": {
           "score": 150,
-          "rank": 48,
+          "rank": 50,
           "as": "Kimi K2.7 Code"
         },
         "webdev": {
           "score": 1473,
-          "rank": 58,
+          "rank": 60,
           "as": "kimi-k2.7-code"
         }
       },
@@ -3761,12 +3776,12 @@
       }
     },
     "moonshot/kimi-k2-instruct": {
-      "quality": 73,
+      "quality": 72,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 146,
-          "rank": 73,
+          "rank": 75,
           "as": "Kimi K2 Thinking"
         }
       },
@@ -3777,8 +3792,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 157.7,
-          "rank": 12,
+          "score": 157.6,
+          "rank": 13,
           "as": "Kimi K3"
         },
         "text": {
@@ -3787,23 +3802,23 @@
           "as": "kimi-k3-max"
         },
         "coding": {
-          "score": 1509,
+          "score": 1510,
           "rank": 15,
           "as": "kimi-k3-max"
         },
         "math": {
           "score": 1493,
-          "rank": 17,
+          "rank": 18,
           "as": "kimi-k3-max"
         },
         "creative": {
-          "score": 1452,
+          "score": 1453,
           "rank": 29,
           "as": "kimi-k3-max"
         },
         "webdev": {
-          "score": 1659,
-          "rank": 10,
+          "score": 1658,
+          "rank": 12,
           "as": "kimi-k3-max"
         }
       },
@@ -3820,49 +3835,49 @@
       "boards": {
         "text": {
           "score": 1283,
-          "rank": 259,
+          "rank": 260,
           "as": "llama-3.1-nemotron-70b-instruct"
         },
         "coding": {
           "score": 1272,
-          "rank": 271,
+          "rank": 272,
           "as": "llama-3.1-nemotron-70b-instruct"
         },
         "math": {
           "score": 1271,
-          "rank": 254,
+          "rank": 256,
           "as": "llama-3.1-nemotron-70b-instruct"
         },
         "creative": {
           "score": 1269,
-          "rank": 244,
+          "rank": 245,
           "as": "llama-3.1-nemotron-70b-instruct"
         }
       },
       "bench": {}
     },
     "nvidia/llama-3-1-nemotron-ultra-253b-v1": {
-      "quality": 45,
+      "quality": 44,
       "basis": "text",
       "boards": {
         "text": {
           "score": 1320,
-          "rank": 227,
+          "rank": 228,
           "as": "llama-3.1-nemotron-ultra-253b-v1"
         },
         "coding": {
           "score": 1312,
-          "rank": 242,
+          "rank": 243,
           "as": "llama-3.1-nemotron-ultra-253b-v1"
         },
         "math": {
           "score": 1360,
-          "rank": 196,
+          "rank": 198,
           "as": "llama-3.1-nemotron-ultra-253b-v1"
         },
         "creative": {
           "score": 1314,
-          "rank": 202,
+          "rank": 203,
           "as": "llama-3.1-nemotron-ultra-253b-v1"
         }
       },
@@ -3874,17 +3889,17 @@
       "boards": {
         "text": {
           "score": 1348,
-          "rank": 202,
+          "rank": 203,
           "as": "nvidia-nemotron-3-nano-30b-a3b-bf16"
         },
         "coding": {
           "score": 1378,
-          "rank": 190,
+          "rank": 191,
           "as": "nvidia-nemotron-3-nano-30b-a3b-bf16"
         },
         "math": {
-          "score": 1369,
-          "rank": 185,
+          "score": 1370,
+          "rank": 187,
           "as": "nvidia-nemotron-3-nano-30b-a3b-bf16"
         },
         "creative": {
@@ -3896,12 +3911,12 @@
       "bench": {}
     },
     "openai/gpt-3-5-turbo": {
-      "quality": 27,
+      "quality": 26,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 118.5,
-          "rank": 197,
+          "score": 118.6,
+          "rank": 199,
           "as": "GPT-3.5 Turbo (Nov 2023)"
         }
       },
@@ -3913,39 +3928,39 @@
       "boards": {
         "eci": {
           "score": 125.9,
-          "rank": 175,
+          "rank": 177,
           "as": "GPT-4 (Mar 2023)"
         }
       },
       "bench": {}
     },
     "openai/gpt-4-1": {
-      "quality": 53,
+      "quality": 52,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 136.8,
-          "rank": 127,
+          "rank": 129,
           "as": "GPT-4.1"
         },
         "text": {
           "score": 1383,
-          "rank": 165,
+          "rank": 166,
           "as": "gpt-4.1-2025-04-14"
         },
         "coding": {
           "score": 1391,
-          "rank": 175,
+          "rank": 176,
           "as": "gpt-4.1-2025-04-14"
         },
         "math": {
           "score": 1369,
-          "rank": 186,
+          "rank": 189,
           "as": "gpt-4.1-2025-04-14"
         },
         "creative": {
           "score": 1363,
-          "rank": 145,
+          "rank": 146,
           "as": "gpt-4.1-2025-04-14"
         },
         "vision": {
@@ -3968,27 +3983,27 @@
       "boards": {
         "eci": {
           "score": 135,
-          "rank": 136,
+          "rank": 138,
           "as": "GPT-4.1 mini"
         },
         "text": {
-          "score": 1341,
-          "rank": 204,
+          "score": 1340,
+          "rank": 205,
           "as": "gpt-4.1-mini-2025-04-14"
         },
         "coding": {
           "score": 1367,
-          "rank": 201,
+          "rank": 202,
           "as": "gpt-4.1-mini-2025-04-14"
         },
         "math": {
           "score": 1343,
-          "rank": 209,
+          "rank": 211,
           "as": "gpt-4.1-mini-2025-04-14"
         },
         "creative": {
           "score": 1300,
-          "rank": 211,
+          "rank": 212,
           "as": "gpt-4.1-mini-2025-04-14"
         },
         "vision": {
@@ -4010,27 +4025,27 @@
       "boards": {
         "eci": {
           "score": 129.6,
-          "rank": 155,
+          "rank": 157,
           "as": "GPT-4.1 nano"
         },
         "text": {
           "score": 1285,
-          "rank": 257,
+          "rank": 258,
           "as": "gpt-4.1-nano-2025-04-14"
         },
         "coding": {
           "score": 1306,
-          "rank": 249,
+          "rank": 250,
           "as": "gpt-4.1-nano-2025-04-14"
         },
         "math": {
           "score": 1274,
-          "rank": 248,
+          "rank": 250,
           "as": "gpt-4.1-nano-2025-04-14"
         },
         "creative": {
           "score": 1260,
-          "rank": 253,
+          "rank": 254,
           "as": "gpt-4.1-nano-2025-04-14"
         },
         "vision": {
@@ -4046,32 +4061,32 @@
       }
     },
     "openai/gpt-4-turbo": {
-      "quality": 36,
+      "quality": 35,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 126.5,
-          "rank": 173,
+          "rank": 175,
           "as": "GPT-4 Turbo (Nov 2023)"
         },
         "text": {
           "score": 1272,
-          "rank": 272,
+          "rank": 273,
           "as": "gpt-4-turbo-2024-04-09"
         },
         "coding": {
           "score": 1268,
-          "rank": 276,
+          "rank": 277,
           "as": "gpt-4-turbo-2024-04-09"
         },
         "math": {
           "score": 1272,
-          "rank": 253,
+          "rank": 255,
           "as": "gpt-4-turbo-2024-04-09"
         },
         "creative": {
           "score": 1268,
-          "rank": 245,
+          "rank": 246,
           "as": "gpt-4-turbo-2024-04-09"
         },
         "vision": {
@@ -4092,22 +4107,22 @@
       "boards": {
         "eci": {
           "score": 129,
-          "rank": 158,
+          "rank": 160,
           "as": "GPT-4o (May 2024)"
         },
         "text": {
           "score": 1300,
-          "rank": 240,
+          "rank": 241,
           "as": "gpt-4o-2024-05-13"
         },
         "coding": {
           "score": 1297,
-          "rank": 252,
+          "rank": 253,
           "as": "gpt-4o-2024-05-13"
         },
         "math": {
           "score": 1284,
-          "rank": 240,
+          "rank": 242,
           "as": "gpt-4o-2024-05-13"
         },
         "creative": {
@@ -4132,27 +4147,27 @@
       "boards": {
         "eci": {
           "score": 128.8,
-          "rank": 160,
+          "rank": 162,
           "as": "GPT-4o (Aug 2024)"
         },
         "text": {
           "score": 1283,
-          "rank": 260,
+          "rank": 261,
           "as": "gpt-4o-2024-08-06"
         },
         "coding": {
           "score": 1284,
-          "rank": 265,
+          "rank": 266,
           "as": "gpt-4o-2024-08-06"
         },
         "math": {
           "score": 1285,
-          "rank": 239,
+          "rank": 241,
           "as": "gpt-4o-2024-08-06"
         },
         "creative": {
           "score": 1275,
-          "rank": 234,
+          "rank": 235,
           "as": "gpt-4o-2024-08-06"
         },
         "vision": {
@@ -4174,7 +4189,7 @@
       "boards": {
         "eci": {
           "score": 128.8,
-          "rank": 159,
+          "rank": 161,
           "as": "GPT-4o (Nov 2024)"
         }
       },
@@ -4190,27 +4205,27 @@
       "boards": {
         "eci": {
           "score": 126.6,
-          "rank": 172,
+          "rank": 174,
           "as": "GPT-4o mini"
         },
         "text": {
           "score": 1286,
-          "rank": 256,
+          "rank": 257,
           "as": "gpt-4o-mini-2024-07-18"
         },
         "coding": {
           "score": 1290,
-          "rank": 259,
+          "rank": 260,
           "as": "gpt-4o-mini-2024-07-18"
         },
         "math": {
           "score": 1267,
-          "rank": 262,
+          "rank": 264,
           "as": "gpt-4o-mini-2024-07-18"
         },
         "creative": {
           "score": 1268,
-          "rank": 246,
+          "rank": 247,
           "as": "gpt-4o-mini-2024-07-18"
         },
         "vision": {
@@ -4227,37 +4242,37 @@
       }
     },
     "openai/gpt-5": {
-      "quality": 82,
+      "quality": 81,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 150,
-          "rank": 49,
+          "rank": 51,
           "as": "GPT-5"
         },
         "text": {
           "score": 1406,
-          "rank": 140,
+          "rank": 141,
           "as": "gpt-5-high"
         },
         "coding": {
           "score": 1436,
-          "rank": 121,
+          "rank": 122,
           "as": "gpt-5-high"
         },
         "math": {
-          "score": 1406,
-          "rank": 141,
+          "score": 1405,
+          "rank": 147,
           "as": "gpt-5-chat"
         },
         "creative": {
-          "score": 1365,
-          "rank": 142,
+          "score": 1366,
+          "rank": 143,
           "as": "gpt-5-chat"
         },
         "webdev": {
           "score": 1417,
-          "rank": 76,
+          "rank": 78,
           "as": "gpt-5-medium"
         },
         "vision": {
@@ -4280,32 +4295,32 @@
       "boards": {
         "eci": {
           "score": 149.7,
-          "rank": 51,
+          "rank": 53,
           "as": "GPT-5.1"
         },
         "text": {
           "score": 1443,
-          "rank": 65,
+          "rank": 66,
           "as": "gpt-5.1-high"
         },
         "coding": {
           "score": 1454,
-          "rank": 90,
+          "rank": 87,
           "as": "gpt-5.1-high"
         },
         "math": {
           "score": 1446,
-          "rank": 68,
+          "rank": 70,
           "as": "gpt-5.1-high"
         },
         "creative": {
           "score": 1427,
-          "rank": 59,
+          "rank": 60,
           "as": "gpt-5.1-high"
         },
         "webdev": {
           "score": 1395,
-          "rank": 87,
+          "rank": 89,
           "as": "gpt-5.1-medium"
         },
         "vision": {
@@ -4322,37 +4337,37 @@
       }
     },
     "openai/gpt-5-2": {
-      "quality": 87,
+      "quality": 86,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 153.5,
-          "rank": 36,
+          "rank": 38,
           "as": "GPT-5.2"
         },
         "text": {
           "score": 1416,
-          "rank": 123,
+          "rank": 124,
           "as": "gpt-5.2-high"
         },
         "coding": {
-          "score": 1442,
-          "rank": 109,
+          "score": 1441,
+          "rank": 110,
           "as": "gpt-5.2-high"
         },
         "math": {
           "score": 1439,
-          "rank": 79,
+          "rank": 81,
           "as": "gpt-5.2-high"
         },
         "creative": {
-          "score": 1376,
-          "rank": 129,
+          "score": 1377,
+          "rank": 130,
           "as": "gpt-5.2-high"
         },
         "webdev": {
-          "score": 1415,
-          "rank": 77,
+          "score": 1416,
+          "rank": 79,
           "as": "gpt-5.2"
         },
         "vision": {
@@ -4370,12 +4385,12 @@
       }
     },
     "openai/gpt-5-2-pro": {
-      "quality": 92,
+      "quality": 91,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 155.4,
-          "rank": 23,
+          "rank": 25,
           "as": "GPT-5.2 Pro"
         }
       },
@@ -4389,12 +4404,12 @@
       "boards": {
         "eci": {
           "score": 156.8,
-          "rank": 16,
+          "rank": 18,
           "as": "GPT-5.3 Codex"
         },
         "webdev": {
           "score": 1408,
-          "rank": 95,
+          "rank": 97,
           "as": "gpt-5.3-codex (codex-harness)"
         }
       },
@@ -4403,37 +4418,37 @@
       }
     },
     "openai/gpt-5-4": {
-      "quality": 95,
+      "quality": 94,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 156.9,
-          "rank": 14,
+          "rank": 16,
           "as": "GPT-5.4"
         },
         "text": {
           "score": 1469,
-          "rank": 30,
+          "rank": 31,
           "as": "gpt-5.4-high"
         },
         "coding": {
-          "score": 1497,
-          "rank": 27,
+          "score": 1496,
+          "rank": 28,
           "as": "gpt-5.4-high"
         },
         "math": {
-          "score": 1487,
-          "rank": 21,
+          "score": 1488,
+          "rank": 22,
           "as": "gpt-5.4-high"
         },
         "creative": {
           "score": 1439,
-          "rank": 45,
+          "rank": 47,
           "as": "gpt-5.4-high"
         },
         "webdev": {
           "score": 1465,
-          "rank": 60,
+          "rank": 62,
           "as": "gpt-5.4-high (codex-harness)"
         },
         "vision": {
@@ -4456,32 +4471,32 @@
       "boards": {
         "eci": {
           "score": 148.8,
-          "rank": 56,
+          "rank": 58,
           "as": "GPT-5.4 Mini"
         },
         "text": {
           "score": 1411,
-          "rank": 132,
+          "rank": 133,
           "as": "gpt-5.4-mini-high"
         },
         "coding": {
           "score": 1438,
-          "rank": 115,
+          "rank": 116,
           "as": "gpt-5.4-mini-high"
         },
         "math": {
           "score": 1418,
-          "rank": 120,
+          "rank": 123,
           "as": "gpt-5.4-mini-high"
         },
         "creative": {
           "score": 1370,
-          "rank": 137,
+          "rank": 138,
           "as": "gpt-5.4-mini-high"
         },
         "webdev": {
           "score": 1397,
-          "rank": 84,
+          "rank": 87,
           "as": "gpt-5.4-mini-high"
         },
         "vision": {
@@ -4498,32 +4513,32 @@
       }
     },
     "openai/gpt-5-4-nano": {
-      "quality": 72,
+      "quality": 71,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 145.8,
-          "rank": 76,
+          "rank": 78,
           "as": "GPT-5.4 Nano"
         },
         "text": {
           "score": 1372,
-          "rank": 175,
+          "rank": 176,
           "as": "gpt-5.4-nano-high"
         },
         "coding": {
           "score": 1404,
-          "rank": 162,
+          "rank": 163,
           "as": "gpt-5.4-nano-high"
         },
         "math": {
           "score": 1406,
-          "rank": 140,
+          "rank": 145,
           "as": "gpt-5.4-nano-high"
         },
         "creative": {
           "score": 1313,
-          "rank": 204,
+          "rank": 205,
           "as": "gpt-5.4-nano-high"
         },
         "vision": {
@@ -4540,12 +4555,12 @@
       }
     },
     "openai/gpt-5-4-pro": {
-      "quality": 97,
+      "quality": 96,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 159.1,
-          "rank": 9,
+          "rank": 11,
           "as": "GPT-5.4 Pro"
         }
       },
@@ -4560,33 +4575,33 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 159.3,
-          "rank": 8,
+          "score": 159.2,
+          "rank": 10,
           "as": "GPT-5.5"
         },
         "text": {
           "score": 1471,
-          "rank": 26,
+          "rank": 27,
           "as": "gpt-5.5-high"
         },
         "coding": {
           "score": 1494,
-          "rank": 28,
+          "rank": 30,
           "as": "gpt-5.5-high"
         },
         "math": {
           "score": 1486,
-          "rank": 23,
+          "rank": 25,
           "as": "gpt-5.5"
         },
         "creative": {
           "score": 1455,
-          "rank": 24,
+          "rank": 26,
           "as": "gpt-5.5-high"
         },
         "webdev": {
           "score": 1512,
-          "rank": 47,
+          "rank": 49,
           "as": "gpt-5.5-xhigh (codex-harness)"
         },
         "vision": {
@@ -4603,12 +4618,12 @@
       }
     },
     "openai/gpt-5-5-pro": {
-      "quality": 99,
+      "quality": 98,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 162.5,
-          "rank": 5,
+          "score": 162.4,
+          "rank": 6,
           "as": "GPT-5.5 Pro"
         }
       },
@@ -4621,13 +4636,13 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 156.3,
+          "score": 156.5,
           "rank": 21,
           "as": "GPT-5.6 Luna"
         },
         "text": {
-          "score": 1432,
-          "rank": 88,
+          "score": 1431,
+          "rank": 89,
           "as": "gpt-5.6-luna-xhigh"
         },
         "coding": {
@@ -4636,18 +4651,18 @@
           "as": "gpt-5.6-luna-xhigh"
         },
         "math": {
-          "score": 1455,
-          "rank": 56,
+          "score": 1456,
+          "rank": 57,
           "as": "gpt-5.6-luna-xhigh"
         },
         "creative": {
-          "score": 1397,
-          "rank": 101,
+          "score": 1395,
+          "rank": 105,
           "as": "gpt-5.6-luna-xhigh"
         },
         "webdev": {
-          "score": 1517,
-          "rank": 45,
+          "score": 1518,
+          "rank": 46,
           "as": "gpt-5.6-luna-xhigh (codex-harness)"
         },
         "vision": {
@@ -4664,37 +4679,37 @@
       }
     },
     "openai/gpt-5-6-sol": {
-      "quality": 98,
+      "quality": 97,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 162,
-          "rank": 6,
+          "score": 161.8,
+          "rank": 8,
           "as": "GPT-5.6 Sol"
         },
         "text": {
           "score": 1456,
-          "rank": 41,
+          "rank": 42,
           "as": "gpt-5.6-sol-xhigh"
         },
         "coding": {
-          "score": 1493,
+          "score": 1496,
           "rank": 29,
           "as": "gpt-5.6-sol-xhigh"
         },
         "math": {
-          "score": 1472,
-          "rank": 39,
+          "score": 1471,
+          "rank": 41,
           "as": "gpt-5.6-sol-xhigh"
         },
         "creative": {
-          "score": 1450,
-          "rank": 30,
+          "score": 1449,
+          "rank": 32,
           "as": "gpt-5.6-sol-xhigh"
         },
         "webdev": {
           "score": 1619,
-          "rank": 20,
+          "rank": 22,
           "as": "gpt-5.6-sol-xhigh (codex-harness)"
         },
         "vision": {
@@ -4711,37 +4726,37 @@
       }
     },
     "openai/gpt-5-6-terra": {
-      "quality": 98,
+      "quality": 97,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 159.3,
-          "rank": 7,
+          "score": 159.8,
+          "rank": 9,
           "as": "GPT-5.6 Terra"
         },
         "text": {
           "score": 1446,
-          "rank": 55,
+          "rank": 57,
           "as": "gpt-5.6-terra-xhigh"
         },
         "coding": {
-          "score": 1484,
-          "rank": 43,
+          "score": 1483,
+          "rank": 45,
           "as": "gpt-5.6-terra-xhigh"
         },
         "math": {
-          "score": 1463,
-          "rank": 49,
+          "score": 1464,
+          "rank": 50,
           "as": "gpt-5.6-terra-xhigh"
         },
         "creative": {
-          "score": 1411,
-          "rank": 75,
+          "score": 1409,
+          "rank": 78,
           "as": "gpt-5.6-terra-xhigh"
         },
         "webdev": {
-          "score": 1520,
-          "rank": 43,
+          "score": 1519,
+          "rank": 45,
           "as": "gpt-5.6-terra-xhigh (codex-harness)"
         },
         "vision": {
@@ -4763,27 +4778,27 @@
       "boards": {
         "eci": {
           "score": 145.5,
-          "rank": 78,
+          "rank": 80,
           "as": "GPT-5 mini"
         },
         "text": {
           "score": 1373,
-          "rank": 173,
+          "rank": 174,
           "as": "gpt-5-mini-high"
         },
         "coding": {
           "score": 1406,
-          "rank": 161,
+          "rank": 162,
           "as": "gpt-5-mini-high"
         },
         "math": {
           "score": 1377,
-          "rank": 176,
+          "rank": 178,
           "as": "gpt-5-mini-high"
         },
         "creative": {
           "score": 1325,
-          "rank": 188,
+          "rank": 189,
           "as": "gpt-5-mini-high"
         },
         "vision": {
@@ -4806,27 +4821,27 @@
       "boards": {
         "eci": {
           "score": 139.4,
-          "rank": 116,
+          "rank": 118,
           "as": "GPT-5 nano"
         },
         "text": {
           "score": 1320,
-          "rank": 225,
+          "rank": 226,
           "as": "gpt-5-nano-high"
         },
         "coding": {
           "score": 1351,
-          "rank": 218,
+          "rank": 219,
           "as": "gpt-5-nano-high"
         },
         "math": {
           "score": 1318,
-          "rank": 216,
+          "rank": 218,
           "as": "gpt-5-nano-high"
         },
         "creative": {
-          "score": 1250,
-          "rank": 260,
+          "score": 1249,
+          "rank": 262,
           "as": "gpt-5-nano-high"
         },
         "vision": {
@@ -4843,12 +4858,12 @@
       }
     },
     "openai/gpt-5-pro": {
-      "quality": 84,
+      "quality": 83,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 150.3,
-          "rank": 45,
+          "rank": 47,
           "as": "GPT-5 Pro"
         }
       },
@@ -4856,37 +4871,54 @@
         "frontiermath": 0.558
       }
     },
+    "openai/gpt-6-1-sol": {
+      "quality": 99,
+      "basis": "webdev",
+      "boards": {
+        "webdev": {
+          "score": 1759,
+          "rank": 3,
+          "as": "gpt-6.1-sol-max"
+        }
+      },
+      "bench": {
+        "gpqa": 0.954,
+        "frontiermath": 0.937,
+        "aime": 1,
+        "simpleqa": 0.739
+      }
+    },
     "openai/gpt-6-astra": {
       "quality": 100,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 166.6,
-          "rank": 1,
+          "score": 166.5,
+          "rank": 2,
           "as": "GPT-6 Astra"
         },
         "text": {
-          "score": 1443,
-          "rank": 64,
+          "score": 1441,
+          "rank": 72,
           "as": "gpt-6-astra-max"
         },
         "coding": {
-          "score": 1488,
-          "rank": 36,
+          "score": 1485,
+          "rank": 43,
           "as": "gpt-6-astra-max"
         },
         "math": {
-          "score": 1463,
-          "rank": 47,
+          "score": 1469,
+          "rank": 45,
           "as": "gpt-6-astra-max"
         },
         "creative": {
-          "score": 1423,
-          "rank": 62,
+          "score": 1418,
+          "rank": 67,
           "as": "gpt-6-astra-max"
         },
         "webdev": {
-          "score": 1792,
+          "score": 1789,
           "rank": 2,
           "as": "gpt-6-astra-max"
         },
@@ -4904,68 +4936,78 @@
       }
     },
     "openai/gpt-6-luna": {
+      "quality": 61,
+      "basis": "text",
+      "boards": {
+        "text": {
+          "score": 1393,
+          "rank": 159,
+          "as": "gpt-6-luna-max"
+        },
+        "coding": {
+          "score": 1444,
+          "rank": 107,
+          "as": "gpt-6-luna-max"
+        },
+        "math": {
+          "score": 1411,
+          "rank": 134,
+          "as": "gpt-6-luna-max"
+        },
+        "creative": {
+          "score": 1361,
+          "rank": 149,
+          "as": "gpt-6-luna-max"
+        },
+        "webdev": {
+          "score": 1582,
+          "rank": 30,
+          "as": "gpt-6-luna-max"
+        }
+      },
+      "bench": {
+        "gpqa": 0.905,
+        "frontiermath": 0.789,
+        "aime": 0.989,
+        "simpleqa": 0.414
+      }
+    },
+    "openai/gpt-6-sol": {
       "quality": 62,
       "basis": "text",
       "boards": {
         "text": {
-          "score": 1392,
-          "rank": 158,
-          "as": "gpt-6-luna-max"
-        },
-        "coding": {
-          "score": 1448,
-          "rank": 98,
-          "as": "gpt-6-luna-max"
-        },
-        "math": {
-          "score": 1396,
-          "rank": 155,
-          "as": "gpt-6-luna-max"
-        },
-        "creative": {
-          "score": 1357,
-          "rank": 152,
-          "as": "gpt-6-luna-max"
-        },
-        "webdev": {
-          "score": 1583,
-          "rank": 26,
-          "as": "gpt-6-luna-max"
-        }
-      },
-      "bench": {}
-    },
-    "openai/gpt-6-sol": {
-      "quality": 63,
-      "basis": "text",
-      "boards": {
-        "text": {
-          "score": 1396,
-          "rank": 153,
+          "score": 1394,
+          "rank": 156,
           "as": "gpt-6-sol-max"
         },
         "coding": {
-          "score": 1453,
-          "rank": 93,
+          "score": 1450,
+          "rank": 96,
           "as": "gpt-6-sol-max"
         },
         "math": {
-          "score": 1404,
-          "rank": 143,
+          "score": 1409,
+          "rank": 139,
           "as": "gpt-6-sol-max"
         },
         "creative": {
-          "score": 1392,
-          "rank": 109,
+          "score": 1378,
+          "rank": 128,
           "as": "gpt-6-sol-max"
         },
         "webdev": {
-          "score": 1692,
-          "rank": 6,
+          "score": 1689,
+          "rank": 7,
           "as": "gpt-6-sol-max"
         }
       },
-      "bench": {}
+      "bench": {
+        "gpqa": 0.943,
+        "frontiermath": 0.898,
+        "aime": 1,
+        "simpleqa": 0.607
+      }
     },
     "openai/gpt-image-1": {
       "quality": 42,
@@ -4978,7 +5020,7 @@
         },
         "image-edit": {
           "score": 1139,
-          "rank": 51,
+          "rank": 53,
           "as": "gpt-image-1"
         }
       },
@@ -4995,7 +5037,7 @@
         },
         "image-edit": {
           "score": 1124,
-          "rank": 53,
+          "rank": 54,
           "as": "gpt-image-1-mini"
         }
       },
@@ -5023,28 +5065,28 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 139.9,
-          "rank": 112,
+          "score": 140,
+          "rank": 114,
           "as": "gpt-oss-120b"
         },
         "text": {
-          "score": 1365,
-          "rank": 185,
+          "score": 1366,
+          "rank": 186,
           "as": "gpt-oss-120b"
         },
         "coding": {
           "score": 1380,
-          "rank": 185,
+          "rank": 186,
           "as": "gpt-oss-120b"
         },
         "math": {
-          "score": 1388,
-          "rank": 170,
+          "score": 1389,
+          "rank": 171,
           "as": "gpt-oss-120b"
         },
         "creative": {
           "score": 1274,
-          "rank": 235,
+          "rank": 236,
           "as": "gpt-oss-120b"
         }
       },
@@ -5059,27 +5101,27 @@
       "boards": {
         "eci": {
           "score": 137.8,
-          "rank": 123,
+          "rank": 125,
           "as": "gpt-oss-20b"
         },
         "text": {
           "score": 1288,
-          "rank": 253,
+          "rank": 254,
           "as": "gpt-oss-20b"
         },
         "coding": {
           "score": 1307,
-          "rank": 246,
+          "rank": 247,
           "as": "gpt-oss-20b"
         },
         "math": {
           "score": 1317,
-          "rank": 217,
+          "rank": 219,
           "as": "gpt-oss-20b"
         },
         "creative": {
           "score": 1201,
-          "rank": 298,
+          "rank": 300,
           "as": "gpt-oss-20b"
         }
       },
@@ -5089,32 +5131,32 @@
       }
     },
     "openai/o1": {
-      "quality": 63,
+      "quality": 62,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 141.9,
-          "rank": 100,
+          "rank": 102,
           "as": "o1"
         },
         "text": {
           "score": 1366,
-          "rank": 183,
+          "rank": 184,
           "as": "o1-2024-12-17"
         },
         "coding": {
           "score": 1367,
-          "rank": 202,
+          "rank": 203,
           "as": "o1-2024-12-17"
         },
         "math": {
           "score": 1388,
-          "rank": 169,
+          "rank": 172,
           "as": "o1-2024-12-17"
         },
         "creative": {
           "score": 1347,
-          "rank": 161,
+          "rank": 162,
           "as": "o1-2024-12-17"
         },
         "vision": {
@@ -5131,32 +5173,32 @@
       }
     },
     "openai/o3": {
-      "quality": 77,
+      "quality": 76,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 146.9,
-          "rank": 63,
+          "rank": 65,
           "as": "o3"
         },
         "text": {
           "score": 1410,
-          "rank": 134,
+          "rank": 135,
           "as": "o3-2025-04-16"
         },
         "coding": {
           "score": 1408,
-          "rank": 159,
+          "rank": 160,
           "as": "o3-2025-04-16"
         },
         "math": {
           "score": 1426,
-          "rank": 101,
+          "rank": 103,
           "as": "o3-2025-04-16"
         },
         "creative": {
           "score": 1358,
-          "rank": 148,
+          "rank": 151,
           "as": "o3-2025-04-16"
         },
         "vision": {
@@ -5174,27 +5216,27 @@
       }
     },
     "openai/o3-mini": {
-      "quality": 60,
+      "quality": 59,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 140.4,
-          "rank": 108,
+          "score": 140.3,
+          "rank": 111,
           "as": "o3-mini"
         },
         "text": {
           "score": 1337,
-          "rank": 212,
+          "rank": 213,
           "as": "o3-mini-high"
         },
         "coding": {
           "score": 1378,
-          "rank": 189,
+          "rank": 190,
           "as": "o3-mini-high"
         },
         "math": {
           "score": 1396,
-          "rank": 157,
+          "rank": 161,
           "as": "o3-mini-high"
         },
         "creative": {
@@ -5211,44 +5253,44 @@
       }
     },
     "openai/o3-pro": {
-      "quality": 78,
+      "quality": 77,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 147.4,
-          "rank": 60,
+          "rank": 62,
           "as": "o3-pro"
         }
       },
       "bench": {}
     },
     "openai/o4-mini": {
-      "quality": 72,
+      "quality": 71,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 145.6,
-          "rank": 77,
+          "rank": 79,
           "as": "o4-mini"
         },
         "text": {
           "score": 1353,
-          "rank": 197,
+          "rank": 198,
           "as": "o4-mini-2025-04-16"
         },
         "coding": {
-          "score": 1369,
-          "rank": 199,
+          "score": 1368,
+          "rank": 200,
           "as": "o4-mini-2025-04-16"
         },
         "math": {
           "score": 1390,
-          "rank": 167,
+          "rank": 169,
           "as": "o4-mini-2025-04-16"
         },
         "creative": {
           "score": 1294,
-          "rank": 216,
+          "rank": 217,
           "as": "o4-mini-2025-04-16"
         },
         "vision": {
@@ -5270,19 +5312,19 @@
       "boards": {
         "webdev": {
           "score": 1348,
-          "rank": 105,
+          "rank": 107,
           "as": "laguna-m.1"
         }
       },
       "bench": {}
     },
     "poolside/laguna-xs-2": {
-      "quality": 16,
+      "quality": 15,
       "basis": "webdev",
       "boards": {
         "webdev": {
           "score": 1302,
-          "rank": 114,
+          "rank": 116,
           "as": "laguna-xs.2"
         }
       },
@@ -5310,7 +5352,7 @@
           "as": "qwen-image-2.1"
         },
         "image-edit": {
-          "score": 1367,
+          "score": 1366,
           "rank": 16,
           "as": "qwen-image-2.1"
         }
@@ -5318,24 +5360,24 @@
       "bench": {}
     },
     "qwen/qwen-image-edit": {
-      "quality": 40,
+      "quality": 39,
       "basis": "image-edit",
       "boards": {
         "image-edit": {
           "score": 1241,
-          "rank": 34,
+          "rank": 35,
           "as": "qwen-image-edit"
         }
       },
       "bench": {}
     },
     "qwen/qwen-image-edit-2511": {
-      "quality": 38,
+      "quality": 36,
       "basis": "image-edit",
       "boards": {
         "image-edit": {
-          "score": 1235,
-          "rank": 35,
+          "score": 1234,
+          "rank": 37,
           "as": "qwen-image-edit-2511"
         }
       },
@@ -5347,7 +5389,7 @@
       "boards": {
         "eci": {
           "score": 132.5,
-          "rank": 144,
+          "rank": 146,
           "as": "Qwen2.5-Max"
         }
       },
@@ -5387,12 +5429,12 @@
       "bench": {}
     },
     "qwen/qwen2-5-32b-instruct": {
-      "quality": 40,
+      "quality": 39,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 128.5,
-          "rank": 162,
+          "rank": 164,
           "as": "Qwen2.5-32B"
         }
       },
@@ -5402,32 +5444,32 @@
       }
     },
     "qwen/qwen2-5-72b-instruct": {
-      "quality": 42,
+      "quality": 41,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 129,
-          "rank": 157,
+          "rank": 159,
           "as": "Qwen2.5-72B"
         },
         "text": {
           "score": 1269,
-          "rank": 275,
+          "rank": 276,
           "as": "qwen2.5-72b-instruct"
         },
         "coding": {
           "score": 1293,
-          "rank": 255,
+          "rank": 256,
           "as": "qwen2.5-72b-instruct"
         },
         "math": {
           "score": 1283,
-          "rank": 242,
+          "rank": 244,
           "as": "qwen2.5-72b-instruct"
         },
         "creative": {
           "score": 1221,
-          "rank": 287,
+          "rank": 288,
           "as": "qwen2.5-72b-instruct"
         }
       },
@@ -5441,8 +5483,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 118.4,
-          "rank": 198,
+          "score": 118.5,
+          "rank": 200,
           "as": "Qwen2.5-7B"
         }
       },
@@ -5456,8 +5498,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 87.4,
-          "rank": 265,
+          "score": 88.2,
+          "rank": 267,
           "as": "Qwen2.5-Coder-0.5B"
         }
       },
@@ -5468,8 +5510,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 102.6,
-          "rank": 239,
+          "score": 103,
+          "rank": 241,
           "as": "Qwen2.5-Coder (1.5B)"
         }
       },
@@ -5480,8 +5522,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 116.3,
-          "rank": 208,
+          "score": 116.4,
+          "rank": 210,
           "as": "Qwen2.5-Coder-14B"
         }
       },
@@ -5492,28 +5534,28 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 119.4,
-          "rank": 193,
+          "score": 119.5,
+          "rank": 195,
           "as": "Qwen2.5-Coder-32B"
         },
         "text": {
           "score": 1230,
-          "rank": 294,
+          "rank": 295,
           "as": "qwen2.5-coder-32b-instruct"
         },
         "coding": {
           "score": 1276,
-          "rank": 269,
+          "rank": 270,
           "as": "qwen2.5-coder-32b-instruct"
         },
         "math": {
           "score": 1251,
-          "rank": 271,
+          "rank": 272,
           "as": "qwen2.5-coder-32b-instruct"
         },
         "creative": {
           "score": 1174,
-          "rank": 313,
+          "rank": 314,
           "as": "qwen2.5-coder-32b-instruct"
         }
       },
@@ -5524,8 +5566,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 107.4,
-          "rank": 227,
+          "score": 107.8,
+          "rank": 229,
           "as": "Qwen2.5-Coder-3B"
         }
       },
@@ -5536,8 +5578,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 112.9,
-          "rank": 214,
+          "score": 113.2,
+          "rank": 216,
           "as": "Qwen2.5-Coder (7B)"
         }
       },
@@ -5589,12 +5631,12 @@
       }
     },
     "qwen/qwen3-14b": {
-      "quality": 55,
+      "quality": 54,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 138.2,
-          "rank": 122,
+          "rank": 124,
           "as": "Qwen3-14B"
         }
       },
@@ -5604,32 +5646,32 @@
       }
     },
     "qwen/qwen3-235b-a22b": {
-      "quality": 57,
+      "quality": 56,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 139.4,
-          "rank": 117,
+          "rank": 119,
           "as": "Qwen3-235B-A22B"
         },
         "text": {
           "score": 1367,
-          "rank": 181,
+          "rank": 183,
           "as": "qwen3-235b-a22b"
         },
         "coding": {
           "score": 1385,
-          "rank": 181,
+          "rank": 182,
           "as": "qwen3-235b-a22b"
         },
         "math": {
           "score": 1395,
-          "rank": 160,
+          "rank": 163,
           "as": "qwen3-235b-a22b"
         },
         "creative": {
           "score": 1317,
-          "rank": 200,
+          "rank": 201,
           "as": "qwen3-235b-a22b"
         }
       },
@@ -5638,17 +5680,17 @@
       }
     },
     "qwen/qwen3-235b-a22b-instruct-2507": {
-      "quality": 56,
+      "quality": 55,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 138.9,
-          "rank": 119,
+          "rank": 121,
           "as": "Qwen3-235B-A22B-Instruct (Jul 2025)"
         },
         "text": {
           "score": 1419,
-          "rank": 114,
+          "rank": 115,
           "as": "qwen3-235b-a22b-instruct-2507"
         },
         "coding": {
@@ -5658,12 +5700,12 @@
         },
         "math": {
           "score": 1431,
-          "rank": 92,
+          "rank": 94,
           "as": "qwen3-235b-a22b-instruct-2507"
         },
         "creative": {
           "score": 1374,
-          "rank": 132,
+          "rank": 133,
           "as": "qwen3-235b-a22b-instruct-2507"
         }
       },
@@ -5675,27 +5717,27 @@
       "boards": {
         "eci": {
           "score": 136.2,
-          "rank": 129,
+          "rank": 131,
           "as": "Qwen3-30B-A3B"
         },
         "text": {
           "score": 1317,
-          "rank": 232,
+          "rank": 233,
           "as": "qwen3-30b-a3b"
         },
         "coding": {
           "score": 1337,
-          "rank": 226,
+          "rank": 227,
           "as": "qwen3-30b-a3b"
         },
         "math": {
           "score": 1354,
-          "rank": 203,
+          "rank": 205,
           "as": "qwen3-30b-a3b"
         },
         "creative": {
           "score": 1271,
-          "rank": 239,
+          "rank": 240,
           "as": "qwen3-30b-a3b"
         }
       },
@@ -5710,22 +5752,22 @@
       "boards": {
         "eci": {
           "score": 137.4,
-          "rank": 126,
+          "rank": 128,
           "as": "Qwen3-30B-A3B-Instruct (Jul 2025)"
         },
         "text": {
           "score": 1384,
-          "rank": 163,
+          "rank": 164,
           "as": "qwen3-30b-a3b-instruct-2507"
         },
         "coding": {
           "score": 1416,
-          "rank": 146,
+          "rank": 147,
           "as": "qwen3-30b-a3b-instruct-2507"
         },
         "math": {
           "score": 1394,
-          "rank": 161,
+          "rank": 164,
           "as": "qwen3-30b-a3b-instruct-2507"
         },
         "creative": {
@@ -5745,7 +5787,7 @@
       "boards": {
         "eci": {
           "score": 138.5,
-          "rank": 120,
+          "rank": 122,
           "as": "Qwen3-32B"
         },
         "text": {
@@ -5755,17 +5797,17 @@
         },
         "coding": {
           "score": 1358,
-          "rank": 215,
+          "rank": 216,
           "as": "qwen3-32b"
         },
         "math": {
-          "score": 1398,
-          "rank": 150,
+          "score": 1399,
+          "rank": 153,
           "as": "qwen3-32b"
         },
         "creative": {
           "score": 1297,
-          "rank": 214,
+          "rank": 215,
           "as": "qwen3-32b"
         }
       },
@@ -5797,27 +5839,27 @@
       "boards": {
         "text": {
           "score": 1417,
-          "rank": 119,
+          "rank": 120,
           "as": "qwen3.5-122b-a10b"
         },
         "coding": {
           "score": 1436,
-          "rank": 120,
+          "rank": 121,
           "as": "qwen3.5-122b-a10b"
         },
         "math": {
           "score": 1432,
-          "rank": 89,
+          "rank": 91,
           "as": "qwen3.5-122b-a10b"
         },
         "creative": {
-          "score": 1369,
-          "rank": 139,
+          "score": 1368,
+          "rank": 140,
           "as": "qwen3.5-122b-a10b"
         },
         "webdev": {
           "score": 1360,
-          "rank": 99,
+          "rank": 101,
           "as": "qwen3.5-122b-a10b"
         },
         "vision": {
@@ -5834,27 +5876,27 @@
       "boards": {
         "text": {
           "score": 1409,
-          "rank": 135,
+          "rank": 136,
           "as": "qwen3.5-27b"
         },
         "coding": {
           "score": 1427,
-          "rank": 132,
+          "rank": 133,
           "as": "qwen3.5-27b"
         },
         "math": {
-          "score": 1428,
-          "rank": 97,
+          "score": 1429,
+          "rank": 99,
           "as": "qwen3.5-27b"
         },
         "creative": {
           "score": 1362,
-          "rank": 146,
+          "rank": 147,
           "as": "qwen3.5-27b"
         },
         "webdev": {
           "score": 1357,
-          "rank": 101,
+          "rank": 103,
           "as": "qwen3.5-27b"
         },
         "vision": {
@@ -5866,12 +5908,12 @@
       "bench": {}
     },
     "qwen/qwen3-5-35b-a3b": {
-      "quality": 65,
+      "quality": 64,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 142.5,
-          "rank": 95,
+          "rank": 97,
           "as": "Qwen3.5-35B-A3B"
         },
         "text": {
@@ -5881,22 +5923,22 @@
         },
         "coding": {
           "score": 1410,
-          "rank": 156,
+          "rank": 157,
           "as": "qwen3.5-35b-a3b"
         },
         "math": {
-          "score": 1404,
-          "rank": 145,
+          "score": 1403,
+          "rank": 149,
           "as": "qwen3.5-35b-a3b"
         },
         "creative": {
-          "score": 1347,
-          "rank": 162,
+          "score": 1346,
+          "rank": 165,
           "as": "qwen3.5-35b-a3b"
         },
         "webdev": {
           "score": 1253,
-          "rank": 122,
+          "rank": 124,
           "as": "qwen3.5-35b-a3b"
         }
       },
@@ -5910,33 +5952,33 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 146.6,
-          "rank": 67,
+          "score": 146.7,
+          "rank": 69,
           "as": "Qwen3.5 397B-A17B"
         },
         "text": {
           "score": 1438,
-          "rank": 76,
+          "rank": 77,
           "as": "qwen3.5-397b-a17b"
         },
         "coding": {
           "score": 1464,
-          "rank": 73,
+          "rank": 74,
           "as": "qwen3.5-397b-a17b"
         },
         "math": {
           "score": 1455,
-          "rank": 57,
+          "rank": 62,
           "as": "qwen3.5-397b-a17b"
         },
         "creative": {
           "score": 1401,
-          "rank": 90,
+          "rank": 96,
           "as": "qwen3.5-397b-a17b"
         },
         "webdev": {
           "score": 1400,
-          "rank": 83,
+          "rank": 85,
           "as": "qwen3.5-397b-a17b"
         },
         "vision": {
@@ -5965,7 +6007,7 @@
       "boards": {
         "eci": {
           "score": 139.5,
-          "rank": 115,
+          "rank": 117,
           "as": "Qwen3.5-9B"
         }
       },
@@ -5975,37 +6017,37 @@
       }
     },
     "qwen/qwen3-5-flash": {
-      "quality": 68,
+      "quality": 67,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 144,
-          "rank": 87,
+          "rank": 89,
           "as": "Qwen 3.5 Flash (hosted 35B-A3B)"
         },
         "text": {
           "score": 1397,
-          "rank": 149,
+          "rank": 150,
           "as": "qwen3.5-flash"
         },
         "coding": {
           "score": 1412,
-          "rank": 154,
+          "rank": 155,
           "as": "qwen3.5-flash"
         },
         "math": {
           "score": 1407,
-          "rank": 139,
+          "rank": 144,
           "as": "qwen3.5-flash"
         },
         "creative": {
           "score": 1343,
-          "rank": 169,
+          "rank": 171,
           "as": "qwen3.5-flash"
         },
         "webdev": {
           "score": 1243,
-          "rank": 124,
+          "rank": 126,
           "as": "qwen3.5-flash"
         }
       },
@@ -6017,12 +6059,12 @@
       }
     },
     "qwen/qwen3-5-plus": {
-      "quality": 76,
+      "quality": 75,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 146.8,
-          "rank": 65,
+          "rank": 67,
           "as": "Qwen 3.5 Plus (hosted 397B-A17B)"
         }
       },
@@ -6033,12 +6075,12 @@
       }
     },
     "qwen/qwen3-6-27b": {
-      "quality": 75,
+      "quality": 74,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 146.5,
-          "rank": 68,
+          "rank": 70,
           "as": "Qwen3.6 27B"
         }
       },
@@ -6054,7 +6096,7 @@
       "boards": {
         "eci": {
           "score": 143.9,
-          "rank": 88,
+          "rank": 90,
           "as": "Qwen 3.6 35B-A3B"
         }
       },
@@ -6070,7 +6112,7 @@
       "boards": {
         "eci": {
           "score": 143.3,
-          "rank": 91,
+          "rank": 93,
           "as": "Qwen 3.6 Flash"
         }
       },
@@ -6082,27 +6124,27 @@
       }
     },
     "qwen/qwen3-6-max-preview": {
-      "quality": 81,
+      "quality": 80,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 149.3,
-          "rank": 53,
+          "score": 149.2,
+          "rank": 55,
           "as": "Qwen 3.6 Max (Preview)"
         },
         "text": {
           "score": 1447,
-          "rank": 54,
+          "rank": 55,
           "as": "qwen3.6-max-preview"
         },
         "coding": {
           "score": 1472,
-          "rank": 60,
+          "rank": 61,
           "as": "qwen3.6-max-preview"
         },
         "math": {
           "score": 1464,
-          "rank": 45,
+          "rank": 48,
           "as": "qwen3.6-max-preview"
         },
         "creative": {
@@ -6112,7 +6154,7 @@
         },
         "webdev": {
           "score": 1482,
-          "rank": 56,
+          "rank": 58,
           "as": "qwen3.6-max-preview"
         }
       },
@@ -6128,23 +6170,23 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 147.7,
-          "rank": 59,
+          "score": 147.6,
+          "rank": 61,
           "as": "Qwen 3.6 Plus"
         },
         "text": {
           "score": 1437,
-          "rank": 78,
+          "rank": 79,
           "as": "qwen3.6-plus"
         },
         "coding": {
           "score": 1467,
-          "rank": 67,
+          "rank": 68,
           "as": "qwen3.6-plus"
         },
         "math": {
           "score": 1450,
-          "rank": 62,
+          "rank": 64,
           "as": "qwen3.6-plus"
         },
         "creative": {
@@ -6154,7 +6196,7 @@
         },
         "webdev": {
           "score": 1461,
-          "rank": 62,
+          "rank": 64,
           "as": "qwen3.6-plus"
         }
       },
@@ -6167,12 +6209,12 @@
       }
     },
     "qwen/qwen3-7-flash": {
-      "quality": 70,
+      "quality": 69,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 144.6,
-          "rank": 82,
+          "rank": 84,
           "as": "Qwen3.7 Flash"
         }
       },
@@ -6188,17 +6230,17 @@
       "boards": {
         "eci": {
           "score": 153.7,
-          "rank": 35,
+          "rank": 37,
           "as": "Qwen3.7-Max"
         },
         "text": {
-          "score": 1476,
-          "rank": 21,
+          "score": 1475,
+          "rank": 24,
           "as": "qwen3.7-max-preview"
         },
         "coding": {
-          "score": 1498,
-          "rank": 24,
+          "score": 1497,
+          "rank": 27,
           "as": "qwen3.7-max-preview"
         },
         "math": {
@@ -6207,13 +6249,13 @@
           "as": "qwen3.7-max-preview"
         },
         "creative": {
-          "score": 1450,
-          "rank": 32,
+          "score": 1449,
+          "rank": 33,
           "as": "qwen3.7-max-preview"
         },
         "webdev": {
           "score": 1515,
-          "rank": 46,
+          "rank": 48,
           "as": "qwen3.7-max-20260517"
         }
       },
@@ -6226,32 +6268,32 @@
       }
     },
     "qwen/qwen3-7-plus": {
-      "quality": 78,
+      "quality": 77,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 147.4,
-          "rank": 61,
+          "rank": 63,
           "as": "Qwen3.7-Plus"
         },
         "text": {
-          "score": 1454,
-          "rank": 43,
+          "score": 1455,
+          "rank": 44,
           "as": "qwen3.7-plus"
         },
         "coding": {
           "score": 1473,
-          "rank": 57,
+          "rank": 58,
           "as": "qwen3.7-plus"
         },
         "math": {
-          "score": 1467,
-          "rank": 44,
+          "score": 1466,
+          "rank": 47,
           "as": "qwen3.7-plus"
         },
         "creative": {
           "score": 1439,
-          "rank": 47,
+          "rank": 45,
           "as": "qwen3.7-plus"
         },
         "vision": {
@@ -6267,12 +6309,12 @@
       }
     },
     "qwen/qwen3-8-27b": {
-      "quality": 81,
+      "quality": 80,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 149.4,
-          "rank": 52,
+          "rank": 54,
           "as": "Qwen 3.8 27B"
         },
         "text": {
@@ -6281,23 +6323,23 @@
           "as": "qwen3.8-27b"
         },
         "coding": {
-          "score": 1487,
-          "rank": 39,
+          "score": 1488,
+          "rank": 38,
           "as": "qwen3.8-27b"
         },
         "math": {
-          "score": 1453,
-          "rank": 61,
+          "score": 1461,
+          "rank": 53,
           "as": "qwen3.8-27b"
         },
         "creative": {
-          "score": 1382,
-          "rank": 124,
+          "score": 1380,
+          "rank": 127,
           "as": "qwen3.8-27b"
         },
         "webdev": {
-          "score": 1592,
-          "rank": 25,
+          "score": 1590,
+          "rank": 27,
           "as": "qwen3.8-27b"
         },
         "vision": {
@@ -6309,49 +6351,49 @@
       "bench": {}
     },
     "qwen/qwen3-8-flash-next": {
-      "quality": 92,
+      "quality": 90,
       "basis": "webdev",
       "boards": {
         "webdev": {
-          "score": 1637,
-          "rank": 12,
+          "score": 1638,
+          "rank": 14,
           "as": "qwen3.8-flash-next"
         }
       },
       "bench": {}
     },
     "qwen/qwen3-8-max": {
-      "quality": 94,
+      "quality": 93,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 156.7,
-          "rank": 17,
+          "score": 156.6,
+          "rank": 20,
           "as": "Qwen 3.8 Max"
         },
         "text": {
-          "score": 1480,
+          "score": 1481,
           "rank": 17,
           "as": "qwen3.8-max"
         },
         "coding": {
-          "score": 1499,
-          "rank": 20,
+          "score": 1500,
+          "rank": 21,
           "as": "qwen3.8-max"
         },
         "math": {
-          "score": 1498,
-          "rank": 13,
+          "score": 1499,
+          "rank": 14,
           "as": "qwen3.8-max"
         },
         "creative": {
           "score": 1478,
-          "rank": 14,
+          "rank": 15,
           "as": "qwen3.8-max"
         },
         "webdev": {
           "score": 1671,
-          "rank": 7,
+          "rank": 9,
           "as": "qwen3.8-max"
         },
         "vision": {
@@ -6363,12 +6405,12 @@
       "bench": {}
     },
     "qwen/qwen3-8b": {
-      "quality": 52,
+      "quality": 51,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 136.2,
-          "rank": 130,
+          "rank": 132,
           "as": "Qwen3-8B"
         }
       },
@@ -6383,27 +6425,27 @@
       "boards": {
         "text": {
           "score": 1356,
-          "rank": 193,
+          "rank": 194,
           "as": "qwen3-coder-480b-a35b-instruct"
         },
         "coding": {
-          "score": 1413,
-          "rank": 152,
+          "score": 1412,
+          "rank": 153,
           "as": "qwen3-coder-480b-a35b-instruct"
         },
         "math": {
           "score": 1364,
-          "rank": 192,
+          "rank": 194,
           "as": "qwen3-coder-480b-a35b-instruct"
         },
         "creative": {
           "score": 1333,
-          "rank": 177,
+          "rank": 178,
           "as": "qwen3-coder-480b-a35b-instruct"
         },
         "webdev": {
           "score": 1274,
-          "rank": 117,
+          "rank": 119,
           "as": "qwen3-coder-480b-a35b-instruct"
         }
       },
@@ -6415,27 +6457,27 @@
       "boards": {
         "eci": {
           "score": 142.4,
-          "rank": 99,
+          "rank": 101,
           "as": "Qwen3-Max"
         },
         "text": {
           "score": 1439,
-          "rank": 73,
+          "rank": 74,
           "as": "qwen3-max-preview"
         },
         "coding": {
           "score": 1456,
-          "rank": 83,
+          "rank": 84,
           "as": "qwen3-max-preview"
         },
         "math": {
           "score": 1447,
-          "rank": 67,
+          "rank": 69,
           "as": "qwen3-max-preview"
         },
         "creative": {
-          "score": 1401,
-          "rank": 91,
+          "score": 1402,
+          "rank": 90,
           "as": "qwen3-max-preview"
         }
       },
@@ -6447,27 +6489,27 @@
       }
     },
     "qwen/qwen3-next-80b-a3b-instruct": {
-      "quality": 72,
+      "quality": 71,
       "basis": "text",
       "boards": {
         "text": {
           "score": 1417,
-          "rank": 117,
+          "rank": 119,
           "as": "qwen3-next-80b-a3b-instruct"
         },
         "coding": {
-          "score": 1441,
-          "rank": 110,
+          "score": 1440,
+          "rank": 111,
           "as": "qwen3-next-80b-a3b-instruct"
         },
         "math": {
-          "score": 1440,
-          "rank": 77,
+          "score": 1439,
+          "rank": 80,
           "as": "qwen3-next-80b-a3b-instruct"
         },
         "creative": {
           "score": 1333,
-          "rank": 179,
+          "rank": 180,
           "as": "qwen3-next-80b-a3b-instruct"
         }
       },
@@ -6479,22 +6521,22 @@
       "boards": {
         "text": {
           "score": 1368,
-          "rank": 180,
+          "rank": 181,
           "as": "qwen3-next-80b-a3b-thinking"
         },
         "coding": {
           "score": 1392,
-          "rank": 173,
+          "rank": 174,
           "as": "qwen3-next-80b-a3b-thinking"
         },
         "math": {
-          "score": 1399,
-          "rank": 149,
+          "score": 1398,
+          "rank": 154,
           "as": "qwen3-next-80b-a3b-thinking"
         },
         "creative": {
-          "score": 1314,
-          "rank": 201,
+          "score": 1315,
+          "rank": 202,
           "as": "qwen3-next-80b-a3b-thinking"
         }
       },
@@ -6514,7 +6556,7 @@
       "boards": {
         "text": {
           "score": 1403,
-          "rank": 143,
+          "rank": 144,
           "as": "step-3.5-flash"
         },
         "coding": {
@@ -6524,24 +6566,24 @@
         },
         "math": {
           "score": 1408,
-          "rank": 136,
+          "rank": 141,
           "as": "step-3.5-flash"
         },
         "creative": {
           "score": 1357,
-          "rank": 151,
+          "rank": 153,
           "as": "step-3.5-flash"
         }
       },
       "bench": {}
     },
     "stepfun/step-5-preview": {
-      "quality": 78,
+      "quality": 77,
       "basis": "webdev",
       "boards": {
         "webdev": {
-          "score": 1569,
-          "rank": 30,
+          "score": 1570,
+          "rank": 32,
           "as": "step-5-preview-high"
         }
       },
@@ -6558,71 +6600,71 @@
         },
         "coding": {
           "score": 1465,
-          "rank": 72,
+          "rank": 73,
           "as": "hy3"
         },
         "math": {
-          "score": 1475,
-          "rank": 35,
+          "score": 1473,
+          "rank": 38,
           "as": "hy3"
         },
         "creative": {
-          "score": 1399,
-          "rank": 98,
+          "score": 1403,
+          "rank": 89,
           "as": "hy3"
         },
         "webdev": {
-          "score": 1509,
-          "rank": 49,
+          "score": 1508,
+          "rank": 52,
           "as": "hy3"
         }
       },
       "bench": {}
     },
     "tencent/hy4-preview": {
-      "quality": 90,
+      "quality": 89,
       "basis": "webdev",
       "boards": {
         "webdev": {
           "score": 1633,
-          "rank": 14,
+          "rank": 16,
           "as": "hy4-preview"
         }
       },
       "bench": {}
     },
     "thinkingmachines/Inkling": {
-      "quality": 79,
+      "quality": 78,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 148.6,
-          "rank": 57,
+          "rank": 59,
           "as": "Inkling"
         },
         "text": {
-          "score": 1443,
-          "rank": 66,
+          "score": 1442,
+          "rank": 69,
           "as": "inkling"
         },
         "coding": {
-          "score": 1463,
+          "score": 1464,
           "rank": 75,
           "as": "inkling"
         },
         "math": {
-          "score": 1482,
-          "rank": 26,
+          "score": 1479,
+          "rank": 32,
           "as": "inkling"
         },
         "creative": {
-          "score": 1390,
-          "rank": 113,
+          "score": 1386,
+          "rank": 120,
           "as": "inkling"
         },
         "webdev": {
           "score": 1412,
-          "rank": 78,
+          "rank": 80,
           "as": "inkling"
         }
       },
@@ -6633,40 +6675,40 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 94.5,
-          "rank": 250,
+          "score": 95.1,
+          "rank": 252,
           "as": "Falcon-7B"
         }
       },
       "bench": {}
     },
     "upstage/solar-pro4": {
-      "quality": 61,
+      "quality": 60,
       "basis": "text",
       "boards": {
         "text": {
           "score": 1386,
-          "rank": 162,
+          "rank": 163,
           "as": "solar-pro4"
         },
         "coding": {
-          "score": 1439,
-          "rank": 112,
+          "score": 1438,
+          "rank": 115,
           "as": "solar-pro4"
         },
         "math": {
-          "score": 1418,
-          "rank": 119,
+          "score": 1417,
+          "rank": 125,
           "as": "solar-pro4"
         },
         "creative": {
-          "score": 1313,
-          "rank": 203,
+          "score": 1314,
+          "rank": 204,
           "as": "solar-pro4"
         },
         "webdev": {
-          "score": 1371,
-          "rank": 96,
+          "score": 1370,
+          "rank": 98,
           "as": "solar-pro4"
         }
       },
@@ -6678,7 +6720,7 @@
       "boards": {
         "eci": {
           "score": 152,
-          "rank": 40,
+          "rank": 42,
           "as": "Grok 4.20"
         }
       },
@@ -6694,33 +6736,33 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 149.1,
-          "rank": 55,
+          "score": 149.2,
+          "rank": 56,
           "as": "Grok 4.3 Beta"
         },
         "text": {
           "score": 1397,
-          "rank": 150,
+          "rank": 151,
           "as": "grok-4.3"
         },
         "coding": {
-          "score": 1415,
-          "rank": 147,
+          "score": 1414,
+          "rank": 148,
           "as": "grok-4.3"
         },
         "math": {
-          "score": 1388,
-          "rank": 171,
+          "score": 1387,
+          "rank": 173,
           "as": "grok-4.3"
         },
         "creative": {
           "score": 1380,
-          "rank": 126,
+          "rank": 125,
           "as": "grok-4.3"
         },
         "webdev": {
           "score": 1357,
-          "rank": 102,
+          "rank": 104,
           "as": "grok-4.3"
         },
         "vision": {
@@ -6737,37 +6779,37 @@
       }
     },
     "xai/grok-4-5": {
-      "quality": 88,
+      "quality": 87,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 154,
-          "rank": 34,
+          "rank": 36,
           "as": "Grok 4.5"
         },
         "text": {
-          "score": 1447,
-          "rank": 53,
+          "score": 1448,
+          "rank": 54,
           "as": "grok-4.5"
         },
         "coding": {
-          "score": 1473,
-          "rank": 56,
+          "score": 1474,
+          "rank": 57,
           "as": "grok-4.5"
         },
         "math": {
-          "score": 1457,
-          "rank": 52,
+          "score": 1459,
+          "rank": 54,
           "as": "grok-4.5"
         },
         "creative": {
-          "score": 1442,
-          "rank": 38,
+          "score": 1441,
+          "rank": 42,
           "as": "grok-4.5"
         },
         "webdev": {
           "score": 1552,
-          "rank": 34,
+          "rank": 36,
           "as": "grok-4.5"
         },
         "vision": {
@@ -6784,37 +6826,37 @@
       }
     },
     "xai/grok-4-6": {
-      "quality": 94,
+      "quality": 93,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 156.5,
-          "rank": 18,
+          "score": 156.6,
+          "rank": 19,
           "as": "Grok 4.6"
         },
         "text": {
           "score": 1427,
-          "rank": 94,
+          "rank": 96,
           "as": "grok-4.6-high"
         },
         "coding": {
-          "score": 1464,
-          "rank": 74,
+          "score": 1463,
+          "rank": 76,
           "as": "grok-4.6-high"
         },
         "math": {
-          "score": 1416,
-          "rank": 125,
+          "score": 1419,
+          "rank": 121,
           "as": "grok-4.6-high"
         },
         "creative": {
-          "score": 1429,
-          "rank": 57,
+          "score": 1430,
+          "rank": 58,
           "as": "grok-4.6-high"
         },
         "webdev": {
           "score": 1620,
-          "rank": 19,
+          "rank": 20,
           "as": "grok-4.6-high"
         },
         "vision": {
@@ -6835,28 +6877,28 @@
       "basis": "text",
       "boards": {
         "text": {
-          "score": 1397,
+          "score": 1400,
           "rank": 148,
           "as": "grok-4.7-xhigh"
         },
         "coding": {
-          "score": 1423,
-          "rank": 138,
+          "score": 1426,
+          "rank": 136,
           "as": "grok-4.7-xhigh"
         },
         "math": {
-          "score": 1393,
-          "rank": 162,
+          "score": 1414,
+          "rank": 130,
           "as": "grok-4.7-xhigh"
         },
         "creative": {
-          "score": 1391,
-          "rank": 111,
+          "score": 1397,
+          "rank": 103,
           "as": "grok-4.7-xhigh"
         },
         "webdev": {
           "score": 1636,
-          "rank": 13,
+          "rank": 15,
           "as": "grok-4.7-xhigh"
         }
       },
@@ -6873,19 +6915,19 @@
         },
         "image-edit": {
           "score": 1329,
-          "rank": 19,
+          "rank": 20,
           "as": "grok-imagine-image"
         }
       },
       "bench": {}
     },
     "xai/grok-imagine-image-quality": {
-      "quality": 84,
+      "quality": 86,
       "basis": "image-edit",
       "boards": {
         "image-edit": {
-          "score": 1390,
-          "rank": 10,
+          "score": 1391,
+          "rank": 9,
           "as": "grok-imagine-image-quality (20260519)"
         }
       },
@@ -6908,28 +6950,28 @@
       "basis": "text",
       "boards": {
         "text": {
-          "score": 1427,
-          "rank": 93,
+          "score": 1428,
+          "rank": 94,
           "as": "mimo-v2.5"
         },
         "coding": {
           "score": 1469,
-          "rank": 65,
+          "rank": 66,
           "as": "mimo-v2.5"
         },
         "math": {
           "score": 1436,
-          "rank": 81,
+          "rank": 83,
           "as": "mimo-v2.5"
         },
         "creative": {
-          "score": 1392,
-          "rank": 107,
+          "score": 1393,
+          "rank": 109,
           "as": "mimo-v2.5"
         },
         "webdev": {
           "score": 1438,
-          "rank": 70,
+          "rank": 72,
           "as": "mimo-v2.5"
         },
         "vision": {
@@ -6946,27 +6988,27 @@
       "boards": {
         "text": {
           "score": 1465,
-          "rank": 34,
+          "rank": 35,
           "as": "mimo-v2.5-pro"
         },
         "coding": {
           "score": 1502,
-          "rank": 19,
+          "rank": 20,
           "as": "mimo-v2.5-pro"
         },
         "math": {
-          "score": 1480,
+          "score": 1481,
           "rank": 29,
           "as": "mimo-v2.5-pro"
         },
         "creative": {
-          "score": 1440,
-          "rank": 44,
+          "score": 1439,
+          "rank": 46,
           "as": "mimo-v2.5-pro"
         },
         "webdev": {
           "score": 1477,
-          "rank": 57,
+          "rank": 59,
           "as": "mimo-v2.5-pro"
         }
       },
@@ -6977,23 +7019,23 @@
       "basis": "text",
       "boards": {
         "text": {
-          "score": 1459,
-          "rank": 38,
+          "score": 1458,
+          "rank": 39,
           "as": "mimo-v2.6-flash"
         },
         "coding": {
-          "score": 1516,
-          "rank": 11,
+          "score": 1512,
+          "rank": 13,
           "as": "mimo-v2.6-flash"
         },
         "math": {
-          "score": 1477,
-          "rank": 32,
+          "score": 1476,
+          "rank": 34,
           "as": "mimo-v2.6-flash"
         },
         "creative": {
-          "score": 1408,
-          "rank": 78,
+          "score": 1401,
+          "rank": 95,
           "as": "mimo-v2.6-flash"
         },
         "vision": {
@@ -7010,27 +7052,27 @@
       "boards": {
         "text": {
           "score": 1491,
-          "rank": 9,
+          "rank": 10,
           "as": "mimo-v2.6-pro"
         },
         "coding": {
-          "score": 1538,
+          "score": 1535,
           "rank": 2,
           "as": "mimo-v2.6-pro"
         },
         "math": {
           "score": 1497,
-          "rank": 14,
-          "as": "mimo-v2.6-pro"
-        },
-        "creative": {
-          "score": 1465,
           "rank": 17,
           "as": "mimo-v2.6-pro"
         },
-        "webdev": {
-          "score": 1618,
+        "creative": {
+          "score": 1464,
           "rank": 21,
+          "as": "mimo-v2.6-pro"
+        },
+        "webdev": {
+          "score": 1619,
+          "rank": 23,
           "as": "mimo-v2.6-pro"
         },
         "vision": {
@@ -7042,32 +7084,32 @@
       "bench": {}
     },
     "xiaomi/mimo-v2-flash": {
-      "quality": 68,
+      "quality": 67,
       "basis": "text",
       "boards": {
         "text": {
           "score": 1411,
-          "rank": 133,
+          "rank": 134,
           "as": "mimo-v2-flash (non-thinking)"
         },
         "coding": {
           "score": 1443,
-          "rank": 107,
+          "rank": 108,
           "as": "mimo-v2-flash (non-thinking)"
         },
         "math": {
           "score": 1396,
-          "rank": 158,
+          "rank": 160,
           "as": "mimo-v2-flash (non-thinking)"
         },
         "creative": {
           "score": 1375,
-          "rank": 131,
+          "rank": 132,
           "as": "mimo-v2-flash (non-thinking)"
         },
         "webdev": {
           "score": 1330,
-          "rank": 110,
+          "rank": 112,
           "as": "mimo-v2-flash (non-thinking)"
         }
       },
@@ -7078,8 +7120,8 @@
       "basis": "text",
       "boards": {
         "text": {
-          "score": 1424,
-          "rank": 102,
+          "score": 1423,
+          "rank": 103,
           "as": "mimo-v2-omni"
         },
         "coding": {
@@ -7088,13 +7130,13 @@
           "as": "mimo-v2-omni"
         },
         "math": {
-          "score": 1432,
-          "rank": 87,
+          "score": 1431,
+          "rank": 95,
           "as": "mimo-v2-omni"
         },
         "creative": {
-          "score": 1393,
-          "rank": 106,
+          "score": 1392,
+          "rank": 110,
           "as": "mimo-v2-omni"
         },
         "vision": {
@@ -7111,27 +7153,27 @@
       "boards": {
         "text": {
           "score": 1436,
-          "rank": 81,
+          "rank": 82,
           "as": "mimo-v2-pro"
         },
         "coding": {
           "score": 1476,
-          "rank": 54,
+          "rank": 55,
           "as": "mimo-v2-pro"
         },
         "math": {
           "score": 1447,
-          "rank": 66,
+          "rank": 68,
           "as": "mimo-v2-pro"
         },
         "creative": {
           "score": 1415,
-          "rank": 70,
+          "rank": 72,
           "as": "mimo-v2-pro"
         },
         "webdev": {
           "score": 1433,
-          "rank": 74,
+          "rank": 76,
           "as": "mimo-v2-pro"
         }
       },
@@ -7143,22 +7185,22 @@
       "boards": {
         "text": {
           "score": 1430,
-          "rank": 89,
+          "rank": 90,
           "as": "glm-4.5"
         },
         "coding": {
           "score": 1434,
-          "rank": 123,
+          "rank": 124,
           "as": "glm-4.5"
         },
         "math": {
           "score": 1427,
-          "rank": 99,
+          "rank": 101,
           "as": "glm-4.5"
         },
         "creative": {
           "score": 1395,
-          "rank": 102,
+          "rank": 104,
           "as": "glm-4.5"
         }
       },
@@ -7170,17 +7212,17 @@
       "boards": {
         "text": {
           "score": 1384,
-          "rank": 164,
+          "rank": 165,
           "as": "glm-4.5-air"
         },
         "coding": {
           "score": 1397,
-          "rank": 170,
+          "rank": 171,
           "as": "glm-4.5-air"
         },
         "math": {
           "score": 1396,
-          "rank": 154,
+          "rank": 159,
           "as": "glm-4.5-air"
         },
         "creative": {
@@ -7197,22 +7239,22 @@
       "boards": {
         "text": {
           "score": 1333,
-          "rank": 216,
+          "rank": 217,
           "as": "glm-4.5v"
         },
         "coding": {
           "score": 1347,
-          "rank": 220,
+          "rank": 221,
           "as": "glm-4.5v"
         },
         "math": {
           "score": 1353,
-          "rank": 204,
+          "rank": 206,
           "as": "glm-4.5v"
         },
         "creative": {
-          "score": 1295,
-          "rank": 215,
+          "score": 1294,
+          "rank": 216,
           "as": "glm-4.5v"
         },
         "vision": {
@@ -7224,32 +7266,32 @@
       "bench": {}
     },
     "zai/glm-4-6": {
-      "quality": 83,
+      "quality": 82,
       "basis": "text",
       "boards": {
         "text": {
           "score": 1440,
-          "rank": 72,
+          "rank": 73,
           "as": "glm-4.6"
         },
         "coding": {
           "score": 1449,
-          "rank": 97,
+          "rank": 98,
           "as": "glm-4.6"
         },
         "math": {
           "score": 1431,
-          "rank": 91,
+          "rank": 92,
           "as": "glm-4.6"
         },
         "creative": {
           "score": 1411,
-          "rank": 74,
+          "rank": 75,
           "as": "glm-4.6"
         },
         "webdev": {
           "score": 1339,
-          "rank": 107,
+          "rank": 109,
           "as": "glm-4.6"
         }
       },
@@ -7266,12 +7308,12 @@
         },
         "coding": {
           "score": 1390,
-          "rank": 176,
+          "rank": 177,
           "as": "glm-4.6v"
         },
         "creative": {
           "score": 1347,
-          "rank": 163,
+          "rank": 164,
           "as": "glm-4.6v"
         },
         "vision": {
@@ -7283,16 +7325,16 @@
       "bench": {}
     },
     "zai/glm-4-7": {
-      "quality": 67,
+      "quality": 66,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 143.5,
-          "rank": 90,
+          "rank": 92,
           "as": "GLM-4.7"
         },
         "text": {
-          "score": 1435,
+          "score": 1436,
           "rank": 83,
           "as": "glm-4.7"
         },
@@ -7303,17 +7345,17 @@
         },
         "math": {
           "score": 1423,
-          "rank": 106,
+          "rank": 108,
           "as": "glm-4.7"
         },
         "creative": {
           "score": 1401,
-          "rank": 94,
+          "rank": 92,
           "as": "glm-4.7"
         },
         "webdev": {
           "score": 1435,
-          "rank": 72,
+          "rank": 74,
           "as": "glm-4.7"
         }
       },
@@ -7329,22 +7371,22 @@
       "boards": {
         "text": {
           "score": 1351,
-          "rank": 199,
+          "rank": 200,
           "as": "glm-4.7-flash"
         },
         "coding": {
           "score": 1383,
-          "rank": 182,
+          "rank": 183,
           "as": "glm-4.7-flash"
         },
         "math": {
-          "score": 1354,
-          "rank": 202,
+          "score": 1355,
+          "rank": 204,
           "as": "glm-4.7-flash"
         },
         "creative": {
           "score": 1297,
-          "rank": 213,
+          "rank": 214,
           "as": "glm-4.7-flash"
         }
       },
@@ -7354,12 +7396,12 @@
       }
     },
     "zai/glm-5": {
-      "quality": 73,
+      "quality": 72,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 145.8,
-          "rank": 74,
+          "rank": 77,
           "as": "GLM-5"
         },
         "text": {
@@ -7369,22 +7411,22 @@
         },
         "coding": {
           "score": 1461,
-          "rank": 76,
+          "rank": 78,
           "as": "glm-5"
         },
         "math": {
           "score": 1440,
-          "rank": 76,
+          "rank": 77,
           "as": "glm-5"
         },
         "creative": {
-          "score": 1437,
-          "rank": 49,
+          "score": 1439,
+          "rank": 48,
           "as": "glm-5"
         },
         "webdev": {
           "score": 1434,
-          "rank": 73,
+          "rank": 75,
           "as": "glm-5"
         }
       },
@@ -7395,16 +7437,16 @@
       }
     },
     "zai/glm-5-1": {
-      "quality": 82,
+      "quality": 81,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 149.9,
-          "rank": 50,
+          "rank": 52,
           "as": "GLM-5.1"
         },
         "text": {
-          "score": 1462,
+          "score": 1461,
           "rank": 36,
           "as": "glm-5.1"
         },
@@ -7414,18 +7456,18 @@
           "as": "glm-5.1"
         },
         "math": {
-          "score": 1472,
-          "rank": 37,
+          "score": 1473,
+          "rank": 39,
           "as": "glm-5.1"
         },
         "creative": {
-          "score": 1454,
-          "rank": 25,
+          "score": 1453,
+          "rank": 30,
           "as": "glm-5.1"
         },
         "webdev": {
-          "score": 1509,
-          "rank": 50,
+          "score": 1508,
+          "rank": 51,
           "as": "glm-5.1"
         }
       },
@@ -7443,12 +7485,12 @@
       "boards": {
         "eci": {
           "score": 151.8,
-          "rank": 43,
+          "rank": 45,
           "as": "GLM-5.2"
         },
         "text": {
           "score": 1470,
-          "rank": 29,
+          "rank": 30,
           "as": "glm-5.2-max"
         },
         "coding": {
@@ -7457,18 +7499,18 @@
           "as": "glm-5.2-max"
         },
         "math": {
-          "score": 1482,
-          "rank": 27,
+          "score": 1483,
+          "rank": 28,
           "as": "glm-5.2-max"
         },
         "creative": {
           "score": 1465,
-          "rank": 18,
+          "rank": 19,
           "as": "glm-5.2-max"
         },
         "webdev": {
-          "score": 1604,
-          "rank": 23,
+          "score": 1605,
+          "rank": 25,
           "as": "glm-5.2-max"
         }
       },
@@ -7481,37 +7523,37 @@
       }
     },
     "zai/glm-5-3": {
-      "quality": 92,
+      "quality": 91,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 155.6,
-          "rank": 22,
+          "score": 155.8,
+          "rank": 24,
           "as": "GLM-5.3"
         },
         "text": {
           "score": 1472,
-          "rank": 25,
+          "rank": 26,
           "as": "glm-5.3-max"
         },
         "coding": {
-          "score": 1498,
-          "rank": 23,
+          "score": 1497,
+          "rank": 26,
           "as": "glm-5.3-max"
         },
         "math": {
-          "score": 1493,
-          "rank": 16,
+          "score": 1488,
+          "rank": 21,
           "as": "glm-5.3-max"
         },
         "creative": {
           "score": 1458,
-          "rank": 22,
+          "rank": 24,
           "as": "glm-5.3-max"
         },
         "webdev": {
-          "score": 1623,
-          "rank": 17,
+          "score": 1622,
+          "rank": 19,
           "as": "glm-5.3-max"
         }
       },
@@ -7523,37 +7565,37 @@
       }
     },
     "zai/glm-5-3-flash": {
-      "quality": 85,
+      "quality": 84,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 151.9,
-          "rank": 41,
+          "rank": 43,
           "as": "GLM-5.3-Flash"
         },
         "text": {
-          "score": 1471,
-          "rank": 27,
+          "score": 1470,
+          "rank": 29,
           "as": "glm-5.3-flash"
         },
         "coding": {
-          "score": 1506,
-          "rank": 16,
+          "score": 1507,
+          "rank": 17,
           "as": "glm-5.3-flash"
         },
         "math": {
-          "score": 1499,
-          "rank": 11,
+          "score": 1498,
+          "rank": 16,
           "as": "glm-5.3-flash"
         },
         "creative": {
-          "score": 1440,
+          "score": 1442,
           "rank": 41,
           "as": "glm-5.3-flash"
         },
         "webdev": {
-          "score": 1614,
-          "rank": 22,
+          "score": 1615,
+          "rank": 24,
           "as": "glm-5.3-flash"
         },
         "vision": {
@@ -7573,28 +7615,28 @@
       "basis": "text",
       "boards": {
         "text": {
-          "score": 1437,
-          "rank": 77,
+          "score": 1438,
+          "rank": 78,
           "as": "glm-5v-turbo"
         },
         "coding": {
           "score": 1467,
-          "rank": 68,
+          "rank": 70,
           "as": "glm-5v-turbo"
         },
         "math": {
           "score": 1440,
-          "rank": 75,
+          "rank": 79,
           "as": "glm-5v-turbo"
         },
         "creative": {
-          "score": 1414,
-          "rank": 72,
+          "score": 1416,
+          "rank": 69,
           "as": "glm-5v-turbo"
         },
         "webdev": {
           "score": 1400,
-          "rank": 82,
+          "rank": 84,
           "as": "glm-5v-turbo"
         },
         "vision": {
