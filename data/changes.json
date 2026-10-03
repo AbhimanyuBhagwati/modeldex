@@ -2,6 +2,49 @@
   "version": 1,
   "events": [
     {
+      "date": "2026-10-03",
+      "kind": "added",
+      "key": "sbert/distilbert-base-nli-stsb-mean-tokens",
+      "name": "distilbert-base-nli-stsb-mean-tokens",
+      "lab": "sbert"
+    },
+    {
+      "date": "2026-10-03",
+      "kind": "added",
+      "key": "xai/grok-imagine-video-1-5-lite",
+      "name": "Grok Imagine Video 1.5 Lite",
+      "lab": "xai"
+    },
+    {
+      "date": "2026-10-03",
+      "kind": "removed",
+      "key": "cohere/c4ai-aya-expanse-8b",
+      "name": "Aya Expanse 8B",
+      "lab": "cohere"
+    },
+    {
+      "date": "2026-10-03",
+      "kind": "removed",
+      "key": "cohere/c4ai-aya-vision-8b",
+      "name": "Aya Vision 8B",
+      "lab": "cohere"
+    },
+    {
+      "date": "2026-10-03",
+      "kind": "price",
+      "key": "deepseek/deepseek-v4-pro",
+      "name": "DeepSeek V4 Pro",
+      "lab": "deepseek",
+      "before": {
+        "input": 0.435,
+        "output": 0.87
+      },
+      "after": {
+        "input": 0.66,
+        "output": 1.98
+      }
+    },
+    {
       "date": "2026-10-02",
       "kind": "added",
       "key": "sbert/multi-qa-minilm-l6-dot-v1",
