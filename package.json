@@ -14,10 +14,10 @@
     "check": "npm run lint && npm run typecheck && npm test"
   },
   "dependencies": {
-    "next": "16.3.6",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
-    "three": "0.186.0",
+    "next": "16.3.8",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "three": "0.186.1",
     "zod": "^4.6.5"
   },
   "devDependencies": {
@@ -26,12 +26,12 @@
     "@types/react-dom": "^19",
     "@types/three": "0.186.0",
     "eslint": "^9",
-    "eslint-config-next": "16.3.6",
+    "eslint-config-next": "16.3.8",
     "fflate": "^0.8.3",
-    "hyparquet": "^1.31.1",
+    "hyparquet": "^1.31.2",
     "tsx": "^4.23.15",
     "typescript": "^5",
-    "vitest": "^5.0.1"
+    "vitest": "^5.0.3"
   },
   "description": "Every AI model as a collectible card. Compare specs side by side; data syncs daily from models.dev.",
   "engines": {
