@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-06T13:23:36.064Z",
+  "updatedAt": "2026-10-07T13:31:55.964Z",
   "boards": {
     "eci": {
       "count": 274,
@@ -31,12 +31,12 @@
       "published": "2026-10-02"
     },
     "image": {
-      "count": 81,
-      "published": "2026-10-05"
+      "count": 82,
+      "published": "2026-10-06"
     },
     "image-edit": {
-      "count": 58,
-      "published": "2026-10-05"
+      "count": 59,
+      "published": "2026-10-06"
     },
     "video": {
       "count": 48,
@@ -806,34 +806,34 @@
       "bench": {}
     },
     "bfl/flux-1-kontext-dev": {
-      "quality": 3,
+      "quality": 2,
       "basis": "image",
       "boards": {
         "image": {
           "score": 941,
-          "rank": 79,
+          "rank": 80,
           "as": "flux-1-kontext-dev"
         },
         "image-edit": {
           "score": 1149,
-          "rank": 52,
+          "rank": 53,
           "as": "flux-1-kontext-dev"
         }
       },
       "bench": {}
     },
     "bfl/flux-2-dev": {
-      "quality": 55,
+      "quality": 54,
       "basis": "image",
       "boards": {
         "image": {
           "score": 1146,
-          "rank": 37,
+          "rank": 38,
           "as": "flux-2-dev"
         },
         "image-edit": {
           "score": 1225,
-          "rank": 42,
+          "rank": 43,
           "as": "flux-2-dev"
         }
       },
@@ -845,12 +845,12 @@
       "boards": {
         "image": {
           "score": 1030,
-          "rank": 69,
+          "rank": 70,
           "as": "flux-2-klein-4b"
         },
         "image-edit": {
           "score": 1187,
-          "rank": 48,
+          "rank": 49,
           "as": "flux-2-klein-4b"
         }
       },
@@ -862,12 +862,12 @@
       "boards": {
         "image": {
           "score": 1070,
-          "rank": 61,
+          "rank": 62,
           "as": "flux-2-klein-9b"
         },
         "image-edit": {
           "score": 1225,
-          "rank": 41,
+          "rank": 42,
           "as": "flux-2-klein-9b"
         }
       },
@@ -1470,17 +1470,17 @@
       }
     },
     "google/gemini-2-5-flash-image": {
-      "quality": 60,
+      "quality": 59,
       "basis": "image",
       "boards": {
         "image": {
           "score": 1150,
-          "rank": 33,
+          "rank": 34,
           "as": "gemini-2.5-flash-image-preview (nano-banana)"
         },
         "image-edit": {
           "score": 1293,
-          "rank": 30,
+          "rank": 31,
           "as": "gemini-2.5-flash-image-preview (nano-banana)"
         }
       },
@@ -1571,17 +1571,17 @@
       }
     },
     "google/gemini-3-1-flash-image": {
-      "quality": 89,
+      "quality": 88,
       "basis": "image",
       "boards": {
         "image": {
           "score": 1261,
-          "rank": 10,
+          "rank": 11,
           "as": "gemini-3.1-flash-image (nano-banana-2) [web-search]"
         },
         "image-edit": {
           "score": 1387,
-          "rank": 13,
+          "rank": 14,
           "as": "gemini-3.1-flash-image (nano-banana-2) [web-search]"
         }
       },
@@ -1604,17 +1604,17 @@
       }
     },
     "google/gemini-3-1-flash-lite-image": {
-      "quality": 84,
+      "quality": 83,
       "basis": "image",
       "boards": {
         "image": {
           "score": 1250,
-          "rank": 14,
+          "rank": 15,
           "as": "gemini-3.1-flash-lite-image (nano-banana-2-lite)"
         },
         "image-edit": {
-          "score": 1313,
-          "rank": 23,
+          "score": 1314,
+          "rank": 24,
           "as": "gemini-3.1-flash-lite-image (nano-banana-2-lite)"
         }
       },
@@ -2002,17 +2002,17 @@
       }
     },
     "google/gemini-3-pro-image": {
-      "quality": 83,
+      "quality": 81,
       "basis": "image",
       "boards": {
         "image": {
           "score": 1248,
-          "rank": 15,
+          "rank": 16,
           "as": "gemini-3-pro-image-2k (nano-banana-pro)"
         },
         "image-edit": {
           "score": 1390,
-          "rank": 11,
+          "rank": 12,
           "as": "gemini-3-pro-image-2k (nano-banana-pro)"
         }
       },
@@ -5043,17 +5043,17 @@
       }
     },
     "openai/gpt-image-1": {
-      "quality": 43,
+      "quality": 42,
       "basis": "image",
       "boards": {
         "image": {
           "score": 1116,
-          "rank": 47,
+          "rank": 48,
           "as": "gpt-image-1"
         },
         "image-edit": {
           "score": 1139,
-          "rank": 54,
+          "rank": 55,
           "as": "gpt-image-1"
         }
       },
@@ -5065,12 +5065,12 @@
       "boards": {
         "image": {
           "score": 1110,
-          "rank": 53,
+          "rank": 54,
           "as": "gpt-image-1-mini"
         },
         "image-edit": {
           "score": 1124,
-          "rank": 55,
+          "rank": 56,
           "as": "gpt-image-1-mini"
         }
       },
@@ -5081,7 +5081,7 @@
       "basis": "image",
       "boards": {
         "image": {
-          "score": 1384,
+          "score": 1383,
           "rank": 3,
           "as": "gpt-image-2 (medium)"
         },
@@ -5369,48 +5369,48 @@
       "boards": {
         "image": {
           "score": 1057,
-          "rank": 65,
+          "rank": 66,
           "as": "qwen-image"
         }
       },
       "bench": {}
     },
     "qwen/qwen-image-2-1": {
-      "quality": 79,
+      "quality": 78,
       "basis": "image",
       "boards": {
         "image": {
-          "score": 1222,
-          "rank": 18,
+          "score": 1223,
+          "rank": 19,
           "as": "qwen-image-2.1"
         },
         "image-edit": {
           "score": 1369,
-          "rank": 17,
+          "rank": 18,
           "as": "qwen-image-2.1"
         }
       },
       "bench": {}
     },
     "qwen/qwen-image-edit": {
-      "quality": 39,
+      "quality": 38,
       "basis": "image-edit",
       "boards": {
         "image-edit": {
-          "score": 1241,
-          "rank": 36,
+          "score": 1242,
+          "rank": 37,
           "as": "qwen-image-edit"
         }
       },
       "bench": {}
     },
     "qwen/qwen-image-edit-2511": {
-      "quality": 35,
+      "quality": 34,
       "basis": "image-edit",
       "boards": {
         "image-edit": {
           "score": 1234,
-          "rank": 38,
+          "rank": 39,
           "as": "qwen-image-edit-2511"
         }
       },
@@ -6968,29 +6968,29 @@
       }
     },
     "xai/grok-imagine-image": {
-      "quality": 71,
+      "quality": 70,
       "basis": "image",
       "boards": {
         "image": {
           "score": 1170,
-          "rank": 24,
+          "rank": 25,
           "as": "grok-imagine-image"
         },
         "image-edit": {
           "score": 1329,
-          "rank": 21,
+          "rank": 22,
           "as": "grok-imagine-image"
         }
       },
       "bench": {}
     },
     "xai/grok-imagine-image-quality": {
-      "quality": 84,
+      "quality": 83,
       "basis": "image-edit",
       "boards": {
         "image-edit": {
           "score": 1391,
-          "rank": 10,
+          "rank": 11,
           "as": "grok-imagine-image-quality (20260519)"
         }
       },
