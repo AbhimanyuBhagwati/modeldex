@@ -2,6 +2,168 @@
   "version": 1,
   "events": [
     {
+      "date": "2026-10-08",
+      "kind": "added",
+      "key": "sbert/nli-deberta-v3-large",
+      "name": "nli-deberta-v3-large",
+      "lab": "sbert"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "added",
+      "key": "google/vit-large-patch16-224-in21k",
+      "name": "vit-large-patch16-224-in21k",
+      "lab": "google"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "added",
+      "key": "mistral/voxtral-small-2507",
+      "name": "Voxtral Small",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "added",
+      "key": "mistral/codestral-2508",
+      "name": "Codestral 25.08",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "added",
+      "key": "nvidia/canary-1b-v2",
+      "name": "canary-1b-v2",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "added",
+      "key": "mistral/ministral-3-14b-instruct-2512-bf16",
+      "name": "Ministral-3-14B-Instruct-2512-BF16",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "added",
+      "key": "mistral/ministral-14b-2512",
+      "name": "Ministral 3 14B",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "added",
+      "key": "mistral/ministral-3b-2512",
+      "name": "Ministral 3 3B",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "added",
+      "key": "mistral/ministral-8b-2512",
+      "name": "Ministral 3 8B",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "added",
+      "key": "ibm/granite-embedding-97m-multilingual-r2",
+      "name": "granite-embedding-97m-multilingual-r2",
+      "lab": "ibm"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "added",
+      "key": "mistral/labs-leanstral-1-5-1",
+      "name": "Leanstral 1.5",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "added",
+      "key": "anthropic/claude-haiku-5-5",
+      "name": "Claude Haiku 5.5",
+      "lab": "anthropic"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "retired",
+      "key": "mistral/open-mistral-7b",
+      "name": "Mistral 7B",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "retired",
+      "key": "mistral/open-mixtral-8x7b",
+      "name": "Mixtral 8x7B",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "retired",
+      "key": "mistral/open-mixtral-8x22b",
+      "name": "Mixtral 8x22B",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "retired",
+      "key": "mistral/mistral-nemo",
+      "name": "Mistral Nemo",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "retired",
+      "key": "mistral/pixtral-12b",
+      "name": "Pixtral 12B",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "price",
+      "key": "qwen/qwen-vl-ocr",
+      "name": "Qwen-VL OCR",
+      "lab": "qwen",
+      "before": {
+        "input": 0.72,
+        "output": 0.72
+      },
+      "after": {
+        "input": 0.07,
+        "output": 0.16
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "retired",
+      "key": "mistral/mistral-large-2411",
+      "name": "Mistral Large 2.1",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "retired",
+      "key": "mistral/mistral-medium-2505",
+      "name": "Mistral Medium 3",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "retired",
+      "key": "mistral/mistral-small-2506",
+      "name": "Mistral Small 3.2",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-08",
+      "kind": "retired",
+      "key": "mistral/mistral-medium-2508",
+      "name": "Mistral Medium 3.1",
+      "lab": "mistral"
+    },
+    {
       "date": "2026-10-07",
       "kind": "added",
       "key": "baai/bge-small-zh",
