@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-09T13:24:00.612Z",
+  "updatedAt": "2026-10-10T12:38:57.539Z",
   "providers": {
     "302ai": {
       "name": "302.AI",
@@ -402,6 +402,10 @@
       "name": "LongCat",
       "url": "https://longcat.chat/platform/docs/"
     },
+    "lowrouter": {
+      "name": "LowRouter",
+      "url": "https://lowrouter.ai/docs/models/available"
+    },
     "meganova": {
       "name": "Meganova",
       "url": "https://docs.meganova.ai"
@@ -503,7 +507,7 @@
       "url": "https://nova.amazon.com/dev/documentation"
     },
     "novita-ai": {
-      "name": "NovitaAI",
+      "name": "Novita AI",
       "url": "https://novita.ai/docs/guides/introduction"
     },
     "nvidia": {
@@ -2161,6 +2165,14 @@
         },
         {
           "provider": "nano-gpt",
+          "model": "anthropic/claude-haiku-5.5",
+          "input": 0.1,
+          "output": 0.5,
+          "context": 1000000,
+          "official": false
+        },
+        {
+          "provider": "ofox",
           "model": "anthropic/claude-haiku-5.5",
           "input": 0.1,
           "output": 0.5,
@@ -5348,6 +5360,14 @@
           "official": false
         },
         {
+          "provider": "novita-ai",
+          "model": "baai/bge-m3",
+          "input": 0.01,
+          "output": 0,
+          "context": 8192,
+          "official": false
+        },
+        {
           "provider": "digitalocean",
           "model": "bge-m3",
           "input": 0.02,
@@ -5387,6 +5407,14 @@
           "input": 0.01,
           "output": 0,
           "context": 8192,
+          "official": false
+        },
+        {
+          "provider": "novita-ai",
+          "model": "baai/bge-reranker-v2-m3",
+          "input": 0.01,
+          "output": 0,
+          "context": 8000,
           "official": false
         }
       ],
@@ -6229,8 +6257,8 @@
           "input": null,
           "output": null,
           "context": null,
-          "throughput": 35,
-          "latencyMs": 382,
+          "throughput": 49,
+          "latencyMs": 213,
           "tools": false
         }
       ]
@@ -6254,8 +6282,8 @@
           "input": null,
           "output": null,
           "context": null,
-          "throughput": 42,
-          "latencyMs": 191,
+          "throughput": 38,
+          "latencyMs": 221,
           "tools": false
         }
       ]
@@ -6385,8 +6413,8 @@
           "input": null,
           "output": null,
           "context": null,
-          "throughput": 100,
-          "latencyMs": 226,
+          "throughput": 101,
+          "latencyMs": 216,
           "tools": true
         }
       ]
@@ -6410,8 +6438,8 @@
           "input": null,
           "output": null,
           "context": null,
-          "throughput": 70,
-          "latencyMs": 284,
+          "throughput": 68,
+          "latencyMs": 452,
           "tools": true
         }
       ]
@@ -6655,7 +6683,7 @@
           "output": null,
           "context": null,
           "throughput": 134,
-          "latencyMs": 168,
+          "latencyMs": 161,
           "tools": false
         }
       ]
@@ -6679,8 +6707,8 @@
           "input": null,
           "output": null,
           "context": null,
-          "throughput": 134,
-          "latencyMs": 192,
+          "throughput": 133,
+          "latencyMs": 167,
           "tools": false
         }
       ]
@@ -6705,7 +6733,7 @@
           "output": null,
           "context": null,
           "throughput": 134,
-          "latencyMs": 165,
+          "latencyMs": 160,
           "tools": false
         }
       ]
@@ -6730,7 +6758,7 @@
           "output": null,
           "context": null,
           "throughput": 134,
-          "latencyMs": 175,
+          "latencyMs": 163,
           "tools": false
         }
       ]
@@ -7082,6 +7110,14 @@
           "official": false
         },
         {
+          "provider": "novita-ai",
+          "model": "deepseek/deepseek-v4.1-flash",
+          "input": 0.3,
+          "output": 1.2,
+          "context": 1048576,
+          "official": false
+        },
+        {
           "provider": "opencode",
           "model": "deepseek-v4.1-flash",
           "input": 0.3,
@@ -7202,8 +7238,8 @@
           "input": 0.2,
           "output": 0.6,
           "context": 1048576,
-          "throughput": 50,
-          "latencyMs": 387,
+          "throughput": 41,
+          "latencyMs": 427,
           "tools": true
         },
         {
@@ -7213,8 +7249,8 @@
           "input": 0.3,
           "output": 1.2,
           "context": 1048576,
-          "throughput": 112,
-          "latencyMs": 952,
+          "throughput": 241,
+          "latencyMs": 265,
           "tools": true
         },
         {
@@ -7224,8 +7260,8 @@
           "input": 0.3,
           "output": 1.2,
           "context": 1048576,
-          "throughput": 79,
-          "latencyMs": 1571,
+          "throughput": 87,
+          "latencyMs": 1217,
           "tools": true
         },
         {
@@ -7246,8 +7282,8 @@
           "input": null,
           "output": null,
           "context": 1048576,
-          "throughput": 82,
-          "latencyMs": 597,
+          "throughput": 83,
+          "latencyMs": 508,
           "tools": true
         }
       ]
@@ -7259,14 +7295,6 @@
           "model": "deepseek-ai/DeepSeek-OCR",
           "input": 0,
           "output": 0,
-          "context": 8192,
-          "official": false
-        },
-        {
-          "provider": "novita-ai",
-          "model": "deepseek/deepseek-ocr",
-          "input": 0.03,
-          "output": 0.03,
           "context": 8192,
           "official": false
         },
@@ -7497,8 +7525,8 @@
           "input": 0.7,
           "output": 2.5,
           "context": 64000,
-          "throughput": 24,
-          "latencyMs": 1106,
+          "throughput": 23,
+          "latencyMs": 1062,
           "tools": true
         }
       ]
@@ -7508,6 +7536,14 @@
         {
           "provider": "deepinfra",
           "model": "deepseek-ai/DeepSeek-R1-0528",
+          "input": 0.5,
+          "output": 2.15,
+          "context": 163840,
+          "official": false
+        },
+        {
+          "provider": "edenai",
+          "model": "deepinfra/deepseek-ai/DeepSeek-R1-0528",
           "input": 0.5,
           "output": 2.15,
           "context": 163840,
@@ -7594,6 +7630,14 @@
           "official": false
         },
         {
+          "provider": "merge-gateway",
+          "model": "deepseek/deepseek-r1-0528",
+          "input": 1.35,
+          "output": 5.4,
+          "context": 65536,
+          "official": false
+        },
+        {
           "provider": "io-net",
           "model": "deepseek-ai/DeepSeek-R1-0528",
           "input": 2,
@@ -7618,8 +7662,8 @@
           "input": 0.5,
           "output": 2.15,
           "context": 163840,
-          "throughput": 36,
-          "latencyMs": 541,
+          "throughput": 21,
+          "latencyMs": 775,
           "tools": true
         },
         {
@@ -7629,8 +7673,8 @@
           "input": 0.7,
           "output": 2.5,
           "context": 163840,
-          "throughput": 25,
-          "latencyMs": 996,
+          "throughput": 19,
+          "latencyMs": 1056,
           "tools": true
         },
         {
@@ -7678,8 +7722,8 @@
           "input": 0.05,
           "output": 0.05,
           "context": 131072,
-          "throughput": 145,
-          "latencyMs": 646,
+          "throughput": 150,
+          "latencyMs": 590,
           "tools": false
         },
         {
@@ -7711,14 +7755,6 @@
     "deepseek/deepseek-r1-distill-qwen-14b": {
       "offers": [
         {
-          "provider": "novita-ai",
-          "model": "deepseek/deepseek-r1-distill-qwen-14b",
-          "input": 0.15,
-          "output": 0.15,
-          "context": 32768,
-          "official": false
-        },
-        {
           "provider": "alibaba-cn",
           "model": "deepseek-r1-distill-qwen-14b",
           "input": 0.144,
@@ -7735,8 +7771,8 @@
           "input": 0.2,
           "output": 0.2,
           "context": 131072,
-          "throughput": 93,
-          "latencyMs": 656,
+          "throughput": 92,
+          "latencyMs": 643,
           "tools": false
         },
         {
@@ -7754,14 +7790,6 @@
     },
     "deepseek/deepseek-r1-distill-qwen-32b": {
       "offers": [
-        {
-          "provider": "novita-ai",
-          "model": "deepseek/deepseek-r1-distill-qwen-32b",
-          "input": 0.3,
-          "output": 0.3,
-          "context": 64000,
-          "official": false
-        },
         {
           "provider": "alibaba-cn",
           "model": "deepseek-r1-distill-qwen-32b",
@@ -7800,8 +7828,8 @@
           "input": 0.15,
           "output": 0.15,
           "context": 131072,
-          "throughput": 164,
-          "latencyMs": 693,
+          "throughput": 162,
+          "latencyMs": 619,
           "tools": false
         },
         {
@@ -7884,6 +7912,14 @@
           "official": false
         },
         {
+          "provider": "novita-ai",
+          "model": "deepseek/deepseek_v3",
+          "input": 0.89,
+          "output": 0.89,
+          "context": 64000,
+          "official": false
+        },
+        {
           "provider": "siliconflow",
           "model": "deepseek-ai/DeepSeek-V3",
           "input": 0.25,
@@ -7940,14 +7976,6 @@
           "official": false
         },
         {
-          "provider": "novita-ai",
-          "model": "deepseek/deepseek-v3-turbo",
-          "input": 0.4,
-          "output": 1.3,
-          "context": 64000,
-          "official": false
-        },
-        {
           "provider": "helicone",
           "model": "deepseek-v3",
           "input": 0.56,
@@ -7989,7 +8017,7 @@
           "output": 0.89,
           "context": 163840,
           "throughput": 22,
-          "latencyMs": 529,
+          "latencyMs": 3154,
           "tools": true
         }
       ]
@@ -8045,14 +8073,6 @@
           "official": false
         },
         {
-          "provider": "novita-ai",
-          "model": "deepseek/deepseek-v3-0324",
-          "input": 0.27,
-          "output": 1.12,
-          "context": 163840,
-          "official": false
-        },
-        {
           "provider": "jiekou",
           "model": "deepseek/deepseek-v3-0324",
           "input": 0.28,
@@ -8101,8 +8121,8 @@
           "input": 0.24,
           "output": 0.9,
           "context": 163840,
-          "throughput": 20,
-          "latencyMs": 690,
+          "throughput": 58,
+          "latencyMs": 492,
           "tools": true
         },
         {
@@ -8190,14 +8210,6 @@
           "input": 0.27,
           "output": 1,
           "context": 164000,
-          "official": false
-        },
-        {
-          "provider": "novita-ai",
-          "model": "deepseek/deepseek-v3.1",
-          "input": 0.27,
-          "output": 1,
-          "context": 131072,
           "official": false
         },
         {
@@ -8297,8 +8309,8 @@
           "input": 0.25,
           "output": 0.95,
           "context": 163840,
-          "throughput": 7,
-          "latencyMs": 788,
+          "throughput": 13,
+          "latencyMs": 890,
           "tools": true
         },
         {
@@ -8389,14 +8401,6 @@
           "official": false
         },
         {
-          "provider": "novita-ai",
-          "model": "deepseek/deepseek-v3.2",
-          "input": 0.269,
-          "output": 0.4,
-          "context": 163840,
-          "official": false
-        },
-        {
           "provider": "abacus",
           "model": "deepseek-ai/DeepSeek-V3.2",
           "input": 0.27,
@@ -8425,22 +8429,6 @@
           "model": "deepseek-v3.2",
           "input": 0.27,
           "output": 0.41,
-          "context": 163840,
-          "official": false
-        },
-        {
-          "provider": "kilo",
-          "model": "deepseek/deepseek-v3.2",
-          "input": 0.259,
-          "output": 0.42,
-          "context": 163840,
-          "official": false
-        },
-        {
-          "provider": "openrouter",
-          "model": "deepseek/deepseek-v3.2",
-          "input": 0.259,
-          "output": 0.42,
           "context": 163840,
           "official": false
         },
@@ -8533,6 +8521,22 @@
           "official": false
         },
         {
+          "provider": "kilo",
+          "model": "deepseek/deepseek-v3.2",
+          "input": 0.259,
+          "output": 0.8,
+          "context": 163840,
+          "official": false
+        },
+        {
+          "provider": "openrouter",
+          "model": "deepseek/deepseek-v3.2",
+          "input": 0.259,
+          "output": 0.8,
+          "context": 163840,
+          "official": false
+        },
+        {
           "provider": "cortecs",
           "model": "deepseek-v3.2",
           "input": 0.5,
@@ -8573,14 +8577,6 @@
           "official": false
         },
         {
-          "provider": "empiriolabs",
-          "model": "deepseek-v3-2",
-          "input": 0.57,
-          "output": 1.71,
-          "context": 128000,
-          "official": false
-        },
-        {
           "provider": "amazon-bedrock",
           "model": "deepseek.v3.2",
           "input": 0.62,
@@ -8605,8 +8601,8 @@
           "input": 0.26,
           "output": 0.38,
           "context": 163840,
-          "throughput": 18,
-          "latencyMs": 527,
+          "throughput": 14,
+          "latencyMs": 1084,
           "tools": true
         },
         {
@@ -8897,14 +8893,6 @@
           "official": false
         },
         {
-          "provider": "empiriolabs",
-          "model": "deepseek-v4-flash",
-          "input": 0.14,
-          "output": 0.28,
-          "context": 1000000,
-          "official": false
-        },
-        {
           "provider": "hpc-ai",
           "model": "deepseek/deepseek-v4-flash",
           "input": 0.14,
@@ -8915,14 +8903,6 @@
         {
           "provider": "jalapeno",
           "model": "DeepSeek-V4-Flash",
-          "input": 0.14,
-          "output": 0.28,
-          "context": 1048576,
-          "official": false
-        },
-        {
-          "provider": "kilo",
-          "model": "deepseek/deepseek-v4-flash",
           "input": 0.14,
           "output": 0.28,
           "context": 1048576,
@@ -8942,14 +8922,6 @@
           "input": 0.14,
           "output": 0.28,
           "context": 1048560,
-          "official": false
-        },
-        {
-          "provider": "novita-ai",
-          "model": "deepseek/deepseek-v4-flash",
-          "input": 0.14,
-          "output": 0.28,
-          "context": 1048576,
           "official": false
         },
         {
@@ -9091,7 +9063,15 @@
         {
           "provider": "openrouter",
           "model": "deepseek/deepseek-v4-flash",
-          "input": 0.0075,
+          "input": 0.0182,
+          "output": 1.28,
+          "context": 1048576,
+          "official": false
+        },
+        {
+          "provider": "kilo",
+          "model": "deepseek/deepseek-v4-flash",
+          "input": 0.0216,
           "output": 1.28,
           "context": 1048576,
           "official": false
@@ -9129,19 +9109,8 @@
           "input": 0.09,
           "output": 0.18,
           "context": 1048576,
-          "throughput": 28,
-          "latencyMs": 950,
-          "tools": true
-        },
-        {
-          "provider": "novita",
-          "name": "Novita",
-          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash?inference_provider=novita",
-          "input": 0.14,
-          "output": 0.28,
-          "context": 1048576,
-          "throughput": 90,
-          "latencyMs": 1229,
+          "throughput": 41,
+          "latencyMs": 414,
           "tools": true
         },
         {
@@ -9474,7 +9443,7 @@
         {
           "provider": "openrouter",
           "model": "deepseek/deepseek-v4-flash-0731",
-          "input": 0.018,
+          "input": 0.0099,
           "output": 1.28,
           "context": 1048576,
           "official": false
@@ -9504,6 +9473,14 @@
           "official": false
         },
         {
+          "provider": "novita-ai",
+          "model": "deepseek/deepseek-v4-flash-0731",
+          "input": 0.44,
+          "output": 1.32,
+          "context": 1048576,
+          "official": false
+        },
+        {
           "provider": "volcengine",
           "model": "deepseek-v4-flash-ga-260731",
           "input": 0.4453,
@@ -9520,8 +9497,8 @@
           "input": 0.06,
           "output": 0.18,
           "context": 1048576,
-          "throughput": 36,
-          "latencyMs": 287,
+          "throughput": 33,
+          "latencyMs": 376,
           "tools": true
         },
         {
@@ -9531,8 +9508,8 @@
           "input": 0.13,
           "output": 0.26,
           "context": 1048576,
-          "throughput": 168,
-          "latencyMs": 477,
+          "throughput": 195,
+          "latencyMs": 427,
           "tools": true
         },
         {
@@ -9542,8 +9519,8 @@
           "input": 0.14,
           "output": 0.28,
           "context": 1048576,
-          "throughput": 19,
-          "latencyMs": 2182,
+          "throughput": 68,
+          "latencyMs": 521,
           "tools": true
         },
         {
@@ -9553,8 +9530,8 @@
           "input": 0.44,
           "output": 1.32,
           "context": 1048576,
-          "throughput": 122,
-          "latencyMs": 701,
+          "throughput": 87,
+          "latencyMs": 935,
           "tools": true
         },
         {
@@ -9575,8 +9552,8 @@
           "input": null,
           "output": null,
           "context": null,
-          "throughput": 71,
-          "latencyMs": 1191,
+          "throughput": 158,
+          "latencyMs": 688,
           "tools": true
         }
       ]
@@ -9720,8 +9697,8 @@
           "input": 0.44,
           "output": 1.32,
           "context": 1048576,
-          "throughput": 107,
-          "latencyMs": 384,
+          "throughput": 147,
+          "latencyMs": 313,
           "tools": true
         }
       ]
@@ -9907,8 +9884,8 @@
         {
           "provider": "openrouter",
           "model": "deepseek/deepseek-v4-pro",
-          "input": 0.95526,
-          "output": 1.91052,
+          "input": 0.9483,
+          "output": 1.8966,
           "context": 1048576,
           "official": false
         },
@@ -10249,8 +10226,8 @@
           "input": 1.3,
           "output": 2.6,
           "context": 1048576,
-          "throughput": 38,
-          "latencyMs": 697,
+          "throughput": 50,
+          "latencyMs": 545,
           "tools": true
         },
         {
@@ -10260,8 +10237,8 @@
           "input": 1.6,
           "output": 3.2,
           "context": 1048576,
-          "throughput": 46,
-          "latencyMs": 809,
+          "throughput": 29,
+          "latencyMs": 654,
           "tools": true
         },
         {
@@ -10496,6 +10473,14 @@
           "official": false
         },
         {
+          "provider": "novita-ai",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "input": 1.32,
+          "output": 3.96,
+          "context": 1048576,
+          "official": false
+        },
+        {
           "provider": "siliconflow",
           "model": "deepseek-ai/DeepSeek-V4-Pro-0813",
           "input": 1.32,
@@ -10568,8 +10553,8 @@
           "input": 1.3,
           "output": 2.6,
           "context": 1048576,
-          "throughput": 26,
-          "latencyMs": 331,
+          "throughput": 38,
+          "latencyMs": 524,
           "tools": true
         },
         {
@@ -10579,8 +10564,8 @@
           "input": 1.32,
           "output": 3.96,
           "context": 1048576,
-          "throughput": 94,
-          "latencyMs": 470,
+          "throughput": 100,
+          "latencyMs": 398,
           "tools": true
         },
         {
@@ -10590,8 +10575,8 @@
           "input": 1.32,
           "output": 3.96,
           "context": 1048576,
-          "throughput": 37,
-          "latencyMs": 1618,
+          "throughput": 39,
+          "latencyMs": 1307,
           "tools": true
         },
         {
@@ -10601,8 +10586,8 @@
           "input": 1.32,
           "output": 3.96,
           "context": 1048576,
-          "throughput": 105,
-          "latencyMs": 886,
+          "throughput": 95,
+          "latencyMs": 892,
           "tools": true
         }
       ]
@@ -14090,8 +14075,8 @@
           "input": 0.05,
           "output": 0.15,
           "context": 131072,
-          "throughput": 19,
-          "latencyMs": 319,
+          "throughput": 29,
+          "latencyMs": 445,
           "tools": true
         },
         {
@@ -14222,8 +14207,8 @@
           "input": 0.08,
           "output": 0.16,
           "context": 131072,
-          "throughput": 19,
-          "latencyMs": 1688,
+          "throughput": 53,
+          "latencyMs": 230,
           "tools": true
         },
         {
@@ -14322,8 +14307,8 @@
           "input": 0.05,
           "output": 0.1,
           "context": 131072,
-          "throughput": 22,
-          "latencyMs": 295,
+          "throughput": 20,
+          "latencyMs": 477,
           "tools": true
         },
         {
@@ -14634,8 +14619,8 @@
           "input": 0.07,
           "output": 0.34,
           "context": 262144,
-          "throughput": 53,
-          "latencyMs": 329,
+          "throughput": 108,
+          "latencyMs": 274,
           "tools": true
         },
         {
@@ -14645,8 +14630,8 @@
           "input": 0.13,
           "output": 0.4,
           "context": 262144,
-          "throughput": 121,
-          "latencyMs": 771,
+          "throughput": 81,
+          "latencyMs": 422,
           "tools": true
         },
         {
@@ -14656,8 +14641,8 @@
           "input": 0.285,
           "output": 0.57,
           "context": null,
-          "throughput": 161,
-          "latencyMs": 393,
+          "throughput": 182,
+          "latencyMs": 416,
           "tools": true
         },
         {
@@ -15321,8 +15306,8 @@
           "input": 0.14,
           "output": 0.4,
           "context": 262144,
-          "throughput": 28,
-          "latencyMs": 892,
+          "throughput": 31,
+          "latencyMs": 928,
           "tools": true
         },
         {
@@ -15332,8 +15317,8 @@
           "input": 0.2,
           "output": 0.4,
           "context": 262144,
-          "throughput": 25,
-          "latencyMs": 4440,
+          "throughput": 27,
+          "latencyMs": 532,
           "tools": true
         },
         {
@@ -15671,8 +15656,8 @@
           "input": 0.06,
           "output": 0.25,
           "context": 131072,
-          "throughput": 65,
-          "latencyMs": 230,
+          "throughput": 73,
+          "latencyMs": 236,
           "tools": true
         }
       ]
@@ -16240,8 +16225,8 @@
           "input": 0.02,
           "output": 0.05,
           "context": 131072,
-          "throughput": 18,
-          "latencyMs": 685,
+          "throughput": 34,
+          "latencyMs": 465,
           "tools": true
         },
         {
@@ -16251,8 +16236,8 @@
           "input": 0.02,
           "output": 0.05,
           "context": 16384,
-          "throughput": 132,
-          "latencyMs": 884,
+          "throughput": 146,
+          "latencyMs": 812,
           "tools": false
         },
         {
@@ -16262,8 +16247,8 @@
           "input": 0.06,
           "output": 0.06,
           "context": 131072,
-          "throughput": 130,
-          "latencyMs": 549,
+          "throughput": 147,
+          "latencyMs": 645,
           "tools": false
         },
         {
@@ -16298,6 +16283,14 @@
           "official": false
         },
         {
+          "provider": "novita-ai",
+          "model": "meta-llama/llama-3.2-1b-instruct",
+          "input": 0.02,
+          "output": 0.02,
+          "context": 131000,
+          "official": false
+        },
+        {
           "provider": "pioneer",
           "model": "meta-llama/Llama-3.2-1B",
           "input": 0.1,
@@ -16308,6 +16301,14 @@
         {
           "provider": "cloudflare-workers-ai",
           "model": "@cf/meta/llama-3.2-1b-instruct",
+          "input": 0.027,
+          "output": 0.201,
+          "context": 60000,
+          "official": false
+        },
+        {
+          "provider": "edenai",
+          "model": "cloudflare/@cf/meta/llama-3.2-1b-instruct",
           "input": 0.027,
           "output": 0.201,
           "context": 60000,
@@ -16351,6 +16352,14 @@
           "official": false
         },
         {
+          "provider": "novita-ai",
+          "model": "meta-llama/llama-3.2-1b-instruct",
+          "input": 0.02,
+          "output": 0.02,
+          "context": 131000,
+          "official": false
+        },
+        {
           "provider": "pioneer",
           "model": "meta-llama/Llama-3.2-1B",
           "input": 0.1,
@@ -16361,6 +16370,14 @@
         {
           "provider": "cloudflare-workers-ai",
           "model": "@cf/meta/llama-3.2-1b-instruct",
+          "input": 0.027,
+          "output": 0.201,
+          "context": 60000,
+          "official": false
+        },
+        {
+          "provider": "edenai",
+          "model": "cloudflare/@cf/meta/llama-3.2-1b-instruct",
           "input": 0.027,
           "output": 0.201,
           "context": 60000,
@@ -16422,14 +16439,6 @@
         {
           "provider": "llmgateway-providers",
           "model": "novita/llama-3.2-3b-instruct",
-          "input": 0.03,
-          "output": 0.05,
-          "context": 32768,
-          "official": false
-        },
-        {
-          "provider": "novita-ai",
-          "model": "meta-llama/llama-3.2-3b-instruct",
           "input": 0.03,
           "output": 0.05,
           "context": 32768,
@@ -16515,14 +16524,6 @@
         {
           "provider": "llmgateway-providers",
           "model": "novita/llama-3.2-3b-instruct",
-          "input": 0.03,
-          "output": 0.05,
-          "context": 32768,
-          "official": false
-        },
-        {
-          "provider": "novita-ai",
-          "model": "meta-llama/llama-3.2-3b-instruct",
           "input": 0.03,
           "output": 0.05,
           "context": 32768,
@@ -16695,7 +16696,7 @@
           "model": "meta-llama/llama-3.3-70b-instruct",
           "input": 0.135,
           "output": 0.4,
-          "context": 131072,
+          "context": 12288,
           "official": false
         },
         {
@@ -16915,8 +16916,8 @@
           "input": 0.135,
           "output": 0.4,
           "context": 12288,
-          "throughput": 33,
-          "latencyMs": 1113,
+          "throughput": 50,
+          "latencyMs": 557,
           "tools": true
         },
         {
@@ -16926,8 +16927,8 @@
           "input": 0.74,
           "output": 0.74,
           "context": 131072,
-          "throughput": 12,
-          "latencyMs": 348,
+          "throughput": 24,
+          "latencyMs": 464,
           "tools": true
         },
         {
@@ -16937,8 +16938,8 @@
           "input": 1.026,
           "output": 1.026,
           "context": null,
-          "throughput": 69,
-          "latencyMs": 397,
+          "throughput": 81,
+          "latencyMs": 417,
           "tools": true
         },
         {
@@ -16948,8 +16949,8 @@
           "input": 1.04,
           "output": 1.04,
           "context": 131072,
-          "throughput": 89,
-          "latencyMs": 309,
+          "throughput": 94,
+          "latencyMs": 619,
           "tools": true
         },
         {
@@ -17070,7 +17071,7 @@
           "output": 0.85,
           "context": 1048576,
           "throughput": 43,
-          "latencyMs": 671,
+          "latencyMs": 1372,
           "tools": false
         }
       ]
@@ -17142,8 +17143,8 @@
           "input": 0.09,
           "output": 0.29,
           "context": 890000,
-          "throughput": 69,
-          "latencyMs": 626,
+          "throughput": 73,
+          "latencyMs": 598,
           "tools": true
         },
         {
@@ -17153,8 +17154,8 @@
           "input": 0.1,
           "output": 0.3,
           "context": 327680,
-          "throughput": 20,
-          "latencyMs": 313,
+          "throughput": 28,
+          "latencyMs": 553,
           "tools": true
         },
         {
@@ -17164,8 +17165,8 @@
           "input": 0.18,
           "output": 0.59,
           "context": 131072,
-          "throughput": 39,
-          "latencyMs": 1015,
+          "throughput": 18,
+          "latencyMs": 730,
           "tools": false
         }
       ]
@@ -17319,8 +17320,8 @@
           "input": 0.3,
           "output": 1.2,
           "context": 131072,
-          "throughput": 111,
-          "latencyMs": 397,
+          "throughput": 120,
+          "latencyMs": 242,
           "tools": true
         },
         {
@@ -17330,8 +17331,8 @@
           "input": 0.35,
           "output": 1.5,
           "context": 131072,
-          "throughput": 105,
-          "latencyMs": 225,
+          "throughput": 103,
+          "latencyMs": 352,
           "tools": true
         },
         {
@@ -17872,7 +17873,7 @@
           "output": 0.14,
           "context": 16384,
           "throughput": 77,
-          "latencyMs": 358,
+          "latencyMs": 252,
           "tools": false
         },
         {
@@ -18116,14 +18117,6 @@
           "official": true
         },
         {
-          "provider": "novita-ai",
-          "model": "minimax/minimax-m2",
-          "input": 0.3,
-          "output": 1.2,
-          "context": 204800,
-          "official": false
-        },
-        {
           "provider": "ofox",
           "model": "minimax/minimax-m2",
           "input": 0.3,
@@ -18303,14 +18296,6 @@
           "output": 1.2,
           "context": 204800,
           "official": true
-        },
-        {
-          "provider": "novita-ai",
-          "model": "minimax/minimax-m2.1",
-          "input": 0.3,
-          "output": 1.2,
-          "context": 204800,
-          "official": false
         },
         {
           "provider": "ofox",
@@ -18774,8 +18759,8 @@
           "input": 0.3,
           "output": 1.2,
           "context": 204800,
-          "throughput": 36,
-          "latencyMs": 1305,
+          "throughput": 41,
+          "latencyMs": 1687,
           "tools": true
         },
         {
@@ -18848,14 +18833,6 @@
           "output": 2.4,
           "context": 204800,
           "official": true
-        },
-        {
-          "provider": "novita-ai",
-          "model": "minimax/minimax-m2.5-highspeed",
-          "input": 0.6,
-          "output": 2.4,
-          "context": 204800,
-          "official": false
         },
         {
           "provider": "orcarouter",
@@ -19239,8 +19216,8 @@
           "input": 0.25,
           "output": 1,
           "context": 196608,
-          "throughput": 8,
-          "latencyMs": 627,
+          "throughput": 72,
+          "latencyMs": 442,
           "tools": true
         },
         {
@@ -19251,7 +19228,7 @@
           "output": 1.2,
           "context": 204800,
           "throughput": 36,
-          "latencyMs": 1407,
+          "latencyMs": 1102,
           "tools": true
         },
         {
@@ -19651,6 +19628,14 @@
           "official": false
         },
         {
+          "provider": "novita-ai",
+          "model": "minimax/minimax-m3",
+          "input": 0.3,
+          "output": 1.2,
+          "context": 1000000,
+          "official": false
+        },
+        {
           "provider": "opencode-go",
           "model": "minimax-m3",
           "input": 0.3,
@@ -19827,8 +19812,8 @@
           "input": 0.28,
           "output": 1.1,
           "context": 524288,
-          "throughput": 20,
-          "latencyMs": 554,
+          "throughput": 18,
+          "latencyMs": 627,
           "tools": true
         },
         {
@@ -19838,8 +19823,8 @@
           "input": 0.3,
           "output": 1.2,
           "context": 512000,
-          "throughput": 85,
-          "latencyMs": 645,
+          "throughput": 112,
+          "latencyMs": 804,
           "tools": true
         },
         {
@@ -19849,8 +19834,8 @@
           "input": 0.3,
           "output": 1.2,
           "context": 1000000,
-          "throughput": 67,
-          "latencyMs": 2859,
+          "throughput": 76,
+          "latencyMs": 1143,
           "tools": true
         },
         {
@@ -19860,8 +19845,8 @@
           "input": 0.3,
           "output": 1.2,
           "context": 524288,
-          "throughput": 35,
-          "latencyMs": 422,
+          "throughput": 37,
+          "latencyMs": 435,
           "tools": true
         },
         {
@@ -19946,6 +19931,14 @@
           "input": 0.3,
           "output": 0.9,
           "context": 256000,
+          "official": false
+        },
+        {
+          "provider": "lowrouter",
+          "model": "auto/mistralai/codestral-2508",
+          "input": 0.3138,
+          "output": 0.9413,
+          "context": 128000,
           "official": false
         },
         {
@@ -20240,6 +20233,14 @@
           "official": false
         },
         {
+          "provider": "lowrouter",
+          "model": "auto/mistralai/ministral-14b-2512",
+          "input": 0.2092,
+          "output": 0.2092,
+          "context": 262144,
+          "official": false
+        },
+        {
           "provider": "cortecs",
           "model": "ministral-14b-2512",
           "input": 0.24,
@@ -20258,8 +20259,8 @@
         {
           "provider": "edenai",
           "model": "infomaniak/mistralai/Ministral-3-14B-Instruct-2512",
-          "input": 0.33558,
-          "output": 0.44744,
+          "input": 0.33618,
+          "output": 0.44824,
           "context": 100000,
           "official": false
         },
@@ -20287,8 +20288,8 @@
         {
           "provider": "edenai",
           "model": "infomaniak/mistralai/Ministral-3-14B-Instruct-2512",
-          "input": 0.33558,
-          "output": 0.44744,
+          "input": 0.33618,
+          "output": 0.44824,
           "context": 100000,
           "official": false
         },
@@ -20388,6 +20389,14 @@
           "official": false
         },
         {
+          "provider": "lowrouter",
+          "model": "auto/mistralai/ministral-3b-2512",
+          "input": 0.1046,
+          "output": 0.1046,
+          "context": 262144,
+          "official": false
+        },
+        {
           "provider": "cortecs",
           "model": "ministral-3b-2512",
           "input": 0.123,
@@ -20453,6 +20462,14 @@
           "model": "mistralai/ministral-8b-2512",
           "input": 0.15,
           "output": 0.15,
+          "context": 262144,
+          "official": false
+        },
+        {
+          "provider": "lowrouter",
+          "model": "auto/mistralai/ministral-8b-2512",
+          "input": 0.1569,
+          "output": 0.1569,
           "context": 262144,
           "official": false
         },
@@ -20719,6 +20736,14 @@
           "official": false
         },
         {
+          "provider": "lowrouter",
+          "model": "auto/mistralai/mistral-large-2512",
+          "input": 0.5229,
+          "output": 1.5688,
+          "context": 262144,
+          "official": false
+        },
+        {
           "provider": "cortecs",
           "model": "mistral-large-2512",
           "input": 0.613,
@@ -20800,6 +20825,14 @@
           "model": "mistral/mistral-large-4",
           "input": 0.68,
           "output": 2.09,
+          "context": 524288,
+          "official": false
+        },
+        {
+          "provider": "lowrouter",
+          "model": "auto/mistralai/mistral-large-4",
+          "input": 0.7112,
+          "output": 2.1859,
           "context": 524288,
           "official": false
         },
@@ -21083,6 +21116,14 @@
           "official": false
         },
         {
+          "provider": "lowrouter",
+          "model": "auto/mistralai/mistral-medium-3.5",
+          "input": 1.5688,
+          "output": 7.8442,
+          "context": 262144,
+          "official": false
+        },
+        {
           "provider": "requesty",
           "model": "mistral-medium-3-5",
           "input": 1.65,
@@ -21112,14 +21153,6 @@
     "mistral/mistral-nemo": {
       "offers": [
         {
-          "provider": "vercel",
-          "model": "mistral/mistral-nemo",
-          "input": 0.019,
-          "output": 0.03,
-          "context": 131072,
-          "official": false
-        },
-        {
           "provider": "pioneer",
           "model": "mistralai/Mistral-Nemo-Instruct-2407",
           "input": 0.02,
@@ -21130,6 +21163,14 @@
         {
           "provider": "openrouter",
           "model": "mistralai/mistral-nemo",
+          "input": 0.029,
+          "output": 0.03,
+          "context": 131072,
+          "official": false
+        },
+        {
+          "provider": "vercel",
+          "model": "mistral/mistral-nemo",
           "input": 0.029,
           "output": 0.03,
           "context": 131072,
@@ -21158,14 +21199,6 @@
           "output": 0.15,
           "context": 128000,
           "official": true
-        },
-        {
-          "provider": "novita-ai",
-          "model": "mistralai/mistral-nemo",
-          "input": 0.04,
-          "output": 0.17,
-          "context": 60288,
-          "official": false
         },
         {
           "provider": "digitalocean",
@@ -21380,6 +21413,14 @@
           "input": 0.156,
           "output": 0.625,
           "context": 262144,
+          "official": false
+        },
+        {
+          "provider": "lowrouter",
+          "model": "auto/mistralai/mistral-small-2603",
+          "input": 0.1569,
+          "output": 0.6275,
+          "context": 256000,
           "official": false
         },
         {
@@ -21766,14 +21807,6 @@
           "official": false
         },
         {
-          "provider": "openrouter",
-          "model": "moonshotai/kimi-k2.5",
-          "input": 0.45,
-          "output": 2.25,
-          "context": 262144,
-          "official": false
-        },
-        {
           "provider": "siliconflow",
           "model": "moonshotai/Kimi-K2.5",
           "input": 0.45,
@@ -21794,6 +21827,14 @@
           "model": "kimi-k2.5",
           "input": 0.574,
           "output": 2.411,
+          "context": 262144,
+          "official": false
+        },
+        {
+          "provider": "openrouter",
+          "model": "moonshotai/kimi-k2.5",
+          "input": 0.5,
+          "output": 2.5,
           "context": 262144,
           "official": false
         },
@@ -22046,8 +22087,8 @@
           "input": 0.45,
           "output": 2.25,
           "context": 262144,
-          "throughput": 18,
-          "latencyMs": 988,
+          "throughput": 21,
+          "latencyMs": 1043,
           "tools": true
         },
         {
@@ -22057,8 +22098,8 @@
           "input": 0.6,
           "output": 3,
           "context": 262144,
-          "throughput": 71,
-          "latencyMs": 1122,
+          "throughput": 47,
+          "latencyMs": 1177,
           "tools": true
         },
         {
@@ -22605,8 +22646,8 @@
           "input": 0.8,
           "output": 3.4,
           "context": 262144,
-          "throughput": 41,
-          "latencyMs": 2238,
+          "throughput": 33,
+          "latencyMs": 1697,
           "tools": true
         },
         {
@@ -22617,7 +22658,7 @@
           "output": 3.5,
           "context": 262144,
           "throughput": 16,
-          "latencyMs": 655,
+          "latencyMs": 718,
           "tools": true
         },
         {
@@ -23100,8 +23141,8 @@
           "input": 0.68,
           "output": 3.4,
           "context": 262144,
-          "throughput": 58,
-          "latencyMs": 483,
+          "throughput": 25,
+          "latencyMs": 628,
           "tools": true
         },
         {
@@ -23111,8 +23152,8 @@
           "input": 0.95,
           "output": 4,
           "context": 262144,
-          "throughput": 39,
-          "latencyMs": 1496,
+          "throughput": 43,
+          "latencyMs": 1360,
           "tools": true
         },
         {
@@ -23272,6 +23313,14 @@
           "official": false
         },
         {
+          "provider": "edenai",
+          "model": "deepinfra/moonshotai/Kimi-K2-Instruct",
+          "input": 0.5,
+          "output": 2,
+          "context": 131072,
+          "official": false
+        },
+        {
           "provider": "helicone",
           "model": "kimi-k2-0905",
           "input": 0.5,
@@ -23368,8 +23417,8 @@
           "input": 0.57,
           "output": 2.3,
           "context": 131072,
-          "throughput": 45,
-          "latencyMs": 710,
+          "throughput": 49,
+          "latencyMs": 934,
           "tools": true
         },
         {
@@ -23492,14 +23541,6 @@
           "official": false
         },
         {
-          "provider": "openrouter",
-          "model": "moonshotai/kimi-k3",
-          "input": 0.5,
-          "output": 12,
-          "context": 1048576,
-          "official": false
-        },
-        {
           "provider": "vancine",
           "model": "kimi-k3",
           "input": 2.4,
@@ -23512,6 +23553,14 @@
           "model": "moonshotai/kimi-k3",
           "input": 3,
           "output": 12.5,
+          "context": 1048576,
+          "official": false
+        },
+        {
+          "provider": "openrouter",
+          "model": "moonshotai/kimi-k3",
+          "input": 0.64,
+          "output": 13.5,
           "context": 1048576,
           "official": false
         },
@@ -23988,8 +24037,8 @@
           "input": 2.7,
           "output": 13.5,
           "context": 1048576,
-          "throughput": 39,
-          "latencyMs": 1065,
+          "throughput": 38,
+          "latencyMs": 944,
           "tools": true
         },
         {
@@ -23999,8 +24048,8 @@
           "input": 2.85,
           "output": 14.25,
           "context": 1048576,
-          "throughput": 29,
-          "latencyMs": 474,
+          "throughput": 43,
+          "latencyMs": 585,
           "tools": true
         },
         {
@@ -24010,8 +24059,8 @@
           "input": 3,
           "output": 15,
           "context": 1048576,
-          "throughput": 106,
-          "latencyMs": 356,
+          "throughput": 59,
+          "latencyMs": 4122,
           "tools": true
         },
         {
@@ -24021,8 +24070,8 @@
           "input": 3,
           "output": 15,
           "context": 1048576,
-          "throughput": 29,
-          "latencyMs": 1931,
+          "throughput": 35,
+          "latencyMs": 1565,
           "tools": true
         },
         {
@@ -24432,14 +24481,6 @@
           "official": false
         },
         {
-          "provider": "openrouter",
-          "model": "nvidia/nemotron-3.5-lightning",
-          "input": 0.0469,
-          "output": 0.134,
-          "context": 262144,
-          "official": false
-        },
-        {
           "provider": "runinfra",
           "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
           "input": 0.05,
@@ -24451,6 +24492,14 @@
           "provider": "fireworks-ai",
           "model": "accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b",
           "input": 0.05,
+          "output": 0.2,
+          "context": 262144,
+          "official": false
+        },
+        {
+          "provider": "openrouter",
+          "model": "nvidia/nemotron-3.5-lightning",
+          "input": 0.07,
           "output": 0.2,
           "context": 262144,
           "official": false
@@ -24543,6 +24592,14 @@
           "input": 0.05,
           "output": 0.2,
           "context": 256000,
+          "official": false
+        },
+        {
+          "provider": "novita-ai",
+          "model": "nvidia/nemotron-3-nano-30b-a3b",
+          "input": 0.05,
+          "output": 0.2,
+          "context": 262144,
           "official": false
         },
         {
@@ -25015,8 +25072,8 @@
           "input": null,
           "output": null,
           "context": 262144,
-          "throughput": 269,
-          "latencyMs": 500,
+          "throughput": 341,
+          "latencyMs": 258,
           "tools": true
         }
       ]
@@ -25053,8 +25110,8 @@
           "input": 1,
           "output": 5,
           "context": 262144,
-          "throughput": 48,
-          "latencyMs": 511,
+          "throughput": 17,
+          "latencyMs": 412,
           "tools": true
         }
       ]
@@ -32353,6 +32410,14 @@
           "official": false
         },
         {
+          "provider": "kilo",
+          "model": "openai/gpt-oss-120b",
+          "input": 0.03,
+          "output": 0.15,
+          "context": 131072,
+          "official": false
+        },
+        {
           "provider": "helicone",
           "model": "gpt-oss-120b",
           "input": 0.04,
@@ -32371,14 +32436,6 @@
         {
           "provider": "edenai",
           "model": "flexai/gpt-oss-120b",
-          "input": 0.03,
-          "output": 0.17,
-          "context": 131072,
-          "official": false
-        },
-        {
-          "provider": "kilo",
-          "model": "openai/gpt-oss-120b",
           "input": 0.03,
           "output": 0.17,
           "context": 131072,
@@ -32785,8 +32842,8 @@
           "input": 0.037,
           "output": 0.17,
           "context": 131072,
-          "throughput": 55,
-          "latencyMs": 284,
+          "throughput": 79,
+          "latencyMs": 439,
           "tools": true
         },
         {
@@ -32796,8 +32853,8 @@
           "input": 0.05,
           "output": 0.25,
           "context": 131072,
-          "throughput": 162,
-          "latencyMs": 545,
+          "throughput": 240,
+          "latencyMs": 473,
           "tools": true
         },
         {
@@ -32807,8 +32864,8 @@
           "input": 0.1,
           "output": 0.4,
           "context": 131072,
-          "throughput": 94,
-          "latencyMs": 648,
+          "throughput": 113,
+          "latencyMs": 673,
           "tools": true
         },
         {
@@ -32818,8 +32875,8 @@
           "input": 0.09,
           "output": 0.47,
           "context": 131072,
-          "throughput": 30,
-          "latencyMs": 367,
+          "throughput": 65,
+          "latencyMs": 396,
           "tools": true
         },
         {
@@ -32829,8 +32886,8 @@
           "input": 0.1,
           "output": 0.5,
           "context": 128072,
-          "throughput": 205,
-          "latencyMs": 272,
+          "throughput": 167,
+          "latencyMs": 257,
           "tools": true
         },
         {
@@ -32840,8 +32897,8 @@
           "input": 0.15,
           "output": 0.6,
           "context": 131072,
-          "throughput": 178,
-          "latencyMs": 390,
+          "throughput": 183,
+          "latencyMs": 310,
           "tools": true
         },
         {
@@ -32851,8 +32908,8 @@
           "input": 0.15,
           "output": 0.6,
           "context": 131072,
-          "throughput": 95,
-          "latencyMs": 4542,
+          "throughput": 131,
+          "latencyMs": 3762,
           "tools": true
         },
         {
@@ -32862,8 +32919,8 @@
           "input": 0.171,
           "output": 0.684,
           "context": null,
-          "throughput": 83,
-          "latencyMs": 571,
+          "throughput": 186,
+          "latencyMs": 395,
           "tools": true
         },
         {
@@ -32873,8 +32930,8 @@
           "input": 0.15,
           "output": 0.75,
           "context": 131072,
-          "throughput": 408,
-          "latencyMs": 392,
+          "throughput": 431,
+          "latencyMs": 256,
           "tools": true
         },
         {
@@ -32884,8 +32941,8 @@
           "input": 0.35,
           "output": 0.75,
           "context": 131072,
-          "throughput": 896,
-          "latencyMs": 170,
+          "throughput": 670,
+          "latencyMs": 307,
           "tools": true
         },
         {
@@ -32997,14 +33054,6 @@
           "input": 0.04,
           "output": 0.15,
           "context": 128000,
-          "official": false
-        },
-        {
-          "provider": "novita-ai",
-          "model": "openai/gpt-oss-20b",
-          "input": 0.04,
-          "output": 0.15,
-          "context": 131072,
           "official": false
         },
         {
@@ -33216,8 +33265,8 @@
           "input": 0.03,
           "output": 0.14,
           "context": 131072,
-          "throughput": 133,
-          "latencyMs": 297,
+          "throughput": 115,
+          "latencyMs": 370,
           "tools": true
         },
         {
@@ -33227,8 +33276,8 @@
           "input": 0.05,
           "output": 0.18,
           "context": 131072,
-          "throughput": 59,
-          "latencyMs": 448,
+          "throughput": 62,
+          "latencyMs": 336,
           "tools": true
         },
         {
@@ -33238,8 +33287,8 @@
           "input": 0.05,
           "output": 0.2,
           "context": 131072,
-          "throughput": 156,
-          "latencyMs": 536,
+          "throughput": 158,
+          "latencyMs": 558,
           "tools": true
         },
         {
@@ -33249,8 +33298,8 @@
           "input": 0.1,
           "output": 0.5,
           "context": 131072,
-          "throughput": 763,
-          "latencyMs": 272,
+          "throughput": 707,
+          "latencyMs": 402,
           "tools": true
         },
         {
@@ -34642,6 +34691,14 @@
           "output": 7.37,
           "context": 16384,
           "official": true
+        },
+        {
+          "provider": "edenai",
+          "model": "qwen/qwen-mt-plus",
+          "input": 2.46,
+          "output": 7.37,
+          "context": 4096,
+          "official": false
         }
       ],
       "hf": []
@@ -34684,22 +34741,6 @@
           "output": 0.27,
           "context": 32768,
           "official": true
-        },
-        {
-          "provider": "llmgateway",
-          "model": "qwen-omni-turbo",
-          "input": 0.2,
-          "output": 0.8,
-          "context": 32768,
-          "official": false
-        },
-        {
-          "provider": "llmgateway-providers",
-          "model": "alibaba/qwen-omni-turbo",
-          "input": 0.2,
-          "output": 0.8,
-          "context": 32768,
-          "official": false
         }
       ],
       "hf": []
@@ -35040,14 +35081,6 @@
           "official": false
         },
         {
-          "provider": "novita-ai",
-          "model": "qwen/qwen-2.5-72b-instruct",
-          "input": 0.38,
-          "output": 0.4,
-          "context": 32000,
-          "official": false
-        },
-        {
           "provider": "nano-gpt",
           "model": "qwen/qwen-2.5-72b-instruct",
           "input": 0.357,
@@ -35096,8 +35129,8 @@
           "input": 0.36,
           "output": 0.4,
           "context": 32768,
-          "throughput": 39,
-          "latencyMs": 249,
+          "throughput": 29,
+          "latencyMs": 288,
           "tools": true
         },
         {
@@ -35129,14 +35162,6 @@
           "input": 0.05,
           "output": 0.05,
           "context": 33000,
-          "official": false
-        },
-        {
-          "provider": "novita-ai",
-          "model": "qwen/qwen2.5-7b-instruct",
-          "input": 0.07,
-          "output": 0.07,
-          "context": 32000,
           "official": false
         },
         {
@@ -35190,14 +35215,6 @@
           "input": 0.05,
           "output": 0.05,
           "context": 33000,
-          "official": false
-        },
-        {
-          "provider": "novita-ai",
-          "model": "qwen/qwen2.5-7b-instruct",
-          "input": 0.07,
-          "output": 0.07,
-          "context": 32000,
           "official": false
         },
         {
@@ -35323,8 +35340,8 @@
           "input": 0.06,
           "output": 0.2,
           "context": 131072,
-          "throughput": 45,
-          "latencyMs": 626,
+          "throughput": 47,
+          "latencyMs": 654,
           "tools": false
         },
         {
@@ -35350,8 +35367,8 @@
           "input": 0.01,
           "output": 0.03,
           "context": 32768,
-          "throughput": 167,
-          "latencyMs": 846,
+          "throughput": 152,
+          "latencyMs": 616,
           "tools": false
         },
         {
@@ -35399,8 +35416,8 @@
           "input": 0.01,
           "output": 0.03,
           "context": 131072,
-          "throughput": 149,
-          "latencyMs": 539,
+          "throughput": 142,
+          "latencyMs": 594,
           "tools": false
         },
         {
@@ -35469,14 +35486,6 @@
           "official": false
         },
         {
-          "provider": "novita-ai",
-          "model": "qwen/qwen2.5-vl-72b-instruct",
-          "input": 0.8,
-          "output": 0.8,
-          "context": 32768,
-          "official": false
-        },
-        {
           "provider": "kilo",
           "model": "qwen/qwen2.5-vl-72b-instruct",
           "input": 0.8,
@@ -35541,8 +35550,8 @@
           "input": 1.01,
           "output": 1.01,
           "context": 32768,
-          "throughput": 33,
-          "latencyMs": 528,
+          "throughput": 36,
+          "latencyMs": 465,
           "tools": false
         },
         {
@@ -35611,11 +35620,19 @@
           "official": false
         },
         {
+          "provider": "kilo",
+          "model": "qwen/qwen3-14b",
+          "input": 0.12,
+          "output": 0.24,
+          "context": 40960,
+          "official": false
+        },
+        {
           "provider": "openrouter",
           "model": "qwen/qwen3-14b",
           "input": 0.12,
           "output": 0.24,
-          "context": 131072,
+          "context": 40960,
           "official": false
         },
         {
@@ -35651,14 +35668,6 @@
           "official": false
         },
         {
-          "provider": "kilo",
-          "model": "qwen/qwen3-14b",
-          "input": 0.2275,
-          "output": 0.91,
-          "context": 40960,
-          "official": false
-        },
-        {
           "provider": "alibaba",
           "model": "qwen3-14b",
           "input": 0.35,
@@ -35675,8 +35684,8 @@
           "input": 0.07,
           "output": 0.2,
           "context": 40960,
-          "throughput": 96,
-          "latencyMs": 516,
+          "throughput": 93,
+          "latencyMs": 647,
           "tools": true
         },
         {
@@ -35686,8 +35695,8 @@
           "input": 0.12,
           "output": 0.24,
           "context": 40960,
-          "throughput": 65,
-          "latencyMs": 281,
+          "throughput": 14,
+          "latencyMs": 187,
           "tools": true
         },
         {
@@ -35746,14 +35755,6 @@
           "official": false
         },
         {
-          "provider": "novita-ai",
-          "model": "qwen/qwen3-235b-a22b-fp8",
-          "input": 0.2,
-          "output": 0.8,
-          "context": 40960,
-          "official": false
-        },
-        {
           "provider": "google-vertex",
           "model": "qwen/qwen3-235b-a22b-instruct-2507-maas",
           "input": 0.22,
@@ -35774,22 +35775,6 @@
           "model": "qwen/qwen3-235b-a22b",
           "input": 0.287,
           "output": 1.147,
-          "context": 131072,
-          "official": false
-        },
-        {
-          "provider": "kilo",
-          "model": "qwen/qwen3-235b-a22b",
-          "input": 0.455,
-          "output": 1.82,
-          "context": 131072,
-          "official": false
-        },
-        {
-          "provider": "openrouter",
-          "model": "qwen/qwen3-235b-a22b",
-          "input": 0.455,
-          "output": 1.82,
           "context": 131072,
           "official": false
         },
@@ -35827,7 +35812,7 @@
           "output": 0.6,
           "context": 32000,
           "throughput": 16,
-          "latencyMs": 753,
+          "latencyMs": 726,
           "tools": true
         },
         {
@@ -35878,6 +35863,14 @@
           "official": false
         },
         {
+          "provider": "kilo",
+          "model": "qwen/qwen3-235b-a22b-2507",
+          "input": 0.09,
+          "output": 0.55,
+          "context": 262144,
+          "official": false
+        },
+        {
           "provider": "openrouter",
           "model": "qwen/qwen3-235b-a22b-2507",
           "input": 0.09,
@@ -35899,22 +35892,6 @@
           "input": 0.09,
           "output": 0.58,
           "context": 131072,
-          "official": false
-        },
-        {
-          "provider": "novita-ai",
-          "model": "qwen/qwen3-235b-a22b-instruct-2507",
-          "input": 0.09,
-          "output": 0.58,
-          "context": 131072,
-          "official": false
-        },
-        {
-          "provider": "kilo",
-          "model": "qwen/qwen3-235b-a22b-2507",
-          "input": 0.1495,
-          "output": 0.598,
-          "context": 262144,
           "official": false
         },
         {
@@ -36062,8 +36039,8 @@
           "input": 0.09,
           "output": 0.55,
           "context": 262144,
-          "throughput": 28,
-          "latencyMs": 384,
+          "throughput": 17,
+          "latencyMs": 410,
           "tools": true
         },
         {
@@ -36073,8 +36050,8 @@
           "input": 0.2,
           "output": 0.6,
           "context": 32768,
-          "throughput": 14,
-          "latencyMs": 838,
+          "throughput": 15,
+          "latencyMs": 737,
           "tools": true
         },
         {
@@ -36084,8 +36061,8 @@
           "input": 0.855,
           "output": 2.565,
           "context": null,
-          "throughput": 83,
-          "latencyMs": 384,
+          "throughput": 32,
+          "latencyMs": 829,
           "tools": true
         }
       ]
@@ -36117,16 +36094,16 @@
           "official": false
         },
         {
-          "provider": "novita-ai",
-          "model": "qwen/qwen3-30b-a3b-fp8",
-          "input": 0.09,
-          "output": 0.45,
+          "provider": "deepinfra",
+          "model": "Qwen/Qwen3-30B-A3B",
+          "input": 0.12,
+          "output": 0.5,
           "context": 40960,
           "official": false
         },
         {
-          "provider": "deepinfra",
-          "model": "Qwen/Qwen3-30B-A3B",
+          "provider": "kilo",
+          "model": "qwen/qwen3-30b-a3b",
           "input": 0.12,
           "output": 0.5,
           "context": 40960,
@@ -36137,7 +36114,7 @@
           "model": "qwen/qwen3-30b-a3b",
           "input": 0.12,
           "output": 0.5,
-          "context": 131072,
+          "context": 40960,
           "official": false
         },
         {
@@ -36145,14 +36122,6 @@
           "model": "alibaba/qwen-3-30b",
           "input": 0.12,
           "output": 0.5,
-          "context": 40960,
-          "official": false
-        },
-        {
-          "provider": "kilo",
-          "model": "qwen/qwen3-30b-a3b",
-          "input": 0.13,
-          "output": 0.52,
           "context": 40960,
           "official": false
         },
@@ -36189,8 +36158,8 @@
           "input": 0.12,
           "output": 0.5,
           "context": 40960,
-          "throughput": 120,
-          "latencyMs": 177,
+          "throughput": 104,
+          "latencyMs": 342,
           "tools": true
         }
       ]
@@ -36214,6 +36183,14 @@
           "official": false
         },
         {
+          "provider": "ambient",
+          "model": "qwen/qwen3-30b-a3b-instruct-2507",
+          "input": 0.09,
+          "output": 0.3,
+          "context": 131072,
+          "official": false
+        },
+        {
           "provider": "siliconflow",
           "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
           "input": 0.09,
@@ -36227,6 +36204,14 @@
           "input": 0.09,
           "output": 0.3,
           "context": 262000,
+          "official": false
+        },
+        {
+          "provider": "kilo",
+          "model": "qwen/qwen3-30b-a3b-instruct-2507",
+          "input": 0.1,
+          "output": 0.3,
+          "context": 262144,
           "official": false
         },
         {
@@ -36258,14 +36243,6 @@
           "model": "qwen/qwenLM/models/Qwen3-30B-A3B-Instruct-2507",
           "input": 0.3,
           "output": 0.5,
-          "context": 262144,
-          "official": false
-        },
-        {
-          "provider": "kilo",
-          "model": "qwen/qwen3-30b-a3b-instruct-2507",
-          "input": 0.13,
-          "output": 0.52,
           "context": 262144,
           "official": false
         },
@@ -36332,14 +36309,6 @@
         },
         {
           "provider": "jiekou",
-          "model": "qwen/qwen3-32b-fp8",
-          "input": 0.1,
-          "output": 0.45,
-          "context": 40960,
-          "official": false
-        },
-        {
-          "provider": "novita-ai",
           "model": "qwen/qwen3-32b-fp8",
           "input": 0.1,
           "output": 0.45,
@@ -36467,8 +36436,8 @@
           "input": 0.08,
           "output": 0.25,
           "context": 40960,
-          "throughput": 46,
-          "latencyMs": 714,
+          "throughput": 39,
+          "latencyMs": 611,
           "tools": true
         },
         {
@@ -36478,8 +36447,8 @@
           "input": 0.08,
           "output": 0.28,
           "context": 40960,
-          "throughput": 24,
-          "latencyMs": 235,
+          "throughput": 26,
+          "latencyMs": 282,
           "tools": true
         },
         {
@@ -36497,14 +36466,6 @@
     },
     "qwen/qwen3-4b": {
       "offers": [
-        {
-          "provider": "novita-ai",
-          "model": "qwen/qwen3-4b-fp8",
-          "input": 0.03,
-          "output": 0.03,
-          "context": 128000,
-          "official": false
-        },
         {
           "provider": "pioneer",
           "model": "Qwen/Qwen3-4B-Instruct-2507",
@@ -36548,8 +36509,8 @@
           "input": 0.01,
           "output": 0.03,
           "context": 262144,
-          "throughput": 140,
-          "latencyMs": 604,
+          "throughput": 148,
+          "latencyMs": 690,
           "tools": true
         },
         {
@@ -36575,8 +36536,8 @@
           "input": 0.01,
           "output": 0.03,
           "context": 262144,
-          "throughput": 157,
-          "latencyMs": 669,
+          "throughput": 154,
+          "latencyMs": 812,
           "tools": true
         }
       ]
@@ -36765,8 +36726,8 @@
           "input": 0.29,
           "output": 2.4,
           "context": 262144,
-          "throughput": 35,
-          "latencyMs": 731,
+          "throughput": 53,
+          "latencyMs": 285,
           "tools": true
         },
         {
@@ -36776,8 +36737,8 @@
           "input": 0.4,
           "output": 3.2,
           "context": 262144,
-          "throughput": 106,
-          "latencyMs": 795,
+          "throughput": 105,
+          "latencyMs": 1619,
           "tools": true
         }
       ]
@@ -36937,8 +36898,8 @@
           "input": 0.3,
           "output": 2.4,
           "context": 262144,
-          "throughput": 64,
-          "latencyMs": 728,
+          "throughput": 50,
+          "latencyMs": 1069,
           "tools": true
         },
         {
@@ -36948,8 +36909,8 @@
           "input": 0.26,
           "output": 2.6,
           "context": 262144,
-          "throughput": 50,
-          "latencyMs": 362,
+          "throughput": 63,
+          "latencyMs": 311,
           "tools": true
         },
         {
@@ -37157,8 +37118,8 @@
           "input": 0.14,
           "output": 1,
           "context": 262144,
-          "throughput": 43,
-          "latencyMs": 312,
+          "throughput": 137,
+          "latencyMs": 197,
           "tools": true
         },
         {
@@ -37168,8 +37129,8 @@
           "input": 0.25,
           "output": 2,
           "context": 262144,
-          "throughput": 69,
-          "latencyMs": 912,
+          "throughput": 71,
+          "latencyMs": 1228,
           "tools": true
         }
       ]
@@ -37449,8 +37410,8 @@
           "input": 0.45,
           "output": 3,
           "context": 262144,
-          "throughput": 43,
-          "latencyMs": 240,
+          "throughput": 57,
+          "latencyMs": 478,
           "tools": true
         },
         {
@@ -37461,7 +37422,7 @@
           "output": 3.6,
           "context": 262144,
           "throughput": 77,
-          "latencyMs": 1312,
+          "latencyMs": 1377,
           "tools": true
         },
         {
@@ -37471,8 +37432,8 @@
           "input": 0.684,
           "output": 4.104,
           "context": null,
-          "throughput": 80,
-          "latencyMs": 1645,
+          "throughput": 113,
+          "latencyMs": 473,
           "tools": true
         },
         {
@@ -37482,8 +37443,8 @@
           "input": 0.71,
           "output": 4.25,
           "context": 262144,
-          "throughput": 100,
-          "latencyMs": 460,
+          "throughput": 120,
+          "latencyMs": 386,
           "tools": true
         },
         {
@@ -37715,8 +37676,8 @@
           "input": 0.1,
           "output": 0.15,
           "context": 262144,
-          "throughput": 62,
-          "latencyMs": 382,
+          "throughput": 19,
+          "latencyMs": 431,
           "tools": true
         },
         {
@@ -37727,7 +37688,7 @@
           "output": 0.18,
           "context": 262144,
           "throughput": 37,
-          "latencyMs": 436,
+          "latencyMs": 458,
           "tools": true
         },
         {
@@ -37737,8 +37698,8 @@
           "input": 0.17,
           "output": 0.25,
           "context": 262144,
-          "throughput": 94,
-          "latencyMs": 415,
+          "throughput": 112,
+          "latencyMs": 460,
           "tools": true
         },
         {
@@ -38087,14 +38048,6 @@
           "official": false
         },
         {
-          "provider": "openrouter",
-          "model": "qwen/qwen3.6-27b",
-          "input": 0.45,
-          "output": 2.7,
-          "context": 262144,
-          "official": false
-        },
-        {
           "provider": "groq",
           "model": "qwen/qwen3.6-27b",
           "input": 0.6,
@@ -38159,6 +38112,14 @@
           "official": false
         },
         {
+          "provider": "openrouter",
+          "model": "qwen/qwen3.6-27b",
+          "input": 0.32,
+          "output": 3.2,
+          "context": 262144,
+          "official": false
+        },
+        {
           "provider": "venice",
           "model": "qwen3-6-27b",
           "input": 0.325,
@@ -38183,6 +38144,14 @@
           "official": true
         },
         {
+          "provider": "novita-ai",
+          "model": "qwen/qwen3.6-27b",
+          "input": 0.6,
+          "output": 3.6,
+          "context": 262144,
+          "official": false
+        },
+        {
           "provider": "vercel",
           "model": "alibaba/qwen3.6-27b",
           "input": 0.6,
@@ -38199,8 +38168,8 @@
           "input": 0.47,
           "output": 3.19,
           "context": 262144,
-          "throughput": 77,
-          "latencyMs": 447,
+          "throughput": 75,
+          "latencyMs": 1550,
           "tools": true
         },
         {
@@ -38210,8 +38179,8 @@
           "input": 0.32,
           "output": 3.2,
           "context": 262144,
-          "throughput": 46,
-          "latencyMs": 709,
+          "throughput": 75,
+          "latencyMs": 456,
           "tools": true
         },
         {
@@ -38334,6 +38303,14 @@
           "official": false
         },
         {
+          "provider": "ambient",
+          "model": "qwen/qwen3.6-35b-a3b",
+          "input": 0.15,
+          "output": 1,
+          "context": 262144,
+          "official": false
+        },
+        {
           "provider": "kilo",
           "model": "qwen/qwen3.6-35b-a3b",
           "input": 0.15,
@@ -38391,6 +38368,14 @@
         },
         {
           "provider": "merge-gateway",
+          "model": "qwen/qwen3.6-35b-a3b",
+          "input": 0.248,
+          "output": 1.485,
+          "context": 262144,
+          "official": false
+        },
+        {
+          "provider": "novita-ai",
           "model": "qwen/qwen3.6-35b-a3b",
           "input": 0.248,
           "output": 1.485,
@@ -38478,8 +38463,8 @@
           "input": 0.1,
           "output": 0.95,
           "context": 262144,
-          "throughput": 12,
-          "latencyMs": 537,
+          "throughput": 13,
+          "latencyMs": 1870,
           "tools": true
         },
         {
@@ -38489,8 +38474,8 @@
           "input": 0.285,
           "output": 1.71,
           "context": null,
-          "throughput": 52,
-          "latencyMs": 516,
+          "throughput": 99,
+          "latencyMs": 447,
           "tools": true
         },
         {
@@ -38666,22 +38651,6 @@
     "qwen/qwen3-6-max-preview": {
       "offers": [
         {
-          "provider": "kilo",
-          "model": "qwen/qwen3.6-max-preview",
-          "input": 1.027,
-          "output": 6.162,
-          "context": 262144,
-          "official": false
-        },
-        {
-          "provider": "openrouter",
-          "model": "qwen/qwen3.6-max-preview",
-          "input": 1.027,
-          "output": 6.162,
-          "context": 262144,
-          "official": false
-        },
-        {
           "provider": "nano-gpt",
           "model": "qwen/qwen3.6-max-preview",
           "input": 1.04,
@@ -38714,35 +38683,11 @@
           "official": true
         },
         {
-          "provider": "llmgateway",
-          "model": "qwen3.6-max-preview",
-          "input": 1.3,
-          "output": 7.8,
-          "context": 262144,
-          "official": false
-        },
-        {
-          "provider": "llmgateway-providers",
-          "model": "alibaba/qwen3.6-max-preview",
-          "input": 1.3,
-          "output": 7.8,
-          "context": 262144,
-          "official": false
-        },
-        {
           "provider": "vercel",
           "model": "alibaba/qwen-3.6-max-preview",
           "input": 1.3,
           "output": 7.8,
           "context": 240000,
-          "official": false
-        },
-        {
-          "provider": "empiriolabs",
-          "model": "qwen3-6-max-preview",
-          "input": 1.31,
-          "output": 7.88,
-          "context": 256000,
           "official": false
         },
         {
@@ -39715,6 +39660,14 @@
           "official": false
         },
         {
+          "provider": "novita-ai",
+          "model": "qwen/qwen3.8-2.4t-a95b",
+          "input": 2,
+          "output": 6,
+          "context": 1000000,
+          "official": false
+        },
+        {
           "provider": "openrouter",
           "model": "qwen/qwen3.8-2.4t-a95b",
           "input": 2,
@@ -39803,8 +39756,8 @@
           "input": 2,
           "output": 6,
           "context": 262144,
-          "throughput": 88,
-          "latencyMs": 362,
+          "throughput": 85,
+          "latencyMs": 463,
           "tools": true
         },
         {
@@ -39814,8 +39767,8 @@
           "input": 2,
           "output": 6,
           "context": 1000000,
-          "throughput": 39,
-          "latencyMs": 1088,
+          "throughput": 29,
+          "latencyMs": 1821,
           "tools": true
         },
         {
@@ -39825,19 +39778,8 @@
           "input": 2,
           "output": 6,
           "context": 1010000,
-          "throughput": 118,
-          "latencyMs": 533,
-          "tools": true
-        },
-        {
-          "provider": "fireworks-ai",
-          "name": "Fireworks",
-          "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B?inference_provider=fireworks-ai",
-          "input": null,
-          "output": null,
-          "context": 262144,
-          "throughput": 96,
-          "latencyMs": 647,
+          "throughput": 78,
+          "latencyMs": 783,
           "tools": true
         }
       ]
@@ -40053,6 +39995,14 @@
           "official": false
         },
         {
+          "provider": "novita-ai",
+          "model": "qwen/qwen3.8-27b",
+          "input": 0.42,
+          "output": 3,
+          "context": 1000000,
+          "official": false
+        },
+        {
           "provider": "nebius",
           "model": "Qwen/Qwen3.8-27B",
           "input": 0.45,
@@ -40175,14 +40125,25 @@
       ],
       "hf": [
         {
+          "provider": "cerebras",
+          "name": "Cerebras",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-27B?inference_provider=cerebras",
+          "input": 0.99,
+          "output": 1.49,
+          "context": 65536,
+          "throughput": 166,
+          "latencyMs": 4666,
+          "tools": true
+        },
+        {
           "provider": "deepinfra",
           "name": "DeepInfra",
           "url": "https://huggingface.co/Qwen/Qwen3.8-27B?inference_provider=deepinfra",
           "input": 0.2,
           "output": 2.5,
           "context": 262144,
-          "throughput": 57,
-          "latencyMs": 628,
+          "throughput": 69,
+          "latencyMs": 547,
           "tools": true
         },
         {
@@ -40192,8 +40153,8 @@
           "input": 0.42,
           "output": 3,
           "context": 1000000,
-          "throughput": 36,
-          "latencyMs": 1497,
+          "throughput": 37,
+          "latencyMs": 657,
           "tools": true
         },
         {
@@ -40203,8 +40164,8 @@
           "input": 0.47,
           "output": 3.19,
           "context": 262144,
-          "throughput": 63,
-          "latencyMs": 597,
+          "throughput": 76,
+          "latencyMs": 458,
           "tools": true
         },
         {
@@ -40364,6 +40325,14 @@
           "input": 0.15,
           "output": 0.47,
           "context": 977000,
+          "official": false
+        },
+        {
+          "provider": "novita-ai",
+          "model": "qwen/qwen3.8-flash",
+          "input": 0.15,
+          "output": 0.47,
+          "context": 1000000,
           "official": false
         },
         {
@@ -40697,6 +40666,14 @@
           "official": false
         },
         {
+          "provider": "novita-ai",
+          "model": "qwen/qwen3.8-max",
+          "input": 2,
+          "output": 6,
+          "context": 1000000,
+          "official": false
+        },
+        {
           "provider": "opencode-go",
           "model": "qwen3.8-max",
           "input": 2,
@@ -40875,14 +40852,6 @@
           "official": false
         },
         {
-          "provider": "novita-ai",
-          "model": "qwen/qwen3-8b-fp8",
-          "input": 0.035,
-          "output": 0.138,
-          "context": 128000,
-          "official": false
-        },
-        {
           "provider": "pioneer",
           "model": "Qwen/Qwen3-8B",
           "input": 0.2,
@@ -40895,22 +40864,6 @@
           "model": "qwen3-8b",
           "input": 0.072,
           "output": 0.287,
-          "context": 131072,
-          "official": false
-        },
-        {
-          "provider": "kilo",
-          "model": "qwen/qwen3-8b",
-          "input": 0.117,
-          "output": 0.455,
-          "context": 131072,
-          "official": false
-        },
-        {
-          "provider": "openrouter",
-          "model": "qwen/qwen3-8b",
-          "input": 0.117,
-          "output": 0.455,
           "context": 131072,
           "official": false
         },
@@ -40939,8 +40892,8 @@
           "input": 0.07,
           "output": 0.18,
           "context": 40960,
-          "throughput": 107,
-          "latencyMs": 678,
+          "throughput": 133,
+          "latencyMs": 651,
           "tools": true
         },
         {
@@ -41012,11 +40965,11 @@
           "official": false
         },
         {
-          "provider": "novita-ai",
+          "provider": "kilo",
           "model": "qwen/qwen3-coder-30b-a3b-instruct",
           "input": 0.07,
-          "output": 0.27,
-          "context": 160000,
+          "output": 0.28,
+          "context": 262144,
           "official": false
         },
         {
@@ -41116,14 +41069,6 @@
           "official": false
         },
         {
-          "provider": "kilo",
-          "model": "qwen/qwen3-coder-30b-a3b-instruct",
-          "input": 0.2925,
-          "output": 1.4625,
-          "context": 262144,
-          "official": false
-        },
-        {
           "provider": "alibaba",
           "model": "qwen3-coder-30b-a3b-instruct",
           "input": 0.45,
@@ -41148,8 +41093,8 @@
           "input": 0.228,
           "output": 0.912,
           "context": null,
-          "throughput": 134,
-          "latencyMs": 399,
+          "throughput": 131,
+          "latencyMs": 365,
           "tools": true
         },
         {
@@ -41200,6 +41145,14 @@
           "official": false
         },
         {
+          "provider": "kilo",
+          "model": "qwen/qwen3-coder",
+          "input": 0.3,
+          "output": 1,
+          "context": 262144,
+          "official": false
+        },
+        {
           "provider": "openrouter",
           "model": "qwen/qwen3-coder",
           "input": 0.3,
@@ -41234,14 +41187,6 @@
         {
           "provider": "llmgateway-providers",
           "model": "novita/qwen3-coder-480b-a35b-instruct",
-          "input": 0.38,
-          "output": 1.55,
-          "context": 262144,
-          "official": false
-        },
-        {
-          "provider": "novita-ai",
-          "model": "qwen/qwen3-coder-480b-a35b-instruct",
           "input": 0.38,
           "output": 1.55,
           "context": 262144,
@@ -41292,14 +41237,6 @@
           "model": "qwen3-coder-480b-a35b-instruct",
           "input": 0.861,
           "output": 3.441,
-          "context": 262144,
-          "official": false
-        },
-        {
-          "provider": "kilo",
-          "model": "qwen/qwen3-coder",
-          "input": 0.975,
-          "output": 4.875,
           "context": 262144,
           "official": false
         },
@@ -41474,6 +41411,14 @@
           "official": false
         },
         {
+          "provider": "kilo",
+          "model": "qwen/qwen3-coder-next",
+          "input": 0.12,
+          "output": 0.8,
+          "context": 262144,
+          "official": false
+        },
+        {
           "provider": "openrouter",
           "model": "qwen/qwen3-coder-next",
           "input": 0.12,
@@ -41486,6 +41431,14 @@
           "model": "qwen/qwen3-coder-next",
           "input": 0.15,
           "output": 0.8,
+          "context": 262144,
+          "official": false
+        },
+        {
+          "provider": "nano-gpt",
+          "model": "qwen/qwen3-coder-next",
+          "input": 0.250251,
+          "output": 0.80293,
           "context": 262144,
           "official": false
         },
@@ -41538,22 +41491,6 @@
           "official": false
         },
         {
-          "provider": "nano-gpt",
-          "model": "qwen/qwen3-coder-next",
-          "input": 0.2,
-          "output": 1.5,
-          "context": 262144,
-          "official": false
-        },
-        {
-          "provider": "novita-ai",
-          "model": "qwen/qwen3-coder-next",
-          "input": 0.2,
-          "output": 1.5,
-          "context": 262144,
-          "official": false
-        },
-        {
           "provider": "ofox",
           "model": "qwen/qwen3-coder-next",
           "input": 0.2,
@@ -41563,14 +41500,6 @@
         },
         {
           "provider": "edenai",
-          "model": "qwen/qwen3-coder-next",
-          "input": 0.3,
-          "output": 1.5,
-          "context": 262144,
-          "official": false
-        },
-        {
-          "provider": "kilo",
           "model": "qwen/qwen3-coder-next",
           "input": 0.3,
           "output": 1.5,
@@ -41631,22 +41560,6 @@
           "official": false
         },
         {
-          "provider": "kilo",
-          "model": "qwen/qwen3-coder-plus",
-          "input": 0.65,
-          "output": 3.25,
-          "context": 1000000,
-          "official": false
-        },
-        {
-          "provider": "openrouter",
-          "model": "qwen/qwen3-coder-plus",
-          "input": 0.65,
-          "output": 3.25,
-          "context": 1000000,
-          "official": false
-        },
-        {
           "provider": "alibaba",
           "model": "qwen3-coder-plus",
           "input": 1,
@@ -41655,24 +41568,8 @@
           "official": true
         },
         {
-          "provider": "llmgateway",
-          "model": "qwen3-coder-plus",
-          "input": 1,
-          "output": 5,
-          "context": 1000000,
-          "official": false
-        },
-        {
           "provider": "edenai",
           "model": "qwen/qwen3-coder-plus",
-          "input": 1,
-          "output": 5,
-          "context": 1000000,
-          "official": false
-        },
-        {
-          "provider": "llmgateway-providers",
-          "model": "alibaba/qwen3-coder-plus",
           "input": 1,
           "output": 5,
           "context": 1000000,
@@ -41814,6 +41711,14 @@
           "official": false
         },
         {
+          "provider": "novita-ai",
+          "model": "qwen/qwen3-embedding-8b",
+          "input": 0.07,
+          "output": 0,
+          "context": 32768,
+          "official": false
+        },
+        {
           "provider": "regolo-ai",
           "model": "qwen3-embedding-8b",
           "input": 0.1,
@@ -41944,30 +41849,6 @@
           "official": false
         },
         {
-          "provider": "kilo",
-          "model": "qwen/qwen3-max",
-          "input": 0.78,
-          "output": 3.9,
-          "context": 262144,
-          "official": false
-        },
-        {
-          "provider": "openrouter",
-          "model": "qwen/qwen3-max",
-          "input": 0.78,
-          "output": 3.9,
-          "context": 262144,
-          "official": false
-        },
-        {
-          "provider": "empiriolabs",
-          "model": "qwen3-max",
-          "input": 1.08,
-          "output": 5.52,
-          "context": 256000,
-          "official": false
-        },
-        {
           "provider": "abacus",
           "model": "qwen3-max",
           "input": 1.2,
@@ -42040,14 +41921,6 @@
           "official": false
         },
         {
-          "provider": "novita-ai",
-          "model": "qwen/qwen3-max",
-          "input": 2.11,
-          "output": 8.45,
-          "context": 262144,
-          "official": false
-        },
-        {
           "provider": "qiniu-ai",
           "model": "qwen3-max",
           "input": null,
@@ -42093,14 +41966,6 @@
           "official": false
         },
         {
-          "provider": "kilo",
-          "model": "qwen/qwen3-next-80b-a3b-instruct",
-          "input": 0.0975,
-          "output": 0.78,
-          "context": 262144,
-          "official": false
-        },
-        {
           "provider": "io-net",
           "model": "Qwen/Qwen3-Next-80B-A3B-Instruct",
           "input": 0.1,
@@ -42112,6 +41977,14 @@
           "provider": "deepinfra",
           "model": "Qwen/Qwen3-Next-80B-A3B-Instruct",
           "input": 0.09,
+          "output": 1.1,
+          "context": 262144,
+          "official": false
+        },
+        {
+          "provider": "kilo",
+          "model": "qwen/qwen3-next-80b-a3b-instruct",
+          "input": 0.1,
           "output": 1.1,
           "context": 262144,
           "official": false
@@ -42197,14 +42070,6 @@
           "official": false
         },
         {
-          "provider": "novita-ai",
-          "model": "qwen/qwen3-next-80b-a3b-instruct",
-          "input": 0.15,
-          "output": 1.5,
-          "context": 131072,
-          "official": false
-        },
-        {
           "provider": "alibaba",
           "model": "qwen3-next-80b-a3b-instruct",
           "input": 0.5,
@@ -42229,8 +42094,8 @@
           "input": 0.09,
           "output": 1.1,
           "context": 262144,
-          "throughput": 66,
-          "latencyMs": 439,
+          "throughput": 60,
+          "latencyMs": 376,
           "tools": true
         },
         {
@@ -42281,14 +42146,6 @@
           "official": false
         },
         {
-          "provider": "kilo",
-          "model": "qwen/qwen3-next-80b-a3b-instruct",
-          "input": 0.0975,
-          "output": 0.78,
-          "context": 262144,
-          "official": false
-        },
-        {
           "provider": "io-net",
           "model": "Qwen/Qwen3-Next-80B-A3B-Instruct",
           "input": 0.1,
@@ -42308,6 +42165,14 @@
           "provider": "deepinfra",
           "model": "Qwen/Qwen3-Next-80B-A3B-Instruct",
           "input": 0.09,
+          "output": 1.1,
+          "context": 262144,
+          "official": false
+        },
+        {
+          "provider": "kilo",
+          "model": "qwen/qwen3-next-80b-a3b-instruct",
+          "input": 0.1,
           "output": 1.1,
           "context": 262144,
           "official": false
@@ -42393,14 +42258,6 @@
           "official": false
         },
         {
-          "provider": "novita-ai",
-          "model": "qwen/qwen3-next-80b-a3b-thinking",
-          "input": 0.15,
-          "output": 1.5,
-          "context": 131072,
-          "official": false
-        },
-        {
           "provider": "alibaba",
           "model": "qwen3-next-80b-a3b-instruct",
           "input": 0.5,
@@ -42414,19 +42271,6 @@
           "input": null,
           "output": null,
           "context": 131072,
-          "official": false
-        }
-      ],
-      "hf": []
-    },
-    "qwen/qwen3-omni-30b-a3b-instruct": {
-      "offers": [
-        {
-          "provider": "novita-ai",
-          "model": "qwen/qwen3-omni-30b-a3b-instruct",
-          "input": 0.25,
-          "output": 0.97,
-          "context": 65536,
           "official": false
         }
       ],
@@ -42521,6 +42365,19 @@
       ],
       "hf": []
     },
+    "qwen/qwen3-reranker-8b": {
+      "offers": [
+        {
+          "provider": "novita-ai",
+          "model": "qwen/qwen3-reranker-8b",
+          "input": 0.05,
+          "output": 0,
+          "context": 32768,
+          "official": false
+        }
+      ],
+      "hf": []
+    },
     "qwen/qwen3-vl-235b-a22b": {
       "offers": [
         {
@@ -42545,14 +42402,6 @@
           "input": 0.2,
           "output": 0.88,
           "context": 262144,
-          "official": false
-        },
-        {
-          "provider": "kilo",
-          "model": "qwen/qwen3-vl-235b-a22b-instruct",
-          "input": 0.26,
-          "output": 1.04,
-          "context": 131072,
           "official": false
         },
         {
@@ -42588,14 +42437,6 @@
           "official": false
         },
         {
-          "provider": "novita-ai",
-          "model": "qwen/qwen3-vl-235b-a22b-instruct",
-          "input": 0.3,
-          "output": 1.5,
-          "context": 131072,
-          "official": false
-        },
-        {
           "provider": "edenai",
           "model": "qwen/qwen3-vl-235b-a22b-instruct",
           "input": 0.4,
@@ -42616,6 +42457,14 @@
           "model": "alibaba/qwen3-vl-235b-a22b-instruct",
           "input": 0.4,
           "output": 1.6,
+          "context": 131072,
+          "official": false
+        },
+        {
+          "provider": "kilo",
+          "model": "qwen/qwen3-vl-235b-a22b-instruct",
+          "input": 0.21,
+          "output": 1.9,
           "context": 131072,
           "official": false
         },
@@ -42676,8 +42525,8 @@
           "input": 0.2,
           "output": 0.88,
           "context": 262144,
-          "throughput": 8,
-          "latencyMs": 345,
+          "throughput": 9,
+          "latencyMs": 3012,
           "tools": true
         }
       ]
@@ -42685,19 +42534,19 @@
     "qwen/qwen3-vl-30b-a3b": {
       "offers": [
         {
+          "provider": "merge-gateway",
+          "model": "qwen/qwen3-vl-30b-a3b-instruct",
+          "input": 0.108,
+          "output": 0.43,
+          "context": 131072,
+          "official": false
+        },
+        {
           "provider": "alibaba-cn",
           "model": "qwen3-vl-30b-a3b",
           "input": 0.108,
           "output": 0.431,
           "context": 131072,
-          "official": false
-        },
-        {
-          "provider": "kilo",
-          "model": "qwen/qwen3-vl-30b-a3b-instruct",
-          "input": 0.13,
-          "output": 0.52,
-          "context": 262144,
           "official": false
         },
         {
@@ -42709,8 +42558,24 @@
           "official": false
         },
         {
+          "provider": "deepinfra",
+          "model": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+          "input": 0.15,
+          "output": 0.6,
+          "context": 262144,
+          "official": false
+        },
+        {
           "provider": "llmgateway",
           "model": "qwen3-vl-30b-a3b-instruct",
+          "input": 0.15,
+          "output": 0.6,
+          "context": 262144,
+          "official": false
+        },
+        {
+          "provider": "kilo",
+          "model": "qwen/qwen3-vl-30b-a3b-instruct",
           "input": 0.15,
           "output": 0.6,
           "context": 262144,
@@ -42749,6 +42614,14 @@
           "official": true
         },
         {
+          "provider": "edenai",
+          "model": "qwen/qwen3-vl-30b-a3b-instruct",
+          "input": 0.2,
+          "output": 0.8,
+          "context": 131072,
+          "official": false
+        },
+        {
           "provider": "siliconflow",
           "model": "Qwen/Qwen3-VL-30B-A3B-Instruct",
           "input": 0.29,
@@ -42773,8 +42646,8 @@
           "input": 0.15,
           "output": 0.6,
           "context": 262144,
-          "throughput": 28,
-          "latencyMs": 300,
+          "throughput": 13,
+          "latencyMs": 243,
           "tools": true
         },
         {
@@ -42784,8 +42657,8 @@
           "input": 0.2,
           "output": 0.7,
           "context": 131072,
-          "throughput": 98,
-          "latencyMs": 877,
+          "throughput": 20,
+          "latencyMs": 2135,
           "tools": true
         },
         {
@@ -42803,22 +42676,6 @@
     },
     "qwen/qwen3-vl-32b-instruct": {
       "offers": [
-        {
-          "provider": "kilo",
-          "model": "qwen/qwen3-vl-32b-instruct",
-          "input": 0.104,
-          "output": 0.416,
-          "context": 131072,
-          "official": false
-        },
-        {
-          "provider": "openrouter",
-          "model": "qwen/qwen3-vl-32b-instruct",
-          "input": 0.104,
-          "output": 0.416,
-          "context": 131072,
-          "official": false
-        },
         {
           "provider": "siliconflow",
           "model": "Qwen/Qwen3-VL-32B-Instruct",
@@ -42841,30 +42698,6 @@
     "qwen/qwen3-vl-8b-instruct": {
       "offers": [
         {
-          "provider": "kilo",
-          "model": "qwen/qwen3-vl-8b-instruct",
-          "input": 0.117,
-          "output": 0.455,
-          "context": 131072,
-          "official": false
-        },
-        {
-          "provider": "openrouter",
-          "model": "qwen/qwen3-vl-8b-instruct",
-          "input": 0.117,
-          "output": 0.455,
-          "context": 262144,
-          "official": false
-        },
-        {
-          "provider": "novita-ai",
-          "model": "qwen/qwen3-vl-8b-instruct",
-          "input": 0.08,
-          "output": 0.5,
-          "context": 131072,
-          "official": false
-        },
-        {
           "provider": "siliconflow",
           "model": "Qwen/Qwen3-VL-8B-Instruct",
           "input": 0.18,
@@ -42879,26 +42712,21 @@
           "output": 0.68,
           "context": 262000,
           "official": false
-        }
-      ],
-      "hf": []
-    },
-    "qwen/qwen3-vl-8b-thinking": {
-      "offers": [
+        },
         {
           "provider": "kilo",
-          "model": "qwen/qwen3-vl-8b-thinking",
-          "input": 0.18,
-          "output": 2.1,
-          "context": 131072,
+          "model": "qwen/qwen3-vl-8b-instruct",
+          "input": 0.25,
+          "output": 0.75,
+          "context": 262144,
           "official": false
         },
         {
           "provider": "openrouter",
-          "model": "qwen/qwen3-vl-8b-thinking",
-          "input": 0.18,
-          "output": 2.1,
-          "context": 131072,
+          "model": "qwen/qwen3-vl-8b-instruct",
+          "input": 0.25,
+          "output": 0.75,
+          "context": 262144,
           "official": false
         }
       ],
@@ -43467,8 +43295,8 @@
           "input": 0.1,
           "output": 0.3,
           "context": 262144,
-          "throughput": 28,
-          "latencyMs": 371,
+          "throughput": 17,
+          "latencyMs": 572,
           "tools": true
         },
         {
@@ -43652,6 +43480,14 @@
           "official": false
         },
         {
+          "provider": "novita-ai",
+          "model": "stepfun/step-3.7-flash",
+          "input": 0.2,
+          "output": 1.15,
+          "context": 262144,
+          "official": false
+        },
+        {
           "provider": "openrouter",
           "model": "stepfun/step-3.7-flash",
           "input": 0.2,
@@ -43708,8 +43544,8 @@
           "input": 0.2,
           "output": 1.15,
           "context": 262144,
-          "throughput": 37,
-          "latencyMs": 1002,
+          "throughput": 17,
+          "latencyMs": 1408,
           "tools": true
         },
         {
@@ -43980,6 +43816,14 @@
           "official": false
         },
         {
+          "provider": "novita-ai",
+          "model": "tencent/hy3",
+          "input": 0.14,
+          "output": 0.58,
+          "context": 262144,
+          "official": false
+        },
+        {
           "provider": "opencode-go",
           "model": "hy3",
           "input": 0.14,
@@ -44028,8 +43872,8 @@
           "input": 0.13,
           "output": 0.53,
           "context": 262144,
-          "throughput": 13,
-          "latencyMs": 3668,
+          "throughput": 12,
+          "latencyMs": 700,
           "tools": true
         },
         {
@@ -44149,6 +43993,14 @@
           "official": false
         },
         {
+          "provider": "novita-ai",
+          "model": "tencent/hy4-preview",
+          "input": 0.834,
+          "output": 2.501,
+          "context": 1000000,
+          "official": false
+        },
+        {
           "provider": "opencode-go",
           "model": "hy4-preview",
           "input": 0.834,
@@ -44213,8 +44065,8 @@
           "input": 0.834,
           "output": 2.501,
           "context": 1048576,
-          "throughput": 19,
-          "latencyMs": 3139,
+          "throughput": 25,
+          "latencyMs": 649,
           "tools": true
         },
         {
@@ -44224,8 +44076,8 @@
           "input": 0.834,
           "output": 2.501,
           "context": 1000000,
-          "throughput": 39,
-          "latencyMs": 3266,
+          "throughput": 32,
+          "latencyMs": 3713,
           "tools": true
         }
       ]
@@ -46091,14 +45943,6 @@
           "official": false
         },
         {
-          "provider": "llmgateway",
-          "model": "mimo-v2.5",
-          "input": 0.14,
-          "output": 0.28,
-          "context": 1048576,
-          "official": false
-        },
-        {
           "provider": "impossibl",
           "model": "xiaomi/mimo-v2.5",
           "input": 0.14,
@@ -46203,6 +46047,22 @@
           "official": false
         },
         {
+          "provider": "llmgateway",
+          "model": "mimo-v2.5",
+          "input": 0.168,
+          "output": 0.336,
+          "context": 1048576,
+          "official": false
+        },
+        {
+          "provider": "novita-ai",
+          "model": "xiaomimimo/mimo-v2.5",
+          "input": 0.168,
+          "output": 0.336,
+          "context": 1048576,
+          "official": false
+        },
+        {
           "provider": "empiriolabs",
           "model": "mimo-v2-5",
           "input": 0.7,
@@ -46243,8 +46103,8 @@
           "input": 0.14,
           "output": 0.28,
           "context": 262144,
-          "throughput": 22,
-          "latencyMs": 554,
+          "throughput": 19,
+          "latencyMs": 699,
           "tools": true
         },
         {
@@ -46254,8 +46114,8 @@
           "input": 0.168,
           "output": 0.336,
           "context": 1048576,
-          "throughput": 37,
-          "latencyMs": 1678,
+          "throughput": 25,
+          "latencyMs": 2503,
           "tools": true
         },
         {
@@ -46474,8 +46334,8 @@
           "input": 0.522,
           "output": 1.044,
           "context": 1048576,
-          "throughput": 15,
-          "latencyMs": 1122,
+          "throughput": 27,
+          "latencyMs": 1576,
           "tools": true
         },
         {
@@ -46485,8 +46345,8 @@
           "input": 1,
           "output": 3,
           "context": 1048576,
-          "throughput": 18,
-          "latencyMs": 608,
+          "throughput": 11,
+          "latencyMs": 939,
           "tools": true
         }
       ]
@@ -46603,6 +46463,14 @@
           "official": false
         },
         {
+          "provider": "novita-ai",
+          "model": "xiaomimimo/mimo-v2.6-flash",
+          "input": 0.14,
+          "output": 0.28,
+          "context": 1048576,
+          "official": false
+        },
+        {
           "provider": "opencode-go",
           "model": "mimo-v2.6-flash",
           "input": 0.14,
@@ -46704,8 +46572,8 @@
           "input": 0.14,
           "output": 0.28,
           "context": 1048576,
-          "throughput": 27,
-          "latencyMs": 2063,
+          "throughput": 42,
+          "latencyMs": 1425,
           "tools": true
         }
       ]
@@ -46803,6 +46671,14 @@
         {
           "provider": "nano-gpt",
           "model": "xiaomi/mimo-v2.6-pro",
+          "input": 0.435,
+          "output": 0.87,
+          "context": 1048576,
+          "official": false
+        },
+        {
+          "provider": "novita-ai",
+          "model": "xiaomimimo/mimo-v2.6-pro",
           "input": 0.435,
           "output": 0.87,
           "context": 1048576,
@@ -46910,8 +46786,8 @@
           "input": 0.435,
           "output": 0.87,
           "context": 1048576,
-          "throughput": 15,
-          "latencyMs": 1882,
+          "throughput": 36,
+          "latencyMs": 4784,
           "tools": true
         }
       ]
@@ -47028,14 +46904,6 @@
           "official": false
         },
         {
-          "provider": "novita-ai",
-          "model": "xiaomimimo/mimo-v2-flash",
-          "input": 0.1,
-          "output": 0.3,
-          "context": 262144,
-          "official": false
-        },
-        {
           "provider": "qiniu-ai",
           "model": "mimo-v2-flash",
           "input": 0.1,
@@ -47123,14 +46991,6 @@
           "input": 1,
           "output": 3,
           "context": 1000000,
-          "official": false
-        },
-        {
-          "provider": "novita-ai",
-          "model": "xiaomimimo/mimo-v2-pro",
-          "input": 2,
-          "output": 6,
-          "context": 1048576,
           "official": false
         }
       ],
@@ -47232,14 +47092,6 @@
           "input": 0.6,
           "output": 2.2,
           "context": 128000,
-          "official": false
-        },
-        {
-          "provider": "novita-ai",
-          "model": "zai-org/glm-4.5",
-          "input": 0.6,
-          "output": 2.2,
-          "context": 131072,
           "official": false
         },
         {
@@ -47456,8 +47308,8 @@
           "input": 0.13,
           "output": 0.85,
           "context": 131072,
-          "throughput": 79,
-          "latencyMs": 845,
+          "throughput": 80,
+          "latencyMs": 669,
           "tools": true
         },
         {
@@ -47467,8 +47319,8 @@
           "input": null,
           "output": null,
           "context": null,
-          "throughput": 81,
-          "latencyMs": 1704,
+          "throughput": 74,
+          "latencyMs": 2165,
           "tools": true
         }
       ]
@@ -47641,8 +47493,8 @@
           "input": 0.6,
           "output": 1.8,
           "context": 65536,
-          "throughput": 33,
-          "latencyMs": 1148,
+          "throughput": 50,
+          "latencyMs": 1084,
           "tools": true
         },
         {
@@ -47652,8 +47504,8 @@
           "input": null,
           "output": null,
           "context": null,
-          "throughput": 50,
-          "latencyMs": 2502,
+          "throughput": 47,
+          "latencyMs": 2403,
           "tools": true
         }
       ]
@@ -47725,22 +47577,6 @@
           "official": false
         },
         {
-          "provider": "kilo",
-          "model": "z-ai/glm-4.6",
-          "input": 0.43,
-          "output": 1.75,
-          "context": 198000,
-          "official": false
-        },
-        {
-          "provider": "openrouter",
-          "model": "z-ai/glm-4.6",
-          "input": 0.43,
-          "output": 1.75,
-          "context": 204800,
-          "official": false
-        },
-        {
           "provider": "venice",
           "model": "zai-org-glm-4.6",
           "input": 0.43,
@@ -47762,6 +47598,22 @@
           "input": 0.5,
           "output": 2,
           "context": 202752,
+          "official": false
+        },
+        {
+          "provider": "kilo",
+          "model": "z-ai/glm-4.6",
+          "input": 0.5,
+          "output": 2,
+          "context": 202752,
+          "official": false
+        },
+        {
+          "provider": "openrouter",
+          "model": "z-ai/glm-4.6",
+          "input": 0.5,
+          "output": 2,
+          "context": 204800,
           "official": false
         },
         {
@@ -47901,8 +47753,8 @@
           "input": 0.5,
           "output": 2,
           "context": 202752,
-          "throughput": 66,
-          "latencyMs": 986,
+          "throughput": 35,
+          "latencyMs": 582,
           "tools": true
         },
         {
@@ -47913,7 +47765,7 @@
           "output": 2.2,
           "context": 204800,
           "throughput": 26,
-          "latencyMs": 3329,
+          "latencyMs": 3537,
           "tools": true
         },
         {
@@ -48060,8 +47912,8 @@
           "input": null,
           "output": null,
           "context": null,
-          "throughput": 50,
-          "latencyMs": 2546,
+          "throughput": 54,
+          "latencyMs": 2431,
           "tools": true
         }
       ]
@@ -48117,19 +47969,8 @@
           "input": 0.3,
           "output": 0.9,
           "context": 131072,
-          "throughput": 42,
-          "latencyMs": 2121,
-          "tools": true
-        },
-        {
-          "provider": "zai-org",
-          "name": "Z.ai",
-          "url": "https://huggingface.co/zai-org/GLM-4.6V-Flash?inference_provider=zai-org",
-          "input": null,
-          "output": null,
-          "context": null,
-          "throughput": 53,
-          "latencyMs": 4729,
+          "throughput": 56,
+          "latencyMs": 1202,
           "tools": true
         }
       ]
@@ -48433,8 +48274,8 @@
           "input": 0.4,
           "output": 1.75,
           "context": 202752,
-          "throughput": 20,
-          "latencyMs": 773,
+          "throughput": 15,
+          "latencyMs": 1326,
           "tools": true
         },
         {
@@ -48445,7 +48286,7 @@
           "output": 2.2,
           "context": 204800,
           "throughput": 26,
-          "latencyMs": 3969,
+          "latencyMs": 4090,
           "tools": true
         },
         {
@@ -48458,17 +48299,6 @@
           "throughput": null,
           "latencyMs": null,
           "tools": false
-        },
-        {
-          "provider": "zai-org",
-          "name": "Z.ai",
-          "url": "https://huggingface.co/zai-org/GLM-4.7?inference_provider=zai-org",
-          "input": null,
-          "output": null,
-          "context": null,
-          "throughput": 37,
-          "latencyMs": 3080,
-          "tools": true
         }
       ]
     },
@@ -48675,8 +48505,8 @@
           "input": 0.06,
           "output": 0.4,
           "context": 202752,
-          "throughput": 25,
-          "latencyMs": 601,
+          "throughput": 89,
+          "latencyMs": 749,
           "tools": true
         },
         {
@@ -48686,8 +48516,8 @@
           "input": 0.07,
           "output": 0.4,
           "context": 200000,
-          "throughput": 66,
-          "latencyMs": 2880,
+          "throughput": 69,
+          "latencyMs": 701,
           "tools": true
         },
         {
@@ -48708,8 +48538,8 @@
           "input": null,
           "output": null,
           "context": null,
-          "throughput": 76,
-          "latencyMs": 1746,
+          "throughput": 72,
+          "latencyMs": 1842,
           "tools": true
         }
       ]
@@ -49170,8 +49000,8 @@
           "input": 0.6,
           "output": 2.08,
           "context": 202752,
-          "throughput": 85,
-          "latencyMs": 383,
+          "throughput": 116,
+          "latencyMs": 664,
           "tools": true
         },
         {
@@ -49182,7 +49012,7 @@
           "output": 3.2,
           "context": 202800,
           "throughput": 43,
-          "latencyMs": 1271,
+          "latencyMs": 1567,
           "tools": true
         },
         {
@@ -49305,6 +49135,14 @@
           "input": 0.98,
           "output": 3.08,
           "context": 202000,
+          "official": false
+        },
+        {
+          "provider": "huggingface",
+          "model": "zai-org/GLM-5.1",
+          "input": 1,
+          "output": 3.2,
+          "context": 202752,
           "official": false
         },
         {
@@ -49644,30 +49482,7 @@
           "official": false
         }
       ],
-      "hf": [
-        {
-          "provider": "deepinfra",
-          "name": "DeepInfra",
-          "url": "https://huggingface.co/zai-org/GLM-5.1?inference_provider=deepinfra",
-          "input": 1.05,
-          "output": 3.5,
-          "context": 202752,
-          "throughput": 63,
-          "latencyMs": 559,
-          "tools": true
-        },
-        {
-          "provider": "featherless-ai",
-          "name": "Featherless",
-          "url": "https://huggingface.co/zai-org/GLM-5.1?inference_provider=featherless-ai",
-          "input": null,
-          "output": null,
-          "context": null,
-          "throughput": null,
-          "latencyMs": null,
-          "tools": false
-        }
-      ]
+      "hf": []
     },
     "zai/glm-5-2": {
       "offers": [
@@ -49941,14 +49756,6 @@
           "input": 1.18747,
           "output": 4.15615,
           "context": 1000000,
-          "official": false
-        },
-        {
-          "provider": "openrouter",
-          "model": "z-ai/glm-5.2",
-          "input": 0.06,
-          "output": 4.2,
-          "context": 1048576,
           "official": false
         },
         {
@@ -50336,6 +50143,14 @@
           "official": false
         },
         {
+          "provider": "openrouter",
+          "model": "z-ai/glm-5.2",
+          "input": 0.06,
+          "output": 7,
+          "context": 1048576,
+          "official": false
+        },
+        {
           "provider": "model-oracle-ai",
           "model": "glm-5.2",
           "input": null,
@@ -50352,8 +50167,8 @@
           "input": 0.75,
           "output": 2.4,
           "context": 1048576,
-          "throughput": 75,
-          "latencyMs": 327,
+          "throughput": 50,
+          "latencyMs": 276,
           "tools": true
         },
         {
@@ -50363,8 +50178,8 @@
           "input": 1.4,
           "output": 4.4,
           "context": 1048576,
-          "throughput": 78,
-          "latencyMs": 764,
+          "throughput": 89,
+          "latencyMs": 327,
           "tools": true
         },
         {
@@ -50374,8 +50189,8 @@
           "input": 1.4,
           "output": 4.4,
           "context": 1048576,
-          "throughput": 49,
-          "latencyMs": 2963,
+          "throughput": 53,
+          "latencyMs": 1419,
           "tools": true
         },
         {
@@ -50385,8 +50200,8 @@
           "input": 1.4,
           "output": 4.4,
           "context": 1048575,
-          "throughput": 140,
-          "latencyMs": 237,
+          "throughput": 184,
+          "latencyMs": 210,
           "tools": true
         },
         {
@@ -50396,8 +50211,8 @@
           "input": 2.052,
           "output": 6.27,
           "context": null,
-          "throughput": 9,
-          "latencyMs": 1194,
+          "throughput": 36,
+          "latencyMs": 1390,
           "tools": true
         },
         {
@@ -50418,14 +50233,22 @@
           "input": null,
           "output": null,
           "context": null,
-          "throughput": 47,
-          "latencyMs": 3017,
+          "throughput": 52,
+          "latencyMs": 2831,
           "tools": true
         }
       ]
     },
     "zai/glm-5-3": {
       "offers": [
+        {
+          "provider": "aihubmix",
+          "model": "coding-glm-5.3-free",
+          "input": 0,
+          "output": 0,
+          "context": 1000000,
+          "official": false
+        },
         {
           "provider": "alibaba-token-plan",
           "model": "glm-5.3",
@@ -50523,19 +50346,19 @@
           "official": false
         },
         {
+          "provider": "nano-gpt",
+          "model": "z-ai/glm-5.3",
+          "input": 0.6,
+          "output": 2.2,
+          "context": 1048576,
+          "official": false
+        },
+        {
           "provider": "merge-gateway",
           "model": "zai/glm-5.3",
           "input": 0.7,
           "output": 2.2,
           "context": 1000000,
-          "official": false
-        },
-        {
-          "provider": "nano-gpt",
-          "model": "z-ai/glm-5.3",
-          "input": 0.7,
-          "output": 2.2,
-          "context": 1048576,
           "official": false
         },
         {
@@ -50615,14 +50438,6 @@
           "model": "glm-5.3",
           "input": 1.1,
           "output": 3.851,
-          "context": 1000000,
-          "official": false
-        },
-        {
-          "provider": "aihubmix",
-          "model": "glm-5.3",
-          "input": 1.1268,
-          "output": 3.9438,
           "context": 1000000,
           "official": false
         },
@@ -50787,6 +50602,14 @@
           "official": false
         },
         {
+          "provider": "novita-ai",
+          "model": "zai-org/glm-5.3",
+          "input": 1.4,
+          "output": 4.4,
+          "context": 1048576,
+          "official": false
+        },
+        {
           "provider": "ofox",
           "model": "z-ai/glm-5.3",
           "input": 1.4,
@@ -50933,7 +50756,7 @@
         {
           "provider": "openrouter",
           "model": "z-ai/glm-5.3",
-          "input": 0.04,
+          "input": 0.039,
           "output": 4.8,
           "context": 1048576,
           "official": false
@@ -50997,25 +50820,14 @@
       ],
       "hf": [
         {
-          "provider": "deepinfra",
-          "name": "DeepInfra",
-          "url": "https://huggingface.co/zai-org/GLM-5.3?inference_provider=deepinfra",
-          "input": 0.9,
-          "output": 4,
-          "context": 1048576,
-          "throughput": 83,
-          "latencyMs": 236,
-          "tools": true
-        },
-        {
           "provider": "baseten",
           "name": "Baseten",
           "url": "https://huggingface.co/zai-org/GLM-5.3?inference_provider=baseten",
           "input": 1.4,
           "output": 4.4,
           "context": 1048576,
-          "throughput": 67,
-          "latencyMs": 1267,
+          "throughput": 48,
+          "latencyMs": 1040,
           "tools": true
         },
         {
@@ -51025,8 +50837,8 @@
           "input": 1.4,
           "output": 4.4,
           "context": 1048576,
-          "throughput": 27,
-          "latencyMs": 1710,
+          "throughput": 68,
+          "latencyMs": 831,
           "tools": true
         },
         {
@@ -51036,8 +50848,8 @@
           "input": 1.4,
           "output": 4.4,
           "context": 1048575,
-          "throughput": 126,
-          "latencyMs": 413,
+          "throughput": 153,
+          "latencyMs": 193,
           "tools": true
         },
         {
@@ -51058,8 +50870,8 @@
           "input": null,
           "output": null,
           "context": 1048576,
-          "throughput": 46,
-          "latencyMs": 515,
+          "throughput": 38,
+          "latencyMs": 531,
           "tools": true
         },
         {
@@ -51069,14 +50881,22 @@
           "input": null,
           "output": null,
           "context": null,
-          "throughput": 28,
-          "latencyMs": 3664,
+          "throughput": 32,
+          "latencyMs": 3199,
           "tools": true
         }
       ]
     },
     "zai/glm-5-3-flash": {
       "offers": [
+        {
+          "provider": "aihubmix",
+          "model": "coding-glm-5.3-flash-free",
+          "input": 0,
+          "output": 0,
+          "context": 1000000,
+          "official": false
+        },
         {
           "provider": "kenari",
           "model": "glm-5-3-flash",
@@ -51227,14 +51047,6 @@
           "input": 0.1,
           "output": 0.35,
           "context": 1048576,
-          "official": false
-        },
-        {
-          "provider": "aihubmix",
-          "model": "glm-5.3-flash",
-          "input": 0.11268,
-          "output": 0.39438,
-          "context": 1000000,
           "official": false
         },
         {
@@ -51430,6 +51242,14 @@
           "official": false
         },
         {
+          "provider": "novita-ai",
+          "model": "zai-org/glm-5.3-flash",
+          "input": 0.15,
+          "output": 0.5,
+          "context": 1048576,
+          "official": false
+        },
+        {
           "provider": "ofox",
           "model": "z-ai/glm-5.3-flash",
           "input": 0.15,
@@ -51622,14 +51442,6 @@
           "official": false
         },
         {
-          "provider": "tinfoil",
-          "model": "glm-5-3-flash",
-          "input": 0.4,
-          "output": 1.25,
-          "context": 1048576,
-          "official": false
-        },
-        {
           "provider": "modal",
           "model": "zai-org/GLM-5.3-Flash",
           "input": 0.45,
@@ -51646,8 +51458,8 @@
           "input": 0.15,
           "output": 0.5,
           "context": 1048576,
-          "throughput": 57,
-          "latencyMs": 427,
+          "throughput": 120,
+          "latencyMs": 481,
           "tools": true
         },
         {
@@ -51657,8 +51469,8 @@
           "input": 0.15,
           "output": 0.5,
           "context": 1048576,
-          "throughput": 41,
-          "latencyMs": 472,
+          "throughput": 39,
+          "latencyMs": 1196,
           "tools": true
         },
         {
@@ -51668,8 +51480,8 @@
           "input": 0.15,
           "output": 0.5,
           "context": 1048576,
-          "throughput": 43,
-          "latencyMs": 1752,
+          "throughput": 44,
+          "latencyMs": 2241,
           "tools": true
         },
         {
@@ -51679,8 +51491,8 @@
           "input": 0.15,
           "output": 0.5,
           "context": 1048575,
-          "throughput": 109,
-          "latencyMs": 202,
+          "throughput": 142,
+          "latencyMs": 182,
           "tools": true
         },
         {
@@ -51701,8 +51513,8 @@
           "input": null,
           "output": null,
           "context": 1048576,
-          "throughput": 104,
-          "latencyMs": 725,
+          "throughput": 106,
+          "latencyMs": 685,
           "tools": true
         },
         {
@@ -51712,8 +51524,8 @@
           "input": null,
           "output": null,
           "context": null,
-          "throughput": 34,
-          "latencyMs": 2799,
+          "throughput": 40,
+          "latencyMs": 2559,
           "tools": true
         }
       ]
