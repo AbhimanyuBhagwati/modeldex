@@ -2,6 +2,42 @@
   "version": 1,
   "events": [
     {
+      "date": "2026-10-14",
+      "kind": "added",
+      "key": "bfl/flux-2-klein-base-9b",
+      "name": "FLUX.2-klein-base-9B",
+      "lab": "bfl"
+    },
+    {
+      "date": "2026-10-14",
+      "kind": "added",
+      "key": "liquid/lfm2-5-24b-a2b",
+      "name": "LFM2.5-24B-A2B",
+      "lab": "liquid"
+    },
+    {
+      "date": "2026-10-14",
+      "kind": "added",
+      "key": "google/gemini-4-argon",
+      "name": "Gemini 4 Argon",
+      "lab": "google"
+    },
+    {
+      "date": "2026-10-14",
+      "kind": "price",
+      "key": "meta/muse-wonder-1-0",
+      "name": "Muse Wonder",
+      "lab": "meta",
+      "before": {
+        "input": null,
+        "output": null
+      },
+      "after": {
+        "input": 4,
+        "output": 20
+      }
+    },
+    {
       "date": "2026-10-13",
       "kind": "added",
       "key": "jina/jina-clip-v1",
