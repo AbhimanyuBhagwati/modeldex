@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-14T12:00:44.056Z",
+  "updatedAt": "2026-10-15T11:37:17.287Z",
   "boards": {
     "eci": {
-      "count": 274,
-      "published": "2026-09-29"
+      "count": 277,
+      "published": "2026-10-07"
     },
     "text": {
       "count": 415,
@@ -55,10 +55,10 @@
       "count": 35
     },
     "frontiermath": {
-      "count": 116
+      "count": 117
     },
     "aime": {
-      "count": 301
+      "count": 303
     },
     "simpleqa": {
       "count": 90
@@ -152,12 +152,12 @@
       "bench": {}
     },
     "amazon/amazon-nova-pro-v1-0": {
-      "quality": 33,
+      "quality": 32,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 123.8,
-          "rank": 185,
+          "rank": 188,
           "as": "Amazon Nova Pro"
         },
         "text": {
@@ -241,7 +241,7 @@
       "boards": {
         "eci": {
           "score": 164.7,
-          "rank": 5,
+          "rank": 4,
           "as": "Claude Fable 5.1"
         },
         "text": {
@@ -287,7 +287,7 @@
       "boards": {
         "eci": {
           "score": 142.4,
-          "rank": 104,
+          "rank": 107,
           "as": "Claude Haiku 4.5"
         },
         "text": {
@@ -323,9 +323,14 @@
       }
     },
     "anthropic/claude-haiku-5-5": {
-      "quality": 79,
-      "basis": "webdev",
+      "quality": 95,
+      "basis": "eci",
       "boards": {
+        "eci": {
+          "score": 159,
+          "rank": 14,
+          "as": "Claude Haiku 5.5"
+        },
         "webdev": {
           "score": 1585,
           "rank": 31,
@@ -340,12 +345,12 @@
       }
     },
     "anthropic/claude-opus-4-5-20251101": {
-      "quality": 81,
+      "quality": 80,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 150.1,
-          "rank": 53,
+          "score": 150.2,
+          "rank": 56,
           "as": "Claude Opus 4.5"
         },
         "text": {
@@ -381,12 +386,12 @@
       }
     },
     "anthropic/claude-opus-4-6": {
-      "quality": 89,
+      "quality": 88,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 155.2,
-          "rank": 30,
+          "score": 155.3,
+          "rank": 33,
           "as": "Claude Opus 4.6"
         },
         "text": {
@@ -434,7 +439,7 @@
       "boards": {
         "eci": {
           "score": 156.3,
-          "rank": 25,
+          "rank": 26,
           "as": "Claude Opus 4.7"
         },
         "text": {
@@ -481,8 +486,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 158.2,
-          "rank": 14,
+          "score": 158.3,
+          "rank": 16,
           "as": "Claude Opus 4.8"
         },
         "text": {
@@ -528,8 +533,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 162.8,
-          "rank": 6,
+          "score": 162.6,
+          "rank": 7,
           "as": "Claude Opus 5"
         },
         "text": {
@@ -575,7 +580,7 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 167.3,
+          "score": 166.8,
           "rank": 1,
           "as": "Claude Opus 5.5"
         },
@@ -618,12 +623,12 @@
       }
     },
     "anthropic/claude-sonnet-4-5-20250929": {
-      "quality": 75,
+      "quality": 74,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 146.8,
-          "rank": 70,
+          "rank": 73,
           "as": "Claude Sonnet 4.5"
         },
         "text": {
@@ -660,12 +665,12 @@
       }
     },
     "anthropic/claude-sonnet-4-6": {
-      "quality": 84,
+      "quality": 83,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 152.2,
-          "rank": 44,
+          "score": 152.4,
+          "rank": 47,
           "as": "Claude Sonnet 4.6"
         },
         "text": {
@@ -707,12 +712,12 @@
       }
     },
     "anthropic/claude-sonnet-5": {
-      "quality": 91,
+      "quality": 92,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 156.2,
-          "rank": 26,
+          "score": 156.4,
+          "rank": 24,
           "as": "Claude Sonnet 5"
         },
         "text": {
@@ -754,12 +759,12 @@
       }
     },
     "anthropic/claude-sonnet-5-5": {
-      "quality": 99,
+      "quality": 98,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 165,
-          "rank": 4,
+          "score": 164.5,
+          "rank": 6,
           "as": "Claude Sonnet 5.5"
         },
         "text": {
@@ -1010,8 +1015,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 119.3,
-          "rank": 200,
+          "score": 119.4,
+          "rank": 203,
           "as": "Command R+"
         },
         "text": {
@@ -1042,8 +1047,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 89.6,
-          "rank": 269,
+          "score": 89.8,
+          "rank": 272,
           "as": "DeepSeek Coder 6.7B"
         }
       },
@@ -1054,8 +1059,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 154.9,
-          "rank": 32,
+          "score": 155.6,
+          "rank": 31,
           "as": "DeepSeek V4.1 Flash"
         },
         "text": {
@@ -1097,12 +1102,12 @@
       }
     },
     "deepseek/deepseek-r1": {
-      "quality": 55,
+      "quality": 54,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 139,
-          "rank": 124,
+          "rank": 127,
           "as": "DeepSeek-R1"
         },
         "text": {
@@ -1132,12 +1137,12 @@
       }
     },
     "deepseek/deepseek-r1-0528": {
-      "quality": 60,
+      "quality": 59,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 141.3,
-          "rank": 111,
+          "rank": 114,
           "as": "DeepSeek-R1 (May 2025)"
         },
         "text": {
@@ -1190,7 +1195,7 @@
       "boards": {
         "eci": {
           "score": 135.4,
-          "rank": 139,
+          "rank": 142,
           "as": "DeepSeek-R1-Distill-Qwen-14B"
         }
       },
@@ -1205,7 +1210,7 @@
       "boards": {
         "eci": {
           "score": 137.4,
-          "rank": 131,
+          "rank": 134,
           "as": "DeepSeek-R1-Distill-Qwen-32B"
         }
       },
@@ -1220,7 +1225,7 @@
       "boards": {
         "eci": {
           "score": 132.3,
-          "rank": 151,
+          "rank": 154,
           "as": "DeepSeek-V3"
         },
         "text": {
@@ -1255,7 +1260,7 @@
       "boards": {
         "eci": {
           "score": 135.9,
-          "rank": 137,
+          "rank": 140,
           "as": "DeepSeek-V3 (Mar 2025)"
         },
         "text": {
@@ -1285,12 +1290,12 @@
       }
     },
     "deepseek/deepseek-v3-1": {
-      "quality": 57,
+      "quality": 56,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 139.9,
-          "rank": 119,
+          "rank": 122,
           "as": "DeepSeek-V3.1"
         },
         "text": {
@@ -1317,12 +1322,12 @@
       "bench": {}
     },
     "deepseek/deepseek-v3-2": {
-      "quality": 73,
+      "quality": 71,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 146.3,
-          "rank": 76,
+          "score": 146.1,
+          "rank": 80,
           "as": "DeepSeek-V3.2"
         },
         "text": {
@@ -1354,12 +1359,12 @@
       "bench": {}
     },
     "deepseek/deepseek-v4-flash": {
-      "quality": 72,
+      "quality": 71,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 146.1,
-          "rank": 78,
+          "rank": 81,
           "as": "DeepSeek-V4-Flash"
         },
         "text": {
@@ -1391,12 +1396,12 @@
       "bench": {}
     },
     "deepseek/deepseek-v4-flash-0731": {
-      "quality": 88,
+      "quality": 87,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 154.5,
-          "rank": 35,
+          "rank": 37,
           "as": "DeepSeek V4 Flash 0731"
         }
       },
@@ -1412,8 +1417,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 149.1,
-          "rank": 61,
+          "score": 149.2,
+          "rank": 62,
           "as": "DeepSeek-V4-Pro"
         },
         "text": {
@@ -1451,12 +1456,12 @@
       }
     },
     "deepseek/deepseek-v4-pro-0813": {
-      "quality": 90,
+      "quality": 89,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 155.3,
-          "rank": 29,
+          "rank": 32,
           "as": "DeepSeek V4 Pro 0813"
         }
       },
@@ -1468,12 +1473,12 @@
       }
     },
     "google/gemini-2-5-flash": {
-      "quality": 59,
+      "quality": 58,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 140.8,
-          "rank": 113,
+          "rank": 116,
           "as": "Gemini 2.5 Flash (Jun 2025)"
         },
         "text": {
@@ -1524,12 +1529,12 @@
       "bench": {}
     },
     "google/gemini-2-5-flash-lite": {
-      "quality": 47,
+      "quality": 46,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 133.9,
-          "rank": 147,
+          "score": 134,
+          "rank": 150,
           "as": "Gemini 2.5 Flash-Lite (Jun 2025)"
         },
         "text": {
@@ -1561,12 +1566,12 @@
       "bench": {}
     },
     "google/gemini-2-5-pro": {
-      "quality": 69,
+      "quality": 68,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 145.3,
-          "rank": 85,
+          "rank": 88,
           "as": "Gemini 2.5 Pro (Jun 2025)"
         },
         "text": {
@@ -1625,12 +1630,12 @@
       "bench": {}
     },
     "google/gemini-3-1-flash-lite": {
-      "quality": 68,
+      "quality": 67,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 144.5,
-          "rank": 89,
+          "rank": 92,
           "as": "Gemini 3.1 Flash-Lite"
         }
       },
@@ -1695,12 +1700,12 @@
       "bench": {}
     },
     "google/gemini-3-1-pro-preview": {
-      "quality": 88,
+      "quality": 87,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 154.8,
-          "rank": 34,
+          "score": 154.7,
+          "rank": 36,
           "as": "Gemini 3.1 Pro"
         },
         "text": {
@@ -1742,12 +1747,12 @@
       }
     },
     "google/gemini-3-1-pro-preview-customtools": {
-      "quality": 88,
+      "quality": 87,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 154.8,
-          "rank": 34,
+          "score": 154.7,
+          "rank": 36,
           "as": "Gemini 3.1 Pro"
         }
       },
@@ -1760,8 +1765,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 154.5,
-          "rank": 36,
+          "score": 154.4,
+          "rank": 38,
           "as": "Gemini 3.5 Flash"
         },
         "text": {
@@ -1804,12 +1809,12 @@
       }
     },
     "google/gemini-3-5-flash-lite": {
-      "quality": 69,
+      "quality": 68,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 145.1,
-          "rank": 86,
+          "score": 145.2,
+          "rank": 89,
           "as": "Gemini 3.5 Flash-Lite"
         },
         "text": {
@@ -1850,12 +1855,12 @@
       }
     },
     "google/gemini-3-6-flash": {
-      "quality": 87,
+      "quality": 86,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 154.3,
-          "rank": 37,
+          "score": 154.2,
+          "rank": 40,
           "as": "Gemini 3.6 Flash"
         },
         "text": {
@@ -1897,12 +1902,12 @@
       }
     },
     "google/gemini-3-7-flash": {
-      "quality": 95,
+      "quality": 94,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 157.3,
-          "rank": 16,
+          "score": 157.2,
+          "rank": 18,
           "as": "Gemini 3.7 Flash"
         },
         "text": {
@@ -1948,8 +1953,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 156.7,
-          "rank": 20,
+          "score": 157.2,
+          "rank": 19,
           "as": "Gemini 3.8 Flash"
         },
         "text": {
@@ -1991,12 +1996,12 @@
       }
     },
     "google/gemini-3-flash-preview": {
-      "quality": 83,
+      "quality": 82,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 151.8,
-          "rank": 48,
+          "rank": 51,
           "as": "Gemini 3 Flash"
         },
         "text": {
@@ -2056,9 +2061,14 @@
       "bench": {}
     },
     "google/gemini-4-argon": {
-      "quality": 100,
-      "basis": "text",
+      "quality": 99,
+      "basis": "eci",
       "boards": {
+        "eci": {
+          "score": 164.6,
+          "rank": 5,
+          "as": "Gemini 4 Argon"
+        },
         "text": {
           "score": 1533,
           "rank": 1,
@@ -2087,6 +2097,8 @@
       },
       "bench": {
         "gpqa": 0.964,
+        "frontiermath": 0.86,
+        "aime": 1,
         "simpleqa": 0.76
       }
     },
@@ -2139,8 +2151,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 119.8,
-          "rank": 198,
+          "score": 119.9,
+          "rank": 201,
           "as": "Gemma 2 9B"
         },
         "text": {
@@ -2175,7 +2187,7 @@
       "boards": {
         "eci": {
           "score": 123.5,
-          "rank": 186,
+          "rank": 189,
           "as": "Gemma 3 12B"
         },
         "text": {
@@ -2218,8 +2230,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 130,
-          "rank": 158,
+          "score": 130.1,
+          "rank": 161,
           "as": "Gemma 3 27B"
         },
         "text": {
@@ -2254,12 +2266,12 @@
       }
     },
     "google/gemma-3-4b-it": {
-      "quality": 22,
+      "quality": 21,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 116,
-          "rank": 215,
+          "rank": 218,
           "as": "Gemma 3 4B"
         },
         "text": {
@@ -2293,8 +2305,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 141.9,
-          "rank": 107,
+          "score": 141.8,
+          "rank": 110,
           "as": "Gemma 4 26B A4B"
         },
         "text": {
@@ -2334,12 +2346,12 @@
       }
     },
     "google/gemma-4-31b-it": {
-      "quality": 64,
+      "quality": 63,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 142.7,
-          "rank": 99,
+          "score": 142.9,
+          "rank": 102,
           "as": "Gemma 4 31B IT"
         },
         "text": {
@@ -2527,7 +2539,7 @@
       "boards": {
         "eci": {
           "score": 128.8,
-          "rank": 167,
+          "rank": 169,
           "as": "Llama 3.1-405B"
         }
       },
@@ -2542,7 +2554,7 @@
       "boards": {
         "eci": {
           "score": 125.9,
-          "rank": 180,
+          "rank": 183,
           "as": "Llama 3.1-70B"
         },
         "text": {
@@ -2572,12 +2584,12 @@
       }
     },
     "meta/llama-3-1-8b-instruct": {
-      "quality": 23,
+      "quality": 22,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 116.6,
-          "rank": 212,
+          "rank": 215,
           "as": "Llama 3.1-8B"
         },
         "text": {
@@ -2612,7 +2624,7 @@
       "boards": {
         "eci": {
           "score": 102,
-          "rank": 247,
+          "rank": 250,
           "as": "Llama 3.2 1B"
         },
         "text": {
@@ -2683,7 +2695,7 @@
       "boards": {
         "eci": {
           "score": 127.3,
-          "rank": 172,
+          "rank": 175,
           "as": "Llama 3.3 70B"
         },
         "text": {
@@ -2713,12 +2725,12 @@
       }
     },
     "meta/llama-4-maverick-17b-128e-instruct-fp8": {
-      "quality": 45,
+      "quality": 44,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 132.2,
-          "rank": 152,
+          "rank": 155,
           "as": "Llama 4 Maverick"
         }
       },
@@ -2728,12 +2740,12 @@
       }
     },
     "meta/llama-4-scout-17b-16e-instruct": {
-      "quality": 42,
+      "quality": 41,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 129.6,
-          "rank": 160,
+          "score": 129.7,
+          "rank": 163,
           "as": "Llama 4 Scout"
         },
         "text": {
@@ -2768,12 +2780,12 @@
       }
     },
     "meta/meta-llama-3-70b-instruct": {
-      "quality": 32,
+      "quality": 31,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 122.9,
-          "rank": 188,
+          "rank": 191,
           "as": "Llama 3-70B"
         }
       },
@@ -2788,7 +2800,7 @@
       "boards": {
         "eci": {
           "score": 116.5,
-          "rank": 213,
+          "rank": 216,
           "as": "Llama 3-8B"
         }
       },
@@ -2802,8 +2814,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 154.2,
-          "rank": 38,
+          "score": 154,
+          "rank": 41,
           "as": "Muse Spark 1.1"
         },
         "text": {
@@ -2847,7 +2859,7 @@
       "boards": {
         "eci": {
           "score": 154.9,
-          "rank": 33,
+          "rank": 35,
           "as": "Muse Spark 1.2"
         },
         "text": {
@@ -2891,7 +2903,7 @@
       "boards": {
         "eci": {
           "score": 156.8,
-          "rank": 19,
+          "rank": 21,
           "as": "Muse Spark 1.3"
         },
         "text": {
@@ -2930,13 +2942,21 @@
         "aime": 0.992
       }
     },
+    "meta/muse-wonder-1-0": {
+      "quality": null,
+      "basis": null,
+      "boards": {},
+      "bench": {
+        "aime": 0.994
+      }
+    },
     "microsoft/phi-2": {
       "quality": 15,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 107.9,
-          "rank": 232,
+          "score": 108,
+          "rank": 235,
           "as": "Phi-2"
         }
       },
@@ -2960,7 +2980,7 @@
       "boards": {
         "eci": {
           "score": 117.4,
-          "rank": 209,
+          "rank": 212,
           "as": "phi-3-mini 3.8B"
         },
         "text": {
@@ -2992,7 +3012,7 @@
       "boards": {
         "eci": {
           "score": 117.4,
-          "rank": 209,
+          "rank": 212,
           "as": "phi-3-mini 3.8B"
         },
         "text": {
@@ -3019,12 +3039,12 @@
       "bench": {}
     },
     "microsoft/phi-4": {
-      "quality": 43,
+      "quality": 42,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 130.4,
-          "rank": 157,
+          "rank": 160,
           "as": "Phi-4"
         },
         "text": {
@@ -3123,7 +3143,7 @@
       "boards": {
         "eci": {
           "score": 146.7,
-          "rank": 72,
+          "rank": 74,
           "as": "MiniMax-M2.5"
         },
         "text": {
@@ -3155,12 +3175,12 @@
       "bench": {}
     },
     "minimax/MiniMax-M2-7": {
-      "quality": 71,
+      "quality": 70,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 145.9,
-          "rank": 80,
+          "rank": 83,
           "as": "MiniMax-M2.7"
         },
         "text": {
@@ -3196,8 +3216,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 147,
-          "rank": 68,
+          "score": 147.1,
+          "rank": 70,
           "as": "MiniMax-M3"
         },
         "text": {
@@ -3282,8 +3302,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 112.2,
-          "rank": 222,
+          "score": 112.3,
+          "rank": 225,
           "as": "Mistral 7B v0.1"
         }
       },
@@ -3321,8 +3341,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 109,
-          "rank": 229,
+          "score": 109.1,
+          "rank": 232,
           "as": "Mistral 7B v0.3"
         }
       },
@@ -3336,8 +3356,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 112.2,
-          "rank": 222,
+          "score": 112.3,
+          "rank": 225,
           "as": "Mistral 7B v0.1"
         }
       },
@@ -3348,20 +3368,20 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 109,
-          "rank": 229,
+          "score": 109.1,
+          "rank": 232,
           "as": "Mistral 7B v0.3"
         }
       },
       "bench": {}
     },
     "mistral/mistral-large-2411": {
-      "quality": 39,
+      "quality": 38,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 128.5,
-          "rank": 168,
+          "rank": 171,
           "as": "Mistral Large 2 (Nov 2024)"
         },
         "text": {
@@ -3428,9 +3448,14 @@
       "bench": {}
     },
     "mistral/mistral-large-4": {
-      "quality": 77,
-      "basis": "text",
+      "quality": 75,
+      "basis": "eci",
       "boards": {
+        "eci": {
+          "score": 146.9,
+          "rank": 71,
+          "as": "Mistral Large 4"
+        },
         "text": {
           "score": 1430,
           "rank": 96,
@@ -3460,12 +3485,12 @@
       "bench": {}
     },
     "mistral/mistral-medium-2505": {
-      "quality": 47,
+      "quality": 46,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 134.1,
-          "rank": 146,
+          "rank": 149,
           "as": "Mistral Medium 3"
         },
         "text": {
@@ -3532,12 +3557,12 @@
       "bench": {}
     },
     "mistral/mistral-medium-2604": {
-      "quality": 60,
+      "quality": 59,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 141.4,
-          "rank": 110,
+          "score": 141.5,
+          "rank": 113,
           "as": "Mistral Medium 3.5"
         },
         "text": {
@@ -3579,7 +3604,7 @@
       "boards": {
         "eci": {
           "score": 118.7,
-          "rank": 202,
+          "rank": 205,
           "as": "Mistral NeMo"
         }
       },
@@ -3591,7 +3616,7 @@
       "boards": {
         "eci": {
           "score": 118.7,
-          "rank": 202,
+          "rank": 205,
           "as": "Mistral NeMo"
         }
       },
@@ -3602,8 +3627,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 131.7,
-          "rank": 153,
+          "score": 131.8,
+          "rank": 156,
           "as": "Mistral Small 3.2"
         },
         "text": {
@@ -3672,7 +3697,7 @@
       "boards": {
         "eci": {
           "score": 118.5,
-          "rank": 205,
+          "rank": 208,
           "as": "Mixtral 8x7B"
         },
         "text": {
@@ -3705,8 +3730,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 109,
-          "rank": 229,
+          "score": 109.1,
+          "rank": 232,
           "as": "Mistral 7B v0.3"
         },
         "text": {
@@ -3739,8 +3764,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 122,
-          "rank": 191,
+          "score": 122.1,
+          "rank": 194,
           "as": "Mixtral 8x22B"
         }
       },
@@ -3754,7 +3779,7 @@
       "boards": {
         "eci": {
           "score": 118.5,
-          "rank": 205,
+          "rank": 208,
           "as": "Mixtral 8x7B"
         }
       },
@@ -3763,12 +3788,12 @@
       }
     },
     "moonshot/kimi-k2-5": {
-      "quality": 77,
+      "quality": 76,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 148,
-          "rank": 64,
+          "rank": 66,
           "as": "Kimi K2.5"
         },
         "text": {
@@ -3808,12 +3833,12 @@
       }
     },
     "moonshot/kimi-k2-6": {
-      "quality": 82,
+      "quality": 81,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 151.1,
-          "rank": 50,
+          "score": 150.9,
+          "rank": 53,
           "as": "Kimi K2.6"
         },
         "text": {
@@ -3856,12 +3881,12 @@
       }
     },
     "moonshot/kimi-k2-7-code": {
-      "quality": 80,
+      "quality": 79,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 150,
-          "rank": 55,
+          "score": 149.9,
+          "rank": 59,
           "as": "Kimi K2.7 Code"
         },
         "webdev": {
@@ -3883,19 +3908,19 @@
       "boards": {
         "eci": {
           "score": 146,
-          "rank": 79,
+          "rank": 82,
           "as": "Kimi K2 Thinking"
         }
       },
       "bench": {}
     },
     "moonshot/kimi-k3": {
-      "quality": 95,
+      "quality": 94,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 157.5,
-          "rank": 15,
+          "score": 157.4,
+          "rank": 17,
           "as": "Kimi K3"
         },
         "text": {
@@ -4018,7 +4043,7 @@
       "boards": {
         "eci": {
           "score": 118.6,
-          "rank": 203,
+          "rank": 206,
           "as": "GPT-3.5 Turbo (Nov 2023)"
         }
       },
@@ -4030,19 +4055,19 @@
       "boards": {
         "eci": {
           "score": 125.9,
-          "rank": 181,
+          "rank": 184,
           "as": "GPT-4 (Mar 2023)"
         }
       },
       "bench": {}
     },
     "openai/gpt-4-1": {
-      "quality": 52,
+      "quality": 51,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 136.8,
-          "rank": 133,
+          "rank": 136,
           "as": "GPT-4.1"
         },
         "text": {
@@ -4085,7 +4110,7 @@
       "boards": {
         "eci": {
           "score": 135,
-          "rank": 142,
+          "rank": 145,
           "as": "GPT-4.1 mini"
         },
         "text": {
@@ -4127,7 +4152,7 @@
       "boards": {
         "eci": {
           "score": 129.6,
-          "rank": 161,
+          "rank": 164,
           "as": "GPT-4.1 nano"
         },
         "text": {
@@ -4163,12 +4188,12 @@
       }
     },
     "openai/gpt-4-turbo": {
-      "quality": 35,
+      "quality": 34,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 126.5,
-          "rank": 179,
+          "rank": 182,
           "as": "GPT-4 Turbo (Nov 2023)"
         },
         "text": {
@@ -4208,8 +4233,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 129,
-          "rank": 164,
+          "score": 129.1,
+          "rank": 166,
           "as": "GPT-4o (May 2024)"
         },
         "text": {
@@ -4244,12 +4269,12 @@
       }
     },
     "openai/gpt-4o-2024-08-06": {
-      "quality": 40,
+      "quality": 39,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 128.8,
-          "rank": 166,
+          "rank": 168,
           "as": "GPT-4o (Aug 2024)"
         },
         "text": {
@@ -4286,12 +4311,12 @@
       }
     },
     "openai/gpt-4o-2024-11-20": {
-      "quality": 40,
+      "quality": 39,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 128.8,
-          "rank": 165,
+          "score": 128.7,
+          "rank": 170,
           "as": "GPT-4o (Nov 2024)"
         }
       },
@@ -4307,7 +4332,7 @@
       "boards": {
         "eci": {
           "score": 126.6,
-          "rank": 178,
+          "rank": 181,
           "as": "GPT-4o mini"
         },
         "text": {
@@ -4344,12 +4369,12 @@
       }
     },
     "openai/gpt-5": {
-      "quality": 81,
+      "quality": 80,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 150,
-          "rank": 54,
+          "rank": 57,
           "as": "GPT-5"
         },
         "text": {
@@ -4396,8 +4421,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 149.6,
-          "rank": 57,
+          "score": 149.8,
+          "rank": 60,
           "as": "GPT-5.1"
         },
         "text": {
@@ -4439,12 +4464,12 @@
       }
     },
     "openai/gpt-5-2": {
-      "quality": 85,
+      "quality": 84,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 153.5,
-          "rank": 42,
+          "rank": 44,
           "as": "GPT-5.2"
         },
         "text": {
@@ -4491,8 +4516,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 155.4,
-          "rank": 28,
+          "score": 156,
+          "rank": 29,
           "as": "GPT-5.2 Pro"
         }
       },
@@ -4501,12 +4526,12 @@
       }
     },
     "openai/gpt-5-3-codex": {
-      "quality": 94,
+      "quality": 93,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 156.8,
-          "rank": 18,
+          "rank": 21,
           "as": "GPT-5.3 Codex"
         },
         "webdev": {
@@ -4520,12 +4545,12 @@
       }
     },
     "openai/gpt-5-4": {
-      "quality": 94,
+      "quality": 92,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 156.8,
-          "rank": 17,
+          "score": 156.7,
+          "rank": 23,
           "as": "GPT-5.4"
         },
         "text": {
@@ -4568,12 +4593,12 @@
       }
     },
     "openai/gpt-5-4-mini": {
-      "quality": 78,
+      "quality": 77,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 148.8,
-          "rank": 62,
+          "rank": 64,
           "as": "GPT-5.4 Mini"
         },
         "text": {
@@ -4615,12 +4640,12 @@
       }
     },
     "openai/gpt-5-4-nano": {
-      "quality": 70,
+      "quality": 72,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 145.8,
-          "rank": 82,
+          "score": 146.1,
+          "rank": 79,
           "as": "GPT-5.4 Nano"
         },
         "text": {
@@ -4661,7 +4686,7 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 158.9,
+          "score": 159,
           "rank": 13,
           "as": "GPT-5.4 Pro"
         }
@@ -4673,12 +4698,12 @@
       }
     },
     "openai/gpt-5-5": {
-      "quality": 96,
+      "quality": 95,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 159.1,
-          "rank": 12,
+          "score": 159,
+          "rank": 15,
           "as": "GPT-5.5"
         },
         "text": {
@@ -4724,8 +4749,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 162.1,
-          "rank": 8,
+          "score": 162,
+          "rank": 10,
           "as": "GPT-5.5 Pro"
         }
       },
@@ -4734,12 +4759,12 @@
       }
     },
     "openai/gpt-5-6-luna": {
-      "quality": 92,
+      "quality": 91,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 156.4,
-          "rank": 23,
+          "score": 156.3,
+          "rank": 25,
           "as": "GPT-5.6 Luna"
         },
         "text": {
@@ -4781,12 +4806,12 @@
       }
     },
     "openai/gpt-5-6-sol": {
-      "quality": 97,
+      "quality": 96,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 161.7,
-          "rank": 10,
+          "rank": 11,
           "as": "GPT-5.6 Sol"
         },
         "text": {
@@ -4832,8 +4857,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 159.6,
-          "rank": 11,
+          "score": 159.4,
+          "rank": 12,
           "as": "GPT-5.6 Terra"
         },
         "text": {
@@ -4875,12 +4900,12 @@
       }
     },
     "openai/gpt-5-mini": {
-      "quality": 70,
+      "quality": 69,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 145.5,
-          "rank": 84,
+          "score": 145.4,
+          "rank": 87,
           "as": "GPT-5 mini"
         },
         "text": {
@@ -4918,12 +4943,12 @@
       }
     },
     "openai/gpt-5-nano": {
-      "quality": 56,
+      "quality": 55,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 139.4,
-          "rank": 122,
+          "score": 139.3,
+          "rank": 126,
           "as": "GPT-5 nano"
         },
         "text": {
@@ -4960,12 +4985,12 @@
       }
     },
     "openai/gpt-5-pro": {
-      "quality": 82,
+      "quality": 81,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 150.3,
-          "rank": 51,
+          "score": 150.7,
+          "rank": 54,
           "as": "GPT-5 Pro"
         }
       },
@@ -4978,7 +5003,7 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 166.1,
+          "score": 166.3,
           "rank": 3,
           "as": "GPT-6.1 Sol"
         },
@@ -5025,7 +5050,7 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 166.5,
+          "score": 166.4,
           "rank": 2,
           "as": "GPT-6 Astra"
         },
@@ -5068,12 +5093,12 @@
       }
     },
     "openai/gpt-6-luna": {
-      "quality": 92,
+      "quality": 91,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 156.3,
-          "rank": 24,
+          "rank": 27,
           "as": "GPT-6 Luna"
         },
         "text": {
@@ -5115,12 +5140,12 @@
       }
     },
     "openai/gpt-6-sol": {
-      "quality": 98,
+      "quality": 97,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 162.7,
-          "rank": 7,
+          "score": 162.6,
+          "rank": 8,
           "as": "GPT-6 Sol"
         },
         "text": {
@@ -5217,8 +5242,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 139.9,
-          "rank": 118,
+          "score": 140,
+          "rank": 120,
           "as": "gpt-oss-120b"
         },
         "text": {
@@ -5253,7 +5278,7 @@
       "boards": {
         "eci": {
           "score": 137.8,
-          "rank": 129,
+          "rank": 132,
           "as": "gpt-oss-20b"
         },
         "text": {
@@ -5283,12 +5308,12 @@
       }
     },
     "openai/o1": {
-      "quality": 62,
+      "quality": 61,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 141.9,
-          "rank": 106,
+          "score": 141.8,
+          "rank": 109,
           "as": "o1"
         },
         "text": {
@@ -5325,12 +5350,12 @@
       }
     },
     "openai/o3": {
-      "quality": 75,
+      "quality": 74,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 146.9,
-          "rank": 69,
+          "rank": 72,
           "as": "o3"
         },
         "text": {
@@ -5373,7 +5398,7 @@
       "boards": {
         "eci": {
           "score": 140.3,
-          "rank": 115,
+          "rank": 117,
           "as": "o3-mini"
         },
         "text": {
@@ -5410,19 +5435,19 @@
       "boards": {
         "eci": {
           "score": 147.4,
-          "rank": 66,
+          "rank": 68,
           "as": "o3-pro"
         }
       },
       "bench": {}
     },
     "openai/o4-mini": {
-      "quality": 70,
+      "quality": 69,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 145.6,
-          "rank": 83,
+          "rank": 86,
           "as": "o4-mini"
         },
         "text": {
@@ -5541,7 +5566,7 @@
       "boards": {
         "eci": {
           "score": 132.5,
-          "rank": 150,
+          "rank": 153,
           "as": "Qwen2.5-Max"
         }
       },
@@ -5581,12 +5606,12 @@
       "bench": {}
     },
     "qwen/qwen2-5-32b-instruct": {
-      "quality": 39,
+      "quality": 38,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 128.5,
-          "rank": 168,
+          "rank": 171,
           "as": "Qwen2.5-32B"
         }
       },
@@ -5596,12 +5621,12 @@
       }
     },
     "qwen/qwen2-5-72b-instruct": {
-      "quality": 41,
+      "quality": 40,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 129,
-          "rank": 163,
+          "rank": 167,
           "as": "Qwen2.5-72B"
         },
         "text": {
@@ -5631,12 +5656,12 @@
       }
     },
     "qwen/qwen2-5-7b-instruct": {
-      "quality": 26,
+      "quality": 25,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 118.5,
-          "rank": 204,
+          "rank": 207,
           "as": "Qwen2.5-7B"
         }
       },
@@ -5650,8 +5675,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 88.2,
-          "rank": 271,
+          "score": 88.3,
+          "rank": 274,
           "as": "Qwen2.5-Coder-0.5B"
         }
       },
@@ -5662,8 +5687,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 103,
-          "rank": 245,
+          "score": 103.1,
+          "rank": 248,
           "as": "Qwen2.5-Coder (1.5B)"
         }
       },
@@ -5675,7 +5700,7 @@
       "boards": {
         "eci": {
           "score": 116.4,
-          "rank": 214,
+          "rank": 217,
           "as": "Qwen2.5-Coder-14B"
         }
       },
@@ -5687,7 +5712,7 @@
       "boards": {
         "eci": {
           "score": 119.5,
-          "rank": 199,
+          "rank": 202,
           "as": "Qwen2.5-Coder-32B"
         },
         "text": {
@@ -5718,8 +5743,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 107.7,
-          "rank": 233,
+          "score": 107.8,
+          "rank": 236,
           "as": "Qwen2.5-Coder-3B"
         }
       },
@@ -5730,8 +5755,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 113.1,
-          "rank": 220,
+          "score": 113.2,
+          "rank": 223,
           "as": "Qwen2.5-Coder (7B)"
         }
       },
@@ -5788,7 +5813,7 @@
       "boards": {
         "eci": {
           "score": 138.2,
-          "rank": 128,
+          "rank": 131,
           "as": "Qwen3-14B"
         }
       },
@@ -5803,7 +5828,7 @@
       "boards": {
         "eci": {
           "score": 139.4,
-          "rank": 123,
+          "rank": 125,
           "as": "Qwen3-235B-A22B"
         },
         "text": {
@@ -5832,12 +5857,12 @@
       }
     },
     "qwen/qwen3-235b-a22b-instruct-2507": {
-      "quality": 55,
+      "quality": 54,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 138.9,
-          "rank": 125,
+          "rank": 128,
           "as": "Qwen3-235B-A22B-Instruct (Jul 2025)"
         },
         "text": {
@@ -5864,12 +5889,12 @@
       "bench": {}
     },
     "qwen/qwen3-30b-a3b": {
-      "quality": 51,
+      "quality": 50,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 136.2,
-          "rank": 135,
+          "rank": 138,
           "as": "Qwen3-30B-A3B"
         },
         "text": {
@@ -5904,7 +5929,7 @@
       "boards": {
         "eci": {
           "score": 137.4,
-          "rank": 132,
+          "rank": 134,
           "as": "Qwen3-30B-A3B-Instruct (Jul 2025)"
         },
         "text": {
@@ -5939,7 +5964,7 @@
       "boards": {
         "eci": {
           "score": 138.5,
-          "rank": 126,
+          "rank": 129,
           "as": "Qwen3-32B"
         },
         "text": {
@@ -6065,7 +6090,7 @@
       "boards": {
         "eci": {
           "score": 142.5,
-          "rank": 101,
+          "rank": 104,
           "as": "Qwen3.5-35B-A3B"
         },
         "text": {
@@ -6100,12 +6125,12 @@
       }
     },
     "qwen/qwen3-5-397b-a17b": {
-      "quality": 74,
+      "quality": 73,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 146.7,
-          "rank": 73,
+          "rank": 75,
           "as": "Qwen3.5 397B-A17B"
         },
         "text": {
@@ -6154,12 +6179,12 @@
       }
     },
     "qwen/qwen3-5-9b": {
-      "quality": 56,
+      "quality": 55,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 139.5,
-          "rank": 121,
+          "score": 139.4,
+          "rank": 124,
           "as": "Qwen3.5-9B"
         }
       },
@@ -6169,12 +6194,12 @@
       }
     },
     "qwen/qwen3-5-flash": {
-      "quality": 66,
+      "quality": 64,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 144,
-          "rank": 93,
+          "score": 143.8,
+          "rank": 99,
           "as": "Qwen 3.5 Flash (hosted 35B-A3B)"
         },
         "text": {
@@ -6211,12 +6236,12 @@
       }
     },
     "qwen/qwen3-5-plus": {
-      "quality": 74,
+      "quality": 72,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 146.8,
-          "rank": 71,
+          "score": 146.3,
+          "rank": 78,
           "as": "Qwen 3.5 Plus (hosted 397B-A17B)"
         }
       },
@@ -6232,7 +6257,7 @@
       "boards": {
         "eci": {
           "score": 146.5,
-          "rank": 74,
+          "rank": 76,
           "as": "Qwen3.6 27B"
         }
       },
@@ -6247,8 +6272,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 143.9,
-          "rank": 94,
+          "score": 144.1,
+          "rank": 95,
           "as": "Qwen 3.6 35B-A3B"
         }
       },
@@ -6259,12 +6284,12 @@
       }
     },
     "qwen/qwen3-6-flash": {
-      "quality": 65,
+      "quality": 64,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 143.3,
-          "rank": 97,
+          "score": 143.1,
+          "rank": 100,
           "as": "Qwen 3.6 Flash"
         }
       },
@@ -6276,12 +6301,12 @@
       }
     },
     "qwen/qwen3-6-max-preview": {
-      "quality": 79,
+      "quality": 78,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 149.2,
-          "rank": 59,
+          "rank": 61,
           "as": "Qwen 3.6 Max (Preview)"
         },
         "text": {
@@ -6318,12 +6343,12 @@
       }
     },
     "qwen/qwen3-6-plus": {
-      "quality": 77,
+      "quality": 76,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 147.7,
-          "rank": 65,
+          "score": 147.5,
+          "rank": 67,
           "as": "Qwen 3.6 Plus"
         },
         "text": {
@@ -6361,12 +6386,12 @@
       }
     },
     "qwen/qwen3-7-flash": {
-      "quality": 68,
+      "quality": 67,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 144.6,
-          "rank": 88,
+          "rank": 91,
           "as": "Qwen3.7 Flash"
         }
       },
@@ -6377,12 +6402,12 @@
       }
     },
     "qwen/qwen3-7-max": {
-      "quality": 86,
+      "quality": 85,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 153.7,
-          "rank": 40,
+          "score": 153.8,
+          "rank": 43,
           "as": "Qwen3.7-Max"
         },
         "text": {
@@ -6420,12 +6445,12 @@
       }
     },
     "qwen/qwen3-7-plus": {
-      "quality": 76,
+      "quality": 75,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 147.4,
-          "rank": 67,
+          "score": 147.3,
+          "rank": 69,
           "as": "Qwen3.7-Plus"
         },
         "text": {
@@ -6461,12 +6486,12 @@
       }
     },
     "qwen/qwen3-8-27b": {
-      "quality": 79,
+      "quality": 82,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 149.4,
-          "rank": 58,
+          "score": 151.6,
+          "rank": 52,
           "as": "Qwen 3.8 27B"
         },
         "text": {
@@ -6515,12 +6540,12 @@
       "bench": {}
     },
     "qwen/qwen3-8-max": {
-      "quality": 92,
+      "quality": 93,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 156.4,
-          "rank": 22,
+          "score": 156.9,
+          "rank": 20,
           "as": "Qwen 3.8 Max"
         },
         "text": {
@@ -6557,12 +6582,12 @@
       "bench": {}
     },
     "qwen/qwen3-8b": {
-      "quality": 51,
+      "quality": 50,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 136.2,
-          "rank": 136,
+          "rank": 139,
           "as": "Qwen3-8B"
         }
       },
@@ -6604,12 +6629,12 @@
       "bench": {}
     },
     "qwen/qwen3-max": {
-      "quality": 62,
+      "quality": 61,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 142.4,
-          "rank": 105,
+          "score": 142.3,
+          "rank": 108,
           "as": "Qwen3-Max"
         },
         "text": {
@@ -6815,8 +6840,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 148.5,
-          "rank": 63,
+          "score": 148.6,
+          "rank": 65,
           "as": "Inkling"
         },
         "text": {
@@ -6852,8 +6877,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 95.1,
-          "rank": 256,
+          "score": 95.2,
+          "rank": 259,
           "as": "Falcon-7B"
         }
       },
@@ -6892,12 +6917,12 @@
       "bench": {}
     },
     "xai/grok-4-20-0309-reasoning": {
-      "quality": 84,
+      "quality": 83,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 152,
-          "rank": 46,
+          "score": 152.1,
+          "rank": 49,
           "as": "Grok 4.20"
         }
       },
@@ -6913,8 +6938,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 149.2,
-          "rank": 60,
+          "score": 149,
+          "rank": 63,
           "as": "Grok 4.3 Beta"
         },
         "text": {
@@ -6956,12 +6981,12 @@
       }
     },
     "xai/grok-4-5": {
-      "quality": 86,
+      "quality": 85,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 153.9,
-          "rank": 39,
+          "rank": 42,
           "as": "Grok 4.5"
         },
         "text": {
@@ -7003,12 +7028,12 @@
       }
     },
     "xai/grok-4-6": {
-      "quality": 93,
+      "quality": 91,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 156.4,
-          "rank": 21,
+          "score": 156.3,
+          "rank": 27,
           "as": "Grok 4.6"
         },
         "text": {
@@ -7050,12 +7075,12 @@
       }
     },
     "xai/grok-4-7": {
-      "quality": 85,
+      "quality": 86,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 153.5,
-          "rank": 41,
+          "score": 154.4,
+          "rank": 39,
           "as": "Grok 4.7"
         },
         "text": {
@@ -7526,8 +7551,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 143.5,
-          "rank": 96,
+          "score": 143.8,
+          "rank": 98,
           "as": "GLM-4.7"
         },
         "text": {
@@ -7593,12 +7618,12 @@
       }
     },
     "zai/glm-5": {
-      "quality": 71,
+      "quality": 70,
       "basis": "eci",
       "boards": {
         "eci": {
           "score": 145.8,
-          "rank": 81,
+          "rank": 84,
           "as": "GLM-5"
         },
         "text": {
@@ -7634,12 +7659,12 @@
       }
     },
     "zai/glm-5-1": {
-      "quality": 80,
+      "quality": 79,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 149.8,
-          "rank": 56,
+          "score": 150,
+          "rank": 58,
           "as": "GLM-5.1"
         },
         "text": {
@@ -7681,8 +7706,8 @@
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 151.8,
-          "rank": 49,
+          "score": 151.9,
+          "rank": 50,
           "as": "GLM-5.2"
         },
         "text": {
@@ -7720,12 +7745,12 @@
       }
     },
     "zai/glm-5-3": {
-      "quality": 90,
+      "quality": 89,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 155.6,
-          "rank": 27,
+          "score": 155.9,
+          "rank": 30,
           "as": "GLM-5.3"
         },
         "text": {
@@ -7762,12 +7787,12 @@
       }
     },
     "zai/glm-5-3-flash": {
-      "quality": 83,
+      "quality": 84,
       "basis": "eci",
       "boards": {
         "eci": {
-          "score": 151.9,
-          "rank": 47,
+          "score": 153.2,
+          "rank": 45,
           "as": "GLM-5.3-Flash"
         },
         "text": {
