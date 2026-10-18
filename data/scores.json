@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-17T10:51:27.808Z",
+  "updatedAt": "2026-10-18T11:15:32.050Z",
   "boards": {
     "eci": {
       "count": 277,
@@ -1054,53 +1054,6 @@
       },
       "bench": {}
     },
-    "deepseek/deepseek-flash": {
-      "quality": 89,
-      "basis": "eci",
-      "boards": {
-        "eci": {
-          "score": 155.6,
-          "rank": 31,
-          "as": "DeepSeek V4.1 Flash"
-        },
-        "text": {
-          "score": 1463,
-          "rank": 38,
-          "as": "deepseek-v4.1-flash-max"
-        },
-        "coding": {
-          "score": 1501,
-          "rank": 24,
-          "as": "deepseek-v4.1-flash-max"
-        },
-        "math": {
-          "score": 1478,
-          "rank": 33,
-          "as": "deepseek-v4.1-flash-max"
-        },
-        "creative": {
-          "score": 1437,
-          "rank": 52,
-          "as": "deepseek-v4.1-flash-max"
-        },
-        "webdev": {
-          "score": 1618,
-          "rank": 24,
-          "as": "DeepSeek-V4.1-Flash (Max)"
-        },
-        "vision": {
-          "score": 1277,
-          "rank": 39,
-          "as": "deepseek-v4.1-flash-max"
-        }
-      },
-      "bench": {
-        "gpqa": 0.898,
-        "frontiermath": 0.674,
-        "aime": 0.983,
-        "simpleqa": 0.429
-      }
-    },
     "deepseek/deepseek-r1": {
       "quality": 54,
       "basis": "eci",
@@ -1357,6 +1310,53 @@
         }
       },
       "bench": {}
+    },
+    "deepseek/deepseek-v4-1-flash": {
+      "quality": 89,
+      "basis": "eci",
+      "boards": {
+        "eci": {
+          "score": 155.6,
+          "rank": 31,
+          "as": "DeepSeek V4.1 Flash"
+        },
+        "text": {
+          "score": 1463,
+          "rank": 38,
+          "as": "deepseek-v4.1-flash-max"
+        },
+        "coding": {
+          "score": 1501,
+          "rank": 24,
+          "as": "deepseek-v4.1-flash-max"
+        },
+        "math": {
+          "score": 1478,
+          "rank": 33,
+          "as": "deepseek-v4.1-flash-max"
+        },
+        "creative": {
+          "score": 1437,
+          "rank": 52,
+          "as": "deepseek-v4.1-flash-max"
+        },
+        "webdev": {
+          "score": 1618,
+          "rank": 24,
+          "as": "DeepSeek-V4.1-Flash (Max)"
+        },
+        "vision": {
+          "score": 1277,
+          "rank": 39,
+          "as": "deepseek-v4.1-flash-max"
+        }
+      },
+      "bench": {
+        "gpqa": 0.898,
+        "frontiermath": 0.674,
+        "aime": 0.983,
+        "simpleqa": 0.429
+      }
     },
     "deepseek/deepseek-v4-flash": {
       "quality": 71,
