@@ -2,6 +2,128 @@
   "version": 1,
   "events": [
     {
+      "date": "2026-10-21",
+      "kind": "added",
+      "key": "meta/meta-llama-3-70b",
+      "name": "Meta-Llama-3-70B",
+      "lab": "meta"
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "added",
+      "key": "liquid/lfm2-5-230m-base",
+      "name": "LFM2.5-230M-Base",
+      "lab": "liquid"
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "added",
+      "key": "thinkingmachines/Inkling-Small",
+      "name": "Inkling Small",
+      "lab": "thinkingmachines"
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "added",
+      "key": "meta/muse-glimmer-30b-assistant",
+      "name": "Muse-Glimmer-30B-assistant",
+      "lab": "meta"
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "added",
+      "key": "meituan/LongCat-2-5-Preview",
+      "name": "LongCat-2.5-Preview",
+      "lab": "meituan"
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "retired",
+      "key": "perplexity/sonar",
+      "name": "Sonar",
+      "lab": "perplexity"
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "retired",
+      "key": "perplexity/sonar-pro",
+      "name": "Sonar Pro",
+      "lab": "perplexity"
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "retired",
+      "key": "perplexity/sonar-reasoning-pro",
+      "name": "Sonar Reasoning Pro",
+      "lab": "perplexity"
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "retired",
+      "key": "stepfun/step-1-32k",
+      "name": "Step 1 (32K)",
+      "lab": "stepfun"
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "retired",
+      "key": "stepfun/step-2-16k",
+      "name": "Step 2 (16K)",
+      "lab": "stepfun"
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "retired",
+      "key": "perplexity/sonar-deep-research",
+      "name": "Perplexity Sonar Deep Research",
+      "lab": "perplexity"
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "price",
+      "key": "stepfun/step-3-7-flash",
+      "name": "Step 3.7 Flash",
+      "lab": "stepfun",
+      "before": {
+        "input": 0.185,
+        "output": 1.11
+      },
+      "after": {
+        "input": 0.2,
+        "output": 1.15
+      }
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "price",
+      "key": "meituan/LongCat-2-0",
+      "name": "LongCat-2.0",
+      "lab": "meituan",
+      "before": {
+        "input": 0.75,
+        "output": 2.95
+      },
+      "after": {
+        "input": 0.3,
+        "output": 1.2
+      }
+    },
+    {
+      "date": "2026-10-21",
+      "kind": "price",
+      "key": "inception/mercury-2-5",
+      "name": "Mercury 2.5",
+      "lab": "inception",
+      "before": {
+        "input": 0.04,
+        "output": 0.15
+      },
+      "after": {
+        "input": 0.2,
+        "output": 0.75
+      }
+    },
+    {
       "date": "2026-10-20",
       "kind": "added",
       "key": "meta/sam3-1",
