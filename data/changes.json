@@ -2,6 +2,290 @@
   "version": 1,
   "events": [
     {
+      "date": "2026-10-22",
+      "kind": "added",
+      "key": "nvidia/cosmos-embed1-224p",
+      "name": "Cosmos-Embed1-224p",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "added",
+      "key": "nvidia/llama-3_3-nemotron-super-49b-v1_5",
+      "name": "Llama-3_3-Nemotron-Super-49B-v1_5",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "added",
+      "key": "amazon/nova-2-lite-v1",
+      "name": "Nova 2 Lite",
+      "lab": "amazon"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "added",
+      "key": "bfl/flux-3-image-klein-base",
+      "name": "flux-3-image-klein-base",
+      "lab": "bfl"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "added",
+      "key": "sparkllm/spark-x2-6-4b",
+      "name": "Spark-X2.6-4B",
+      "lab": "sparkllm"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "removed",
+      "key": "nvidia/nemotron-mini-4b-instruct",
+      "name": "nemotron-mini-4b-instruct",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "removed",
+      "key": "nvidia/nemotron-3-nano-30b-a3b",
+      "name": "nemotron-3-nano-30b-a3b",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "removed",
+      "key": "nvidia/cosmos-predict1-5b",
+      "name": "cosmos-predict1-5b",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "removed",
+      "key": "nvidia/llama-3-1-nemotron-nano-8b-v1",
+      "name": "Llama 3.1 Nemotron Nano 8B v1",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "removed",
+      "key": "nvidia/llama-3-3-nemotron-super-49b-v1",
+      "name": "Llama 3.3 Nemotron Super 49B v1",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "removed",
+      "key": "nvidia/llama-3-1-nemotron-nano-vl-8b-v1",
+      "name": "Llama 3.1 Nemotron Nano VL 8B v1",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "removed",
+      "key": "nvidia/mistral-nemotron",
+      "name": "mistral-nemotron",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "removed",
+      "key": "nvidia/cosmos-transfer1-7b",
+      "name": "cosmos-transfer1-7b",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "removed",
+      "key": "nvidia/llama-3-3-nemotron-super-49b-v1-5",
+      "name": "Llama 3.3 Nemotron Super 49B v1.5",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "removed",
+      "key": "nvidia/nemotron-nano-12b-v2-vl",
+      "name": "Nemotron Nano 12B v2 VL",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "removed",
+      "key": "amazon/amazon-nova-2-lite-v1-0",
+      "name": "Nova 2 Lite",
+      "lab": "amazon"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "removed",
+      "key": "nvidia/nemotron-content-safety-reasoning-4b",
+      "name": "nemotron-content-safety-reasoning-4b",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "removed",
+      "key": "nvidia/nemotron-3-content-safety",
+      "name": "nemotron-3-content-safety",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "retired",
+      "key": "meta/llama-3-3-70b-instruct",
+      "name": "Llama-3.3-70B-Instruct",
+      "lab": "meta"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "retired",
+      "key": "meta/llama-3-3-8b-instruct",
+      "name": "Llama-3.3-8B-Instruct",
+      "lab": "meta"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "retired",
+      "key": "meta/llama-4-maverick-17b-128e-instruct-fp8",
+      "name": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "lab": "meta"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "retired",
+      "key": "meta/llama-4-scout-17b-16e-instruct-fp8",
+      "name": "Llama-4-Scout-17B-16E-Instruct-FP8",
+      "lab": "meta"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "retired",
+      "key": "nvidia/llama-3-1-nemotron-ultra-253b-v1",
+      "name": "Llama 3.1 Nemotron Ultra 253B",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "retired",
+      "key": "nvidia/llama-3-1-nemotron-70b-instruct",
+      "name": "Llama 3.1 Nemotron 70B Instruct",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "price",
+      "key": "nvidia/nvidia-nemotron-nano-9b-v2",
+      "name": "NVIDIA-Nemotron-Nano-9B-v2",
+      "lab": "nvidia",
+      "before": {
+        "input": 0,
+        "output": 0
+      },
+      "after": {
+        "input": null,
+        "output": null
+      }
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "retired",
+      "key": "bytedance/doubao-seed-1-6-vision-250815",
+      "name": "Seed 1.6 Vision",
+      "lab": "bytedance"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "retired",
+      "key": "bytedance/doubao-seed-1-6-flash-250828",
+      "name": "Seed 1.6 Flash",
+      "lab": "bytedance"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "price",
+      "key": "qwen/qwen3-asr-flash",
+      "name": "Qwen3-ASR Flash",
+      "lab": "qwen",
+      "before": {
+        "input": 0.035,
+        "output": 0.035
+      },
+      "after": {
+        "input": null,
+        "output": null
+      }
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "retired",
+      "key": "bytedance/doubao-seed-1-6-251015",
+      "name": "Seed 1.6",
+      "lab": "bytedance"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "retired",
+      "key": "nvidia/cosmos-reason2-8b",
+      "name": "Cosmos Reason2 8B",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "retired",
+      "key": "bytedance/doubao-seed-1-8-251228",
+      "name": "Seed 1.8",
+      "lab": "bytedance"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "retired",
+      "key": "bytedance/doubao-seed-2-0-code-preview-260215",
+      "name": "Seed 2.0 Code",
+      "lab": "bytedance"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "retired",
+      "key": "bytedance/doubao-seed-2-0-pro-260215",
+      "name": "Seed 2.0 Pro",
+      "lab": "bytedance"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "price",
+      "key": "sarvam/sarvam-105b",
+      "name": "Sarvam-105B",
+      "lab": "sarvam",
+      "before": {
+        "input": null,
+        "output": null
+      },
+      "after": {
+        "input": 0.157903,
+        "output": 0.631611
+      }
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "retired",
+      "key": "sarvam/sarvam-30b",
+      "name": "Sarvam-30B",
+      "lab": "sarvam"
+    },
+    {
+      "date": "2026-10-22",
+      "kind": "price",
+      "key": "nvidia/nemotron-3-ultra-550b-a55b",
+      "name": "Nemotron 3 Ultra 550B A55B",
+      "lab": "nvidia",
+      "before": {
+        "input": 0.5,
+        "output": 2.5
+      },
+      "after": {
+        "input": 0,
+        "output": 0
+      }
+    },
+    {
       "date": "2026-10-21",
       "kind": "added",
       "key": "meta/meta-llama-3-70b",

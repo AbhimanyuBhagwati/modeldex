@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-21T11:57:54.404Z",
+  "updatedAt": "2026-10-22T12:00:09.101Z",
   "boards": {
     "eci": {
       "count": 270,
@@ -49,19 +49,19 @@
   },
   "bench": {
     "gpqa": {
-      "count": 324
+      "count": 325
     },
     "swe": {
       "count": 35
     },
     "frontiermath": {
-      "count": 120
+      "count": 121
     },
     "aime": {
-      "count": 304
+      "count": 305
     },
     "simpleqa": {
-      "count": 91
+      "count": 92
     }
   },
   "models": {
@@ -930,6 +930,17 @@
         }
       },
       "bench": {}
+    },
+    "deepseek/deepseek-flash": {
+      "quality": null,
+      "basis": null,
+      "boards": {},
+      "bench": {
+        "gpqa": 0.932,
+        "frontiermath": 0.712,
+        "aime": 0.994,
+        "simpleqa": 0.425
+      }
     },
     "deepseek/deepseek-r1": {
       "quality": 52,
@@ -3954,29 +3965,7 @@
       },
       "bench": {}
     },
-    "nvidia/llama-3-3-nemotron-super-49b-v1": {
-      "quality": 42,
-      "basis": "text",
-      "boards": {
-        "text": {
-          "score": 1308,
-          "rank": 244,
-          "as": "Llama 3.3 Nemotron Super 49B v1"
-        },
-        "coding": {
-          "score": 1296,
-          "rank": 261,
-          "as": "Llama 3.3 Nemotron Super 49B v1"
-        },
-        "creative": {
-          "score": 1288,
-          "rank": 229,
-          "as": "Llama 3.3 Nemotron Super 49B v1"
-        }
-      },
-      "bench": {}
-    },
-    "nvidia/llama-3-3-nemotron-super-49b-v1-5": {
+    "nvidia/llama-3_3-nemotron-super-49b-v1_5": {
       "quality": 48,
       "basis": "text",
       "boards": {
