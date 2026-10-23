@@ -2,6 +2,251 @@
   "version": 1,
   "events": [
     {
+      "date": "2026-10-23",
+      "kind": "added",
+      "key": "apple/dfn2b-clip-vit-l-14",
+      "name": "DFN2B-CLIP-ViT-L-14",
+      "lab": "apple"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "added",
+      "key": "apple/dfn2b-clip-vit-l-14-39b",
+      "name": "DFN2B-CLIP-ViT-L-14-39B",
+      "lab": "apple"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "added",
+      "key": "google/t5gemma-2b-2b-ul2-it",
+      "name": "t5gemma-2b-2b-ul2-it",
+      "lab": "google"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "removed",
+      "key": "mistral/mistral-nemo",
+      "name": "Mistral Nemo",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "removed",
+      "key": "qwen/qwen2-5-vl-72b-instruct",
+      "name": "Qwen2.5-VL 72B Instruct",
+      "lab": "qwen"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "removed",
+      "key": "mistral/mistral-large-2411",
+      "name": "Mistral Large 2.1",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "removed",
+      "key": "meta/llama-3-3-8b-instruct",
+      "name": "Llama-3.3-8B-Instruct",
+      "lab": "meta"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "removed",
+      "key": "stepfun/step-1-32k",
+      "name": "Step 1 (32K)",
+      "lab": "stepfun"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "removed",
+      "key": "stepfun/step-2-16k",
+      "name": "Step 2 (16K)",
+      "lab": "stepfun"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "removed",
+      "key": "meta/llama-4-maverick-17b-128e-instruct-fp8",
+      "name": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "lab": "meta"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "removed",
+      "key": "meta/llama-4-scout-17b-16e-instruct-fp8",
+      "name": "Llama-4-Scout-17B-16E-Instruct-FP8",
+      "lab": "meta"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "removed",
+      "key": "mistral/devstral-small-2505",
+      "name": "Devstral Small 2505",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "removed",
+      "key": "mistral/devstral-medium-2507",
+      "name": "Devstral Medium",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "removed",
+      "key": "mistral/devstral-small-2507",
+      "name": "Devstral Small",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "removed",
+      "key": "google/veo-3-1-generate-preview",
+      "name": "Veo 3.1",
+      "lab": "google"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "removed",
+      "key": "google/veo-3-1-fast-generate-preview",
+      "name": "Veo 3.1 fast",
+      "lab": "google"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "removed",
+      "key": "xiaomi/mimo-v2-flash",
+      "name": "MiMo-V2-Flash",
+      "lab": "xiaomi"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "removed",
+      "key": "xiaomi/mimo-v2-omni",
+      "name": "MiMo-V2-Omni",
+      "lab": "xiaomi"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "removed",
+      "key": "xiaomi/mimo-v2-pro",
+      "name": "MiMo-V2-Pro",
+      "lab": "xiaomi"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "removed",
+      "key": "google/veo-3-1-lite-generate-preview",
+      "name": "Veo 3.1 lite",
+      "lab": "google"
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "price",
+      "key": "qwen/qwen2-5-14b-instruct",
+      "name": "Qwen2.5-14B-Instruct",
+      "lab": "qwen",
+      "before": {
+        "input": 0.35,
+        "output": 1.4
+      },
+      "after": {
+        "input": null,
+        "output": null
+      }
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "price",
+      "key": "qwen/qwen2-5-72b-instruct",
+      "name": "Qwen2.5-72B-Instruct",
+      "lab": "qwen",
+      "before": {
+        "input": 1.4,
+        "output": 5.6
+      },
+      "after": {
+        "input": null,
+        "output": null
+      }
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "price",
+      "key": "qwen/qwen2-5-7b-instruct",
+      "name": "Qwen2.5-7B-Instruct",
+      "lab": "qwen",
+      "before": {
+        "input": 0.175,
+        "output": 0.7
+      },
+      "after": {
+        "input": null,
+        "output": null
+      }
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "price",
+      "key": "qwen/qwen2-5-32b-instruct",
+      "name": "Qwen2.5-32B-Instruct",
+      "lab": "qwen",
+      "before": {
+        "input": 0.7,
+        "output": 2.8
+      },
+      "after": {
+        "input": null,
+        "output": null
+      }
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "price",
+      "key": "meta/llama-3-3-70b-instruct",
+      "name": "Llama-3.3-70B-Instruct",
+      "lab": "meta",
+      "before": {
+        "input": 0,
+        "output": 0
+      },
+      "after": {
+        "input": null,
+        "output": null
+      }
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "price",
+      "key": "qwen/qwen2-5-vl-7b-instruct",
+      "name": "Qwen2.5-VL-7B-Instruct",
+      "lab": "qwen",
+      "before": {
+        "input": 0.35,
+        "output": 1.05
+      },
+      "after": {
+        "input": null,
+        "output": null
+      }
+    },
+    {
+      "date": "2026-10-23",
+      "kind": "price",
+      "key": "mistral/mistral-large-4",
+      "name": "Mistral Large 4",
+      "lab": "mistral",
+      "before": {
+        "input": 0.68,
+        "output": 2.09
+      },
+      "after": {
+        "input": 1.36,
+        "output": 4.18
+      }
+    },
+    {
       "date": "2026-10-22",
       "kind": "added",
       "key": "nvidia/cosmos-embed1-224p",
