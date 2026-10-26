@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-24T11:10:01.643Z",
+  "updatedAt": "2026-10-26T13:12:14.411Z",
   "boards": {
     "eci": {
       "count": 270,
@@ -3834,6 +3834,254 @@
         }
       },
       "bench": {}
+    },
+    "morph/morph-dsv41flash": {
+      "quality": 88,
+      "basis": "eci",
+      "boards": {
+        "eci": {
+          "score": 155.9,
+          "rank": 32,
+          "as": "DeepSeek V4.1 Flash"
+        },
+        "text": {
+          "score": 1464,
+          "rank": 37,
+          "as": "DeepSeek-V4.1-Flash-20260910 (Max)"
+        },
+        "coding": {
+          "score": 1501,
+          "rank": 22,
+          "as": "DeepSeek-V4.1-Flash-20260910 (Max)"
+        },
+        "math": {
+          "score": 1479,
+          "rank": 37,
+          "as": "DeepSeek-V4.1-Flash-20260910 (Max)"
+        },
+        "creative": {
+          "score": 1438,
+          "rank": 47,
+          "as": "DeepSeek-V4.1-Flash-20260910 (Max)"
+        },
+        "webdev": {
+          "score": 1665,
+          "rank": 14,
+          "as": "DeepSeek-V4.1-Flash-20261017 (Max)"
+        },
+        "vision": {
+          "score": 1278,
+          "rank": 38,
+          "as": "DeepSeek-V4.1-Flash-20260910 (Max)"
+        }
+      },
+      "bench": {
+        "gpqa": 0.898,
+        "frontiermath": 0.674,
+        "aime": 0.983,
+        "simpleqa": 0.429
+      }
+    },
+    "morph/morph-dsv41flash-1017": {
+      "quality": null,
+      "basis": null,
+      "boards": {},
+      "bench": {
+        "gpqa": 0.932,
+        "frontiermath": 0.712,
+        "aime": 0.994,
+        "simpleqa": 0.425
+      }
+    },
+    "morph/morph-dsv4flash": {
+      "quality": 86,
+      "basis": "eci",
+      "boards": {
+        "eci": {
+          "score": 154.8,
+          "rank": 40,
+          "as": "DeepSeek V4 Flash 0731"
+        }
+      },
+      "bench": {
+        "gpqa": 0.91,
+        "frontiermath": 0.575,
+        "aime": 0.944,
+        "simpleqa": 0.336
+      }
+    },
+    "morph/morph-glm52-744b": {
+      "quality": 81,
+      "basis": "eci",
+      "boards": {
+        "eci": {
+          "score": 151.9,
+          "rank": 52,
+          "as": "GLM-5.2"
+        },
+        "text": {
+          "score": 1470,
+          "rank": 32,
+          "as": "GLM-5.2 (Max)"
+        },
+        "coding": {
+          "score": 1487,
+          "rank": 42,
+          "as": "GLM-5.2 (Max)"
+        },
+        "math": {
+          "score": 1484,
+          "rank": 29,
+          "as": "GLM-5.2 (Max)"
+        },
+        "creative": {
+          "score": 1462,
+          "rank": 24,
+          "as": "GLM-5.2 (Max)"
+        },
+        "webdev": {
+          "score": 1604,
+          "rank": 31,
+          "as": "GLM-5.2 (Max)"
+        }
+      },
+      "bench": {
+        "gpqa": 0.919,
+        "swe": 0.787,
+        "frontiermath": 0.592,
+        "aime": 0.864,
+        "simpleqa": 0.342
+      }
+    },
+    "morph/morph-glm53-744b": {
+      "quality": 89,
+      "basis": "eci",
+      "boards": {
+        "eci": {
+          "score": 156,
+          "rank": 31,
+          "as": "GLM-5.3"
+        },
+        "text": {
+          "score": 1474,
+          "rank": 27,
+          "as": "GLM-5.3 (Max)"
+        },
+        "coding": {
+          "score": 1498,
+          "rank": 27,
+          "as": "GLM-5.3 (Max)"
+        },
+        "math": {
+          "score": 1498,
+          "rank": 19,
+          "as": "GLM-5.3 (Max)"
+        },
+        "creative": {
+          "score": 1459,
+          "rank": 25,
+          "as": "GLM-5.3 (Max)"
+        },
+        "webdev": {
+          "score": 1623,
+          "rank": 25,
+          "as": "GLM-5.3 (Max)"
+        }
+      },
+      "bench": {
+        "gpqa": 0.909,
+        "frontiermath": 0.688,
+        "aime": 0.911,
+        "simpleqa": 0.41
+      }
+    },
+    "morph/morph-glm53flash": {
+      "quality": 83,
+      "basis": "eci",
+      "boards": {
+        "eci": {
+          "score": 153.1,
+          "rank": 47,
+          "as": "GLM-5.3-Flash"
+        },
+        "text": {
+          "score": 1472,
+          "rank": 29,
+          "as": "GLM-5.3-Flash"
+        },
+        "coding": {
+          "score": 1508,
+          "rank": 15,
+          "as": "GLM-5.3-Flash"
+        },
+        "math": {
+          "score": 1502,
+          "rank": 14,
+          "as": "GLM-5.3-Flash"
+        },
+        "creative": {
+          "score": 1441,
+          "rank": 44,
+          "as": "GLM-5.3-Flash"
+        },
+        "webdev": {
+          "score": 1608,
+          "rank": 30,
+          "as": "GLM-5.3-Flash"
+        },
+        "vision": {
+          "score": 1294,
+          "rank": 24,
+          "as": "GLM-5.3-Flash"
+        }
+      },
+      "bench": {
+        "gpqa": 0.902,
+        "frontiermath": 0.558,
+        "aime": 0.939
+      }
+    },
+    "morph/morph-kimik3": {
+      "quality": 93,
+      "basis": "eci",
+      "boards": {
+        "eci": {
+          "score": 157.9,
+          "rank": 19,
+          "as": "Kimi K3"
+        },
+        "text": {
+          "score": 1475,
+          "rank": 25,
+          "as": "Kimi K3 (Max)"
+        },
+        "coding": {
+          "score": 1508,
+          "rank": 16,
+          "as": "Kimi K3 (Max)"
+        },
+        "math": {
+          "score": 1493,
+          "rank": 20,
+          "as": "Kimi K3 (Max)"
+        },
+        "creative": {
+          "score": 1456,
+          "rank": 28,
+          "as": "Kimi K3 (Max)"
+        },
+        "webdev": {
+          "score": 1655,
+          "rank": 17,
+          "as": "Kimi K3 (Max)"
+        }
+      },
+      "bench": {
+        "gpqa": 0.931,
+        "frontiermath": 0.722,
+        "aime": 0.972,
+        "simpleqa": 0.506
+      }
     },
     "nvidia/llama-3-1-nemotron-70b-instruct": {
       "quality": 36,
