@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-26T13:12:14.411Z",
+  "updatedAt": "2026-10-27T12:20:03.974Z",
   "boards": {
     "eci": {
       "count": 270,
@@ -32,11 +32,11 @@
     },
     "image": {
       "count": 82,
-      "published": "2026-10-07"
+      "published": "2026-10-26"
     },
     "image-edit": {
       "count": 60,
-      "published": "2026-10-20"
+      "published": "2026-10-26"
     },
     "video": {
       "count": 48,
@@ -739,12 +739,12 @@
       "basis": "image",
       "boards": {
         "image": {
-          "score": 941,
+          "score": 942,
           "rank": 80,
-          "as": "flux-1-kontext-dev"
+          "as": "FLUX.1 Kontext [dev]"
         },
         "image-edit": {
-          "score": 1151,
+          "score": 1150,
           "rank": 54,
           "as": "FLUX.1 Kontext [dev]"
         }
@@ -756,9 +756,9 @@
       "basis": "image",
       "boards": {
         "image": {
-          "score": 1146,
+          "score": 1145,
           "rank": 38,
-          "as": "flux-2-dev"
+          "as": "FLUX.2 [dev]"
         },
         "image-edit": {
           "score": 1224,
@@ -775,7 +775,7 @@
         "image": {
           "score": 1030,
           "rank": 70,
-          "as": "flux-2-klein-4b"
+          "as": "FLUX.2 [klein] 4B"
         },
         "image-edit": {
           "score": 1187,
@@ -792,7 +792,7 @@
         "image": {
           "score": 1070,
           "rank": 62,
-          "as": "flux-2-klein-9b"
+          "as": "FLUX.2 [klein] 9B"
         },
         "image-edit": {
           "score": 1224,
@@ -1408,16 +1408,16 @@
       }
     },
     "google/gemini-2-5-flash-image": {
-      "quality": 59,
+      "quality": 57,
       "basis": "image",
       "boards": {
         "image": {
-          "score": 1150,
-          "rank": 34,
-          "as": "gemini-2.5-flash-image-preview (nano-banana)"
+          "score": 1149,
+          "rank": 36,
+          "as": "Gemini 2.5 Flash Image Preview (nano-banana)"
         },
         "image-edit": {
-          "score": 1291,
+          "score": 1292,
           "rank": 32,
           "as": "Gemini 2.5 Flash Image Preview (nano-banana)"
         }
@@ -1513,12 +1513,12 @@
       "basis": "image",
       "boards": {
         "image": {
-          "score": 1262,
+          "score": 1257,
           "rank": 11,
-          "as": "gemini-3.1-flash-image (nano-banana-2) [web-search]"
+          "as": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)"
         },
         "image-edit": {
-          "score": 1387,
+          "score": 1388,
           "rank": 14,
           "as": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)"
         }
@@ -1546,9 +1546,9 @@
       "basis": "image",
       "boards": {
         "image": {
-          "score": 1250,
+          "score": 1249,
           "rank": 15,
-          "as": "gemini-3.1-flash-lite-image (nano-banana-2-lite)"
+          "as": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)"
         },
         "image-edit": {
           "score": 1313,
@@ -1944,9 +1944,9 @@
       "basis": "image",
       "boards": {
         "image": {
-          "score": 1248,
+          "score": 1246,
           "rank": 16,
-          "as": "gemini-3-pro-image-2k (nano-banana-pro)"
+          "as": "Gemini 3 Pro Image (nano-banana-pro, 2K)"
         },
         "image-edit": {
           "score": 1390,
@@ -5385,9 +5385,9 @@
       "basis": "image",
       "boards": {
         "image": {
-          "score": 1116,
+          "score": 1115,
           "rank": 49,
-          "as": "gpt-image-1"
+          "as": "GPT-Image-1"
         },
         "image-edit": {
           "score": 1139,
@@ -5398,11 +5398,16 @@
       "bench": {}
     },
     "openai/gpt-image-1-5": {
-      "quality": 71,
-      "basis": "image-edit",
+      "quality": 80,
+      "basis": "image",
       "boards": {
+        "image": {
+          "score": 1236,
+          "rank": 17,
+          "as": "GPT-Image-1.5 (High Fidelity)"
+        },
         "image-edit": {
-          "score": 1367,
+          "score": 1368,
           "rank": 18,
           "as": "GPT-Image-1.5 (High Fidelity)"
         }
@@ -5414,9 +5419,9 @@
       "basis": "image",
       "boards": {
         "image": {
-          "score": 1110,
+          "score": 1109,
           "rank": 54,
-          "as": "gpt-image-1-mini"
+          "as": "GPT-Image-1 mini"
         },
         "image-edit": {
           "score": 1124,
@@ -5431,12 +5436,12 @@
       "basis": "image",
       "boards": {
         "image": {
-          "score": 1383,
+          "score": 1381,
           "rank": 3,
-          "as": "gpt-image-2 (medium)"
+          "as": "GPT-Image-2 (Medium)"
         },
         "image-edit": {
-          "score": 1461,
+          "score": 1460,
           "rank": 3,
           "as": "GPT-Image-2 (Medium)"
         }
@@ -5714,13 +5719,13 @@
       "bench": {}
     },
     "qwen/qwen-image": {
-      "quality": 20,
+      "quality": 23,
       "basis": "image",
       "boards": {
         "image": {
-          "score": 1057,
-          "rank": 66,
-          "as": "qwen-image"
+          "score": 1061,
+          "rank": 63,
+          "as": "Qwen-Image (Prompt Extend)"
         }
       },
       "bench": {}
@@ -5730,12 +5735,12 @@
       "basis": "image",
       "boards": {
         "image": {
-          "score": 1223,
+          "score": 1225,
           "rank": 19,
-          "as": "qwen-image-2.1"
+          "as": "Qwen-Image-2.1"
         },
         "image-edit": {
-          "score": 1362,
+          "score": 1364,
           "rank": 19,
           "as": "Qwen-Image-2.1"
         }
@@ -6956,6 +6961,18 @@
         "gpqa": 0.654
       }
     },
+    "stability/stable-diffusion-3-5-large": {
+      "quality": 1,
+      "basis": "image",
+      "boards": {
+        "image": {
+          "score": 938,
+          "rank": 81,
+          "as": "Stable Diffusion 3.5 Large"
+        }
+      },
+      "bench": {}
+    },
     "stepfun/step-3-5-flash": {
       "quality": 64,
       "basis": "text",
@@ -7429,9 +7446,9 @@
       "basis": "image",
       "boards": {
         "image": {
-          "score": 1170,
+          "score": 1169,
           "rank": 25,
-          "as": "grok-imagine-image"
+          "as": "Grok Imagine Image"
         },
         "image-edit": {
           "score": 1329,
