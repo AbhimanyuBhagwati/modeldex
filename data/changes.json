@@ -2,6 +2,56 @@
   "version": 1,
   "events": [
     {
+      "date": "2026-10-30",
+      "kind": "added",
+      "key": "meta/mask2former-swin-tiny-coco-instance",
+      "name": "mask2former-swin-tiny-coco-instance",
+      "lab": "meta"
+    },
+    {
+      "date": "2026-10-30",
+      "kind": "added",
+      "key": "meta/map-anything-apache",
+      "name": "map-anything-apache",
+      "lab": "meta"
+    },
+    {
+      "date": "2026-10-30",
+      "kind": "added",
+      "key": "mistral/mistral-large-4-1t-a52b",
+      "name": "Mistral-Large-4-1T-A52B",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-30",
+      "kind": "added",
+      "key": "mistral/mistral-large-4-0-8",
+      "name": "Mistral Large 4.0.8",
+      "lab": "mistral"
+    },
+    {
+      "date": "2026-10-30",
+      "kind": "added",
+      "key": "liquid/lfm3-omni-2b",
+      "name": "LFM3-Omni-2B",
+      "lab": "liquid"
+    },
+    {
+      "date": "2026-10-30",
+      "kind": "price",
+      "key": "mistral/mistral-large-4",
+      "name": "Mistral Large 4",
+      "lab": "mistral",
+      "before": {
+        "input": 1.36,
+        "output": 4.18
+      },
+      "after": {
+        "input": 0.7,
+        "output": 2.1
+      }
+    },
+    {
       "date": "2026-10-29",
       "kind": "added",
       "key": "sbert/paraphrase-xlm-r-multilingual-v1",
