@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-03T14:25:16.544Z",
+  "updatedAt": "2026-11-04T14:39:47.871Z",
   "boards": {
     "eci": {
       "count": 271,
@@ -49,19 +49,19 @@
   },
   "bench": {
     "gpqa": {
-      "count": 327
+      "count": 333
     },
     "swe": {
       "count": 35
     },
     "frontiermath": {
-      "count": 123
+      "count": 122
     },
     "aime": {
-      "count": 307
+      "count": 313
     },
     "simpleqa": {
-      "count": 94
+      "count": 100
     }
   },
   "models": {
@@ -802,6 +802,36 @@
       },
       "bench": {}
     },
+    "bytedance/doubao-seed-1-6-251015": {
+      "quality": null,
+      "basis": null,
+      "boards": {},
+      "bench": {
+        "gpqa": 0.776,
+        "aime": 0.694,
+        "simpleqa": 0.174
+      }
+    },
+    "bytedance/doubao-seed-2-0-lite-260428": {
+      "quality": null,
+      "basis": null,
+      "boards": {},
+      "bench": {
+        "gpqa": 0.881,
+        "aime": 0.911,
+        "simpleqa": 0.315
+      }
+    },
+    "bytedance/doubao-seed-2-0-pro-260215": {
+      "quality": null,
+      "basis": null,
+      "boards": {},
+      "bench": {
+        "gpqa": 0.882,
+        "aime": 0.939,
+        "simpleqa": 0.394
+      }
+    },
     "bytedance/doubao-seed-2-1-pro-260628": {
       "quality": 62,
       "basis": "webdev",
@@ -812,7 +842,21 @@
           "as": "Seed2.1 Pro Preview"
         }
       },
-      "bench": {}
+      "bench": {
+        "gpqa": 0.893,
+        "aime": 0.956,
+        "simpleqa": 0.447
+      }
+    },
+    "bytedance/doubao-seed-2-1-turbo-260628": {
+      "quality": null,
+      "basis": null,
+      "boards": {},
+      "bench": {
+        "gpqa": 0.896,
+        "aime": 0.961,
+        "simpleqa": 0.297
+      }
     },
     "cohere/c4ai-aya-expanse-32b": {
       "quality": 26,
