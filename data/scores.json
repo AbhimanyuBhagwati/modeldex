@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-05T14:44:50.518Z",
+  "updatedAt": "2026-11-06T14:23:12.315Z",
   "boards": {
     "eci": {
       "count": 253,
@@ -39,12 +39,12 @@
       "published": "2026-11-04"
     },
     "video": {
-      "count": 48,
-      "published": "2026-09-22"
+      "count": 50,
+      "published": "2026-11-05"
     },
     "image-video": {
-      "count": 48,
-      "published": "2026-09-22"
+      "count": 50,
+      "published": "2026-11-05"
     }
   },
   "bench": {
@@ -2044,17 +2044,17 @@
       }
     },
     "google/gemini-omni-flash-preview": {
-      "quality": 98,
+      "quality": 96,
       "basis": "video",
       "boards": {
         "video": {
-          "score": 1513,
-          "rank": 2,
+          "score": 1509,
+          "rank": 3,
           "as": "gemini-omni-flash"
         },
         "image-video": {
-          "score": 1465,
-          "rank": 6,
+          "score": 1463,
+          "rank": 8,
           "as": "gemini-omni-flash"
         }
       },
@@ -3238,18 +3238,18 @@
       "bench": {}
     },
     "minimax/minimax-h3": {
-      "quality": 85,
+      "quality": 80,
       "basis": "video",
       "boards": {
         "video": {
-          "score": 1460,
-          "rank": 8,
-          "as": "minimax-h3"
+          "score": 1456,
+          "rank": 11,
+          "as": "MiniMax H3"
         },
         "image-video": {
-          "score": 1495,
-          "rank": 1,
-          "as": "minimax-h3"
+          "score": 1493,
+          "rank": 2,
+          "as": "MiniMax H3"
         }
       },
       "bench": {}
@@ -7471,14 +7471,36 @@
       },
       "bench": {}
     },
-    "xai/grok-imagine-video-1-5": {
-      "quality": 85,
-      "basis": "image-video",
+    "xai/grok-imagine-video": {
+      "quality": 61,
+      "basis": "video",
       "boards": {
+        "video": {
+          "score": 1341,
+          "rank": 20,
+          "as": "Grok Imagine Video (720p)"
+        },
         "image-video": {
-          "score": 1456,
-          "rank": 8,
-          "as": "grok-imagine-video-1.5-720p"
+          "score": 1412,
+          "rank": 14,
+          "as": "Grok Imagine Video (720p)"
+        }
+      },
+      "bench": {}
+    },
+    "xai/grok-imagine-video-1-5": {
+      "quality": 92,
+      "basis": "video",
+      "boards": {
+        "video": {
+          "score": 1486,
+          "rank": 5,
+          "as": "Grok Imagine Video 1.5"
+        },
+        "image-video": {
+          "score": 1454,
+          "rank": 10,
+          "as": "Grok Imagine Video 1.5 (720p)"
         }
       },
       "bench": {}
