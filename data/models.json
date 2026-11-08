@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-07T13:12:12.253Z",
+  "updatedAt": "2026-11-08T13:33:24.194Z",
   "source": {
     "url": "https://models.dev/api.json",
     "providers": 235,
-    "listings": 8943,
+    "listings": 8940,
     "hub": {
-      "orgs": 65,
-      "repos": 9336
+      "orgs": 66,
+      "repos": 9355
     }
   },
   "labs": [
@@ -212,7 +212,7 @@
       "name": "Morph",
       "color": "#9B51E0",
       "docUrl": "https://docs.morphllm.com/api-reference/introduction",
-      "count": 10
+      "count": 11
     },
     {
       "key": "antgroup",
@@ -437,6 +437,13 @@
       "color": "#ADB635",
       "docUrl": "https://huggingface.co/speridlabs",
       "count": 1
+    },
+    {
+      "key": "autotrust-ai-lab",
+      "name": "AutoTrust AI Lab",
+      "color": "#37B635",
+      "docUrl": "https://huggingface.co/autotrust",
+      "count": 2
     }
   ],
   "models": [
@@ -476,7 +483,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "sentence-transformers/all-distilroberta-v1",
-        "downloads": 2700000,
+        "downloads": 2600000,
         "likes": 56,
         "params": 82118914,
         "gated": false
@@ -728,7 +735,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/bart-large",
-        "downloads": 130000,
+        "downloads": 110000,
         "likes": 210,
         "params": null,
         "gated": false
@@ -855,7 +862,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/bert_for_seq_generation_L-24_bbc_encoder",
-        "downloads": 920,
+        "downloads": 900,
         "likes": 1,
         "params": null,
         "gated": false
@@ -897,7 +904,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/bert_uncased_L-2_H-128_A-2",
-        "downloads": 290000,
+        "downloads": 280000,
         "likes": 45,
         "params": 4433468,
         "gated": false
@@ -981,7 +988,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google-bert/bert-base-cased",
-        "downloads": 3400000,
+        "downloads": 3300000,
         "likes": 400,
         "params": 108932934,
         "gated": false
@@ -1023,7 +1030,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google-bert/bert-base-chinese",
-        "downloads": 380000,
+        "downloads": 370000,
         "likes": 1500,
         "params": 102882442,
         "gated": false
@@ -1317,7 +1324,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google-bert/bert-large-uncased",
-        "downloads": 280000,
+        "downloads": 270000,
         "likes": 150,
         "params": 336226108,
         "gated": false
@@ -1401,7 +1408,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract",
-        "downloads": 350000,
+        "downloads": 330000,
         "likes": 110,
         "params": null,
         "gated": false
@@ -1443,7 +1450,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext",
-        "downloads": 1300000,
+        "downloads": 1400000,
         "likes": 350,
         "params": null,
         "gated": false
@@ -1531,7 +1538,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/blenderbot-3B",
-        "downloads": 3800,
+        "downloads": 3300,
         "likes": 160,
         "params": null,
         "gated": false
@@ -1575,7 +1582,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/byt5-small",
-        "downloads": 220000,
+        "downloads": 210000,
         "likes": 120,
         "params": null,
         "gated": false
@@ -1617,7 +1624,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/canine-c",
-        "downloads": 150000,
+        "downloads": 140000,
         "likes": 48,
         "params": 132099328,
         "gated": false
@@ -1995,7 +2002,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/deberta-base-mnli",
-        "downloads": 21000,
+        "downloads": 23000,
         "likes": 13,
         "params": null,
         "gated": false
@@ -2037,7 +2044,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/deberta-large-mnli",
-        "downloads": 200000,
+        "downloads": 190000,
         "likes": 44,
         "params": null,
         "gated": false
@@ -2121,7 +2128,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/deberta-v3-base",
-        "downloads": 2600000,
+        "downloads": 2500000,
         "likes": 470,
         "params": null,
         "gated": false
@@ -2205,7 +2212,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/deberta-v3-small",
-        "downloads": 850000,
+        "downloads": 840000,
         "likes": 91,
         "params": null,
         "gated": false
@@ -2247,7 +2254,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/deberta-xlarge-mnli",
-        "downloads": 93000,
+        "downloads": 94000,
         "likes": 30,
         "params": null,
         "gated": false
@@ -2289,7 +2296,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/deit-tiny-patch16-224",
-        "downloads": 72000,
+        "downloads": 81000,
         "likes": 19,
         "params": null,
         "gated": false
@@ -2331,7 +2338,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/detr-resnet-50",
-        "downloads": 95000,
+        "downloads": 93000,
         "likes": 990,
         "params": 41631008,
         "gated": false
@@ -2375,7 +2382,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/DialoGPT-medium",
-        "downloads": 140000,
+        "downloads": 130000,
         "likes": 450,
         "params": null,
         "gated": false
@@ -2417,7 +2424,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/dino-vitb16",
-        "downloads": 470000,
+        "downloads": 450000,
         "likes": 120,
         "params": null,
         "gated": false
@@ -2459,7 +2466,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/dino-vits16",
-        "downloads": 110000,
+        "downloads": 120000,
         "likes": 19,
         "params": null,
         "gated": false
@@ -2501,7 +2508,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "sentence-transformers/distilbert-base-nli-mean-tokens",
-        "downloads": 65000,
+        "downloads": 66000,
         "likes": 13,
         "params": 66362880,
         "gated": false
@@ -2585,7 +2592,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "sentence-transformers/distiluse-base-multilingual-cased-v1",
-        "downloads": 1600000,
+        "downloads": 1700000,
         "likes": 150,
         "params": 134734080,
         "gated": false
@@ -2627,7 +2634,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "sentence-transformers/distiluse-base-multilingual-cased-v2",
-        "downloads": 920000,
+        "downloads": 890000,
         "likes": 220,
         "params": 134734080,
         "gated": false
@@ -2669,7 +2676,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/dpr-ctx_encoder-single-nq-base",
-        "downloads": 16000,
+        "downloads": 17000,
         "likes": 30,
         "params": null,
         "gated": false
@@ -2753,7 +2760,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/electra-base-discriminator",
-        "downloads": 8200000,
+        "downloads": 6100000,
         "likes": 220,
         "params": null,
         "gated": false
@@ -2795,7 +2802,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/electra-small-discriminator",
-        "downloads": 140000,
+        "downloads": 150000,
         "likes": 49,
         "params": null,
         "gated": false
@@ -2837,7 +2844,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/fnet-base",
-        "downloads": 530000,
+        "downloads": 520000,
         "likes": 24,
         "params": null,
         "gated": false
@@ -2881,7 +2888,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "openai-community/gpt2",
-        "downloads": 31000000,
+        "downloads": 32000000,
         "likes": 3900,
         "params": 137022720,
         "gated": false
@@ -2925,7 +2932,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "openai-community/gpt2-large",
-        "downloads": 840000,
+        "downloads": 850000,
         "likes": 370,
         "params": 811778816,
         "gated": false
@@ -2969,7 +2976,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "openai-community/gpt2-medium",
-        "downloads": 160000,
+        "downloads": 170000,
         "likes": 210,
         "params": 379988992,
         "gated": false
@@ -3138,7 +3145,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/infoxlm-large",
-        "downloads": 96000,
+        "downloads": 94000,
         "likes": 20,
         "params": null,
         "gated": false
@@ -3180,7 +3187,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "sentence-transformers/LaBSE",
-        "downloads": 920000,
+        "downloads": 940000,
         "likes": 350,
         "params": 470927360,
         "gated": false
@@ -3222,7 +3229,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/layoutlm-base-uncased",
-        "downloads": 130000,
+        "downloads": 120000,
         "likes": 68,
         "params": 112627968,
         "gated": false
@@ -3306,7 +3313,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/layoutxlm-base",
-        "downloads": 170000,
+        "downloads": 160000,
         "likes": 86,
         "params": null,
         "gated": false
@@ -3348,7 +3355,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "allenai/longformer-base-4096",
-        "downloads": 850000,
+        "downloads": 840000,
         "likes": 230,
         "params": null,
         "gated": false
@@ -3479,7 +3486,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/mbart-large-50-one-to-many-mmt",
-        "downloads": 85000,
+        "downloads": 83000,
         "likes": 42,
         "params": null,
         "gated": false
@@ -3523,7 +3530,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/mbart-large-en-ro",
-        "downloads": 6400,
+        "downloads": 7100,
         "likes": 6,
         "params": 611101867,
         "gated": false
@@ -3649,7 +3656,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/mobilebert-uncased",
-        "downloads": 670000,
+        "downloads": 680000,
         "likes": 81,
         "params": null,
         "gated": false
@@ -3690,7 +3697,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/mpnet-base",
-        "downloads": 23000,
+        "downloads": 24000,
         "likes": 51,
         "params": 132993790,
         "gated": false
@@ -3732,7 +3739,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "cross-encoder/ms-marco-electra-base",
-        "downloads": 260000,
+        "downloads": 250000,
         "likes": 7,
         "params": 109483521,
         "gated": false
@@ -3774,7 +3781,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "cross-encoder/ms-marco-MiniLM-L12-v2",
-        "downloads": 1000000,
+        "downloads": 990000,
         "likes": 120,
         "params": 33360897,
         "gated": false
@@ -3900,7 +3907,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "cross-encoder/ms-marco-MiniLM-L6-v2",
-        "downloads": 65000000,
+        "downloads": 64000000,
         "likes": 440,
         "params": 22714113,
         "gated": false
@@ -4025,7 +4032,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "sentence-transformers/msmarco-distilbert-base-tas-b",
-        "downloads": 200000,
+        "downloads": 210000,
         "likes": 43,
         "params": 66362880,
         "gated": false
@@ -4152,7 +4159,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/mt5-large",
-        "downloads": 160000,
+        "downloads": 130000,
         "likes": 120,
         "params": null,
         "gated": false
@@ -4196,7 +4203,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/mt5-small",
-        "downloads": 200000,
+        "downloads": 190000,
         "likes": 200,
         "params": null,
         "gated": false
@@ -4319,7 +4326,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "sentence-transformers/multi-qa-mpnet-base-cos-v1",
-        "downloads": 140000,
+        "downloads": 150000,
         "likes": 42,
         "params": 109486978,
         "gated": false
@@ -4402,7 +4409,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "cross-encoder/nli-deberta-v3-base",
-        "downloads": 220000,
+        "downloads": 210000,
         "likes": 51,
         "params": 184424963,
         "gated": false
@@ -4486,7 +4493,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "cross-encoder/nli-deberta-v3-small",
-        "downloads": 410000,
+        "downloads": 400000,
         "likes": 17,
         "params": 141897731,
         "gated": false
@@ -4614,7 +4621,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "openai-community/openai-gpt",
-        "downloads": 58000,
+        "downloads": 56000,
         "likes": 320,
         "params": 119680512,
         "gated": false
@@ -4656,7 +4663,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "sentence-transformers/paraphrase-albert-small-v2",
-        "downloads": 370000,
+        "downloads": 360000,
         "likes": 11,
         "params": 11684096,
         "gated": false
@@ -4740,7 +4747,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "sentence-transformers/paraphrase-MiniLM-L3-v2",
-        "downloads": 850000,
+        "downloads": 890000,
         "likes": 31,
         "params": 17390336,
         "gated": false
@@ -4824,7 +4831,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "sentence-transformers/paraphrase-mpnet-base-v2",
-        "downloads": 1800000,
+        "downloads": 1900000,
         "likes": 60,
         "params": 109486978,
         "gated": false
@@ -4866,7 +4873,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-        "downloads": 28000000,
+        "downloads": 27000000,
         "likes": 1500,
         "params": 117654272,
         "gated": false
@@ -4908,7 +4915,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
-        "downloads": 9200000,
+        "downloads": 9100000,
         "likes": 550,
         "params": 278044162,
         "gated": false
@@ -4950,7 +4957,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "sentence-transformers/paraphrase-xlm-r-multilingual-v1",
-        "downloads": 160000,
+        "downloads": 170000,
         "likes": 71,
         "params": 278044162,
         "gated": false
@@ -4993,7 +5000,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/pegasus-xsum",
-        "downloads": 48000,
+        "downloads": 52000,
         "likes": 230,
         "params": null,
         "gated": false
@@ -5078,7 +5085,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "cross-encoder/qnli-electra-base",
-        "downloads": 110000,
+        "downloads": 95000,
         "likes": 5,
         "params": 109483521,
         "gated": false
@@ -5121,7 +5128,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/reformer-crime-and-punishment",
-        "downloads": 7200,
+        "downloads": 7000,
         "likes": 21,
         "params": null,
         "gated": false
@@ -5163,7 +5170,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/rembert",
-        "downloads": 6900,
+        "downloads": 6200,
         "likes": 30,
         "params": null,
         "gated": false
@@ -5205,7 +5212,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "FacebookAI/roberta-base",
-        "downloads": 5900000,
+        "downloads": 5800000,
         "likes": 700,
         "params": 124697947,
         "gated": false
@@ -5247,7 +5254,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "openai-community/roberta-base-openai-detector",
-        "downloads": 370000,
+        "downloads": 360000,
         "likes": 140,
         "params": 125237762,
         "gated": false
@@ -5331,7 +5338,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "FacebookAI/roberta-large-mnli",
-        "downloads": 250000,
+        "downloads": 240000,
         "likes": 220,
         "params": 356412419,
         "gated": false
@@ -5375,7 +5382,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/s2t-small-librispeech-asr",
-        "downloads": 5500,
+        "downloads": 5400,
         "likes": 37,
         "params": 29536256,
         "gated": false
@@ -5542,7 +5549,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "nvidia/segformer-b2-finetuned-ade-512-512",
-        "downloads": 130000,
+        "downloads": 140000,
         "likes": 16,
         "params": null,
         "gated": false
@@ -5710,7 +5717,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "cross-encoder/stsb-roberta-base",
-        "downloads": 150000,
+        "downloads": 170000,
         "likes": 5,
         "params": 124646915,
         "gated": false
@@ -5752,7 +5759,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "cross-encoder/stsb-roberta-large",
-        "downloads": 92000,
+        "downloads": 90000,
         "likes": 14,
         "params": 355361283,
         "gated": false
@@ -5796,7 +5803,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/t5-v1_1-xxl",
-        "downloads": 91000,
+        "downloads": 89000,
         "likes": 160,
         "params": null,
         "gated": false
@@ -5928,7 +5935,7 @@
       "hub": {
         "repo": "microsoft/trocr-base-printed",
         "downloads": 290000,
-        "likes": 230,
+        "likes": 240,
         "params": 333331200,
         "gated": false
       }
@@ -5970,7 +5977,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/trocr-base-stage1",
-        "downloads": 20000,
+        "downloads": 19000,
         "likes": 25,
         "params": 384274177,
         "gated": false
@@ -6013,7 +6020,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/trocr-large-printed",
-        "downloads": 130000,
+        "downloads": 120000,
         "likes": 190,
         "params": 608119809,
         "gated": false
@@ -6056,7 +6063,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/trocr-small-handwritten",
-        "downloads": 150000,
+        "downloads": 160000,
         "likes": 75,
         "params": null,
         "gated": false
@@ -6099,7 +6106,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "allenai/unifiedqa-t5-small",
-        "downloads": 1500,
+        "downloads": 1400,
         "likes": 5,
         "params": null,
         "gated": false
@@ -6183,7 +6190,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/vit-base-patch16-224-in21k",
-        "downloads": 810000,
+        "downloads": 840000,
         "likes": 430,
         "params": 86389248,
         "gated": false
@@ -6225,7 +6232,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/vit-large-patch16-224-in21k",
-        "downloads": 81000,
+        "downloads": 93000,
         "likes": 39,
         "params": 304351232,
         "gated": false
@@ -6269,7 +6276,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/wav2vec2-base",
-        "downloads": 3600000,
+        "downloads": 3700000,
         "likes": 140,
         "params": null,
         "gated": false
@@ -6357,7 +6364,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/wav2vec2-large-960h-lv60-self",
-        "downloads": 470000,
+        "downloads": 490000,
         "likes": 170,
         "params": null,
         "gated": false
@@ -6446,7 +6453,7 @@
       "hub": {
         "repo": "facebook/wav2vec2-lv-60-espeak-cv-ft",
         "downloads": 390000,
-        "likes": 77,
+        "likes": 78,
         "params": null,
         "gated": false
       }
@@ -6489,7 +6496,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/wav2vec2-xls-r-1b",
-        "downloads": 140000,
+        "downloads": 150000,
         "likes": 42,
         "params": null,
         "gated": false
@@ -6619,7 +6626,7 @@
       "hub": {
         "repo": "microsoft/wavlm-base-plus",
         "downloads": 380000,
-        "likes": 50,
+        "likes": 51,
         "params": null,
         "gated": false
       }
@@ -6702,7 +6709,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/wavlm-large",
-        "downloads": 900000,
+        "downloads": 1300000,
         "likes": 120,
         "params": null,
         "gated": false
@@ -6746,7 +6753,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/xglm-564M",
-        "downloads": 9400,
+        "downloads": 8900,
         "likes": 58,
         "params": null,
         "gated": false
@@ -6788,7 +6795,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "FacebookAI/xlm-mlm-en-2048",
-        "downloads": 5900,
+        "downloads": 5700,
         "likes": 1,
         "params": null,
         "gated": false
@@ -6913,7 +6920,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "FacebookAI/xlm-roberta-large-finetuned-conll03-english",
-        "downloads": 100000,
+        "downloads": 98000,
         "likes": 190,
         "params": 559898632,
         "gated": false
@@ -6955,8 +6962,8 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/resnet-18",
-        "downloads": 380000,
-        "likes": 97,
+        "downloads": 330000,
+        "likes": 98,
         "params": 11699112,
         "gated": false
       }
@@ -7039,7 +7046,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/unixcoder-base",
-        "downloads": 170000,
+        "downloads": 160000,
         "likes": 76,
         "params": null,
         "gated": false
@@ -7169,7 +7176,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/wav2vec2-conformer-rope-large-960h-ft",
-        "downloads": 98000,
+        "downloads": 93000,
         "likes": 17,
         "params": 593426112,
         "gated": false
@@ -7211,7 +7218,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "openai/clip-vit-large-patch14-336",
-        "downloads": 2100000,
+        "downloads": 2000000,
         "likes": 330,
         "params": null,
         "gated": false
@@ -7297,7 +7304,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/opt-125m",
-        "downloads": 4800000,
+        "downloads": 4700000,
         "likes": 330,
         "params": null,
         "gated": false
@@ -7341,7 +7348,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/opt-350m",
-        "downloads": 180000,
+        "downloads": 190000,
         "likes": 160,
         "params": null,
         "gated": false
@@ -7383,7 +7390,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
-        "downloads": 1300000,
+        "downloads": 1200000,
         "likes": 98,
         "params": 117641603,
         "gated": false
@@ -7424,7 +7431,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/roberta-hate-speech-dynabench-r4-target",
-        "downloads": 81000,
+        "downloads": 82000,
         "likes": 110,
         "params": 124647684,
         "gated": false
@@ -7466,7 +7473,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/swinv2-tiny-patch4-window16-256",
-        "downloads": 400000,
+        "downloads": 390000,
         "likes": 23,
         "params": null,
         "gated": false
@@ -7641,7 +7648,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/nllb-200-distilled-600M",
-        "downloads": 940000,
+        "downloads": 930000,
         "likes": 1000,
         "params": null,
         "gated": false
@@ -7767,7 +7774,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/xclip-large-patch14",
-        "downloads": 170000,
+        "downloads": 180000,
         "likes": 23,
         "params": 575673934,
         "gated": false
@@ -7809,7 +7816,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/esm2_t6_8M_UR50D",
-        "downloads": 610000,
+        "downloads": 600000,
         "likes": 52,
         "params": 7841868,
         "gated": false
@@ -7853,7 +7860,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "openai/whisper-base",
-        "downloads": 4300000,
+        "downloads": 4500000,
         "likes": 310,
         "params": 72593920,
         "gated": false
@@ -7941,7 +7948,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "openai/whisper-medium",
-        "downloads": 370000,
+        "downloads": 360000,
         "likes": 320,
         "params": 763857920,
         "gated": false
@@ -8159,7 +8166,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/esm2_t12_35M_UR50D",
-        "downloads": 240000,
+        "downloads": 230000,
         "likes": 30,
         "params": 33995044,
         "gated": false
@@ -8201,7 +8208,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/esm2_t30_150M_UR50D",
-        "downloads": 140000,
+        "downloads": 130000,
         "likes": 17,
         "params": 148798300,
         "gated": false
@@ -8243,7 +8250,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/esm2_t33_650M_UR50D",
-        "downloads": 4000000,
+        "downloads": 4100000,
         "likes": 110,
         "params": 652358616,
         "gated": false
@@ -8328,7 +8335,7 @@
       "hub": {
         "repo": "microsoft/table-transformer-detection",
         "downloads": 270000,
-        "likes": 440,
+        "likes": 450,
         "params": 28818631,
         "gated": false
       }
@@ -8413,7 +8420,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/flan-t5-base",
-        "downloads": 720000,
+        "downloads": 700000,
         "likes": 1100,
         "params": 247577856,
         "gated": false
@@ -8587,7 +8594,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/mobilenet_v2_1.0_224",
-        "downloads": 110000,
+        "downloads": 120000,
         "likes": 57,
         "params": 3540265,
         "gated": false
@@ -8720,7 +8727,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Salesforce/blip-vqa-base",
-        "downloads": 560000,
+        "downloads": 550000,
         "likes": 200,
         "params": 384673596,
         "gated": false
@@ -8764,7 +8771,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Salesforce/blip-image-captioning-large",
-        "downloads": 410000,
+        "downloads": 400000,
         "likes": 1500,
         "params": 469733436,
         "gated": false
@@ -8890,7 +8897,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/mask2former-swin-large-ade-semantic",
-        "downloads": 430000,
+        "downloads": 380000,
         "likes": 33,
         "params": 215986594,
         "gated": false
@@ -8932,7 +8939,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/mask2former-swin-large-cityscapes-semantic",
-        "downloads": 170000,
+        "downloads": 150000,
         "likes": 42,
         "params": 215952796,
         "gated": false
@@ -9107,7 +9114,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "allenai/specter2_base",
-        "downloads": 680000,
+        "downloads": 670000,
         "likes": 57,
         "params": null,
         "gated": false
@@ -9149,7 +9156,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/convnextv2-base-22k-384",
-        "downloads": 160000,
+        "downloads": 170000,
         "likes": 11,
         "params": 88717800,
         "gated": false
@@ -9191,7 +9198,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/convnextv2-tiny-22k-224",
-        "downloads": 81000,
+        "downloads": 75000,
         "likes": 10,
         "params": 28635496,
         "gated": false
@@ -9359,7 +9366,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "m-a-p/MERT-v1-95M",
-        "downloads": 75000,
+        "downloads": 74000,
         "likes": 63,
         "params": null,
         "gated": false
@@ -9444,7 +9451,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/sam-vit-huge",
-        "downloads": 320000,
+        "downloads": 310000,
         "likes": 210,
         "params": 641090864,
         "gated": false
@@ -9574,7 +9581,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/mms-1b-all",
-        "downloads": 250000,
+        "downloads": 230000,
         "likes": 220,
         "params": 964845850,
         "gated": false
@@ -9703,7 +9710,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/encodec_24khz",
-        "downloads": 43000,
+        "downloads": 41000,
         "likes": 59,
         "params": 23273218,
         "gated": false
@@ -9745,7 +9752,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/mms-lid-1024",
-        "downloads": 320000,
+        "downloads": 310000,
         "likes": 16,
         "params": 967009920,
         "gated": false
@@ -9921,7 +9928,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "meta-llama/Llama-2-7b-hf",
-        "downloads": 220000,
+        "downloads": 210000,
         "likes": 2500,
         "params": 6738417664,
         "gated": true
@@ -10047,7 +10054,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/dinov2-large",
-        "downloads": 680000,
+        "downloads": 670000,
         "likes": 130,
         "params": 304368640,
         "gated": false
@@ -10091,7 +10098,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "stabilityai/stable-diffusion-xl-base-1.0",
-        "downloads": 4700000,
+        "downloads": 4600000,
         "likes": 8400,
         "params": 2567463684,
         "gated": false
@@ -10346,7 +10353,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "BAAI/bge-small-zh",
-        "downloads": 36000,
+        "downloads": 29000,
         "likes": 30,
         "params": null,
         "gated": false
@@ -10390,7 +10397,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/mms-tts-eng",
-        "downloads": 45000,
+        "downloads": 46000,
         "likes": 180,
         "params": 36284592,
         "gated": false
@@ -10434,7 +10441,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/hf-seamless-m4t-medium",
-        "downloads": 8800,
+        "downloads": 8600,
         "likes": 35,
         "params": null,
         "gated": false
@@ -10562,7 +10569,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "BAAI/bge-reranker-base",
-        "downloads": 2500000,
+        "downloads": 2400000,
         "likes": 260,
         "params": 278044931,
         "gated": false
@@ -10604,7 +10611,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "BAAI/bge-base-zh-v1.5",
-        "downloads": 270000,
+        "downloads": 260000,
         "likes": 110,
         "params": null,
         "gated": false
@@ -10646,7 +10653,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "BAAI/bge-large-en-v1.5",
-        "downloads": 8500000,
+        "downloads": 8300000,
         "likes": 780,
         "params": 335142400,
         "gated": false
@@ -10688,7 +10695,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "BAAI/bge-large-zh-v1.5",
-        "downloads": 340000,
+        "downloads": 330000,
         "likes": 650,
         "params": null,
         "gated": false
@@ -10814,7 +10821,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "BAAI/bge-small-zh-v1.5",
-        "downloads": 3200000,
+        "downloads": 3100000,
         "likes": 170,
         "params": 23954432,
         "gated": false
@@ -10858,7 +10865,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "mistralai/Mistral-7B-v0.1",
-        "downloads": 410000,
+        "downloads": 400000,
         "likes": 4200,
         "params": 7241732096,
         "gated": false
@@ -10902,7 +10909,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/nougat-base",
-        "downloads": 3000,
+        "downloads": 2300,
         "likes": 190,
         "params": 348736012,
         "gated": false
@@ -11073,7 +11080,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/siglip-base-patch16-224",
-        "downloads": 870000,
+        "downloads": 860000,
         "likes": 110,
         "params": 203155970,
         "gated": false
@@ -11117,7 +11124,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/kosmos-2-patch14-224",
-        "downloads": 15000,
+        "downloads": 10000,
         "likes": 190,
         "params": 1664485376,
         "gated": false
@@ -11203,7 +11210,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/owlv2-large-patch14-ensemble",
-        "downloads": 75000,
+        "downloads": 72000,
         "likes": 56,
         "params": 437610759,
         "gated": false
@@ -11247,7 +11254,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "deepseek-ai/deepseek-coder-6.7b-base",
-        "downloads": 73000,
+        "downloads": 70000,
         "likes": 150,
         "params": 6740512768,
         "gated": false
@@ -11377,7 +11384,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "apple/DFN5B-CLIP-ViT-H-14-378",
-        "downloads": 980000,
+        "downloads": 950000,
         "likes": 120,
         "params": null,
         "gated": false
@@ -11549,7 +11556,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "openai/whisper-large-v3",
-        "downloads": 3600000,
+        "downloads": 3500000,
         "likes": 6800,
         "params": 1543490560,
         "gated": false
@@ -11636,7 +11643,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "stabilityai/stable-video-diffusion-img2vid-xt",
-        "downloads": 130000,
+        "downloads": 120000,
         "likes": 3500,
         "params": 1524623082,
         "gated": false
@@ -11680,7 +11687,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen-72B",
-        "downloads": 2900,
+        "downloads": 2700,
         "likes": 370,
         "params": 72287920128,
         "gated": false
@@ -11723,7 +11730,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "stabilityai/sd-turbo",
-        "downloads": 490000,
+        "downloads": 470000,
         "likes": 470,
         "params": 865910724,
         "gated": false
@@ -11811,7 +11818,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/seamless-m4t-v2-large",
-        "downloads": 310000,
+        "downloads": 300000,
         "likes": 1000,
         "params": 2309249669,
         "gated": false
@@ -11941,7 +11948,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "mistralai/Mistral-7B-Instruct-v0.2",
-        "downloads": 1600000,
+        "downloads": 1500000,
         "likes": 3300,
         "params": 7241732096,
         "gated": false
@@ -12240,7 +12247,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/siglip-so400m-patch14-384",
-        "downloads": 730000,
+        "downloads": 740000,
         "likes": 700,
         "params": 877960498,
         "gated": false
@@ -12282,7 +12289,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "jinaai/jina-embeddings-v2-base-de",
-        "downloads": 69000,
+        "downloads": 78000,
         "likes": 85,
         "params": 160813824,
         "gated": false
@@ -12326,7 +12333,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "deepseek-ai/deepseek-coder-7b-instruct-v1.5",
-        "downloads": 200000,
+        "downloads": 180000,
         "likes": 190,
         "params": 6910365696,
         "gated": false
@@ -12581,7 +12588,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen1.5-1.8B-Chat",
-        "downloads": 170000,
+        "downloads": 160000,
         "likes": 85,
         "params": 1836828672,
         "gated": false
@@ -12789,7 +12796,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "amazon/chronos-t5-large",
-        "downloads": 61000,
+        "downloads": 59000,
         "likes": 180,
         "params": 708963328,
         "gated": false
@@ -12829,7 +12836,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "amazon/chronos-t5-small",
-        "downloads": 420000,
+        "downloads": 380000,
         "likes": 150,
         "params": 46154240,
         "gated": false
@@ -12874,7 +12881,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/udop-large",
-        "downloads": 4500,
+        "downloads": 4300,
         "likes": 130,
         "params": 741653504,
         "gated": false
@@ -12956,7 +12963,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "mixedbread-ai/mxbai-rerank-xsmall-v1",
-        "downloads": 690000,
+        "downloads": 680000,
         "likes": 59,
         "params": 70830337,
         "gated": false
@@ -13000,7 +13007,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen1.5-MoE-A2.7B",
-        "downloads": 50000,
+        "downloads": 49000,
         "likes": 240,
         "params": 14315784192,
         "gated": false
@@ -13042,7 +13049,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "stabilityai/TripoSR",
-        "downloads": 200000,
+        "downloads": 190000,
         "likes": 690,
         "params": null,
         "gated": false
@@ -13128,7 +13135,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "CohereLabs/c4ai-command-r-v01",
-        "downloads": 70000,
+        "downloads": 79000,
         "likes": 1100,
         "params": 34980831232,
         "gated": true
@@ -13254,7 +13261,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/llmlingua-2-bert-base-multilingual-cased-meetingbank",
-        "downloads": 880000,
+        "downloads": 890000,
         "likes": 65,
         "params": 177341186,
         "gated": false
@@ -13296,7 +13303,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/llmlingua-2-xlm-roberta-large-meetingbank",
-        "downloads": 50000,
+        "downloads": 49000,
         "likes": 37,
         "params": 558945282,
         "gated": false
@@ -13467,7 +13474,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "apple/OpenELM-1_1B-Instruct",
-        "downloads": 2900,
+        "downloads": 2600,
         "likes": 78,
         "params": 1079891456,
         "gated": false
@@ -13509,7 +13516,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Snowflake/snowflake-arctic-embed-l",
-        "downloads": 550000,
+        "downloads": 540000,
         "likes": 110,
         "params": 334092288,
         "gated": false
@@ -13551,7 +13558,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Snowflake/snowflake-arctic-embed-s",
-        "downloads": 44000,
+        "downloads": 43000,
         "likes": 29,
         "params": 33212160,
         "gated": false
@@ -13592,7 +13599,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Snowflake/snowflake-arctic-embed-xs",
-        "downloads": 480000,
+        "downloads": 520000,
         "likes": 43,
         "params": 22565376,
         "gated": false
@@ -13680,7 +13687,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "meta-llama/Meta-Llama-3-70B-Instruct",
-        "downloads": 38000,
+        "downloads": 37000,
         "likes": 1500,
         "params": 70553706496,
         "gated": true
@@ -13768,7 +13775,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "meta-llama/Meta-Llama-3-8B-Instruct",
-        "downloads": 360000,
+        "downloads": 370000,
         "likes": 5800,
         "params": 8030261248,
         "gated": true
@@ -13940,7 +13947,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/Phi-3-mini-4k-instruct",
-        "downloads": 330000,
+        "downloads": 320000,
         "likes": 1500,
         "params": 3821079552,
         "gated": false
@@ -14069,7 +14076,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/paligemma-3b-mix-224",
-        "downloads": 75000,
+        "downloads": 74000,
         "likes": 110,
         "params": 2923466480,
         "gated": true
@@ -14114,7 +14121,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/paligemma-3b-pt-224",
-        "downloads": 290000,
+        "downloads": 280000,
         "likes": 710,
         "params": 2923466480,
         "gated": true
@@ -14246,7 +14253,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/paligemma-3b-ft-cococap-448",
-        "downloads": 730,
+        "downloads": 750,
         "likes": 4,
         "params": 2924351216,
         "gated": true
@@ -14290,7 +14297,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "deepseek-ai/DeepSeek-V2-Lite",
-        "downloads": 130000,
+        "downloads": 120000,
         "likes": 210,
         "params": 15706484224,
         "gated": false
@@ -14334,7 +14341,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "deepseek-ai/DeepSeek-V2-Lite-Chat",
-        "downloads": 42000,
+        "downloads": 41000,
         "likes": 170,
         "params": 15706484224,
         "gated": false
@@ -14417,7 +14424,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "jinaai/jina-clip-v1",
-        "downloads": 190000,
+        "downloads": 200000,
         "likes": 260,
         "params": 222672128,
         "gated": false
@@ -14505,7 +14512,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "mistralai/Mistral-7B-v0.3",
-        "downloads": 190000,
+        "downloads": 200000,
         "likes": 630,
         "params": 7248023552,
         "gated": false
@@ -14549,7 +14556,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen2-0.5B",
-        "downloads": 180000,
+        "downloads": 170000,
         "likes": 180,
         "params": 494032768,
         "gated": false
@@ -14593,7 +14600,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen2-1.5B",
-        "downloads": 120000,
+        "downloads": 110000,
         "likes": 120,
         "params": 1543714304,
         "gated": false
@@ -14679,8 +14686,8 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen2-0.5B-Instruct",
-        "downloads": 250000,
-        "likes": 210,
+        "downloads": 240000,
+        "likes": 220,
         "params": 494032768,
         "gated": false
       }
@@ -14723,7 +14730,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen2-1.5B-Instruct",
-        "downloads": 67000,
+        "downloads": 68000,
         "likes": 180,
         "params": 1543714304,
         "gated": false
@@ -14767,7 +14774,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen2-7B",
-        "downloads": 170000,
+        "downloads": 160000,
         "likes": 180,
         "params": 7615616512,
         "gated": false
@@ -14897,7 +14904,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct",
-        "downloads": 92000,
+        "downloads": 93000,
         "likes": 710,
         "params": 15706484224,
         "gated": false
@@ -14937,7 +14944,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Salesforce/moirai-1.1-R-small",
-        "downloads": 41000,
+        "downloads": 42000,
         "likes": 8,
         "params": 13827528,
         "gated": false
@@ -14982,7 +14989,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/Florence-2-base",
-        "downloads": 10000000,
+        "downloads": 11000000,
         "likes": 440,
         "params": 231567705,
         "gated": false
@@ -15027,7 +15034,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/Florence-2-base-ft",
-        "downloads": 170000,
+        "downloads": 160000,
         "likes": 150,
         "params": 231567705,
         "gated": false
@@ -15114,7 +15121,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Alibaba-NLP/gte-Qwen2-7B-instruct",
-        "downloads": 32000,
+        "downloads": 29000,
         "likes": 480,
         "params": 7612620288,
         "gated": false
@@ -15200,7 +15207,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "jinaai/jina-reranker-v2-base-multilingual",
-        "downloads": 1700000,
+        "downloads": 1600000,
         "likes": 370,
         "params": 278437633,
         "gated": false
@@ -15286,7 +15293,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Alibaba-NLP/gte-Qwen2-1.5B-instruct",
-        "downloads": 120000,
+        "downloads": 110000,
         "likes": 240,
         "params": 1776197120,
         "gated": false
@@ -15413,7 +15420,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "mixedbread-ai/deepset-mxbai-embed-de-large-v1",
-        "downloads": 480000,
+        "downloads": 490000,
         "likes": 61,
         "params": 487066624,
         "gated": false
@@ -15457,7 +15464,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "meta-llama/Llama-3.1-8B",
-        "downloads": 490000,
+        "downloads": 480000,
         "likes": 2800,
         "params": 8030261248,
         "gated": true
@@ -15545,7 +15552,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "nvidia/bigvgan_v2_22khz_80band_256x",
-        "downloads": 1700000,
+        "downloads": 1800000,
         "likes": 40,
         "params": null,
         "gated": false
@@ -15677,7 +15684,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/gemma-2-2b-it",
-        "downloads": 130000,
+        "downloads": 120000,
         "likes": 1600,
         "params": 2614341888,
         "gated": true
@@ -15853,7 +15860,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "mistralai/Mistral-Nemo-Instruct-2407",
-        "downloads": 100000,
+        "downloads": 95000,
         "likes": 1700,
         "params": 12247782400,
         "gated": false
@@ -16069,7 +16076,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Alibaba-NLP/gte-multilingual-reranker-base",
-        "downloads": 47000,
+        "downloads": 45000,
         "likes": 200,
         "params": 305959681,
         "gated": false
@@ -16113,7 +16120,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "allenai/OLMoE-1B-7B-0924",
-        "downloads": 48000,
+        "downloads": 47000,
         "likes": 160,
         "params": 6919161856,
         "gated": false
@@ -16155,7 +16162,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "meta-llama/Prompt-Guard-86M",
-        "downloads": 1900000,
+        "downloads": 1800000,
         "likes": 430,
         "params": 278811651,
         "gated": true
@@ -16197,7 +16204,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "BAAI/bge-multilingual-gemma2",
-        "downloads": 49000,
+        "downloads": 50000,
         "likes": 200,
         "params": 9241713152,
         "gated": false
@@ -16283,7 +16290,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "black-forest-labs/FLUX.1-dev",
-        "downloads": 500000,
+        "downloads": 510000,
         "likes": 16000,
         "params": 11901408320,
         "gated": true
@@ -16327,7 +16334,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "black-forest-labs/FLUX.1-schnell",
-        "downloads": 270000,
+        "downloads": 280000,
         "likes": 6600,
         "params": 11891178560,
         "gated": true
@@ -16414,7 +16421,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/sam2-hiera-base-plus",
-        "downloads": 26000,
+        "downloads": 21000,
         "likes": 18,
         "params": 80834178,
         "gated": false
@@ -16499,7 +16506,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "jinaai/jina-colbert-v2",
-        "downloads": 80000,
+        "downloads": 75000,
         "likes": 150,
         "params": 559497216,
         "gated": false
@@ -16588,7 +16595,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/Phi-3.5-vision-instruct",
-        "downloads": 320000,
+        "downloads": 310000,
         "likes": 750,
         "params": 4146621440,
         "gated": false
@@ -16632,7 +16639,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/Phi-3.5-MoE-instruct",
-        "downloads": 25000,
+        "downloads": 24000,
         "likes": 590,
         "params": 41873153344,
         "gated": false
@@ -16722,7 +16729,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen2-VL-7B-Instruct",
-        "downloads": 570000,
+        "downloads": 560000,
         "likes": 1300,
         "params": 8291375616,
         "gated": false
@@ -17198,7 +17205,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen2.5-7B",
-        "downloads": 500000,
+        "downloads": 480000,
         "likes": 340,
         "params": 7615616512,
         "gated": false
@@ -17286,7 +17293,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen2.5-14B-Instruct",
-        "downloads": 680000,
+        "downloads": 690000,
         "likes": 380,
         "params": 14770033664,
         "gated": false
@@ -17374,7 +17381,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen2.5-7B-Instruct",
-        "downloads": 6200000,
+        "downloads": 6000000,
         "likes": 2500,
         "params": 7615616512,
         "gated": false
@@ -17418,7 +17425,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen2.5-Coder-7B",
-        "downloads": 400000,
+        "downloads": 390000,
         "likes": 200,
         "params": 7615616512,
         "gated": false
@@ -17462,7 +17469,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen2.5-Math-1.5B",
-        "downloads": 140000,
+        "downloads": 130000,
         "likes": 120,
         "params": 1543714304,
         "gated": false
@@ -17551,7 +17558,7 @@
       "hub": {
         "repo": "Qwen/Qwen2.5-1.5B-Instruct",
         "downloads": 4900000,
-        "likes": 930,
+        "likes": 940,
         "params": 1543714304,
         "gated": false
       }
@@ -17638,7 +17645,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen2.5-3B-Instruct",
-        "downloads": 2800000,
+        "downloads": 2700000,
         "likes": 640,
         "params": 3085938688,
         "gated": false
@@ -17726,7 +17733,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "meta-llama/Llama-3.2-1B",
-        "downloads": 470000,
+        "downloads": 430000,
         "likes": 2800,
         "params": 1235814400,
         "gated": true
@@ -17770,7 +17777,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "meta-llama/Llama-3.2-1B-Instruct",
-        "downloads": 1500000,
+        "downloads": 1400000,
         "likes": 2000,
         "params": 1235814400,
         "gated": true
@@ -17858,7 +17865,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "meta-llama/Llama-3.2-3B-Instruct",
-        "downloads": 910000,
+        "downloads": 890000,
         "likes": 3000,
         "params": 3212749824,
         "gated": true
@@ -17946,7 +17953,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
-        "downloads": 400000,
+        "downloads": 390000,
         "likes": 170,
         "params": 1543714304,
         "gated": false
@@ -17991,7 +17998,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "meta-llama/Llama-3.2-90B-Vision-Instruct",
-        "downloads": 380,
+        "downloads": 370,
         "likes": 370,
         "params": 88593355323,
         "gated": true
@@ -18033,7 +18040,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/sam2.1-hiera-base-plus",
-        "downloads": 46000,
+        "downloads": 45000,
         "likes": 27,
         "params": 80850690,
         "gated": false
@@ -18203,7 +18210,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "openai/whisper-large-v3-turbo",
-        "downloads": 5300000,
+        "downloads": 5200000,
         "likes": 3500,
         "params": 808878080,
         "gated": false
@@ -18243,7 +18250,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "ibm-granite/granite-timeseries-ttm-r2",
-        "downloads": 110000,
+        "downloads": 100000,
         "likes": 170,
         "params": 805280,
         "gated": false
@@ -18285,7 +18292,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "jinaai/jina-clip-v2",
-        "downloads": 47000,
+        "downloads": 48000,
         "likes": 350,
         "params": 865278476,
         "gated": false
@@ -18373,7 +18380,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "stabilityai/stable-diffusion-3.5-large",
-        "downloads": 52000,
+        "downloads": 50000,
         "likes": 4200,
         "params": 8146280768,
         "gated": true
@@ -18422,7 +18429,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "CohereLabs/aya-expanse-32b",
-        "downloads": 3000,
+        "downloads": 3100,
         "likes": 300,
         "params": 32296476672,
         "gated": true
@@ -18553,7 +18560,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "HuggingFaceTB/SmolLM2-1.7B",
-        "downloads": 39000,
+        "downloads": 38000,
         "likes": 170,
         "params": 1711376384,
         "gated": false
@@ -18642,7 +18649,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
-        "downloads": 280000,
+        "downloads": 270000,
         "likes": 770,
         "params": 1711376384,
         "gated": false
@@ -18775,7 +18782,7 @@
       "hub": {
         "repo": "HuggingFaceTB/SmolLM2-360M",
         "downloads": 130000,
-        "likes": 140,
+        "likes": 150,
         "params": 361821120,
         "gated": false
       }
@@ -18946,8 +18953,8 @@
       "origin": "huggingface",
       "hub": {
         "repo": "nomic-ai/CodeRankEmbed",
-        "downloads": 80000,
-        "likes": 82,
+        "downloads": 78000,
+        "likes": 83,
         "params": 136731648,
         "gated": false
       }
@@ -19164,7 +19171,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Snowflake/snowflake-arctic-embed-l-v2.0",
-        "downloads": 3100000,
+        "downloads": 3300000,
         "likes": 270,
         "params": 567754752,
         "gated": false
@@ -19206,7 +19213,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Snowflake/snowflake-arctic-embed-m-v2.0",
-        "downloads": 52000,
+        "downloads": 50000,
         "likes": 110,
         "params": 305368320,
         "gated": false
@@ -19289,7 +19296,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "amazon/chronos-bolt-base",
-        "downloads": 590000,
+        "downloads": 600000,
         "likes": 97,
         "params": 205292928,
         "gated": false
@@ -19369,7 +19376,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "amazon/chronos-bolt-small",
-        "downloads": 5600000,
+        "downloads": 5200000,
         "likes": 68,
         "params": 47718016,
         "gated": false
@@ -19453,7 +19460,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "meta-llama/Llama-3.3-70B-Instruct",
-        "downloads": 360000,
+        "downloads": 350000,
         "likes": 3200,
         "params": 70553706496,
         "gated": true
@@ -19506,7 +19513,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "Qwen/Qwen2.5-Omni-7B",
-        "downloads": 280000,
+        "downloads": 270000,
         "likes": 2000,
         "params": 10732225440,
         "gated": false
@@ -19854,7 +19861,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "nvidia/diar_sortformer_4spk-v1",
-        "downloads": 99000,
+        "downloads": 98000,
         "likes": 160,
         "params": 123522952,
         "gated": false
@@ -19903,7 +19910,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "microsoft/phi-4",
-        "downloads": 290000,
+        "downloads": 280000,
         "likes": 2300,
         "params": 14659507200,
         "gated": false
@@ -20052,7 +20059,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "microsoft/Phi-4-multimodal-instruct",
-        "downloads": 78000,
+        "downloads": 77000,
         "likes": 1600,
         "params": 5574460384,
         "gated": false
@@ -20101,7 +20108,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "microsoft/Phi-4-reasoning",
-        "downloads": 35000,
+        "downloads": 34000,
         "likes": 230,
         "params": 14659507200,
         "gated": false
@@ -20279,7 +20286,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/dinov2-with-registers-base",
-        "downloads": 270000,
+        "downloads": 280000,
         "likes": 15,
         "params": 86583552,
         "gated": false
@@ -20364,7 +20371,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "deepseek-ai/DeepSeek-V3",
-        "downloads": 1600000,
+        "downloads": 1500000,
         "likes": 4500,
         "params": 684489845504,
         "gated": false
@@ -20622,7 +20629,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen2.5-Math-PRM-7B",
-        "downloads": 730000,
+        "downloads": 720000,
         "likes": 98,
         "params": 7628472322,
         "gated": false
@@ -20801,7 +20808,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
-        "downloads": 77000,
+        "downloads": 75000,
         "likes": 920,
         "params": 8030261248,
         "gated": false
@@ -20845,7 +20852,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-        "downloads": 740000,
+        "downloads": 670000,
         "likes": 1700,
         "params": 1777088000,
         "gated": false
@@ -20889,7 +20896,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
-        "downloads": 210000,
+        "downloads": 200000,
         "likes": 740,
         "params": 14770033664,
         "gated": false
@@ -20977,7 +20984,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
-        "downloads": 320000,
+        "downloads": 330000,
         "likes": 950,
         "params": 7615616512,
         "gated": false
@@ -21019,7 +21026,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Alibaba-NLP/gte-modernbert-base",
-        "downloads": 140000,
+        "downloads": 130000,
         "likes": 210,
         "params": 149014272,
         "gated": false
@@ -21103,7 +21110,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "tencent/Hunyuan3D-2",
-        "downloads": 300000,
+        "downloads": 310000,
         "likes": 1900,
         "params": null,
         "gated": false
@@ -21325,7 +21332,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen2.5-VL-7B-Instruct",
-        "downloads": 6100000,
+        "downloads": 6000000,
         "likes": 1800,
         "params": 8292166656,
         "gated": false
@@ -21498,7 +21505,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "nomic-ai/nomic-embed-text-v2-moe",
-        "downloads": 770000,
+        "downloads": 750000,
         "likes": 520,
         "params": 475292928,
         "gated": false
@@ -21543,7 +21550,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
-        "downloads": 62000,
+        "downloads": 61000,
         "likes": 340,
         "params": 2246784880,
         "gated": false
@@ -21630,7 +21637,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/audiobox-aesthetics",
-        "downloads": 390000,
+        "downloads": 380000,
         "likes": 59,
         "params": 103859112,
         "gated": false
@@ -21673,7 +21680,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/siglip2-base-patch16-224",
-        "downloads": 1500000,
+        "downloads": 1400000,
         "likes": 160,
         "params": 375187970,
         "gated": false
@@ -21716,7 +21723,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/siglip2-base-patch16-256",
-        "downloads": 460000,
+        "downloads": 450000,
         "likes": 28,
         "params": 375234050,
         "gated": false
@@ -21759,7 +21766,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/siglip2-base-patch16-384",
-        "downloads": 80000,
+        "downloads": 79000,
         "likes": 23,
         "params": 375479810,
         "gated": false
@@ -21888,7 +21895,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/siglip2-so400m-patch14-384",
-        "downloads": 640000,
+        "downloads": 650000,
         "likes": 120,
         "params": 1136008498,
         "gated": false
@@ -21931,7 +21938,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/siglip2-so400m-patch16-256",
-        "downloads": 520000,
+        "downloads": 510000,
         "likes": 12,
         "params": 1135670962,
         "gated": false
@@ -22150,7 +22157,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/gemma-3-4b-pt",
-        "downloads": 300000,
+        "downloads": 290000,
         "likes": 180,
         "params": 4300079472,
         "gated": true
@@ -22202,50 +22209,6 @@
       }
     },
     {
-      "key": "qwen/wan2-1-t2v-14b",
-      "id": "Wan-AI/Wan2.1-T2V-14B",
-      "slug": "wan2-1-t2v-14b",
-      "lab": "qwen",
-      "type": "video",
-      "name": "Wan2.1-T2V-14B",
-      "description": "Text-to-video model from Qwen, 14B parameters.",
-      "family": null,
-      "releaseDate": "2025-02-25",
-      "lastUpdated": "2025-03-12",
-      "knowledge": null,
-      "context": null,
-      "maxOutput": null,
-      "price": null,
-      "input": [
-        "text"
-      ],
-      "output": [
-        "video"
-      ],
-      "reasoning": false,
-      "toolCall": false,
-      "structuredOutput": false,
-      "attachment": false,
-      "openWeights": true,
-      "status": null,
-      "access": "open",
-      "rarity": "promo",
-      "set": 507,
-      "license": {
-        "name": "Apache 2.0",
-        "source": "huggingface",
-        "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-14B"
-      },
-      "origin": "huggingface",
-      "hub": {
-        "repo": "Wan-AI/Wan2.1-T2V-14B",
-        "downloads": 110000,
-        "likes": 1600,
-        "params": 14288491584,
-        "gated": false
-      }
-    },
-    {
       "key": "cohere/command-r7b-arabic-02-2025",
       "id": "command-r7b-arabic-02-2025",
       "slug": "command-r7b-arabic-02-2025",
@@ -22279,7 +22242,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 508,
+      "set": 507,
       "license": {
         "name": "CC BY-NC 4.0",
         "source": "lab-default"
@@ -22317,7 +22280,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 509,
+      "set": 508,
       "license": {
         "name": "Gemma license",
         "source": "huggingface",
@@ -22326,7 +22289,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/gemma-3-12b-it",
-        "downloads": 370000,
+        "downloads": 360000,
         "likes": 910,
         "params": 12187325040,
         "gated": true
@@ -22362,7 +22325,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 510,
+      "set": 509,
       "license": {
         "name": "Gemma license",
         "source": "huggingface",
@@ -22407,7 +22370,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 511,
+      "set": 510,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -22451,7 +22414,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 512,
+      "set": 511,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -22460,9 +22423,53 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Wan-AI/Wan2.1-T2V-1.3B-Diffusers",
-        "downloads": 340000,
+        "downloads": 350000,
         "likes": 170,
         "params": 1418996800,
+        "gated": false
+      }
+    },
+    {
+      "key": "qwen/wan2-1-t2v-14b-diffusers",
+      "id": "Wan-AI/Wan2.1-T2V-14B-Diffusers",
+      "slug": "wan2-1-t2v-14b-diffusers",
+      "lab": "qwen",
+      "type": "video",
+      "name": "Wan2.1-T2V-14B-Diffusers",
+      "description": "Text-to-video model from Qwen, 14B parameters.",
+      "family": null,
+      "releaseDate": "2025-03-01",
+      "lastUpdated": "2025-04-04",
+      "knowledge": null,
+      "context": null,
+      "maxOutput": null,
+      "price": null,
+      "input": [
+        "text"
+      ],
+      "output": [
+        "video"
+      ],
+      "reasoning": false,
+      "toolCall": false,
+      "structuredOutput": false,
+      "attachment": false,
+      "openWeights": true,
+      "status": null,
+      "access": "open",
+      "rarity": "promo",
+      "set": 512,
+      "license": {
+        "name": "Apache 2.0",
+        "source": "huggingface",
+        "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-14B-Diffusers"
+      },
+      "origin": "huggingface",
+      "hub": {
+        "repo": "Wan-AI/Wan2.1-T2V-14B-Diffusers",
+        "downloads": 100000,
+        "likes": 54,
+        "params": 14288491584,
         "gated": false
       }
     },
@@ -22502,7 +22509,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "mixedbread-ai/mxbai-rerank-large-v2",
-        "downloads": 27000,
+        "downloads": 25000,
         "likes": 150,
         "params": 1543714304,
         "gated": false
@@ -22547,7 +22554,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "CohereLabs/aya-vision-32b",
-        "downloads": 79,
+        "downloads": 80,
         "likes": 230,
         "params": 33137896688,
         "gated": true
@@ -22677,7 +22684,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
-        "downloads": 170000,
+        "downloads": 160000,
         "likes": 1400,
         "params": 24011361280,
         "gated": false
@@ -22719,7 +22726,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/VGGT-1B",
-        "downloads": 550000,
+        "downloads": 570000,
         "likes": 160,
         "params": 1256537516,
         "gated": false
@@ -22849,7 +22856,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen2.5-VL-32B-Instruct",
-        "downloads": 700000,
+        "downloads": 670000,
         "likes": 510,
         "params": 33452718336,
         "gated": false
@@ -23120,7 +23127,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "Qwen/Qwen3-235B-A22B",
-        "downloads": 310000,
+        "downloads": 300000,
         "likes": 1100,
         "params": 235093634560,
         "gated": false
@@ -23267,7 +23274,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-        "downloads": 1500000,
+        "downloads": 1600000,
         "likes": 1300,
         "params": 30532122624,
         "gated": false
@@ -23316,7 +23323,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
-        "downloads": 59000,
+        "downloads": 58000,
         "likes": 1400,
         "params": 480154875392,
         "gated": false
@@ -23416,7 +23423,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "Qwen/Qwen3-VL-30B-A3B-Instruct",
-        "downloads": 450000,
+        "downloads": 440000,
         "likes": 630,
         "params": 31070754032,
         "gated": false
@@ -23551,7 +23558,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/vjepa2-vitg-fpc64-256",
-        "downloads": 76000,
+        "downloads": 79000,
         "likes": 62,
         "params": 1034555264,
         "gated": false
@@ -23640,7 +23647,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "moonshotai/Kimi-VL-A3B-Instruct",
-        "downloads": 66000,
+        "downloads": 65000,
         "likes": 290,
         "params": 16407657776,
         "gated": false
@@ -23683,7 +23690,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/PE-Core-L14-336",
-        "downloads": 290000,
+        "downloads": 280000,
         "likes": 63,
         "params": null,
         "gated": false
@@ -23863,7 +23870,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "nvidia/Llama-3.1-Nemotron-70B-Instruct",
-        "downloads": 74,
+        "downloads": 81,
         "likes": 570,
         "params": null,
         "gated": false
@@ -23907,7 +23914,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "nvidia/parakeet-tdt-0.6b-v2",
-        "downloads": 170000,
+        "downloads": 180000,
         "likes": 1600,
         "params": null,
         "gated": false
@@ -24039,7 +24046,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "ByteDance-Seed/UI-TARS-1.5-7B",
-        "downloads": 67000,
+        "downloads": 100000,
         "likes": 620,
         "params": 8292166656,
         "gated": false
@@ -24215,8 +24222,8 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-1.7B",
-        "downloads": 4100000,
-        "likes": 610,
+        "downloads": 3900000,
+        "likes": 620,
         "params": 2031739904,
         "gated": false
       }
@@ -24303,7 +24310,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-4B",
-        "downloads": 6400000,
+        "downloads": 5800000,
         "likes": 790,
         "params": 4022468096,
         "gated": false
@@ -24345,8 +24352,8 @@
       "origin": "huggingface",
       "hub": {
         "repo": "meta-llama/Llama-Prompt-Guard-2-86M",
-        "downloads": 100000,
-        "likes": 360,
+        "downloads": 97000,
+        "likes": 370,
         "params": 278810882,
         "gated": true
       }
@@ -24433,7 +24440,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-1.7B-Base",
-        "downloads": 600000,
+        "downloads": 610000,
         "likes": 98,
         "params": 1720574976,
         "gated": false
@@ -24565,7 +24572,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-8B-Base",
-        "downloads": 560000,
+        "downloads": 550000,
         "likes": 150,
         "params": 8190735360,
         "gated": false
@@ -24611,7 +24618,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen2.5-Omni-3B",
-        "downloads": 95000,
+        "downloads": 93000,
         "likes": 380,
         "params": 5537120672,
         "gated": false
@@ -24870,7 +24877,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Wan-AI/Wan2.1-VACE-14B",
-        "downloads": 150000,
+        "downloads": 160000,
         "likes": 520,
         "params": 17337592896,
         "gated": false
@@ -24915,7 +24922,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "ibm-granite/granite-docling-258M",
-        "downloads": 120000,
+        "downloads": 130000,
         "likes": 1300,
         "params": 257517120,
         "gated": false
@@ -25086,7 +25093,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "nvidia/Cosmos-Embed1-224p",
-        "downloads": 350000,
+        "downloads": 370000,
         "likes": 22,
         "params": 1196138872,
         "gated": false
@@ -25175,7 +25182,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "black-forest-labs/FLUX.1-Kontext-dev",
-        "downloads": 260000,
+        "downloads": 250000,
         "likes": 2900,
         "params": 11901408320,
         "gated": true
@@ -25219,7 +25226,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B",
-        "downloads": 360000,
+        "downloads": 350000,
         "likes": 1100,
         "params": 8190735360,
         "gated": false
@@ -25303,7 +25310,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-Reranker-8B",
-        "downloads": 86000,
+        "downloads": 84000,
         "likes": 300,
         "params": 8188548096,
         "gated": false
@@ -25345,7 +25352,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/vjepa2-vitl-fpc64-256",
-        "downloads": 330000,
+        "downloads": 320000,
         "likes": 220,
         "params": 325971328,
         "gated": false
@@ -25385,7 +25392,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "ibm-granite/granite-timeseries-tspulse-r1",
-        "downloads": 1300000,
+        "downloads": 1200000,
         "likes": 48,
         "params": 1084330,
         "gated": false
@@ -25471,7 +25478,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-Embedding-0.6B",
-        "downloads": 9300000,
+        "downloads": 9200000,
         "likes": 1300,
         "params": 595776512,
         "gated": false
@@ -25555,7 +25562,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-Embedding-8B",
-        "downloads": 2300000,
+        "downloads": 2400000,
         "likes": 850,
         "params": 7567295488,
         "gated": false
@@ -25685,7 +25692,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/gemma-3n-E2B-it",
-        "downloads": 33000,
+        "downloads": 32000,
         "likes": 330,
         "params": 5439438272,
         "gated": true
@@ -25727,7 +25734,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "tencent/Hunyuan3D-2.1",
-        "downloads": 100000,
+        "downloads": 110000,
         "likes": 1400,
         "params": null,
         "gated": false
@@ -25953,7 +25960,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "HuggingFaceTB/SmolLM3-3B-Base",
-        "downloads": 79000,
+        "downloads": 81000,
         "likes": 180,
         "params": 3075098624,
         "gated": false
@@ -26085,7 +26092,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "zai-org/GLM-4.1V-9B-Thinking",
-        "downloads": 51000,
+        "downloads": 49000,
         "likes": 790,
         "params": 10292777472,
         "gated": false
@@ -26341,7 +26348,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "HuggingFaceTB/SmolLM3-3B",
-        "downloads": 480000,
+        "downloads": 430000,
         "likes": 1100,
         "params": 3075098624,
         "gated": false
@@ -26385,7 +26392,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "moonshotai/Kimi-K2-Instruct",
-        "downloads": 290000,
+        "downloads": 280000,
         "likes": 3000,
         "params": 1026408235864,
         "gated": false
@@ -26557,7 +26564,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-235B-A22B-Instruct-2507",
-        "downloads": 85000,
+        "downloads": 82000,
         "likes": 810,
         "params": 235093634560,
         "gated": false
@@ -26643,7 +26650,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "nvidia/Llama-3_3-Nemotron-Super-49B-v1_5",
-        "downloads": 44000,
+        "downloads": 40000,
         "likes": 240,
         "params": 49867145216,
         "gated": false
@@ -26911,7 +26918,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-30B-A3B-Instruct-2507",
-        "downloads": 930000,
+        "downloads": 910000,
         "likes": 860,
         "params": 30532122624,
         "gated": false
@@ -27000,7 +27007,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Wan-AI/Wan2.2-T2V-A14B-Diffusers",
-        "downloads": 180000,
+        "downloads": 170000,
         "likes": 160,
         "params": 14288491584,
         "gated": false
@@ -27441,7 +27448,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/gemma-3-270m",
-        "downloads": 95000,
+        "downloads": 90000,
         "likes": 1100,
         "params": 268098176,
         "gated": true
@@ -27529,7 +27536,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-4B-Thinking-2507",
-        "downloads": 380000,
+        "downloads": 370000,
         "likes": 630,
         "params": 4022468096,
         "gated": false
@@ -27571,7 +27578,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "facebook/dinov3-convnext-tiny-pretrain-lvd1689m",
-        "downloads": 51000,
+        "downloads": 54000,
         "likes": 87,
         "params": 27820128,
         "gated": true
@@ -27614,7 +27621,7 @@
       "hub": {
         "repo": "facebook/dinov3-vitl16-pretrain-lvd1689m",
         "downloads": 700000,
-        "likes": 1900,
+        "likes": 2000,
         "params": 303129600,
         "gated": true
       }
@@ -27653,7 +27660,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Salesforce/moirai-2.0-R-small",
-        "downloads": 250000,
+        "downloads": 260000,
         "likes": 51,
         "params": 11387208,
         "gated": false
@@ -27920,7 +27927,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "nvidia/NVIDIA-Nemotron-Nano-9B-v2",
-        "downloads": 110000,
+        "downloads": 100000,
         "likes": 530,
         "params": 8888227328,
         "gated": false
@@ -28146,7 +28153,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "openbmb/MiniCPM-V-4_5",
-        "downloads": 79000,
+        "downloads": 78000,
         "likes": 1100,
         "params": 8695895280,
         "gated": false
@@ -28632,7 +28639,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "allenai/Olmo-3-1025-7B",
-        "downloads": 140000,
+        "downloads": 130000,
         "likes": 93,
         "params": 7298011136,
         "gated": false
@@ -28770,7 +28777,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-Omni-30B-A3B-Thinking",
-        "downloads": 300000,
+        "downloads": 290000,
         "likes": 340,
         "params": 31719205488,
         "gated": false
@@ -28812,7 +28819,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "jinaai/jina-reranker-v3",
-        "downloads": 790000,
+        "downloads": 780000,
         "likes": 160,
         "params": 596836352,
         "gated": false
@@ -28858,7 +28865,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
-        "downloads": 450000,
+        "downloads": 440000,
         "likes": 1100,
         "params": 35259818545,
         "gated": false
@@ -29488,7 +29495,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "nvidia/gpt-oss-120b-Eagle3-short-context",
-        "downloads": 190000,
+        "downloads": 200000,
         "likes": 23,
         "params": 786873600,
         "gated": false
@@ -29621,7 +29628,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-VL-4B-Instruct",
-        "downloads": 3800000,
+        "downloads": 3700000,
         "likes": 530,
         "params": 4437815808,
         "gated": false
@@ -29974,7 +29981,7 @@
       "hub": {
         "repo": "Qwen/Qwen3-VL-2B-Instruct",
         "downloads": 1100000,
-        "likes": 510,
+        "likes": 520,
         "params": 2127532032,
         "gated": false
       }
@@ -30018,7 +30025,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-VL-2B-Thinking",
-        "downloads": 36000,
+        "downloads": 37000,
         "likes": 130,
         "params": 2127532032,
         "gated": false
@@ -30063,7 +30070,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-VL-32B-Instruct",
-        "downloads": 170000,
+        "downloads": 180000,
         "likes": 260,
         "params": 33357390064,
         "gated": false
@@ -30245,7 +30252,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "amazon/chronos-2",
-        "downloads": 8400000,
+        "downloads": 8300000,
         "likes": 570,
         "params": 119477664,
         "gated": false
@@ -30289,7 +30296,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "moonshotai/Kimi-Linear-48B-A3B-Base",
-        "downloads": 2300,
+        "downloads": 2200,
         "likes": 85,
         "params": 49122681728,
         "gated": false
@@ -30333,7 +30340,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "moonshotai/Kimi-Linear-48B-A3B-Instruct",
-        "downloads": 51000,
+        "downloads": 49000,
         "likes": 620,
         "params": 49122681728,
         "gated": false
@@ -30421,7 +30428,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "mistralai/Ministral-3-14B-Instruct-2512-BF16",
-        "downloads": 39000,
+        "downloads": 40000,
         "likes": 51,
         "params": 13945031680,
         "gated": false
@@ -30465,7 +30472,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "mistralai/Ministral-3-14B-Reasoning-2512",
-        "downloads": 330000,
+        "downloads": 340000,
         "likes": 180,
         "params": 13945031680,
         "gated": false
@@ -30509,7 +30516,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "mistralai/Ministral-3-3B-Instruct-2512",
-        "downloads": 71000,
+        "downloads": 68000,
         "likes": 320,
         "params": 3849090048,
         "gated": false
@@ -30596,7 +30603,7 @@
       "hub": {
         "repo": "facebook/sam3",
         "downloads": 2000000,
-        "likes": 6000,
+        "likes": 6100,
         "params": 859922360,
         "gated": true
       }
@@ -30728,7 +30735,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "tencent/HunyuanOCR",
-        "downloads": 620000,
+        "downloads": 610000,
         "likes": 850,
         "params": 1119925744,
         "gated": false
@@ -30772,7 +30779,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "allenai/Olmo-3-7B-Think",
-        "downloads": 59000,
+        "downloads": 58000,
         "likes": 110,
         "params": 7298011136,
         "gated": false
@@ -30816,7 +30823,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "allenai/Olmo-3-7B-Instruct",
-        "downloads": 190000,
+        "downloads": 200000,
         "likes": 160,
         "params": 7298011136,
         "gated": false
@@ -30861,7 +30868,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "black-forest-labs/FLUX.2-dev",
-        "downloads": 300000,
+        "downloads": 290000,
         "likes": 2500,
         "params": 32223281152,
         "gated": true
@@ -30988,7 +30995,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "inclusionAI/LLaDA2.0-mini",
-        "downloads": 26000,
+        "downloads": 18000,
         "likes": 71,
         "params": 16255643392,
         "gated": false
@@ -31032,7 +31039,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "mistralai/Devstral-Small-2-24B-Instruct-2512",
-        "downloads": 100000,
+        "downloads": 84000,
         "likes": 710,
         "params": 24011361280,
         "gated": false
@@ -31083,7 +31090,7 @@
       "hub": {
         "repo": "nvidia/Cosmos-Reason2-8B",
         "downloads": 69000,
-        "likes": 250,
+        "likes": 260,
         "params": 8767123696,
         "gated": true
       }
@@ -31529,7 +31536,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "zai-org/GLM-4.6V",
-        "downloads": 5500,
+        "downloads": 5400,
         "likes": 400,
         "params": 107710933120,
         "gated": false
@@ -31580,7 +31587,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "zai-org/GLM-4.6V-Flash",
-        "downloads": 41000,
+        "downloads": 40000,
         "likes": 630,
         "params": 10292777472,
         "gated": false
@@ -31796,7 +31803,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "nvidia/Cosmos-Reason2-2B",
-        "downloads": 600000,
+        "downloads": 580000,
         "likes": 380,
         "params": 2438696960,
         "gated": true
@@ -31932,7 +31939,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen-Image-Edit-2511",
-        "downloads": 210000,
+        "downloads": 220000,
         "likes": 1500,
         "params": 20430401088,
         "gated": false
@@ -31982,7 +31989,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "nvidia/llama-nemotron-embed-vl-1b-v2",
-        "downloads": 11000,
+        "downloads": 9200,
         "likes": 110,
         "params": 1678252480,
         "gated": false
@@ -32032,7 +32039,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "nvidia/llama-nemotron-rerank-vl-1b-v2",
-        "downloads": 19000,
+        "downloads": 15000,
         "likes": 75,
         "params": 1678256576,
         "gated": false
@@ -32081,7 +32088,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "zai-org/GLM-4.7",
-        "downloads": 67000,
+        "downloads": 53000,
         "likes": 2100,
         "params": 358337791296,
         "gated": false
@@ -32217,7 +32224,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "nvidia/personaplex-7b-v1",
-        "downloads": 160000,
+        "downloads": 180000,
         "likes": 3000,
         "params": 8371408896,
         "gated": true
@@ -32262,7 +32269,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "moonshotai/Kimi-K2.5",
-        "downloads": 400000,
+        "downloads": 390000,
         "likes": 2900,
         "params": 1026879376368,
         "gated": false
@@ -32438,7 +32445,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-VL-Embedding-2B",
-        "downloads": 540000,
+        "downloads": 530000,
         "likes": 500,
         "params": 2127532032,
         "gated": false
@@ -32480,7 +32487,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-VL-Embedding-8B",
-        "downloads": 760000,
+        "downloads": 720000,
         "likes": 520,
         "params": 8144793840,
         "gated": false
@@ -32522,7 +32529,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-VL-Reranker-2B",
-        "downloads": 73000,
+        "downloads": 71000,
         "likes": 240,
         "params": 2127532032,
         "gated": false
@@ -32564,7 +32571,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-VL-Reranker-8B",
-        "downloads": 18000,
+        "downloads": 13000,
         "likes": 180,
         "params": 8767123696,
         "gated": false
@@ -32786,7 +32793,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "black-forest-labs/FLUX.2-klein-base-9B",
-        "downloads": 78000,
+        "downloads": 75000,
         "likes": 440,
         "params": 9078581248,
         "gated": true
@@ -32828,7 +32835,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "perplexity-ai/pplx-embed-v1-0.6b",
-        "downloads": 300000,
+        "downloads": 280000,
         "likes": 240,
         "params": 596049920,
         "gated": false
@@ -32963,7 +32970,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-TTS-12Hz-0.6B-Base",
-        "downloads": 840000,
+        "downloads": 850000,
         "likes": 370,
         "params": 914643008,
         "gated": false
@@ -33007,7 +33014,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
-        "downloads": 740000,
+        "downloads": 730000,
         "likes": 210,
         "params": 905788672,
         "gated": false
@@ -33051,7 +33058,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
-        "downloads": 3600000,
+        "downloads": 3700000,
         "likes": 590,
         "params": 1928677440,
         "gated": false
@@ -33139,8 +33146,8 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
-        "downloads": 590000,
-        "likes": 470,
+        "downloads": 600000,
+        "likes": 480,
         "params": 1916676352,
         "gated": false
       }
@@ -33227,7 +33234,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "mistralai/Voxtral-Mini-4B-Realtime-2602",
-        "downloads": 1500000,
+        "downloads": 1400000,
         "likes": 1100,
         "params": 4429679360,
         "gated": false
@@ -33269,7 +33276,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "jinaai/jina-embeddings-v5-text-nano",
-        "downloads": 85000,
+        "downloads": 83000,
         "likes": 100,
         "params": 211766016,
         "gated": false
@@ -33311,7 +33318,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "jinaai/jina-embeddings-v5-text-small",
-        "downloads": 83000,
+        "downloads": 82000,
         "likes": 210,
         "params": 596049920,
         "gated": false
@@ -33398,7 +33405,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "deepseek-ai/DeepSeek-OCR-2",
-        "downloads": 360000,
+        "downloads": 350000,
         "likes": 1200,
         "params": 3389119360,
         "gated": false
@@ -33519,7 +33526,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3-ASR-0.6B",
-        "downloads": 710000,
+        "downloads": 680000,
         "likes": 400,
         "params": 938008576,
         "gated": false
@@ -33656,7 +33663,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "stepfun-ai/Step-3.5-Flash",
-        "downloads": 220000,
+        "downloads": 200000,
         "likes": 850,
         "params": 199384301376,
         "gated": false
@@ -33966,7 +33973,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "inclusionAI/LLaDA2.1-mini",
-        "downloads": 26000,
+        "downloads": 25000,
         "likes": 130,
         "params": 16255643392,
         "gated": false
@@ -34333,7 +34340,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "Qwen/Qwen3.5-397B-A17B",
-        "downloads": 860000,
+        "downloads": 850000,
         "likes": 1600,
         "params": 403397928944,
         "gated": false
@@ -34509,7 +34516,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "CohereLabs/tiny-aya-fire",
-        "downloads": 740,
+        "downloads": 760,
         "likes": 30,
         "params": 3349227520,
         "gated": true
@@ -34553,7 +34560,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "CohereLabs/tiny-aya-global",
-        "downloads": 19000,
+        "downloads": 20000,
         "likes": 200,
         "params": 3349227520,
         "gated": true
@@ -34597,7 +34604,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "CohereLabs/tiny-aya-water",
-        "downloads": 340,
+        "downloads": 360,
         "likes": 49,
         "params": 3349227520,
         "gated": true
@@ -35066,7 +35073,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3.5-35B-A3B-Base",
-        "downloads": 100000,
+        "downloads": 76000,
         "likes": 160,
         "params": 35951822704,
         "gated": false
@@ -35161,7 +35168,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3.5-9B-Base",
-        "downloads": 310000,
+        "downloads": 330000,
         "likes": 140,
         "params": 9653104368,
         "gated": false
@@ -35250,7 +35257,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3.5-4B",
-        "downloads": 5400000,
+        "downloads": 5300000,
         "likes": 1200,
         "params": 4659865088,
         "gated": false
@@ -35296,7 +35303,7 @@
       "hub": {
         "repo": "Qwen/Qwen3.5-4B-Base",
         "downloads": 590000,
-        "likes": 120,
+        "likes": 130,
         "params": 4659865088,
         "gated": false
       }
@@ -35385,7 +35392,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3.5-0.8B",
-        "downloads": 3700000,
+        "downloads": 3600000,
         "likes": 820,
         "params": 873438784,
         "gated": false
@@ -35430,7 +35437,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3.5-0.8B-Base",
-        "downloads": 730000,
+        "downloads": 770000,
         "likes": 140,
         "params": 873438784,
         "gated": false
@@ -35475,7 +35482,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3.5-2B",
-        "downloads": 3700000,
+        "downloads": 3600000,
         "likes": 470,
         "params": 2274069824,
         "gated": false
@@ -35603,7 +35610,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/gemma-4-E2B",
-        "downloads": 120000,
+        "downloads": 110000,
         "likes": 550,
         "params": 5123178051,
         "gated": false
@@ -35695,7 +35702,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/gemma-4-E4B",
-        "downloads": 470000,
+        "downloads": 460000,
         "likes": 500,
         "params": 7996156490,
         "gated": false
@@ -35786,7 +35793,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "nvidia/LocateAnything-3B",
-        "downloads": 200000,
+        "downloads": 180000,
         "likes": 3200,
         "params": 3830665968,
         "gated": false
@@ -35877,7 +35884,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Lightricks/LTX-2.3",
-        "downloads": 890000,
+        "downloads": 900000,
         "likes": 2000,
         "params": null,
         "gated": false
@@ -36316,7 +36323,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/gemma-4-31B",
-        "downloads": 57000,
+        "downloads": 54000,
         "likes": 590,
         "params": 31273088876,
         "gated": false
@@ -36580,7 +36587,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "MiniMaxAI/MiniMax-M2.7",
-        "downloads": 310000,
+        "downloads": 300000,
         "likes": 1300,
         "params": 228689764864,
         "gated": false
@@ -36885,7 +36892,7 @@
       "hub": {
         "repo": "microsoft/harrier-oss-v1-0.6b",
         "downloads": 230000,
-        "likes": 330,
+        "likes": 340,
         "params": 596049920,
         "gated": false
       }
@@ -37010,7 +37017,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "jinaai/jina-embeddings-v5-omni-small-retrieval",
-        "downloads": 52000,
+        "downloads": 51000,
         "likes": 19,
         "params": 1559368704,
         "gated": false
@@ -37141,7 +37148,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "jinaai/jina-embeddings-v5-omni-nano",
-        "downloads": 6600,
+        "downloads": 6500,
         "likes": 46,
         "params": 985984512,
         "gated": false
@@ -37232,7 +37239,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "arcee-ai/Trinity-Large-Thinking",
-        "downloads": 3200,
+        "downloads": 3100,
         "likes": 190,
         "params": 398635286016,
         "gated": false
@@ -37322,7 +37329,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "google/gemma-4-31B-it",
-        "downloads": 7400000,
+        "downloads": 7200000,
         "likes": 4300,
         "params": 31273088876,
         "gated": false
@@ -37540,7 +37547,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "ibm-granite/granite-4.1-3b",
-        "downloads": 540000,
+        "downloads": 530000,
         "likes": 120,
         "params": 3402836480,
         "gated": false
@@ -37584,7 +37591,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "ibm-granite/granite-4.1-8b",
-        "downloads": 98000,
+        "downloads": 96000,
         "likes": 260,
         "params": 8791592960,
         "gated": false
@@ -37721,7 +37728,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/tipsv2-b14",
-        "downloads": 9200,
+        "downloads": 9100,
         "likes": 140,
         "params": 195948288,
         "gated": false
@@ -37809,7 +37816,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "openbmb/MiniCPM-V-4.6",
-        "downloads": 190000,
+        "downloads": 180000,
         "likes": 1300,
         "params": 1300428016,
         "gated": false
@@ -38195,7 +38202,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "openai/privacy-filter",
-        "downloads": 110000,
+        "downloads": 100000,
         "likes": 1800,
         "params": 1399486865,
         "gated": false
@@ -38288,7 +38295,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "ibm-granite/granite-embedding-311m-multilingual-r2",
-        "downloads": 89000,
+        "downloads": 87000,
         "likes": 150,
         "params": 311664384,
         "gated": false
@@ -38330,7 +38337,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "ibm-granite/granite-embedding-97m-multilingual-r2",
-        "downloads": 120000,
+        "downloads": 130000,
         "likes": 150,
         "params": 97441152,
         "gated": false
@@ -38429,7 +38436,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "moonshotai/Kimi-K2.6",
-        "downloads": 240000,
+        "downloads": 230000,
         "likes": 1600,
         "params": 1026879376368,
         "gated": false
@@ -38475,7 +38482,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16",
-        "downloads": 130000,
+        "downloads": 120000,
         "likes": 440,
         "params": 33015632214,
         "gated": false
@@ -38801,7 +38808,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "XiaomiMiMo/MiMo-V2.5-Pro",
-        "downloads": 9900,
+        "downloads": 9700,
         "likes": 770,
         "params": 1023182841600,
         "gated": false
@@ -38852,7 +38859,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "Qwen/Qwen3.6-27B",
-        "downloads": 2400000,
+        "downloads": 2300000,
         "likes": 2400,
         "params": 27781427952,
         "gated": false
@@ -38944,7 +38951,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/gemma-4-31B-it-assistant",
-        "downloads": 220000,
+        "downloads": 210000,
         "likes": 340,
         "params": 469518596,
         "gated": false
@@ -39206,7 +39213,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "poolside/Laguna-M.1",
-        "downloads": 840000,
+        "downloads": 830000,
         "likes": 150,
         "params": 225795725568,
         "gated": false
@@ -39386,7 +39393,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "openbmb/MiniCPM-V-4.6-Thinking",
-        "downloads": 41000,
+        "downloads": 38000,
         "likes": 33,
         "params": 1300428016,
         "gated": false
@@ -39515,7 +39522,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "ibm-granite/granite-timeseries-ttm-r3",
-        "downloads": 740000,
+        "downloads": 1700000,
         "likes": 20,
         "params": 1414514,
         "gated": false
@@ -39648,7 +39655,7 @@
       "hub": {
         "repo": "google/gemma-4-12B",
         "downloads": 53000,
-        "likes": 840,
+        "likes": 850,
         "params": 11959730224,
         "gated": false
       }
@@ -39968,7 +39975,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "MiniMaxAI/MiniMax-M3",
-        "downloads": 160000,
+        "downloads": 150000,
         "likes": 1600,
         "params": 427040140160,
         "gated": false
@@ -40371,7 +40378,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "CohereLabs/North-Mini-Code-1.0",
-        "downloads": 8500,
+        "downloads": 8400,
         "likes": 590,
         "params": 30484303872,
         "gated": false
@@ -41841,7 +41848,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "moonshotai/Kimi-K3",
-        "downloads": 770000,
+        "downloads": 750000,
         "likes": 12000,
         "params": 2779931837184,
         "gated": false
@@ -42157,7 +42164,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Lightricks/LTX-2.5",
-        "downloads": 2600000,
+        "downloads": 2700000,
         "likes": 11000,
         "params": null,
         "gated": true
@@ -42245,7 +42252,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "LiquidAI/LFM2.5-2.6B",
-        "downloads": 54000,
+        "downloads": 52000,
         "likes": 860,
         "params": 2697198592,
         "gated": false
@@ -42291,7 +42298,7 @@
       "hub": {
         "repo": "MiniMaxAI/MiniMax-H3",
         "downloads": 6400000,
-        "likes": 6600,
+        "likes": 6700,
         "params": 33122992896,
         "gated": false
       }
@@ -42688,7 +42695,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Base-BF16",
-        "downloads": 6400,
+        "downloads": 6300,
         "likes": 29,
         "params": 31577937344,
         "gated": false
@@ -42733,7 +42740,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3.8-27B",
-        "downloads": 7800000,
+        "downloads": 7700000,
         "likes": 19000,
         "params": 27781427952,
         "gated": false
@@ -42991,7 +42998,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "meta-models/Muse-Glimmer-30B",
-        "downloads": 190000,
+        "downloads": 180000,
         "likes": 2100,
         "params": 29776626688,
         "gated": false
@@ -43080,8 +43087,8 @@
       "origin": "huggingface",
       "hub": {
         "repo": "inclusionAI/Ling-3.0-tiny",
-        "downloads": 15000,
-        "likes": 570,
+        "downloads": 14000,
+        "likes": 580,
         "params": 7893392800,
         "gated": false
       }
@@ -43347,7 +43354,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "deepseek-ai/DeepSeek-V4-Pro-0813",
-        "downloads": 150000,
+        "downloads": 140000,
         "likes": 910,
         "params": 1650497936906,
         "gated": false
@@ -43573,7 +43580,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "tencent/AuK",
-        "downloads": 1500,
+        "downloads": 1400,
         "likes": 390,
         "params": null,
         "gated": false
@@ -43618,8 +43625,8 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Qwen/Qwen3.8-Flash-Next",
-        "downloads": 3600000,
-        "likes": 6800,
+        "downloads": 3500000,
+        "likes": 6900,
         "params": 179999981459,
         "gated": false
       }
@@ -43702,7 +43709,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/timesfm-3.0-pytorch",
-        "downloads": 600000,
+        "downloads": 570000,
         "likes": 1000,
         "params": 330710976,
         "gated": false
@@ -43936,7 +43943,7 @@
       "hub": {
         "repo": "tencent/Hy4-preview",
         "downloads": 12000,
-        "likes": 540,
+        "likes": 550,
         "params": 779960992733,
         "gated": false
       }
@@ -44205,7 +44212,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "TaichuAI/ZDTaichu5.0-9B",
-        "downloads": 1800,
+        "downloads": 1700,
         "likes": 3000,
         "params": 9794197512,
         "gated": false
@@ -44293,8 +44300,8 @@
       "origin": "huggingface",
       "hub": {
         "repo": "openbmb/MiniCPM5-2B-DSpark",
-        "downloads": 720000,
-        "likes": 56,
+        "downloads": 680000,
+        "likes": 57,
         "params": 323776001,
         "gated": false
       }
@@ -44340,7 +44347,7 @@
       "hub": {
         "repo": "LiquidAI/LFM3-Audio-2B",
         "downloads": 10000,
-        "likes": 240,
+        "likes": 250,
         "params": 2002332928,
         "gated": false
       }
@@ -44555,7 +44562,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "deepseek-ai/DeepSeek-V4.1-Flash",
-        "downloads": 1900000,
+        "downloads": 1800000,
         "likes": 4900,
         "params": 763205315794,
         "gated": false
@@ -44597,7 +44604,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "google/embeddinggemma-2",
-        "downloads": 500000,
+        "downloads": 510000,
         "likes": 3200,
         "params": 744371512,
         "gated": false
@@ -44686,8 +44693,8 @@
       "origin": "huggingface",
       "hub": {
         "repo": "meta-models/Muse-Spark-Open-816B-A42B",
-        "downloads": 12000,
-        "likes": 750,
+        "downloads": 13000,
+        "likes": 740,
         "params": 822036529664,
         "gated": true
       }
@@ -44737,7 +44744,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "stepfun-ai/Step-5-Preview",
-        "downloads": 7000,
+        "downloads": 7200,
         "likes": 140,
         "params": 604339504832,
         "gated": false
@@ -44957,7 +44964,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "convaiinnovations/laya",
-        "downloads": 24000,
+        "downloads": 22000,
         "likes": 5900,
         "params": 421293830,
         "gated": false
@@ -44999,7 +45006,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "convaiinnovations/laya-multilingual",
-        "downloads": 15000,
+        "downloads": 14000,
         "likes": 420,
         "params": 321908998,
         "gated": false
@@ -45043,7 +45050,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Edge0/Audio8-ASR-Infinite",
-        "downloads": 1900,
+        "downloads": 1700,
         "likes": 880,
         "params": 4086224640,
         "gated": false
@@ -45131,7 +45138,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
-        "downloads": 77000,
+        "downloads": 76000,
         "likes": 590,
         "params": 310756322688,
         "gated": false
@@ -45175,7 +45182,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
-        "downloads": 25000,
+        "downloads": 24000,
         "likes": 810,
         "params": 1024216603392,
         "gated": false
@@ -45486,7 +45493,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "inclusionAI/Ming-3.0-tts-0.5B",
-        "downloads": 12000,
+        "downloads": 13000,
         "likes": 220,
         "params": 1479454868,
         "gated": false
@@ -45748,7 +45755,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "mistralai/Mistral-Large-4-1T-A52B",
-        "downloads": 11000,
+        "downloads": 12000,
         "likes": 1600,
         "params": null,
         "gated": false
@@ -45792,7 +45799,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "fishaudio/drama-3",
-        "downloads": 42000,
+        "downloads": 44000,
         "likes": 1200,
         "params": 35899643008,
         "gated": false
@@ -45875,7 +45882,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "LiquidAI/d1-3B",
-        "downloads": 32000,
+        "downloads": 31000,
         "likes": 500,
         "params": 3123483888,
         "gated": false
@@ -45920,7 +45927,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "openbmb/MiniCPM-V-4.7-1B",
-        "downloads": 330000,
+        "downloads": 350000,
         "likes": 410,
         "params": 1554476272,
         "gated": false
@@ -46097,7 +46104,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "openbmb/MiniCPM-V-4.7-35B-A3B",
-        "downloads": 610000,
+        "downloads": 640000,
         "likes": 1100,
         "params": 35212875824,
         "gated": false
@@ -46141,7 +46148,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
-        "downloads": 64000,
+        "downloads": 67000,
         "likes": 3100,
         "params": 33697781029,
         "gated": false
@@ -46192,6 +46199,48 @@
       }
     },
     {
+      "key": "autotrust-ai-lab/jev-35b",
+      "id": "autotrust/JEV-35B",
+      "slug": "jev-35b",
+      "lab": "autotrust-ai-lab",
+      "type": "encoder",
+      "name": "JEV-35B",
+      "description": "Text classifier from AutoTrust AI Lab, 36B parameters.",
+      "family": null,
+      "releaseDate": "2026-10-11",
+      "lastUpdated": "2026-10-14",
+      "knowledge": null,
+      "context": null,
+      "maxOutput": null,
+      "price": null,
+      "input": [
+        "text"
+      ],
+      "output": [],
+      "reasoning": false,
+      "toolCall": false,
+      "structuredOutput": false,
+      "attachment": false,
+      "openWeights": true,
+      "status": null,
+      "access": "open",
+      "rarity": "promo",
+      "set": 1047,
+      "license": {
+        "name": "Apache 2.0",
+        "source": "huggingface",
+        "url": "https://huggingface.co/autotrust/JEV-35B"
+      },
+      "origin": "huggingface",
+      "hub": {
+        "repo": "autotrust/JEV-35B",
+        "downloads": 1700000,
+        "likes": 2000,
+        "params": 35951822704,
+        "gated": false
+      }
+    },
+    {
       "key": "liquid/lfm2-5-24b-a2b",
       "id": "LiquidAI/LFM2.5-24B-A2B",
       "slug": "lfm2-5-24b-a2b",
@@ -46220,7 +46269,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 1047,
+      "set": 1048,
       "license": {
         "name": "LFM 1.0 license",
         "source": "huggingface",
@@ -46229,7 +46278,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "LiquidAI/LFM2.5-24B-A2B",
-        "downloads": 37000,
+        "downloads": 38000,
         "likes": 600,
         "params": 23971585280,
         "gated": false
@@ -46273,7 +46322,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 1048,
+      "set": 1049,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -46311,7 +46360,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 1049,
+      "set": 1050,
       "license": {
         "name": "FLUX Kommunity license",
         "source": "huggingface",
@@ -46321,7 +46370,7 @@
       "hub": {
         "repo": "black-forest-labs/flux-3-image-klein",
         "downloads": 180000,
-        "likes": 870,
+        "likes": 880,
         "params": 5548681984,
         "gated": true
       }
@@ -46356,7 +46405,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 1050,
+      "set": 1051,
       "license": {
         "name": "FLUX Kommunity license",
         "source": "huggingface",
@@ -46366,7 +46415,7 @@
       "hub": {
         "repo": "black-forest-labs/flux-3-image-klein-base",
         "downloads": 130000,
-        "likes": 220,
+        "likes": 230,
         "params": 5538458368,
         "gated": true
       }
@@ -46409,7 +46458,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 1051,
+      "set": 1052,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -46446,7 +46495,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 1052,
+      "set": 1053,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -46455,8 +46504,8 @@
       "origin": "huggingface",
       "hub": {
         "repo": "Edge0/Audio8-TTS-Realistic-Air",
-        "downloads": 14000,
-        "likes": 340,
+        "downloads": 15000,
+        "likes": 360,
         "params": 601159424,
         "gated": false
       }
@@ -46491,7 +46540,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 1053,
+      "set": 1054,
       "license": {
         "name": "FLUX Kommunity license",
         "source": "huggingface",
@@ -46500,8 +46549,8 @@
       "origin": "huggingface",
       "hub": {
         "repo": "black-forest-labs/flux-3-image-klein-comfy",
-        "downloads": 1100000,
-        "likes": 2600,
+        "downloads": 1200000,
+        "likes": 2700,
         "params": null,
         "gated": true
       }
@@ -46531,7 +46580,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 1054,
+      "set": 1055,
       "license": {
         "name": "Custom license",
         "source": "huggingface",
@@ -46575,7 +46624,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 1055,
+      "set": 1056,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -46584,7 +46633,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "tencent/Hy-Memory-30B-A3B",
-        "downloads": 6900,
+        "downloads": 7000,
         "likes": 320,
         "params": 30064725888,
         "gated": false
@@ -46626,7 +46675,7 @@
       "status": null,
       "access": "free",
       "rarity": "common",
-      "set": 1056,
+      "set": 1057,
       "license": {
         "name": "NVIDIA Open Model license",
         "source": "lab-default"
@@ -46663,7 +46712,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 1057,
+      "set": 1058,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -46672,7 +46721,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "XingChen-AGI/Xing4.0-29B-Intent",
-        "downloads": 5500,
+        "downloads": 5600,
         "likes": 330,
         "params": 31215031088,
         "gated": false
@@ -46712,7 +46761,7 @@
       "status": null,
       "access": "paid",
       "rarity": "common",
-      "set": 1058,
+      "set": 1059,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -46749,7 +46798,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 1059,
+      "set": 1060,
       "license": {
         "name": "OpenMDW 1.1 license",
         "source": "huggingface",
@@ -46758,9 +46807,51 @@
       "origin": "huggingface",
       "hub": {
         "repo": "nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16",
-        "downloads": 12000,
+        "downloads": 13000,
         "likes": 240,
         "params": 3975229440,
+        "gated": false
+      }
+    },
+    {
+      "key": "autotrust-ai-lab/autotrust-jev-27b-v1-1",
+      "id": "autotrust/AutoTrust-JEV-27B-v1.1",
+      "slug": "autotrust-jev-27b-v1-1",
+      "lab": "autotrust-ai-lab",
+      "type": "encoder",
+      "name": "AutoTrust-JEV-27B-v1.1",
+      "description": "Text classifier from AutoTrust AI Lab, 27B parameters.",
+      "family": null,
+      "releaseDate": "2026-10-17",
+      "lastUpdated": "2026-10-17",
+      "knowledge": null,
+      "context": null,
+      "maxOutput": null,
+      "price": null,
+      "input": [
+        "text"
+      ],
+      "output": [],
+      "reasoning": false,
+      "toolCall": false,
+      "structuredOutput": false,
+      "attachment": false,
+      "openWeights": true,
+      "status": null,
+      "access": "open",
+      "rarity": "promo",
+      "set": 1061,
+      "license": {
+        "name": "Apache 2.0",
+        "source": "huggingface",
+        "url": "https://huggingface.co/autotrust/AutoTrust-JEV-27B-v1.1"
+      },
+      "origin": "huggingface",
+      "hub": {
+        "repo": "autotrust/AutoTrust-JEV-27B-v1.1",
+        "downloads": 130000,
+        "likes": 1200,
+        "params": 27356728560,
         "gated": false
       }
     },
@@ -46799,7 +46890,7 @@
       "status": "deprecated",
       "access": "open",
       "rarity": "common",
-      "set": 1060,
+      "set": 1062,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -46849,7 +46940,7 @@
       "status": "deprecated",
       "access": "open",
       "rarity": "common",
-      "set": 1061,
+      "set": 1063,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -46899,7 +46990,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 1062,
+      "set": 1064,
       "license": {
         "name": "MIT",
         "source": "huggingface",
@@ -46908,7 +46999,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
-        "downloads": 280000,
+        "downloads": 300000,
         "likes": 5400,
         "params": 763205315794,
         "gated": false
@@ -46949,7 +47040,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 1063,
+      "set": 1065,
       "license": {
         "name": "Open license",
         "source": "lab-default"
@@ -46987,7 +47078,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 1064,
+      "set": 1066,
       "license": {
         "name": "LFM 1.0 license",
         "source": "huggingface",
@@ -46996,7 +47087,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "LiquidAI/LFM3-VL-2B",
-        "downloads": 15000,
+        "downloads": 16000,
         "likes": 270,
         "params": 1918181888,
         "gated": false
@@ -47038,7 +47129,7 @@
       "status": null,
       "access": "open",
       "rarity": "common",
-      "set": 1065,
+      "set": 1067,
       "license": {
         "name": "MiniMax Community license",
         "source": "huggingface",
@@ -47047,7 +47138,7 @@
       "origin": "models.dev",
       "hub": {
         "repo": "MiniMaxAI/MiniMax-M3.1-Flash",
-        "downloads": 49000,
+        "downloads": 51000,
         "likes": 560,
         "params": 220490854016,
         "gated": false
@@ -47082,7 +47173,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 1066,
+      "set": 1068,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -47091,7 +47182,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "XHToken/Spark-X2.6-4B",
-        "downloads": 23000,
+        "downloads": 24000,
         "likes": 1000,
         "params": 4112079360,
         "gated": false
@@ -47126,7 +47217,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 1067,
+      "set": 1069,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -47135,7 +47226,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "RecursiveSI/flint",
-        "downloads": 43000,
+        "downloads": 44000,
         "likes": 1400,
         "params": 39785287456,
         "gated": false
@@ -47172,7 +47263,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 1068,
+      "set": 1070,
       "license": {
         "name": "LFM 1.0 license",
         "source": "huggingface",
@@ -47181,8 +47272,8 @@
       "origin": "huggingface",
       "hub": {
         "repo": "LiquidAI/LFM3-Omni-2B",
-        "downloads": 16000,
-        "likes": 400,
+        "downloads": 17000,
+        "likes": 410,
         "params": 2166928384,
         "gated": false
       }
@@ -47217,7 +47308,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 1069,
+      "set": 1071,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -47226,7 +47317,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "openbmb/MiniCPM-OCR-1.0",
-        "downloads": 55000,
+        "downloads": 69000,
         "likes": 450,
         "params": 1300434160,
         "gated": false
@@ -47268,7 +47359,7 @@
       "status": null,
       "access": "paid",
       "rarity": "rare",
-      "set": 1070,
+      "set": 1072,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -47276,11 +47367,54 @@
       "origin": "models.dev",
       "hub": {
         "repo": "moonshotai/Kimi-K3.1-Pro",
-        "downloads": 23000,
-        "likes": 1600,
+        "downloads": 26000,
+        "likes": 1700,
         "params": 2780110363392,
         "gated": false
       }
+    },
+    {
+      "key": "morph/morph-kimik31",
+      "id": "morph-kimik31",
+      "slug": "morph-kimik31",
+      "lab": "morph",
+      "type": "text",
+      "name": "Kimi K3.1 Pro",
+      "description": "Multimodal Kimi model with 1M context and always-on reasoning for coding, 3D creation, financial research, and agentic work",
+      "family": "kimi-k3",
+      "releaseDate": "2026-10-23",
+      "lastUpdated": "2026-10-23",
+      "knowledge": null,
+      "context": 1048576,
+      "maxOutput": 1048576,
+      "price": {
+        "input": 2.5,
+        "output": 14,
+        "cacheRead": 0.29,
+        "cacheWrite": null
+      },
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ],
+      "reasoning": true,
+      "toolCall": true,
+      "structuredOutput": true,
+      "attachment": true,
+      "openWeights": false,
+      "status": null,
+      "access": "paid",
+      "rarity": "rare",
+      "set": 1073,
+      "license": {
+        "name": "Proprietary",
+        "source": "proprietary"
+      },
+      "origin": "models.dev",
+      "hub": null
     },
     {
       "key": "moonshot/kimi-k3-1-pro-highspeed",
@@ -47318,7 +47452,7 @@
       "status": null,
       "access": "paid",
       "rarity": "holo",
-      "set": 1071,
+      "set": 1074,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -47355,7 +47489,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 1072,
+      "set": 1075,
       "license": {
         "name": "LFM 1.0 license",
         "source": "huggingface",
@@ -47364,8 +47498,8 @@
       "origin": "huggingface",
       "hub": {
         "repo": "LiquidAI/LFM3-1.7B",
-        "downloads": 70000,
-        "likes": 1500,
+        "downloads": 74000,
+        "likes": 1600,
         "params": 1728801536,
         "gated": false
       }
@@ -47400,7 +47534,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 1073,
+      "set": 1076,
       "license": {
         "name": "LFM 1.0 license",
         "source": "huggingface",
@@ -47409,8 +47543,8 @@
       "origin": "huggingface",
       "hub": {
         "repo": "LiquidAI/d1-2B",
-        "downloads": 9000,
-        "likes": 240,
+        "downloads": 9700,
+        "likes": 250,
         "params": 1918181888,
         "gated": false
       }
@@ -47444,7 +47578,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 1074,
+      "set": 1077,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -47495,7 +47629,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 1075,
+      "set": 1078,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
@@ -47530,7 +47664,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 1076,
+      "set": 1079,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -47539,8 +47673,8 @@
       "origin": "huggingface",
       "hub": {
         "repo": "speridlabs/idol",
-        "downloads": 21000,
-        "likes": 1000,
+        "downloads": 23000,
+        "likes": 1300,
         "params": null,
         "gated": false
       }
@@ -47575,7 +47709,7 @@
       "status": null,
       "access": "open",
       "rarity": "promo",
-      "set": 1077,
+      "set": 1080,
       "license": {
         "name": "Apache 2.0",
         "source": "huggingface",
@@ -47584,7 +47718,7 @@
       "origin": "huggingface",
       "hub": {
         "repo": "microsoft/Mage-VL-Cowork",
-        "downloads": 3100,
+        "downloads": 3600,
         "likes": 210,
         "params": 4741793792,
         "gated": false
@@ -47625,7 +47759,7 @@
       "status": null,
       "access": "paid",
       "rarity": "uncommon",
-      "set": 1078,
+      "set": 1081,
       "license": {
         "name": "Proprietary",
         "source": "proprietary"
