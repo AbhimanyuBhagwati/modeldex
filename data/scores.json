@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-10T14:59:06.466Z",
+  "updatedAt": "2026-11-11T14:29:52.436Z",
   "boards": {
     "eci": {
       "count": 255,
@@ -23,8 +23,8 @@
       "published": "2026-11-09"
     },
     "webdev": {
-      "count": 154,
-      "published": "2026-11-09"
+      "count": 156,
+      "published": "2026-11-10"
     },
     "vision": {
       "count": 167,
@@ -49,19 +49,19 @@
   },
   "bench": {
     "gpqa": {
-      "count": 335
+      "count": 336
     },
     "swe": {
       "count": 35
     },
     "frontiermath": {
-      "count": 124
+      "count": 125
     },
     "aime": {
-      "count": 315
+      "count": 316
     },
     "simpleqa": {
-      "count": 102
+      "count": 103
     }
   },
   "models": {
@@ -96,7 +96,7 @@
         },
         "webdev": {
           "score": 1625,
-          "rank": 25,
+          "rank": 26,
           "as": "Claude Fable 5 (High)"
         },
         "vision": {
@@ -142,8 +142,8 @@
           "as": "Claude Fable 5.1 (Max)"
         },
         "webdev": {
-          "score": 1745,
-          "rank": 5,
+          "score": 1742,
+          "rank": 7,
           "as": "Claude Fable 5.1 (Max)"
         },
         "vision": {
@@ -166,6 +166,11 @@
           "score": 174.2,
           "rank": 1,
           "as": "Claude Fable 5.2"
+        },
+        "webdev": {
+          "score": 1836,
+          "rank": 1,
+          "as": "Claude Fable 5.2 (xHigh)"
         }
       },
       "bench": {
@@ -206,7 +211,7 @@
         },
         "webdev": {
           "score": 1330,
-          "rank": 130,
+          "rank": 132,
           "as": "Claude Haiku 4.5 (20251001)"
         }
       },
@@ -246,8 +251,8 @@
           "as": "Claude Haiku 5.5 (High)"
         },
         "webdev": {
-          "score": 1595,
-          "rank": 36,
+          "score": 1594,
+          "rank": 38,
           "as": "Claude Haiku 5.5 (High)"
         }
       },
@@ -289,7 +294,7 @@
         },
         "webdev": {
           "score": 1469,
-          "rank": 76,
+          "rank": 78,
           "as": "Claude Opus 4.5 (20251101)"
         }
       },
@@ -329,8 +334,8 @@
           "as": "Claude Opus 4.6 (High)"
         },
         "webdev": {
-          "score": 1546,
-          "rank": 50,
+          "score": 1547,
+          "rank": 52,
           "as": "Claude Opus 4.6 (High)"
         },
         "vision": {
@@ -378,7 +383,7 @@
         },
         "webdev": {
           "score": 1557,
-          "rank": 46,
+          "rank": 48,
           "as": "Claude Opus 4.7 (High)"
         },
         "vision": {
@@ -426,7 +431,7 @@
         },
         "webdev": {
           "score": 1555,
-          "rank": 47,
+          "rank": 49,
           "as": "Claude Opus 4.8 (High)"
         },
         "vision": {
@@ -473,7 +478,7 @@
         },
         "webdev": {
           "score": 1691,
-          "rank": 9,
+          "rank": 10,
           "as": "Claude Opus 5 (Max)"
         },
         "vision": {
@@ -519,8 +524,8 @@
           "as": "Claude Opus 5.5 (High)"
         },
         "webdev": {
-          "score": 1818,
-          "rank": 1,
+          "score": 1814,
+          "rank": 2,
           "as": "Claude Opus 5.5 (Max)"
         },
         "vision": {
@@ -567,7 +572,7 @@
         },
         "webdev": {
           "score": 1385,
-          "rank": 110,
+          "rank": 112,
           "as": "Claude Sonnet 4.5 (20250929)"
         }
       },
@@ -609,7 +614,7 @@
         },
         "webdev": {
           "score": 1522,
-          "rank": 58,
+          "rank": 60,
           "as": "Claude Sonnet 4.6"
         },
         "vision": {
@@ -656,7 +661,7 @@
         },
         "webdev": {
           "score": 1539,
-          "rank": 52,
+          "rank": 54,
           "as": "Claude Sonnet 5 (High)"
         },
         "vision": {
@@ -702,8 +707,8 @@
           "as": "Claude Sonnet 5.5 (xHigh)"
         },
         "webdev": {
-          "score": 1774,
-          "rank": 2,
+          "score": 1773,
+          "rank": 3,
           "as": "Claude Sonnet 5.5 (xHigh)"
         },
         "vision": {
@@ -745,7 +750,7 @@
         },
         "webdev": {
           "score": 1236,
-          "rank": 145,
+          "rank": 147,
           "as": "Trinity Large Thinking"
         }
       },
@@ -850,12 +855,12 @@
       }
     },
     "bytedance/doubao-seed-2-1-pro-260628": {
-      "quality": 61,
+      "quality": 60,
       "basis": "webdev",
       "boards": {
         "webdev": {
           "score": 1519,
-          "rank": 60,
+          "rank": 63,
           "as": "Seed2.1 Pro Preview"
         }
       },
@@ -1262,8 +1267,8 @@
           "as": "DeepSeek-V3.2"
         },
         "webdev": {
-          "score": 1363,
-          "rank": 117,
+          "score": 1362,
+          "rank": 119,
           "as": "DeepSeek-V3.2 (Thinking)"
         }
       },
@@ -1300,7 +1305,7 @@
         },
         "webdev": {
           "score": 1664,
-          "rank": 16,
+          "rank": 17,
           "as": "DeepSeek-V4.1-Flash-20261017 (Max)"
         },
         "vision": {
@@ -1347,7 +1352,7 @@
         },
         "webdev": {
           "score": 1582,
-          "rank": 40,
+          "rank": 43,
           "as": "DeepSeek-V4-Flash (High)"
         }
       },
@@ -1401,7 +1406,7 @@
         },
         "webdev": {
           "score": 1448,
-          "rank": 81,
+          "rank": 83,
           "as": "DeepSeek-V4-Pro"
         }
       },
@@ -1553,8 +1558,8 @@
           "as": "Gemini 2.5 Pro"
         },
         "webdev": {
-          "score": 1227,
-          "rank": 147,
+          "score": 1228,
+          "rank": 149,
           "as": "Gemini 2.5 Pro"
         },
         "vision": {
@@ -1646,7 +1651,7 @@
         },
         "webdev": {
           "score": 1256,
-          "rank": 140,
+          "rank": 142,
           "as": "Gemini 3.1 Flash-Lite Preview"
         },
         "vision": {
@@ -1688,7 +1693,7 @@
         },
         "webdev": {
           "score": 1446,
-          "rank": 82,
+          "rank": 84,
           "as": "Gemini 3.1 Pro Preview"
         },
         "vision": {
@@ -1749,7 +1754,7 @@
         },
         "webdev": {
           "score": 1500,
-          "rank": 67,
+          "rank": 69,
           "as": "Gemini 3.5 Flash (High)"
         },
         "vision": {
@@ -1797,7 +1802,7 @@
         },
         "webdev": {
           "score": 1435,
-          "rank": 89,
+          "rank": 91,
           "as": "Gemini 3.5 Flash-Lite"
         },
         "vision": {
@@ -1843,7 +1848,7 @@
         },
         "webdev": {
           "score": 1538,
-          "rank": 53,
+          "rank": 55,
           "as": "Gemini 3.6 Flash (High)"
         },
         "vision": {
@@ -1890,7 +1895,7 @@
         },
         "webdev": {
           "score": 1588,
-          "rank": 38,
+          "rank": 40,
           "as": "Gemini 3.7 Flash (High)"
         },
         "vision": {
@@ -1936,8 +1941,8 @@
           "as": "Gemini 3.8 Flash (High)"
         },
         "webdev": {
-          "score": 1584,
-          "rank": 39,
+          "score": 1583,
+          "rank": 42,
           "as": "Gemini 3.8 Flash (High)"
         },
         "vision": {
@@ -1983,8 +1988,8 @@
           "as": "Gemini 3 Flash"
         },
         "webdev": {
-          "score": 1440,
-          "rank": 85,
+          "score": 1439,
+          "rank": 87,
           "as": "Gemini 3 Flash"
         },
         "vision": {
@@ -2048,8 +2053,8 @@
           "as": "Gemini 4 Argon (High)"
         },
         "webdev": {
-          "score": 1683,
-          "rank": 11,
+          "score": 1682,
+          "rank": 12,
           "as": "Gemini 4 Argon (High)"
         }
       },
@@ -2058,6 +2063,38 @@
         "frontiermath": 0.86,
         "aime": 1,
         "simpleqa": 0.76
+      }
+    },
+    "google/gemini-4-carbon": {
+      "quality": 100,
+      "basis": "text",
+      "boards": {
+        "text": {
+          "score": 1538,
+          "rank": 1,
+          "as": "Gemini 4 Carbon (High)"
+        },
+        "coding": {
+          "score": 1563,
+          "rank": 1,
+          "as": "Gemini 4 Carbon (High)"
+        },
+        "creative": {
+          "score": 1532,
+          "rank": 3,
+          "as": "Gemini 4 Carbon (High)"
+        },
+        "webdev": {
+          "score": 1768,
+          "rank": 4,
+          "as": "Gemini 4 Carbon (High)"
+        }
+      },
+      "bench": {
+        "gpqa": 0.965,
+        "frontiermath": 0.905,
+        "aime": 1,
+        "simpleqa": 0.777
       }
     },
     "google/gemini-omni-flash-preview": {
@@ -2279,7 +2316,7 @@
         },
         "webdev": {
           "score": 1358,
-          "rank": 119,
+          "rank": 121,
           "as": "Gemma 4 26B A4B"
         },
         "vision": {
@@ -2323,8 +2360,8 @@
           "as": "Gemma 4 31B"
         },
         "webdev": {
-          "score": 1369,
-          "rank": 115,
+          "score": 1370,
+          "rank": 117,
           "as": "Gemma 4 31B"
         },
         "vision": {
@@ -2392,7 +2429,7 @@
         },
         "webdev": {
           "score": 1193,
-          "rank": 150,
+          "rank": 152,
           "as": "Granite 4.1 8B"
         }
       },
@@ -2468,7 +2505,7 @@
         },
         "webdev": {
           "score": 1171,
-          "rank": 151,
+          "rank": 153,
           "as": "Mercury 2"
         }
       },
@@ -2757,12 +2794,12 @@
       }
     },
     "meta/muse-ember-1-0": {
-      "quality": 78,
+      "quality": 77,
       "basis": "webdev",
       "boards": {
         "webdev": {
-          "score": 1608,
-          "rank": 34,
+          "score": 1609,
+          "rank": 36,
           "as": "Muse Ember (Max)"
         }
       },
@@ -2798,8 +2835,8 @@
           "as": "Muse Spark 1.1"
         },
         "webdev": {
-          "score": 1542,
-          "rank": 51,
+          "score": 1541,
+          "rank": 53,
           "as": "Muse Spark 1.1"
         },
         "vision": {
@@ -2843,7 +2880,7 @@
         },
         "webdev": {
           "score": 1534,
-          "rank": 56,
+          "rank": 58,
           "as": "Muse Spark 1.2 (xHigh)"
         },
         "vision": {
@@ -2886,8 +2923,8 @@
           "as": "Muse Spark 1.3 (Max)"
         },
         "webdev": {
-          "score": 1654,
-          "rank": 19,
+          "score": 1655,
+          "rank": 20,
           "as": "Muse Spark 1.3 (Max)"
         },
         "vision": {
@@ -2948,8 +2985,8 @@
           "as": "Muse Wonder (Max)"
         },
         "webdev": {
-          "score": 1650,
-          "rank": 20,
+          "score": 1649,
+          "rank": 21,
           "as": "Muse Wonder (Max)"
         }
       },
@@ -3107,7 +3144,7 @@
         },
         "webdev": {
           "score": 1299,
-          "rank": 134,
+          "rank": 136,
           "as": "MiniMax-M2"
         }
       },
@@ -3139,7 +3176,7 @@
         },
         "webdev": {
           "score": 1384,
-          "rank": 112,
+          "rank": 113,
           "as": "MiniMax-M2.1 Preview"
         }
       },
@@ -3171,7 +3208,7 @@
         },
         "webdev": {
           "score": 1386,
-          "rank": 109,
+          "rank": 111,
           "as": "MiniMax-M2.5"
         }
       },
@@ -3203,7 +3240,7 @@
         },
         "webdev": {
           "score": 1398,
-          "rank": 104,
+          "rank": 106,
           "as": "MiniMax-M2.7"
         }
       },
@@ -3240,7 +3277,7 @@
         },
         "webdev": {
           "score": 1484,
-          "rank": 72,
+          "rank": 74,
           "as": "MiniMax-M3"
         },
         "vision": {
@@ -3259,7 +3296,7 @@
       "basis": "webdev",
       "boards": {
         "webdev": {
-          "score": 1582,
+          "score": 1585,
           "rank": 41,
           "as": "MiniMax-M3.1-Flash"
         }
@@ -3288,8 +3325,8 @@
       "basis": "webdev",
       "boards": {
         "webdev": {
-          "score": 1195,
-          "rank": 149,
+          "score": 1196,
+          "rank": 151,
           "as": "Devstral 2"
         }
       },
@@ -3381,7 +3418,7 @@
         },
         "webdev": {
           "score": 1233,
-          "rank": 146,
+          "rank": 148,
           "as": "Mistral Large 3"
         },
         "vision": {
@@ -3422,8 +3459,8 @@
           "as": "Mistral Large 4"
         },
         "webdev": {
-          "score": 1562,
-          "rank": 45,
+          "score": 1564,
+          "rank": 47,
           "as": "Mistral Large 4"
         },
         "vision": {
@@ -3537,7 +3574,7 @@
         },
         "webdev": {
           "score": 1263,
-          "rank": 138,
+          "rank": 140,
           "as": "Mistral Medium 3.5"
         },
         "vision": {
@@ -3701,7 +3738,7 @@
         },
         "webdev": {
           "score": 1436,
-          "rank": 88,
+          "rank": 90,
           "as": "Kimi K2.5 (Thinking)"
         },
         "vision": {
@@ -3746,7 +3783,7 @@
         },
         "webdev": {
           "score": 1509,
-          "rank": 64,
+          "rank": 66,
           "as": "Kimi K2.6"
         },
         "vision": {
@@ -3774,7 +3811,7 @@
         },
         "webdev": {
           "score": 1474,
-          "rank": 75,
+          "rank": 77,
           "as": "Kimi K2.7 Code"
         }
       },
@@ -3847,8 +3884,8 @@
           "as": "Kimi K3 (Max)"
         },
         "webdev": {
-          "score": 1657,
-          "rank": 17,
+          "score": 1658,
+          "rank": 18,
           "as": "Kimi K3 (Max)"
         }
       },
@@ -3885,7 +3922,7 @@
         },
         "webdev": {
           "score": 1688,
-          "rank": 10,
+          "rank": 11,
           "as": "Kimi K3.1 Pro (Max)"
         }
       },
@@ -3922,7 +3959,7 @@
         },
         "webdev": {
           "score": 1664,
-          "rank": 16,
+          "rank": 17,
           "as": "DeepSeek-V4.1-Flash-20261017 (Max)"
         },
         "vision": {
@@ -4003,7 +4040,7 @@
         },
         "webdev": {
           "score": 1608,
-          "rank": 35,
+          "rank": 37,
           "as": "GLM-5.2 (Max)"
         }
       },
@@ -4046,7 +4083,7 @@
         },
         "webdev": {
           "score": 1622,
-          "rank": 28,
+          "rank": 29,
           "as": "GLM-5.3 (Max)"
         }
       },
@@ -4088,7 +4125,7 @@
         },
         "webdev": {
           "score": 1609,
-          "rank": 33,
+          "rank": 35,
           "as": "GLM-5.3-Flash"
         },
         "vision": {
@@ -4133,8 +4170,8 @@
           "as": "Kimi K3 (Max)"
         },
         "webdev": {
-          "score": 1657,
-          "rank": 17,
+          "score": 1658,
+          "rank": 18,
           "as": "Kimi K3 (Max)"
         }
       },
@@ -4171,7 +4208,7 @@
         },
         "webdev": {
           "score": 1688,
-          "rank": 10,
+          "rank": 11,
           "as": "Kimi K3.1 Pro (Max)"
         }
       },
@@ -4687,7 +4724,7 @@
         },
         "webdev": {
           "score": 1417,
-          "rank": 95,
+          "rank": 97,
           "as": "GPT-5 (Medium)"
         },
         "vision": {
@@ -4735,7 +4772,7 @@
         },
         "webdev": {
           "score": 1397,
-          "rank": 106,
+          "rank": 108,
           "as": "GPT-5.1 (Medium)"
         },
         "vision": {
@@ -4782,7 +4819,7 @@
         },
         "webdev": {
           "score": 1420,
-          "rank": 94,
+          "rank": 96,
           "as": "GPT-5.2"
         },
         "vision": {
@@ -4819,7 +4856,7 @@
       "boards": {
         "webdev": {
           "score": 1406,
-          "rank": 114,
+          "rank": 116,
           "as": "GPT-5.3-Codex (Codex Harness)"
         }
       },
@@ -4858,7 +4895,7 @@
         },
         "webdev": {
           "score": 1462,
-          "rank": 78,
+          "rank": 80,
           "as": "GPT-5.4 (High, Codex Harness)"
         },
         "vision": {
@@ -4906,7 +4943,7 @@
         },
         "webdev": {
           "score": 1398,
-          "rank": 105,
+          "rank": 107,
           "as": "GPT-5.4 mini (High)"
         },
         "vision": {
@@ -5011,7 +5048,7 @@
         },
         "webdev": {
           "score": 1512,
-          "rank": 63,
+          "rank": 65,
           "as": "GPT-5.5 (xHigh, Codex Harness)"
         },
         "vision": {
@@ -5072,7 +5109,7 @@
         },
         "webdev": {
           "score": 1519,
-          "rank": 61,
+          "rank": 62,
           "as": "GPT-5.6 Luna (xHigh, Codex Harness)"
         },
         "vision": {
@@ -5119,7 +5156,7 @@
         },
         "webdev": {
           "score": 1615,
-          "rank": 32,
+          "rank": 33,
           "as": "GPT-5.6 Sol (xHigh, Codex Harness)"
         },
         "vision": {
@@ -5166,7 +5203,7 @@
         },
         "webdev": {
           "score": 1520,
-          "rank": 59,
+          "rank": 61,
           "as": "GPT-5.6 Terra (xHigh, Codex Harness)"
         },
         "vision": {
@@ -5339,7 +5376,7 @@
         },
         "webdev": {
           "score": 1679,
-          "rank": 12,
+          "rank": 13,
           "as": "GPT-6.1 Terra (Max)"
         }
       },
@@ -5380,8 +5417,8 @@
           "as": "GPT-6 Astra (Max)"
         },
         "webdev": {
-          "score": 1767,
-          "rank": 4,
+          "score": 1764,
+          "rank": 5,
           "as": "GPT-6 Astra (Max)"
         },
         "vision": {
@@ -5427,8 +5464,8 @@
           "as": "GPT-6 Luna (Max)"
         },
         "webdev": {
-          "score": 1578,
-          "rank": 43,
+          "score": 1577,
+          "rank": 45,
           "as": "GPT-6 Luna (Max)"
         },
         "vision": {
@@ -5474,8 +5511,8 @@
           "as": "GPT-6 Sol (Max)"
         },
         "webdev": {
-          "score": 1674,
-          "rank": 14,
+          "score": 1673,
+          "rank": 15,
           "as": "GPT-6 Sol (Max)"
         },
         "vision": {
@@ -5789,12 +5826,12 @@
       }
     },
     "poolside/laguna-m-1": {
-      "quality": 20,
+      "quality": 19,
       "basis": "webdev",
       "boards": {
         "webdev": {
-          "score": 1349,
-          "rank": 124,
+          "score": 1350,
+          "rank": 126,
           "as": "Laguna M.1"
         }
       },
@@ -5806,7 +5843,7 @@
       "boards": {
         "webdev": {
           "score": 1303,
-          "rank": 133,
+          "rank": 135,
           "as": "Laguna XS.2"
         }
       },
@@ -6370,7 +6407,7 @@
         },
         "webdev": {
           "score": 1360,
-          "rank": 118,
+          "rank": 120,
           "as": "Qwen3.5-122B-A10B"
         },
         "vision": {
@@ -6407,7 +6444,7 @@
         },
         "webdev": {
           "score": 1357,
-          "rank": 122,
+          "rank": 124,
           "as": "Qwen3.5-27B"
         },
         "vision": {
@@ -6449,7 +6486,7 @@
         },
         "webdev": {
           "score": 1253,
-          "rank": 141,
+          "rank": 143,
           "as": "Qwen3.5-35B-A3B"
         }
       },
@@ -6489,7 +6526,7 @@
         },
         "webdev": {
           "score": 1400,
-          "rank": 100,
+          "rank": 103,
           "as": "Qwen3.5-397B-A17B"
         },
         "vision": {
@@ -6557,8 +6594,8 @@
           "as": "Qwen3.5-Flash"
         },
         "webdev": {
-          "score": 1243,
-          "rank": 143,
+          "score": 1244,
+          "rank": 145,
           "as": "Qwen3.5-Flash"
         }
       },
@@ -6665,7 +6702,7 @@
         },
         "webdev": {
           "score": 1482,
-          "rank": 73,
+          "rank": 75,
           "as": "Qwen3.6-Max-Preview"
         }
       },
@@ -6707,7 +6744,7 @@
         },
         "webdev": {
           "score": 1461,
-          "rank": 79,
+          "rank": 81,
           "as": "Qwen3.6-Plus"
         }
       },
@@ -6760,7 +6797,7 @@
         },
         "webdev": {
           "score": 1515,
-          "rank": 62,
+          "rank": 64,
           "as": "Qwen3.7-Max (20260517)"
         }
       },
@@ -6843,8 +6880,8 @@
           "as": "Qwen3.8-27B"
         },
         "webdev": {
-          "score": 1591,
-          "rank": 37,
+          "score": 1590,
+          "rank": 39,
           "as": "Qwen3.8-27B"
         },
         "vision": {
@@ -6856,12 +6893,12 @@
       "bench": {}
     },
     "qwen/qwen3-8-flash-next": {
-      "quality": 84,
+      "quality": 83,
       "basis": "webdev",
       "boards": {
         "webdev": {
           "score": 1624,
-          "rank": 26,
+          "rank": 28,
           "as": "Qwen3.8-Flash-Next"
         }
       },
@@ -6898,7 +6935,7 @@
         },
         "webdev": {
           "score": 1670,
-          "rank": 15,
+          "rank": 16,
           "as": "Qwen3.8-Max"
         },
         "vision": {
@@ -6950,7 +6987,7 @@
         },
         "webdev": {
           "score": 1275,
-          "rank": 136,
+          "rank": 138,
           "as": "Qwen3-Coder-480B-A35B-Instruct"
         }
       },
@@ -7119,8 +7156,8 @@
           "as": "Step 5 Preview"
         },
         "webdev": {
-          "score": 1572,
-          "rank": 44,
+          "score": 1573,
+          "rank": 46,
           "as": "Step 5 Preview (High)"
         },
         "vision": {
@@ -7157,7 +7194,7 @@
         },
         "webdev": {
           "score": 1506,
-          "rank": 66,
+          "rank": 68,
           "as": "Hy3"
         }
       },
@@ -7189,7 +7226,7 @@
         },
         "webdev": {
           "score": 1358,
-          "rank": 120,
+          "rank": 122,
           "as": "Hy3 preview"
         }
       },
@@ -7200,8 +7237,8 @@
       "basis": "webdev",
       "boards": {
         "webdev": {
-          "score": 1631,
-          "rank": 24,
+          "score": 1632,
+          "rank": 25,
           "as": "Hy4 preview"
         }
       },
@@ -7238,7 +7275,7 @@
         },
         "webdev": {
           "score": 1414,
-          "rank": 96,
+          "rank": 98,
           "as": "Inkling"
         }
       },
@@ -7274,8 +7311,8 @@
           "as": "Inkling-Small"
         },
         "webdev": {
-          "score": 1407,
-          "rank": 97,
+          "score": 1408,
+          "rank": 99,
           "as": "Inkling-Small"
         },
         "vision": {
@@ -7324,7 +7361,7 @@
         },
         "webdev": {
           "score": 1369,
-          "rank": 116,
+          "rank": 118,
           "as": "Solar Pro 4"
         }
       },
@@ -7378,7 +7415,7 @@
         },
         "webdev": {
           "score": 1357,
-          "rank": 121,
+          "rank": 123,
           "as": "Grok 4.3"
         },
         "vision": {
@@ -7425,7 +7462,7 @@
         },
         "webdev": {
           "score": 1552,
-          "rank": 49,
+          "rank": 51,
           "as": "Grok 4.5"
         },
         "vision": {
@@ -7472,7 +7509,7 @@
         },
         "webdev": {
           "score": 1618,
-          "rank": 31,
+          "rank": 32,
           "as": "Grok 4.6 (High)"
         },
         "vision": {
@@ -7518,8 +7555,8 @@
           "as": "Grok 4.7 (xHigh)"
         },
         "webdev": {
-          "score": 1639,
-          "rank": 22,
+          "score": 1641,
+          "rank": 23,
           "as": "Grok 4.7 (xHigh)"
         },
         "vision": {
@@ -7612,7 +7649,7 @@
         },
         "webdev": {
           "score": 1438,
-          "rank": 87,
+          "rank": 88,
           "as": "MiMo-V2.5"
         },
         "vision": {
@@ -7649,7 +7686,7 @@
         },
         "webdev": {
           "score": 1479,
-          "rank": 74,
+          "rank": 76,
           "as": "MiMo-V2.5-Pro"
         }
       },
@@ -7680,8 +7717,8 @@
           "as": "MiMo-V2.6-Flash"
         },
         "webdev": {
-          "score": 1637,
-          "rank": 23,
+          "score": 1638,
+          "rank": 24,
           "as": "MiMo-V2.6-Flash"
         },
         "vision": {
@@ -7841,7 +7878,7 @@
         },
         "webdev": {
           "score": 1342,
-          "rank": 126,
+          "rank": 127,
           "as": "GLM-4.6"
         }
       },
@@ -7905,7 +7942,7 @@
         },
         "webdev": {
           "score": 1435,
-          "rank": 91,
+          "rank": 93,
           "as": "GLM-4.7"
         }
       },
@@ -7976,7 +8013,7 @@
         },
         "webdev": {
           "score": 1435,
-          "rank": 90,
+          "rank": 92,
           "as": "GLM-5"
         }
       },
@@ -8017,7 +8054,7 @@
         },
         "webdev": {
           "score": 1508,
-          "rank": 65,
+          "rank": 67,
           "as": "GLM-5.1"
         }
       },
@@ -8060,7 +8097,7 @@
         },
         "webdev": {
           "score": 1608,
-          "rank": 35,
+          "rank": 37,
           "as": "GLM-5.2 (Max)"
         }
       },
@@ -8103,7 +8140,7 @@
         },
         "webdev": {
           "score": 1622,
-          "rank": 28,
+          "rank": 29,
           "as": "GLM-5.3 (Max)"
         }
       },
@@ -8145,7 +8182,7 @@
         },
         "webdev": {
           "score": 1609,
-          "rank": 33,
+          "rank": 35,
           "as": "GLM-5.3-Flash"
         },
         "vision": {
@@ -8186,7 +8223,7 @@
         },
         "webdev": {
           "score": 1399,
-          "rank": 103,
+          "rank": 105,
           "as": "GLM-5V-Turbo"
         },
         "vision": {

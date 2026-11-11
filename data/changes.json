@@ -2,6 +2,83 @@
   "version": 1,
   "events": [
     {
+      "date": "2026-11-11",
+      "kind": "added",
+      "key": "ibm/granite-3-3-8b-instruct",
+      "name": "granite-3.3-8b-instruct",
+      "lab": "ibm"
+    },
+    {
+      "date": "2026-11-11",
+      "kind": "added",
+      "key": "meta/llama-guard-4-12b",
+      "name": "Llama-Guard-4-12B",
+      "lab": "meta"
+    },
+    {
+      "date": "2026-11-11",
+      "kind": "added",
+      "key": "nvidia/music-flamingo-hf",
+      "name": "music-flamingo-hf",
+      "lab": "nvidia"
+    },
+    {
+      "date": "2026-11-11",
+      "kind": "added",
+      "key": "ibm/granite-speech-5-0-470m-turboctc-nc",
+      "name": "granite-speech-5.0-470m-turboctc-nc",
+      "lab": "ibm"
+    },
+    {
+      "date": "2026-11-11",
+      "kind": "added",
+      "key": "autotrust-ai-lab/autotrust-decider-pro-35b",
+      "name": "AutoTrust-Decider-Pro-35B",
+      "lab": "autotrust-ai-lab"
+    },
+    {
+      "date": "2026-11-11",
+      "kind": "added",
+      "key": "autotrust-ai-lab/autotrust-decider-pro-vision-27b-v1-1",
+      "name": "AutoTrust-Decider-Pro-Vision-27B-v1.1",
+      "lab": "autotrust-ai-lab"
+    },
+    {
+      "date": "2026-11-11",
+      "kind": "added",
+      "key": "minimax/minimax-h3-image",
+      "name": "MiniMax-H3-Image",
+      "lab": "minimax"
+    },
+    {
+      "date": "2026-11-11",
+      "kind": "added",
+      "key": "google/gemini-4-carbon",
+      "name": "Gemini 4 Carbon",
+      "lab": "google"
+    },
+    {
+      "date": "2026-11-11",
+      "kind": "removed",
+      "key": "autotrust-ai-lab/jev-35b",
+      "name": "JEV-35B",
+      "lab": "autotrust-ai-lab"
+    },
+    {
+      "date": "2026-11-11",
+      "kind": "removed",
+      "key": "autotrust-ai-lab/autotrust-jev-27b-v1-1",
+      "name": "AutoTrust-JEV-27B-v1.1",
+      "lab": "autotrust-ai-lab"
+    },
+    {
+      "date": "2026-11-11",
+      "kind": "retired",
+      "key": "anthropic/claude-sonnet-4-5-20250929",
+      "name": "Claude Sonnet 4.5",
+      "lab": "anthropic"
+    },
+    {
       "date": "2026-11-10",
       "kind": "added",
       "key": "openbmb/minicpm-v-4-7-35b-a3b-dspark",
