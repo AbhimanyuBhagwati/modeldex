@@ -2,6 +2,93 @@
   "version": 1,
   "events": [
     {
+      "date": "2026-11-13",
+      "kind": "added",
+      "key": "qwen/wan2-1-t2v-14b",
+      "name": "Wan2.1-T2V-14B",
+      "lab": "qwen"
+    },
+    {
+      "date": "2026-11-13",
+      "kind": "added",
+      "key": "qwen/qwen3-asr-0-6b-hf",
+      "name": "Qwen3-ASR-0.6B-hf",
+      "lab": "qwen"
+    },
+    {
+      "date": "2026-11-13",
+      "kind": "added",
+      "key": "google/gemini-4-hydrogen",
+      "name": "Gemini 4 Hydrogen",
+      "lab": "google"
+    },
+    {
+      "date": "2026-11-13",
+      "kind": "removed",
+      "key": "qwen/wan2-1-t2v-14b-diffusers",
+      "name": "Wan2.1-T2V-14B-Diffusers",
+      "lab": "qwen"
+    },
+    {
+      "date": "2026-11-13",
+      "kind": "removed",
+      "key": "qwen/qwen3-asr-0-6b",
+      "name": "Qwen3-ASR-0.6B",
+      "lab": "qwen"
+    },
+    {
+      "date": "2026-11-13",
+      "kind": "removed",
+      "key": "google/gemini-omni-flash-preview",
+      "name": "Gemini Omni Flash Preview",
+      "lab": "google"
+    },
+    {
+      "date": "2026-11-13",
+      "kind": "price",
+      "key": "openai/gpt-image-1-5",
+      "name": "gpt-image-1.5",
+      "lab": "openai",
+      "before": {
+        "input": null,
+        "output": null
+      },
+      "after": {
+        "input": 5,
+        "output": 10
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "kind": "price",
+      "key": "google/gemma-4-26b-a4b-it",
+      "name": "Gemma 4 26B A4B IT",
+      "lab": "google",
+      "before": {
+        "input": null,
+        "output": null
+      },
+      "after": {
+        "input": 0,
+        "output": 0
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "kind": "price",
+      "key": "google/gemma-4-31b-it",
+      "name": "Gemma 4 31B IT",
+      "lab": "google",
+      "before": {
+        "input": null,
+        "output": null
+      },
+      "after": {
+        "input": 0,
+        "output": 0
+      }
+    },
+    {
       "date": "2026-11-12",
       "kind": "added",
       "key": "qwen/qwen-image-layered",
