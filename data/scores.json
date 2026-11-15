@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-13T14:40:44.140Z",
+  "updatedAt": "2026-11-15T14:01:39.965Z",
   "boards": {
     "eci": {
       "count": 256,
@@ -2130,6 +2130,23 @@
           "score": 1704,
           "rank": 10,
           "as": "Gemini 4 Hydrogen (High)"
+        }
+      },
+      "bench": {}
+    },
+    "google/gemini-omni-flash-preview": {
+      "quality": 96,
+      "basis": "video",
+      "boards": {
+        "video": {
+          "score": 1509,
+          "rank": 3,
+          "as": "gemini-omni-flash"
+        },
+        "image-video": {
+          "score": 1463,
+          "rank": 8,
+          "as": "gemini-omni-flash"
         }
       },
       "bench": {}
